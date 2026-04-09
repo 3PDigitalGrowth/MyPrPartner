@@ -7,7 +7,7 @@ import { Menu, X, ChevronDown, Phone, Mail, ExternalLink, GraduationCap, Buildin
 
 const navLinks = [
   { name: "Crisis masterclass", href: "#programs" },
-  { name: "Plans & pricing", href: "#pricing" },
+  { name: "Plans & pricing", href: "#programs" },
   { name: "About", href: "#about" },
   { name: "Resources", href: "#resources" },
 ];
@@ -188,7 +188,7 @@ export default function Navbar() {
               {/* Bottom link */}
               <div className="mt-6 pt-6 border-t border-gray-100">
                 <Link
-                  href="#pricing"
+                  href="#programs"
                   className="text-[14px] font-medium text-teal hover:text-teal-dark transition-colors"
                   onClick={() => setMegaOpen(false)}
                 >

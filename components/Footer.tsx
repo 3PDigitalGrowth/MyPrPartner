@@ -30,7 +30,7 @@ const programLinks = [
   { name: "Schools program", href: "#programs" },
   { name: "Industry & professional associations program", href: "#programs" },
   { name: "Crisis masterclass", href: "#programs" },
-  { name: "Plans & pricing", href: "#pricing" },
+  { name: "Plans & pricing", href: "#programs" },
 ];
 
 const companyLinks = [
@@ -48,7 +48,7 @@ export default function Footer() {
           {/* Column 1 - Brand */}
           <div>
             <Link href="/" className="inline-block">
-              <Image src="/logo.png" alt="My PR Partner" width={160} height={42} className="h-9 w-auto brightness-0 invert" />
+              <Image src="/logo.png" alt="My PR Partner" width={160} height={42} className="h-9 w-auto" />
             </Link>
             <p className="mt-2 text-sm text-gray-400">Powered by CRC Public Relations</p>
             <p className="mt-4 text-sm text-gray-400 leading-relaxed">
