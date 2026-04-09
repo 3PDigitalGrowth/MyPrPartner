@@ -64,10 +64,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {programLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                  >
+                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -81,10 +78,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                  >
+                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -106,18 +100,35 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-4 pt-2">
-                <a href="#" aria-label="LinkedIn" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://www.linkedin.com/company/my-pr-partner" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-white transition-colors">
                   <LinkedinIcon className="h-5 w-5" />
                 </a>
-                <a href="#" aria-label="Facebook" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://www.facebook.com/people/My-PR-Partner/100093729961913/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-gray-400 hover:text-white transition-colors">
                   <FacebookIcon className="h-5 w-5" />
                 </a>
-                <a href="#" aria-label="Instagram" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://www.instagram.com/myprpartner/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-white transition-colors">
                   <InstagramIcon className="h-5 w-5" />
                 </a>
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      {/* Crisis support link */}
+      <div className="border-t border-[#2A2A4E]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5">
+          <p className="text-center text-[14px] text-gray-400">
+            Need immediate crisis support?{" "}
+            <a
+              href="https://crcpublicrelations.com.au"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-teal hover:text-teal-dark transition-colors"
+            >
+              Contact CRC Public Relations &rarr;
+            </a>
+          </p>
         </div>
       </div>
 
