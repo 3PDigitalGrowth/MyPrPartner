@@ -6,8 +6,8 @@ import Link from "next/link";
 import { Menu, X, ChevronDown, Phone, Mail, ExternalLink, GraduationCap, Building2, Shield } from "lucide-react";
 
 const navLinks = [
-  { name: "Crisis Masterclass", href: "#programs" },
-  { name: "Plans & Pricing", href: "#pricing" },
+  { name: "Crisis masterclass", href: "#programs" },
+  { name: "Plans & pricing", href: "#pricing" },
   { name: "About", href: "#about" },
   { name: "Resources", href: "#resources" },
 ];
@@ -60,7 +60,7 @@ export default function Navbar() {
             </a>
           </div>
           <a href="#" className="flex items-center gap-1.5 text-[13px] text-white/90 hover:text-white transition-colors">
-            Member Login
+            Member login
             <ExternalLink className="h-3.5 w-3.5" />
           </a>
         </div>
@@ -107,13 +107,13 @@ export default function Navbar() {
                 href="#contact"
                 className="rounded-full border border-teal px-5 py-2 text-[14px] font-medium text-teal hover:bg-teal hover:text-white transition-colors"
               >
-                Contact Us
+                Contact us
               </Link>
               <Link
                 href="#programs"
                 className="rounded-full bg-teal px-5 py-2 text-[14px] font-medium text-white hover:bg-teal-dark transition-colors"
               >
-                Explore Programs
+                Explore programs
               </Link>
             </div>
 
@@ -140,7 +140,7 @@ export default function Navbar() {
                 {/* Left column */}
                 <div>
                   <p className="font-heading text-base font-bold text-text-dark mb-4">
-                    Training, Resources &amp; Support
+                    Training, resources &amp; support
                   </p>
                   <div className="space-y-4">
                     <Link
@@ -150,7 +150,7 @@ export default function Navbar() {
                     >
                       <GraduationCap className="h-5 w-5 text-teal mt-0.5 flex-shrink-0" />
                       <div>
-                        <p className="text-[15px] font-medium text-text-dark group-hover:text-teal transition-colors">Schools Program</p>
+                        <p className="text-[15px] font-medium text-text-dark group-hover:text-teal transition-colors">Schools program</p>
                         <p className="text-[14px] text-gray-400">For school leaders and staff</p>
                       </div>
                     </Link>
@@ -161,7 +161,7 @@ export default function Navbar() {
                     >
                       <Building2 className="h-5 w-5 text-teal mt-0.5 flex-shrink-0" />
                       <div>
-                        <p className="text-[15px] font-medium text-text-dark group-hover:text-teal transition-colors">Industry &amp; Professional Associations Program</p>
+                        <p className="text-[15px] font-medium text-text-dark group-hover:text-teal transition-colors">Industry &amp; professional associations program</p>
                         <p className="text-[14px] text-gray-400">For associations and member organisations</p>
                       </div>
                     </Link>
@@ -170,7 +170,7 @@ export default function Navbar() {
                 {/* Right column */}
                 <div>
                   <p className="font-heading text-base font-bold text-text-dark mb-4">
-                    Specialist Training
+                    Specialist training
                   </p>
                   <Link
                     href="#programs"
@@ -179,7 +179,7 @@ export default function Navbar() {
                   >
                     <Shield className="h-5 w-5 text-teal mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="text-[15px] font-medium text-text-dark group-hover:text-teal transition-colors">Crisis Masterclass</p>
+                      <p className="text-[15px] font-medium text-text-dark group-hover:text-teal transition-colors">Crisis masterclass</p>
                       <p className="text-[14px] text-gray-400">For PR and communications professionals and business leaders</p>
                     </div>
                   </Link>
@@ -192,7 +192,7 @@ export default function Navbar() {
                   className="text-[14px] font-medium text-teal hover:text-teal-dark transition-colors"
                   onClick={() => setMegaOpen(false)}
                 >
-                  View All Programs &amp; Pricing &rarr;
+                  View all programs &amp; pricing &rarr;
                 </Link>
               </div>
             </div>
@@ -203,15 +203,15 @@ export default function Navbar() {
         {mobileOpen && (
           <div className="lg:hidden bg-white border-t border-gray-100">
             <div className="px-4 py-4 space-y-1">
-              <p className="px-3 py-2 text-xs font-medium uppercase tracking-wider text-text-medium">Programs</p>
+              <p className="px-3 py-2 text-xs font-medium tracking-wider text-text-medium">Programs</p>
               <Link href="#programs" className="flex items-center gap-2 px-3 py-2.5 text-sm text-text-medium hover:text-teal transition-colors" onClick={() => setMobileOpen(false)}>
-                <GraduationCap className="h-4 w-4 text-teal" /> Schools Program
+                <GraduationCap className="h-4 w-4 text-teal" /> Schools program
               </Link>
               <Link href="#programs" className="flex items-center gap-2 px-3 py-2.5 text-sm text-text-medium hover:text-teal transition-colors" onClick={() => setMobileOpen(false)}>
-                <Building2 className="h-4 w-4 text-teal" /> Industry &amp; Professional Associations
+                <Building2 className="h-4 w-4 text-teal" /> Industry &amp; professional associations
               </Link>
               <Link href="#programs" className="flex items-center gap-2 px-3 py-2.5 text-sm text-text-medium hover:text-teal transition-colors" onClick={() => setMobileOpen(false)}>
-                <Shield className="h-4 w-4 text-teal" /> Crisis Masterclass
+                <Shield className="h-4 w-4 text-teal" /> Crisis masterclass
               </Link>
               <div className="border-t border-gray-100 my-2" />
               {navLinks.map((link) => (
@@ -221,10 +221,10 @@ export default function Navbar() {
               ))}
               <div className="pt-3 space-y-2">
                 <Link href="#contact" className="block w-full rounded-full border border-teal px-6 py-2.5 text-center text-sm font-medium text-teal hover:bg-teal hover:text-white transition-colors" onClick={() => setMobileOpen(false)}>
-                  Contact Us
+                  Contact us
                 </Link>
                 <Link href="#programs" className="block w-full rounded-full bg-teal px-6 py-2.5 text-center text-sm font-medium text-white hover:bg-teal-dark transition-colors" onClick={() => setMobileOpen(false)}>
-                  Explore Programs
+                  Explore programs
                 </Link>
               </div>
             </div>

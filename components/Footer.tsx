@@ -27,15 +27,15 @@ function InstagramIcon({ className }: { className?: string }) {
 }
 
 const programLinks = [
-  { name: "Schools Program", href: "#programs" },
-  { name: "Industry & Professional Associations Program", href: "#programs" },
-  { name: "Crisis Masterclass", href: "#programs" },
-  { name: "Plans & Pricing", href: "#pricing" },
+  { name: "Schools program", href: "#programs" },
+  { name: "Industry & professional associations program", href: "#programs" },
+  { name: "Crisis masterclass", href: "#programs" },
+  { name: "Plans & pricing", href: "#pricing" },
 ];
 
 const companyLinks = [
   { name: "About", href: "#about" },
-  { name: "Expert Panel", href: "#experts" },
+  { name: "Expert panel", href: "#experts" },
   { name: "Resources", href: "#resources" },
   { name: "Contact", href: "#contact" },
 ];
@@ -136,9 +136,9 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
             <p>&copy; 2026 Cheese Wheel Communications Group Pty Ltd t/a My PR Partner and CRC Public Relations. All rights reserved.</p>
             <div className="flex items-center gap-4">
-              <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="#" className="hover:text-white transition-colors">Privacy policy</Link>
               <span>|</span>
-              <Link href="#" className="hover:text-white transition-colors">Terms &amp; Conditions</Link>
+              <Link href="#" className="hover:text-white transition-colors">Terms &amp; conditions</Link>
             </div>
           </div>
         </div>
