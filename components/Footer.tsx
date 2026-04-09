@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail } from "lucide-react";
 
 function LinkedinIcon({ className }: { className?: string }) {
@@ -47,10 +48,7 @@ export default function Footer() {
           {/* Column 1 - Brand */}
           <div>
             <Link href="/" className="inline-block">
-              <span className="font-heading text-xl font-bold">
-                <span className="text-white">MY PR </span>
-                <span className="text-teal">PARTNER</span>
-              </span>
+              <Image src="/logo.png" alt="My PR Partner" width={160} height={42} className="h-9 w-auto brightness-0 invert" />
             </Link>
             <p className="mt-2 text-sm text-gray-400">Powered by CRC Public Relations</p>
             <p className="mt-4 text-sm text-gray-400 leading-relaxed">

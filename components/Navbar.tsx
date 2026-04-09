@@ -72,7 +72,7 @@ export default function Navbar() {
           <div className="flex h-[72px] items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
-              <Image src="/logo.svg" alt="My PR Partner" width={200} height={32} priority />
+              <Image src="/logo.png" alt="My PR Partner" width={180} height={48} priority className="h-10 w-auto" />
             </Link>
 
             {/* Desktop nav */}
@@ -110,10 +110,10 @@ export default function Navbar() {
                 Contact Us
               </Link>
               <Link
-                href="#cta"
+                href="#programs"
                 className="rounded-full bg-teal px-5 py-2 text-[14px] font-medium text-white hover:bg-teal-dark transition-colors"
               >
-                Start Free Trial
+                Explore Programs
               </Link>
             </div>
 
@@ -223,8 +223,8 @@ export default function Navbar() {
                 <Link href="#contact" className="block w-full rounded-full border border-teal px-6 py-2.5 text-center text-sm font-medium text-teal hover:bg-teal hover:text-white transition-colors" onClick={() => setMobileOpen(false)}>
                   Contact Us
                 </Link>
-                <Link href="#cta" className="block w-full rounded-full bg-teal px-6 py-2.5 text-center text-sm font-medium text-white hover:bg-teal-dark transition-colors" onClick={() => setMobileOpen(false)}>
-                  Start Free Trial
+                <Link href="#programs" className="block w-full rounded-full bg-teal px-6 py-2.5 text-center text-sm font-medium text-white hover:bg-teal-dark transition-colors" onClick={() => setMobileOpen(false)}>
+                  Explore Programs
                 </Link>
               </div>
             </div>
