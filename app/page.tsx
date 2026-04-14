@@ -188,7 +188,7 @@ export default function Home() {
                     />
                   </div>
                   <h1 className="font-heading text-[36px] md:text-[52px] font-bold text-text-dark leading-[1.1] tracking-tight">
-                    Public relations training, resources &amp; support
+                    Online public relations training, resources &amp; support
                   </h1>
                   <p className="mt-4 mx-auto max-w-[600px] text-[20px] text-text-medium">
                     Tailored programs backed by 25 years of crisis and corporate PR consulting experience
@@ -210,7 +210,7 @@ export default function Home() {
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in-up">
                   <Link href="#programs" className="group relative block overflow-hidden rounded-card min-h-[240px] md:min-h-[320px]">
-                    <Image src="/images/hero-programs.jpg" alt="Programs for organisations - teachers in professional development session" fill className="object-cover transition-transform duration-500 group-hover:scale-105" priority />
+                    <Image src="/images/hero-programs.jpg" alt="Professionals learning online PR training via laptops in a modern office" fill className="object-cover transition-transform duration-500 group-hover:scale-105" priority />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20" />
                     <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
                       <h2 className="font-heading text-[28px] font-bold text-white">Programs for organisations</h2>
@@ -219,7 +219,7 @@ export default function Home() {
                     </div>
                   </Link>
                   <Link href="#programs" className="group relative block overflow-hidden rounded-card min-h-[240px] md:min-h-[320px]">
-                    <Image src="/images/hero-masterclass.jpg" alt="Crisis masterclass - communications professional leading crisis planning session" fill className="object-cover transition-transform duration-500 group-hover:scale-105" priority />
+                    <Image src="/images/hero-masterclass.jpg" alt="PR professional participating in an online crisis masterclass via laptop" fill className="object-cover transition-transform duration-500 group-hover:scale-105" priority />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20" />
                     <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
                       <h2 className="font-heading text-[28px] font-bold text-white">Crisis masterclass</h2>
@@ -258,7 +258,6 @@ export default function Home() {
               </div>
               <div className="lg:col-span-5">
                 <VideoPlayer />
-                <p className="mt-3 text-center text-[13px] text-gray-400">1:49 - Introduction to My PR Partner</p>
               </div>
             </div>
           </div>
@@ -294,9 +293,9 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up">
               {[
-                { icon: BookOpen, title: "Practical training", body: "Monthly video training and downloadable workbooks from Australia\u2019s leading PR and crisis specialists." },
-                { icon: FileText, title: "Ready-to-use resources", body: "Crisis plan templates, media response guides, and communications checklists your team can implement immediately." },
-                { icon: Headphones, title: "Ongoing expert support", body: "Access to CRC Public Relations consultants via phone, email and the member portal when you need guidance." },
+                { icon: BookOpen, title: "Practical training", body: "Monthly video training and downloadable workbooks from leading PR and crisis specialists across Australia and internationally." },
+                { icon: FileText, title: "Ready-to-use resources", body: "Media release and crisis plan templates, media response guides and communications checklists your team can implement immediately." },
+                { icon: Headphones, title: "Ongoing expert support", body: "Access to CRC Public Relations consultants via phone, email, and video + access to trainers through the member portal when you need guidance." },
               ].map((card) => (
                 <div key={card.title} className="bg-white rounded-card p-8 shadow-card">
                   <card.icon className="h-8 w-8 text-teal mb-4" />
@@ -331,7 +330,7 @@ export default function Home() {
                     <p className="text-[14px] text-text-medium mb-3 flex-1 line-clamp-2">{program.description}</p>
                     <div className="flex items-center gap-2 text-[13px] text-gray-400 mb-4">
                       <Clock className="h-3.5 w-3.5" />
-                      <span>12-month program</span>
+                      <span>Ongoing team support</span>
                     </div>
                     <Link href="#" className="block w-full rounded-full bg-teal py-2.5 text-center text-sm font-medium text-white hover:bg-teal-dark transition-colors">View program</Link>
                   </div>
@@ -350,16 +349,15 @@ export default function Home() {
             <div className="text-center mb-14 animate-fade-in-up">
               <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-4">What&apos;s included</p>
               <h2 className="font-heading text-[28px] md:text-[36px] font-bold text-text-dark leading-tight">Every program includes</h2>
-              <p className="mt-4 mx-auto max-w-[640px] text-[17px] text-text-medium">Choose a growth focus, a reputation focus, or both. Your content is tailored to your organisation type.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 animate-fade-in-up">
               {[
-                { icon: PlayCircle, title: "Monthly video training", text: "Expert-led training sessions covering PR strategy, media management, crisis communications and reputation protection. New content unlocks every month." },
+                { icon: PlayCircle, title: "Monthly video training", text: "Expert-led training sessions covering PR strategy, communications, media management, crisis communications and reputation protection. New content unlocks every month." },
                 { icon: FileDown, title: "Downloadable workbooks", text: "Fillable PDF workbooks and templates for each module. Build your crisis plan, media response guide, and communications toolkit." },
                 { icon: Mail, title: "Fortnightly spotlights", text: "Regular email updates with curated PR insights, industry analysis, and practical tips from our expert panel." },
                 { icon: MessageSquare, title: "Member portal & Q&A", text: "Submit questions and access all your training content through the secure member dashboard." },
-                { icon: Phone, title: "CRC Public Relations support", text: "Higher-tier subscribers get direct phone and email access to CRC Public Relations consultants." },
-                { icon: Award, title: "Exclusive partnerships", text: "Access the Crisis Ready\u00AE program from Melissa Agnes, available exclusively through My PR Partner in Australasia." },
+                { icon: Phone, title: "CRC Public Relations support", text: "Higher-tier subscribers get personal direct phone, email and video access to CRC Public Relations consultants." },
+                { icon: Award, title: "Exclusive partnerships", text: "Access the world-leading Crisis Ready\u00AE program from Melissa Agnes of Crisis Ready Institute USA, available exclusively through My PR Partner in Australasia." },
               ].map((block) => (
                 <div key={block.title} className="text-center md:text-left">
                   <block.icon className="h-10 w-10 text-teal mb-4 mx-auto md:mx-0" />
@@ -405,11 +403,10 @@ export default function Home() {
               <h2 className="font-heading text-[28px] md:text-[36px] font-bold text-text-dark leading-tight">Learn from Australia&apos;s leading crisis and PR specialists</h2>
               <p className="mt-4 mx-auto max-w-[640px] text-base text-text-medium">Every program is developed and delivered by practitioners with decades of real-world consulting experience, not academics.</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in-up">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto animate-fade-in-up">
               {[
-                { image: "/images/expert-lyall-real.png", name: "Lyall Mercer", title: "Head of Content, My PR Partner | Lead Strategist, CRC Public Relations", bio: "Former journalist and 25-year PR career spanning six continents. Lyall has consulted national and international companies, governments, executives, and industry leaders in crisis communications and reputation management." },
+                { image: "/images/expert-lyall-real.png", name: "Lyall Mercer", title: "Co-founder, My PR Partner | Lead Strategist, CRC Public Relations", bio: "Former journalist and 25-year PR career spanning six continents. Lyall has consulted to national and international companies, governments, executives, and industry leaders in crisis communications and reputation management." },
                 { image: "/images/expert-melissa-real.png", name: "Melissa Agnes", title: "Founder, Crisis Ready Institute (USA)", bio: "Globally recognised authority on crisis communication and crisis leadership. Creator of the Crisis Ready\u00AE Model and best-selling author. Presenting exclusively through My PR Partner in Australasia." },
-                { image: "/images/expert-barbara-real.png", name: "Deborah Hileman", title: "President, Institute for Crisis Management (USA)", bio: "35+ years experience training executives across the globe to prevent, respond to, and mitigate crises across public and private sectors." },
               ].map((expert) => (
                 <div key={expert.name} className="rounded-card border border-gray-200 p-8 text-center">
                   <div className="mx-auto mb-4 h-[160px] w-[160px] overflow-hidden rounded-xl relative">
@@ -524,7 +521,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <FAQItem
                     question="Who owns My PR Partner and what experience do they have?"
-                    answer="My PR Partner is part of CRC Public Relations, a respected national PR company with decades of local and international experience in public relations and crisis communications. CRC PR was established in 2010 and has worked with organisations across more than 15 industries including schools, industry associations, government, legal, health, and corporate sectors."
+                    answer="My PR Partner is part of CRC Public Relations, a respected national PR company with decades of local and international experience in public relations and crisis communications. CRC Public Relations was established in 2010 and has worked with organisations across more than 15 industries including schools, industry associations, government, legal, health, and corporate sectors."
                   />
                   <FAQItem
                     question="Are the Support and Partner levels similar to engaging a PR consultancy?"
@@ -576,7 +573,7 @@ export default function Home() {
             logo: "https://myprpartner.com/logo.png",
             description: "Australia\u2019s specialist PR training platform. Expert-led programs for schools, associations, and communications professionals.",
             parentOrganization: { "@type": "Organization", name: "CRC Public Relations", url: "https://crcpublicrelations.com.au" },
-            contactPoint: { "@type": "ContactPoint", email: "info@myprpartner.com", contactType: "customer service" },
+            contactPoint: { "@type": "ContactPoint", contactType: "customer service", url: "https://myprpartner.com/#contact" },
           }),
         }}
       />

@@ -54,9 +54,9 @@ export default function Navbar() {
               <Phone className="h-3.5 w-3.5" />
               1300 XXX XXX
             </a>
-            <a href="mailto:info@myprpartner.com" className="hidden sm:flex items-center gap-1.5 text-[13px] text-white/90 hover:text-white transition-colors">
+            <a href="#contact" className="hidden sm:flex items-center gap-1.5 text-[13px] text-white/90 hover:text-white transition-colors">
               <Mail className="h-3.5 w-3.5" />
-              info@myprpartner.com
+              Contact us
             </a>
           </div>
           <a href="#" className="flex items-center gap-1.5 text-[13px] text-white/90 hover:text-white transition-colors">

@@ -42,7 +42,7 @@ const companyLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-text-dark">
+    <footer className="bg-[#0A5E63]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Column 1 - Brand */}
@@ -90,11 +90,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:info@myprpartner.com"
+                  href="#contact"
                   className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
                 >
                   <Mail className="h-4 w-4" />
-                  info@myprpartner.com
+                  Send us a message
                 </a>
               </li>
               <li className="flex items-center gap-4 pt-2">
@@ -114,7 +114,7 @@ export default function Footer() {
       </div>
 
       {/* Crisis support link */}
-      <div className="border-t border-[#2A2A4E]">
+      <div className="border-t border-white/15">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5">
           <p className="text-center text-[14px] text-gray-400">
             Need immediate crisis support?{" "}
@@ -131,7 +131,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-white/15">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
             <p>&copy; 2026 Cheese Wheel Communications Group Pty Ltd t/a My PR Partner and CRC Public Relations. All rights reserved.</p>
