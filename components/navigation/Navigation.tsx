@@ -206,7 +206,7 @@ export default function Navigation() {
       <div ref={navShellRef} className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-[72px] items-center justify-between">
           <Link href="/" className="flex-shrink-0">
-            <Image src="/logo.svg" alt="My PR Partner" width={180} height={48} priority className="h-10 w-auto" />
+            <Image src="/logo.png" alt="My PR Partner" width={200} height={65} priority className="h-[65px] w-auto" />
           </Link>
 
           <div className="hidden lg:flex lg:items-center lg:gap-6 xl:gap-7">
@@ -218,35 +218,11 @@ export default function Navigation() {
               <NavTrigger
                 ref={programsTriggerRef}
                 id="nav-trigger-programs"
-                label="Programs"
+                label="Online Courses & Programs"
                 isOpen={openDropdown === "programs"}
                 onMouseEnter={cancelPendingClose}
                 onMouseLeave={() => {}}
                 onClick={() => onDesktopTriggerClick("programs")}
-              />
-            </div>
-
-            <Link
-              href="/crisis-masterclass"
-              className="relative inline-block pr-2 text-[15px] font-medium text-text-dark transition-colors hover:text-teal"
-            >
-              Crisis Masterclass
-              <span className="flagship-indicator absolute -right-0 top-0 h-1.5 w-1.5 rounded-full bg-teal" aria-hidden />
-            </Link>
-
-            <Link href="/plan-pricing" className="text-[15px] font-medium text-text-dark transition-colors hover:text-teal">
-              Plans & Pricing
-            </Link>
-
-            <div className="relative z-[45]" onMouseEnter={() => scheduleOpen("about")} onMouseLeave={scheduleClose}>
-              <NavTrigger
-                ref={aboutTriggerRef}
-                id="nav-trigger-about"
-                label="About"
-                isOpen={openDropdown === "about"}
-                onMouseEnter={cancelPendingClose}
-                onMouseLeave={() => {}}
-                onClick={() => onDesktopTriggerClick("about")}
               />
             </div>
 
@@ -259,6 +235,18 @@ export default function Navigation() {
                 onMouseEnter={cancelPendingClose}
                 onMouseLeave={() => {}}
                 onClick={() => onDesktopTriggerClick("resources")}
+              />
+            </div>
+
+            <div className="relative z-[45]" onMouseEnter={() => scheduleOpen("about")} onMouseLeave={scheduleClose}>
+              <NavTrigger
+                ref={aboutTriggerRef}
+                id="nav-trigger-about"
+                label="About"
+                isOpen={openDropdown === "about"}
+                onMouseEnter={cancelPendingClose}
+                onMouseLeave={() => {}}
+                onClick={() => onDesktopTriggerClick("about")}
               />
             </div>
 
@@ -346,12 +334,6 @@ export default function Navigation() {
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                   <p className="text-[14px] text-text-medium">Not sure which program fits your organisation?</p>
                   <div className="flex flex-wrap items-center gap-2 text-[14px] font-medium">
-                    <Link href="/plan-pricing" className="text-teal hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal" onClick={() => setOpenDropdown(null)} role="menuitem">
-                      Compare all programs →
-                    </Link>
-                    <span className="text-[#E5E7EB]" aria-hidden>
-                      ·
-                    </span>
                     <Link href="/contact" className="text-teal hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal" onClick={() => setOpenDropdown(null)} role="menuitem">
                       Book a call with our team →
                     </Link>

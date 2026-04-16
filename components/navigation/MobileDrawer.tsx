@@ -89,7 +89,7 @@ export function MobileDrawer({ open, onClose, expanded, setExpanded }: MobileDra
     >
       <div className="flex shrink-0 items-center justify-between border-b border-[#E5E7EB] px-5 py-5">
         <Link href="/" onClick={onClose}>
-          <Image src="/logo.svg" alt="My PR Partner" width={180} height={48} className="h-10 w-auto" />
+          <Image src="/logo.png" alt="My PR Partner" width={200} height={65} className="h-10 w-auto" />
         </Link>
         <button type="button" className="p-2 text-text-dark outline-none focus-visible:ring-2 focus-visible:ring-teal" onClick={onClose} aria-label="Close menu">
           <X className="h-6 w-6" />
@@ -116,7 +116,7 @@ export function MobileDrawer({ open, onClose, expanded, setExpanded }: MobileDra
 
       <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 pb-48">
         <MobileRow
-          label="Programs"
+          label="Online Courses & Programs"
           isExpandable
           expanded={expanded === "programs"}
           onToggle={() => toggle("programs")}
@@ -155,9 +155,6 @@ export function MobileDrawer({ open, onClose, expanded, setExpanded }: MobileDra
               <div className="border-t border-[#E5E7EB] pt-4 text-[13px] text-text-medium">
                 <p>Not sure which program fits your organisation?</p>
                 <div className="mt-2 flex flex-col gap-2">
-                  <Link href="/plan-pricing" className="font-medium text-teal" onClick={onClose}>
-                    Compare all programs →
-                  </Link>
                   <Link href="/contact" className="font-medium text-teal" onClick={onClose}>
                     Book a call with our team →
                   </Link>
@@ -168,33 +165,6 @@ export function MobileDrawer({ open, onClose, expanded, setExpanded }: MobileDra
         </div>
 
         <MobileStandalone href="/crisis-masterclass" label="Crisis Masterclass" onNavigate={onClose} showDot />
-        <MobileStandalone href="/plan-pricing" label="Plans & Pricing" onNavigate={onClose} />
-
-        <MobileRow label="About" isExpandable expanded={expanded === "about"} onToggle={() => toggle("about")} />
-        <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${expanded === "about" ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
-          <div className="overflow-hidden">
-            <div className="space-y-3 border-b border-[#F7F8FA] py-3 pl-4">
-              <p className="font-heading text-[11px] font-bold uppercase tracking-[0.12em] text-[#9CA3AF]">About My PR Partner</p>
-              {aboutLinks.map((item) => (
-                <DropdownLink key={item.href} {...item} variant="plain" onNavigate={onClose} />
-              ))}
-              <div className="border-t border-[#E5E7EB] pt-4">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <span className="text-[12px] font-medium text-[#9CA3AF]">Powered by CRC Public Relations</span>
-                  <a
-                    href="https://crcpr.com.au"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-[12px] font-medium text-teal"
-                  >
-                    Visit CRC PR
-                    <ExternalLink className="h-3 w-3" aria-hidden />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <MobileRow label="Resources" isExpandable expanded={expanded === "resources"} onToggle={() => toggle("resources")} />
         <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${expanded === "resources" ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
@@ -220,6 +190,32 @@ export function MobileDrawer({ open, onClose, expanded, setExpanded }: MobileDra
                   <Link href="/contact" className="font-medium text-teal" onClick={onClose}>
                     Contact us →
                   </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <MobileRow label="About" isExpandable expanded={expanded === "about"} onToggle={() => toggle("about")} />
+        <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${expanded === "about" ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+          <div className="overflow-hidden">
+            <div className="space-y-3 border-b border-[#F7F8FA] py-3 pl-4">
+              <p className="font-heading text-[11px] font-bold uppercase tracking-[0.12em] text-[#9CA3AF]">About My PR Partner</p>
+              {aboutLinks.map((item) => (
+                <DropdownLink key={item.href} {...item} variant="plain" onNavigate={onClose} />
+              ))}
+              <div className="border-t border-[#E5E7EB] pt-4">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <span className="text-[12px] font-medium text-[#9CA3AF]">Powered by CRC Public Relations</span>
+                  <a
+                    href="https://crcpr.com.au"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-[12px] font-medium text-teal"
+                  >
+                    Visit CRC PR
+                    <ExternalLink className="h-3 w-3" aria-hidden />
+                  </a>
                 </div>
               </div>
             </div>
