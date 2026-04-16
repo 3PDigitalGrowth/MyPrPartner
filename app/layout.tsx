@@ -12,7 +12,7 @@ const dmSans = DM_Sans({
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-plus-jakarta-sans",
-  weight: ["700"],
+  weight: ["500", "700"],
   display: "swap",
 });
 

@@ -38,3 +38,25 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+@keyframes subtle-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.15);
+  }
+}
+
+.flagship-indicator {
+  animation: subtle-pulse 2.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flagship-indicator {
+    animation: none;
+  }
+}
