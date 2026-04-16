@@ -11,7 +11,6 @@ import {
   Newspaper,
   FileText,
   ShieldCheck,
-  TrendingUp,
 } from "lucide-react";
 
 export type ProgramSectorLink = {
@@ -91,12 +90,6 @@ export const resourceLinks: ResourceLink[] = [
     label: "Crisis Readiness Checklist",
     descriptor: "Evaluate your organisation's crisis preparedness in 10 minutes",
     badges: ["free"],
-  },
-  {
-    href: "/blog?sort=latest",
-    icon: TrendingUp,
-    label: "Latest articles",
-    descriptor: "Read our most recent posts on PR, crisis and reputation",
   },
 ];
 
