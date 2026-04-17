@@ -97,15 +97,20 @@ export function MobileDrawer({ open, onClose, expanded, setExpanded }: MobileDra
       </div>
 
       <div className="shrink-0 bg-bg-grey px-5 py-5">
-        <a href="tel:1300000000" className="flex items-center gap-2 text-[14px] text-text-dark">
+        <a href="tel:1300182186" className="flex items-center gap-2 text-[14px] text-text-dark">
           <Phone className="h-4 w-4 text-teal" aria-hidden />
-          1300 XXX XXX
+          1300 182 186
         </a>
         <a href="mailto:info@myprpartner.com" className="mt-3 flex items-center gap-2 text-[14px] text-text-dark">
           <Mail className="h-4 w-4 text-teal" aria-hidden />
           info@myprpartner.com
         </a>
-        <a href="#" className="mt-3 flex items-center justify-between text-[14px] text-text-dark">
+        <a
+          href="https://learn.myprpartner.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 flex items-center justify-between text-[14px] text-text-dark"
+        >
           <span className="flex items-center gap-2">
             <UserCircle className="h-4 w-4 text-teal" aria-hidden />
             Member Login
@@ -147,8 +152,8 @@ export function MobileDrawer({ open, onClose, expanded, setExpanded }: MobileDra
                 <p className="mt-1.5 text-[13px] leading-relaxed text-text-medium">
                   Standalone courses on LinkedIn strategy, media training, personal branding and more.
                 </p>
-                <Link href="/waitlist" className="mt-3 inline-block text-[13px] font-medium text-teal" onClick={onClose}>
-                  Join the waitlist →
+                <Link href="/courses" className="mt-3 inline-block text-[13px] font-medium text-teal" onClick={onClose}>
+                  See the pipeline →
                 </Link>
               </div>
               <ProgramsFeaturedMobile onNavigate={onClose} />

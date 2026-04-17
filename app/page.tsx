@@ -317,9 +317,9 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in-up">
               {[
-                { image: "/images/card-schools.jpg", title: "Schools program", description: "Professional development in PR, media and crisis communications for school leaders and staff.", alt: "School principal speaking to media" },
-                { image: "/images/card-associations.jpg", title: "Industry & professional associations program", description: "Practical PR skills and resources for association leaders and member organisations.", alt: "Boardroom meeting with association members" },
-                { image: "/images/card-crisis-masterclass.jpg", title: "Crisis masterclass", description: "Australia\u2019s premier crisis communications training program with Melissa Agnes and expert panel.", alt: "PR consultant presenting in training room" },
+                { image: "/images/card-schools.jpg", title: "Schools program", description: "Professional development in PR, media and crisis communications for school leaders and staff.", alt: "School principal speaking to media", href: "/programs/schools" },
+                { image: "/images/card-associations.jpg", title: "Industry & professional associations program", description: "Practical PR skills and resources for association leaders and member organisations.", alt: "Boardroom meeting with association members", href: "/programs/industry-associations" },
+                { image: "/images/card-crisis-masterclass.jpg", title: "Crisis masterclass", description: "Australia\u2019s premier crisis communications training program with Melissa Agnes and expert panel.", alt: "PR consultant presenting in training room", href: "/crisis-masterclass" },
               ].map((program) => (
                 <div key={program.title} className="bg-white rounded-card shadow-card overflow-hidden flex flex-col">
                   <div className="relative aspect-video">
@@ -332,13 +332,10 @@ export default function Home() {
                       <Clock className="h-3.5 w-3.5" />
                       <span>Ongoing team support</span>
                     </div>
-                    <Link href="#" className="block w-full rounded-full bg-teal py-2.5 text-center text-sm font-medium text-white hover:bg-teal-dark transition-colors">View program</Link>
+                    <Link href={program.href} className="block w-full rounded-full bg-teal py-2.5 text-center text-sm font-medium text-white hover:bg-teal-dark transition-colors">View program</Link>
                   </div>
                 </div>
               ))}
-            </div>
-            <div className="mt-8 text-center animate-fade-in-up">
-              <Link href="#programs" className="text-base font-medium text-teal hover:text-teal-dark transition-colors">Explore plans &amp; pricing &rarr;</Link>
             </div>
           </div>
         </section>
@@ -405,8 +402,8 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto animate-fade-in-up">
               {[
-                { image: "/images/expert-lyall-real.png", name: "Lyall Mercer", title: "Co-founder, My PR Partner | Lead Strategist, CRC Public Relations", bio: "Former journalist and 25-year PR career spanning six continents. Lyall has consulted to national and international companies, governments, executives, and industry leaders in crisis communications and reputation management." },
-                { image: "/images/expert-melissa-real.png", name: "Melissa Agnes", title: "Founder, Crisis Ready Institute (USA)", bio: "Globally recognised authority on crisis communication and crisis leadership. Creator of the Crisis Ready\u00AE Model and best-selling author. Presenting exclusively through My PR Partner in Australasia." },
+                { image: "/images/instructors/lyall-mercer.png", name: "Lyall Mercer", title: "Co-founder, My PR Partner | Lead Strategist, CRC Public Relations", bio: "Former journalist and 25-year PR career spanning six continents. Lyall has consulted to national and international companies, governments, executives, and industry leaders in crisis communications and reputation management." },
+                { image: "/images/instructors/melissa-agnes.png", name: "Melissa Agnes", title: "Founder, Crisis Ready Institute (USA)", bio: "Globally recognised authority on crisis communication and crisis leadership. Creator of the Crisis Ready\u00AE Model and best-selling author. Presenting exclusively through My PR Partner in Australasia." },
               ].map((expert) => (
                 <div key={expert.name} className="rounded-card border border-gray-200 p-8 text-center">
                   <div className="mx-auto mb-4 h-[160px] w-[160px] overflow-hidden rounded-xl relative">
@@ -513,7 +510,7 @@ export default function Home() {
                 <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-4">Common questions</p>
                 <h2 className="font-heading text-[28px] md:text-[32px] font-bold text-text-dark leading-tight">Frequently asked questions</h2>
                 <p className="mt-4 text-[15px] text-text-medium leading-relaxed">Everything you need to know about My PR Partner. Can&apos;t find the answer you&apos;re looking for?</p>
-                <Link href="#contact" className="inline-block mt-5 text-[15px] font-medium text-teal hover:text-teal-dark transition-colors">Get in touch &rarr;</Link>
+                <Link href="/contact" className="inline-block mt-5 text-[15px] font-medium text-teal hover:text-teal-dark transition-colors">Get in touch &rarr;</Link>
               </div>
 
               {/* Right column - FAQ cards in two columns */}
@@ -553,7 +550,7 @@ export default function Home() {
               <p className="text-lg text-white/90 mb-8">Find the program that fits your organisation and start building your team&apos;s PR capability today.</p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link href="#programs" className="rounded-full bg-white px-8 py-3 text-sm font-medium text-text-dark hover:bg-gray-50 transition-colors">Explore programs</Link>
-                <Link href="#contact" className="rounded-full border-2 border-white px-8 py-3 text-sm font-medium text-white hover:bg-white/10 transition-colors">Contact us</Link>
+                <Link href="/contact" className="rounded-full border-2 border-white px-8 py-3 text-sm font-medium text-white hover:bg-white/10 transition-colors">Contact us</Link>
               </div>
             </div>
           </div>
@@ -572,8 +569,8 @@ export default function Home() {
             url: "https://myprpartner.com",
             logo: "https://myprpartner.com/logo.png",
             description: "Australia\u2019s specialist PR training platform. Expert-led programs for schools, associations, and communications professionals.",
-            parentOrganization: { "@type": "Organization", name: "CRC Public Relations", url: "https://crcpublicrelations.com.au" },
-            contactPoint: { "@type": "ContactPoint", contactType: "customer service", url: "https://myprpartner.com/#contact" },
+            parentOrganization: { "@type": "Organization", name: "CRC Public Relations", url: "https://crcpr.com.au" },
+            contactPoint: { "@type": "ContactPoint", contactType: "customer service", url: "https://myprpartner.com/contact" },
           }),
         }}
       />

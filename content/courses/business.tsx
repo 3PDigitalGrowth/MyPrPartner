@@ -1,4 +1,4 @@
-import {
+﻿import {
   Award,
   BadgeCheck,
   Briefcase,
@@ -47,12 +47,12 @@ export const businessContent: CourseContent = {
     metaTitle:
       "Business PR, Profile & Crisis Communications Program | Build Trust, Grow & Protect Your Reputation | My PR Partner",
     metaDescription:
-      "A 12-month online PR, profile, reputation and crisis communications program for Australian business owners, founders and leadership teams. Built by CRC Public Relations with 25+ years of business PR experience. Join the waitlist — first 50 businesses save 10%.",
+      "A 12-month online PR, profile, reputation and crisis communications program for Australian business owners, founders and leadership teams. Built by CRC Public Relations with 25+ years of business PR experience. Join the waitlist - first 50 businesses save 10%.",
     canonicalUrl: `${SITE}${PAGE_PATH}`,
     ogImage: HERO_IMAGE,
     twitterTitle: "Business PR & Reputation Program | My PR Partner",
     twitterDescription:
-      "A 12-month online PR program for Australian business owners and leadership teams, powered by CRC Public Relations. Join the waitlist — first 50 save 10%.",
+      "A 12-month online PR program for Australian business owners and leadership teams, powered by CRC Public Relations. Join the waitlist - first 50 save 10%.",
     courseWorkload: "PT12M",
   },
 
@@ -168,7 +168,7 @@ export const businessContent: CourseContent = {
 
   whatYoullLearn: {
     eyebrow: "What's included every month",
-    heading: "Grow, protect, support and expertise — every single month for a year",
+    heading: "Grow, protect, support and expertise - every single month for a year",
     intro:
       "This is not a passive video library. Each month, your whole team gets everything they need to build your business profile, win new customers, communicate confidently with media, and stand firm when your reputation is tested.",
     tiles: [
@@ -188,7 +188,7 @@ export const businessContent: CourseContent = {
         icon: HelpingHand,
         title: "Support",
         body:
-          "Receive ongoing PR support and training without consultancy costs — a real partner in your corner every month, for 12 months, and a team ready when you need them.",
+          "Receive ongoing PR support and training without consultancy costs - a real partner in your corner every month, for 12 months, and a team ready when you need them.",
       },
       {
         icon: BadgeCheck,
@@ -274,7 +274,7 @@ export const businessContent: CourseContent = {
         icon: Building2,
         title: "CEOs and managing directors",
         body:
-          "Turn your position, your team and your track record into measurable gains in profile, trust and commercial growth — and a reputation that stands up under pressure.",
+          "Turn your position, your team and your track record into measurable gains in profile, trust and commercial growth - and a reputation that stands up under pressure.",
       },
       {
         image: "/images/business/business-persona-comms.jpg",
@@ -288,7 +288,7 @@ export const businessContent: CourseContent = {
         icon: HandHeart,
         title: "Client-facing and sales teams",
         body:
-          "Turn every customer conversation, review and referral into a brand moment — because reputation is built in the frontline interactions your customers remember most.",
+          "Turn every customer conversation, review and referral into a brand moment - because reputation is built in the frontline interactions your customers remember most.",
       },
     ],
   },
@@ -300,13 +300,13 @@ export const businessContent: CourseContent = {
       "Lead presenter is Lyall Mercer, supported by a panel of guest experts and successful Australian business owners who each bring real-world experience to the program.",
     items: [
       {
-        image: "/images/expert-lyall-real.png",
+        image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
         bio: "Former journalist with a 25-year PR career spanning six continents. Lyall has assisted Australian businesses, from hospitality and professional services to national brands, for over 25 years. He has spoken at numerous business forums and conferences, and trained owners, executive teams and staff in the art of effective communication and reputation strategy.",
       },
       {
-        image: "/images/expert-melissa-real.png",
+        image: "/images/instructors/melissa-agnes.png",
         name: "Melissa Agnes",
         title: "Featured presenter \u00B7 Founder, Crisis Ready Institute (USA)",
         bio: (
@@ -414,7 +414,7 @@ export const businessContent: CourseContent = {
       },
       {
         q: "Will there be different levels (Train, Support, Partner)?",
-        a: "Yes — the program will launch with three tiers so sole traders, small teams and larger businesses can all find a fit. Train Level is training and resources only; Support Level adds on-call PR support; Partner Level adds full PR partnership including media training. Pricing details will be shared with the waitlist first.",
+        a: "Yes - the program will launch with three tiers so sole traders, small teams and larger businesses can all find a fit. Train Level is training and resources only; Support Level adds on-call PR support; Partner Level adds full PR partnership including media training. Pricing details will be shared with the waitlist first.",
       },
       {
         q: "Do we get support between modules?",
@@ -496,7 +496,7 @@ export const businessContent: CourseContent = {
     image: "/images/founders.png",
     imageAlt: "Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner",
     paragraphs: [
-      "We have a deep understanding of the unique needs facing Australian business owners and leadership teams, having worked alongside businesses of every size — from local hospitality and professional services firms to national brands — for more than 25 years through CRC Public Relations.",
+      "We have a deep understanding of the unique needs facing Australian business owners and leadership teams, having worked alongside businesses of every size - from local hospitality and professional services firms to national brands - for more than 25 years through CRC Public Relations.",
       "We've helped many businesses grow their profile, win new customers through trusted public relations, and protect their reputation when everything was on the line. That hard-won experience is what this program is built on.",
       "We're excited to bring you high-quality training and resources, with optional support when you need it, that will help you and your team at an affordable cost. We hope to welcome you to our community of business leaders.",
     ],
@@ -509,11 +509,11 @@ export const businessContent: CourseContent = {
     badgeIcon: Users,
     heading: "Train every location, franchisee or business in your group under one enrolment",
     body:
-      "We work with franchise networks, multi-location businesses and business groups on bulk enrolments. Discounted per-business pricing, shared dashboards and an optional group-wide tabletop or media-training day with CRC are all on the table.",
+      "We work with franchise networks, multi-location businesses and business groups on bulk enrolments. Discounted per-business pricing, shared dashboards and an optional group-wide tabletop or media-training day with CRC Public Relations are all on the table.",
     bullets: [
       "Discounted per-business pricing across a group",
       "Shared dashboard across all participating locations",
-      "Optional group-wide tabletop or media-training day with CRC",
+      "Optional group-wide tabletop or media-training day with CRC Public Relations",
       "Sector-specific onboarding with the My PR Partner team",
     ],
     cta: { label: "Enquire about group enrolment", href: "/contact" },

@@ -1,4 +1,4 @@
-import {
+﻿import {
   Award,
   Briefcase,
   Building2,
@@ -46,12 +46,12 @@ export const associationsContent: CourseContent = {
     metaTitle:
       "Industry & Professional Associations PR Program | Advocacy, Reputation & Member Engagement Training | My PR Partner",
     metaDescription:
-      "A 12-month online PR, advocacy and reputation program for Australian industry, trade and professional association leadership teams. Built by CRC Public Relations with 25+ years of association experience. Join the waitlist — first 50 association members save 10%.",
+      "A 12-month online PR, advocacy and reputation program for Australian industry, trade and professional association leadership teams. Built by CRC Public Relations with 25+ years of association experience. Join the waitlist - first 50 association members save 10%.",
     canonicalUrl: `${SITE}${PAGE_PATH}`,
     ogImage: HERO_IMAGE,
     twitterTitle: "Industry & Professional Associations PR Program | My PR Partner",
     twitterDescription:
-      "A 12-month online PR program for Australian industry, trade and professional associations, powered by CRC Public Relations. Join the waitlist — first 50 save 10%.",
+      "A 12-month online PR program for Australian industry, trade and professional associations, powered by CRC Public Relations. Join the waitlist - first 50 save 10%.",
     courseWorkload: "PT12M",
   },
 
@@ -286,13 +286,13 @@ export const associationsContent: CourseContent = {
       "Lead presenter is Lyall Mercer, supported by a panel of guest experts and successful association leaders who each bring real industry experience to the program.",
     items: [
       {
-        image: "/images/expert-lyall-real.png",
+        image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
         bio: "Former journalist with a 25-year PR career spanning six continents. Lyall has assisted state and federal industry and professional associations across Australia, New Zealand and the USA for over 25 years, spoken at numerous association forums and conferences, and trained executive teams, boards and staff in the art of effective communication and strategy.",
       },
       {
-        image: "/images/expert-melissa-real.png",
+        image: "/images/instructors/melissa-agnes.png",
         name: "Melissa Agnes",
         title: "Featured presenter \u00B7 Founder, Crisis Ready Institute (USA)",
         bio: (
@@ -397,7 +397,7 @@ export const associationsContent: CourseContent = {
       },
       {
         q: "Will there be different levels (Train, Support, Partner)?",
-        a: "Yes — the program will launch with three tiers so smaller associations and larger national bodies can both find a fit. Train Level is training and resources only; Support Level adds on-call PR support; Partner Level adds full PR partnership including media training. Pricing details will be shared with the waitlist first.",
+        a: "Yes - the program will launch with three tiers so smaller associations and larger national bodies can both find a fit. Train Level is training and resources only; Support Level adds on-call PR support; Partner Level adds full PR partnership including media training. Pricing details will be shared with the waitlist first.",
       },
       {
         q: "Do we get support between modules?",
@@ -493,11 +493,11 @@ export const associationsContent: CourseContent = {
     badgeIcon: Users,
     heading: "Train every association in your group or federation under one enrolment",
     body:
-      "We work with peak bodies, federations and association groups on multi-organisation enrolments. Bulk rates, shared resources and an optional sector-wide tabletop or media-training day with CRC are all on the table.",
+      "We work with peak bodies, federations and association groups on multi-organisation enrolments. Bulk rates, shared resources and an optional sector-wide tabletop or media-training day with CRC Public Relations are all on the table.",
     bullets: [
       "Discounted per-association pricing across a group",
       "Shared dashboard across all participating organisations",
-      "Optional sector-wide tabletop or media-training day with CRC",
+      "Optional sector-wide tabletop or media-training day with CRC Public Relations",
       "Sector-specific onboarding with the My PR Partner team",
     ],
     cta: { label: "Enquire about group enrolment", href: "/contact" },

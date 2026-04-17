@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { Check } from "lucide-react";
 import type { Sector } from "./SectorTabs";
 
@@ -44,7 +44,7 @@ function CellValue({ value }: { value: boolean | string }) {
     return <Check className="mx-auto h-5 w-5 text-teal" />;
   }
   if (value === false) {
-    return <span className="text-[18px] text-[#D1D5DB]">—</span>;
+    return <span className="text-[18px] text-[#D1D5DB]">-</span>;
   }
   return <span className="text-[13px] font-medium text-text-dark">{value}</span>;
 }

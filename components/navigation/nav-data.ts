@@ -1,4 +1,4 @@
-import type { LucideIcon } from "lucide-react";
+﻿import type { LucideIcon } from "lucide-react";
 import {
   GraduationCap,
   Building2,
@@ -81,7 +81,7 @@ export const resourceLinks: ResourceLink[] = [
     href: "/resources/pr-guide",
     icon: FileText,
     label: "Free 5-Step PR Guide",
-    descriptor: "Learn the secrets PR professionals use — no cost, no catch",
+    descriptor: "Learn the secrets PR professionals use - no cost, no catch",
     badges: ["free"],
   },
   {

@@ -277,7 +277,7 @@ export const schoolsContent: CourseContent = {
       "Lead presenter is Lyall Mercer, supported by a panel of guest experts who each lead the month covering their specialty.",
     items: [
       {
-        image: "/images/expert-lyall-real.png",
+        image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
         bio: "Former journalist with a 25-year PR career spanning six continents. Lyall has guided Australian schools, charities, associations, businesses and governments through crisis moments and reputation-building campaigns for over 25 years.",
@@ -297,7 +297,7 @@ export const schoolsContent: CourseContent = {
           "School governance and education law specialist. Tim leads the Month 6 session on school board and governance risks, drawing on years of advising Australian independent and faith-based schools.",
       },
       {
-        image: "/images/expert-melissa-real.png",
+        image: "/images/instructors/melissa-agnes.png",
         name: "Melissa Agnes",
         title: "Month 10 \u00B7 Founder, Crisis Ready Institute (USA)",
         bio: (
@@ -402,7 +402,7 @@ export const schoolsContent: CourseContent = {
       },
       {
         q: "Do we get support between modules?",
-        a: "Yes. The fortnightly Spotlight email keeps key ideas alive, and the monthly interactive Q&A is where you can bring your school's live situation. When something serious breaks, your team has a clear path to call on the CRC consulting team if required.",
+        a: "Yes. The fortnightly Spotlight email keeps key ideas alive, and the monthly interactive Q&A is where you can bring your school's live situation. When something serious breaks, your team has a clear path to call on the CRC Public Relations consulting team if required.",
       },
       {
         q: "Can our school board see the content?",
@@ -536,11 +536,11 @@ export const schoolsContent: CourseContent = {
     badgeIcon: Users,
     heading: "Train every school in your group under one enrolment",
     body:
-      "We work with dioceses, independent school groups and school associations on multi-school enrolments. Bulk rates, shared resources and an optional tabletop exercise facilitated by CRC are all on the table.",
+      "We work with dioceses, independent school groups and school associations on multi-school enrolments. Bulk rates, shared resources and an optional tabletop exercise facilitated by CRC Public Relations are all on the table.",
     bullets: [
       "Discounted per-school pricing across a group",
       "Shared dashboard across all participating schools",
-      "Optional sector-wide tabletop exercise with CRC",
+      "Optional sector-wide tabletop exercise with CRC Public Relations",
       "Sector-specific onboarding with the My PR Partner team",
     ],
     cta: { label: "Enquire about group enrolment", href: "/contact" },

@@ -1,4 +1,4 @@
-import {
+﻿import {
   Award,
   BookOpen,
   Briefcase,
@@ -263,13 +263,13 @@ export const crisisMasterclassContent: CourseContent = {
       "Every module is developed and delivered by practising consultants who live this work every day, not academics.",
     items: [
       {
-        image: "/images/expert-lyall-real.png",
+        image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
         bio: "Former journalist with a 25-year PR career spanning six continents. Lyall has consulted to national and international companies, governments, executives and industry leaders in crisis communications and reputation management.",
       },
       {
-        image: "/images/expert-melissa-real.png",
+        image: "/images/instructors/melissa-agnes.png",
         name: "Melissa Agnes",
         title: "Founder, Crisis Ready Institute (USA)",
         bio: (
@@ -384,7 +384,7 @@ export const crisisMasterclassContent: CourseContent = {
     eyebrow: "Enrol today",
     price: "$340 p/m",
     priceCurrencyNote: "AUD, incl. GST",
-    pricePlanNote: "Annual plan available — pay 11 months, get all 12.",
+    pricePlanNote: "Annual plan available - pay 11 months, get all 12.",
     primaryCtaLabel: "Enrol now",
     secondaryCta: { label: "Download course outline", href: "/downloads/crisis-masterclass-outline.pdf" },
     inclusionsTitle: "What's included",
@@ -427,7 +427,7 @@ export const crisisMasterclassContent: CourseContent = {
     bullets: [
       "Discounted group pricing",
       "Team progress reporting",
-      "Optional tabletop exercise facilitated by CRC",
+      "Optional tabletop exercise facilitated by CRC Public Relations",
       "Custom onboarding call with our team",
     ],
     cta: { label: "Enquire about group enrolment", href: "/contact" },

@@ -27,17 +27,20 @@ function InstagramIcon({ className }: { className?: string }) {
 }
 
 const programLinks = [
-  { name: "Schools program", href: "#programs" },
-  { name: "Industry & professional associations program", href: "#programs" },
-  { name: "Crisis masterclass", href: "#programs" },
-  { name: "Plans & pricing", href: "#programs" },
+  { name: "All programs", href: "/programs" },
+  { name: "Crisis Masterclass", href: "/crisis-masterclass" },
+  { name: "Schools program", href: "/programs/schools" },
+  { name: "Industry & associations program", href: "/programs/industry-associations" },
+  { name: "Business program", href: "/programs/business" },
+  { name: "Charity & NFP program", href: "/programs/charity" },
 ];
 
 const companyLinks = [
-  { name: "About", href: "#about" },
-  { name: "Expert panel", href: "#experts" },
-  { name: "Resources", href: "#resources" },
-  { name: "Contact", href: "#contact" },
+  { name: "Our story", href: "/about" },
+  { name: "Expert trainers", href: "/about/expert-trainers" },
+  { name: "Giving back", href: "/about/giving-back" },
+  { name: "Upcoming courses", href: "/courses" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Footer() {
@@ -89,13 +92,13 @@ export default function Footer() {
             <h3 className="text-sm font-medium text-white mb-4">Connect</h3>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
                 >
                   <Mail className="h-4 w-4" />
                   Send us a message
-                </a>
+                </Link>
               </li>
               <li className="flex items-center gap-4 pt-2">
                 <a href="https://www.linkedin.com/company/my-pr-partner" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-white transition-colors">
@@ -119,7 +122,7 @@ export default function Footer() {
           <p className="text-center text-[14px] text-gray-400">
             Need immediate crisis support?{" "}
             <a
-              href="https://crcpublicrelations.com.au"
+              href="https://crcpr.com.au"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-teal hover:text-teal-dark transition-colors"

@@ -1,4 +1,4 @@
-import {
+﻿import {
   Award,
   BadgeCheck,
   Briefcase,
@@ -48,12 +48,12 @@ export const charityContent: CourseContent = {
     metaTitle:
       "Charity & Not-for-Profit PR Program | Donor Trust, Fundraising & Reputation Training | My PR Partner",
     metaDescription:
-      "A 12-month online PR, donor trust and reputation program for Australian charities and not-for-profits — executive directors, boards, fundraising and communications teams. Built by CRC Public Relations with 25+ years of NFP sector experience. Join the waitlist — first 50 charities save 10%.",
+      "A 12-month online PR, donor trust and reputation program for Australian charities and not-for-profits - executive directors, boards, fundraising and communications teams. Built by CRC Public Relations with 25+ years of NFP sector experience. Join the waitlist - first 50 charities save 10%.",
     canonicalUrl: `${SITE}${PAGE_PATH}`,
     ogImage: HERO_IMAGE,
     twitterTitle: "Charity & Not-for-Profit PR Program | My PR Partner",
     twitterDescription:
-      "A 12-month online PR program for Australian charities and not-for-profits, powered by CRC Public Relations. Join the waitlist — first 50 charities save 10%.",
+      "A 12-month online PR program for Australian charities and not-for-profits, powered by CRC Public Relations. Join the waitlist - first 50 charities save 10%.",
     courseWorkload: "PT12M",
   },
 
@@ -85,7 +85,7 @@ export const charityContent: CourseContent = {
     eyebrow: "For Australian charities, not-for-profits & community organisations",
     eyebrowIcon: Heart,
     headline:
-      "Grow donor trust, fundraising and public profile — and protect the reputation your mission depends on",
+      "Grow donor trust, fundraising and public profile - and protect the reputation your mission depends on",
     tagline:
       "A 12-month online PR program built for busy Australian charity and not-for-profit leadership teams",
     intro:
@@ -142,7 +142,7 @@ export const charityContent: CourseContent = {
       "Affordable PR training, resources and support that enables your whole charity team",
     paragraphs: [
       "The My PR Partner Charity & Not-for-Profit Program is a 12-month online training program designed for busy Australian charity and not-for-profit leaders. Each team member learns at a time that suits them, and content is built for the full range of NFP roles so your executive director, board, fundraising, communications and community engagement teams share the same language and pull in the same direction.",
-      "Built by CRC Public Relations, this is the distilled version of 25+ years of working alongside Australian charities, not-for-profits and community organisations through their biggest moments — from record fundraising campaigns and national awareness wins to the hardest moments when a sensitive issue or public scrutiny threatened the mission.",
+      "Built by CRC Public Relations, this is the distilled version of 25+ years of working alongside Australian charities, not-for-profits and community organisations through their biggest moments - from record fundraising campaigns and national awareness wins to the hardest moments when a sensitive issue or public scrutiny threatened the mission.",
       <blockquote
         key="buffett-quote"
         className="mt-2 rounded-xl border-l-4 border-teal bg-[#F7F8FA] px-6 py-5 italic text-text-dark"
@@ -169,7 +169,7 @@ export const charityContent: CourseContent = {
 
   whatYoullLearn: {
     eyebrow: "What's included every month",
-    heading: "Grow, protect, support and expertise — every single month for a year",
+    heading: "Grow, protect, support and expertise - every single month for a year",
     intro:
       "This is not a passive video library. Each month, your whole team gets everything they need to grow supporter trust, run stronger appeals and campaigns, communicate confidently with media, and stand firm when your charity's reputation is tested.",
     tiles: [
@@ -183,13 +183,13 @@ export const charityContent: CourseContent = {
         icon: Shield,
         title: "Protect",
         body:
-          "Protect the reputation your mission depends on. Spot sensitive issues early — from safeguarding to governance and financial probity — and respond with confidence and compassion.",
+          "Protect the reputation your mission depends on. Spot sensitive issues early - from safeguarding to governance and financial probity - and respond with confidence and compassion.",
       },
       {
         icon: HelpingHand,
         title: "Support",
         body:
-          "Receive ongoing PR support and training without consultancy costs — a real partner in your corner every month for 12 months, and a team ready when a difficult situation lands.",
+          "Receive ongoing PR support and training without consultancy costs - a real partner in your corner every month for 12 months, and a team ready when a difficult situation lands.",
       },
       {
         icon: BadgeCheck,
@@ -236,7 +236,7 @@ export const charityContent: CourseContent = {
         items: [
           "Month 7 \u00B7 Growing donor trust, retention and lifetime value through consistent public relations",
           "Month 7 Resource: Donor trust and retention checklist",
-          "Month 8 \u00B7 Managing sensitive issues — safeguarding, governance, financial probity — with confidence and compassion",
+          "Month 8 \u00B7 Managing sensitive issues - safeguarding, governance, financial probity - with confidence and compassion",
           "Month 8 Resource: Issues-management framework for charities and not-for-profits",
           "Month 9 \u00B7 Doing social media well for a charity voice, with a specialist social media presenter",
           "Month 9 Resource: Charity social media tips and response library",
@@ -275,7 +275,7 @@ export const charityContent: CourseContent = {
         icon: Scale,
         title: "Board chairs and directors",
         body:
-          "Guide your charity through growth moments and sensitive issues with the reputation lens every board needs — from governance announcements to crisis oversight and public accountability.",
+          "Guide your charity through growth moments and sensitive issues with the reputation lens every board needs - from governance announcements to crisis oversight and public accountability.",
       },
       {
         image: "/images/charity/charity-persona-fundraising.jpg",
@@ -289,7 +289,7 @@ export const charityContent: CourseContent = {
         icon: Megaphone,
         title: "Marketing, communications and community teams",
         body:
-          "Sharpen your content, channels and campaigns into consistent gains in donor engagement, media profile and public trust — with frameworks from real Australian NFP PR experts.",
+          "Sharpen your content, channels and campaigns into consistent gains in donor engagement, media profile and public trust - with frameworks from real Australian NFP PR experts.",
       },
     ],
   },
@@ -301,13 +301,13 @@ export const charityContent: CourseContent = {
       "Lead presenter is Lyall Mercer, supported by a panel of guest experts and successful Australian charity leaders who each bring real not-for-profit experience to the program.",
     items: [
       {
-        image: "/images/expert-lyall-real.png",
+        image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
-        bio: "Former journalist with a 25-year PR career spanning six continents. Lyall has worked alongside Australian charities, not-for-profits and community organisations for over 25 years — from community services and health charities to national foundations — training executive directors, boards and staff in the art of effective communication, reputation and fundraising strategy.",
+        bio: "Former journalist with a 25-year PR career spanning six continents. Lyall has worked alongside Australian charities, not-for-profits and community organisations for over 25 years - from community services and health charities to national foundations - training executive directors, boards and staff in the art of effective communication, reputation and fundraising strategy.",
       },
       {
-        image: "/images/expert-melissa-real.png",
+        image: "/images/instructors/melissa-agnes.png",
         name: "Melissa Agnes",
         title: "Featured presenter \u00B7 Founder, Crisis Ready Institute (USA)",
         bio: (
@@ -335,7 +335,7 @@ export const charityContent: CourseContent = {
       },
       {
         quote:
-          "When our sector faced significant public scrutiny, the team at CRC Public Relations stood with us — providing calm, principled counsel that protected our reputation and our mission.",
+          "When our sector faced significant public scrutiny, the team at CRC Public Relations stood with us - providing calm, principled counsel that protected our reputation and our mission.",
         // TODO: Replace with real Australian charity/NFP testimonial from the CRC archive
         name: "[Confirm name]",
         title: "Chief Executive Officer",
@@ -364,7 +364,7 @@ export const charityContent: CourseContent = {
       {
         icon: TrendingUp,
         title: "Grow fundraising",
-        body: "Use PR and earned media to lift appeals, major gifts, grants and corporate partnerships — so your mission can do more, for longer.",
+        body: "Use PR and earned media to lift appeals, major gifts, grants and corporate partnerships - so your mission can do more, for longer.",
       },
       {
         icon: Heart,
@@ -415,7 +415,7 @@ export const charityContent: CourseContent = {
       },
       {
         q: "Will there be different levels (Train, Support, Partner)?",
-        a: "Yes — the program will launch with three tiers so small community organisations and larger national foundations can both find a fit. Train Level is training and resources only; Support Level adds on-call PR support; Partner Level adds full PR partnership including media training. Pricing details will be shared with the waitlist first.",
+        a: "Yes - the program will launch with three tiers so small community organisations and larger national foundations can both find a fit. Train Level is training and resources only; Support Level adds on-call PR support; Partner Level adds full PR partnership including media training. Pricing details will be shared with the waitlist first.",
       },
       {
         q: "Do we get support between modules?",
@@ -502,7 +502,7 @@ export const charityContent: CourseContent = {
     image: "/images/founders.png",
     imageAlt: "Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner",
     paragraphs: [
-      "We have a deep understanding of the unique needs facing Australian charities and not-for-profits, having worked alongside organisations of every size — from small community charities and DGR-endorsed not-for-profits to national foundations — for more than 25 years through CRC Public Relations.",
+      "We have a deep understanding of the unique needs facing Australian charities and not-for-profits, having worked alongside organisations of every size - from small community charities and DGR-endorsed not-for-profits to national foundations - for more than 25 years through CRC Public Relations.",
       "We've helped many charities grow their public profile, lift fundraising through trusted public relations, and protect their reputation through some of the sector's most sensitive moments. That hard-won experience is what this program is built on.",
       "We're excited to bring you high-quality training and resources, with optional support when you need it, that will help you and your team at an affordable cost. We hope to welcome you to our community of charity and not-for-profit leaders.",
     ],
@@ -515,11 +515,11 @@ export const charityContent: CourseContent = {
     badgeIcon: Users,
     heading: "Train every charity in your federation, peak body or network under one enrolment",
     body:
-      "We work with charity federations, peak bodies and multi-entity groups on bulk enrolments. Discounted per-charity pricing, shared dashboards and an optional group-wide tabletop or media-training day with CRC are all on the table.",
+      "We work with charity federations, peak bodies and multi-entity groups on bulk enrolments. Discounted per-charity pricing, shared dashboards and an optional group-wide tabletop or media-training day with CRC Public Relations are all on the table.",
     bullets: [
       "Discounted per-charity pricing across a federation or network",
       "Shared dashboard across all participating organisations",
-      "Optional sector-wide tabletop or media-training day with CRC",
+      "Optional sector-wide tabletop or media-training day with CRC Public Relations",
       "Sector-specific onboarding with the My PR Partner team",
     ],
     cta: { label: "Enquire about group enrolment", href: "/contact" },

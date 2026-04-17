@@ -1,0 +1,50 @@
+---
+description: Always use the full brand name "CRC Public Relations" in copy — never "CRC" or "CRC PR"
+globs:
+alwaysApply: true
+---
+
+# Always use the full name "CRC Public Relations"
+
+In any user-visible copy across the My PR Partner site, the parent firm must always be referred to by its full name: **CRC Public Relations**.
+
+## Never use
+
+- `CRC` (bare — e.g. "senior CRC advisers", "CRC's clients", "facilitated by CRC", "the CRC consulting team")
+- `CRC PR` (shortened)
+- `CRCPR`, `crcpr` (except in domain URLs like `crcpr.com.au` where it is part of the URL string)
+
+## Always use
+
+- `CRC Public Relations` (full name, every time)
+- `CRC Public Relations'` (possessive form, with trailing apostrophe — use `&apos;` in JSX)
+- `CRC Public Relations consultant / adviser / team / clients` (full name as the modifier)
+
+## Scope
+
+Applies to every user-visible string: page copy, headings, CTAs, button labels, alt text, metadata titles and descriptions, JSON-LD, FAQ answers, testimonials, microcopy, toast messages, form placeholders — everywhere.
+
+## Exceptions (allowed)
+
+These are internal / non-rendered and do not need to be rewritten:
+
+- JSX code comments, e.g. `{/* ── CRC DIRECT ENQUIRY BAND ── */}`
+- Developer `// TODO:` notes referencing internal resources like "the CRC archive"
+- Asset filenames such as `powered-by-crc-badge.svg` and `powered-by-crc-badge-light.svg`
+- Domain URLs where "CRC" is part of the URL string (e.g. `crcpublicrelations.com.au`, `crcpr.com.au`)
+- Variable/identifier names in code (e.g. `crcClients`, `CRC_URL`) — these are not rendered to users
+
+## Rewriting guide
+
+When editing or writing new copy, apply these substitutions:
+
+- `senior CRC advisers` → `senior CRC Public Relations advisers`
+- `CRC's clients` → `CRC Public Relations' clients` (JSX: `CRC Public Relations&apos; clients`)
+- `CRC consulting team` → `CRC Public Relations consulting team`
+- `facilitated by CRC` → `facilitated by CRC Public Relations`
+- `tabletop day with CRC` → `tabletop day with CRC Public Relations`
+- `the CRC archive` (internal dev note only) → leave as-is if it's a developer comment; rewrite if it's user-visible
+
+## Verification
+
+Before committing any copy changes, search for `\bCRC\b` (word-boundary) and confirm every match is followed by ` Public Relations` (or is one of the allowed exceptions above).

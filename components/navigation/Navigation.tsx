@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -42,7 +42,7 @@ export default function Navigation() {
   const aboutPanelRef = useRef<HTMLDivElement>(null);
   const resourcesPanelRef = useRef<HTMLDivElement>(null);
 
-  /** Only clears the delayed close — never the pending open (hover uses a 150ms open delay). */
+  /** Only clears the delayed close - never the pending open (hover uses a 150ms open delay). */
   const cancelPendingClose = useCallback(() => {
     if (closeTimer.current) {
       clearTimeout(closeTimer.current);
@@ -322,12 +322,12 @@ export default function Navigation() {
                       Standalone courses on LinkedIn strategy, media training, personal branding and more.
                     </p>
                     <Link
-                      href="/waitlist"
+                      href="/courses"
                       className="mt-3 inline-block text-[13px] font-medium text-teal outline-none focus-visible:ring-2 focus-visible:ring-teal"
                       onClick={() => setOpenDropdown(null)}
                       role="menuitem"
                     >
-                      Join the waitlist →
+                      See the pipeline →
                     </Link>
                   </div>
                 </div>
