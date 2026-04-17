@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail } from "lucide-react";
+import { ArrowUpRight, Mail, Sparkles } from "lucide-react";
+import { FooterNewsletter } from "./FooterNewsletter";
 
 function LinkedinIcon({ className }: { className?: string }) {
   return (
@@ -26,6 +27,29 @@ function InstagramIcon({ className }: { className?: string }) {
   );
 }
 
+function FooterLogo({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 200 32"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="My PR Partner"
+      role="img"
+    >
+      <text
+        x="0"
+        y="24"
+        fontFamily="'Plus Jakarta Sans', sans-serif"
+        fontWeight={700}
+        fontSize={22}
+      >
+        <tspan fill="#FFFFFF">MY PR </tspan>
+        <tspan fill="#07AFBB">PARTNER</tspan>
+      </text>
+    </svg>
+  );
+}
+
 const programLinks = [
   { name: "All programs", href: "/programs" },
   { name: "Crisis Masterclass", href: "/crisis-masterclass" },
@@ -43,29 +67,123 @@ const companyLinks = [
   { name: "Contact", href: "/contact" },
 ];
 
+const resourceLinks = [
+  { name: "Articles & insights", href: "/articles" },
+  { name: "5-Step PR Guide", href: "/resources/pr-guide" },
+  { name: "Crisis Readiness Checklist", href: "/resources/crisis-checklist" },
+];
+
 export default function Footer() {
   return (
-    <footer className="bg-[#0A5E63]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Column 1 - Brand */}
-          <div>
-            <Link href="/" className="inline-block">
-              <Image src="/logo.png" alt="My PR Partner" width={160} height={42} className="h-9 w-auto" />
+    <footer className="relative bg-text-dark text-white">
+      {/* Thin accent bar - matches hero gradient language */}
+      <div
+        aria-hidden
+        className="h-[3px] w-full"
+        style={{
+          background:
+            "linear-gradient(90deg, #1A2B4A 0%, #07AFBB 50%, #1E73BE 100%)",
+        }}
+      />
+
+      {/* ── NEWSLETTER STRIP ── */}
+      <section className="border-b border-white/10 bg-white/[0.03]">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-12 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center lg:gap-10">
+            <div className="lg:col-span-6">
+              <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.06] px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-white/90">
+                <Sparkles className="h-3.5 w-3.5" aria-hidden />
+                Stay in the loop
+              </p>
+              <h2 className="mt-4 font-heading text-[22px] font-bold leading-tight text-white md:text-[28px]">
+                Senior-adviser thinking - straight to your inbox.
+              </h2>
+              <p className="mt-3 max-w-[520px] text-[14.5px] leading-relaxed text-white/75">
+                New articles, program launches and practical templates.
+                Fortnightly at most, unsubscribe in one click.
+              </p>
+            </div>
+            <div className="lg:col-span-6">
+              <FooterNewsletter />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── MAIN FOOTER GRID ── */}
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-16 lg:px-8">
+        <div className="grid grid-cols-2 gap-10 md:grid-cols-6 md:gap-8 lg:grid-cols-12 lg:gap-12">
+          {/* Brand */}
+          <div className="col-span-2 md:col-span-6 lg:col-span-4">
+            <Link
+              href="/"
+              className="inline-block rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-4 focus-visible:ring-offset-text-dark"
+              aria-label="My PR Partner home"
+            >
+              <FooterLogo className="h-8 w-auto" />
             </Link>
-            <p className="mt-2 text-sm text-gray-400">Powered by CRC Public Relations</p>
-            <p className="mt-4 text-sm text-gray-400 leading-relaxed">
-              Public relations training, resources and support for Australian organisations.
+            <p className="mt-5 max-w-[380px] text-[14.5px] leading-relaxed text-white/75">
+              Public relations training, resources and support for Australian
+              organisations - powered by the senior advisory team at CRC
+              Public Relations.
             </p>
+
+            <Image
+              src="/images/powered-by-crc-badge-light.svg"
+              alt="Powered by CRC Public Relations"
+              width={280}
+              height={36}
+              className="mt-6 h-9 w-auto opacity-90"
+            />
+
+            <div className="mt-7">
+              <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-white/60">
+                Follow along
+              </p>
+              <div className="mt-3 flex items-center gap-3">
+                <a
+                  href="https://www.linkedin.com/company/my-pr-partner"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="My PR Partner on LinkedIn"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/[0.06] text-white/80 transition-colors hover:border-teal hover:bg-teal hover:text-white"
+                >
+                  <LinkedinIcon className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://www.facebook.com/people/My-PR-Partner/100093729961913/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="My PR Partner on Facebook"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/[0.06] text-white/80 transition-colors hover:border-teal hover:bg-teal hover:text-white"
+                >
+                  <FacebookIcon className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://www.instagram.com/myprpartner/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="My PR Partner on Instagram"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/[0.06] text-white/80 transition-colors hover:border-teal hover:bg-teal hover:text-white"
+                >
+                  <InstagramIcon className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
           </div>
 
-          {/* Column 2 - Programs */}
-          <div>
-            <h3 className="text-sm font-medium text-white mb-4">Programs</h3>
-            <ul className="space-y-3">
+          {/* Programs */}
+          <div className="md:col-span-2 lg:col-span-3">
+            <h3 className="text-[12px] font-semibold uppercase tracking-[0.14em] text-white">
+              Programs
+            </h3>
+            <ul className="mt-4 space-y-3">
               {programLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-[14px] leading-relaxed text-white/75 transition-colors hover:text-white"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -73,13 +191,18 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3 - Company */}
-          <div>
-            <h3 className="text-sm font-medium text-white mb-4">Company</h3>
-            <ul className="space-y-3">
+          {/* Company */}
+          <div className="md:col-span-2 lg:col-span-2">
+            <h3 className="text-[12px] font-semibold uppercase tracking-[0.14em] text-white">
+              Company
+            </h3>
+            <ul className="mt-4 space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href={link.href}
+                    className="text-[14px] leading-relaxed text-white/75 transition-colors hover:text-white"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -87,61 +210,69 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4 - Connect */}
-          <div>
-            <h3 className="text-sm font-medium text-white mb-4">Connect</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/contact"
-                  className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
-                >
-                  <Mail className="h-4 w-4" />
-                  Send us a message
-                </Link>
-              </li>
-              <li className="flex items-center gap-4 pt-2">
-                <a href="https://www.linkedin.com/company/my-pr-partner" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-white transition-colors">
-                  <LinkedinIcon className="h-5 w-5" />
-                </a>
-                <a href="https://www.facebook.com/people/My-PR-Partner/100093729961913/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-gray-400 hover:text-white transition-colors">
-                  <FacebookIcon className="h-5 w-5" />
-                </a>
-                <a href="https://www.instagram.com/myprpartner/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-white transition-colors">
-                  <InstagramIcon className="h-5 w-5" />
-                </a>
-              </li>
+          {/* Resources */}
+          <div className="md:col-span-2 lg:col-span-3">
+            <h3 className="text-[12px] font-semibold uppercase tracking-[0.14em] text-white">
+              Free resources
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {resourceLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-[14px] leading-relaxed text-white/75 transition-colors hover:text-white"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
+            <Link
+              href="/contact"
+              className="mt-5 inline-flex items-center gap-2 text-[13.5px] font-semibold text-teal-light transition-colors hover:text-white"
+            >
+              <Mail className="h-4 w-4" aria-hidden />
+              Send us a message
+              <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+            </Link>
           </div>
         </div>
       </div>
 
-      {/* Crisis support link */}
-      <div className="border-t border-white/15">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5">
-          <p className="text-center text-[14px] text-gray-400">
+      {/* ── CRISIS SUPPORT STRIP ── */}
+      <div className="border-t border-white/10 bg-white/[0.02]">
+        <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
+          <p className="text-center text-[13.5px] text-white/75">
             Need immediate crisis support?{" "}
             <a
               href="https://crcpr.com.au"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-teal hover:text-teal-dark transition-colors"
+              className="inline-flex items-center gap-1 font-semibold text-teal-light transition-colors hover:text-white"
             >
-              Contact CRC Public Relations &rarr;
+              Contact CRC Public Relations
+              <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
             </a>
           </p>
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-white/15">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
-            <p>&copy; 2026 Cheese Wheel Communications Group Pty Ltd t/a My PR Partner and CRC Public Relations. All rights reserved.</p>
+      {/* ── BOTTOM BAR ── */}
+      <div className="border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center justify-between gap-4 text-[12.5px] text-white/60 sm:flex-row">
+            <p className="text-center sm:text-left">
+              &copy; 2026 Cheese Wheel Communications Group Pty Ltd t/a My PR
+              Partner and CRC Public Relations. All rights reserved.
+            </p>
             <div className="flex items-center gap-4">
-              <Link href="#" className="hover:text-white transition-colors">Privacy policy</Link>
-              <span>|</span>
-              <Link href="#" className="hover:text-white transition-colors">Terms &amp; conditions</Link>
+              <Link href="#" className="transition-colors hover:text-white">
+                Privacy policy
+              </Link>
+              <span aria-hidden className="text-white/30">|</span>
+              <Link href="#" className="transition-colors hover:text-white">
+                Terms &amp; conditions
+              </Link>
             </div>
           </div>
         </div>

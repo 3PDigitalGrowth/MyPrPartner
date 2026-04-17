@@ -12,6 +12,7 @@ const config: Config = {
         teal: {
           DEFAULT: "#07AFBB",
           dark: "#069AA4",
+          light: "#5EDDE4",
         },
         "brand-blue": "#1E73BE",
         "accent-green": "#57B76A",
