@@ -20,7 +20,7 @@ export function FooterNewsletter() {
 
   if (status === "done") {
     return (
-      <div className="flex items-start gap-4 rounded-card border border-white/20 bg-white/[0.06] p-5 md:p-6">
+      <div className="flex items-start gap-4 rounded-card border border-[#D5E3DA] bg-[#F1F9F4] p-5 md:p-6">
         <div
           className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl text-white"
           style={{ background: "linear-gradient(135deg, #0B7A58 0%, #37B288 100%)" }}
@@ -28,10 +28,10 @@ export function FooterNewsletter() {
           <CheckCircle2 className="h-5 w-5" aria-hidden />
         </div>
         <div>
-          <p className="font-heading text-[16px] font-bold text-white">
+          <p className="font-heading text-[16px] font-bold text-text-dark">
             You&apos;re on the list.
           </p>
-          <p className="mt-1 text-[14px] leading-relaxed text-white/75">
+          <p className="mt-1 text-[14px] leading-relaxed text-text-medium">
             We&apos;ll email you when new articles and programs go live. No
             spam, unsubscribe any time.
           </p>
@@ -49,7 +49,7 @@ export function FooterNewsletter() {
         <span className="sr-only">Work email</span>
         <div className="relative">
           <Mail
-            className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/50"
+            className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-text-medium/60"
             aria-hidden
           />
           <input
@@ -60,14 +60,14 @@ export function FooterNewsletter() {
             required
             autoComplete="email"
             placeholder="you@example.com"
-            className="w-full rounded-full border border-white/20 bg-white/[0.08] px-11 py-3 text-[14.5px] text-white placeholder:text-white/50 focus:border-teal focus:bg-white/[0.12] focus:outline-none focus:ring-1 focus:ring-teal"
+            className="w-full rounded-full border border-[#E5E7EB] bg-white px-11 py-3 text-[14.5px] text-text-dark placeholder:text-text-medium/70 shadow-sm transition-shadow focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
           />
         </div>
       </label>
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="inline-flex items-center justify-center gap-2 rounded-full bg-teal px-6 py-3 text-[14.5px] font-semibold text-white transition-colors hover:bg-teal-dark disabled:cursor-not-allowed disabled:opacity-70"
+        className="inline-flex items-center justify-center gap-2 rounded-full bg-teal px-6 py-3 text-[14.5px] font-semibold text-white shadow-sm transition-colors hover:bg-teal-dark disabled:cursor-not-allowed disabled:opacity-70"
       >
         {status === "submitting" ? "Sending..." : "Subscribe"}
         <ArrowRight className="h-4 w-4" aria-hidden />
