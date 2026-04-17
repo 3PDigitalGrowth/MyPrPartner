@@ -43,7 +43,7 @@ export default function SchoolsPage() {
         courseWorkload={content.seo.courseWorkload}
       />
       <Navbar />
-      <main className="pt-[112px] lg:pt-[112px]">
+      <main className="pt-[72px] lg:pt-[72px]">
         <SchoolsClient />
       </main>
       <Footer />

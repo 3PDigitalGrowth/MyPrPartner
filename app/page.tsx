@@ -169,7 +169,7 @@ export default function Home() {
     <div ref={revealRef}>
       <Navbar />
 
-      <main className="pt-[112px] lg:pt-[112px]">
+      <main className="pt-[72px] lg:pt-[72px]">
         {/* ── HERO (BANNER + TWO-PATH SPLIT) ── */}
         <section className="relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/hero-background.png')" }}>
           <div className="absolute inset-0 bg-white/85" />

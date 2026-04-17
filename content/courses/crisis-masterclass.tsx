@@ -121,7 +121,7 @@ export const crisisMasterclassContent: CourseContent = {
     paragraphs: [
       "Crisis Masterclass is a 12-month online course and program built for Australian organisations that can't afford to get crisis communications wrong. Whether you lead PR for a growing business, sit on a charity board, run an industry association, or manage reputation for a school community, this program gives you the practical skills, templates and expert guidance to handle any reputation threat with confidence.",
       <>
-        The program blends CRC Public Relations' 15+ years of Australian crisis consulting experience with the globally recognised Crisis Ready<sup className="ml-0.5 align-super text-[10px]">®</sup> methodology from Melissa Agnes, available exclusively through My PR Partner in Australasia. You'll work through Australian case studies, build your own crisis plan, and get ongoing support from our expert panel.
+        The program blends CRC Public Relations' 25+ years of Australian crisis consulting experience with the globally recognised Crisis Ready<sup className="ml-0.5 align-super text-[10px]">®</sup> methodology from Melissa Agnes, available exclusively through My PR Partner in Australasia. You'll work through Australian case studies, build your own crisis plan, and get ongoing support from our expert panel.
       </>,
     ],
     keyLearningsTitle: "Key learnings in this online course",
@@ -382,9 +382,9 @@ export const crisisMasterclassContent: CourseContent = {
     badge: "Flagship program",
     badgeIcon: ShieldCheck,
     eyebrow: "Enrol today",
-    price: "$X,XXX",
+    price: "$340 p/m",
     priceCurrencyNote: "AUD, incl. GST",
-    pricePlanNote: "Or flexible monthly payment plans at checkout.",
+    pricePlanNote: "Annual plan available — pay 11 months, get all 12.",
     primaryCtaLabel: "Enrol now",
     secondaryCta: { label: "Download course outline", href: "/downloads/crisis-masterclass-outline.pdf" },
     inclusionsTitle: "What's included",
@@ -449,7 +449,7 @@ export const crisisMasterclassContent: CourseContent = {
 
   mobileBar: {
     label: "Crisis Masterclass",
-    priceShort: "From $X,XXX AUD",
+    priceShort: "From $340 p/m AUD",
     ctaLabel: "Enrol now",
   },
 };

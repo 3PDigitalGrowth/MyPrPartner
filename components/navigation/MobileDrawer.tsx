@@ -213,7 +213,7 @@ export function MobileDrawer({ open, onClose, expanded, setExpanded }: MobileDra
                     rel="noopener noreferrer"
                     className="flex items-center gap-1 text-[12px] font-medium text-teal"
                   >
-                    Visit CRC PR
+                    Visit CRC Public Relations
                     <ExternalLink className="h-3 w-3" aria-hidden />
                   </a>
                 </div>

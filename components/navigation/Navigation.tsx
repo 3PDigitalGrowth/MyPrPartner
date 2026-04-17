@@ -257,12 +257,15 @@ export default function Navigation() {
               Contact
             </Link>
 
-            <Link
-              href="/programs"
-              className="rounded-full bg-teal px-5 py-2 text-[14px] font-medium text-white transition-colors hover:bg-teal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2"
+            <a
+              href="https://learn.myprpartner.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full bg-teal px-5 py-2 text-[14px] font-medium text-white transition-colors hover:bg-teal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2"
             >
-              Explore Programs
-            </Link>
+              Member Login
+              <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+            </a>
           </div>
 
           <button
@@ -380,7 +383,7 @@ export default function Navigation() {
                     className="flex items-center gap-1 text-[12px] font-medium text-teal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal"
                     role="menuitem"
                   >
-                    Visit CRC PR
+                    Visit CRC Public Relations
                     <ExternalLink className="h-3 w-3" aria-hidden />
                   </a>
                 </div>

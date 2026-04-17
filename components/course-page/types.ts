@@ -167,6 +167,49 @@ export type PricingTier = {
   plusInclusions?: PricingBullet[];
 };
 
+export type WaitlistContent = {
+  /**
+   * Hosted waitlist signup URL (e.g. a Kajabi form landing page).
+   * Resolve at the top of the course's content file from
+   * process.env.NEXT_PUBLIC_<NAME>_WAITLIST_URL so Next.js inlines the value
+   * into the client bundle.
+   */
+  signupUrl: string;
+  /** Main headline shown above the scarcity indicator, e.g. "Join the waitlist" */
+  headline: string;
+  /** Short supporting line, e.g. "Be first in line when enrolments open." */
+  subheadline?: string;
+  /**
+   * Pill rendered above the headline to call out the founding-member offer,
+   * e.g. "First 50 save 10%". Uses teal brand colour.
+   */
+  discountPill?: string;
+  /** Optional spot-based scarcity counter: "X of Y founding spots claimed" + progress bar */
+  spots?: {
+    capacity: number;
+    /** How many spots have been CLAIMED so far (i.e. how far the bar fills) */
+    claimed: number;
+    /** Label above the bar, e.g. "Founding member spots" */
+    label?: string;
+  };
+  /**
+   * Optional time countdown shown below the progress bar, e.g. until launch
+   * or until the founding-member offer expires. Pass an ISO 8601 string.
+   */
+  countdown?: {
+    /** ISO 8601 date string, e.g. "2026-06-01T09:00:00+10:00" */
+    endsAt: string;
+    /** Label above the countdown, e.g. "Enrolments open in" or "Offer ends in" */
+    label: string;
+  };
+  /** Primary CTA label on the waitlist button, e.g. "Join the waitlist" */
+  ctaLabel: string;
+  /** Benefit bullets rendered under the CTA explaining what waitlisters get */
+  benefits: string[];
+  /** Small footnote under the benefits, e.g. "We'll email you when enrolments open." */
+  footnote?: string;
+};
+
 export type SidebarContent = {
   thumbImage: string;
   badge?: string;
@@ -191,6 +234,13 @@ export type SidebarContent = {
   };
   callbackLinkLabel?: string;
   callbackHref?: string;
+  /**
+   * If present, the sticky card renders in WAITLIST mode (hides pricing/tier
+   * selector, shows a scarcity-driven waitlist signup UI instead). Inclusions
+   * list is still rendered below the waitlist block using the sidebar-level
+   * inclusionsTitle/inclusions fields.
+   */
+  waitlist?: WaitlistContent;
 };
 
 export type FoundersWelcomeContent = {

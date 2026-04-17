@@ -29,7 +29,7 @@ const COMPARISON_DATA: FeatureRow[] = [
   { feature: "Phone & Zoom PR support", resource: false, train: false, support: false, partner: "2 hrs/month" },
   { feature: "Personalised half-day media training (valued $3,000)", resource: false, train: false, support: false, partner: true },
   { feature: "Discounted PR consultancy rates (10% off)", resource: false, train: false, support: true, partner: true },
-  { feature: "Priority CRC PR consultant access", resource: false, train: false, support: false, partner: true },
+  { feature: "Priority CRC Public Relations consultant access", resource: false, train: false, support: false, partner: true },
 ];
 
 const TIER_NAMES = [

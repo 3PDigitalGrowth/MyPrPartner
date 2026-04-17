@@ -52,7 +52,7 @@ export const aboutLinks: ProgramSectorLink[] = [
     href: "/about",
     icon: BookOpen,
     label: "Our Story",
-    descriptor: "Meet the founders and the CRC PR team behind the platform",
+    descriptor: "Meet the founders and the CRC Public Relations team behind the platform",
   },
   {
     href: "/about/expert-trainers",

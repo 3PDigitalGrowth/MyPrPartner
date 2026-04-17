@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CourseJsonLd from "@/components/CourseJsonLd";
-import CrisisMasterclassClient from "./CrisisMasterclassClient";
-import { crisisMasterclassContent as content } from "@/content/courses/crisis-masterclass";
+import AssociationsClient from "./AssociationsClient";
+import { associationsContent as content } from "@/content/courses/associations";
 
 export const metadata: Metadata = {
   title: content.seo.metaTitle,
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function CrisisMasterclassPage() {
+export default function IndustryAssociationsPage() {
   return (
     <>
       <CourseJsonLd
@@ -44,7 +44,7 @@ export default function CrisisMasterclassPage() {
       />
       <Navbar />
       <main className="pt-[72px] lg:pt-[72px]">
-        <CrisisMasterclassClient />
+        <AssociationsClient />
       </main>
       <Footer />
     </>
