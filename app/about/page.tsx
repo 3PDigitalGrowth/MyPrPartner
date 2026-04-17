@@ -109,6 +109,7 @@ const leadershipTeam: Leader[] = [
       "Barbara Gorogh is the co-founder of My PR Partner, CRC Public Relations' training platform for communications practitioners and spokesperson development. Her work sits at the intersection of communications capability, practical training design, and the delivery of programs that help leaders perform more confidently under pressure.",
       "She brings deep experience in communications education, practitioner support, and the translation of crisis and media strategy into practical development programs. Barbara plays a central role in how CRC Public Relations turns senior advisory experience into structured training for organisations and professionals across Australia.",
     ],
+    image: "/images/instructors/barbara-gorogh.png",
     initials: "BG",
     palette: "teal",
   },
