@@ -139,16 +139,32 @@ export type FaqContent = {
   items: FaqItem[];
 };
 
+/**
+ * A single bullet in a pricing tier's inclusions list.
+ * Use a plain string for standard bullets, or the object form to render
+ * the bullet text + check icon in the teal highlight colour (used for
+ * headline inclusions on higher tiers).
+ */
+export type PricingBullet = string | { text: string; highlighted?: boolean };
+
 export type PricingTier = {
   id: string;
   label: string;
-  /** Short descriptor shown under the label, e.g. "Up to 300 students" */
+  /** Short descriptor shown under the label, e.g. "Team training and resources" */
   description?: string;
   price: string;
   /** Overrides sidebar priceCurrencyNote when this tier is selected */
   priceCurrencyNote?: string;
   /** Overrides sidebar pricePlanNote when this tier is selected */
   pricePlanNote?: string;
+  /** Overrides sidebar inclusionsTitle when this tier is selected */
+  inclusionsTitle?: string;
+  /** Overrides sidebar inclusions list when this tier is selected */
+  inclusions?: PricingBullet[];
+  /** Optional sub-heading shown above plusInclusions, e.g. "Train Level PLUS:" */
+  plusHeading?: string;
+  /** Extra bullets rendered below the base inclusions under the plusHeading */
+  plusInclusions?: PricingBullet[];
 };
 
 export type SidebarContent = {

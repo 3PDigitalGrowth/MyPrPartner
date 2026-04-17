@@ -4,8 +4,28 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, Download, ShieldCheck } from "lucide-react";
-import type { CheckoutConfig, SidebarContent } from "./types";
+import type { CheckoutConfig, PricingBullet, SidebarContent } from "./types";
 import { getCourseCheckoutUrl } from "@/lib/checkout";
+
+function normaliseBullet(b: PricingBullet): { text: string; highlighted: boolean } {
+  return typeof b === "string" ? { text: b, highlighted: false } : { text: b.text, highlighted: !!b.highlighted };
+}
+
+function InclusionItem({ text, highlighted }: { text: string; highlighted: boolean }) {
+  return (
+    <li
+      className={`flex items-start gap-2 text-[13px] ${
+        highlighted ? "font-medium text-teal" : "text-text-medium"
+      }`}
+    >
+      <Check
+        className={`mt-0.5 h-3.5 w-3.5 flex-shrink-0 ${highlighted ? "text-teal" : "text-teal"}`}
+        aria-hidden
+      />
+      <span>{text}</span>
+    </li>
+  );
+}
 
 export default function StickyEnrolCard({
   sidebar,
@@ -29,6 +49,12 @@ export default function StickyEnrolCard({
   const displayPrice = selectedTier?.price ?? sidebar.price;
   const displayCurrencyNote = selectedTier?.priceCurrencyNote ?? sidebar.priceCurrencyNote;
   const displayPlanNote = selectedTier?.pricePlanNote ?? sidebar.pricePlanNote;
+
+  const displayInclusionsTitle = selectedTier?.inclusionsTitle ?? sidebar.inclusionsTitle;
+  const baseInclusions: PricingBullet[] =
+    selectedTier?.inclusions ?? (sidebar.inclusions as PricingBullet[]);
+  const plusHeading = selectedTier?.plusHeading;
+  const plusInclusions = selectedTier?.plusInclusions;
 
   const checkoutUrl = getCourseCheckoutUrl(checkout, {
     utm_content: placement,
@@ -136,15 +162,24 @@ export default function StickyEnrolCard({
         </div>
 
         <div className="mt-6 border-t border-[#F1F2F5] pt-5">
-          <p className="font-heading text-[13px] font-semibold text-text-dark">{sidebar.inclusionsTitle}</p>
+          <p className="font-heading text-[13px] font-semibold text-text-dark">{displayInclusionsTitle}</p>
           <ul className="mt-3 space-y-2">
-            {sidebar.inclusions.map((i) => (
-              <li key={i} className="flex items-start gap-2 text-[13px] text-text-medium">
-                <Check className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-teal" aria-hidden />
-                <span>{i}</span>
-              </li>
-            ))}
+            {baseInclusions.map((b, i) => {
+              const item = normaliseBullet(b);
+              return <InclusionItem key={`base-${i}-${item.text}`} {...item} />;
+            })}
           </ul>
+          {plusHeading && plusInclusions && plusInclusions.length > 0 ? (
+            <>
+              <p className="mt-4 font-heading text-[13px] font-semibold text-teal">{plusHeading}</p>
+              <ul className="mt-3 space-y-2">
+                {plusInclusions.map((b, i) => {
+                  const item = normaliseBullet(b);
+                  return <InclusionItem key={`plus-${i}-${item.text}`} {...item} />;
+                })}
+              </ul>
+            </>
+          ) : null}
         </div>
 
         {sidebar.trustBadges ? (

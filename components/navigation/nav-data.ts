@@ -72,9 +72,9 @@ export type ResourceLink = ProgramSectorLink & { badges?: "free"[] };
 
 export const resourceLinks: ResourceLink[] = [
   {
-    href: "/blog",
+    href: "/articles",
     icon: Newspaper,
-    label: "Blog",
+    label: "Articles",
     descriptor: "Practical PR tips, insights and industry commentary",
   },
   {
