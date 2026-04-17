@@ -472,11 +472,11 @@ export default function ExpertTrainersPage() {
                 Expert trainers
               </div>
               <h1 className="font-heading text-[34px] font-bold leading-[1.08] text-white sm:text-[44px] md:text-[54px]">
-                You'll be trained and supported by the best in their business
+                You&apos;ll be trained and supported by the best in their business
                 from across Australia and the globe
               </h1>
               <p className="mt-5 max-w-[680px] text-[16px] leading-relaxed text-white/85 md:text-[18px]">
-                Here are just a few of the experts you'll meet as part of the
+                Here are just a few of the experts you&apos;ll meet as part of the
                 My PR Partner community - with many more specialists across
                 every area of public relations and reputation management.
               </p>
@@ -607,7 +607,7 @@ export default function ExpertTrainersPage() {
               );
             })}
             <p className="mt-14 rounded-card border border-dashed border-[#E5E7EB] bg-[#F7F8FA] p-6 text-center text-[14.5px] italic text-text-medium md:p-7">
-              These are just a few of the experts you'll meet inside the My PR
+              These are just a few of the experts you&apos;ll meet inside the My PR
               Partner community - there are many more specialists across every
               area of public relations, reputation, media and crisis.
             </p>
@@ -625,7 +625,7 @@ export default function ExpertTrainersPage() {
               <p className="mx-auto mt-4 max-w-[620px] text-[16px] text-text-medium md:text-[17px]">
                 Every My PR Partner program is curated so you hear from the
                 specialists who matter most to your sector. Pick your path
-                below and see who's teaching.
+                below and see who&apos;s teaching.
               </p>
             </div>
             <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -754,8 +754,8 @@ export default function ExpertTrainersPage() {
                 </SectionHeading>
                 <p className="mt-5 text-[16px] leading-relaxed text-text-medium md:text-[17px]">
                   Every trainer inside My PR Partner is actively consulting to real
-                  organisations. That means your learning isn't theory from a textbook
-                  - it's frameworks, scripts and decisions that have been stress-tested
+                  organisations. That means your learning isn&apos;t theory from a textbook
+                  - it&apos;s frameworks, scripts and decisions that have been stress-tested
                   inside boardrooms, newsrooms and live crisis responses.
                 </p>
                 <ul className="mt-7 space-y-3">
@@ -856,7 +856,7 @@ export default function ExpertTrainersPage() {
               </h2>
               <p className="mx-auto mt-4 max-w-[620px] text-[16px] leading-relaxed text-white/85 md:text-[17px]">
                 Pick the program built for your organisation and start learning
-                from trainers who've stood beside the CEOs, boards and
+                from trainers who&apos;ve stood beside the CEOs, boards and
                 governments you read about.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

@@ -670,7 +670,7 @@ export default function AboutPage() {
               <p className="mx-auto mt-4 max-w-[600px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
                 My PR Partner is how CRC Public Relations opens up 25+ years of
                 corporate, crisis and reputation experience to organisations
-                that can't all engage the firm directly. Pick the program
+                that can&apos;t all engage the firm directly. Pick the program
                 built for your sector.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
