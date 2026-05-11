@@ -210,7 +210,7 @@ export default function Home() {
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in-up">
                   <Link href="#programs" className="group relative block overflow-hidden rounded-card min-h-[240px] md:min-h-[320px]">
-                    <Image src="/images/hero-programs.jpg" alt="Professionals learning online PR training via laptops in a modern office" fill className="object-cover transition-transform duration-500 group-hover:scale-105" priority />
+                    <Image src="/images/hero-programs.jpg" alt="Australian company team learning online PR training in a modern meeting room" fill className="object-cover transition-transform duration-500 group-hover:scale-105" priority />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20" />
                     <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
                       <h2 className="font-heading text-[28px] font-bold text-white">Programs for organisations</h2>
