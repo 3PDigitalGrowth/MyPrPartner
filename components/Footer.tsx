@@ -110,8 +110,8 @@ export default function Footer() {
             </Link>
             <p className="mt-5 max-w-[380px] text-[14.5px] leading-relaxed text-text-medium">
               Public relations training, resources and support for Australian
-              organisations - powered by the senior advisory team at CRC
-              Public Relations.
+              and New Zealand organisations - powered by the senior advisory
+              team at CRC Public Relations.
             </p>
 
             <Image

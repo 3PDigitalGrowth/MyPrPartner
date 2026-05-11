@@ -191,13 +191,13 @@ export default function Home() {
                     Online public relations training, resources &amp; support
                   </h1>
                   <p className="mt-4 mx-auto max-w-[600px] text-[20px] text-text-medium">
-                    Tailored programs backed by 25 years of crisis and corporate PR consulting experience
+                    Tailored programs backed by 25 years of corporate PR, reputation and crisis and consulting experience
                   </p>
                   <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <Link href="#programs" className="rounded-full bg-teal px-7 py-3 text-sm font-medium text-white hover:bg-teal-dark transition-colors">
                       Explore programs
                     </Link>
-                    <Link href="#programs" className="rounded-full border border-teal px-7 py-3 text-sm font-medium text-teal hover:bg-teal hover:text-white transition-colors">
+                    <Link href="/programs" className="rounded-full border border-teal px-7 py-3 text-sm font-medium text-teal hover:bg-teal hover:text-white transition-colors">
                       View plans &amp; pricing
                     </Link>
                   </div>
@@ -222,7 +222,7 @@ export default function Home() {
                     <Image src="/images/hero-masterclass.jpg" alt="PR professional participating in an online crisis masterclass via laptop" fill className="object-cover transition-transform duration-500 group-hover:scale-105" priority />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20" />
                     <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
-                      <h2 className="font-heading text-[28px] font-bold text-white">Crisis masterclass</h2>
+                      <h2 className="font-heading text-[28px] font-bold text-white">Online crisis masterclass</h2>
                       <p className="mt-2 text-[15px] text-white/85 max-w-[380px]">For PR and communications professionals and business leaders. 12-month expert-led program.</p>
                       <span className="mt-5 inline-block rounded-full bg-white px-6 py-2.5 text-sm font-medium text-text-dark hover:bg-gray-50 transition-colors">Find out more</span>
                     </div>
@@ -288,12 +288,12 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-[700px] text-center mb-12 animate-fade-in-up">
               <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-4">Why My PR Partner</p>
-              <h2 className="font-heading text-[28px] md:text-[36px] font-bold text-text-dark leading-tight">Build the skills your organisation needs to manage reputation, media and crisis</h2>
-              <p className="mt-4 mx-auto max-w-[600px] text-[17px] text-text-medium">Most organisations don&apos;t have a dedicated PR resource. When issues arise or media comes calling, teams are left without the skills, plans or support they need.</p>
+              <h2 className="font-heading text-[28px] md:text-[36px] font-bold text-text-dark leading-tight">Build the skills your organisation needs to grow your influence, manage your reputation, engage with media, and prepare for a crisis</h2>
+              <p className="mt-4 mx-auto max-w-[600px] text-[17px] text-text-medium">Most organisations don&apos;t have a dedicated PR resource. They miss opportunities, and when issues arise or media comes calling, teams are left without the skills, plans or support they need.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up">
               {[
-                { icon: BookOpen, title: "Practical training", body: "Monthly video training and downloadable workbooks from leading PR and crisis specialists across Australia and internationally." },
+                { icon: BookOpen, title: "Practical training", body: "Monthly video training and downloadable workbooks + fortnightly Spotlight emails, from leading PR and crisis specialists across Australia and internationally." },
                 { icon: FileText, title: "Ready-to-use resources", body: "Media release and crisis plan templates, media response guides and communications checklists your team can implement immediately." },
                 { icon: Headphones, title: "Ongoing expert support", body: "Access to CRC Public Relations consultants via phone, email, and video + access to trainers through the member portal when you need guidance." },
               ].map((card) => (
@@ -330,7 +330,7 @@ export default function Home() {
                     <p className="text-[14px] text-text-medium mb-3 flex-1 line-clamp-2">{program.description}</p>
                     <div className="flex items-center gap-2 text-[13px] text-gray-400 mb-4">
                       <Clock className="h-3.5 w-3.5" />
-                      <span>Ongoing team support</span>
+                      <span>12-month online program</span>
                     </div>
                     <Link href={program.href} className="block w-full rounded-full bg-teal py-2.5 text-center text-sm font-medium text-white hover:bg-teal-dark transition-colors">View program</Link>
                   </div>
@@ -397,15 +397,28 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
               <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-4">Your expert team</p>
-              <h2 className="font-heading text-[28px] md:text-[36px] font-bold text-text-dark leading-tight">Learn from Australia&apos;s leading crisis and PR specialists</h2>
-              <p className="mt-4 mx-auto max-w-[640px] text-base text-text-medium">Every program is developed and delivered by practitioners with decades of real-world consulting experience, not academics.</p>
+              <h2 className="font-heading text-[28px] md:text-[36px] font-bold text-text-dark leading-tight">Learn from leading national and international public relations experts and industry specialists</h2>
+              <p className="mt-4 mx-auto max-w-[640px] text-base text-text-medium">Every program module and session is delivered by practitioners with decades of real-world consulting experience, not academics.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto animate-fade-in-up">
               {[
-                { image: "/images/instructors/lyall-mercer.png", name: "Lyall Mercer", title: "Co-founder, My PR Partner | Lead Strategist, CRC Public Relations", bio: "Former journalist and 25-year PR career spanning six continents. Lyall has consulted to national and international companies, governments, executives, and industry leaders in crisis communications and reputation management." },
-                { image: "/images/instructors/melissa-agnes.png", name: "Melissa Agnes", title: "Founder, Crisis Ready Institute (USA)", bio: "Globally recognised authority on crisis communication and crisis leadership. Creator of the Crisis Ready\u00AE Model and best-selling author. Presenting exclusively through My PR Partner in Australasia." },
+                {
+                  image: "/images/instructors/lyall-mercer.png",
+                  name: "Lyall Mercer",
+                  developer: "Training developer - Business, charity, schools, industry associations",
+                  title: "Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
+                  bio: "Former journalist and 25-year PR career spanning six continents. Lyall has consulted to national and international companies, governments, executives, heads of state, and industry leaders in the areas of corporate communication, reputation and issues management, and crisis communications. He has worked with more than 30 industry and professional associations and more than 100 schools across every Australian state.",
+                },
+                {
+                  image: "/images/instructors/melissa-agnes.png",
+                  name: "Melissa Agnes",
+                  developer: "Training developer - Crisis Masterclass",
+                  title: "Founder, Crisis Ready Institute (USA)",
+                  bio: "Globally recognised authority on crisis communication and crisis leadership. Presenting exclusively through My PR Partner in Australasia. Creator of the Crisis Ready\u00AE Model and best-selling author, Melissa has worked with global players including NATO, the Pentagon, financial firms, technology companies, healthcare organisations, law enforcement agencies, aviation organisations, global non-profits, and many others.",
+                },
               ].map((expert) => (
                 <div key={expert.name} className="rounded-card border border-gray-200 p-8 text-center">
+                  <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.12em] text-teal">{expert.developer}</p>
                   <div className="mx-auto mb-4 h-[160px] w-[160px] overflow-hidden rounded-xl relative">
                     <Image src={expert.image} alt={expert.name} fill className="object-cover object-top" />
                   </div>
@@ -414,6 +427,14 @@ export default function Home() {
                   <p className="mt-3 text-sm text-text-medium leading-relaxed">{expert.bio}</p>
                 </div>
               ))}
+            </div>
+            <div className="mt-8 text-center animate-fade-in-up">
+              <p className="mx-auto max-w-[620px] text-[15px] leading-relaxed text-text-medium">
+                Plus more than 10 national and international expert presenters across the My PR Partner programs.
+              </p>
+              <Link href="/about/expert-trainers" className="mt-4 inline-block text-[15px] font-medium text-teal hover:text-teal-dark transition-colors">
+                Meet the full expert trainer panel &rarr;
+              </Link>
             </div>
           </div>
         </section>
@@ -486,14 +507,14 @@ export default function Home() {
               {[
                 { quote: "CRC Public Relations has helped us generate major, ongoing, national exposure and ensure that our message is widely heard.", name: "Peter White AM", title: "Managing Director", org: "Finance Brokers Association of Australia" },
                 { quote: "The invaluable customer relations support from CRC Public Relations helps ensure a high level of trust in, and growth for, our chain of more than 50 restaurants.", name: "Hamish Watson", title: "Director", org: "Cafe 63" },
-                { quote: "CRC Public Relations has developed a crisis communications plan for Christian schools and has assisted many of our member schools across Australia to effectively communicate when issues have arisen.", name: "Vanessa Cheng", title: "Executive Officer", org: "Australian Association of Christian Schools" },
+                { quote: "CRC Public Relations has developed a crisis communications plan for Christian schools and has assisted many of our member schools across Australia to effectively communicate when issues have arisen.", name: "Executive Officer", title: "", org: "Australian Association of Christian Schools" },
               ].map((t) => (
                 <div key={t.name} className="bg-[#F7F8FA] rounded-card p-8">
                   <span className="block text-[48px] leading-none text-teal/20 font-heading font-bold mb-2">&ldquo;</span>
                   <p className="text-base text-text-medium italic leading-relaxed mb-5">{t.quote}</p>
                   <div className="mt-5">
                     <p className="text-[15px] font-medium text-text-dark">{t.name}</p>
-                    <p className="text-[14px] text-gray-400">{t.title}, {t.org}</p>
+                    <p className="text-[14px] text-gray-400">{t.title ? `${t.title}, ` : ""}{t.org}</p>
                   </div>
                 </div>
               ))}
@@ -518,7 +539,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <FAQItem
                     question="Who owns My PR Partner and what experience do they have?"
-                    answer="My PR Partner is part of CRC Public Relations, a respected national PR company with decades of local and international experience in public relations and crisis communications. CRC Public Relations was established in 2010 and has worked with organisations across more than 15 industries including schools, industry associations, government, legal, health, and corporate sectors."
+                    answer="My PR Partner is part of CRC Public Relations, a national PR company led by a team with decades of combined local and international experience in public relations and crisis communications. CRC Public Relations was established in 2010 and has worked with organisations across more than 15 industries including schools, industry associations, government, legal, health, and corporate sectors."
                   />
                   <FAQItem
                     question="Are the Support and Partner levels similar to engaging a PR consultancy?"
@@ -530,7 +551,7 @@ export default function Home() {
                   />
                   <FAQItem
                     question="Can I pay annually by invoice?"
-                    answer="We can invoice for annual subscriptions on the Support and Partner levels only. Annual payments on other levels must be made through the website via credit or debit card."
+                    answer="Yes, we can invoice for annual subscriptions for all programs on all levels."
                   />
                   <FAQItem
                     question="Can I upgrade to a higher level before the end of my annual subscription?"
