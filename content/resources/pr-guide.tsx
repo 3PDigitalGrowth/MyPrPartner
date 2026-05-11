@@ -78,7 +78,7 @@ export const prGuideConfig: LeadMagnetConfig = {
   authority: {
     eyebrow: "Why trust this guide",
     title: "Written by senior advisers, not marketers.",
-    body: "My PR Partner is powered by CRC Public Relations - a boutique firm that has spent more than 25 years counselling boards, CEOs, governments, associations and schools through the moments that matter most. This guide is the foundational framework senior advisers walk new clients through on day one.",
+    body: "My PR Partner is powered by CRC Public Relations - a boutique firm that has spent more than 16 years counselling boards, CEOs, governments, associations and schools through the moments that matter most. This guide is the foundational framework senior advisers walk new clients through on day one.",
     bullets: [
       "Distilled from 25+ years of senior crisis, reputation and corporate communications practice",
       "Used as the onboarding framework for organisations across Australia and the Pacific",

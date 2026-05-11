@@ -303,7 +303,7 @@ export const businessContent: CourseContent = {
         image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
-        bio: "Former journalist with a 25-year PR career spanning six continents. Lyall has assisted Australian businesses, from hospitality and professional services to national brands, for over 25 years. He has spoken at numerous business forums and conferences, and trained owners, executive teams and staff in the art of effective communication and reputation strategy.",
+        bio: "Former journalist with a 16-year PR career spanning six continents. Lyall has assisted Australian businesses, from hospitality and professional services to national brands, for over 16 years. He has spoken at numerous business forums and conferences, and trained owners, executive teams and staff in the art of effective communication and reputation strategy.",
       },
       {
         image: "/images/instructors/melissa-agnes.png",
@@ -496,7 +496,7 @@ export const businessContent: CourseContent = {
     image: "/images/founders.png",
     imageAlt: "Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner",
     paragraphs: [
-      "We have a deep understanding of the unique needs facing Australian business owners and leadership teams, having worked alongside businesses of every size - from local hospitality and professional services firms to national brands - for more than 25 years through CRC Public Relations.",
+      "We have a deep understanding of the unique needs facing Australian business owners and leadership teams, having worked alongside businesses of every size - from local hospitality and professional services firms to national brands - for more than 16 years through CRC Public Relations.",
       "We've helped many businesses grow their profile, win new customers through trusted public relations, and protect their reputation when everything was on the line. That hard-won experience is what this program is built on.",
       "We're excited to bring you high-quality training and resources, with optional support when you need it, that will help you and your team at an affordable cost. We hope to welcome you to our community of business leaders.",
     ],

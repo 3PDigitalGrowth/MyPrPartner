@@ -289,7 +289,7 @@ export const associationsContent: CourseContent = {
         image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
-        bio: "Former journalist with a 25-year PR career spanning six continents. Lyall has assisted state and federal industry and professional associations across Australia, New Zealand and the USA for over 25 years, spoken at numerous association forums and conferences, and trained executive teams, boards and staff in the art of effective communication and strategy.",
+        bio: "Former journalist with a 16-year PR career spanning six continents. Lyall has assisted state and federal industry and professional associations across Australia, New Zealand and the USA for over 16 years, spoken at numerous association forums and conferences, and trained executive teams, boards and staff in the art of effective communication and strategy.",
       },
       {
         image: "/images/instructors/melissa-agnes.png",
@@ -480,7 +480,7 @@ export const associationsContent: CourseContent = {
     image: "/images/founders.png",
     imageAlt: "Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner",
     paragraphs: [
-      "We have a deep understanding of the unique needs facing industry, trade and professional associations and peak bodies, having worked alongside many state and national associations for more than 25 years through CRC Public Relations.",
+      "We have a deep understanding of the unique needs facing industry, trade and professional associations and peak bodies, having worked alongside many state and national associations for more than 16 years through CRC Public Relations.",
       "We've helped position many associations as the public voice of authority in their industry, supported them through high-stakes advocacy moments, and seen them build member trust and grow membership through smart, consistent public relations.",
       "We're excited to bring you high-quality training and resources, with optional support when you need it, that will help you and your team at an affordable cost. We hope to welcome you to our community of association leaders.",
     ],

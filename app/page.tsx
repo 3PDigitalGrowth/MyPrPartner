@@ -191,7 +191,7 @@ export default function Home() {
                     Online public relations training, resources &amp; support
                   </h1>
                   <p className="mt-4 mx-auto max-w-[600px] text-[20px] text-text-medium">
-                    Tailored programs backed by 25 years of corporate PR, reputation and crisis and consulting experience
+                    Tailored programs backed by 16 years of corporate PR, reputation and crisis and consulting experience
                   </p>
                   <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <Link href="#programs" className="rounded-full bg-teal px-7 py-3 text-sm font-medium text-white hover:bg-teal-dark transition-colors">
