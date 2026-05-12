@@ -109,9 +109,7 @@ export default async function ArticlesPage() {
                   Article previews below. Full reads rolling out across 2026.
                 </p>
                 <p className="mt-1.5 text-[14px] leading-relaxed text-text-medium">
-                  Each piece is written, edited and senior-reviewed before it
-                  goes live in full. The summaries below give you the useful
-                  take today -{" "}
+                  The summaries below give you the useful take today -{" "}
                   <Link
                     href="#subscribe"
                     className="font-semibold text-teal underline-offset-4 hover:text-teal-dark hover:underline"

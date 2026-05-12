@@ -77,7 +77,6 @@ export const prGuideConfig: LeadMagnetConfig = {
 
   authority: {
     eyebrow: "Why trust this guide",
-    title: "Written by senior advisers, not marketers.",
     body: "My PR Partner is powered by CRC Public Relations - a boutique firm that has spent 15+ years counselling boards, CEOs, governments, associations and schools through the moments that matter most. This guide is the foundational framework senior advisers walk new clients through on day one.",
     bullets: [
       "Distilled from 15+ years of senior crisis, reputation and corporate communications practice",
@@ -87,16 +86,9 @@ export const prGuideConfig: LeadMagnetConfig = {
     ],
   },
 
-  testimonial: {
-    quote:
-      "The five-step framework gave our leadership team a shared language for reputation work. We stopped reacting and started choosing our moments - and our media coverage has been the better for it.",
-    name: "Senior leader, ASX-listed client",
-    title: "CRC Public Relations engagement, 2025",
-  },
-
   crossSells: {
     eyebrow: "When a guide isn't enough",
-    title: "Ready for senior-led, practical training?",
+    title: "Ready for practical training?",
     subhead:
       "The guide will get you started. Our programs take your whole team from aware to genuinely capable - each one sector-matched and delivered by senior practitioners.",
     cards: [

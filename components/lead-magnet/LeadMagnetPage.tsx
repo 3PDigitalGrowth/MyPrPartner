@@ -161,9 +161,11 @@ export function LeadMagnetPage({ config }: LeadMagnetPageProps) {
               <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
                 {config.authority.eyebrow}
               </p>
-              <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[36px]">
-                {config.authority.title}
-              </h2>
+              {config.authority.title ? (
+                <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[36px]">
+                  {config.authority.title}
+                </h2>
+              ) : null}
               <p className="mt-5 text-[16px] leading-relaxed text-text-medium md:text-[17px]">
                 {config.authority.body}
               </p>
@@ -202,41 +204,43 @@ export function LeadMagnetPage({ config }: LeadMagnetPageProps) {
         </section>
 
         {/* ── TESTIMONIAL QUOTE ── */}
-        <section className="bg-white">
-          <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-18 lg:px-8">
-            <figure className="mx-auto max-w-[860px] rounded-card border border-[#E5E7EB] bg-[#F7F8FA] p-8 md:p-12">
-              <Quote
-                className="h-8 w-8 text-teal opacity-60"
-                aria-hidden
-              />
-              <blockquote className="mt-5 font-heading text-[22px] font-medium leading-[1.4] text-text-dark md:text-[28px]">
-                {config.testimonial.quote}
-              </blockquote>
-              <figcaption className="mt-6 flex items-center gap-3 text-[14px]">
-                <div
+        {config.testimonial ? (
+          <section className="bg-white">
+            <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-18 lg:px-8">
+              <figure className="mx-auto max-w-[860px] rounded-card border border-[#E5E7EB] bg-[#F7F8FA] p-8 md:p-12">
+                <Quote
+                  className="h-8 w-8 text-teal opacity-60"
                   aria-hidden
-                  className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full font-heading text-[14px] font-bold text-white"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #0F6DA3 0%, #07AFBB 100%)",
-                  }}
-                >
-                  {config.testimonial.name
-                    .split(" ")
-                    .slice(0, 2)
-                    .map((w) => w.charAt(0))
-                    .join("")}
-                </div>
-                <div>
-                  <p className="font-semibold text-text-dark">
-                    {config.testimonial.name}
-                  </p>
-                  <p className="text-text-medium">{config.testimonial.title}</p>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
-        </section>
+                />
+                <blockquote className="mt-5 font-heading text-[22px] font-medium leading-[1.4] text-text-dark md:text-[28px]">
+                  {config.testimonial.quote}
+                </blockquote>
+                <figcaption className="mt-6 flex items-center gap-3 text-[14px]">
+                  <div
+                    aria-hidden
+                    className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full font-heading text-[14px] font-bold text-white"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #0F6DA3 0%, #07AFBB 100%)",
+                    }}
+                  >
+                    {config.testimonial.name
+                      .split(" ")
+                      .slice(0, 2)
+                      .map((w) => w.charAt(0))
+                      .join("")}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-text-dark">
+                      {config.testimonial.name}
+                    </p>
+                    <p className="text-text-medium">{config.testimonial.title}</p>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+        ) : null}
 
         {/* ── CROSS-SELL: EXPERT-LED TRAINING ── */}
         <section className="bg-[#F7F8FA]">

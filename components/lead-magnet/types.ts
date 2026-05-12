@@ -56,12 +56,12 @@ export type LeadMagnetConfig = {
 
   authority: {
     eyebrow: string;
-    title: string;
+    title?: string;
     body: string;
     bullets: string[];
   };
 
-  testimonial: LeadMagnetTestimonial;
+  testimonial?: LeadMagnetTestimonial;
 
   crossSells: {
     eyebrow: string;

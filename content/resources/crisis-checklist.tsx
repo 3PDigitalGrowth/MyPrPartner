@@ -125,12 +125,6 @@ export const crisisChecklistConfig: LeadMagnetConfig = {
     ],
   },
 
-  testimonial: {
-    quote:
-      "We scored ourselves an eight out of ten and felt pretty good - until CRC Public Relations walked us through what each question actually means. We were a four. The checklist is the cheapest risk audit we've ever done.",
-    name: "CEO, national peak body",
-    title: "CRC Public Relations engagement, 2024",
-  },
 
   crossSells: {
     eyebrow: "Found gaps? Here's the fix.",
