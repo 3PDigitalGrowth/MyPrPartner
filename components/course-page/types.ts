@@ -67,11 +67,25 @@ export type StructureGroup = {
   items: string[];
 };
 
+export type StructureModule = {
+  /** The month number, e.g. 1, 2, 3, ... */
+  month: number;
+  /** The module title, e.g. "Having a PR mindset: Intentional communication that builds ongoing trust" */
+  title: string;
+  /** Optional resource for this month, rendered as a pill below the title */
+  resource?: string;
+  /** Optional short note (e.g. "On call all year") shown beneath the title */
+  note?: string;
+};
+
 export type CourseStructureContent = {
   eyebrow: string;
   heading: string;
   intro: string;
-  groups: StructureGroup[];
+  /** Legacy grouped/phased view. Used when modules is not provided. */
+  groups?: StructureGroup[];
+  /** Flat month-by-month list. Takes precedence over groups when both are provided. */
+  modules?: StructureModule[];
 };
 
 export type Persona = {

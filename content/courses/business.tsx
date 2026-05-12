@@ -123,7 +123,7 @@ export const businessContent: CourseContent = {
     { icon: Clock, title: "12 monthly modules", sub: "Training + resource + Q&A" },
     { icon: Users, title: "Whole-team program", sub: "Owner, exec, comms & client teams" },
     { icon: TrendingUp, title: "Growth focused", sub: "Profile, trust and new customers" },
-    { icon: Award, title: "Certificate of completion", sub: "Recognised business training" },
+    { icon: Award, title: "Certificate of completion", sub: "Endorsed by CRC Public Relations" },
   ],
 
   anchors: [
@@ -394,39 +394,43 @@ export const businessContent: CourseContent = {
     items: [
       {
         q: "Who exactly can access the program at our business?",
-        a: "The program is designed for your whole leadership team. Your owners, directors, CEO/MD, executive team, marketing and communications staff, and client-facing leads can all access the content. Several hands-on roles will get the most direct value, but the program is structured so the whole team builds shared language and culture around your brand.",
+        a: "The program is designed for your whole leadership team. You choose who you'd like to be involved each month. This includes owners, directors, CEO/MD, executive team, marketing and communications staff, and client-facing leads. The first month is intentionally shaped so everyone benefits.",
+      },
+      {
+        q: "What ongoing PR support is available to our business?",
+        a: "Our Support Level is our most popular and includes on-call PR or issues & crisis assistance. Our Partner Level is for businesses who want the security of extra peace of mind, and includes personal, ongoing phone, email & Zoom PR support. Both of these levels also include many other features, extra resources and individual training. See our pricing and plans for details. All PR support is provided by the senior team at CRC Public Relations.",
       },
       {
         q: "Is it really 100% online?",
-        a: "Yes. Every module is self-paced online, with a training video, workbook and downloadable resource released monthly. The monthly Q&A is answered through your member portal so anyone on your team can submit questions and read every answer.",
+        a: "Yes. Every module is self-paced online, with a training video, workbook and downloadable resource released monthly. This includes the monthly Q&A.",
       },
       {
-        q: "How long does the program run?",
-        a: "Enrolment runs for 12 months from the day your business joins. You keep access to all modules, resources and recordings for the full year. Many businesses choose to continue annually so new staff onboard into the same shared PR mindset.",
+        q: "How long does enrolment last?",
+        a: "Enrolment runs for 12 months from the day your business joins. You keep access to all modules, resources and recordings (after they are released) until the end of the 12 months. Many businesses choose to continue annually so new staff onboard into the same shared PR mindset. There is also an option to renew for new second year content for those who have completed year one.",
       },
       {
         q: "When do enrolments open?",
         a: "We're opening enrolments to a small founding cohort of Australian businesses in 2026. The first 50 businesses on the waitlist receive a 10% founding-member discount on their first 12 months. Join the waitlist to lock in your place and your discount.",
       },
       {
-        q: "What is the founding-member discount?",
-        a: "The first 50 Australian businesses to join the waitlist receive a 10% discount on their first 12-month enrolment, applied automatically at checkout when enrolments open. You'll also be the first to receive program details, the founders' welcome and an early invitation to enrol before public release.",
-      },
-      {
-        q: "Will there be different levels (Train, Support, Partner)?",
-        a: "Yes - the program will launch with three tiers so sole traders, small teams and larger businesses can all find a fit. Train Level is training and resources only; Support Level adds on-call PR support; Partner Level adds full PR partnership including media training. Pricing details will be shared with the waitlist first.",
+        q: "What if we want an even deeper dive on crisis?",
+        a: "The Business Program covers everything most businesses need. However if any of your team wants the deeper, personal crisis leadership available, we offer the crisis masterclass as a separate flagship program. This features the Crisis Ready course with Melissa Agnes, CEO of the Crisis Ready Institute USA as well as other crisis-specific resources. This is personal (not team) training and businesses can enrol their CEO, owners or communications manager in this separately.",
       },
       {
         q: "Do we get support between modules?",
-        a: "Yes. The weekly Spotlight email keeps the key ideas alive, and the monthly interactive Q&A is where you can bring your business's live situation. Higher tiers include direct on-call PR support from CRC Public Relations.",
+        a: "Yes. The fortnightly Spotlight email keeps key ideas alive, and the monthly interactive Q&A is where you can bring your business's live situation. When something serious breaks, your team has a clear path to call on the CRC Public Relations consulting team if required (available on support levels).",
       },
       {
         q: "Can our board or franchise partners see the content?",
-        a: "Absolutely. We actively encourage directors, franchise partners and senior advisers to access the program, especially the growth, reputation and crisis modules. Larger tiers include group-level access by default.",
+        a: "Absolutely. We actively encourage directors, franchise partners and senior advisers to access the program, especially the growth, reputation and crisis modules.",
+      },
+      {
+        q: "How is payment handled?",
+        a: "Payment will be by annual subscription per business that can be paid in monthly instalments or annually. Payment is billed through our secure learning platform at checkout. You'll receive a tax invoice by email and immediate access to your business dashboard. Annual subscribers receive one month free and have the option of paying by invoice. Pricing details will be shared with the waitlist first.",
       },
       {
         q: "What if the program isn't the right fit for us?",
-        a: "We'll offer a satisfaction guarantee at launch. If the program is not right for your business, contact our team within the guarantee window of enrolment for a full refund, no questions asked.",
+        a: "We offer a 10 day free trial. Your online payment will not be processed for 10 days and during this time you are able to cancel. If paying annually by invoice you can still cancel within 10 days for a full refund, no questions asked. There is no refund after the 10 days (see T&C for full details).",
       },
     ],
   },

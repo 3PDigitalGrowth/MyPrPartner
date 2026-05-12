@@ -114,7 +114,6 @@ export const charityContent: CourseContent = {
       poweredByCrcLogo: true,
       items: [
         "Built for Australian charity and not-for-profit leadership teams",
-        "Designed for EDs, boards, fundraising, comms & community teams",
       ],
     },
   },
@@ -124,7 +123,7 @@ export const charityContent: CourseContent = {
     { icon: Clock, title: "12 monthly modules", sub: "Training + resource + Q&A" },
     { icon: Users, title: "Whole-team program", sub: "ED, board, fundraising & comms" },
     { icon: Heart, title: "Mission focused", sub: "Trust, donations and reputation" },
-    { icon: Award, title: "Certificate of completion", sub: "Recognised NFP training" },
+    { icon: Award, title: "Certificate of completion", sub: "Endorsed by CRC Public Relations" },
   ],
 
   anchors: [
@@ -395,43 +394,43 @@ export const charityContent: CourseContent = {
     items: [
       {
         q: "Who exactly can access the program at our charity?",
-        a: "The program is designed for your whole leadership team. Your executive director/CEO, senior leadership team, board chairs and directors, fundraising and philanthropy staff, and marketing, communications and community engagement teams can all access the content. Several hands-on roles will get the most direct value, but the program is structured so the whole team builds shared language and culture around your mission.",
+        a: "The program is designed for your whole leadership team. You choose who you'd like to be involved each month. This includes your Executive Director or CEO, senior leadership team, board chairs and directors, fundraising and philanthropy staff, and marketing, communications and community engagement teams. The first month is intentionally shaped so everyone benefits.",
+      },
+      {
+        q: "What ongoing PR support is available to our charity?",
+        a: "Our Support Level is our most popular and includes on-call PR or issues & crisis assistance. Our Partner Level is for charities who want the security of extra peace of mind, and includes personal, ongoing phone, email & Zoom PR support. Both of these levels also include many other features, extra resources and individual training. See our pricing and plans for details. All PR support is provided by the senior team at CRC Public Relations.",
       },
       {
         q: "Is it really 100% online?",
-        a: "Yes. Every module is self-paced online, with a training video, workbook and downloadable resource released monthly. The monthly Q&A is answered through your member portal so anyone on your team can submit questions and read every answer.",
+        a: "Yes. Every module is self-paced online, with a training video, workbook and downloadable resource released monthly. This includes the monthly Q&A.",
       },
       {
-        q: "How long does the program run?",
-        a: "Enrolment runs for 12 months from the day your charity joins. You keep access to all modules, resources and recordings for the full year. Many charities choose to continue annually so new staff, volunteers and board members onboard into the same shared PR mindset.",
+        q: "How long does enrolment last?",
+        a: "Enrolment runs for 12 months from the day your charity joins. You keep access to all modules, resources and recordings (after they are released) until the end of the 12 months. Many charities choose to continue annually so new staff, volunteers and board members onboard into the same shared PR mindset. There is also an option to renew for new second year content for those who have completed year one.",
       },
       {
         q: "When do enrolments open?",
         a: "We're opening enrolments to a small founding cohort of Australian charities and not-for-profits in 2026. The first 50 charities on the waitlist receive a 10% founding-member discount on their first 12 months. Join the waitlist to lock in your place and your discount.",
       },
       {
-        q: "What is the founding-member discount?",
-        a: "The first 50 Australian charities to join the waitlist receive a 10% discount on their first 12-month enrolment, applied automatically at checkout when enrolments open. You'll also be the first to receive program details, the founders' welcome and an early invitation to enrol before public release.",
-      },
-      {
-        q: "Will there be different levels (Train, Support, Partner)?",
-        a: "Yes - the program will launch with three tiers so small community organisations and larger national foundations can both find a fit. Train Level is training and resources only; Support Level adds on-call PR support; Partner Level adds full PR partnership including media training. Pricing details will be shared with the waitlist first.",
+        q: "What if we want an even deeper dive on crisis?",
+        a: "The Charity Program covers everything most charities need. However if any of your team wants the deeper, personal crisis leadership available, we offer the crisis masterclass as a separate flagship program. This features the Crisis Ready course with Melissa Agnes, CEO of the Crisis Ready Institute USA as well as other crisis-specific resources. This is personal (not team) training and charities can enrol their CEO, board chair or communications manager in this separately.",
       },
       {
         q: "Do we get support between modules?",
-        a: "Yes. The weekly Spotlight email keeps the key ideas alive, and the monthly interactive Q&A is where you can bring your charity's live situation. Higher tiers include direct on-call PR support from CRC Public Relations.",
+        a: "Yes. The fortnightly Spotlight email keeps key ideas alive, and the monthly interactive Q&A is where you can bring your charity's live situation. When something serious breaks, your team has a clear path to call on the CRC Public Relations consulting team if required (available on support levels).",
       },
       {
         q: "Can our board and senior volunteers see the content?",
-        a: "Absolutely. We actively encourage board members, senior advisers and long-serving volunteers to access the program, especially the governance, issues-management and crisis modules. Larger tiers include board-level access by default.",
+        a: "Absolutely. We actively encourage board members, senior advisers and long-serving volunteers to access the program, especially the governance, issues-management and crisis modules.",
       },
       {
-        q: "Is there a sector or size we don't suit?",
-        a: "The program is built for registered charities, deductible-gift-recipient (DGR) organisations, not-for-profits, peak bodies, foundations and community organisations of most sizes. If you're unsure whether it's right for your organisation, book a callback with our team and we'll talk it through.",
+        q: "How is payment handled?",
+        a: "Payment will be by annual subscription per charity that can be paid in monthly instalments or annually. Payment is billed through our secure learning platform at checkout. You'll receive a tax invoice by email and immediate access to your charity dashboard. Annual subscribers receive one month free and have the option of paying by invoice. Pricing details will be shared with the waitlist first.",
       },
       {
         q: "What if the program isn't the right fit for us?",
-        a: "We'll offer a satisfaction guarantee at launch. If the program is not right for your charity, contact our team within the guarantee window of enrolment for a full refund, no questions asked.",
+        a: "We offer a 10 day free trial. Your online payment will not be processed for 10 days and during this time you are able to cancel. If paying annually by invoice you can still cancel within 10 days for a full refund, no questions asked. There is no refund after the 10 days (see T&C for full details).",
       },
     ],
   },

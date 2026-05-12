@@ -103,7 +103,7 @@ export const crisisMasterclassContent: CourseContent = {
     { icon: Clock, title: "12-month access", sub: "Go at your own pace" },
     { icon: Users, title: "10+ expert trainers", sub: "Australian and international" },
     { icon: ShieldCheck, title: "Crisis Ready\u00AE inclusive", sub: "Melissa Agnes methodology" },
-    { icon: Award, title: "Certificate of completion", sub: "Recognised industry training" },
+    { icon: Award, title: "Certificate of completion", sub: "Endorsed by CRC Public Relations" },
   ],
 
   anchors: [
@@ -343,36 +343,40 @@ export const crisisMasterclassContent: CourseContent = {
     heading: "Frequently asked questions",
     items: [
       {
-        q: "Is the Crisis Masterclass fully online?",
-        a: "Yes, it is 100% online. You can complete every module at your own pace from anywhere in Australia, with live Q&A sessions held over video. All recordings are available inside the member portal.",
+        q: "Who is the Crisis Masterclass for?",
+        a: "The Crisis Masterclass is designed for individual leaders, owners, executives, principals, board chairs, communications managers, and school or association staff who want the deepest crisis communication and leadership training available in Australia. No formal PR background is required. Everything is taught from first principles with clear Australian examples.",
       },
       {
-        q: "How long will I have access?",
-        a: "Your enrolment includes 12 months of access to all modules, templates, case studies, Q&A sessions and updates. If new Australian case studies or Crisis Ready\u00AE content lands during your year, you get it at no extra cost.",
+        q: "What ongoing crisis support is available?",
+        a: "Throughout your 12 months you have access to a monthly interactive Q&A with Lyall and the expert panel where you can bring your real-world scenarios. For organisations who want personal, ongoing phone, email and Zoom PR or crisis support beyond the masterclass, the senior team at CRC Public Relations is available on a consulting basis.",
       },
       {
-        q: "Do I need a PR or communications background?",
-        a: "No. The program is designed for leaders, owners, executives, school and association staff who may not have a formal PR background. Everything is taught from first principles, with clear Australian examples.",
+        q: "Is it really 100% online?",
+        a: "Yes. Every module is self-paced online, with a training video, workbook and downloadable resource released monthly. This includes the monthly Q&A.",
+      },
+      {
+        q: "How long does enrolment last?",
+        a: "Enrolment runs for 12 months from the day you join. You keep access to all modules, templates, case studies, Q&A recordings and updates (after they are released) until the end of the 12 months. If new Australian case studies or Crisis Ready\u00AE content lands during your year, you get it at no extra cost.",
       },
       {
         q: "What is Crisis Ready\u00AE and why is it included?",
-        a: "Crisis Ready\u00AE is the world-leading crisis communication and leadership methodology developed by Melissa Agnes of Crisis Ready Institute in the United States. My PR Partner is the exclusive Australasian partner, so your enrolment gives you direct access to her material, which is not available through any other Australian provider.",
+        a: "Crisis Ready\u00AE is the world-leading crisis communication and leadership methodology developed by Melissa Agnes, CEO of the Crisis Ready Institute in the United States. My PR Partner is the exclusive Australasian partner, so your enrolment gives you direct access to her material, which is not available through any other Australian provider.",
       },
       {
-        q: "Can I enrol my team?",
-        a: "Yes. We offer group enrolment rates for organisations of any size, including customised onboarding and optional team tabletop exercises. Get in touch and our team will put together a plan that fits.",
+        q: "Can I enrol my team or board?",
+        a: "Yes. We offer group enrolment rates for organisations of any size, including customised onboarding and optional team tabletop exercises facilitated by CRC Public Relations. Many schools, associations and businesses enrol their CEO, principal, board chair and communications manager together. Get in touch and our team will put together a plan that fits.",
       },
       {
         q: "What does the certificate cover?",
-        a: "On completion, you receive a My PR Partner Crisis Masterclass certificate of completion, endorsed by CRC Public Relations. It recognises that you have completed the full 12-month program, including Crisis Ready\u00AE modules.",
+        a: "On completion, you receive a My PR Partner Crisis Masterclass certificate of completion, endorsed by CRC Public Relations. It acknowledges that you have completed the full 12-month program, including Crisis Ready\u00AE modules. The certificate is not a nationally accredited or formally recognised industry training qualification.",
       },
       {
         q: "How is payment handled?",
-        a: "Payment is processed securely through our learning platform at checkout. You'll receive a tax invoice by email and immediate access to your course dashboard.",
+        a: "Payment is by annual subscription that can be paid in monthly instalments or annually. Payment is billed through our secure learning platform at checkout. You'll receive a tax invoice by email and immediate access to your course dashboard. Annual subscribers receive one month free and have the option of paying by invoice.",
       },
       {
-        q: "Can I get a refund?",
-        a: "We offer a 14-day satisfaction guarantee. If the program isn't right for you, contact our team within 14 days of enrolment for a full refund, no questions asked.",
+        q: "What if the program isn't the right fit for me?",
+        a: "We offer a 10 day free trial. Your online payment will not be processed for 10 days and during this time you are able to cancel. If paying annually by invoice you can still cancel within 10 days for a full refund, no questions asked. There is no refund after the 10 days (see T&C for full details).",
       },
     ],
   },
