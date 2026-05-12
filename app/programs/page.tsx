@@ -155,7 +155,7 @@ const programs: Program[] = [
     outcomes: [
       "Monthly training video, workbook and ready-to-use resources",
       "Sector-specific content - from proud media wins to the hardest allegations",
-      "Optional multi-school and diocese enrolments for whole-group training",
+      "Optional multi-school enrolments for whole-group training",
     ],
     cta: "See the Schools Program",
   },

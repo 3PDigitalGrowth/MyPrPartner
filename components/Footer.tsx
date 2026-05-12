@@ -104,7 +104,7 @@ export default function Footer() {
                 alt="My PR Partner"
                 width={220}
                 height={56}
-                className="h-12 w-auto"
+                className="h-12 w-auto mix-blend-multiply"
                 priority={false}
               />
             </Link>

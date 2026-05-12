@@ -542,11 +542,11 @@ export const schoolsContent: CourseContent = {
   },
 
   groupBand: {
-    badge: "Multi-school and diocese enrolments",
+    badge: "Multi-school enrolments",
     badgeIcon: Users,
     heading: "Train every school in your organisation under one enrolment",
     body:
-      "We work with independent school groups under the same ownership, and dioceses, on multi-school enrolments. Bulk rates, shared resources and optional training facilitated by CRC Public Relations are all on the table.",
+      "We work with independent school groups under the same ownership on multi-school enrolments. Bulk rates, shared resources and optional training facilitated by CRC Public Relations are all on the table.",
     bullets: [
       "Discounted per-school pricing across a group",
       "Tailored training can be discussed",
@@ -556,22 +556,6 @@ export const schoolsContent: CourseContent = {
     cta: { label: "Enquire about group enrolment", href: "/contact" },
     ctaSubLabel: "We'll reply within one business day.",
     bgImage: "/images/schools/schools-group-bg.jpg",
-  },
-
-  relatedProgram: {
-    eyebrow: "Want to go deeper on crisis?",
-    heading: "Add the Crisis Masterclass for your principal and board chair",
-    body:
-      "If you want the full 12-month Crisis Masterclass, this includes the full Crisis Ready\u00AE course with Melissa Agnes, CEO of Crisis Ready Institute USA, tailored for Australia, and other crisis training from Lyall Mercer.",
-    thumbImage: "/images/crisis-masterclass/hero-bg-crisis.jpg",
-    featureBullets: [
-      "Full 12-month Crisis Masterclass",
-      "Full Crisis Ready\u00AE course with Melissa Agnes",
-      "Monthly Q&A",
-      "Detailed workbooks and resources.",
-    ],
-    primaryCta: { label: "Learn about the My PR Partner Crisis Masterclass", href: "/crisis-masterclass" },
-    secondaryCta: { label: "Talk to our team", href: "/contact" },
   },
 
   finalCta: {
