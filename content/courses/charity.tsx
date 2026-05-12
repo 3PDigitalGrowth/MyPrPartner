@@ -304,7 +304,7 @@ export const charityContent: CourseContent = {
         image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
-        bio: "Former journalist with a 16-year PR career spanning six continents. Lyall has worked alongside Australian charities, not-for-profits and community organisations for over 16 years - from community services and health charities to national foundations - training executive directors, boards and staff in the art of effective communication, reputation and fundraising strategy.",
+        bio: "Former journalist with a 15+ year PR career spanning six continents. Lyall has worked alongside Australian charities, not-for-profits and community organisations for 15+ years - from community services and health charities to national foundations - training executive directors, boards and staff in the art of effective communication, reputation and fundraising strategy.",
       },
       {
         image: "/images/instructors/melissa-agnes.png",
@@ -502,7 +502,7 @@ export const charityContent: CourseContent = {
     image: "/images/founders.png",
     imageAlt: "Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner",
     paragraphs: [
-      "We have a deep understanding of the unique needs facing Australian charities and not-for-profits, having worked alongside organisations of every size - from small community charities and DGR-endorsed not-for-profits to national foundations - for more than 16 years through CRC Public Relations.",
+      "We have a deep understanding of the unique needs facing Australian charities and not-for-profits, having worked alongside organisations of every size - from small community charities and DGR-endorsed not-for-profits to national foundations - for 15+ years through CRC Public Relations.",
       "We've helped many charities grow their public profile, lift fundraising through trusted public relations, and protect their reputation through some of the sector's most sensitive moments. That hard-won experience is what this program is built on.",
       "We're excited to bring you high-quality training and resources, with optional support when you need it, that will help you and your team at an affordable cost. We hope to welcome you to our community of charity and not-for-profit leaders.",
     ],

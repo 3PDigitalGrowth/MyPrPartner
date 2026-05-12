@@ -116,7 +116,7 @@ export const crisisChecklistConfig: LeadMagnetConfig = {
   authority: {
     eyebrow: "Why trust this checklist",
     title: "Built from real engagements, not theory.",
-    body: "The checkpoints in this checklist are the same questions senior CRC Public Relations advisers ask when they sit down with a new client. They're drawn from more than 16 years of real crisis work - ASX-listed boards, federal and state government, peak bodies, schools, faith-based organisations, and Pacific governments and NGOs.",
+    body: "The checkpoints in this checklist are the same questions senior CRC Public Relations advisers ask when they sit down with a new client. They're drawn from 15+ years of real crisis work - ASX-listed boards, federal and state government, peak bodies, schools, faith-based organisations, and Pacific governments and NGOs.",
     bullets: [
       "Built from 25+ years of live crisis engagements, not a textbook",
       "Scored the same way CRC Public Relations scores new client assessments",
