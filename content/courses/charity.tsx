@@ -320,37 +320,6 @@ export const charityContent: CourseContent = {
       "Plus in-depth conversations with successful Australian charity leaders, a specialist social media presenter, and a rotating panel of 10+ Australian PR, fundraising and communications experts across the year.",
   },
 
-  testimonials: {
-    eyebrow: "What Australian charity leaders say",
-    heading: "Built on 15+ years of real work with Australian charities and not-for-profits",
-    items: [
-      {
-        quote:
-          "CRC Public Relations helped us sharpen our story, land sustained national media coverage and build the donor trust we needed to step change our fundraising results.",
-        // TODO: Replace with real Australian charity/NFP testimonial from the CRC archive
-        name: "[Confirm name]",
-        title: "Executive Director",
-        org: "[Confirm charity name]",
-      },
-      {
-        quote:
-          "When our sector faced significant public scrutiny, the team at CRC Public Relations stood with us - providing calm, principled counsel that protected our reputation and our mission.",
-        // TODO: Replace with real Australian charity/NFP testimonial from the CRC archive
-        name: "[Confirm name]",
-        title: "Chief Executive Officer",
-        org: "[Confirm charity name]",
-      },
-      {
-        quote:
-          "Their guidance across appeals, media and board communications helped us lift our profile, deepen donor trust and navigate several sensitive moments with real care.",
-        // TODO: Replace with real Australian charity/NFP testimonial from the CRC archive
-        name: "[Confirm name]",
-        title: "Chair of the Board",
-        org: "[Confirm charity name]",
-      },
-    ],
-  },
-
   careerValue: {
     eyebrow: "The value your charity walks away with",
     heading: "Outcomes that matter in the community, the newsroom and the boardroom",

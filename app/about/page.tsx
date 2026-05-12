@@ -66,13 +66,6 @@ const whyPillars = [
   },
 ];
 
-const stats = [
-  { figure: "15+", label: "Years of senior advisory behind every program" },
-  { figure: "Global Reach", label: "Support Businesses Everywhere" },
-  { figure: "100%", label: "CRC Public Relations client satisfaction rating" },
-  { figure: "500+", label: "Professionals trained through our programs" },
-];
-
 type Leader = {
   slug: string;
   name: string;
@@ -404,27 +397,6 @@ export default function AboutPage() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── STATS BAND ── */}
-        <section className="bg-white">
-          <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
-            <div className="grid grid-cols-2 gap-6 text-center md:grid-cols-4 md:gap-8">
-              {stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="flex flex-col items-center rounded-card border border-[#EEF0F3] bg-[#F7F8FA] p-6"
-                >
-                  <p className="font-heading text-[32px] font-bold leading-none text-text-dark md:text-[42px]">
-                    {s.figure}
-                  </p>
-                  <p className="mt-2 text-[13px] text-text-medium md:text-[14px]">
-                    {s.label}
-                  </p>
-                </div>
-              ))}
             </div>
           </div>
         </section>

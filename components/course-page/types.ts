@@ -356,12 +356,12 @@ export type CourseContent = {
   courseStructure: CourseStructureContent;
   personas: PersonasContent;
   instructors: InstructorsContent;
-  testimonials: TestimonialsContent;
+  testimonials?: TestimonialsContent;
   careerValue: CareerValueContent;
   faq: FaqContent;
   sidebar: SidebarContent;
   foundersWelcome: FoundersWelcomeContent;
-  groupBand: GroupBandContent;
+  groupBand?: GroupBandContent;
   /** Optional cross-sell band for a related program (e.g. Schools -> Crisis Masterclass) */
   relatedProgram?: RelatedProgramContent;
   finalCta: FinalCtaContent;

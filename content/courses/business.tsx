@@ -320,37 +320,6 @@ export const businessContent: CourseContent = {
       "Plus in-depth conversations with successful Australian business owners, a specialist social media presenter, and a rotating panel of 10+ Australian PR, marketing and communications experts across the year.",
   },
 
-  testimonials: {
-    eyebrow: "What Australian business leaders say",
-    heading: "Built on 15+ years of real work with Australian businesses",
-    items: [
-      {
-        quote:
-          "The invaluable customer relations support from CRC Public Relations has helped us build a high level of trust in our customer base, and significant growth for our business.",
-        // TODO: confirm the exact name from the CRC Public Relations testimonial archive
-        name: "[Confirm name]",
-        title: "Owner",
-        org: "Caff\u00E9 Ko",
-      },
-      {
-        quote:
-          "CRC Public Relations has worked extensively across the Pacific Region, providing high-level advice to governments and organisations on sensitive communications and reputation issues.",
-        // TODO: confirm the exact name from the CRC Public Relations testimonial archive
-        name: "[Confirm name]",
-        title: "Secretary General",
-        org: "Pacific Islands Forum",
-      },
-      {
-        quote:
-          "The team at CRC Public Relations has stood with us during some of our most difficult times, providing a calm voice of reason in shaping our public messaging.",
-        // TODO: confirm the exact name from the CRC Public Relations testimonial archive
-        name: "[Confirm name]",
-        title: "Former CEO",
-        org: "EU Australia",
-      },
-    ],
-  },
-
   careerValue: {
     eyebrow: "The value your business walks away with",
     heading: "Outcomes that matter in the market, the newsroom and at the kitchen table",

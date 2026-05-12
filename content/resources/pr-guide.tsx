@@ -85,12 +85,6 @@ export const prGuideConfig: LeadMagnetConfig = {
       "Written for leaders - clear, practical, and free of PR jargon",
       "Focused on what actually moves the needle, not vanity metrics",
     ],
-    stats: [
-      { value: "15+", label: "Years advising on high-stakes communications" },
-      { value: "500+", label: "Communications professionals trained" },
-      { value: "100%", label: "CRC Public Relations client satisfaction rating" },
-      { value: "1:1", label: "Direct access to senior advisers - no juniors" },
-    ],
   },
 
   testimonial: {

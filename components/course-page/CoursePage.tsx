@@ -22,7 +22,7 @@ export default function CoursePage({ content }: { content: CourseContent }) {
       <InPageAnchorNav anchors={content.anchors} />
       <BodyWithSidebar content={content} />
       <FoundersWelcome content={content.foundersWelcome} />
-      <GroupEnrolmentBand content={content.groupBand} />
+      {content.groupBand ? <GroupEnrolmentBand content={content.groupBand} /> : null}
       {content.relatedProgram ? <RelatedProgramBand content={content.relatedProgram} /> : null}
       <FinalCtaBand content={content.finalCta} checkout={content.checkout} />
       <MobileEnrolBar bar={content.mobileBar} checkout={content.checkout} />

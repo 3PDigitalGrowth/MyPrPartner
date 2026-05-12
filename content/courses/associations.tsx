@@ -244,46 +244,46 @@ export const associationsContent: CourseContent = {
 
   personas: {
     eyebrow: "Who it's for",
-    heading: "A tailored program exclusively for association leadership teams",
+    heading: "This program is for you if\u2026",
     intro:
-      "Your whole leadership team learns together, so everyone speaks with one voice in high-stakes moments and no one carries the reputation load alone.",
+      "Whether you're a CEO, communications professional, advocacy lead, membership manager or public spokesperson, this program is built for everyone whose role touches your association's reputation, and for leaders who understand the power of effective communication and ongoing professional development.",
     items: [
       {
         image: "/images/associations/associations-persona-ceo.jpg",
         icon: Building2,
-        title: "CEOs and executive directors",
+        title: "If you play a role in association leadership",
         body:
-          "Lead your association with confidence as the trusted public voice of your industry, from day-to-day positioning to the moments your sector turns to you for leadership.",
+          "Whether you're a CEO, executive director or board member, this program helps you strengthen your skills in new and profound ways that meet today's challenges, so you can lead your association as the trusted public voice of your industry.",
       },
       {
         image: "/images/associations/associations-persona-comms.jpg",
         icon: Briefcase,
-        title: "Communications and marketing teams",
+        title: "If you have a role in communication, marketing or representing your association publicly",
         body:
-          "Turn content, channels and campaigns into measurable gains in member engagement, media profile and public trust.",
+          "From communications and marketing teams through to spokespeople at events, forums and conferences, this program gives you the strategy, frameworks and templates to lift your association's profile and make every public moment count.",
       },
       {
         image: "/images/associations/associations-persona-advocacy.jpg",
         icon: Megaphone,
-        title: "Advocacy and government relations",
+        title: "If you're involved in advocacy, government relations or influencing policy and legislation",
         body:
-          "Use PR strategy and media leverage to influence policy and legislation, and build the public case behind every meeting in Canberra or your state capital.",
+          "Use PR and media strategies to effectively boost your advocacy, influence policy and legislation, and build the public case behind every meeting in Canberra or your state capital.",
       },
       {
         image: "/images/associations/associations-persona-members.jpg",
         icon: HandHeart,
-        title: "Membership engagement teams",
+        title: "If you communicate with members or work on membership growth and retention",
         body:
-          "Build a membership of advocates, not adversaries, with communications that grow value, deepen loyalty and turn members into your best champions.",
+          "Build a membership of advocates, not adversaries, who trust and support your association, with communications that grow value, deepen loyalty and turn members into your best champions.",
       },
     ],
   },
 
   instructors: {
-    eyebrow: "Your presenters",
-    heading: "Learn from Australia's leading association PR specialists",
+    eyebrow: "Your lead presenter",
+    heading: "Led by one of Australia's most experienced association PR strategists",
     intro:
-      "Lead presenter is Lyall Mercer, supported by a panel of guest experts and successful association leaders who each bring real industry experience to the program.",
+      "Lyall Mercer leads every program, with additional Australian guest presenters joining throughout the year as content is developed and refreshed.",
     items: [
       {
         image: "/images/instructors/lyall-mercer.png",
@@ -291,24 +291,13 @@ export const associationsContent: CourseContent = {
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
         bio: "Former journalist with a 15+ year PR career spanning six continents. Lyall has assisted state and federal industry and professional associations across Australia, New Zealand and the USA for 15+ years, spoken at numerous association forums and conferences, and trained executive teams, boards and staff in the art of effective communication and strategy.",
       },
-      {
-        image: "/images/instructors/melissa-agnes.png",
-        name: "Melissa Agnes",
-        title: "Featured presenter \u00B7 Founder, Crisis Ready Institute (USA)",
-        bio: (
-          <>
-            Globally recognised authority on crisis communication and crisis leadership. Creator of the Crisis Ready<sup className="ml-0.5 align-super text-[10px]">®</sup> Model, presenting exclusively through My PR Partner in Australasia, with a dedicated session on protecting association reputation when the sector is under pressure.
-          </>
-        ),
-      },
     ],
-    footnote:
-      "Plus in-depth conversations with successful Australian association leaders, a specialist social media presenter, and a rotating panel of 10+ Australian PR, advocacy and communications experts across the year.",
   },
 
   testimonials: {
     eyebrow: "What Australian association leaders say",
-    heading: "Built on 15+ years of real work with Australian associations",
+    heading:
+      "My PR Partner is backed by a corporate PR company with proven expertise in the needs of industry associations",
     items: [
       {
         quote:
@@ -335,38 +324,38 @@ export const associationsContent: CourseContent = {
   },
 
   careerValue: {
-    eyebrow: "The value your association walks away with",
-    heading: "Outcomes that matter in the boardroom, the newsroom and Parliament House",
+    eyebrow: "What your team will learn",
+    heading: "Strategic outcomes your team will walk away with",
     items: [
       {
+        icon: Sparkles,
+        title: "Adopt a PR mindset",
+        body: "Equip your team to consider the public relations benefits and ramifications in everything they do.",
+      },
+      {
+        icon: HandHeart,
+        title: "Build a membership of advocates",
+        body: "Turn members into advocates, not adversaries, who genuinely trust and support your association.",
+      },
+      {
+        icon: MessageSquare,
+        title: "Communicate with emotional resonance",
+        body: "Connect powerfully with the people most important to your success through communication that resonates.",
+      },
+      {
         icon: Megaphone,
-        title: "Become the public voice",
-        body: "Position your association as the recognised, quoted voice of authority in your industry, above any competitor body.",
+        title: "Become the public voice of authority",
+        body: "Position your association as the recognised public voice of authority in your industry, above any others.",
       },
       {
         icon: Flag,
-        title: "Win advocacy battles",
-        body: "Use PR and earned media to build the public case behind every advocacy meeting and submission.",
+        title: "Boost advocacy and influence policy",
+        body: "Use PR and media strategies to strengthen your advocacy and influence policy and legislation.",
       },
       {
         icon: TrendingUp,
-        title: "Grow membership",
-        body: "Increase the felt value of membership so renewals stay strong and prospective members come to you.",
-      },
-      {
-        icon: Newspaper,
-        title: "Own the media moment",
-        body: "Turn media interest, good or bad, into a chance to lead the conversation in your sector.",
-      },
-      {
-        icon: Handshake,
-        title: "Deepen stakeholder trust",
-        body: "Build the kind of credibility with government, regulators and media that opens doors when it matters most.",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Be issues and crisis ready",
-        body: "Leave the year with frameworks, holding statements and a calm, repeatable response process for when the sector is under fire.",
+        title: "Build and retain more members",
+        body: "Grow membership and improve retention by increasing the felt value of belonging to your association.",
       },
     ],
   },
@@ -439,8 +428,6 @@ export const associationsContent: CourseContent = {
       "10% founding-member discount (first 50 association members)",
       "First access to enrolments before public release",
       "Full program outline and 12-month curriculum",
-      "Founders' welcome from Lyall and the team",
-      "Early invitation to a live walkthrough Q&A",
       "Updates on launch date and pricing tiers",
     ],
     waitlist: {
@@ -468,7 +455,6 @@ export const associationsContent: CourseContent = {
         "10% founding-member discount on year one",
         "First access to enrolment before public release",
         "Full program outline and 12-month curriculum",
-        "Early invitation to a live walkthrough Q&A",
       ],
       footnote:
         "We'll only email you about the Industry Associations Program. Unsubscribe at any time.",
@@ -490,39 +476,6 @@ export const associationsContent: CourseContent = {
     ],
     signoff: "Lyall Mercer and Barbara Gorogh, Co-founders",
     showCrcLogo: true,
-  },
-
-  groupBand: {
-    badge: "Multi-association and peak body enrolments",
-    badgeIcon: Users,
-    heading: "Train every association in your group or federation under one enrolment",
-    body:
-      "We work with peak bodies, federations and association groups on multi-organisation enrolments. Bulk rates, shared resources and an optional sector-wide tabletop or media-training day with CRC Public Relations are all on the table.",
-    bullets: [
-      "Discounted per-association pricing across a group",
-      "Shared dashboard across all participating organisations",
-      "Optional sector-wide tabletop or media-training day with CRC Public Relations",
-      "Sector-specific onboarding with the My PR Partner team",
-    ],
-    cta: { label: "Enquire about group enrolment", href: "/contact" },
-    ctaSubLabel: "We'll reply within one business day.",
-    bgImage: "/images/associations/associations-group-bg.jpg",
-  },
-
-  relatedProgram: {
-    eyebrow: "Want to go deeper on crisis?",
-    heading: "Add the Crisis Masterclass for your CEO and board chair",
-    body:
-      "The Industry Associations Program covers issues management and reputation defence. If your team wants the deepest crisis training available, with the full Melissa Agnes Crisis Ready\u00AE course and an Australian case-study library, enrol your CEO and board chair in the Crisis Masterclass alongside your association program.",
-    thumbImage: "/images/crisis-masterclass/hero-bg-crisis.jpg",
-    featureBullets: [
-      "Full 12-month Crisis Ready\u00AE course with Melissa Agnes",
-      "Australian crisis case-study library, updated monthly",
-      "Monthly live expert panel Q&A",
-      "Templates, holding statements and media playbooks",
-    ],
-    primaryCta: { label: "Learn about Crisis Masterclass", href: "/crisis-masterclass" },
-    secondaryCta: { label: "Talk to our team", href: "/contact" },
   },
 
   finalCta: {

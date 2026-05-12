@@ -20,7 +20,9 @@ export default function BodyWithSidebar({ content }: { content: CourseContent })
             <CourseStructure content={content.courseStructure} />
             <Personas content={content.personas} />
             <Instructors content={content.instructors} />
-            <Testimonials content={content.testimonials} />
+            {content.testimonials ? (
+              <Testimonials content={content.testimonials} />
+            ) : null}
             <CareerValue content={content.careerValue} />
             <FAQ content={content.faq} />
           </div>

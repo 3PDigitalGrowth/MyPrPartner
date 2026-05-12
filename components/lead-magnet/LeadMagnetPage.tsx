@@ -157,65 +157,45 @@ export function LeadMagnetPage({ config }: LeadMagnetPageProps) {
         {/* ── AUTHORITY / WHY TRUST US ── */}
         <section className="bg-[#F7F8FA]">
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
-            <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14 lg:items-center">
-              <div className="lg:col-span-7">
-                <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                  {config.authority.eyebrow}
-                </p>
-                <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[36px]">
-                  {config.authority.title}
-                </h2>
-                <p className="mt-5 text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                  {config.authority.body}
-                </p>
-                <ul className="mt-7 space-y-3">
-                  {config.authority.bullets.map((b) => (
-                    <li
-                      key={b}
-                      className="flex items-start gap-3 text-[15px] leading-relaxed text-text-dark"
+            <div className="mx-auto max-w-[760px]">
+              <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
+                {config.authority.eyebrow}
+              </p>
+              <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[36px]">
+                {config.authority.title}
+              </h2>
+              <p className="mt-5 text-[16px] leading-relaxed text-text-medium md:text-[17px]">
+                {config.authority.body}
+              </p>
+              <ul className="mt-7 space-y-3">
+                {config.authority.bullets.map((b) => (
+                  <li
+                    key={b}
+                    className="flex items-start gap-3 text-[15px] leading-relaxed text-text-dark"
+                  >
+                    <span
+                      aria-hidden
+                      className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full text-white"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #0B7A58 0%, #37B288 100%)",
+                      }}
                     >
-                      <span
-                        aria-hidden
-                        className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full text-white"
-                        style={{
-                          background:
-                            "linear-gradient(135deg, #0B7A58 0%, #37B288 100%)",
-                        }}
-                      >
-                        <Check className="h-3 w-3" />
-                      </span>
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-7 inline-flex items-center gap-3 rounded-full border border-[#E5E7EB] bg-white px-4 py-2 text-[13px] text-text-medium shadow-sm">
-                  <Image
-                    src="/images/powered-by-crc-badge.svg"
-                    alt="Powered by CRC Public Relations"
-                    width={22}
-                    height={22}
-                    className="h-5 w-5"
-                  />
-                  Powered by CRC Public Relations
-                </div>
-              </div>
-
-              <div className="lg:col-span-5">
-                <div className="grid grid-cols-2 gap-4">
-                  {config.authority.stats.map((s) => (
-                    <div
-                      key={s.label}
-                      className="rounded-card border border-[#E5E7EB] bg-white p-5 text-center shadow-sm"
-                    >
-                      <p className="font-heading text-[30px] font-bold leading-none text-text-dark md:text-[36px]">
-                        {s.value}
-                      </p>
-                      <p className="mt-2 text-[13px] leading-snug text-text-medium md:text-[13.5px]">
-                        {s.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                      <Check className="h-3 w-3" />
+                    </span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-7 inline-flex items-center gap-3 rounded-full border border-[#E5E7EB] bg-white px-4 py-2 text-[13px] text-text-medium shadow-sm">
+                <Image
+                  src="/images/powered-by-crc-badge.svg"
+                  alt="Powered by CRC Public Relations"
+                  width={22}
+                  height={22}
+                  className="h-5 w-5"
+                />
+                Powered by CRC Public Relations
               </div>
             </div>
           </div>

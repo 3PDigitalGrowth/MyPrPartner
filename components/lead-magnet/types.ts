@@ -7,11 +7,6 @@ export type LeadMagnetStep = {
   accent: string;
 };
 
-export type LeadMagnetStat = {
-  value: string;
-  label: string;
-};
-
 export type LeadMagnetTestimonial = {
   quote: string;
   name: string;
@@ -64,7 +59,6 @@ export type LeadMagnetConfig = {
     title: string;
     body: string;
     bullets: string[];
-    stats: LeadMagnetStat[];
   };
 
   testimonial: LeadMagnetTestimonial;

@@ -123,12 +123,6 @@ export const crisisChecklistConfig: LeadMagnetConfig = {
       "Covers the full arc - prevention, first-hour, sustained incident, recovery",
       "Designed for leaders to complete in under 10 minutes",
     ],
-    stats: [
-      { value: "15+", label: "Years of senior crisis advisory practice" },
-      { value: "10", label: "Checkpoints, scored honestly in 10 minutes" },
-      { value: "500+", label: "Communications professionals trained" },
-      { value: "100%", label: "CRC Public Relations client satisfaction rating" },
-    ],
   },
 
   testimonial: {

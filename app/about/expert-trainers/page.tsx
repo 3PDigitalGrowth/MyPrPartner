@@ -9,9 +9,6 @@ import {
   Megaphone,
   GraduationCap,
   Users,
-  Building2,
-  Briefcase,
-  Heart,
   Check,
   Globe2,
 } from "lucide-react";
@@ -72,7 +69,7 @@ const trainers: Trainer[] = [
     image: "/images/instructors/lyall-mercer.png",
     initials: "LM",
     palette: "navy",
-    programs: ["crisis", "schools", "associations", "business", "charity"],
+    programs: ["crisis", "schools", "associations", "business"],
   },
   {
     slug: "melissa-agnes",
@@ -96,7 +93,7 @@ const trainers: Trainer[] = [
     image: "/images/instructors/deborah-hileman.png",
     initials: "DH",
     palette: "plum",
-    programs: ["crisis", "associations", "business", "charity"],
+    programs: ["crisis"],
   },
   {
     slug: "tim-sterne",
@@ -120,7 +117,7 @@ const trainers: Trainer[] = [
     image: "/images/instructors/trevor-young.png",
     initials: "TY",
     palette: "ocean",
-    programs: ["associations", "business", "charity"],
+    programs: [],
   },
   {
     slug: "julie-mason",
@@ -132,7 +129,7 @@ const trainers: Trainer[] = [
     image: "/images/instructors/julie-mason.png",
     initials: "JM",
     palette: "sunset",
-    programs: ["business", "associations"],
+    programs: ["business"],
   },
   {
     slug: "karl-schwantes",
@@ -156,7 +153,7 @@ const trainers: Trainer[] = [
     image: "/images/instructors/petra-zink.png",
     initials: "PZ",
     palette: "plum",
-    programs: ["business", "associations"],
+    programs: ["business"],
   },
   {
     slug: "libby-marshall",
@@ -168,7 +165,7 @@ const trainers: Trainer[] = [
     image: "/images/instructors/libby-marshall.png",
     initials: "LM",
     palette: "ocean",
-    programs: ["business", "associations", "charity"],
+    programs: ["business"],
   },
   {
     slug: "jonathan-hawkes",
@@ -180,7 +177,7 @@ const trainers: Trainer[] = [
     image: "/images/instructors/jonathan-hawkes.png",
     initials: "JH",
     palette: "navy",
-    programs: ["associations", "charity"],
+    programs: ["associations"],
   },
   {
     slug: "vincent-potage",
@@ -192,7 +189,7 @@ const trainers: Trainer[] = [
     image: "/images/instructors/vincent-potage.png",
     initials: "VP",
     palette: "teal",
-    programs: ["business", "associations", "charity"],
+    programs: [],
   },
   {
     slug: "cavill-stone",
@@ -204,7 +201,7 @@ const trainers: Trainer[] = [
     image: "/images/instructors/cavill-stone.png",
     initials: "CS",
     palette: "sunset",
-    programs: ["business", "associations", "charity"],
+    programs: ["business", "charity"],
   },
 ];
 
@@ -228,15 +225,15 @@ const specialtyGroups: SpecialtyGroup[] = [
     blurb:
       "Practitioners who've stood beside governments, boards and CEOs through their hardest days.",
     icon: Shield,
-    trainers: ["lyall-mercer", "melissa-agnes", "deborah-hileman", "jonathan-hawkes"],
+    trainers: ["lyall-mercer", "melissa-agnes", "deborah-hileman"],
   },
   {
     id: "media",
-    label: "Media, content & digital",
+    label: "Media, content, digital & advocacy",
     blurb:
-      "Journalists, strategists and podcasters who know how to earn attention and keep it.",
+      "Journalists, strategists, podcasters and campaigners who know how to earn attention, shape the conversation and influence outcomes.",
     icon: Newspaper,
-    trainers: ["trevor-young", "cavill-stone", "vincent-potage", "julie-mason"],
+    trainers: ["trevor-young", "jonathan-hawkes", "cavill-stone", "vincent-potage", "julie-mason"],
   },
   {
     id: "growth",
@@ -306,69 +303,20 @@ function TrainerAvatar({ trainer, size = 96 }: { trainer: Trainer; size?: number
 }
 
 // ──────────────────────────────────────────────────────────────────────────────
-// Program catalogue - used in the "Matched to your program" CRO band so visitors
-// land from the trainers page into the right enrolment path.
+// Program catalogue - used by the per-trainer chips in TrainerCard footers to
+// link a trainer back to the matching program/course page.
 // ──────────────────────────────────────────────────────────────────────────────
 
 const programCatalogue: Array<{
   id: Trainer["programs"][number];
   href: string;
   label: string;
-  icon: typeof Shield;
-  intro: string;
-  cta: string;
-  accent: "teal" | "navy";
 }> = [
-  {
-    id: "crisis",
-    href: "/crisis-masterclass",
-    label: "Crisis Masterclass",
-    icon: Shield,
-    intro:
-      "Australia's premier 12-month crisis communications program, presented with Melissa Agnes.",
-    cta: "Explore the masterclass",
-    accent: "navy",
-  },
-  {
-    id: "schools",
-    href: "/programs/schools",
-    label: "Schools Program",
-    icon: GraduationCap,
-    intro:
-      "Reputation, safeguarding communications and media training built for Australian schools.",
-    cta: "Explore schools program",
-    accent: "teal",
-  },
-  {
-    id: "associations",
-    href: "/programs/industry-associations",
-    label: "Industry Associations",
-    icon: Building2,
-    intro:
-      "Advocacy, member growth and crisis-ready communications for peak and member bodies.",
-    cta: "Join the waitlist",
-    accent: "teal",
-  },
-  {
-    id: "business",
-    href: "/programs/business",
-    label: "Business Program",
-    icon: Briefcase,
-    intro:
-      "Brand, growth and reputation training for business owners, founders and marketing leads.",
-    cta: "Join the waitlist",
-    accent: "teal",
-  },
-  {
-    id: "charity",
-    href: "/programs/charity",
-    label: "Charity & Not-for-Profit",
-    icon: Heart,
-    intro:
-      "Donor trust, fundraising and governance-ready PR for Australian NFPs and charities.",
-    cta: "Join the waitlist",
-    accent: "teal",
-  },
+  { id: "crisis", href: "/crisis-masterclass", label: "Crisis Masterclass" },
+  { id: "schools", href: "/programs/schools", label: "Schools Program" },
+  { id: "associations", href: "/programs/industry-associations", label: "Industry Associations" },
+  { id: "business", href: "/programs/business", label: "Business Program" },
+  { id: "charity", href: "/programs/charity", label: "Charity & Not-for-Profit" },
 ];
 
 // ──────────────────────────────────────────────────────────────────────────────
@@ -611,83 +559,6 @@ export default function ExpertTrainersPage() {
               Partner community - there are many more specialists across every
               area of public relations, reputation, media and crisis.
             </p>
-          </div>
-        </section>
-
-        {/* ── MATCHED TO YOUR PROGRAM (CRO BAND) ── */}
-        <section className="bg-[#F7F8FA]">
-          <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
-            <div className="mx-auto max-w-[760px] text-center">
-              <SectionEyebrow>Matched to your program</SectionEyebrow>
-              <SectionHeading>
-                Learn from the right trainers for your organisation
-              </SectionHeading>
-              <p className="mx-auto mt-4 max-w-[620px] text-[16px] text-text-medium md:text-[17px]">
-                Every My PR Partner program is curated so you hear from the
-                specialists who matter most to your sector. Pick your path
-                below and see who&apos;s teaching.
-              </p>
-            </div>
-            <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {programCatalogue.map((prog) => {
-                const Icon = prog.icon;
-                const matched = trainers.filter((t) => t.programs.includes(prog.id));
-                const accentBg =
-                  prog.accent === "navy" ? paletteGradients.navy : paletteGradients.teal;
-                return (
-                  <article
-                    key={prog.id}
-                    className="flex h-full flex-col overflow-hidden rounded-card border border-[#E5E7EB] bg-white shadow-sm transition-shadow hover:shadow-card"
-                  >
-                    <div
-                      className="flex items-center gap-3 px-6 py-5 text-white"
-                      style={{ background: accentBg }}
-                    >
-                      <Icon className="h-5 w-5" aria-hidden />
-                      <h3 className="font-heading text-[18px] font-bold">{prog.label}</h3>
-                    </div>
-                    <div className="flex flex-1 flex-col p-6">
-                      <p className="text-[14.5px] leading-relaxed text-text-medium">
-                        {prog.intro}
-                      </p>
-                      <div className="mt-5">
-                        <p className="text-[11.5px] font-medium uppercase tracking-[0.12em] text-text-medium">
-                          Presented by
-                        </p>
-                        <div className="mt-3 flex flex-wrap gap-2.5">
-                          {matched.slice(0, 5).map((t) => (
-                            <div
-                              key={t.slug}
-                              className="flex items-center gap-2 rounded-full border border-[#EEF0F3] bg-[#F7F8FA] px-2.5 py-1.5"
-                              title={`${t.name} - ${t.org}`}
-                            >
-                              <TrainerAvatar trainer={t} size={24} />
-                              <span className="pr-1 text-[12.5px] font-medium text-text-dark">
-                                {t.name}
-                              </span>
-                            </div>
-                          ))}
-                          {matched.length > 5 ? (
-                            <span className="inline-flex items-center rounded-full border border-[#EEF0F3] bg-white px-3 py-1.5 text-[12px] text-text-medium">
-                              +{matched.length - 5} more
-                            </span>
-                          ) : null}
-                        </div>
-                      </div>
-                      <div className="mt-auto pt-6">
-                        <Link
-                          href={prog.href}
-                          className="inline-flex items-center gap-2 text-[14px] font-semibold text-teal transition-colors hover:text-teal-dark"
-                        >
-                          {prog.cta}
-                          <ArrowRight className="h-4 w-4" aria-hidden />
-                        </Link>
-                      </div>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
           </div>
         </section>
 
