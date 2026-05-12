@@ -269,7 +269,7 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
               {[
                 { icon: Building2, line1: "Powered by CRC Public Relations", line2: "Established 2010" },
-                { icon: Users, line1: "10+ expert presenters", line2: "National & international specialists" },
+                { icon: Users, line1: "9 expert presenters", line2: "National & international specialists" },
                 { icon: GraduationCap, line1: "Tailored for 4 sectors", line2: "Business, charity, schools & associations" },
                 { icon: MonitorPlay, line1: "100% online", line2: "Learn at your own pace, anywhere" },
               ].map((item, i) => (
@@ -430,7 +430,7 @@ export default function Home() {
             </div>
             <div className="mt-8 text-center animate-fade-in-up">
               <p className="mx-auto max-w-[620px] text-[15px] leading-relaxed text-text-medium">
-                Plus more than 10 national and international expert presenters across the My PR Partner programs.
+                Plus 9 national and international expert presenters across the My PR Partner programs.
               </p>
               <Link href="/about/expert-trainers" className="mt-4 inline-block text-[15px] font-medium text-teal hover:text-teal-dark transition-colors">
                 Meet the full expert trainer panel &rarr;
