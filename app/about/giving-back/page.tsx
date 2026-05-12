@@ -665,7 +665,7 @@ export default function GivingBackPage() {
               </SectionHeading>
               <p className="mx-auto mt-4 max-w-[600px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
                 My PR Partner is powered by CRC Public Relations - a boutique
-                senior-adviser firm with 25+ years advising across Australia
+                senior-adviser firm with 15+ years advising across Australia
                 and the Pacific. Every subscription funds capability in your
                 team and projects like these on behalf of Compassion.
               </p>

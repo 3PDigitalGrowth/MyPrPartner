@@ -507,7 +507,7 @@ export default function ExpertTrainersPage() {
                   />
                 </div>
                 <span aria-hidden className="text-white/30">|</span>
-                <span>25+ years of specialist PR consulting</span>
+                <span>15+ years of specialist PR consulting</span>
                 <span aria-hidden className="text-white/30">|</span>
                 <span>Presenters across 4 continents</span>
               </div>

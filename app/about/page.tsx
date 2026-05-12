@@ -21,7 +21,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Our Story - My PR Partner, Powered by CRC Public Relations",
   description:
-    "My PR Partner is the training platform powered by CRC Public Relations - a boutique senior-adviser firm with 25+ years of crisis, reputation and corporate communications experience across Australia and the Pacific.",
+    "My PR Partner is the training platform powered by CRC Public Relations - a boutique senior-adviser firm with 15+ years of crisis, reputation and corporate communications experience across Australia and the Pacific.",
   alternates: { canonical: "https://myprpartner.com/about" },
   openGraph: {
     title: "Our Story - My PR Partner, Powered by CRC Public Relations",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Our Story - My PR Partner, Powered by CRC Public Relations",
     description:
-      "Senior counsel, not account managers. The boutique firm behind My PR Partner, 25+ years advising at the highest levels.",
+      "Senior counsel, not account managers. The boutique firm behind My PR Partner, 15+ years advising at the highest levels.",
     images: ["/images/crisis-masterclass/hero-portrait-crisis.jpg"],
   },
 };
@@ -67,7 +67,7 @@ const whyPillars = [
 ];
 
 const stats = [
-  { figure: "25+", label: "Years of senior advisory behind every program" },
+  { figure: "15+", label: "Years of senior advisory behind every program" },
   { figure: "Global Reach", label: "Support Businesses Everywhere" },
   { figure: "100%", label: "CRC Public Relations client satisfaction rating" },
   { figure: "500+", label: "Professionals trained through our programs" },
@@ -227,7 +227,7 @@ export default function AboutPage() {
                 <p className="mt-5 max-w-[640px] text-[16px] leading-relaxed text-white/85 md:text-[18px]">
                   My PR Partner is the online training platform built and
                   delivered by the senior advisers at CRC Public Relations
-                  - the boutique Australian firm that has spent 25+ years
+                  - the boutique Australian firm that has spent 15+ years
                   inside real boardrooms, real crises, and real high-stakes
                   decisions. We built My PR Partner because that experience
                   doesn&apos;t belong behind a consulting-firm paywall.
@@ -356,7 +356,7 @@ export default function AboutPage() {
                     managers or junior staff.
                   </p>
                   <p>
-                    For 25+ years CRC Public Relations has honoured that
+                    For 15+ years CRC Public Relations has honoured that
                     principle for a deliberately short list of clients. My PR
                     Partner carries the same principle into online training:
                     no recycled content, no off-the-shelf templates from
@@ -442,7 +442,7 @@ export default function AboutPage() {
               <SectionEyebrow>Our mission</SectionEyebrow>
               <p className="mt-4 font-heading text-[22px] font-medium leading-[1.35] text-text-dark md:text-[28px]">
                 CRC Public Relations can only advise so many clients directly.
-                My PR Partner is how 25+ years of senior-level judgement -
+                My PR Partner is how 15+ years of senior-level judgement -
                 real boardrooms, real crises, real decisions - becomes a
                 program your team can enrol in today.
               </p>
@@ -669,7 +669,7 @@ export default function AboutPage() {
                 in a program you can enrol in today?
               </SectionHeading>
               <p className="mx-auto mt-4 max-w-[600px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                My PR Partner is how CRC Public Relations opens up 25+ years of
+                My PR Partner is how CRC Public Relations opens up 15+ years of
                 corporate, crisis and reputation experience to organisations
                 that can&apos;t all engage the firm directly. Pick the program
                 built for your sector.

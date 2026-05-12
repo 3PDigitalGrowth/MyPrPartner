@@ -34,7 +34,7 @@ export const schoolsContent: CourseContent = {
     metaTitle:
       "Schools PR Program | Communications, Reputation & Crisis Training for Australian Schools | My PR Partner",
     metaDescription:
-      "A 12-month online PR and crisis training program for Australian school leadership teams. Principals, executive leaders, communications staff and crisis response teams learn together. Built by CRC Public Relations with 25+ years of schools experience.",
+      "A 12-month online PR and crisis training program for Australian school leadership teams. Principals, executive leaders, communications staff and crisis response teams learn together. Built by CRC Public Relations with 15+ years of schools experience.",
     canonicalUrl: `${SITE}${PAGE_PATH}`,
     ogImage: HERO_IMAGE,
     twitterTitle: "Schools PR Program | My PR Partner",
@@ -53,7 +53,7 @@ export const schoolsContent: CourseContent = {
       {
         name: "Lyall Mercer",
         description:
-          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 25+ years of PR and crisis consulting with Australian schools, charities and associations.",
+          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 15+ years of PR and crisis consulting with Australian schools, charities and associations.",
       },
       {
         name: "Tim Sterne",
@@ -96,7 +96,7 @@ export const schoolsContent: CourseContent = {
     portraitCallout: {
       eyebrow: "Trusted by",
       title: <>Australia's leading independent, faith-based and diocesan schools</>,
-      sub: "Powered by CRC Public Relations, with 25+ years in the sector",
+      sub: "Powered by CRC Public Relations, with 15+ years in the sector",
     },
     trustStrip: {
       poweredByCrcLogo: true,
@@ -130,7 +130,7 @@ export const schoolsContent: CourseContent = {
       "Affordable PR training, resources and support that enables your whole school team",
     paragraphs: [
       "The My PR Partner Schools Program is a 12-month online training program designed for busy Australian school professionals. Each team member learns at a time that suits them, and content is built with the full range of school roles in mind, so your whole team shares the same language and supports each other when it matters most.",
-      "Built by CRC Public Relations, this is the distilled version of 25+ years of sitting beside Australian schools through their biggest PR moments, from proud media wins to the toughest allegations, governance challenges and tragedies no school wants to face.",
+      "Built by CRC Public Relations, this is the distilled version of 15+ years of sitting beside Australian schools through their biggest PR moments, from proud media wins to the toughest allegations, governance challenges and tragedies no school wants to face.",
     ],
     keyLearningsTitle: "Why school leaders choose this program",
     keyLearnings: [
@@ -313,7 +313,7 @@ export const schoolsContent: CourseContent = {
 
   testimonials: {
     eyebrow: "What Australian schools and sector leaders say",
-    heading: "Built on 25+ years of real work with Australian schools",
+    heading: "Built on 15+ years of real work with Australian schools",
     items: [
       {
         quote:

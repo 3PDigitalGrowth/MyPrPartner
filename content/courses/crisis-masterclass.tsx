@@ -50,7 +50,7 @@ export const crisisMasterclassContent: CourseContent = {
       {
         name: "Lyall Mercer",
         description:
-          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 25+ years in crisis and corporate PR.",
+          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 15+ years in crisis and corporate PR.",
       },
       {
         name: "Melissa Agnes",
@@ -121,7 +121,7 @@ export const crisisMasterclassContent: CourseContent = {
     paragraphs: [
       "Crisis Masterclass is a 12-month online course and program built for Australian organisations that can't afford to get crisis communications wrong. Whether you lead PR for a growing business, sit on a charity board, run an industry association, or manage reputation for a school community, this program gives you the practical skills, templates and expert guidance to handle any reputation threat with confidence.",
       <>
-        The program blends CRC Public Relations' 25+ years of Australian crisis consulting experience with the globally recognised Crisis Ready<sup className="ml-0.5 align-super text-[10px]">®</sup> methodology from Melissa Agnes, available exclusively through My PR Partner in Australasia. You'll work through Australian case studies, build your own crisis plan, and get ongoing support from our expert panel.
+        The program blends CRC Public Relations' 15+ years of Australian crisis consulting experience with the globally recognised Crisis Ready<sup className="ml-0.5 align-super text-[10px]">®</sup> methodology from Melissa Agnes, available exclusively through My PR Partner in Australasia. You'll work through Australian case studies, build your own crisis plan, and get ongoing support from our expert panel.
       </>,
     ],
     keyLearningsTitle: "Key learnings in this online course",
@@ -266,7 +266,7 @@ export const crisisMasterclassContent: CourseContent = {
         image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
-        bio: "Former journalist with a 25-year PR career spanning six continents. Lyall has consulted to national and international companies, governments, executives and industry leaders in crisis communications and reputation management.",
+        bio: "Former journalist with a 15+ year PR career spanning six continents. Lyall has consulted to national and international companies, governments, executives and industry leaders in crisis communications and reputation management.",
       },
       {
         image: "/images/instructors/melissa-agnes.png",

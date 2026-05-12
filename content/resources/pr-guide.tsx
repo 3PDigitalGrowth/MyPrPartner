@@ -80,13 +80,13 @@ export const prGuideConfig: LeadMagnetConfig = {
     title: "Written by senior advisers, not marketers.",
     body: "My PR Partner is powered by CRC Public Relations - a boutique firm that has spent 15+ years counselling boards, CEOs, governments, associations and schools through the moments that matter most. This guide is the foundational framework senior advisers walk new clients through on day one.",
     bullets: [
-      "Distilled from 25+ years of senior crisis, reputation and corporate communications practice",
+      "Distilled from 15+ years of senior crisis, reputation and corporate communications practice",
       "Used as the onboarding framework for organisations across Australia and the Pacific",
       "Written for leaders - clear, practical, and free of PR jargon",
       "Focused on what actually moves the needle, not vanity metrics",
     ],
     stats: [
-      { value: "25+", label: "Years advising on high-stakes communications" },
+      { value: "15+", label: "Years advising on high-stakes communications" },
       { value: "500+", label: "Communications professionals trained" },
       { value: "100%", label: "CRC Public Relations client satisfaction rating" },
       { value: "1:1", label: "Direct access to senior advisers - no juniors" },

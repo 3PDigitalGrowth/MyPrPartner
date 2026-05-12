@@ -298,7 +298,7 @@ const finalFunnel = [
     icon: Newspaper,
     eyebrow: "Read first",
     title: "Articles & insights",
-    body: "Practical PR tips and senior-adviser commentary on reputation, media, crisis and brand - built up over 25+ years.",
+    body: "Practical PR tips and senior-adviser commentary on reputation, media, crisis and brand - built up over 15+ years.",
     cta: "Read the articles",
     accent: "linear-gradient(135deg, #0B7A58 0%, #37B288 100%)",
   },

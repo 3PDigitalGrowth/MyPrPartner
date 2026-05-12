@@ -46,7 +46,7 @@ export const associationsContent: CourseContent = {
     metaTitle:
       "Industry & Professional Associations PR Program | Advocacy, Reputation & Member Engagement Training | My PR Partner",
     metaDescription:
-      "A 12-month online PR, advocacy and reputation program for Australian industry, trade and professional association leadership teams. Built by CRC Public Relations with 25+ years of association experience. Join the waitlist - first 50 association members save 10%.",
+      "A 12-month online PR, advocacy and reputation program for Australian industry, trade and professional association leadership teams. Built by CRC Public Relations with 15+ years of association experience. Join the waitlist - first 50 association members save 10%.",
     canonicalUrl: `${SITE}${PAGE_PATH}`,
     ogImage: HERO_IMAGE,
     twitterTitle: "Industry & Professional Associations PR Program | My PR Partner",
@@ -65,7 +65,7 @@ export const associationsContent: CourseContent = {
       {
         name: "Lyall Mercer",
         description:
-          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 25+ years of PR consulting with industry, trade and professional associations across Australia, New Zealand and the USA.",
+          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 15+ years of PR consulting with industry, trade and professional associations across Australia, New Zealand and the USA.",
       },
     ],
   },
@@ -105,7 +105,7 @@ export const associationsContent: CourseContent = {
     portraitCallout: {
       eyebrow: "Trusted by",
       title: <>National and state associations across Australia</>,
-      sub: "Powered by CRC Public Relations, with 25+ years in the sector",
+      sub: "Powered by CRC Public Relations, with 15+ years in the sector",
     },
     trustStrip: {
       poweredByCrcLogo: true,
@@ -139,7 +139,7 @@ export const associationsContent: CourseContent = {
       "Affordable PR training, resources and support that enables your whole association team",
     paragraphs: [
       "The My PR Partner Industry & Professional Associations Program is a 12-month online training program designed for busy association professionals. Each team member learns at a time that suits them, and content is built with the full range of association roles in mind, so your CEO, executive, communications, marketing and membership teams share the same language and pull in the same direction.",
-      "Built by CRC Public Relations, this is the distilled version of 25+ years of working alongside Australian state and national industry, trade and professional associations through their biggest moments, from major advocacy wins and national media campaigns to the hardest sector-defining issues.",
+      "Built by CRC Public Relations, this is the distilled version of 15+ years of working alongside Australian state and national industry, trade and professional associations through their biggest moments, from major advocacy wins and national media campaigns to the hardest sector-defining issues.",
     ],
     keyLearningsTitle: "Why association leaders choose this program",
     keyLearnings: [
@@ -308,7 +308,7 @@ export const associationsContent: CourseContent = {
 
   testimonials: {
     eyebrow: "What Australian association leaders say",
-    heading: "Built on 25+ years of real work with Australian associations",
+    heading: "Built on 15+ years of real work with Australian associations",
     items: [
       {
         quote:
@@ -529,7 +529,7 @@ export const associationsContent: CourseContent = {
       "Enrolments open soon. Founding-member associations save 10% on year one and get first access before public release. Lock in your association's place today.",
     primaryCtaLabel: "Join the waitlist",
     secondaryCta: { label: "Talk to our associations team", href: "/contact" },
-    footnote: "Powered by CRC Public Relations. 25+ years working with Australian associations.",
+    footnote: "Powered by CRC Public Relations. 15+ years working with Australian associations.",
     bgImage: "/images/associations/associations-final-cta-bg.jpg",
   },
 

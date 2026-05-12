@@ -48,7 +48,7 @@ export const charityContent: CourseContent = {
     metaTitle:
       "Charity & Not-for-Profit PR Program | Donor Trust, Fundraising & Reputation Training | My PR Partner",
     metaDescription:
-      "A 12-month online PR, donor trust and reputation program for Australian charities and not-for-profits - executive directors, boards, fundraising and communications teams. Built by CRC Public Relations with 25+ years of NFP sector experience. Join the waitlist - first 50 charities save 10%.",
+      "A 12-month online PR, donor trust and reputation program for Australian charities and not-for-profits - executive directors, boards, fundraising and communications teams. Built by CRC Public Relations with 15+ years of NFP sector experience. Join the waitlist - first 50 charities save 10%.",
     canonicalUrl: `${SITE}${PAGE_PATH}`,
     ogImage: HERO_IMAGE,
     twitterTitle: "Charity & Not-for-Profit PR Program | My PR Partner",
@@ -67,7 +67,7 @@ export const charityContent: CourseContent = {
       {
         name: "Lyall Mercer",
         description:
-          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 25+ years of PR consulting with Australian charities, not-for-profits and community organisations across Australia, New Zealand and the USA.",
+          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 15+ years of PR consulting with Australian charities, not-for-profits and community organisations across Australia, New Zealand and the USA.",
       },
     ],
   },
@@ -108,7 +108,7 @@ export const charityContent: CourseContent = {
     portraitCallout: {
       eyebrow: "Trusted by",
       title: <>Australian charities from community services to national foundations</>,
-      sub: "Powered by CRC Public Relations, with 25+ years in the Australian not-for-profit sector",
+      sub: "Powered by CRC Public Relations, with 15+ years in the Australian not-for-profit sector",
     },
     trustStrip: {
       poweredByCrcLogo: true,
@@ -142,7 +142,7 @@ export const charityContent: CourseContent = {
       "Affordable PR training, resources and support that enables your whole charity team",
     paragraphs: [
       "The My PR Partner Charity & Not-for-Profit Program is a 12-month online training program designed for busy Australian charity and not-for-profit leaders. Each team member learns at a time that suits them, and content is built for the full range of NFP roles so your executive director, board, fundraising, communications and community engagement teams share the same language and pull in the same direction.",
-      "Built by CRC Public Relations, this is the distilled version of 25+ years of working alongside Australian charities, not-for-profits and community organisations through their biggest moments - from record fundraising campaigns and national awareness wins to the hardest moments when a sensitive issue or public scrutiny threatened the mission.",
+      "Built by CRC Public Relations, this is the distilled version of 15+ years of working alongside Australian charities, not-for-profits and community organisations through their biggest moments - from record fundraising campaigns and national awareness wins to the hardest moments when a sensitive issue or public scrutiny threatened the mission.",
       <blockquote
         key="buffett-quote"
         className="mt-2 rounded-xl border-l-4 border-teal bg-[#F7F8FA] px-6 py-5 italic text-text-dark"
@@ -323,7 +323,7 @@ export const charityContent: CourseContent = {
 
   testimonials: {
     eyebrow: "What Australian charity leaders say",
-    heading: "Built on 25+ years of real work with Australian charities and not-for-profits",
+    heading: "Built on 15+ years of real work with Australian charities and not-for-profits",
     items: [
       {
         quote:
@@ -551,7 +551,7 @@ export const charityContent: CourseContent = {
       "Enrolments open soon. Founding-member charities save 10% on year one and get first access before public release. Lock in your charity's place today.",
     primaryCtaLabel: "Join the waitlist",
     secondaryCta: { label: "Talk to our charity team", href: "/contact" },
-    footnote: "Powered by CRC Public Relations. 25+ years working with Australian charities and not-for-profits.",
+    footnote: "Powered by CRC Public Relations. 15+ years working with Australian charities and not-for-profits.",
     bgImage: "/images/charity/charity-final-cta-bg.jpg",
   },
 

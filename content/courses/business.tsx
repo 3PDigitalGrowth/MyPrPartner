@@ -47,7 +47,7 @@ export const businessContent: CourseContent = {
     metaTitle:
       "Business PR, Profile & Crisis Communications Program | Build Trust, Grow & Protect Your Reputation | My PR Partner",
     metaDescription:
-      "A 12-month online PR, profile, reputation and crisis communications program for Australian business owners, founders and leadership teams. Built by CRC Public Relations with 25+ years of business PR experience. Join the waitlist - first 50 businesses save 10%.",
+      "A 12-month online PR, profile, reputation and crisis communications program for Australian business owners, founders and leadership teams. Built by CRC Public Relations with 15+ years of business PR experience. Join the waitlist - first 50 businesses save 10%.",
     canonicalUrl: `${SITE}${PAGE_PATH}`,
     ogImage: HERO_IMAGE,
     twitterTitle: "Business PR & Reputation Program | My PR Partner",
@@ -66,7 +66,7 @@ export const businessContent: CourseContent = {
       {
         name: "Lyall Mercer",
         description:
-          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 25+ years of PR consulting with businesses across Australia, New Zealand and the USA.",
+          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 15+ years of PR consulting with businesses across Australia, New Zealand and the USA.",
       },
     ],
   },
@@ -107,7 +107,7 @@ export const businessContent: CourseContent = {
     portraitCallout: {
       eyebrow: "Trusted by",
       title: <>Australian businesses from cafés to national brands</>,
-      sub: "Powered by CRC Public Relations, with 25+ years in Australian business PR",
+      sub: "Powered by CRC Public Relations, with 15+ years in Australian business PR",
     },
     trustStrip: {
       poweredByCrcLogo: true,
@@ -141,7 +141,7 @@ export const businessContent: CourseContent = {
       "Affordable PR training, resources and support that enables your whole business team",
     paragraphs: [
       "The My PR Partner Business Program is a 12-month online training program designed for busy Australian business owners. Each team member learns at a time that suits them, and content is built with the full range of business roles in mind, so your owners, executive, marketing, communications and client-facing teams share the same language and pull in the same direction.",
-      "Built by CRC Public Relations, this is the distilled version of 25+ years of working alongside Australian businesses through their biggest moments, from proud growth stories and national media wins to the hardest moments when their reputation came under pressure.",
+      "Built by CRC Public Relations, this is the distilled version of 15+ years of working alongside Australian businesses through their biggest moments, from proud growth stories and national media wins to the hardest moments when their reputation came under pressure.",
       <blockquote
         key="buffett-quote"
         className="mt-2 rounded-xl border-l-4 border-teal bg-[#F7F8FA] px-6 py-5 italic text-text-dark"
@@ -322,7 +322,7 @@ export const businessContent: CourseContent = {
 
   testimonials: {
     eyebrow: "What Australian business leaders say",
-    heading: "Built on 25+ years of real work with Australian businesses",
+    heading: "Built on 15+ years of real work with Australian businesses",
     items: [
       {
         quote:
@@ -545,7 +545,7 @@ export const businessContent: CourseContent = {
       "Enrolments open soon. Founding-member businesses save 10% on year one and get first access before public release. Lock in your business's place today.",
     primaryCtaLabel: "Join the waitlist",
     secondaryCta: { label: "Talk to our business team", href: "/contact" },
-    footnote: "Powered by CRC Public Relations. 25+ years working with Australian businesses.",
+    footnote: "Powered by CRC Public Relations. 15+ years working with Australian businesses.",
     bgImage: "/images/business/business-final-cta-bg.jpg",
   },
 

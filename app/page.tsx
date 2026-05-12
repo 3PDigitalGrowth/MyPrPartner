@@ -407,7 +407,7 @@ export default function Home() {
                   name: "Lyall Mercer",
                   developer: "Training developer - Business, charity, schools, industry associations",
                   title: "Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
-                  bio: "Former journalist and 25-year PR career spanning six continents. Lyall has consulted to national and international companies, governments, executives, heads of state, and industry leaders in the areas of corporate communication, reputation and issues management, and crisis communications. He has worked with more than 30 industry and professional associations and more than 100 schools across every Australian state.",
+                  bio: "Former journalist with a 15+ year PR career spanning six continents. Lyall has consulted to national and international companies, governments, executives, heads of state, and industry leaders in the areas of corporate communication, reputation and issues management, and crisis communications. He has worked with more than 30 industry and professional associations and more than 100 schools across every Australian state.",
                 },
                 {
                   image: "/images/instructors/melissa-agnes.png",
