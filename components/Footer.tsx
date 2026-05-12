@@ -128,7 +128,7 @@ export default function Footer() {
               </p>
               <div className="mt-3 flex items-center gap-3">
                 <a
-                  href="https://www.linkedin.com/company/my-pr-partner"
+                  href="https://www.linkedin.com/company/my-prpartner/?viewAsMember=true"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="My PR Partner on LinkedIn"

@@ -317,9 +317,9 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in-up">
               {[
-                { image: "/images/card-schools.jpg", title: "Schools program", description: "Professional development in PR, media and crisis communications for school leaders and staff.", alt: "School principal speaking to media", href: "/programs/schools" },
-                { image: "/images/card-associations.jpg", title: "Industry & professional associations program", description: "Practical PR skills and resources for association leaders and member organisations.", alt: "Boardroom meeting with association members", href: "/programs/industry-associations" },
-                { image: "/images/card-crisis-masterclass.jpg", title: "Crisis masterclass", description: "Australia\u2019s premier crisis communications training program with Melissa Agnes and expert panel.", alt: "PR consultant presenting in training room", href: "/crisis-masterclass" },
+                { image: "/images/card-schools.jpg", title: "Schools program", description: "Professional development in PR, media and crisis communications for school leaders and staff.", alt: "School leaders undertaking online PR and crisis communications training", href: "/programs/schools" },
+                { image: "/images/card-associations.jpg", title: "Industry & professional associations program", description: "Practical PR skills and resources for association leaders and member organisations.", alt: "Association leaders undertaking online PR training in a boardroom", href: "/programs/industry-associations" },
+                { image: "/images/card-crisis-masterclass.jpg", title: "Crisis masterclass", description: "Australia\u2019s premier crisis communications training program with Melissa Agnes and expert panel.", alt: "Communications professional undertaking an online crisis communications masterclass", href: "/crisis-masterclass" },
               ].map((program) => (
                 <div key={program.title} className="bg-white rounded-card shadow-card overflow-hidden flex flex-col">
                   <div className="relative aspect-video">
