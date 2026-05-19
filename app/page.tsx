@@ -191,7 +191,7 @@ export default function Home() {
                     Online public relations training, resources &amp; support
                   </h1>
                   <p className="mt-4 mx-auto max-w-[600px] text-[20px] text-text-medium">
-                    Tailored programs backed by 15+ years of corporate PR, reputation and crisis and consulting experience
+                    Tailored programs backed by 25+ years of corporate PR, reputation and crisis and consulting experience
                   </p>
                   <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <Link href="#programs" className="rounded-full bg-teal px-7 py-3 text-sm font-medium text-white hover:bg-teal-dark transition-colors">
@@ -269,7 +269,7 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
               {[
                 { icon: Building2, line1: "Powered by CRC Public Relations", line2: "Established 2010" },
-                { icon: Users, line1: "9 expert presenters", line2: "National & international specialists" },
+                { icon: Users, line1: "Expert presenters", line2: "National & international specialists" },
                 { icon: GraduationCap, line1: "Tailored for 4 sectors", line2: "Business, charity, schools & associations" },
                 { icon: MonitorPlay, line1: "100% online", line2: "Learn at your own pace, anywhere" },
               ].map((item, i) => (
@@ -353,7 +353,7 @@ export default function Home() {
                 { icon: FileDown, title: "Downloadable workbooks", text: "Fillable PDF workbooks and templates for each module. Build your crisis plan, media response guide, and communications toolkit." },
                 { icon: Mail, title: "Fortnightly spotlights", text: "Regular email updates with curated PR insights, industry analysis, and practical tips from our expert panel." },
                 { icon: MessageSquare, title: "Member portal & Q&A", text: "Submit questions and access all your training content through the secure member dashboard." },
-                { icon: Phone, title: "CRC Public Relations support", text: "Higher-tier subscribers get personal direct phone, email and video access to CRC Public Relations consultants." },
+                { icon: Phone, title: "CRC Public Relations support", text: "Support-tier subscribers get personal direct phone, email and video access to CRC Public Relations consultants." },
                 { icon: Award, title: "Exclusive partnerships", text: "Access the world-leading Crisis Ready\u00AE program from Melissa Agnes of Crisis Ready Institute USA, available exclusively through My PR Partner in Australasia." },
               ].map((block) => (
                 <div key={block.title} className="text-center md:text-left">
