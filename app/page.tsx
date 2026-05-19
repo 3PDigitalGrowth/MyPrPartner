@@ -430,7 +430,7 @@ export default function Home() {
             </div>
             <div className="mt-8 text-center animate-fade-in-up">
               <p className="mx-auto max-w-[620px] text-[15px] leading-relaxed text-text-medium">
-                Plus 9 national and international expert presenters across the My PR Partner programs.
+                Plus national and international expert presenters across the My PR Partner programs.
               </p>
               <Link href="/about/expert-trainers" className="mt-4 inline-block text-[15px] font-medium text-teal hover:text-teal-dark transition-colors">
                 Meet the full expert trainer panel &rarr;
