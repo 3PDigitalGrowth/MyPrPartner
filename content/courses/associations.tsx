@@ -65,7 +65,7 @@ export const associationsContent: CourseContent = {
       {
         name: "Lyall Mercer",
         description:
-          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 15+ years of PR consulting with industry, trade and professional associations across Australia, New Zealand and the USA.",
+          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 25+ years of PR consulting with industry, trade and professional associations across Australia, New Zealand and the USA.",
       },
     ],
   },
@@ -289,7 +289,7 @@ export const associationsContent: CourseContent = {
         image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
-        bio: "Former journalist with a 15+ year PR career spanning six continents. Lyall has assisted state and federal industry and professional associations across Australia, New Zealand and the USA for 15+ years, spoken at numerous association forums and conferences, and trained executive teams, boards and staff in the art of effective communication and strategy.",
+        bio: "Former journalist with a 25+ year PR career spanning six continents. Lyall has assisted state and federal industry and professional associations across Australia, New Zealand and the USA for 25+ years, spoken at numerous association forums and conferences, and trained executive teams, boards and staff in the art of effective communication and strategy.",
       },
     ],
   },

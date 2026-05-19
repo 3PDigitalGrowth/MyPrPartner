@@ -66,7 +66,7 @@ export const businessContent: CourseContent = {
       {
         name: "Lyall Mercer",
         description:
-          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 15+ years of PR consulting with businesses across Australia, New Zealand and the USA.",
+          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 25+ years of PR consulting with businesses across Australia, New Zealand and the USA.",
       },
     ],
   },
@@ -303,7 +303,7 @@ export const businessContent: CourseContent = {
         image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
-        bio: "Former journalist with a 15+ year PR career spanning six continents. Lyall has assisted Australian businesses, from hospitality and professional services to national brands, for 15+ years. He has spoken at numerous business forums and conferences, and trained owners, executive teams and staff in the art of effective communication and reputation strategy.",
+        bio: "Former journalist with a 25+ year PR career spanning six continents. Lyall has assisted Australian businesses, from hospitality and professional services to national brands, for 25+ years. He has spoken at numerous business forums and conferences, and trained owners, executive teams and staff in the art of effective communication and reputation strategy.",
       },
       {
         image: "/images/instructors/melissa-agnes.png",

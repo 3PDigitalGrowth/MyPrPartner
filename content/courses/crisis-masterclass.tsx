@@ -50,7 +50,7 @@ export const crisisMasterclassContent: CourseContent = {
       {
         name: "Lyall Mercer",
         description:
-          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 15+ years in crisis and corporate PR.",
+          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 25+ years in crisis and corporate PR.",
       },
       {
         name: "Melissa Agnes",
@@ -266,7 +266,7 @@ export const crisisMasterclassContent: CourseContent = {
         image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
-        bio: "Former journalist with a 15+ year PR career spanning six continents. Lyall has consulted to national and international companies, governments, executives and industry leaders in crisis communications and reputation management.",
+        bio: "Former journalist with a 25+ year PR career spanning six continents. Lyall has consulted to national and international companies, governments, executives and industry leaders in crisis communications and reputation management.",
       },
       {
         image: "/images/instructors/melissa-agnes.png",

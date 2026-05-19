@@ -67,7 +67,7 @@ export const charityContent: CourseContent = {
       {
         name: "Lyall Mercer",
         description:
-          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 15+ years of PR consulting with Australian charities, not-for-profits and community organisations across Australia, New Zealand and the USA.",
+          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 25+ years of PR consulting with Australian charities, not-for-profits and community organisations across Australia, New Zealand and the USA.",
       },
     ],
   },
@@ -303,7 +303,7 @@ export const charityContent: CourseContent = {
         image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
-        bio: "Former journalist with a 15+ year PR career spanning six continents. Lyall has worked alongside Australian charities, not-for-profits and community organisations for 15+ years - from community services and health charities to national foundations - training executive directors, boards and staff in the art of effective communication, reputation and fundraising strategy.",
+        bio: "Former journalist with a 25+ year PR career spanning six continents. Lyall has worked alongside Australian charities, not-for-profits and community organisations for 25+ years - from community services and health charities to national foundations - training executive directors, boards and staff in the art of effective communication, reputation and fundraising strategy.",
       },
       {
         image: "/images/instructors/melissa-agnes.png",

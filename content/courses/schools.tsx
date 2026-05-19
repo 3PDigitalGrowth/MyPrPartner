@@ -53,7 +53,7 @@ export const schoolsContent: CourseContent = {
       {
         name: "Lyall Mercer",
         description:
-          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 15+ years of PR and crisis consulting with Australian schools, charities and associations.",
+          "Co-founder, My PR Partner. Lead Strategist, CRC Public Relations. 25+ years of PR and crisis consulting with Australian schools, charities and associations.",
       },
       {
         name: "Tim Sterne",
@@ -288,7 +288,7 @@ export const schoolsContent: CourseContent = {
         image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
-        bio: "Former journalist with a 15+ year PR career spanning six continents. Lyall has guided Australian schools, charities, associations, businesses and governments through crisis moments and reputation-building campaigns for 15+ years.",
+        bio: "Former journalist with a 25+ year PR career spanning six continents. Lyall has guided Australian schools, charities, associations, businesses and governments through crisis moments and reputation-building campaigns for 25+ years.",
       },
       {
         image: "/images/instructors/tim-sterne.png",
