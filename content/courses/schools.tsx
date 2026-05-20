@@ -102,8 +102,6 @@ export const schoolsContent: CourseContent = {
       poweredByCrcLogo: true,
       items: [
         "Built for Australian school leadership teams",
-        "Optional PR support - security and peace of mind",
-        "School experts - experienced and specialised",
       ],
     },
   },
@@ -112,8 +110,8 @@ export const schoolsContent: CourseContent = {
     { icon: MonitorPlay, title: "100% online", sub: "Learn at your own pace" },
     { icon: Clock, title: "12 monthly modules", sub: "Training + resource + Q&A" },
     { icon: Users, title: "Whole-team program", sub: "Leadership, comms and crisis staff" },
-    { icon: ShieldCheck, title: "Crisis Ready\u00AE included", sub: "Melissa Agnes module built in" },
-    { icon: Award, title: "Certificate of completion", sub: "Endorsed by CRC Public Relations" },
+    { icon: ShieldCheck, title: "Optional PR support", sub: "Security and peace of mind" },
+    { icon: Award, title: "School experts", sub: "Experienced and specialised" },
   ],
 
   anchors: [
@@ -148,7 +146,7 @@ export const schoolsContent: CourseContent = {
     eyebrow: "What's included every month",
     heading: "Training, resources and support, every single month for a year",
     intro:
-      "This is not a passive video library. Each month, your entire team gets everything they need to build trust, handle issues and communicate confidently to parents, staff, media and community.",
+      "This is not a passive video library. Each month, your entire team gets everything they need to build trust, handle issues and communicate confidently to parents, staff, media and the community.",
     tiles: [
       {
         icon: MonitorPlay,
@@ -186,48 +184,55 @@ export const schoolsContent: CourseContent = {
       {
         month: 1,
         title: "Having a PR mindset: Intentional communication that builds ongoing trust",
+        resource: "Communications tips for all staff",
       },
       {
         month: 2,
         title:
           "Understanding vulnerabilities: spotting your school's \"sliding doors\" moments before they escalate",
+        resource: "The essential reputation checklist for schools",
       },
       {
         month: 3,
         title: "How to deal with allegations, with Tim Sterne (Basalt Solutions)",
+        resource: "Resource from Tim Sterne (TBD)",
       },
       {
         month: 4,
         title: "Elevate your school brand: Become the school of choice through free positive publicity",
+        resource: "Template media releases",
       },
       {
         month: 5,
         title:
           "Handling media enquiries and interest: protect your school when the media comes knocking",
+        resource: "Template media policy",
       },
       {
         month: 6,
         title: "Doing social media well, with a social media specialist expert",
+        resource: "Social media tips",
       },
       {
         month: 7,
         title:
           "Being crisis ready: Lyall Mercer with input from Melissa Agnes (Crisis Ready Institute)",
-        resource: "Crisis communications guide for schools",
+        resource: "Basic crisis readiness template",
       },
       {
         month: 8,
         title: "School board and governance risks, with Tim Whincop (Vocare Law)",
+        resource: "Resource from Tim Whincop (TBD)",
       },
       {
         month: 9,
         title: "Dealing with tragedy: Lyall in conversation with a school principal",
+        resource: "Checklist to navigate tragic events",
       },
       {
         month: 10,
         title:
           "Hot button issues: Red flag issues that schools get wrong, and how to get it right",
-        resource: "Hot button briefs for independent and faith-based schools",
       },
       {
         month: 11,
@@ -398,7 +403,7 @@ export const schoolsContent: CourseContent = {
       },
       {
         q: "Is it really 100% online?",
-        a: "Yes. Every module is self-paced online, with a training video, workbook and downloadable resource released monthly. This includes the monthly Q&A.",
+        a: "Yes. Every module is self-paced online, with a training video, workbook and a downloadable resource released monthly. This includes the monthly Q&A.",
       },
       {
         q: "How long does enrolment last?",
@@ -406,7 +411,7 @@ export const schoolsContent: CourseContent = {
       },
       {
         q: "What if we want an even deeper dive on crisis?",
-        a: "The Schools Program covers everything most schools need. However if any of your team wants the deeper, personal crisis leadership available, we offer the crisis masterclass as a separate flagship program. This features the Crisis Ready course with Melissa Agnes, CEO of the Crisis Ready Institute USA as well as other crisis-specific resources. This is personal (not team) training and schools can enrol their principal, board chair, or communications manager in this separately.",
+        a: "The Schools Program covers everything most schools need, However if any of your team wants the deeper, personal crisis leadership available, we offer the crisis masterclass as a separate flagship program. This features the Crisis Ready course with Melissa Agnes, CEO of the Crisis Ready Institute USA as well as other crisis-specific resources. This is personal (not team) training and schools can enrol their principal, board chair, or communications manager in this separately.",
       },
       {
         q: "Do we get support between modules?",
@@ -532,10 +537,8 @@ export const schoolsContent: CourseContent = {
     image: "/images/founders.png",
     imageAlt: "Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner",
     paragraphs: [
-      "Australian independent and faith-based schools are under more media, public and parent scrutiny than ever before. From everyday issues to serious allegations and tragedies, today's school leaders are expected to communicate with confidence, clarity and care, often with little to no formal communications training.",
-      "Schools often lack dedicated communications support, and educators are rarely trained in PR or crisis response. That is exactly why we built My PR Partner.",
-      "Since 2010, CRC Public Relations has walked with Australian schools through their proudest moments and their hardest ones, from media wins and brand campaigns to allegations, governance challenges and tragedies no school wants to face.",
-      "This program distils that 15+ years of experience into monthly training for school leaders, communications professionals and teachers, so every leader, every comms officer and every teacher is pulling in the same direction.",
+      "We built the Schools Program because Australian schools \u2013 particularly independent and faith based \u2013 are under more media, public and parent scrutiny than ever before. Most are not equipped to handle challenging issues and communication training isn\u2019t offered to educators. Too many schools fail at communicating during high-stakes moments, are not building trust with their community, and don\u2019t take advantage of positive opportunities to showcase their school in a positive light.",
+      "Since 2010, CRC Public Relations has walked with Australian schools through their proudest moments and their hardest ones. This program is that experience, distilled into monthly training your whole team can use, so every leader, every comms professional, and every teacher is working and communicating together.",
     ],
     signoff: "Lyall Mercer and Barbara Gorogh, Co-founders",
     showCrcLogo: true,
@@ -546,7 +549,7 @@ export const schoolsContent: CourseContent = {
     badgeIcon: Users,
     heading: "Train every school in your organisation under one enrolment",
     body:
-      "We work with independent school groups under the same ownership on multi-school enrolments. Bulk rates, shared resources and optional training facilitated by CRC Public Relations are all on the table.",
+      "We work with independent schools groups under the same ownership and dioceses on multi-school enrolments. Bulk rates, shared resources and optional training facilitated by CRC Public Relations are all possible.",
     bullets: [
       "Discounted per-school pricing across a group",
       "Tailored training can be discussed",
@@ -556,6 +559,22 @@ export const schoolsContent: CourseContent = {
     cta: { label: "Enquire about group enrolment", href: "/contact" },
     ctaSubLabel: "We'll reply within one business day.",
     bgImage: "/images/schools/schools-group-bg.jpg",
+  },
+
+  relatedProgram: {
+    eyebrow: "Want to go deeper on crisis?",
+    heading: "Add the Crisis Masterclass for your principal and board chair",
+    body:
+      "The Schools Program includes a module featuring part of the Crisis Ready course. If you\u2019d like the full 12-month flagship program with every Crisis Ready\u00AE module taught by Melissa Agnes, CEO of the Crisis Ready Institute USA (tailored for Australia), and other training from Lyall Mercer, enrol your principal and board chair in the Crisis Masterclass alongside your school program.",
+    thumbImage: "/images/crisis-masterclass/hero-bg-crisis.jpg",
+    featureBullets: [
+      "Full 12-month Crisis Masterclass",
+      "Full Crisis Ready\u00AE course with Melissa Agnes",
+      "Monthly Q&A",
+      "Detailed workbooks and resources.",
+    ],
+    primaryCta: { label: "Learn about the My PR Partner Crisis Masterclass", href: "/crisis-masterclass" },
+    secondaryCta: { label: "Talk to our team", href: "/contact" },
   },
 
   finalCta: {
