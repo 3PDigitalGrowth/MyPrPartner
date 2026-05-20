@@ -64,7 +64,10 @@ export type WhatYoullLearnContent = {
 export type StructureGroup = {
   label: string;
   count: string;
-  items: string[];
+  /** Legacy: simple bulleted strings inside the accordion. */
+  items?: string[];
+  /** Modern: rich month-by-month cards rendered inside the accordion. */
+  modules?: StructureModule[];
 };
 
 export type StructureModule = {
@@ -82,7 +85,7 @@ export type CourseStructureContent = {
   eyebrow: string;
   heading: string;
   intro: string;
-  /** Legacy grouped/phased view. Used when modules is not provided. */
+  /** Phased view: each group is an expandable accordion that can hold bulleted items or rich module cards. */
   groups?: StructureGroup[];
   /** Flat month-by-month list. Takes precedence over groups when both are provided. */
   modules?: StructureModule[];

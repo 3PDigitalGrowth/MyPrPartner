@@ -179,69 +179,94 @@ export const schoolsContent: CourseContent = {
     eyebrow: "12-month plan",
     heading: "Your month-by-month school program",
     intro:
-      "Every month delivers a training video, a workbook, a practical resource, a fortnightly Spotlight email and an interactive Q&A. (Topics are current at this time but are subject to change and some modules may be substituted during the 12 months.)",
-    modules: [
+      "Every month delivers a training video, a workbook, a practical resource, a fortnightly Spotlight email and an interactive Q&A. The 12-month path is grouped into four quarterly phases. (Topics are current at this time but are subject to change and some modules may be substituted during the 12 months.)",
+    groups: [
       {
-        month: 1,
-        title: "Having a PR mindset: Intentional communication that builds ongoing trust",
-        resource: "Communications tips for all staff",
+        label: "Phase 1: Foundations (Months 1 to 3)",
+        count: "Build the mindset and spot the risks",
+        modules: [
+          {
+            month: 1,
+            title: "Having a PR mindset: Intentional communication that builds ongoing trust",
+            resource: "Communications tips for all staff",
+          },
+          {
+            month: 2,
+            title:
+              "Understanding vulnerabilities: spotting your school's \"sliding doors\" moments before they escalate",
+            resource: "The essential reputation checklist for schools",
+          },
+          {
+            month: 3,
+            title: "How to deal with allegations, with Tim Sterne (Basalt Solutions)",
+            resource: "Resource from Tim Sterne (TBD)",
+          },
+        ],
       },
       {
-        month: 2,
-        title:
-          "Understanding vulnerabilities: spotting your school's \"sliding doors\" moments before they escalate",
-        resource: "The essential reputation checklist for schools",
+        label: "Phase 2: Brand, media and social (Months 4 to 6)",
+        count: "Get on the front foot",
+        modules: [
+          {
+            month: 4,
+            title:
+              "Elevate your school brand: Become the school of choice through free positive publicity",
+            resource: "Template media releases",
+          },
+          {
+            month: 5,
+            title:
+              "Handling media enquiries and interest: protect your school when the media comes knocking",
+            resource: "Template media policy",
+          },
+          {
+            month: 6,
+            title: "Doing social media well, with a social media specialist expert",
+            resource: "Social media tips",
+          },
+        ],
       },
       {
-        month: 3,
-        title: "How to deal with allegations, with Tim Sterne (Basalt Solutions)",
-        resource: "Resource from Tim Sterne (TBD)",
+        label: "Phase 3: Crisis-ready (Months 7 to 9)",
+        count: "Ready for the hardest days",
+        modules: [
+          {
+            month: 7,
+            title:
+              "Being crisis ready: Lyall Mercer with input from Melissa Agnes (Crisis Ready Institute)",
+            resource: "Basic crisis readiness template",
+          },
+          {
+            month: 8,
+            title: "School board and governance risks, with Tim Whincop (Vocare Law)",
+            resource: "Resource from Tim Whincop (TBD)",
+          },
+          {
+            month: 9,
+            title: "Dealing with tragedy: Lyall in conversation with a school principal",
+            resource: "Checklist to navigate tragic events",
+          },
+        ],
       },
       {
-        month: 4,
-        title: "Elevate your school brand: Become the school of choice through free positive publicity",
-        resource: "Template media releases",
-      },
-      {
-        month: 5,
-        title:
-          "Handling media enquiries and interest: protect your school when the media comes knocking",
-        resource: "Template media policy",
-      },
-      {
-        month: 6,
-        title: "Doing social media well, with a social media specialist expert",
-        resource: "Social media tips",
-      },
-      {
-        month: 7,
-        title:
-          "Being crisis ready: Lyall Mercer with input from Melissa Agnes (Crisis Ready Institute)",
-        resource: "Basic crisis readiness template",
-      },
-      {
-        month: 8,
-        title: "School board and governance risks, with Tim Whincop (Vocare Law)",
-        resource: "Resource from Tim Whincop (TBD)",
-      },
-      {
-        month: 9,
-        title: "Dealing with tragedy: Lyall in conversation with a school principal",
-        resource: "Checklist to navigate tragic events",
-      },
-      {
-        month: 10,
-        title:
-          "Hot button issues: Red flag issues that schools get wrong, and how to get it right",
-      },
-      {
-        month: 11,
-        title: "Q&A month: the biggest questions and scenarios from program participants",
-      },
-      {
-        month: 12,
-        title: "Media training for your spokespeople: the art of a great school interview",
-        note: "On call all year, so your spokespeople are media-ready whenever you need them.",
+        label: "Phase 4: Mastery and application (Months 10 to 12)",
+        count: "Sharpen and apply",
+        modules: [
+          {
+            month: 10,
+            title:
+              "Hot button issues: Red flag issues that schools get wrong, and how to get it right",
+          },
+          {
+            month: 11,
+            title: "Q&A month: the biggest questions and scenarios from program participants",
+          },
+          {
+            month: 12,
+            title: "Media training for your spokespeople: the art of a great school interview",
+            note: "On call all year, so your spokespeople are media-ready whenever you need them.",
+          },
+        ],
       },
     ],
   },
