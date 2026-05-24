@@ -50,19 +50,19 @@ const whyPillars = [
     icon: Handshake,
     eyebrow: "Built from the boardroom",
     heading: "Not theory - tested judgement",
-    body: "Every framework, case study and warning in our programs comes from real CRC Public Relations engagements with boards, executives and governments under genuine pressure. You get what actually works, not what a textbook says should work.",
+    body: "The teaching, advice, and framework in our programs come from real CRC Public Relations engagements with boards, executives, associations, schools and governments under genuine pressure. You get what actually works, not what a textbook says should work.",
   },
   {
     icon: ShieldCheck,
     eyebrow: "Senior-led end to end",
-    heading: "No junior course creators",
-    body: "You don't get an instructional designer's interpretation of a crisis framework. You get the senior advisers who sit in the room when the crisis is actually happening - teaching what they'd do, in their own words.",
+    heading: "Experienced course creators",
+    body: "Every program and course has been developed through the experience of positioning companies and organisations as public voices of authority, leading through issues, consulting to leaders and being on the front line of public relations and crisis communications.",
   },
   {
     icon: MapPin,
-    eyebrow: "Top-tier counsel, team-wide",
-    heading: "Experience usually behind a retainer",
-    body: "CRC Public Relations' clients pay top-tier rates for this level of counsel. My PR Partner puts the same experience into self-paced, team-ready programs you can roll out across every leader in your organisation.",
+    eyebrow: "Value that makes a difference",
+    heading: "Rarely accessible, affordable training",
+    body: "Public Relations agency clients pay top-tier rates for this level of counsel. My PR Partner puts the same experience into self-paced, team-ready programs you can roll out across every leader in your organisation.",
   },
 ];
 
@@ -81,12 +81,12 @@ const leadershipTeam: Leader[] = [
   {
     slug: "lyall-mercer",
     name: "Lyall Mercer",
-    role: "Co-founder & Principal Adviser",
+    role: "Co-founder & principal adviser",
     tagline:
-      "Former journalist and Australasia's leading crisis communications adviser.",
+      "Former journalist; one of Australasia's leading public relations and crisis communications strategists.",
     bio: [
-      "Lyall Mercer began his career as a journalist before building one of Australasia's most respected crisis communications and reputation advisory practices. His media background shapes how he reads pressure, understands the story behind the story, and prepares leaders for scrutiny that can move faster than their internal decision-making.",
-      "Over 25+ years, he has advised companies, governments, associations, schools, and senior executives across Australia, the Pacific, and internationally. Clients engage Lyall when the matter requires senior judgement, calm counsel, and direct access to someone who has seen how high-stakes situations actually unfold.",
+      "For more than 25 years, Lyall has advised national and international companies and organisations, governments, senior executives, politicians, celebrities and sporting figures across Australia, the Pacific, and internationally. He has coordinated international media conferences, walked clients through issues that have generated intense national and global media exposure, and has been a keynote speaker and presenter at corporate, industry and faith-based conferences across Australia and the USA. As an expert commentator in the area of crisis communications, Lyall has been quoted or interviewed by news organisations from around the world.",
+      "Clients engage Lyall when the matter requires senior judgement, calm counsel, and direct access to someone who has seen how high-stakes situations actually unfold.",
     ],
     image: "/images/instructors/lyall-mercer.png",
     initials: "LM",
@@ -95,12 +95,12 @@ const leadershipTeam: Leader[] = [
   {
     slug: "barbara-gorogh",
     name: "Barbara Gorogh",
-    role: "Co-founder, My PR Partner",
+    role: "Co-founder and director",
     tagline:
-      "Senior communications strategist focused on training, practitioner development, and workshop delivery.",
+      "Senior communications strategist focused on client relations, media relations and practitioner development.",
     bio: [
-      "Barbara Gorogh is the co-founder of My PR Partner, CRC Public Relations' training platform for communications practitioners and spokesperson development. Her work sits at the intersection of communications capability, practical training design, and the delivery of programs that help leaders perform more confidently under pressure.",
-      "She brings deep experience in communications education, practitioner support, and the translation of crisis and media strategy into practical development programs. Barbara plays a central role in how CRC Public Relations turns senior advisory experience into structured training for organisations and professionals across Australia.",
+      "Barbara has worked across Australia and the Pacific region for more than a decade, dealing with companies, organisations and governments in the area of corporate communications and reputation management. She has overseen major online corporate and government communications campaigns designed to achieve vital client objectives, and developed a specialty area in reputation management in the B2C environment. Barbara also oversees digital and social media strategies for our clients - which form an important part of every public relations, reputation and crisis strategy - and the development of our digital team based across Australia and the Pacific.",
+      "Barbara's work in the media monitoring space ensures our clients are ahead of the stories that matter.",
     ],
     image: "/images/instructors/barbara-gorogh.png",
     initials: "BG",
@@ -292,8 +292,7 @@ export default function AboutPage() {
                 Online training designed by practitioners, not by marketers
               </SectionHeading>
               <p className="mx-auto mt-4 max-w-[640px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                Most online PR courses are built by content teams summarising
-                what a textbook says. Every My PR Partner program is built
+                Every My PR Partner program is built
                 from - and delivered with - the same senior-adviser
                 experience CRC Public Relations uses to counsel boards and
                 governments at the highest level.
@@ -350,20 +349,19 @@ export default function AboutPage() {
                   </p>
                   <p>
                     For 15+ years CRC Public Relations has honoured that
-                    principle for a deliberately short list of clients. My PR
-                    Partner carries the same principle into online training:
-                    no recycled content, no off-the-shelf templates from
-                    overseas course libraries - every module is shaped
-                    by the same senior team that advises CRC Public
-                    Relations&apos; clients through their most sensitive
-                    moments.
+                    principle for its clients. My PR Partner carries the same
+                    principle into online training: no recycled content, no
+                    off-the-shelf templates from overseas course libraries -
+                    every module is shaped by the same senior team that advises
+                    CRC Public Relations&apos; clients through their most
+                    sensitive moments.
                   </p>
                   <p>
                     Those clients include national and international
-                    companies, Federal and State Government departments,
-                    industry associations, independent schools, faith-based
-                    organisations, health and aged care providers, and
-                    Pacific governments and NGOs. When you enrol in a My PR
+                    companies, governments, industry associations, independent
+                    schools, faith-based organisations, child care and aged
+                    care providers, NGOs, heads of state, and high profile
+                    leaders and personalities. When you enrol in a My PR
                     Partner program, you&apos;re tapping into the same
                     experience that shaped every one of those engagements.
                   </p>
@@ -390,9 +388,9 @@ export default function AboutPage() {
                       Who we advise
                     </p>
                     <p className="mt-1 font-heading text-[15px] font-bold text-text-dark">
-                      Companies, Federal and State Governments, associations,
-                      schools, faith-based bodies, health &amp; aged care, and
-                      Pacific organisations.
+                      Companies, governments, professional and industry
+                      associations, schools, faith-based bodies, child &amp;
+                      aged care, and Pacific organisations.
                     </p>
                   </div>
                 </div>
@@ -413,13 +411,13 @@ export default function AboutPage() {
               </div>
               <SectionEyebrow>Our mission</SectionEyebrow>
               <p className="mt-4 font-heading text-[22px] font-medium leading-[1.35] text-text-dark md:text-[28px]">
-                CRC Public Relations can only advise so many clients directly.
-                My PR Partner is how 15+ years of senior-level judgement -
-                real boardrooms, real crises, real decisions - becomes a
-                program your team can enrol in today.
+                CRC Public Relations can only advise a finite number of clients
+                directly. My PR Partner is how 15+ years of senior-level
+                judgement - real boardrooms, real results, real decisions -
+                becomes a program your team can enrol in today.
               </p>
               <p className="mt-6 text-[15.5px] leading-relaxed text-text-medium md:text-[16.5px]">
-                So you&apos;re not learning from a course creator or a generic
+                You&apos;re not learning from a course creator or a generic
                 training library. You&apos;re learning from a boutique firm
                 that was hired for the exact situations we teach - with the
                 same senior advisers who take a genuine, long-term interest in
