@@ -234,7 +234,7 @@ export const schoolsContent: CourseContent = {
             month: 7,
             title:
               "Being crisis ready: Lyall Mercer with input from Melissa Agnes (Crisis Ready Institute)",
-            resource: "Basic crisis readiness template",
+            resource: "Crisis communications guide for schools",
           },
           {
             month: 8,
@@ -243,7 +243,7 @@ export const schoolsContent: CourseContent = {
           },
           {
             month: 9,
-            title: "Dealing with tragedy: Lyall in conversation with a school principal",
+            title: "Dealing with tragedy: Lyall speaks to Dan Brown, Principal of Emmanuel College",
             resource: "Checklist to navigate tragic events",
           },
         ],
@@ -256,6 +256,7 @@ export const schoolsContent: CourseContent = {
             month: 10,
             title:
               "Hot button issues: Red flag issues that schools get wrong, and how to get it right",
+            resource: "Hot button briefs for independent and faith-based schools",
           },
           {
             month: 11,

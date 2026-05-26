@@ -82,12 +82,11 @@ export const associationsContent: CourseContent = {
   hero: {
     eyebrow: "For Australian industry, trade & professional associations",
     eyebrowIcon: Building2,
-    headline:
-      "Position your association as the trusted voice and advocate for your industry",
+    headline: "My PR Partner industry associations program",
     tagline:
-      "A 12-month online PR program built exclusively for association leadership teams",
+      "Position your association as the trusted voice and advocate for your industry",
     intro:
-      "Become the recognised public voice of your industry, advocate more effectively to government, and grow trusted, engaged membership. Join the My PR Partner industry & professional association community.",
+      "A 12-month online PR training program built exclusively for Australian industry and professional associations. CEOs, executive leaders, spokespeople, and communications, membership and marketing staff learn together, to maximise your impact.",
     outcomes: [
       "Establish your association as the trusted public voice of your industry",
       "Advocate more effectively and use PR to influence policy and legislation",
@@ -121,7 +120,7 @@ export const associationsContent: CourseContent = {
     { icon: Clock, title: "12 monthly modules", sub: "Training + resource + Q&A" },
     { icon: Users, title: "Whole-team program", sub: "Exec, comms, marketing & membership" },
     { icon: Megaphone, title: "Built for advocacy", sub: "Influence policy and legislation" },
-    { icon: Award, title: "Certificate of completion", sub: "Endorsed by CRC Public Relations" },
+    { icon: ShieldCheck, title: "Optional PR support", sub: "Security and peace of mind" },
   ],
 
   anchors: [
@@ -136,10 +135,10 @@ export const associationsContent: CourseContent = {
   overview: {
     eyebrow: "Overview",
     heading:
-      "Affordable PR training, resources and support that enables your whole association team",
+      "Affordable PR training, resources and support that empowers your association's team",
     paragraphs: [
-      "The My PR Partner Industry & Professional Associations Program is a 12-month online training program designed for busy association professionals. Each team member learns at a time that suits them, and content is built with the full range of association roles in mind, so your CEO, executive, communications, marketing and membership teams share the same language and pull in the same direction.",
-      "Built by CRC Public Relations, this is the distilled version of 15+ years of working alongside Australian state and national industry, trade and professional associations through their biggest moments, from major advocacy wins and national media campaigns to the hardest sector-defining issues.",
+      "The My PR Partner Industry & Professional Associations Program is a 12-month online training program designed for busy professionals. Each team member learns at a time that suits them, and content is built to enable your executive, communications, marketing and membership teams to share the same language while together advancing the association's objectives.",
+      "Built by CRC Public Relations, this is the distilled version of 15+ years of working alongside national and state industry, trade and professional associations, helping them achieve major advocacy wins, elevate their public voice and build the trust and support of their membership.",
     ],
     keyLearningsTitle: "Why association leaders choose this program",
     keyLearnings: [
@@ -147,7 +146,7 @@ export const associationsContent: CourseContent = {
       "A ready-to-use library of resources, templates and checklists for associations",
       "Expert support from real Australian association PR consultants, not academics",
       "Practical advocacy frameworks to influence policy and legislation",
-      "Guest presenters across media, social, advocacy and crisis communications",
+      "Guest presenters across advocacy, social media, association leadership and membership",
       "Monthly interactive Q&A on your specific association circumstances",
     ],
   },
@@ -160,27 +159,27 @@ export const associationsContent: CourseContent = {
     tiles: [
       {
         icon: MonitorPlay,
-        title: "Monthly video resource",
+        title: "Training video + workbook",
         body:
-          "A powerful and practical training video from PR and association-specific experts, built for executive leadership, marketing, comms and membership teams. Includes exercises and workbooks.",
+          "A new training module each month, with a workbook designed for individual learning and team discussion. Built to go deeper over time.",
+      },
+      {
+        icon: FileText,
+        title: "Practical resource",
+        body:
+          "A downloadable tool every month: checklists, templates, policies, and media releases designed to help your team communicate, advocate and engage members more effectively.",
       },
       {
         icon: MessageSquare,
-        title: "Weekly Spotlight email",
+        title: "Fortnightly Spotlight email",
         body:
-          "A weekly email from our experts complementing the video training, with valuable PR and reputation strategies and guidance exclusively for associations. Forward to anyone on your team.",
+          "Short, sharp, timely insights between modules, with valuable PR and reputation strategies and guidance exclusively for associations. Forward to anyone on your team.",
       },
       {
         icon: HelpingHand,
         title: "Interactive Q&A",
         body:
-          "Each month, any team member can submit personalised questions, answered through your member portal. Real advice for your real association situations.",
-      },
-      {
-        icon: FileText,
-        title: "Bonus training & resources",
-        body:
-          "Receive bonus video and written resources throughout the year, all designed to help your team communicate, advocate and engage members more effectively.",
+          "Bring your specific circumstances to a monthly Q&A with Lyall and the expert panel. Real advice for your real situations.",
       },
     ],
   },
@@ -194,49 +193,98 @@ export const associationsContent: CourseContent = {
       {
         label: "Phase 1: Foundations (Months 1 to 3)",
         count: "Build the mindset and find your voice",
-        items: [
-          "Month 1 \u00B7 The PR mindset for associations: why public relations underpins every advocacy and membership win",
-          "Month 1 Resource: Communications tips for the whole association team",
-          "Month 2 \u00B7 Becoming the public voice of authority in your industry",
-          "Month 2 Resource: The essential reputation checklist for associations",
-          "Month 3 \u00B7 Strategic communication that resonates emotionally with members and stakeholders",
-          "Month 3 Resource: Member-message-mapping framework",
+        modules: [
+          {
+            month: 1,
+            title:
+              "Why you need a public voice: become the voice of authority and trust for your industry",
+            resource: "Communication evaluation for your association",
+          },
+          {
+            month: 2,
+            title:
+              "Developing a whole-of-association PR mindset: prioritising effective communication",
+            resource: "Communication tips for the entire team",
+          },
+          {
+            month: 3,
+            title:
+              "Doing social media well, with a social media specialist expert (association focused)",
+            resource: "Social media tips",
+          },
         ],
       },
       {
         label: "Phase 2: Advocacy and media (Months 4 to 6)",
         count: "Get on the front foot",
-        items: [
-          "Month 4 \u00B7 Using PR to influence policy and legislation: the advocacy playbook",
-          "Month 4 Resource: Government relations and advocacy template pack",
-          "Month 5 \u00B7 Handling media enquiries and interest: protecting and amplifying your association",
-          "Month 5 Resource: Template association media policy and media-release library",
-          "Month 6 \u00B7 Building a national media profile and campaigns from a state or sector base",
-          "Month 6 Resource: National media list and pitch templates",
+        modules: [
+          {
+            month: 4,
+            title: "Maximising impact \u2013 Using PR to influence policy and legislation",
+            resource: "Government relations and advocacy template pack",
+          },
+          {
+            month: 5,
+            title:
+              "Lobbying and Advocacy case study with a CEO: How a national industry body turned disaster into success",
+            resource: "Ten vital steps when you need legislators to listen",
+          },
+          {
+            month: 6,
+            title: "Building media campaigns that support your objectives",
+            resource:
+              "Media release and pitch templates plus key steps for media success",
+          },
+          {
+            month: 6,
+            title:
+              "Bonus · Handling media enquiries: protecting and amplifying your association",
+            resource: "Template media policy",
+          },
         ],
       },
       {
         label: "Phase 3: Membership, trust and crisis (Months 7 to 9)",
         count: "Grow members, manage issues",
-        items: [
-          "Month 7 \u00B7 Growing and retaining members by increasing the value of membership",
-          "Month 7 Resource: Member engagement and retention checklist",
-          "Month 8 \u00B7 Managing negative issues and turning them into opportunities for trust",
-          "Month 8 Resource: Issues-management framework for associations",
-          "Month 9 \u00B7 Doing social media well, with a specialist social media presenter",
-          "Month 9 Resource: Association social media tips and responses library",
+        modules: [
+          {
+            month: 7,
+            title: "Growing and retaining members by increasing the value of membership",
+            resource: "Member engagement and retention checklist",
+          },
+          {
+            month: 8,
+            title: "Association board and governance risks, with Tim Whincop (Vocare Law)",
+            resource: "Resource from Tim Whincop (TBD)",
+          },
+          {
+            month: 9,
+            title: "Managing negative issues and turning them into opportunities for trust",
+            resource: "Issues-management framework for associations",
+          },
         ],
       },
       {
         label: "Phase 4: Mastery and application (Months 10 to 12)",
         count: "Sharpen and apply",
-        items: [
-          "Month 10 \u00B7 Featured association leader: an in-depth conversation on what worked, what didn't, and the lessons learned",
-          "Month 10 Resource: Best-practice playbook from a successful Australian association",
-          "Month 11 \u00B7 Q&A month: the biggest questions and scenarios from program participants",
-          "Month 11 Resource: Best-practice recap document from the year",
-          "Month 12 \u00B7 Media training for your spokespeople: the art of a great association interview",
-          "Month 12 is on call all year, so your spokespeople are media-ready whenever you need them",
+        modules: [
+          {
+            month: 10,
+            title:
+              "Featured association leader: an in-depth conversation on what worked, what didn't, and the lessons learned",
+            resource: "Best-practice playbook from a successful Australian association",
+          },
+          {
+            month: 11,
+            title: "Q&A month: the biggest questions and scenarios from program participants",
+            resource: "Best-practice recap document from the year",
+          },
+          {
+            month: 12,
+            title: "Media training for your spokespeople: the art of a great interview",
+            resource:
+              "On call all year, so your spokespeople are media-ready whenever you need them.",
+          },
         ],
       },
     ],
@@ -244,37 +292,38 @@ export const associationsContent: CourseContent = {
 
   personas: {
     eyebrow: "Who it's for",
-    heading: "This program is for you if\u2026",
+    heading:
+      "A tailored program exclusively for industry and professional association leadership and comms teams",
     intro:
-      "Whether you're a CEO, communications professional, advocacy lead, membership manager or public spokesperson, this program is built for everyone whose role touches your association's reputation, and for leaders who understand the power of effective communication and ongoing professional development.",
+      "This program is built for everyone whose role touches your association's growth, influence and reputation, and for leaders who understand the power of effective communication and ongoing professional development.",
     items: [
       {
         image: "/images/associations/associations-persona-ceo.jpg",
         icon: Building2,
-        title: "If you play a role in association leadership",
+        title: "Leaders and spokespeople",
         body:
-          "Whether you're a CEO, executive director or board member, this program helps you strengthen your skills in new and profound ways that meet today's challenges, so you can lead your association as the trusted public voice of your industry.",
+          "Strengthen your communication, media, member relations and advocacy skills to represent your association and be the voice of authority and trust for your industry or sector.",
       },
       {
         image: "/images/associations/associations-persona-comms.jpg",
         icon: Briefcase,
-        title: "If you have a role in communication, marketing or representing your association publicly",
+        title: "Communication and marketing teams",
         body:
-          "From communications and marketing teams through to spokespeople at events, forums and conferences, this program gives you the strategy, frameworks and templates to lift your association's profile and make every public moment count.",
+          "Learn strategies and secure frameworks and templates to lift your association's profile, make every public moment count, maximise content effectiveness and build member and community trust.",
       },
       {
         image: "/images/associations/associations-persona-advocacy.jpg",
         icon: Megaphone,
-        title: "If you're involved in advocacy, government relations or influencing policy and legislation",
+        title: "Government relations",
         body:
           "Use PR and media strategies to effectively boost your advocacy, influence policy and legislation, and build the public case behind every meeting in Canberra or your state capital.",
       },
       {
         image: "/images/associations/associations-persona-members.jpg",
         icon: HandHeart,
-        title: "If you communicate with members or work on membership growth and retention",
+        title: "Membership teams",
         body:
-          "Build a membership of advocates, not adversaries, who trust and support your association, with communications that grow value, deepen loyalty and turn members into your best champions.",
+          "Build a membership of advocates, not adversaries, who trust and support your association and always want to stay, with communications that grow value and deepen loyalty.",
       },
     ],
   },
@@ -283,13 +332,13 @@ export const associationsContent: CourseContent = {
     eyebrow: "Your lead presenter",
     heading: "Led by one of Australia's most experienced association PR strategists",
     intro:
-      "Lyall Mercer leads every program, with additional Australian guest presenters joining throughout the year as content is developed and refreshed.",
+      "Lyall Mercer leads the program, with Australian guest presenters, specialty experts and association leaders joining throughout the year across various modules.",
     items: [
       {
         image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
-        bio: "Former journalist with a 25+ year PR career spanning six continents. Lyall has assisted state and federal industry and professional associations across Australia, New Zealand and the USA for 25+ years, spoken at numerous association forums and conferences, and trained executive teams, boards and staff in the art of effective communication and strategy.",
+        bio: "Former journalist with a 25+ year international PR career. Lyall has assisted state and federal industry and professional associations across Australia, New Zealand and the USA for 15+ years, spoken at numerous association forums and conferences, and trained executive teams, boards and staff in the art of effective communication and strategy.",
       },
     ],
   },
@@ -297,7 +346,7 @@ export const associationsContent: CourseContent = {
   testimonials: {
     eyebrow: "What Australian association leaders say",
     heading:
-      "My PR Partner is backed by a corporate PR company with proven expertise in the needs of industry associations",
+      "Built on 15+ years of real work with Australian industry and professional associations",
     items: [
       {
         quote:
@@ -328,21 +377,6 @@ export const associationsContent: CourseContent = {
     heading: "Strategic outcomes your team will walk away with",
     items: [
       {
-        icon: Sparkles,
-        title: "Adopt a PR mindset",
-        body: "Equip your team to consider the public relations benefits and ramifications in everything they do.",
-      },
-      {
-        icon: HandHeart,
-        title: "Build a membership of advocates",
-        body: "Turn members into advocates, not adversaries, who genuinely trust and support your association.",
-      },
-      {
-        icon: MessageSquare,
-        title: "Communicate with emotional resonance",
-        body: "Connect powerfully with the people most important to your success through communication that resonates.",
-      },
-      {
         icon: Megaphone,
         title: "Become the public voice of authority",
         body: "Position your association as the recognised public voice of authority in your industry, above any others.",
@@ -357,6 +391,21 @@ export const associationsContent: CourseContent = {
         title: "Build and retain more members",
         body: "Grow membership and improve retention by increasing the felt value of belonging to your association.",
       },
+      {
+        icon: HandHeart,
+        title: "Build a membership of advocates",
+        body: "Turn members into advocates, not adversaries, who genuinely trust and support your association.",
+      },
+      {
+        icon: MessageSquare,
+        title: "Communicate with emotional resonance",
+        body: "Connect powerfully with the people most important to your success through communication that resonates.",
+      },
+      {
+        icon: ShieldCheck,
+        title: "Protect and strengthen your industry's reputation",
+        body: "Be ready to deal with negative issues that can damage the association and industry's reputation.",
+      },
     ],
   },
 
@@ -366,11 +415,11 @@ export const associationsContent: CourseContent = {
     items: [
       {
         q: "Who exactly can access the program at our association?",
-        a: "The program is designed for your whole leadership team. You choose who you'd like to be involved each month. This includes your CEO or Executive Director, executive team, communications and marketing staff, advocacy and government relations leads, and membership engagement teams. The first month is intentionally shaped so everyone benefits.",
+        a: "The program is designed for your whole leadership team. You choose who you'd like to be involved each month. This includes your CEO or executive director, executive team, communications and marketing staff, advocacy and government relations leads, and membership engagement teams. The first month is intentionally shaped so everyone benefits.",
       },
       {
         q: "What ongoing PR support is available to our association?",
-        a: "Our Support Level is our most popular and includes on-call PR or issues & crisis assistance. Our Partner Level is for associations who want the security of extra peace of mind, and includes personal, ongoing phone, email & Zoom PR support. Both of these levels also include many other features, extra resources and individual training. See our pricing and plans for details. All PR support is provided by the senior team at CRC Public Relations.",
+        a: "Our Support Level is our most popular and includes on-call PR or issues & crisis assistance. Our Partner Level is for associations who want our ongoing guidance to elevate their public voice and lead them in media and communications strategy and campaigns, and includes personal, ongoing phone, email & Zoom PR support. Both of these levels also include many other features, extra resources and individual training. See our pricing and plans for details. All PR support is provided by the senior team at CRC Public Relations.",
       },
       {
         q: "Is it really 100% online?",

@@ -590,23 +590,27 @@ export default function ExpertTrainersPage() {
                 {
                   quote:
                     "CRC Public Relations has developed a crisis communications plan for Christian schools and has assisted many of our member schools across Australia to effectively communicate when issues have arisen.",
-                  name: "Vanessa Cheng",
-                  title: "Executive Officer",
+                  name: "Executive Officer",
+                  title: "",
                   org: "Australian Association of Christian Schools",
                 },
-              ].map((t) => (
+              ].map((t, i) => (
                 <figure
-                  key={t.name}
+                  key={`${t.name || "testimonial"}-${i}`}
                   className="flex h-full flex-col rounded-card border border-[#E5E7EB] bg-[#F7F8FA] p-6 md:p-7"
                 >
                   <blockquote className="flex-1 text-[15px] italic leading-relaxed text-text-dark">
                     &ldquo;{t.quote}&rdquo;
                   </blockquote>
                   <figcaption className="mt-5 border-t border-[#E5E7EB] pt-4 text-[13px]">
-                    <p className="font-heading font-bold text-text-dark">{t.name}</p>
-                    <p className="text-text-medium">
-                      {t.title}, {t.org}
-                    </p>
+                    {t.name ? (
+                      <p className="font-heading font-bold text-text-dark">{t.name}</p>
+                    ) : null}
+                    {[t.title, t.org].filter(Boolean).length > 0 ? (
+                      <p className="text-text-medium">
+                        {[t.title, t.org].filter(Boolean).join(", ")}
+                      </p>
+                    ) : null}
                   </figcaption>
                 </figure>
               ))}

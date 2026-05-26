@@ -252,7 +252,7 @@ export default function GivingBackPage() {
                     </p>
                     <p className="mt-1 font-heading text-[15px] font-bold text-text-dark">
                       Part of Compassion International, releasing children
-                      from poverty in Jesus&apos; name across 29 countries.
+                      from poverty across 29 countries.
                     </p>
                   </div>
                 </div>

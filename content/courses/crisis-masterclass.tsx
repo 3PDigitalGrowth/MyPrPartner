@@ -304,8 +304,8 @@ export const crisisMasterclassContent: CourseContent = {
       {
         quote:
           "CRC Public Relations has developed a crisis communications plan for Christian schools and has assisted many of our member schools across Australia to effectively communicate when issues have arisen.",
-        name: "Vanessa Cheng",
-        title: "Executive Officer",
+        name: "Executive Officer",
+        title: "",
         org: "Australian Association of Christian Schools",
       },
     ],

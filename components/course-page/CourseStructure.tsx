@@ -47,8 +47,8 @@ export default function CourseStructure({ content }: { content: CourseStructureC
 
       {useModules ? (
         <ol className="mt-6 grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-x-4 md:gap-y-2">
-          {content.modules!.map((m) => (
-            <ModuleCard key={m.month} m={m} />
+          {content.modules!.map((m, i) => (
+            <ModuleCard key={`${m.month}-${i}`} m={m} />
           ))}
         </ol>
       ) : (
@@ -76,8 +76,8 @@ export default function CourseStructure({ content }: { content: CourseStructureC
                 <div className="border-t border-[#F1F2F5] px-6 py-5">
                   {hasModules ? (
                     <ol className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-x-4 md:gap-y-2">
-                      {g.modules!.map((m) => (
-                        <ModuleCard key={m.month} m={m} />
+                      {g.modules!.map((m, i) => (
+                        <ModuleCard key={`${g.label}-${m.month}-${i}`} m={m} />
                       ))}
                     </ol>
                   ) : (

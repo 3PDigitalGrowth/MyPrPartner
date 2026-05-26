@@ -121,7 +121,7 @@ const programs: Program[] = [
     iconAccent: "linear-gradient(135deg, #1A2B4A 0%, #1E73BE 100%)",
     title: "Crisis Masterclass",
     lede:
-      "Australia's premier crisis communications program, built with Melissa Agnes and the senior team at CRC Public Relations.",
+      "Australia's premier crisis communications program, built with Melissa Agnes, CEO of the Crisis Ready Institute and the senior team at CRC Public Relations.",
     audience:
       "Executives, boards, PR professionals and leadership teams serious about being crisis-ready.",
     image: "/images/crisis-masterclass/persona-executive.jpg",
@@ -151,10 +151,10 @@ const programs: Program[] = [
     imageAlt:
       "An Australian school principal leading a confident, prepared leadership team.",
     status: { label: "Available now", tone: "live" },
-    pricing: "Tiered - Small, Medium or Multi-campus",
+    pricing: "From $440 / month",
     outcomes: [
       "Monthly training video, workbook and ready-to-use resources",
-      "Sector-specific content - from proud media wins to the hardest allegations",
+      "Sector-specific content - from effective media strategies to the hardest allegations",
       "Optional multi-school enrolments for whole-group training",
     ],
     cta: "See the Schools Program",
@@ -213,7 +213,7 @@ const programs: Program[] = [
     iconAccent: "linear-gradient(135deg, #0B7A58 0%, #37B288 100%)",
     title: "Industry Associations Program",
     lede:
-      "A 12-month online PR, advocacy and reputation program for Australian industry, trade and professional association leadership teams.",
+      "A 12-month online PR, advocacy and membership program for Australian industry, trade and professional association leadership teams.",
     audience:
       "CEOs, comms leads and peak body teams shaping the voice of their sector.",
     image: "/images/associations/associations-persona-ceo.jpg",
@@ -242,7 +242,7 @@ const comparisonRows: ComparisonRow[] = [
     icon: Target,
     values: [
       "Any leader serious about crisis readiness",
-      "Principals & school leadership teams",
+      "School leadership, comms and marketing teams",
       "Owners, founders & executive teams",
       "EDs, boards & fundraising teams",
       "CEOs & association leadership teams",
@@ -275,7 +275,7 @@ const comparisonRows: ComparisonRow[] = [
     icon: Star,
     values: [
       "From $340 / month",
-      "Tiered by school size",
+      "From $440 / month",
       "Founding-member 10% off",
       "Founding-member 10% off",
       "Founding-member 10% off",
