@@ -263,7 +263,8 @@ export type SidebarContent = {
 export type FoundersWelcomeContent = {
   eyebrow: string;
   heading: string;
-  image: string;
+  image?: string;
+  images?: string[];
   imageAlt: string;
   paragraphs: React.ReactNode[];
   signoff: string;
