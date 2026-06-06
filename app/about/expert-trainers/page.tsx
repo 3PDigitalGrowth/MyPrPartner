@@ -69,7 +69,7 @@ const trainers: Trainer[] = [
     image: "/images/instructors/lyall-mercer.png",
     initials: "LM",
     palette: "navy",
-    programs: ["crisis", "schools", "associations", "business"],
+    programs: ["crisis", "schools", "associations", "business", "charity"],
   },
   {
     slug: "melissa-agnes",
@@ -81,7 +81,7 @@ const trainers: Trainer[] = [
     image: "/images/instructors/melissa-agnes.png",
     initials: "MA",
     palette: "teal",
-    programs: ["crisis"],
+    programs: ["crisis", "business", "schools", "charity"],
   },
   {
     slug: "deborah-hileman",
@@ -93,7 +93,7 @@ const trainers: Trainer[] = [
     image: "/images/instructors/deborah-hileman.png",
     initials: "DH",
     palette: "plum",
-    programs: ["crisis"],
+    programs: ["business", "charity"],
   },
   {
     slug: "tim-sterne",
@@ -105,7 +105,7 @@ const trainers: Trainer[] = [
     image: "/images/instructors/tim-sterne.png",
     initials: "TS",
     palette: "navy",
-    programs: ["schools"],
+    programs: ["schools", "associations", "charity"],
   },
   {
     slug: "trevor-young",
@@ -117,7 +117,7 @@ const trainers: Trainer[] = [
     image: "/images/instructors/trevor-young.png",
     initials: "TY",
     palette: "ocean",
-    programs: [],
+    programs: ["business"],
   },
   {
     slug: "julie-mason",
@@ -132,18 +132,6 @@ const trainers: Trainer[] = [
     programs: ["business"],
   },
   {
-    slug: "karl-schwantes",
-    name: "Karl Schwantes",
-    title: "Customer Experience Expert · Owner, Xennox Diamonds",
-    org: "Reputable Academy",
-    location: "Australia",
-    bio: "Karl is an international award-winning author, a Telstra business award finalist and winner of the My Business Award for best customer experience. As owner of the renowned Xennox Diamonds, a 44-year-old second generation family business, he has achieved a 5-Star Google review ranking after more than 1300 reviews. Since 2020 Karl has been sharing his secrets and helping business owners to craft remarkable client experiences that turn great testimonials into online reviews that drive sales.",
-    image: "/images/instructors/karl-schwantes.png",
-    initials: "KS",
-    palette: "emerald",
-    programs: ["business"],
-  },
-  {
     slug: "petra-zink",
     name: "Petra Zink",
     title: "Founder · Personal Branding Strategist",
@@ -153,18 +141,6 @@ const trainers: Trainer[] = [
     image: "/images/instructors/petra-zink.png",
     initials: "PZ",
     palette: "plum",
-    programs: ["business"],
-  },
-  {
-    slug: "libby-marshall",
-    name: "Libby Marshall",
-    title: "Head of Client Services",
-    org: "OnTalent",
-    location: "Australia",
-    bio: "Libby is the head of client services at OnTalent, a boutique talent advisory firm. She is an MBA graduate of the University of Queensland, a qualified Gallup Global Strengths Coach and certified MBTI Practitioner. Her expertise is in developing people success strategies aligned to commercial performance. Libby has worked with higher education institutions in the areas of MBA and executive education including many of Australia's leading universities, Harvard, Foster School of Business (Seattle), and the University of Illinois.",
-    image: "/images/instructors/libby-marshall.png",
-    initials: "LM",
-    palette: "ocean",
     programs: ["business"],
   },
   {
@@ -189,15 +165,15 @@ const trainers: Trainer[] = [
     image: "/images/instructors/vincent-potage.png",
     initials: "VP",
     palette: "teal",
-    programs: [],
+    programs: ["business", "charity"],
   },
   {
     slug: "cavill-stone",
     name: "Cavill Stone",
-    title: "Director of Clients, People & Culture",
-    org: "MediaCast",
+    title: "Radio and broadcast PR specialist",
+    org: "",
     location: "Australia",
-    bio: "Cavill is director of clients, people and culture at PR agency MediaCast, which specialises in radio and broadcast communications. With more than ten years' experience in PR, communications and marketing, Cavill has assisted companies and non-profit organisations to elevate their profile, build their brand and ensure their messages are heard by their potential audiences - all using the power of radio.",
+    bio: "Cavill is a former director of clients, people and culture at a PR agency specialising in radio and broadcast communications, and has more than ten years' experience in PR, communications and marketing. She has assisted companies and non-profit organisations to elevate their profile, build their brand and ensure their messages are heard by their potential audiences - all using the power of radio.",
     image: "/images/instructors/cavill-stone.png",
     initials: "CS",
     palette: "sunset",
@@ -241,7 +217,7 @@ const specialtyGroups: SpecialtyGroup[] = [
     blurb:
       "Operators and brand builders who turn reputation into repeat revenue.",
     icon: TrendingUp,
-    trainers: ["karl-schwantes", "petra-zink", "libby-marshall"],
+    trainers: ["petra-zink"],
   },
   {
     id: "schools",
@@ -350,8 +326,12 @@ function TrainerCard({ trainer }: { trainer: Trainer }) {
           </h3>
           <p className="mt-1 text-[13px] font-semibold text-teal">{trainer.title}</p>
           <p className="mt-0.5 text-[13px] text-text-medium">
-            {trainer.org}
-            <span aria-hidden className="mx-1.5 text-text-medium/40">·</span>
+            {trainer.org ? (
+              <>
+                {trainer.org}
+                <span aria-hidden className="mx-1.5 text-text-medium/40">·</span>
+              </>
+            ) : null}
             <span className="inline-flex items-center gap-1 text-text-medium">
               <Globe2 className="h-3 w-3" aria-hidden />
               {trainer.location}
@@ -454,8 +434,6 @@ export default function ExpertTrainersPage() {
                     className="h-6 w-auto opacity-90"
                   />
                 </div>
-                <span aria-hidden className="text-white/30">|</span>
-                <span>15+ years of specialist PR consulting</span>
                 <span aria-hidden className="text-white/30">|</span>
                 <span>Presenters across 4 continents</span>
               </div>
@@ -635,10 +613,10 @@ export default function ExpertTrainersPage() {
                 </p>
                 <ul className="mt-7 space-y-3">
                   {[
-                    "Working consultants still briefing CEOs, boards and ministers today",
+                    "Working consultants still briefing CEOs, boards and political leaders today",
                     "Global perspective - Australia, New Zealand, the USA, UK, Europe and Africa",
                     "Cross-sector depth - corporate, schools, associations, charities and NFPs",
-                    "Exclusive Australasian access to the Crisis Ready® Institute through Melissa Agnes",
+                    "Exclusive Australasian access to the Crisis Ready® Institute with CEO Melissa Agnes",
                   ].map((item) => (
                     <li
                       key={item}
