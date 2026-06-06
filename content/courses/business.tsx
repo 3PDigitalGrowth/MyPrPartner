@@ -138,9 +138,9 @@ export const businessContent: CourseContent = {
   overview: {
     eyebrow: "Overview",
     heading:
-      "Affordable PR training, resources and support that enables your whole business team",
+      "Affordable PR training, resources and support that empowers your whole business team",
     paragraphs: [
-      "The My PR Partner Business Program is a 12-month online training program designed for busy Australian business owners. Each team member learns at a time that suits them, and content is built with the full range of business roles in mind, so your owners, executive, marketing, communications and client-facing teams share the same language and pull in the same direction.",
+      "The My PR Partner Business Program is a 12-month online training program designed for busy Australian business owners, managers, and communication teams. Each team member learns at a time that suits them, and content is built with the full range of business roles in mind, so your owners, executive, marketing, communications and client-facing teams share the same language and pull in the same direction.",
       "Built by CRC Public Relations, this is the distilled version of 15+ years of working alongside Australian businesses through their biggest moments, from proud growth stories and national media wins to the hardest moments when their reputation came under pressure.",
       <blockquote
         key="buffett-quote"
@@ -174,7 +174,7 @@ export const businessContent: CourseContent = {
     tiles: [
       {
         icon: TrendingUp,
-        title: "Grow",
+        title: "Brand, growth and social media",
         body:
           "Learn the keys to PR-driven business growth without huge advertising costs. Build the profile, trust and story that win new customers on repeat.",
       },
@@ -203,34 +203,34 @@ export const businessContent: CourseContent = {
     eyebrow: "12-month plan",
     heading: "Your month-by-month path, designed to go deeper over time",
     intro:
-      "Every month delivers a training video, a workbook, a practical resource, the weekly Spotlight email and an interactive Q&A. Below is the 12-month path your team follows, grouped into four quarterly phases.",
+      "Every month delivers a training video, workbook, practical resource, Spotlight emails and an interactive Q&A. Below is the 12-month path your team follows, grouped into four quarterly phases. (Topics are current at this time but are subject to change and some modules may be substituted during the 12 months.)",
     groups: [
       {
         label: "Phase 1: Foundations (Months 1 to 3)",
         count: "Build the mindset and find your voice",
         items: [
-          "Month 1 \u00B7 The PR mindset for business: why public relations underpins every growth and reputation win",
+          "Month 1 · A PR mindset: How public relations underpins every growth and reputation win",
           "Month 1 Resource: Communications tips for the whole business team",
-          "Month 2 \u00B7 Becoming the voice of authority in your industry or market",
-          "Month 2 Resource: The essential profile and reputation checklist for business",
-          "Month 3 \u00B7 Strategic communication that resonates emotionally with customers and staff",
-          "Month 3 Resource: Customer-message-mapping framework",
+          "Month 2 · Becoming the voice of authority in your industry or market",
+          "Month 2 Resource: 5 step guide to becoming an expert media commentator",
+          "Month 3 · Identifying your vulnerabilities before they escalate into a reputational issue",
+          "Month 3 Resource: The essential reputation checklist for business",
         ],
       },
       {
         label: "Phase 2: Profile and growth (Months 4 to 6)",
         count: "Get on the front foot",
         items: [
-          "Month 4 \u00B7 Using PR to attract new customers: the business growth playbook",
+          "Month 4 · PR that attracts new customers: the business growth PR strategy",
           "Month 4 Resource: PR and content campaign template pack",
-          "Month 5 \u00B7 Handling media enquiries and interest: protecting and amplifying your business",
-          "Month 5 Resource: Template business media policy and media-release library",
-          "Month 6 \u00B7 Building a national or local media profile with a small team",
-          "Month 6 Resource: Media list and pitch templates for business",
+          "Month 5 · The LinkedIn playbook: Drive business in a time-effective way",
+          "Month 5 Resource: LinkedIn tips and workbook",
+          "Month 6 · Using social media for business growth, with a social media specialist",
+          "Month 6 Resource: Business social media tips and response library",
         ],
       },
       {
-        label: "Phase 3: Trust, issues and crisis (Months 7 to 9)",
+        label: "Phase 3: Reputation, issues and crisis (Months 7 to 9)",
         count: "Grow trust, manage issues",
         items: [
           "Month 7 \u00B7 Growing customer loyalty and referrals by increasing the felt value of your brand",
@@ -258,9 +258,9 @@ export const businessContent: CourseContent = {
 
   personas: {
     eyebrow: "Who it's for",
-    heading: "A tailored program for Australian business leadership teams",
+    heading: "A tailored program for business owners, managers, and communication teams",
     intro:
-      "Your whole leadership team learns together, so everyone speaks with one voice in high-stakes moments and no one carries the reputation load alone.",
+      "Small or larger business – Your whole team learns together, so everyone understands and unlocks the power of public relations.",
     items: [
       {
         image: "/images/business/business-persona-owner.jpg",
@@ -317,12 +317,12 @@ export const businessContent: CourseContent = {
       },
     ],
     footnote:
-      "Plus in-depth conversations with successful Australian business owners, a specialist social media presenter, and a rotating panel of 10+ Australian PR, marketing and communications experts across the year.",
+      "Plus training by leading Australian and international PR, digital, growth, reputation, social media, and crisis specialists, and discussions with successful Australian business owners across the year.",
   },
 
   careerValue: {
     eyebrow: "The value your business walks away with",
-    heading: "Outcomes that matter in the market, the newsroom and at the kitchen table",
+    heading: "Outcomes that matter to your specific circumstances",
     items: [
       {
         icon: Megaphone,
@@ -363,7 +363,7 @@ export const businessContent: CourseContent = {
     items: [
       {
         q: "Who exactly can access the program at our business?",
-        a: "The program is designed for your whole leadership team. You choose who you'd like to be involved each month. This includes owners, directors, CEO/MD, executive team, marketing and communications staff, and client-facing leads. The first month is intentionally shaped so everyone benefits.",
+        a: "The program is designed for every business – small or large. You choose who you'd like to be involved each month. This includes owners, directors, CEO/MD, executive team, marketing and communications staff, and client-facing leads. The first month is intentionally shaped so everyone benefits.",
       },
       {
         q: "What ongoing PR support is available to our business?",
@@ -390,8 +390,8 @@ export const businessContent: CourseContent = {
         a: "Yes. The fortnightly Spotlight email keeps key ideas alive, and the monthly interactive Q&A is where you can bring your business's live situation. When something serious breaks, your team has a clear path to call on the CRC Public Relations consulting team if required (available on support levels).",
       },
       {
-        q: "Can our board or franchise partners see the content?",
-        a: "Absolutely. We actively encourage directors, franchise partners and senior advisers to access the program, especially the growth, reputation and crisis modules.",
+        q: "Can our board or partners see the content?",
+        a: "Absolutely. We actively encourage directors, partners and senior advisers to access the program, especially the growth, reputation and crisis modules.",
       },
       {
         q: "How is payment handled?",
@@ -498,13 +498,13 @@ export const businessContent: CourseContent = {
     eyebrow: "Want to go deeper on crisis?",
     heading: "Add the Crisis Masterclass for your owner and executive team",
     body:
-      "The Business Program covers issues management and reputation defence. If your team wants the deepest crisis training available, with the full Melissa Agnes Crisis Ready\u00AE course and an Australian case-study library, enrol your owner and key executives in the Crisis Masterclass alongside your business program.",
+      "The Business Program covers issues management and reputation defence. If your team wants the deepest crisis training available, we offer the Crisis Masterclass that includes the Crisis Ready\u00AE course with CEO of the Crisis Ready Institute Melissa Agnes. Enrol your owner and key executives in the Crisis Masterclass alongside your business program.",
     thumbImage: "/images/crisis-masterclass/hero-bg-crisis.jpg",
     featureBullets: [
       "Full 12-month Crisis Ready\u00AE course with Melissa Agnes",
-      "Australian crisis case-study library, updated monthly",
-      "Monthly live expert panel Q&A",
-      "Templates, holding statements and media playbooks",
+      "Monthly resources, workbooks and templates",
+      "Regular Q&A and live discussion opportunities",
+      "The only specialised crisis communications course of its type in Australia",
     ],
     primaryCta: { label: "Learn about Crisis Masterclass", href: "/crisis-masterclass" },
     secondaryCta: { label: "Talk to our team", href: "/contact" },

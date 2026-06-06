@@ -35,14 +35,16 @@ export default function GroupEnrolmentBand({ content }: { content: GroupBandCont
               <p className="mt-3 max-w-[580px] text-[15px] leading-relaxed text-white/85">
                 {content.body}
               </p>
-              <ul className="mt-5 grid grid-cols-1 gap-2 text-[14px] text-white/90 sm:grid-cols-2">
-                {content.bullets.map((i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-white" aria-hidden />
-                    <span>{i}</span>
-                  </li>
-                ))}
-              </ul>
+              {content.bullets?.length ? (
+                <ul className="mt-5 grid grid-cols-1 gap-2 text-[14px] text-white/90 sm:grid-cols-2">
+                  {content.bullets.map((i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-white" aria-hidden />
+                      <span>{i}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
             <div className="md:col-span-2 md:text-right">
               <Link

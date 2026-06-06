@@ -276,7 +276,7 @@ export type GroupBandContent = {
   badgeIcon?: IconRef;
   heading: string;
   body: string;
-  bullets: string[];
+  bullets?: string[];
   cta: CtaLink;
   ctaSubLabel?: string;
   bgImage: string;
