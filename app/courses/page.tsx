@@ -11,7 +11,6 @@ import {
   Star,
   User,
   Newspaper,
-  Users,
   Mail,
   Check,
   ArrowUpRight,
@@ -82,8 +81,8 @@ const upcomingCourses: UpcomingCourse[] = [
     accent: "linear-gradient(135deg, #1A2B4A 0%, #1E73BE 100%)",
     oneLiner: "Walk into an interview with a clear message, a calm voice and a plan for the hard question.",
     body: "Core message design, bridging, the killer question, body language on camera and what to do when the reporter has already made up their mind - built for spokespeople, executives and communications leads.",
-    trainerName: "Melissa Agnes",
-    trainerRole: "Crisis & brand protection author",
+    trainerName: "Lyall Mercer",
+    trainerRole: "Co-founder, My PR Partner · Lead Strategist, CRC Public Relations",
     status: "Launching 2026",
   },
   {
@@ -110,30 +109,6 @@ const upcomingCourses: UpcomingCourse[] = [
     trainerRole: "Owner · Xennox Diamonds",
     status: "Launching 2026",
   },
-  {
-    slug: "content-and-pr-strategy",
-    title: "Content & PR Strategy",
-    category: "Reputation & growth",
-    icon: Newspaper,
-    accent: "linear-gradient(135deg, #0B7A58 0%, #37B288 100%)",
-    oneLiner: "Build a lightweight content engine that earns trust and free media coverage.",
-    body: "Message architecture, content pillars, owned vs earned media, AI for drafting (and when not to use it), and how to run PR without hiring an agency.",
-    trainerName: "Trevor Young",
-    trainerRole: "PR, content & digital strategist",
-    status: "Launching 2026",
-  },
-  {
-    slug: "internal-communications-and-culture",
-    title: "Internal Comms & Culture",
-    category: "Leadership",
-    icon: Users,
-    accent: "linear-gradient(135deg, #1E73BE 0%, #07AFBB 100%)",
-    oneLiner: "Communicate so your team actually reads, understands and acts.",
-    body: "All-staff messaging, difficult announcements, manager cascade, change communications, and the overlap between internal comms and external reputation - for HR leads, comms managers and senior leaders.",
-    trainerName: "Libby Marshall",
-    trainerRole: "Head of Client Services · OnTalent",
-    status: "Launching 2026",
-  },
 ];
 
 const waitlistBenefits = [
@@ -149,7 +124,7 @@ const programFunnelCards = [
     icon: Shield,
     eyebrow: "Available now",
     title: "Crisis Masterclass",
-    body: "Don't want to wait? Australia's premier crisis communications program is live today - built with Melissa Agnes.",
+    body: "Don't want to wait? Australia's premier crisis communications program is live today - built in partnership with the Crisis Ready Institute.",
     cta: "See the masterclass",
     accent: "linear-gradient(135deg, #1A2B4A 0%, #1E73BE 100%)",
   },
@@ -214,11 +189,11 @@ export default function CoursesPage() {
                 </span>
               </h1>
               <p className="mx-auto mt-5 max-w-[660px] text-[16px] leading-relaxed text-white/85 md:text-[18px]">
-                Standalone courses on LinkedIn strategy, media training,
-                personal branding, content strategy and more - each
-                delivered by a senior practitioner, built for a specific
-                outcome, and available on its own (no annual subscription
-                required).
+                Standalone courses on social media, LinkedIn strategy,
+                media training, personal branding, content strategy and
+                more - each delivered by a senior practitioner, built for
+                a specific outcome, and available on its own (no annual
+                subscription required).
               </p>
               <p className="mx-auto mt-4 max-w-[600px] text-[15px] leading-relaxed text-white/75">
                 Register your interest to be first to enrol when each course
@@ -251,16 +226,16 @@ export default function CoursesPage() {
                 The pipeline
               </p>
               <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[36px]">
-                Six courses in development - with more to follow
+                Four courses in development - with more to follow
               </h2>
               <p className="mx-auto mt-4 max-w-[640px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
                 Each course is short, focused, self-paced, and delivered by a
-                senior practitioner whose day job is the subject they&apos;re
-                teaching.
+                specialist practitioner whose day job is the subject
+                they&apos;re teaching.
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2">
               {upcomingCourses.map((c) => {
                 const Icon = c.icon;
                 return (
