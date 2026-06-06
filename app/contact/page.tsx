@@ -81,7 +81,7 @@ const funnelCards: FunnelCard[] = [
   {
     href: "/crisis-masterclass",
     icon: Shield,
-    eyebrow: "Most popular",
+    eyebrow: "View the course",
     title: "Crisis Masterclass",
     body: "Australia's premier crisis communications training - built with Melissa Agnes and delivered by senior CRC Public Relations advisers.",
     cta: "See the masterclass",
@@ -269,7 +269,7 @@ export default function ContactPage() {
                   </button>
                   <p className="mt-4 flex items-center gap-2 text-[12.5px] text-text-medium">
                     <Mail className="h-3.5 w-3.5 text-teal" aria-hidden />
-                    Confidential and reviewed by a senior adviser.
+                    Confidential and read personally by our team.
                   </p>
                 </form>
               </div>
