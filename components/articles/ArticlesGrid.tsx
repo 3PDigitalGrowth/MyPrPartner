@@ -75,11 +75,11 @@ export function ArticlesGrid({ articles, categories }: ArticlesGridProps) {
       {filtered.length === 0 ? (
         <div className="mt-10 rounded-card border border-dashed border-[#E5E7EB] bg-white p-10 text-center">
           <p className="font-heading text-[18px] font-bold text-text-dark">
-            No articles in this category yet.
+            No articles here yet.
           </p>
           <p className="mt-2 text-[14.5px] text-text-medium">
-            Try a different category - or subscribe below and we&apos;ll email
-            you when new pieces go live.
+            Subscribe below and we&apos;ll email you the moment new pieces go
+            live.
           </p>
         </div>
       ) : (

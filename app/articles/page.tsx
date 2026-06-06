@@ -106,17 +106,17 @@ export default async function ArticlesPage() {
               </div>
               <div>
                 <p className="font-heading text-[16px] font-bold text-text-dark md:text-[17px]">
-                  Article previews below. Full reads rolling out across 2026.
+                  Our first articles are on the way.
                 </p>
                 <p className="mt-1.5 text-[14px] leading-relaxed text-text-medium">
-                  The summaries below give you the useful take today -{" "}
+                  We&apos;re putting the finishing touches on the library -{" "}
                   <Link
                     href="#subscribe"
                     className="font-semibold text-teal underline-offset-4 hover:text-teal-dark hover:underline"
                   >
                     subscribe
                   </Link>{" "}
-                  to get each complete article the day it drops.
+                  to get each new article the day it goes live.
                 </p>
               </div>
             </div>
@@ -274,7 +274,7 @@ export default async function ArticlesPage() {
                 If your situation is bigger than an article, start a conversation.
               </h2>
               <p className="mx-auto mt-4 max-w-[620px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                Every enquiry is reviewed by a senior adviser - not a sales
+                Every enquiry is reviewed by an adviser - not a sales
                 funnel - and escalated to CRC Public Relations when the matter
                 warrants it.
               </p>
@@ -337,7 +337,7 @@ const crossSells: CrossSell[] = [
     icon: Shield,
     eyebrow: "Most popular",
     title: "Crisis Masterclass",
-    body: "Australia's premier crisis communications program - built with Melissa Agnes and delivered by senior advisers.",
+    body: "Australia's premier crisis communications program - in partnership with the Crisis Ready Institute.",
     cta: "See the masterclass",
     accent: "linear-gradient(135deg, #1A2B4A 0%, #1E73BE 100%)",
   },
