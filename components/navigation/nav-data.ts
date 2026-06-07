@@ -80,8 +80,8 @@ export const resourceLinks: ResourceLink[] = [
   {
     href: "/resources/pr-guide",
     icon: FileText,
-    label: "Free 5-Step PR Guide",
-    descriptor: "Learn the secrets PR professionals use - no cost, no catch",
+    label: "Becoming a Trusted Public Voice",
+    descriptor: "Five steps to becoming a trusted voice in your field, at no cost",
     badges: ["free"],
   },
   {

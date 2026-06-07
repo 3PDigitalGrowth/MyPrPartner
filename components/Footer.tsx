@@ -46,7 +46,7 @@ const companyLinks = [
 
 const resourceLinks = [
   { name: "Articles & insights", href: "/articles" },
-  { name: "5-Step PR Guide", href: "/resources/pr-guide" },
+  { name: "Becoming a Trusted Public Voice", href: "/resources/pr-guide" },
   { name: "Crisis Vulnerability Checklist", href: "/resources/crisis-checklist" },
 ];
 

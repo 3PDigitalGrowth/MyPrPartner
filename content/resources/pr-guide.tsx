@@ -1,103 +1,105 @@
 import {
+  Award,
   BookOpen,
   Compass,
+  Lightbulb,
   Mic,
+  Newspaper,
+  Search,
+  Send,
   Shield,
-  Sparkles,
-  Target,
-  TrendingUp,
-  Users,
 } from "lucide-react";
 import type { LeadMagnetConfig } from "@/components/lead-magnet/types";
 
 export const prGuideConfig: LeadMagnetConfig = {
   slug: "pr-guide",
-  resourceLabel: "5-Step PR Guide",
+  resourceLabel: "Trusted Public Voice guide",
   downloadHref: "/downloads/pr-guide.pdf",
-  downloadFilename: "My-PR-Partner-5-Step-PR-Guide.pdf",
+  downloadFilename: "My-PR-Partner-Trusted-Public-Voice.pdf",
 
   hero: {
-    eyebrow: "Free download",
-    eyebrowIcon: Sparkles,
-    title: "The 5-Step PR Guide every business leader",
-    titleHighlight: "should have on their desk.",
+    eyebrow: "Free guide",
+    eyebrowIcon: Mic,
+    title: "Five steps to becoming a",
+    titleHighlight: "trusted public voice.",
     subhead:
-      "The same five-step framework senior CRC Public Relations advisers use to help organisations shape the story, protect reputation, and handle the press - now yours to read in under 20 minutes.",
+      "We live in an age of constant news. Journalists need fresh content every hour, and unlike advertising, the coverage costs you nothing. You don't need a public relations firm to begin. You need a few simple principles and the confidence to put your hand up. Follow these five steps and you can become a trusted voice in your field.",
     trustBadges: [
+      "Five practical steps",
       "Instant PDF download",
-      "No credit card required",
-      "Written by senior advisers",
+      "Free, no catch",
     ],
     backgroundImage: "/images/lead-magnet-bg.jpg",
   },
 
   stepsSection: {
     eyebrow: "Inside the guide",
-    title: "Five steps. One framework. Real outcomes.",
+    title: "The media needs experts. That's you.",
     subhead:
-      "The five moves experienced PR advisers make before they say a single word in public - distilled into a practical guide you can use this week.",
+      "None of this needs a budget or a media release. It needs an understanding of how the news works, and a few good habits. Here are the five that matter.",
     steps: [
       {
-        title: "01. Know your audience - really know them",
+        title: "Know the difference between coverage and marketing",
         teaser:
-          "How to map the people who actually influence your reputation (it's almost never the people you think) and pressure-test your messages against the questions they care about.",
-        icon: Users,
-        accent: "linear-gradient(135deg, #0F6DA3 0%, #07AFBB 100%)",
-      },
-      {
-        title: "02. Build the strategy before you need it",
-        teaser:
-          "A one-page PR strategy template senior advisers use to align leadership teams - so when a moment arrives (good or bad), you're already aligned on what to say.",
-        icon: Compass,
+          "This isn't free advertising. What you say has to be newsworthy, because it is the news. Pitch it as genuine public interest, not promotion. A new product or service can earn coverage, but only when it matters to the wider community, not just to you.",
+        icon: Newspaper,
         accent: "linear-gradient(135deg, #1A2B4A 0%, #1E73BE 100%)",
       },
       {
-        title: "03. Craft messages that cut through",
+        title: "Know your authority to speak",
         teaser:
-          "The three-part message architecture used in boardrooms, press interviews and crisis calls. Includes the 'CEO pen test' for knowing when a message is ready to go public.",
-        icon: Target,
-        accent: "linear-gradient(135deg, #B8434A 0%, #E2894B 100%)",
+          "Journalists are rarely experts on what they cover, so they look for people who are. That's you. Be willing to share what you know in your field. Being quoted builds your credibility with clients, and gives you something worth posting on your own channels too.",
+        icon: Award,
+        accent: "linear-gradient(135deg, #0F6DA3 0%, #07AFBB 100%)",
       },
       {
-        title: "04. Manage the media relationship",
+        title: "Ask what you can add to a story",
         teaser:
-          "How to approach journalists without getting burned, how to answer the question you weren't asked, and the one thing to never, ever say off the record.",
-        icon: Mic,
+          "When a story breaks, the follow-ups need fresh angles. When you see something in your area of expertise, ask what you could add to it. Don't undervalue your input. Your knowledge, or simply your opinion, could be exactly what a journalist is looking for.",
+        icon: Lightbulb,
         accent: "linear-gradient(135deg, #533278 0%, #A25CC8 100%)",
       },
       {
-        title: "05. Measure, learn, refine",
+        title: "Monitor the media in your field",
         teaser:
-          "The PR metrics that matter to leadership teams (and the vanity numbers to ignore). Plus a simple monthly review rhythm to turn results into a sharper next quarter.",
-        icon: TrendingUp,
+          "Set up a Google Alert for the keywords that matter to you. It's free, it takes a few minutes, and it tells you the moment your industry is in the news. That's when you can react quickly and put the steps above to work.",
+        icon: Search,
         accent: "linear-gradient(135deg, #0B7A58 0%, #37B288 100%)",
+      },
+      {
+        title: "Contact the journalist",
+        teaser:
+          "You don't need a media release. A short email or a message on social media will do, as long as it's brief. Introduce yourself, make your pitch, and explain what you add to the story. Not every pitch lands. Keep going, and one of them will.",
+        icon: Send,
+        accent: "linear-gradient(135deg, #B8434A 0%, #E2894B 100%)",
       },
     ],
   },
 
   authority: {
     eyebrow: "Why trust this guide",
-    body: "My PR Partner is powered by CRC Public Relations - a boutique firm that has spent 15+ years counselling boards, CEOs, governments, associations and schools through the moments that matter most. This guide is the foundational framework senior advisers walk new clients through on day one.",
+    title: "The same advice we give our own clients.",
+    body: "My PR Partner is powered by CRC Public Relations. For more than 15 years, CRC has helped companies, governments, associations, schools and not-for-profits earn the right kind of attention and protect their reputation. These five steps are where we tell people to start. They cost nothing, and anyone can put them to work.",
     bullets: [
-      "Distilled from 15+ years of senior crisis, reputation and corporate communications practice",
-      "Used as the onboarding framework for organisations across Australia and the Pacific",
-      "Written for leaders - clear, practical, and free of PR jargon",
-      "Focused on what actually moves the needle, not vanity metrics",
+      "Drawn from more than 15 years of public relations and crisis work",
+      "The same first steps we share with new clients",
+      "Written for busy leaders, in plain English and free of jargon",
+      "Practical enough to start using this week",
     ],
   },
 
   crossSells: {
-    eyebrow: "When a guide isn't enough",
-    title: "Ready for practical training?",
+    eyebrow: "When you're ready for more",
+    title: "Ready to take it further?",
     subhead:
-      "The guide will get you started. Our programs take your whole team from aware to genuinely capable - each one sector-matched and delivered by senior practitioners.",
+      "This guide gets you started. When you want your whole team genuinely ready, not just aware, our programs are built for exactly that. Each one is matched to your sector and led by experienced practitioners.",
     cards: [
       {
         href: "/crisis-masterclass",
         icon: Shield,
         eyebrow: "Most popular",
         title: "Crisis Masterclass",
-        body: "Australia's premier crisis communications program - built with Melissa Agnes and delivered by senior CRC Public Relations advisers. For leaders whose reputation can't afford a bad 48 hours.",
+        body: "Australia's premier crisis communications program, built in partnership with the Crisis Ready Institute. For leaders whose reputation can't afford a bad 48 hours.",
         cta: "See the masterclass",
         accent: "linear-gradient(135deg, #1A2B4A 0%, #1E73BE 100%)",
       },
@@ -106,7 +108,7 @@ export const prGuideConfig: LeadMagnetConfig = {
         icon: Compass,
         eyebrow: "Sector programs",
         title: "All programs by sector",
-        body: "Full-year programs for Schools, Industry Associations, Business and Charity - each built for a specific sector and leadership team.",
+        body: "Full-year programs for schools, associations, business and charities, each built for a specific sector and its leadership team.",
         cta: "Browse programs",
         accent: "linear-gradient(135deg, #0F6DA3 0%, #07AFBB 100%)",
       },
@@ -115,7 +117,7 @@ export const prGuideConfig: LeadMagnetConfig = {
         icon: BookOpen,
         eyebrow: "Launching 2026",
         title: "Upcoming standalone courses",
-        body: "Short, focused courses on LinkedIn strategy, media training, personal branding and more - register your interest for founding-member pricing.",
+        body: "Short, focused courses on LinkedIn strategy, media training, personal branding and more. Register your interest for founding-member pricing.",
         cta: "See the pipeline",
         accent: "linear-gradient(135deg, #B8434A 0%, #E2894B 100%)",
       },
@@ -124,28 +126,13 @@ export const prGuideConfig: LeadMagnetConfig = {
 
   articles: {
     eyebrow: "Keep reading",
-    title: "Articles that pair well with the guide",
+    title: "Latest insights",
     items: [
       {
         href: "/articles",
-        eyebrow: "Reputation",
-        title: "The three sentences every leader should know by heart",
-        body: "Why your elevator pitch is the wrong tool for reputation work - and the three-sentence alternative senior advisers use instead.",
-        readTime: "6 min read",
-      },
-      {
-        href: "/articles",
-        eyebrow: "Media",
-        title: "How to answer the question you weren't asked",
-        body: "Bridging, blocking and the rhythm of a great interview. A practical breakdown you can use before your next media moment.",
-        readTime: "8 min read",
-      },
-      {
-        href: "/articles",
-        eyebrow: "Strategy",
-        title: "PR metrics that actually matter to boards",
-        body: "Reach and impressions don't belong on a board paper. Here's the short list of PR measures that do - and how to report them.",
-        readTime: "7 min read",
+        eyebrow: "Latest insights",
+        title: "Explore our full library of articles",
+        body: "Practical advice and honest insights on public relations, media and reputation, to help you protect and build your standing.",
       },
     ],
   },
@@ -153,13 +140,13 @@ export const prGuideConfig: LeadMagnetConfig = {
   contactCta: {
     eyebrow: "For sensitive matters",
     title: "Facing something bigger than a guide can solve?",
-    body: "If the situation is active, sensitive, or already in the media, a PDF is not what you need. Reach out and a senior adviser will review the matter in confidence before recommending a next step.",
+    body: "If the situation is active, sensitive, or already in the media, a PDF isn't what you need. Get in touch and an experienced adviser will look at it in confidence before suggesting a next step.",
   },
 
   meta: {
-    title: "Free 5-Step PR Guide - My PR Partner",
+    title: "Five Steps to Becoming a Trusted Public Voice - My PR Partner",
     description:
-      "The same five-step PR framework senior CRC Public Relations advisers use with their clients - now a free download. Instant PDF, no credit card, no follow-up calls.",
+      "Five practical steps to becoming a trusted voice in your field, the same advice CRC Public Relations gives its clients. A free guide: instant PDF, no cost, no follow-up calls.",
     canonical: "https://myprpartner.com/resources/pr-guide",
     ogImage: "/images/lead-magnet-bg.jpg",
   },

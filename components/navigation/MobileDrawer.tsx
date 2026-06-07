@@ -344,9 +344,9 @@ function ResourcesLeadMobile({ onNavigate }: { onNavigate: () => void }) {
     <div className="rounded-xl bg-bg-grey p-6 text-center">
       <p className="text-[10px] font-medium uppercase tracking-[0.12em] text-teal">Most popular download</p>
       <GuideMockupSmall />
-      <p className="mt-4 font-heading text-base font-bold leading-snug text-text-dark">Free PR & Crisis Readiness Guide</p>
+      <p className="mt-4 font-heading text-base font-bold leading-snug text-text-dark">Becoming a Trusted Public Voice</p>
       <p className="mt-2 text-[13px] leading-relaxed text-text-medium">
-        5 steps to building a stronger public profile and protecting your reputation.
+        Five steps to becoming a trusted voice in your field, at no cost.
       </p>
       <Link
         href="/resources/pr-guide"
@@ -365,7 +365,7 @@ function GuideMockupSmall() {
     <div className="mx-auto mt-3 flex h-[140px] w-[120px] items-center justify-center rounded-lg border border-[#E5E7EB] bg-white shadow-sm">
       <div className="px-2 text-center">
         <p className="font-heading text-[10px] font-bold text-teal">My PR Partner</p>
-        <p className="mt-1 text-[11px] font-medium text-text-dark">PR Guide</p>
+        <p className="mt-1 text-[11px] font-medium text-text-dark">Trusted Voice</p>
       </div>
     </div>
   );
