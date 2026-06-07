@@ -28,7 +28,7 @@ export type LeadMagnetArticle = {
   eyebrow: string;
   title: string;
   body: string;
-  readTime: string;
+  readTime?: string;
 };
 
 export type LeadMagnetConfig = {

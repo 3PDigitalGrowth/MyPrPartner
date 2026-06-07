@@ -298,57 +298,89 @@ export function LeadMagnetPage({ config }: LeadMagnetPageProps) {
         {/* ── RELATED ARTICLES ── */}
         <section className="bg-white">
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
-            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-              <div className="max-w-[620px]">
-                <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                  {config.articles.eyebrow}
-                </p>
-                <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[34px]">
-                  {config.articles.title}
-                </h2>
-              </div>
-              <Link
-                href="/articles"
-                className="inline-flex items-center gap-2 text-[14px] font-semibold text-teal hover:text-teal-dark"
-              >
-                <Newspaper className="h-4 w-4" aria-hidden />
-                See all articles
-                <ArrowRight className="h-4 w-4" aria-hidden />
-              </Link>
-            </div>
-
-            <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
-              {config.articles.items.map((a) => (
-                <Link
-                  key={a.href}
-                  href={a.href}
-                  className="group flex h-full flex-col rounded-card border border-[#E5E7EB] bg-[#F7F8FA] p-6 transition-shadow hover:shadow-card md:p-7"
-                >
-                  <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-teal">
-                    {a.eyebrow}
-                  </p>
-                  <h3 className="mt-2 font-heading text-[19px] font-bold leading-snug text-text-dark">
-                    {a.title}
-                  </h3>
-                  <p className="mt-3 flex-1 text-[14.5px] leading-relaxed text-text-medium">
-                    {a.body}
-                  </p>
-                  <div className="mt-5 flex items-center justify-between border-t border-[#E5E7EB] pt-4 text-[13px]">
-                    <span className="inline-flex items-center gap-1.5 text-text-medium">
-                      <Clock className="h-3.5 w-3.5" aria-hidden />
-                      {a.readTime}
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 font-semibold text-teal transition-colors group-hover:text-teal-dark">
-                      Read article
-                      <ArrowRight
-                        className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
-                        aria-hidden
-                      />
-                    </span>
+            {config.articles.items.length === 1 ? (
+              <div className="rounded-card border border-[#E5E7EB] bg-[#F7F8FA] p-8 md:p-10">
+                <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-10">
+                  <div className="max-w-[640px]">
+                    <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
+                      {config.articles.items[0].eyebrow}
+                    </p>
+                    <h2 className="mt-2 font-heading text-[24px] font-bold leading-snug text-text-dark md:text-[30px]">
+                      {config.articles.items[0].title}
+                    </h2>
+                    <p className="mt-3 text-[15px] leading-relaxed text-text-medium md:text-[16px]">
+                      {config.articles.items[0].body}
+                    </p>
                   </div>
-                </Link>
-              ))}
-            </div>
+                  <Link
+                    href={config.articles.items[0].href}
+                    className="inline-flex flex-shrink-0 items-center justify-center gap-2 rounded-full bg-teal px-7 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-teal-dark"
+                  >
+                    <Newspaper className="h-4 w-4" aria-hidden />
+                    Browse all articles
+                    <ArrowRight className="h-4 w-4" aria-hidden />
+                  </Link>
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                  <div className="max-w-[620px]">
+                    <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
+                      {config.articles.eyebrow}
+                    </p>
+                    <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[34px]">
+                      {config.articles.title}
+                    </h2>
+                  </div>
+                  <Link
+                    href="/articles"
+                    className="inline-flex items-center gap-2 text-[14px] font-semibold text-teal hover:text-teal-dark"
+                  >
+                    <Newspaper className="h-4 w-4" aria-hidden />
+                    See all articles
+                    <ArrowRight className="h-4 w-4" aria-hidden />
+                  </Link>
+                </div>
+
+                <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
+                  {config.articles.items.map((a) => (
+                    <Link
+                      key={a.href}
+                      href={a.href}
+                      className="group flex h-full flex-col rounded-card border border-[#E5E7EB] bg-[#F7F8FA] p-6 transition-shadow hover:shadow-card md:p-7"
+                    >
+                      <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-teal">
+                        {a.eyebrow}
+                      </p>
+                      <h3 className="mt-2 font-heading text-[19px] font-bold leading-snug text-text-dark">
+                        {a.title}
+                      </h3>
+                      <p className="mt-3 flex-1 text-[14.5px] leading-relaxed text-text-medium">
+                        {a.body}
+                      </p>
+                      <div className="mt-5 flex items-center justify-between border-t border-[#E5E7EB] pt-4 text-[13px]">
+                        {a.readTime ? (
+                          <span className="inline-flex items-center gap-1.5 text-text-medium">
+                            <Clock className="h-3.5 w-3.5" aria-hidden />
+                            {a.readTime}
+                          </span>
+                        ) : (
+                          <span />
+                        )}
+                        <span className="inline-flex items-center gap-1.5 font-semibold text-teal transition-colors group-hover:text-teal-dark">
+                          Read article
+                          <ArrowRight
+                            className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
+                            aria-hidden
+                          />
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </section>
 

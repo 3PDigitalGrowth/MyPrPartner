@@ -47,7 +47,7 @@ const companyLinks = [
 const resourceLinks = [
   { name: "Articles & insights", href: "/articles" },
   { name: "5-Step PR Guide", href: "/resources/pr-guide" },
-  { name: "Crisis Readiness Checklist", href: "/resources/crisis-checklist" },
+  { name: "Crisis Vulnerability Checklist", href: "/resources/crisis-checklist" },
 ];
 
 export default function Footer() {
@@ -74,7 +74,7 @@ export default function Footer() {
                   Stay in the loop
                 </p>
                 <h2 className="mt-4 font-heading text-[22px] font-bold leading-tight text-text-dark md:text-[28px]">
-                  Senior-adviser thinking - straight to your inbox.
+                  Specialist-adviser thinking - straight to your inbox.
                 </h2>
                 <p className="mt-3 max-w-[520px] text-[14.5px] leading-relaxed text-text-medium">
                   New articles, program launches and practical templates.

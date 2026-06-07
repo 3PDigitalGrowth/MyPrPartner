@@ -87,8 +87,8 @@ export const resourceLinks: ResourceLink[] = [
   {
     href: "/resources/crisis-checklist",
     icon: ShieldCheck,
-    label: "Crisis Readiness Checklist",
-    descriptor: "Evaluate your organisation's crisis preparedness in 10 minutes",
+    label: "Crisis Vulnerability Checklist",
+    descriptor: "A 30-point self-assessment of your crisis vulnerability in 10 minutes",
     badges: ["free"],
   },
 ];
