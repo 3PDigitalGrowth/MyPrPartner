@@ -481,8 +481,7 @@ function ProgramsFeaturedCard({ onNavigate }: { onNavigate: () => void }) {
         }}
       >
         <div>
-          <p className="text-[11px] font-medium uppercase tracking-[0.12em]">Most popular</p>
-          <p className="mt-3 font-heading text-2xl font-bold leading-tight">Crisis Masterclass</p>
+          <p className="font-heading text-2xl font-bold leading-tight">Crisis Masterclass</p>
           <p className="mt-3 text-[14px] leading-relaxed text-white/90">
             12-month expert-led program featuring the exclusive Crisis Ready® course with Melissa Agnes. Built for Australia&apos;s communications professionals and business leaders.
           </p>
