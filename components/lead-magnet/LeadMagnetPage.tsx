@@ -189,16 +189,7 @@ export function LeadMagnetPage({ config }: LeadMagnetPageProps) {
                   </li>
                 ))}
               </ul>
-              <div className="mt-7 inline-flex items-center gap-3 rounded-full border border-[#E5E7EB] bg-white px-4 py-2 text-[13px] text-text-medium shadow-sm">
-                <Image
-                  src="/images/powered-by-crc-badge.svg"
-                  alt="Powered by CRC Public Relations"
-                  width={22}
-                  height={22}
-                  className="h-5 w-5"
-                />
-                Powered by CRC Public Relations
-              </div>
+              
             </div>
           </div>
         </section>

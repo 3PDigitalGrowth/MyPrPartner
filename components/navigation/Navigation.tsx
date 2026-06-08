@@ -396,9 +396,17 @@ export default function Navigation() {
           <div
             className="absolute top-full z-40 -mt-px hidden w-[min(640px,calc(100vw-3rem))] lg:block"
             style={{
-              left: resourcesTriggerRef.current && navShellRef.current
-                ? `${resourcesTriggerRef.current.getBoundingClientRect().left - navShellRef.current.getBoundingClientRect().left}px`
-                : "0",
+              left: (() => {
+                if (!resourcesTriggerRef.current || !navShellRef.current) return "0";
+                const navRect = navShellRef.current.getBoundingClientRect();
+                const triggerLeft =
+                  resourcesTriggerRef.current.getBoundingClientRect().left - navRect.left;
+                const viewport =
+                  typeof window !== "undefined" ? window.innerWidth : navRect.width;
+                const panelWidth = Math.min(640, viewport - 48); // matches w-[min(640px,calc(100vw-3rem))]
+                const maxLeft = viewport - 12 - panelWidth - navRect.left; // keep the right edge on-screen
+                return `${Math.max(0, Math.min(triggerLeft, maxLeft))}px`;
+              })(),
             }}
             onMouseEnter={() => {
               cancelPendingClose();

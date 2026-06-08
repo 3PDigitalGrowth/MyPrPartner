@@ -360,17 +360,7 @@ export default function StickyEnrolCard({
 
         {sidebar.trustBadges ? (
           <div className="mt-5 flex items-center justify-between gap-3 border-t border-[#F1F2F5] pt-4 text-[12px] text-text-medium">
-            {sidebar.trustBadges.poweredByCrcLogo ? (
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/images/powered-by-crc-badge.svg"
-                  alt="Powered by CRC Public Relations"
-                  width={120}
-                  height={18}
-                  className="h-4 w-auto"
-                />
-              </div>
-            ) : <span />}
+            
             {sidebar.trustBadges.crisisReadyBadge ? (
               <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F7F8FA] px-2.5 py-1 text-[11px] font-medium text-text-dark">
                 <ShieldCheck className="h-3 w-3 text-teal" aria-hidden />

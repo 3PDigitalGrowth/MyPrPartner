@@ -242,15 +242,7 @@ export default function AboutPage() {
                   </Link>
                 </div>
                 <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/15 pt-6 text-[12px] text-white/70">
-                  <div className="flex items-center gap-2">
-                    <Image
-                      src="/images/powered-by-crc-badge-light.svg"
-                      alt="Powered by CRC Public Relations"
-                      width={200}
-                      height={26}
-                      className="h-6 w-auto opacity-90"
-                    />
-                  </div>
+                  
                   <span aria-hidden className="text-white/30">|</span>
                   <span>Built from real engagements</span>
                   <span aria-hidden className="text-white/30">|</span>

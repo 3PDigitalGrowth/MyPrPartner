@@ -3,7 +3,6 @@ import {
   GraduationCap,
   Building2,
   Briefcase,
-  Heart,
   Shield,
   BookOpen,
   Users,
@@ -38,12 +37,6 @@ export const programsBySector: ProgramSectorLink[] = [
     icon: Briefcase,
     label: "Business Program",
     descriptor: "For business owners, founders and marketing leads",
-  },
-  {
-    href: "/programs/charity",
-    icon: Heart,
-    label: "Charity & Not-for-Profit",
-    descriptor: "For executive directors, boards and fundraising teams",
   },
 ];
 
@@ -97,5 +90,5 @@ export const crisisMasterclassProgramLink = {
   href: "/crisis-masterclass",
   icon: Shield,
   label: "Crisis Masterclass",
-  descriptor: "Australia's premier crisis communications training with Melissa Agnes",
+  descriptor: "Australia’s premier crisis communications training - Built in association with the Crisis Ready Institute",
 } as const;

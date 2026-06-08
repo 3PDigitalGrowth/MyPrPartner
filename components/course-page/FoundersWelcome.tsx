@@ -45,17 +45,7 @@ export default function FoundersWelcome({ content }: { content: FoundersWelcomeC
               ))}
             </blockquote>
             <p className="mt-6 text-[14px] font-medium text-text-dark">{content.signoff}</p>
-            {content.showCrcLogo ? (
-              <div className="mt-4">
-                <Image
-                  src="/images/powered-by-crc-badge.svg"
-                  alt="Powered by CRC Public Relations"
-                  width={260}
-                  height={34}
-                  className="h-8 w-auto"
-                />
-              </div>
-            ) : null}
+            
           </div>
         </div>
       </div>

@@ -88,17 +88,7 @@ export default function Hero({
 
             {hero.trustStrip ? (
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/15 pt-6 text-[12px] text-white/70">
-                {hero.trustStrip.poweredByCrcLogo ? (
-                  <div className="flex items-center gap-2">
-                    <Image
-                      src="/images/powered-by-crc-badge-light.svg"
-                      alt="Powered by CRC Public Relations"
-                      width={200}
-                      height={26}
-                      className="h-6 w-auto opacity-90"
-                    />
-                  </div>
-                ) : null}
+                
                 {hero.trustStrip.items.map((item, i) => (
                   <span key={item} className="flex items-center gap-x-6">
                     {(hero.trustStrip!.poweredByCrcLogo || i > 0) ? (

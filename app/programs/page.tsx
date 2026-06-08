@@ -7,7 +7,6 @@ import {
   Shield,
   GraduationCap,
   Briefcase,
-  Heart,
   Users2,
   Compass,
   Check,
@@ -71,13 +70,6 @@ const personaTiles: PersonaTile[] = [
     sublabel: "Owners, founders, executive teams",
     image: "/images/business/business-sticky-thumb.jpg",
     icon: Briefcase,
-  },
-  {
-    href: "/programs/charity",
-    label: "I run a charity or NFP",
-    sublabel: "Executive directors, boards, fundraising leads",
-    image: "/images/charity/charity-sticky-thumb.jpg",
-    icon: Heart,
   },
   {
     href: "/programs/industry-associations",
@@ -181,29 +173,6 @@ const programs: Program[] = [
       "Franchise, multi-location and group enrolments available at bulk rates",
     ],
     cta: "See the Business Program",
-  },
-  {
-    slug: "charity",
-    href: "/programs/charity",
-    sector: "For charities & not-for-profits",
-    icon: Heart,
-    iconAccent: "linear-gradient(135deg, #533278 0%, #A25CC8 100%)",
-    title: "Charity & NFP Program",
-    lede:
-      "A 12-month online PR, donor trust and reputation program built for Australian charities and not-for-profits.",
-    audience:
-      "Executive directors, boards, fundraising and communications teams - every size from community charity to national foundation.",
-    image: "/images/charity/charity-persona-ed.jpg",
-    imageAlt:
-      "An Australian charity executive director engaging her board and fundraising team.",
-    status: { label: "Launching 2026 · join waitlist", tone: "waitlist" },
-    pricing: "Founding-member discount - first 50 save 10%",
-    outcomes: [
-      "Donor-trust and storytelling modules built for mission-led organisations",
-      "Handling sensitive issues, public scrutiny and board-level communications",
-      "Federation, peak body and multi-entity enrolments available at bulk rates",
-    ],
-    cta: "See the Charity Program",
   },
   {
     slug: "industry-associations",
@@ -348,7 +317,7 @@ export default function ProgramsPage() {
                 Our programs
               </div>
               <h1 className="font-heading text-[34px] font-bold leading-[1.08] text-white sm:text-[44px] md:text-[52px]">
-                Five programs.{" "}
+                Four programs.{" "}
                 <span className="text-teal-light">One built for your team.</span>
               </h1>
               <p className="mx-auto mt-5 max-w-[680px] text-[16px] leading-relaxed text-white/85 md:text-[18px]">
@@ -445,7 +414,7 @@ export default function ProgramsPage() {
                 Every program, side by side
               </p>
               <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[36px]">
-                All five programs at a glance
+                All four programs at a glance
               </h2>
               <p className="mx-auto mt-4 max-w-[640px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
                 Each card links to the full program page. Start with the one

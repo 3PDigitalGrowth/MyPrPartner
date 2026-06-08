@@ -33,7 +33,6 @@ const programLinks = [
   { name: "Schools program", href: "/programs/schools" },
   { name: "Industry & associations program", href: "/programs/industry-associations" },
   { name: "Business program", href: "/programs/business" },
-  { name: "Charity & NFP program", href: "/programs/charity" },
 ];
 
 const companyLinks = [
@@ -110,17 +109,13 @@ export default function Footer() {
             </Link>
             <p className="mt-5 max-w-[380px] text-[14.5px] leading-relaxed text-text-medium">
               Public relations training, resources and support for Australian
-              and New Zealand organisations - powered by the senior advisory
-              team at CRC Public Relations.
+              and New Zealand organisations.
+            </p>
+            <p className="mt-4 max-w-[380px] text-[14.5px] leading-relaxed text-text-medium">
+              Powered by CRC Public Relations.
             </p>
 
-            <Image
-              src="/images/powered-by-crc-badge.svg"
-              alt="Powered by CRC Public Relations"
-              width={280}
-              height={36}
-              className="mt-6 h-9 w-auto"
-            />
+            
 
             <div className="mt-7">
               <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-text-medium">
@@ -248,8 +243,8 @@ export default function Footer() {
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-between gap-4 text-[12.5px] text-text-medium sm:flex-row">
             <p className="text-center sm:text-left">
-              &copy; 2026 Cheese Wheel Communications Group Pty Ltd t/a My PR
-              Partner and CRC Public Relations. All rights reserved.
+              &copy; 2026 My PR Partner and CRC Public Relations. All rights
+              reserved.
             </p>
             <div className="flex items-center gap-4">
               <Link href="#" className="transition-colors hover:text-teal">

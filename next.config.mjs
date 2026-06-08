@@ -15,6 +15,16 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      // Charity & NFP program hidden - fold any traffic into the Business program.
+      {
+        source: "/programs/charity",
+        destination: "/programs/business",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -178,15 +178,7 @@ export default function Home() {
             <div className="pt-20 pb-12">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-[720px] text-center animate-fade-in-up">
-                  <div className="flex justify-center mb-6">
-                    <Image
-                      src="/images/powered-by-crc-badge.svg"
-                      alt="Powered by CRC Public Relations"
-                      width={280}
-                      height={36}
-                      priority
-                    />
-                  </div>
+                  
                   <h1 className="font-heading text-[36px] md:text-[52px] font-bold text-text-dark leading-[1.1] tracking-tight">
                     Online public relations training, resources &amp; support
                   </h1>
@@ -384,9 +376,7 @@ export default function Home() {
                   <p>We invite you to join the My PR Partner community.</p>
                 </blockquote>
                 <p className="mt-6 text-[14px] font-medium text-text-dark">- Lyall Mercer &amp; Barbara Gorogh, Co-founders</p>
-                <div className="mt-4">
-                  <Image src="/images/powered-by-crc-badge.svg" alt="Powered by CRC Public Relations" width={280} height={36} />
-                </div>
+                
               </div>
             </div>
           </div>

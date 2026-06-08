@@ -186,9 +186,9 @@ export const associationsContent: CourseContent = {
 
   courseStructure: {
     eyebrow: "12-month plan",
-    heading: "Your month-by-month path, designed to go deeper over time",
+    heading: "Your month-by-month association program",
     intro:
-      "Every month delivers a training video, a workbook, a practical resource, the weekly Spotlight email and an interactive Q&A. Below is the 12-month path your team follows, grouped into four quarterly phases.",
+      "Every month delivers a training video, a workbook, a practical resource, the fortnightly Spotlight emails and an interactive Q&A. The 12-month path is grouped into four quarterly phases. (Topics are current at this time but are subject to change and some modules may be substituted during the 12 months.)",
     groups: [
       {
         label: "Phase 1: Foundations (Months 1 to 3)",
@@ -226,8 +226,7 @@ export const associationsContent: CourseContent = {
           {
             month: 5,
             title:
-              "Lobbying and Advocacy case study with a CEO: How a national industry body turned disaster into success",
-            resource: "Ten vital steps when you need legislators to listen",
+              "Lobbying and advocacy case study with a CEO: How a national industry body turned disaster into success",
           },
           {
             month: 6,
@@ -374,7 +373,7 @@ export const associationsContent: CourseContent = {
 
   careerValue: {
     eyebrow: "What your team will learn",
-    heading: "Strategic outcomes your team will walk away with",
+    heading: "The value your association walks away with",
     items: [
       {
         icon: Megaphone,

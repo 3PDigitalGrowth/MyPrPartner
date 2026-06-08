@@ -153,7 +153,7 @@ export default async function ArticlesPage() {
                 </h2>
                 <p className="mt-3 text-[15.5px] leading-relaxed text-text-medium md:text-[16px]">
                   Filter by the lens you need - crisis response, reputation
-                  work, media craft, or senior-level strategy.
+                  work, media or strategy.
                 </p>
               </div>
             </div>

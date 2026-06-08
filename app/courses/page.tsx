@@ -106,7 +106,7 @@ const upcomingCourses: UpcomingCourse[] = [
     oneLiner: "Turn happy clients into a steady stream of 5-star reviews and referrals.",
     body: "Client experience design, review-generation systems, handling negative feedback, and turning testimonials into a sales engine - from a business that has earned a 5-star rating on 1,300+ Google reviews.",
     trainerName: "Karl Schwantes",
-    trainerRole: "Owner · Xennox Diamonds",
+    trainerRole: "Founder - Reputable Academy",
     status: "Launching 2026",
   },
 ];
@@ -536,9 +536,8 @@ export default function CoursesPage() {
               </h2>
               <p className="mx-auto mt-4 max-w-[600px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
                 If your team has a specific training need that isn&apos;t on
-                the pipeline above, tell us. Every enquiry is reviewed by a
-                senior adviser - and genuinely shapes what we build
-                next.
+                the pipeline above, tell us. Every enquiry is reviewed - and
+                genuinely shapes what we build next.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Link
