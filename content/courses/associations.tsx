@@ -475,7 +475,7 @@ export const associationsContent: CourseContent = {
     inclusions: [
       "10% founding-member discount (first 50 association members)",
       "First access to enrolments before public release",
-      "Full program outline and 12-month curriculum",
+      "Full program outline",
       "Updates on launch date and pricing tiers",
     ],
     waitlist: {
@@ -502,7 +502,7 @@ export const associationsContent: CourseContent = {
       benefits: [
         "10% founding-member discount on year one",
         "First access to enrolment before public release",
-        "Full program outline and 12-month curriculum",
+        "Full program outline",
       ],
       footnote:
         "We'll only email you about the Industry Associations Program. Unsubscribe at any time.",

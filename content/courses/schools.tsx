@@ -478,11 +478,11 @@ export const schoolsContent: CourseContent = {
         pricePlanNote: "Pay annually and save $440",
         inclusionsTitle: "Inclusions tailored specifically for schools:",
         inclusions: [
-          "Monthly video & audio resources",
-          "Weekly Spotlight email",
+          "Monthly training video + workbook",
+          "Monthly practical team resource",
+          "Spotlight emails",
           "Interactive Q&A",
           "Bonus training and resources",
-          "Featured schools video training",
         ],
       },
       {
@@ -494,11 +494,11 @@ export const schoolsContent: CourseContent = {
         pricePlanNote: "Pay annually and save $840",
         inclusionsTitle: "Inclusions tailored specifically for schools:",
         inclusions: [
-          "Monthly video & audio resources",
-          "Weekly Spotlight email",
+          "Monthly training video + workbook",
+          "Monthly practical team resource",
+          "Spotlight emails",
           "Interactive Q&A",
           "Bonus training and resources",
-          "Featured schools video training",
         ],
         plusHeading: "Train Level PLUS:",
         plusInclusions: [
@@ -518,11 +518,11 @@ export const schoolsContent: CourseContent = {
         pricePlanNote: "Pay annually and save $1,340",
         inclusionsTitle: "Inclusions tailored specifically for schools:",
         inclusions: [
-          "Monthly video & audio resources",
-          "Weekly Spotlight email",
+          "Monthly training video + workbook",
+          "Monthly practical team resource",
+          "Spotlight emails",
           "Interactive Q&A",
           "Bonus training and resources",
-          "Featured schools video training",
         ],
         plusHeading: "Train Level PLUS:",
         plusInclusions: [

@@ -247,11 +247,11 @@ export default function Footer() {
               reserved.
             </p>
             <div className="flex items-center gap-4">
-              <Link href="#" className="transition-colors hover:text-teal">
+              <Link href="/privacy-policy" className="transition-colors hover:text-teal">
                 Privacy policy
               </Link>
               <span aria-hidden className="text-[#D1D5DB]">|</span>
-              <Link href="#" className="transition-colors hover:text-teal">
+              <Link href="/terms-and-conditions" className="transition-colors hover:text-teal">
                 Terms &amp; conditions
               </Link>
             </div>
