@@ -86,7 +86,7 @@ export const businessContent: CourseContent = {
     headline:
       "Build the profile, trust and reputation your business needs to grow, and the skills to protect it",
     tagline:
-      "A 12-month online PR program built for busy Australian business owners and their teams",
+      "The only Australian 12-month online public relations program built for busy Australian business owners and their teams",
     intro:
       "Attract new customers, become the recognised voice of authority in your industry, and lead confidently through any issue or crisis. Join the My PR Partner business community.",
     outcomes: [
@@ -218,7 +218,7 @@ export const businessContent: CourseContent = {
         ],
       },
       {
-        label: "Phase 2: Profile and growth (Months 4 to 6)",
+        label: "Phase 2: Brand, growth and social media (Months 4 to 6)",
         count: "Get on the front foot",
         items: [
           "Month 4 · PR that attracts new customers: the business growth PR strategy",
@@ -233,22 +233,22 @@ export const businessContent: CourseContent = {
         label: "Phase 3: Reputation, issues and crisis (Months 7 to 9)",
         count: "Grow trust, manage issues",
         items: [
-          "Month 7 \u00B7 Growing customer loyalty and referrals by increasing the felt value of your brand",
-          "Month 7 Resource: Customer trust and loyalty checklist",
-          "Month 8 \u00B7 Managing negative issues and turning them into opportunities to build trust",
-          "Month 8 Resource: Issues-management framework for business",
-          "Month 9 \u00B7 Doing social media well, with a specialist social media presenter",
-          "Month 9 Resource: Business social media tips and response library",
+          "Month 7 \u00B7 Trust, reputation and turning negative issues into opportunities",
+          "Month 7 Resource: Issues-management framework for business",
+          "Month 8 \u00B7 Avoiding and preparing for a crisis: Planning for any business size",
+          "Month 8 Resource: Crisis communication plan guide and templates",
+          "Month 9 \u00B7 Three questions you must ask to effectively communicate through a crisis",
+          "Month 9 Resource: Guide from the Crisis Ready Institute",
         ],
       },
       {
         label: "Phase 4: Mastery and application (Months 10 to 12)",
         count: "Sharpen and apply",
         items: [
-          "Month 10 \u00B7 Featured business owner: an in-depth conversation on what worked, what didn't, and the lessons learned",
-          "Month 10 Resource: Best-practice playbook from a successful Australian business",
-          "Month 11 \u00B7 Q&A month: the biggest questions and scenarios from program participants",
-          "Month 11 Resource: Best-practice recap document from the year",
+          "Month 10 \u00B7 Building a national or local media profile with a small team",
+          "Month 10 Resource: Media list and pitch templates for business",
+          "Month 11 \u00B7 Featured business owner: What worked, what didn't, and the lessons learned",
+          "Month 11 Resource: Best-practice PR playbook from a successful Australian business",
           "Month 12 \u00B7 Media training for your spokespeople: the art of a great business interview",
           "Month 12 is on call all year, so your spokespeople are media-ready whenever you need them",
         ],
@@ -258,9 +258,9 @@ export const businessContent: CourseContent = {
 
   personas: {
     eyebrow: "Who it's for",
-    heading: "A tailored program for business owners, managers, and communication teams",
+    heading: "Business owners and founders",
     intro:
-      "Small or larger business – Your whole team learns together, so everyone understands and unlocks the power of public relations.",
+      "Elevate your business. Your marketing must be backed up by effective and PR-driven communication to your customers, staff and other stakeholders, that builds growth, trust, and a solid reputation.",
     items: [
       {
         image: "/images/business/business-persona-owner.jpg",
@@ -297,13 +297,13 @@ export const businessContent: CourseContent = {
     eyebrow: "Your presenters",
     heading: "Learn from Australia's leading business PR specialists",
     intro:
-      "Lead presenter is Lyall Mercer, supported by a panel of guest experts and successful Australian business owners who each bring real-world experience to the program.",
+      "Lead presenter is Lyall Mercer, supported by a host of specialist experts and successful Australian business owners who each bring real-world experience to the program.",
     items: [
       {
         image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
-        bio: "Former journalist with a 25+ year PR career spanning six continents. Lyall has assisted Australian businesses, from hospitality and professional services to national brands, for 25+ years. He has spoken at numerous business forums and conferences, and trained owners, executive teams and staff in the art of effective communication and reputation strategy.",
+        bio: "Former journalist with a 25+ year PR career spanning six continents. Lyall has assisted Australian businesses, from hospitality and professional services to national brands, spoken at numerous business forums and conferences, and trained owners, executive teams and staff in the art of effective communication and reputation strategy.",
       },
       {
         image: "/images/instructors/melissa-agnes.png",
