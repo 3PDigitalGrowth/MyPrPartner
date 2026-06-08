@@ -97,7 +97,7 @@ export const crisisMasterclassContent: CourseContent = {
   },
 
   statBar: [
-    { icon: MonitorPlay, title: "100% online", sub: "Learn anywhere in Australia" },
+    { icon: MonitorPlay, title: "100% online", sub: "Learn anywhere in Australasia" },
     { icon: Clock, title: "12-month access", sub: "Go at your own pace" },
     { icon: Users, title: "Expert trainers", sub: "Australian and international" },
     { icon: ShieldCheck, title: "Exclusive and unique", sub: "Taught nowhere else" },
@@ -106,7 +106,7 @@ export const crisisMasterclassContent: CourseContent = {
 
   anchors: [
     { id: "overview", label: "Overview" },
-    { id: "what-youll-learn", label: "What you'll learn" },
+    { id: "what-youll-learn", label: "What you'll get" },
     { id: "structure", label: "Course structure" },
     { id: "instructors", label: "Instructors" },
     { id: "pricing", label: "Pricing" },
@@ -120,7 +120,7 @@ export const crisisMasterclassContent: CourseContent = {
       "Don\u2019t expect the usual. This course doesn\u2019t build plans \u2013 it builds YOU.",
       "Crisis Masterclass is a 12-month online course built for Australian organisations that can't afford to get crisis communications wrong. Whether you are a communications professional, business leader or manager, media spokesperson, or are involved with marketing, HR or legal and support your company or clients in managing a crisis, this program gives you the practical skills, templates and expert guidance to handle any reputation threat with confidence.",
       <>
-        The program blends CRC Public Relations' 20+ years of Australian crisis consulting experience with the globally recognised Crisis Ready<sup className="ml-0.5 align-super text-[10px]">®</sup> methodology from Crisis Ready Institute CEO Melissa Agnes, and is available exclusively through My PR Partner in Australasia. You'll learn not just how to develop the right plan, but how to lead and connect with those who are most important during an issue or crisis, and you\u2019ll get ongoing support from our expert panel.
+        The program blends CRC Public Relations' 20+ years of Australian crisis consulting experience with the globally recognised Crisis Ready<sup className="ml-0.5 align-super text-[10px]">®</sup> methodology from Crisis Ready Institute CEO Melissa Agnes, and is available exclusively through My PR Partner in Australasia. You'll learn not just how to develop the right plan, but how to lead and connect with those who are most important during an issue or crisis, and you'll get ongoing support from our expert panel.
       </>,
     ],
     keyLearningsTitle: "Key learnings in this online course",
@@ -175,62 +175,62 @@ export const crisisMasterclassContent: CourseContent = {
     modules: [
       {
         month: 1,
-        title: "Redefining Crisis Readiness",
+        title: "Redefining crisis readiness",
         note: "Mindset before methodology \u2014 shift from reactive to proactive and lead from presence, not panic.",
       },
       {
         month: 2,
-        title: "Issue vs. Crisis: Getting the Distinction Right",
+        title: "Issue vs. crisis: getting the distinction right",
         note: "Distinguish issues from crises, learn the six thresholds of impact and calibrate your response.",
       },
       {
         month: 3,
-        title: "Emotion and Escalation",
-        note: "You can\u2019t beat emotion with logic \u2014 meet stakeholders in the emotional landscape and guide them to trust.",
+        title: "Emotion and escalation",
+        note: "You can\u2019t beat emotion with logic \u2014 meet stakeholders in the emotional landscape of a crisis and guide them toward trust and resolution.",
       },
       {
         month: 4,
-        title: "Owning Accountability Without Fuelling Liability",
+        title: "Owning accountability without fuelling liability",
         note: "The art of the public apology \u2014 high-integrity communication that honours stakeholders and strengthens trust.",
       },
       {
         month: 5,
-        title: "Layering and Long-Term Trust",
-        note: "Strategic communication in cascading events \u2014 anticipate next steps and maintain transparency through extended disruption.",
+        title: "Layering and long-term trust",
+        note: "Strategic communication in cascading events \u2014 anticipate next steps, maintain transparency and foster lasting trust.",
       },
       {
         month: 6,
-        title: "Governing the Message Internally and Externally",
+        title: "Governing the message internally and externally",
         note: "Align leadership, legal, HR and comms to speak with one coherent, values-based voice.",
       },
       {
         month: 7,
-        title: "Timelines of Response & Owning Your Narrative",
-        note: "Right action + right communication + right timeline. Proactive, strategically reactive, first and layered response frameworks.",
+        title: "Timelines of response & owning your narrative",
+        note: "Tactical frameworks for proactive, strategically reactive, and layered crisis responses.",
       },
       {
         month: 8,
-        title: "Navigating the Modern Noise: AI, Disinformation, Misinformation & Deepfakes",
+        title: "Navigating the modern noise: AI, disinformation, misinformation & deepfakes",
         note: "Own truth in an age of manufactured doubt \u2014 monitor, verify and respond to AI-generated content and coordinated disinformation.",
       },
       {
         month: 9,
-        title: "Building Your Crisis Response Program",
+        title: "Building your crisis response program",
         note: "From insight to infrastructure \u2014 scenario playbooks, activation criteria, roles, workflows and a template library.",
       },
       {
         month: 10,
-        title: "Moving Through Resistance: The Five Crisis Ready\u00AE Hindrances",
-        note: "Recognise and neutralise the five internal forces that derail capable teams in a crisis.",
+        title: "Moving through resistance: the five Crisis Ready\u00AE hindrances",
+        note: "Recognise and neutralise the five forces that derail capable teams in a crisis.",
       },
       {
         month: 11,
-        title: "Post-Crisis: From Surviving to Strengthening",
+        title: "Post-crisis: from surviving to strengthening",
         note: "Rebuild brand equity and leadership credibility \u2014 turn crisis into your next credibility milestone.",
       },
       {
         month: 12,
-        title: "Capstone Tabletop Simulation",
+        title: "Capstone tabletop simulation",
         note: "Practice. Pressure-test. Embody. A facilitated, real-time drill applying every framework from the year.",
       },
     ],
@@ -238,7 +238,7 @@ export const crisisMasterclassContent: CourseContent = {
 
   personas: {
     eyebrow: "Who it's for",
-    heading: "Built for Australian leaders who carry the reputation load",
+    heading: "Built for Australian leaders and communicators who carry the reputation load",
     intro:
       "PR and communications professionals, business leaders, spokespeople and all in your team who care about protecting your people, your brand and your community.",
     items: [
@@ -301,7 +301,7 @@ export const crisisMasterclassContent: CourseContent = {
   },
 
   testimonials: {
-    eyebrow: "Crisis Ready® student testimonials",
+    eyebrow: "Real results",
     heading: "What former students say about the Crisis Ready course",
     items: [
       {
@@ -351,7 +351,7 @@ export const crisisMasterclassContent: CourseContent = {
       },
       {
         icon: Radio,
-        title: "Apply different Crisis Ready® Formulas",
+        title: "Apply different Crisis Ready® formulas",
         body:
           "To effectively develop your crisis response strategies over the long-term",
       },
@@ -420,7 +420,7 @@ export const crisisMasterclassContent: CourseContent = {
   },
 
   foundersWelcome: {
-    eyebrow: "From the founders",
+    eyebrow: "From the Crisis Masterclass leaders",
     heading: "A message from Lyall and Melissa",
     images: ["/images/expert-lyall-real.png", "/images/expert-melissa-real.png"],
     imageAlt: "Melissa Agnes and Lyall Mercer, co-founders of My PR Partner",
@@ -459,7 +459,7 @@ export const crisisMasterclassContent: CourseContent = {
       "Enrol today and start building the skills, plans and confidence to lead your organisation through whatever comes next.",
     primaryCtaLabel: "Enrol now",
     secondaryCta: { label: "Talk to our team", href: "/contact" },
-    footnote: "14-day satisfaction guarantee. Powered by CRC Public Relations and Crisis Ready Institute.",
+    footnote: "Powered by CRC Public Relations and Crisis Ready Institute.",
     bgImage: "/images/crisis-masterclass/final-cta-bg.jpg",
   },
 
