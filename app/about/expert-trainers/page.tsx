@@ -11,9 +11,11 @@ import {
   Users,
   Check,
   Globe2,
+  Scale,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { TrainerFilter } from "./TrainerFilter";
 
 export const metadata: Metadata = {
   title:
@@ -179,6 +181,18 @@ const trainers: Trainer[] = [
     palette: "sunset",
     programs: ["business", "charity"],
   },
+  {
+    slug: "tim-whincop",
+    name: "Tim Whincop",
+    title: "Director",
+    org: "Vocare Law",
+    location: "Australia",
+    bio: "Tim has an extensive background as an in-house legal practitioner in a global not-for-profit organisation spanning numerous years. His proficiency lies in his extensive work with clients in the NGO and NFP sectors, and he has cultivated expertise in handling complex legal and business matters across global jurisdictions. Tim holds a Master of Laws (International Commercial Law and Dispute Resolution) from Bond University, and an MBA and Bachelor of Laws from SCU. He is admitted to practise in the NSW Supreme Court and High Court of Australia.",
+    image: "/images/instructors/tim-whincop.png",
+    initials: "TW",
+    palette: "emerald",
+    programs: ["schools", "associations", "charity"],
+  },
 ];
 
 // ──────────────────────────────────────────────────────────────────────────────
@@ -209,7 +223,7 @@ const specialtyGroups: SpecialtyGroup[] = [
     blurb:
       "Journalists, strategists, podcasters and campaigners who know how to earn attention, shape the conversation and influence outcomes.",
     icon: Newspaper,
-    trainers: ["trevor-young", "jonathan-hawkes", "cavill-stone", "vincent-potage", "julie-mason"],
+    trainers: ["trevor-young", "jonathan-hawkes", "cavill-stone", "vincent-potage", "julie-mason", "lyall-mercer"],
   },
   {
     id: "growth",
@@ -217,7 +231,7 @@ const specialtyGroups: SpecialtyGroup[] = [
     blurb:
       "Operators and brand builders who turn reputation into repeat revenue.",
     icon: TrendingUp,
-    trainers: ["petra-zink"],
+    trainers: ["petra-zink", "julie-mason"],
   },
   {
     id: "schools",
@@ -225,7 +239,15 @@ const specialtyGroups: SpecialtyGroup[] = [
     blurb:
       "Specialist support for principals, boards and school communications leads.",
     icon: GraduationCap,
-    trainers: ["tim-sterne"],
+    trainers: ["tim-sterne", "lyall-mercer"],
+  },
+  {
+    id: "legal",
+    label: "Legal, governance & not-for-profit",
+    blurb:
+      "Legal and governance specialists who help schools, associations and not-for-profits protect their people, mission and reputation.",
+    icon: Scale,
+    trainers: ["tim-whincop"],
   },
 ];
 
@@ -367,7 +389,14 @@ function TrainerCard({ trainer }: { trainer: Trainer }) {
 // ──────────────────────────────────────────────────────────────────────────────
 
 export default function ExpertTrainersPage() {
-  const trainerBySlug = new Map(trainers.map((t) => [t.slug, t]));
+  const expertiseAreas = specialtyGroups.map((g) => ({ id: g.id, label: g.label }));
+  const trainerItems = trainers.map((t) => ({
+    id: t.slug,
+    expertise: specialtyGroups
+      .filter((g) => g.trainers.includes(t.slug))
+      .map((g) => g.id),
+    node: <TrainerCard trainer={t} />,
+  }));
 
   return (
     <>
@@ -458,28 +487,16 @@ export default function ExpertTrainersPage() {
         {/* ── SPECIALTY JUMP NAV ── */}
         <section className="bg-[#F7F8FA]">
           <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-10 lg:px-8">
-            <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-              <div>
-                <SectionEyebrow>Meet the team</SectionEyebrow>
-                <h2 className="mt-2 font-heading text-[22px] font-bold text-text-dark md:text-[26px]">
-                  Jump to the expertise you need
-                </h2>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {specialtyGroups.map((g) => {
-                  const Icon = g.icon;
-                  return (
-                    <a
-                      key={g.id}
-                      href={`#${g.id}`}
-                      className="inline-flex items-center gap-2 rounded-full border border-[#E5E7EB] bg-white px-4 py-2 text-[13px] font-medium text-text-dark transition-colors hover:border-teal hover:text-teal"
-                    >
-                      <Icon className="h-3.5 w-3.5 text-teal" aria-hidden />
-                      {g.label}
-                    </a>
-                  );
-                })}
-              </div>
+            <div className="max-w-[640px]">
+              <SectionEyebrow>Meet the team</SectionEyebrow>
+              <h2 className="mt-2 font-heading text-[22px] font-bold text-text-dark md:text-[26px]">
+                Jump to the expertise you need
+              </h2>
+              <p className="mt-3 text-[15px] leading-relaxed text-text-medium md:text-[16px]">
+                Our presenters work across multiple areas, so everyone is tagged by
+                expertise rather than boxed into one category. Tap a category below to
+                filter the team - or browse everyone.
+              </p>
             </div>
           </div>
         </section>
@@ -487,42 +504,7 @@ export default function ExpertTrainersPage() {
         {/* ── TRAINER GROUPS ── */}
         <section className="bg-white">
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
-            {specialtyGroups.map((group, idx) => {
-              const Icon = group.icon;
-              const groupTrainers = group.trainers
-                .map((slug) => trainerBySlug.get(slug))
-                .filter((t): t is Trainer => Boolean(t));
-              return (
-                <div
-                  key={group.id}
-                  id={group.id}
-                  className={`scroll-mt-28 ${idx > 0 ? "mt-16 md:mt-20" : ""}`}
-                >
-                  <div className="flex items-start gap-4">
-                    <div
-                      className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl text-white"
-                      style={{ background: paletteGradients.teal }}
-                    >
-                      <Icon className="h-5 w-5" aria-hidden />
-                    </div>
-                    <div>
-                      <SectionEyebrow>Specialty</SectionEyebrow>
-                      <h2 className="mt-1 font-heading text-[24px] font-bold text-text-dark md:text-[30px]">
-                        {group.label}
-                      </h2>
-                      <p className="mt-2 max-w-[640px] text-[15px] text-text-medium md:text-[16px]">
-                        {group.blurb}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mt-7 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-                    {groupTrainers.map((t) => (
-                      <TrainerCard key={t.slug} trainer={t} />
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
+            <TrainerFilter areas={expertiseAreas} items={trainerItems} />
             <p className="mt-14 rounded-card border border-dashed border-[#E5E7EB] bg-[#F7F8FA] p-6 text-center text-[14.5px] italic text-text-medium md:p-7">
               These are just a few of the experts you&apos;ll meet inside the My PR
               Partner community - there are many more specialists across every
@@ -594,7 +576,9 @@ export default function ExpertTrainersPage() {
               <div className="lg:col-span-7">
                 <SectionEyebrow>Why trainer quality matters</SectionEyebrow>
                 <SectionHeading>
-                  Practitioners, not academics - live-tested guidance you can use on Monday
+                  Practitioners, not academics.
+                  <br />
+                  Live, tested guidance you can use on Monday
                 </SectionHeading>
                 <p className="mt-5 text-[16px] leading-relaxed text-text-medium md:text-[17px]">
                   Every trainer inside My PR Partner is actively consulting to real

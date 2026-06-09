@@ -99,11 +99,11 @@ export default function Footer() {
               aria-label="My PR Partner home"
             >
               <Image
-                src="/logo.png"
+                src="/my-pr-partner-logo-horz.png"
                 alt="My PR Partner"
-                width={220}
-                height={56}
-                className="h-12 w-auto mix-blend-multiply"
+                width={2362}
+                height={893}
+                className="h-12 w-auto"
                 priority={false}
               />
             </Link>

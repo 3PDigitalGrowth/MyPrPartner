@@ -89,7 +89,7 @@ export function MobileDrawer({ open, onClose, expanded, setExpanded }: MobileDra
     >
       <div className="flex shrink-0 items-center justify-between border-b border-[#E5E7EB] px-5 py-5">
         <Link href="/" onClick={onClose}>
-          <Image src="/logo.png" alt="My PR Partner" width={200} height={65} className="h-10 w-auto" />
+          <Image src="/my-pr-partner-logo-horz.png" alt="My PR Partner" width={2362} height={893} className="h-10 w-auto" />
         </Link>
         <button type="button" className="p-2 text-text-dark outline-none focus-visible:ring-2 focus-visible:ring-teal" onClick={onClose} aria-label="Close menu">
           <X className="h-6 w-6" />
@@ -150,7 +150,7 @@ export function MobileDrawer({ open, onClose, expanded, setExpanded }: MobileDra
                 </div>
                 <p className="mt-2 text-[14px] font-medium text-text-dark">New courses launching soon</p>
                 <p className="mt-1.5 text-[13px] leading-relaxed text-text-medium">
-                  Standalone courses on LinkedIn strategy, media training, personal branding and more.
+                  Standalone courses on social media strategy, media training, personal branding and more.
                 </p>
                 <Link href="/courses" className="mt-3 inline-block text-[13px] font-medium text-teal" onClick={onClose}>
                   See the pipeline →

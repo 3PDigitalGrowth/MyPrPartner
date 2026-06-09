@@ -8,9 +8,9 @@ export default function Overview({ content }: { content: OverviewContent }) {
       <SectionEyebrow>{content.eyebrow}</SectionEyebrow>
       <SectionHeading>{content.heading}</SectionHeading>
       <div className="mt-5 space-y-4 text-[16px] leading-relaxed text-text-medium">
-        {content.paragraphs.map((p, i) => (
-          <p key={i}>{p}</p>
-        ))}
+        {content.paragraphs.map((p, i) =>
+          typeof p === "string" ? <p key={i}>{p}</p> : <div key={i}>{p}</div>
+        )}
       </div>
 
       <div className="mt-7 rounded-card bg-[#F7F8FA] p-6 md:p-7">

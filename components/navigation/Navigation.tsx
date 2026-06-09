@@ -206,7 +206,7 @@ export default function Navigation() {
       <div ref={navShellRef} className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-[72px] items-center justify-between">
           <Link href="/" className="flex-shrink-0">
-            <Image src="/logo.png" alt="My PR Partner" width={200} height={65} priority className="h-[65px] w-auto" />
+            <Image src="/my-pr-partner-logo-horz.png" alt="My PR Partner" width={2362} height={893} priority className="h-[56px] w-auto" />
           </Link>
 
           <div className="hidden lg:flex lg:items-center lg:gap-6 xl:gap-7">
@@ -319,7 +319,7 @@ export default function Navigation() {
                     </div>
                     <p className="mt-2 text-[14px] font-medium text-text-dark">New courses launching soon</p>
                     <p className="mt-1.5 text-[13px] leading-relaxed text-text-medium">
-                      Standalone courses on LinkedIn strategy, media training, personal branding and more.
+                      Standalone courses on social media strategy, media training, personal branding and more.
                     </p>
                     <Link
                       href="/courses"

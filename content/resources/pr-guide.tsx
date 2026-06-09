@@ -78,11 +78,11 @@ export const prGuideConfig: LeadMagnetConfig = {
 
   authority: {
     eyebrow: "Why trust this guide",
-    title: "The same advice we give our own clients.",
-    body: "My PR Partner is powered by CRC Public Relations. For more than 15 years, CRC has helped companies, governments, associations, schools and not-for-profits earn the right kind of attention and protect their reputation. These five steps are where we tell people to start. They cost nothing, and anyone can put them to work.",
+    title: "This is what public relations professionals do",
+    body: "My PR Partner is powered by CRC Public Relations. For more than 15 years, we've helped companies, governments, associations, schools and not-for-profits earn the right kind of attention and protect their reputation. While we have great expertise, when we are elevating the public voice of a client, it's based on the principles contained in these five steps.",
     bullets: [
-      "Drawn from more than 15 years of public relations and crisis work",
-      "The same first steps we share with new clients",
+      "Be the public voice of authority without a PR company",
+      "Based on the principles PR professionals use",
       "Written for busy leaders, in plain English and free of jargon",
       "Practical enough to start using this week",
     ],
@@ -117,7 +117,7 @@ export const prGuideConfig: LeadMagnetConfig = {
         icon: BookOpen,
         eyebrow: "Launching 2026",
         title: "Upcoming standalone courses",
-        body: "Short, focused courses on LinkedIn strategy, media training, personal branding and more. Register your interest for founding-member pricing.",
+        body: "Short, focused courses on social media strategy, media training, personal branding and more. Register your interest for founding-member pricing.",
         cta: "See the pipeline",
         accent: "linear-gradient(135deg, #B8434A 0%, #E2894B 100%)",
       },
