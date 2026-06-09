@@ -425,7 +425,6 @@ export const businessContent: CourseContent = {
       "10% founding-member discount (first 50 businesses)",
       "First access to enrolments before public release",
       "Full program outline",
-      "Founders' welcome from Lyall and the team",
       "Updates on launch date and pricing tiers",
     ],
     waitlist: {
@@ -456,7 +455,7 @@ export const businessContent: CourseContent = {
       footnote:
         "We'll only email you about the Business Program. Unsubscribe at any time.",
     },
-    trustBadges: { poweredByCrcLogo: true, crisisReadyBadge: true },
+    trustBadges: { poweredByCrcLogo: true },
     callbackLinkLabel: "Or request a callback from our business team",
     callbackHref: "/contact",
   },
