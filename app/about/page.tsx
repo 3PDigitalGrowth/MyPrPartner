@@ -252,8 +252,8 @@ export default function AboutPage() {
               <div className="hidden lg:col-span-5 lg:block">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-card shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
                   <Image
-                    src="/images/crisis-masterclass/hero-portrait-crisis.jpg"
-                    alt="Senior Australian communications adviser in a professional setting"
+                    src="/images/founders.png"
+                    alt="Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner"
                     fill
                     priority
                     sizes="(min-width: 1024px) 40vw, 100vw"
@@ -261,12 +261,10 @@ export default function AboutPage() {
                   />
                   <div className="absolute bottom-5 left-5 right-5 rounded-xl bg-white/95 p-4 backdrop-blur">
                     <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-teal">
-                      Every program you enrol in
+                      Our founders
                     </p>
                     <p className="mt-1 font-heading text-[15px] font-bold text-text-dark">
-                      Designed and delivered by senior CRC Public Relations
-                      advisers who still do this work every day - for
-                      real clients, under real pressure.
+                      Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner.
                     </p>
                   </div>
                 </div>

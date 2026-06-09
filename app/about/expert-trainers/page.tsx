@@ -291,7 +291,7 @@ const programCatalogue: Array<{
   { id: "crisis", href: "/crisis-masterclass", label: "Crisis Masterclass" },
   { id: "schools", href: "/programs/schools", label: "Schools Program" },
   { id: "associations", href: "/programs/industry-associations", label: "Industry Associations" },
-  { id: "business", href: "/programs/business", label: "Business Program" },
+  { id: "business", href: "/programs/business", label: "Business & NFP Program" },
 ];
 
 // ──────────────────────────────────────────────────────────────────────────────

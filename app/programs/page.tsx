@@ -157,7 +157,7 @@ const programs: Program[] = [
     sector: "For Australian businesses",
     icon: Briefcase,
     iconAccent: "linear-gradient(135deg, #B8434A 0%, #E2894B 100%)",
-    title: "Business Program",
+    title: "Business & NFP Program",
     lede:
       "A 12-month online PR, profile, reputation and crisis communications program for Australian business owners and leadership teams.",
     audience:
@@ -172,7 +172,7 @@ const programs: Program[] = [
       "Crisis readiness built for leadership teams who haven't had to handle one yet",
       "Franchise, multi-location and group enrolments available at bulk rates",
     ],
-    cta: "See the Business Program",
+    cta: "See the Business & NFP Program",
   },
   {
     slug: "industry-associations",

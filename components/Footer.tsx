@@ -32,7 +32,7 @@ const programLinks = [
   { name: "Crisis Masterclass", href: "/crisis-masterclass" },
   { name: "Schools program", href: "/programs/schools" },
   { name: "Industry & associations program", href: "/programs/industry-associations" },
-  { name: "Business program", href: "/programs/business" },
+  { name: "Business & NFP program", href: "/programs/business" },
 ];
 
 const companyLinks = [

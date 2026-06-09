@@ -35,7 +35,7 @@ export const programsBySector: ProgramSectorLink[] = [
   {
     href: "/programs/business",
     icon: Briefcase,
-    label: "Business Program",
+    label: "Business & NFP Program",
     descriptor: "For business owners, founders and marketing leads",
   },
 ];

@@ -57,7 +57,7 @@ export const businessContent: CourseContent = {
   },
 
   schema: {
-    schemaName: "My PR Partner Business Program",
+    schemaName: "My PR Partner Business & NFP Program",
     schemaDescription:
       "A 12-month online PR, brand profile, reputation and crisis communications program for Australian business owners, founders and leadership teams. Monthly modules with training videos, workbooks, practical resources, interactive Q&A and a rotating panel of expert Australian PR specialists.",
     providerName: "My PR Partner",
@@ -523,7 +523,7 @@ export const businessContent: CourseContent = {
   },
 
   mobileBar: {
-    label: "Business Program",
+    label: "Business & NFP Program",
     priceShort: "First 50 save 10%",
     ctaLabel: "Join the waitlist",
   },

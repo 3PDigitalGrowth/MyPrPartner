@@ -189,7 +189,7 @@ export function LeadMagnetPage({ config }: LeadMagnetPageProps) {
                   </li>
                 ))}
               </ul>
-              
+
             </div>
           </div>
         </section>
