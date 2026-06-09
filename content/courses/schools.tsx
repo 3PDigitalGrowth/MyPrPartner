@@ -552,7 +552,7 @@ export const schoolsContent: CourseContent = {
       "On-call spokesperson media training (Month 12)",
       "Certificate of completion for participating staff",
     ],
-    trustBadges: { poweredByCrcLogo: true, crisisReadyBadge: true },
+    trustBadges: { poweredByCrcLogo: true },
     callbackLinkLabel: "Or request a callback from our schools team",
     callbackHref: "/contact",
   },

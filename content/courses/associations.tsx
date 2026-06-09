@@ -507,7 +507,7 @@ export const associationsContent: CourseContent = {
       footnote:
         "We'll only email you about the Industry Associations Program. Unsubscribe at any time.",
     },
-    trustBadges: { poweredByCrcLogo: true, crisisReadyBadge: true },
+    trustBadges: { poweredByCrcLogo: true },
     callbackLinkLabel: "Or request a callback from our associations team",
     callbackHref: "/contact",
   },

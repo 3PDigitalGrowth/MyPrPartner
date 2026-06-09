@@ -11,7 +11,6 @@ import {
   Users,
   Check,
   Globe2,
-  Scale,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -239,15 +238,7 @@ const specialtyGroups: SpecialtyGroup[] = [
     blurb:
       "Specialist support for principals, boards and school communications leads.",
     icon: GraduationCap,
-    trainers: ["tim-sterne", "lyall-mercer"],
-  },
-  {
-    id: "legal",
-    label: "Legal, governance & not-for-profit",
-    blurb:
-      "Legal and governance specialists who help schools, associations and not-for-profits protect their people, mission and reputation.",
-    icon: Scale,
-    trainers: ["tim-whincop"],
+    trainers: ["tim-sterne", "lyall-mercer", "tim-whincop"],
   },
 ];
 
