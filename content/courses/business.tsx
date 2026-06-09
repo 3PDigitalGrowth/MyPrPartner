@@ -426,7 +426,6 @@ export const businessContent: CourseContent = {
       "First access to enrolments before public release",
       "Full program outline",
       "Founders' welcome from Lyall and the team",
-      "Early invitation to a live walkthrough Q&A",
       "Updates on launch date and pricing tiers",
     ],
     waitlist: {
@@ -453,7 +452,6 @@ export const businessContent: CourseContent = {
         "10% founding-member discount on year one",
         "First access to enrolment before public release",
         "Full program outline",
-        "Early invitation to a live walkthrough Q&A",
       ],
       footnote:
         "We'll only email you about the Business Program. Unsubscribe at any time.",
