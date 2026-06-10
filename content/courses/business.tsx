@@ -103,7 +103,7 @@ export const businessContent: CourseContent = {
       href: "/downloads/business-program-outline.pdf",
     },
     bgImage: HERO_IMAGE,
-    portraitImage: "/images/business/business-hero-portrait.jpg",
+    portraitImage: "/images/myprpartner business program.png",
     portraitCallout: {
       eyebrow: "Trusted by",
       title: <>Australian businesses from cafés to national brands</>,
@@ -263,7 +263,7 @@ export const businessContent: CourseContent = {
       "Elevate your business. Your marketing must be backed up by effective and PR-driven communication to your customers, staff and other stakeholders, that builds growth, trust, and a solid reputation.",
     items: [
       {
-        image: "/images/business/business-persona-owner.jpg",
+        image: "/images/myprpartner business owners.png",
         icon: Briefcase,
         title: "Business owners and founders",
         body:

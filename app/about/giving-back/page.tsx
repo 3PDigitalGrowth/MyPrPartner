@@ -108,7 +108,7 @@ const projects: Project[] = [
     body: "This health intervention will promote and provide mental health services to 2,000 Compassion participants across Peru.",
     metricFigure: "2,000",
     metricLabel: "participants reached",
-    image: "/images/charity/charity-persona-comms.jpg",
+    image: "/images/mentalhealth.jpg",
     imageAlt:
       "Image representing community mental-health and wellbeing support in Peru",
     accent: "linear-gradient(135deg, #B8434A 0%, #E2894B 100%)",
@@ -123,7 +123,7 @@ const projects: Project[] = [
     body: "This water and sanitation intervention will help to provide safe access to water in Thailand, transforming six communities and hundreds of children's lives through the gift of clean water.",
     metricFigure: "6",
     metricLabel: "communities transformed",
-    image: "/images/charity/charity-persona-ed.jpg",
+    image: "/images/water.jpg",
     imageAlt:
       "Image representing clean-water and sanitation projects for children in Thailand",
     accent: "linear-gradient(135deg, #0F6DA3 0%, #07AFBB 100%)",
@@ -239,7 +239,7 @@ export default function GivingBackPage() {
               <div className="hidden lg:col-span-5 lg:block">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-card shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
                   <Image
-                    src="/images/charity/charity-hero-portrait.jpg"
+                    src="/images/charity.jpg"
                     alt="Hopeful scene representing community impact and giving back"
                     fill
                     priority

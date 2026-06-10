@@ -100,7 +100,7 @@ export const associationsContent: CourseContent = {
       href: "/downloads/associations-program-outline.pdf",
     },
     bgImage: HERO_IMAGE,
-    portraitImage: "/images/associations/associations-hero-portrait.jpg",
+    portraitImage: "/images/industry associations hero.png",
     portraitCallout: {
       eyebrow: "Trusted by",
       title: <>National and state associations across Australia</>,
