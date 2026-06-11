@@ -329,7 +329,7 @@ export const schoolsContent: CourseContent = {
           "Former teacher and police detective. Tim is an independent ethics and integrity specialist for Australian and New Zealand schools, and a leading voice on handling allegations with due process and minimised reputational risk.",
       },
       {
-        image: "/images/schools/schools-persona-board.jpg",
+        image: "/images/instructors/tim-whincop.png",
         name: "Tim Whincop",
         title: "Month 8 \u00B7 Director, Vocare Law",
         bio:

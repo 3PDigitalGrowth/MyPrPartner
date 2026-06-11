@@ -31,9 +31,21 @@ export function LeadMagnetForm({
     if (!email || !firstName) return;
     setStatus("submitting");
 
-    // NOTE: No backend wired up yet. When ready, POST {firstName, email, resourceLabel}
-    // to a Kajabi / Formspree / Resend endpoint here. For now we fire-and-forget and
-    // give the user immediate access to the PDF.
+    // Send the lead to Resend (confirmation + admin notification) without
+    // blocking the download - the visitor gets the PDF either way.
+    fetch("/api/forms", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        formType: "resource",
+        name: firstName,
+        email,
+        resourceLabel,
+        downloadHref,
+        source: `lead-magnet-${variant}`,
+      }),
+    }).catch((err) => console.error("Lead submission failed:", err));
+
     try {
       if (typeof window !== "undefined") {
         const a = document.createElement("a");

@@ -257,7 +257,7 @@ export const crisisMasterclassContent: CourseContent = {
           "Understand exactly what to do, and not do, when your brand, team or customers are under pressure.",
       },
       {
-        image: "/images/crisis-masterclass/persona-nfp-leader.jpg",
+        image: "/images/crisiscoursecard.png",
         icon: Radio,
         title: "Media spokespeople",
         body:

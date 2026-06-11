@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  Mail,
   MessageSquare,
   Shield,
   Users,
@@ -15,6 +14,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us - My PR Partner",
@@ -172,106 +172,7 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
               {/* Form */}
               <div className="lg:col-span-7">
-                <form
-                  action="mailto:info@myprpartner.com"
-                  method="post"
-                  encType="text/plain"
-                  className="rounded-card border border-[#E5E7EB] bg-white p-6 shadow-card md:p-8"
-                >
-                  <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                    Send us a message
-                  </p>
-                  <h2 className="mt-1 font-heading text-[24px] font-bold text-text-dark md:text-[28px]">
-                    Tell us what you need
-                  </h2>
-                  <p className="mt-2 text-[14px] leading-relaxed text-text-medium">
-                    Fill out the form and we&apos;ll be in touch. Required
-                    fields are marked with an asterisk.
-                  </p>
-
-                  <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    <label className="block sm:col-span-2">
-                      <span className="text-[13px] font-medium text-text-dark">
-                        Full name <span className="text-teal">*</span>
-                      </span>
-                      <input
-                        type="text"
-                        name="Full name"
-                        required
-                        placeholder="Your name"
-                        className="mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
-                      />
-                    </label>
-                    <label className="block">
-                      <span className="text-[13px] font-medium text-text-dark">
-                        Email <span className="text-teal">*</span>
-                      </span>
-                      <input
-                        type="email"
-                        name="Email"
-                        required
-                        placeholder="you@example.com"
-                        className="mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
-                      />
-                    </label>
-                    <label className="block">
-                      <span className="text-[13px] font-medium text-text-dark">
-                        Organisation
-                      </span>
-                      <input
-                        type="text"
-                        name="Organisation"
-                        placeholder="Your organisation"
-                        className="mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
-                      />
-                    </label>
-                    <label className="block sm:col-span-2">
-                      <span className="text-[13px] font-medium text-text-dark">
-                        What&apos;s this about?{" "}
-                        <span className="text-teal">*</span>
-                      </span>
-                      <select
-                        name="Topic"
-                        required
-                        defaultValue=""
-                        className="mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
-                      >
-                        <option value="" disabled>
-                          Choose a topic
-                        </option>
-                        {topicOptions.map((t) => (
-                          <option key={t} value={t}>
-                            {t}
-                          </option>
-                        ))}
-                      </select>
-                    </label>
-                    <label className="block sm:col-span-2">
-                      <span className="text-[13px] font-medium text-text-dark">
-                        Your message <span className="text-teal">*</span>
-                      </span>
-                      <textarea
-                        name="Message"
-                        rows={5}
-                        required
-                        placeholder="Tell us what you're trying to solve - the more context you share, the more useful our reply will be."
-                        className="mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
-                      />
-                    </label>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-teal-dark sm:w-auto"
-                  >
-                    Send message
-                    <ArrowRight className="h-4 w-4" aria-hidden />
-                  </button>
-                  <p className="mt-4 flex items-center gap-2 text-[12.5px] text-text-medium">
-                    <Mail className="h-3.5 w-3.5 text-teal" aria-hidden />
-                    Confidential and read personally by our team.
-                  </p>
-                </form>
+                <ContactForm topicOptions={topicOptions} />
               </div>
 
               {/* Sidebar trust + why us */}

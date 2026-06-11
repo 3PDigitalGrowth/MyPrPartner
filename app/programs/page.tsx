@@ -98,6 +98,8 @@ type Program = {
   audience: string;
   image: string;
   imageAlt: string;
+  /** Optional object-position class when the default centre crop cuts off the subject. */
+  imagePosition?: string;
   status: { label: string; tone: "live" | "waitlist" };
   pricing: string;
   outcomes: string[];
@@ -165,6 +167,7 @@ const programs: Program[] = [
     image: "/images/myprpartner business owners.png",
     imageAlt:
       "An Australian business owner working through a leadership team planning session.",
+    imagePosition: "object-top",
     status: { label: "Launching 2026 · join waitlist", tone: "waitlist" },
     pricing: "Founding-member discount - first 50 save 10%",
     outcomes: [
@@ -362,7 +365,7 @@ export default function ProgramsPage() {
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {personaTiles.map((p) => {
                 const Icon = p.icon;
                 return (
@@ -436,7 +439,7 @@ export default function ProgramsPage() {
                         alt={p.imageAlt}
                         fill
                         sizes="(max-width: 1024px) 100vw, 50vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        className={`object-cover transition-transform duration-500 group-hover:scale-[1.03] ${p.imagePosition ?? ""}`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                       <div className="absolute left-4 top-4 inline-flex items-center gap-2">

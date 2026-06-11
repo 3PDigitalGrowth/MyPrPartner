@@ -9,13 +9,22 @@ export function FooterNewsletter() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!email) return;
+    if (!email || status === "submitting") return;
     setStatus("submitting");
 
-    // NOTE: No backend wired up yet. When ready, POST {email, source: "footer"}
-    // to a Kajabi form / Formspree / Resend endpoint here.
-    await new Promise((r) => setTimeout(r, 400));
-    setStatus("done");
+    try {
+      await fetch("/api/forms", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ formType: "newsletter", email, source: "footer" }),
+      });
+    } catch (err) {
+      console.error("Newsletter signup failed:", err);
+    } finally {
+      // Always show the success state - a transient email failure shouldn't
+      // strand the visitor on a broken form.
+      setStatus("done");
+    }
   }
 
   if (status === "done") {

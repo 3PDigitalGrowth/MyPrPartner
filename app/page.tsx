@@ -132,6 +132,7 @@ function FAQItem({ question, answer, defaultOpen = false }: { question: string; 
 
 function LeadMagnetForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [email, setEmail] = useState("");
 
   if (submitted) {
     return (
@@ -143,12 +144,30 @@ function LeadMagnetForm() {
 
   return (
     <form
-      onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+      onSubmit={(e) => {
+        e.preventDefault();
+        // The confirmation email carries the download link, so this counts as
+        // a "resource" submission even though it only collects an email.
+        fetch("/api/forms", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            formType: "resource",
+            email,
+            resourceLabel: "Becoming a Trusted Public Voice guide",
+            downloadHref: "/downloads/pr-guide.pdf",
+            source: "homepage",
+          }),
+        }).catch((err) => console.error("Guide signup failed:", err));
+        setSubmitted(true);
+      }}
       className="mt-7 flex flex-col sm:flex-row gap-3"
     >
       <input
         type="email"
         required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your email address"
         className="flex-1 rounded-full border border-[#E5E7EB] bg-white px-5 py-3.5 text-[14px] text-text-dark placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal transition-colors"
       />
@@ -364,7 +383,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-16 items-center animate-fade-in-up">
               <div className="md:col-span-2">
                 <div className="relative aspect-[3/4] max-w-[320px] mx-auto md:mx-0 rounded-card overflow-hidden">
-                  <Image src="/images/founders.png" alt="Lyall Mercer and Barbara Gorogh" fill className="object-cover" />
+                  <Image src="/images/founders-message.jpg" alt="Lyall Mercer and Barbara Gorogh" fill className="object-cover" />
                 </div>
               </div>
               <div className="md:col-span-3">
