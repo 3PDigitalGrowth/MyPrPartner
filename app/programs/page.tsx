@@ -164,7 +164,7 @@ const programs: Program[] = [
       "A 12-month online PR, profile, reputation and crisis communications program for Australian business owners and leadership teams.",
     audience:
       "Owners, founders and leadership teams - from local professional services firms to national brands.",
-    image: "/images/myprpartner business owners.png",
+    image: "/images/business-owners-wide.jpg",
     imageAlt:
       "An Australian business owner working through a leadership team planning session.",
     imagePosition: "object-top",

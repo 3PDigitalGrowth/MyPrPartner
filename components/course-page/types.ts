@@ -93,6 +93,8 @@ export type CourseStructureContent = {
 
 export type Persona = {
   image: string;
+  /** Optional object-position class when the default centre crop cuts off the subject. */
+  imagePosition?: string;
   icon: IconRef;
   title: string;
   body: string;

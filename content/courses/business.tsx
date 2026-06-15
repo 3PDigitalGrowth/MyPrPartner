@@ -263,7 +263,7 @@ export const businessContent: CourseContent = {
       "Elevate your business. Your marketing must be backed up by effective and PR-driven communication to your customers, staff and other stakeholders, that builds growth, trust, and a solid reputation.",
     items: [
       {
-        image: "/images/myprpartner business owners.png",
+        image: "/images/business-owners-wide.jpg",
         icon: Briefcase,
         title: "Business owners and founders",
         body:
