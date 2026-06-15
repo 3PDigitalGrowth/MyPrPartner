@@ -14,14 +14,14 @@
   Users,
 } from "lucide-react";
 import type { CourseContent } from "@/components/course-page/types";
-import { PLACEHOLDER_CHECKOUT_URL } from "@/lib/checkout";
 
 const SITE = "https://myprpartner.com";
 const PAGE_PATH = "/crisis-masterclass";
 const HERO_IMAGE = "/images/crisis-masterclass/hero-bg-crisis.jpg";
 
 const CHECKOUT_BASE_URL =
-  process.env.NEXT_PUBLIC_KAJABI_CRISIS_CHECKOUT_URL || PLACEHOLDER_CHECKOUT_URL;
+  process.env.NEXT_PUBLIC_KAJABI_CRISIS_CHECKOUT_URL ||
+  "https://courses.myprpartner.com/offers/6vzjYRfU/checkout";
 
 export const crisisMasterclassContent: CourseContent = {
   slug: "crisis-masterclass",
