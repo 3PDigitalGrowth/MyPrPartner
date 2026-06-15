@@ -93,7 +93,7 @@ const projects: Project[] = [
     body: "This intervention will help 120 Ethiopian caregivers living in poverty to become economically self-sufficient so they can provide for their families' daily needs.",
     metricFigure: "120",
     metricLabel: "caregivers supported",
-    image: "/images/charity/charity-persona-fundraising.jpg",
+    image: "/images/givingbackincomegeneration.jpg",
     imageAlt:
       "Community-focused image representing income generation and family support in Ethiopia",
     accent: "linear-gradient(135deg, #0B7A58 0%, #37B288 100%)",
@@ -439,7 +439,7 @@ export default function GivingBackPage() {
               <div className="lg:col-span-5">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-card shadow-card">
                   <Image
-                    src="/images/charity/charity-group-bg.jpg"
+                    src="/images/compassion-partnership.jpg"
                     alt="Compassion Australia field work - a community-focused charity"
                     fill
                     sizes="(min-width: 1024px) 35vw, 100vw"
