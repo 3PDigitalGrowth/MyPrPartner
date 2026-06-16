@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import ScrollHintTable from "@/components/programs/ScrollHintTable";
 import {
   ArrowRight,
   ArrowDown,
@@ -540,11 +541,11 @@ export default function ProgramsPage() {
               </h2>
             </div>
 
-            <div className="mt-10 overflow-x-auto">
+            <ScrollHintTable className="mt-10">
               <table className="w-full min-w-[820px] border-collapse text-left">
                 <thead>
                   <tr>
-                    <th className="w-[160px] border-b border-[#E5E7EB] p-4 text-[12px] font-medium uppercase tracking-[0.12em] text-text-medium">
+                    <th className="sticky left-0 z-20 w-[150px] bg-white p-4 text-[12px] font-medium uppercase tracking-[0.12em] text-text-medium shadow-[2px_0_5px_-2px_rgba(16,24,40,0.08)] after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-[#E5E7EB] sm:w-[160px]">
                       &nbsp;
                     </th>
                     {programs.map((p) => {
@@ -583,7 +584,7 @@ export default function ProgramsPage() {
                       >
                         <th
                           scope="row"
-                          className="p-4 align-top"
+                          className="sticky left-0 z-10 bg-white p-4 align-top shadow-[2px_0_5px_-2px_rgba(16,24,40,0.08)] after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-[#F1F2F5]"
                         >
                           <span className="inline-flex items-center gap-2 text-[13px] font-semibold text-text-dark">
                             <RowIcon
@@ -606,7 +607,7 @@ export default function ProgramsPage() {
                   })}
                 </tbody>
               </table>
-            </div>
+            </ScrollHintTable>
             <p className="mt-6 text-center text-[13px] text-text-medium">
               Every program is designed and delivered by senior advisers at
               CRC Public Relations.{" "}
