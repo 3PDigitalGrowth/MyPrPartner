@@ -334,9 +334,9 @@ export default function CoursesPage() {
                   Be first to enrol - and save 10% as a founding member
                 </h2>
                 <p className="mt-5 text-[16px] leading-relaxed text-white/85 md:text-[17px]">
-                  Add your name and we&apos;ll email you only when a course
-                  you&apos;ve flagged opens for enrolment. No marketing spam,
-                  no subscription required - just first access to the
+                  Add your name and we&apos;ll email you when a course
+                  you&apos;ve flagged opens for enrolment, plus the occasional
+                  update. No subscription required - just first access to the
                   courses you actually want.
                 </p>
                 <ul className="mt-7 space-y-2.5">

@@ -266,7 +266,7 @@ export type FoundersWelcomeContent = {
   eyebrow: string;
   heading: string;
   image?: string;
-  images?: string[];
+  images?: Array<string | { src: string; className?: string }>;
   imageAlt: string;
   paragraphs: React.ReactNode[];
   signoff: string;

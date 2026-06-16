@@ -72,11 +72,10 @@ export function NewsletterForm({ theme = "dark" }: NewsletterFormProps) {
         Articles newsletter
       </p>
       <h3 className="mt-1 font-heading text-[22px] font-bold text-text-dark">
-        New articles in your inbox - nothing else.
+        New articles in your inbox.
       </h3>
       <p className="mt-2 text-[14px] leading-relaxed text-text-medium">
-        Add your email to get each new piece as it drops. No marketing drip, no
-        promos, no re-targeting.
+        Add your email to get each new piece as it drops. Unsubscribe any time.
       </p>
 
       <div className="mt-5 flex flex-col gap-3 sm:flex-row">

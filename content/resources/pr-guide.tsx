@@ -146,7 +146,7 @@ export const prGuideConfig: LeadMagnetConfig = {
   meta: {
     title: "Five Steps to Becoming a Trusted Public Voice - My PR Partner",
     description:
-      "Five practical steps to becoming a trusted voice in your field, the same advice CRC Public Relations gives its clients. A free guide: instant PDF, no cost, no follow-up calls.",
+      "Five practical steps to becoming a trusted voice in your field, the same advice CRC Public Relations gives its clients. A free guide: instant PDF, no cost.",
     canonical: "https://myprpartner.com/resources/pr-guide",
     ogImage: "/images/lead-magnet-bg.jpg",
   },

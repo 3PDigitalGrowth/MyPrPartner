@@ -457,7 +457,7 @@ export const charityContent: CourseContent = {
         "Early invitation to a live walkthrough Q&A",
       ],
       footnote:
-        "We'll only email you about the Charity & Not-for-Profit Program. Unsubscribe at any time.",
+        "We'll email you with program updates and occasional resources. Unsubscribe any time.",
     },
     trustBadges: { poweredByCrcLogo: true, crisisReadyBadge: true },
     callbackLinkLabel: "Or request a callback from our charity team",

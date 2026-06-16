@@ -43,7 +43,7 @@ export const crisisChecklistConfig: LeadMagnetConfig = {
       {
         title: "Communication",
         teaser:
-          "The way you and your team communicates to those most important to your success is vital to your reputation yet this is rarely addresses or prioritised in many organisations. It matters.",
+          "The way you and your team communicates to those most important to your success is vital to your reputation yet this is rarely addressed or prioritised in many organisations. It matters.",
         icon: MessageSquare,
         accent: "linear-gradient(135deg, #1E73BE 0%, #07AFBB 100%)",
       },
@@ -163,7 +163,7 @@ export const crisisChecklistConfig: LeadMagnetConfig = {
   meta: {
     title: "Free Crisis Vulnerability Checklist - My PR Partner",
     description:
-      "A 30-point self-assessment that helps you spot the gaps that can lead to a reputational crisis - now a free download. Instant PDF, no credit card, no follow-up calls.",
+      "A 30-point self-assessment that helps you spot the gaps that can lead to a reputational crisis - now a free download. Instant PDF, no credit card.",
     canonical: "https://myprpartner.com/resources/crisis-checklist",
     ogImage: "/images/crisis-masterclass/hero-bg-crisis.jpg",
   },

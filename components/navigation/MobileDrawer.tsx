@@ -6,8 +6,6 @@ import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import {
   X,
   ChevronDown,
-  Phone,
-  Mail,
   ExternalLink,
   UserCircle,
   ArrowRight,
@@ -21,7 +19,7 @@ import {
   resourceLinks,
   crisisMasterclassProgramLink,
 } from "./nav-data";
-import { FlagshipBadge, FreeBadge } from "./badges";
+import { FreeBadge } from "./badges";
 
 function SocialLinkedin({ className }: { className?: string }) {
   return (
@@ -96,26 +94,16 @@ export function MobileDrawer({ open, onClose, expanded, setExpanded }: MobileDra
         </button>
       </div>
 
-      <div className="shrink-0 bg-bg-grey px-5 py-5">
-        <a href="tel:1300182186" className="flex items-center gap-2 text-[14px] text-text-dark">
-          <Phone className="h-4 w-4 text-teal" aria-hidden />
-          1300 182 186
-        </a>
-        <a href="mailto:info@myprpartner.com" className="mt-3 flex items-center gap-2 text-[14px] text-text-dark">
-          <Mail className="h-4 w-4 text-teal" aria-hidden />
-          info@myprpartner.com
-        </a>
+      <div className="shrink-0 bg-bg-grey px-5 py-4">
         <a
           href="https://learn.myprpartner.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-3 flex items-center justify-between text-[14px] text-text-dark"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal px-5 py-3 text-[15px] font-semibold text-white shadow-sm transition-colors hover:bg-teal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2"
         >
-          <span className="flex items-center gap-2">
-            <UserCircle className="h-4 w-4 text-teal" aria-hidden />
-            Member Login
-          </span>
-          <ExternalLink className="h-4 w-4 text-text-medium" aria-hidden />
+          <UserCircle className="h-[18px] w-[18px]" aria-hidden />
+          Member Login
+          <ExternalLink className="h-4 w-4" aria-hidden />
         </a>
       </div>
 
@@ -139,7 +127,6 @@ export function MobileDrawer({ open, onClose, expanded, setExpanded }: MobileDra
                 icon={crisisMasterclassProgramLink.icon}
                 label={crisisMasterclassProgramLink.label}
                 descriptor={crisisMasterclassProgramLink.descriptor}
-                badge={<FlagshipBadge />}
                 variant="plain"
                 onNavigate={onClose}
               />
@@ -168,8 +155,6 @@ export function MobileDrawer({ open, onClose, expanded, setExpanded }: MobileDra
             </div>
           </div>
         </div>
-
-        <MobileStandalone href="/crisis-masterclass" label="Crisis Masterclass" onNavigate={onClose} showDot />
 
         <MobileRow label="Resources" isExpandable expanded={expanded === "resources"} onToggle={() => toggle("resources")} />
         <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${expanded === "resources" ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>

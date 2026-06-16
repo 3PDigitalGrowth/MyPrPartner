@@ -19,7 +19,7 @@ import {
   resourceLinks,
   crisisMasterclassProgramLink,
 } from "./nav-data";
-import { FlagshipBadge, FreeBadge } from "./badges";
+import { FreeBadge } from "./badges";
 
 export type OpenDropdown = "programs" | "about" | "resources" | null;
 
@@ -309,7 +309,6 @@ export default function Navigation() {
                     icon={crisisMasterclassProgramLink.icon}
                     label={crisisMasterclassProgramLink.label}
                     descriptor={crisisMasterclassProgramLink.descriptor}
-                    badge={<FlagshipBadge />}
                     onNavigate={() => setOpenDropdown(null)}
                   />
                   <div className="mt-5 rounded-xl bg-bg-grey p-5">

@@ -41,8 +41,8 @@ export function FooterNewsletter() {
             You&apos;re on the list.
           </p>
           <p className="mt-1 text-[14px] leading-relaxed text-text-medium">
-            We&apos;ll email you when new articles and programs go live. No
-            spam, unsubscribe any time.
+            We&apos;ll email you when new articles and programs go live.
+            Unsubscribe any time.
           </p>
         </div>
       </div>

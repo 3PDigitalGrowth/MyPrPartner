@@ -618,7 +618,7 @@ export default function ExpertTrainersPage() {
               <div className="lg:col-span-5">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-card shadow-card">
                   <Image
-                    src="/images/crisis-masterclass/hero-portrait-crisis.jpg"
+                    src="/images/experttrainersfooter.png"
                     alt="Senior PR practitioner delivering crisis communications training"
                     fill
                     sizes="(min-width: 1024px) 35vw, 100vw"
@@ -633,7 +633,7 @@ export default function ExpertTrainersPage() {
                   />
                   <div className="absolute inset-x-5 bottom-5 rounded-xl bg-white/95 p-5 backdrop-blur">
                     <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-teal">
-                      Real-world bench
+                      Real-world
                     </p>
                     <p className="mt-1 font-heading text-[15px] font-bold text-text-dark">
                       The same team that advises CEOs, boards and governments in live

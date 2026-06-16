@@ -197,8 +197,8 @@ export default async function ArticlesPage() {
                 </h2>
                 <p className="mt-5 text-[16px] leading-relaxed text-white/85 md:text-[17px]">
                   One thoughtful email, fortnightly at most, with the full
-                  article and any practical templates that come with it. No
-                  drip, no promos, and you can unsubscribe with one click.
+                  article and any practical templates that come with it.
+                  Unsubscribe with one click, any time.
                 </p>
               </div>
               <div className="lg:col-span-6">

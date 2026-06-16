@@ -436,8 +436,7 @@ export function LeadMagnetPage({ config }: LeadMagnetPageProps) {
                   Grab the {config.resourceLabel} before you close the tab.
                 </h2>
                 <p className="mt-4 text-[15.5px] leading-relaxed text-text-medium">
-                  One email. Instant download. No drip campaign, no credit card,
-                  no follow-up call.
+                  One email. Instant download. No credit card required.
                 </p>
               </div>
               <div className="lg:col-span-6">

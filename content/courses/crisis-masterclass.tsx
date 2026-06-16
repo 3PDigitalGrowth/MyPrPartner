@@ -118,7 +118,7 @@ export const crisisMasterclassContent: CourseContent = {
     heading: "Become your organisation's trusted crisis communications leader",
     paragraphs: [
       "Don\u2019t expect the usual. This course doesn\u2019t build plans \u2013 it builds YOU.",
-      "Crisis Masterclass is a 12-month online course built for Australian organisations that can't afford to get crisis communications wrong. Whether you are a communications professional, business leader or manager, media spokesperson, or are involved with marketing, HR or legal and support your company or clients in managing a crisis, this program gives you the practical skills, templates and expert guidance to handle any reputation threat with confidence.",
+      "Crisis Masterclass is a 12-month online course built for Australian organisations that can't afford to get crisis communications wrong. Whether you are a communications professional, business leader or manager, media spokesperson, or are involved with marketing, HR or legal and support your company or clients in managing a crisis, this program gives you the practical skills, formulas and expert guidance to handle any reputation threat with confidence.",
       <>
         The program blends CRC Public Relations' 20+ years of Australian crisis consulting experience with the globally recognised Crisis Ready<sup className="ml-0.5 align-super text-[10px]">®</sup> methodology from Crisis Ready Institute CEO Melissa Agnes, and is available exclusively through My PR Partner in Australasia. You'll learn not just how to develop the right plan, but how to lead and connect with those who are most important during an issue or crisis, and you'll get ongoing support from our expert panel.
       </>,
@@ -156,7 +156,7 @@ export const crisisMasterclassContent: CourseContent = {
         icon: MessageSquare,
         title: "In-depth discussions & Q&A",
         body:
-          "Live webinars with Melissa Agnes and Lyall Mercer and opportunities to submit questions every month.",
+          "Discussions with Melissa Agnes and Lyall Mercer and opportunities to submit questions every month.",
       },
       {
         icon: FileText,
@@ -376,7 +376,7 @@ export const crisisMasterclassContent: CourseContent = {
       },
       {
         q: "What is the Crisis Ready Course and why is it included?",
-        a: "Crisis Ready® is the world-leading crisis communication and leadership methodology developed by Melissa Agnes, CEO of the Crisis Ready Institute in the United States. My PR Partner is the exclusive Australasian partner, so your enrolment gives you direct access to her material, which is not available through any other Australian provider.",
+        a: "Crisis Ready® is the world-leading crisis communication and leadership methodology developed by Melissa Agnes, CEO of the Crisis Ready Institute in the United States. My PR Partner is the exclusive Australasian partner, so your enrolment gives you direct access to her material. The Crisis Masterclass is not available through any other Australian provider.",
       },
       {
         q: "Can I enrol my team or board?",
@@ -421,7 +421,10 @@ export const crisisMasterclassContent: CourseContent = {
   foundersWelcome: {
     eyebrow: "From the Crisis Masterclass leaders",
     heading: "A message from Lyall and Melissa",
-    images: ["/images/expert-lyall-real.png", "/images/expert-melissa-real.png"],
+    images: [
+      "/images/expert-lyall-real.png",
+      { src: "/images/melissa-agnes-stage.webp", className: "object-top" },
+    ],
     imageAlt: "Melissa Agnes and Lyall Mercer, co-founders of My PR Partner",
     paragraphs: [
       <>

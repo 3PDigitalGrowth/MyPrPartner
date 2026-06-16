@@ -263,7 +263,7 @@ export const businessContent: CourseContent = {
       "Elevate your business. Your marketing must be backed up by effective and PR-driven communication to your customers, staff and other stakeholders, that builds growth, trust, and a solid reputation.",
     items: [
       {
-        image: "/images/business-owners-wide.jpg",
+        image: "/images/business_nfp.jpg",
         icon: Briefcase,
         title: "Business owners and founders",
         body:
@@ -453,7 +453,7 @@ export const businessContent: CourseContent = {
         "Full program outline",
       ],
       footnote:
-        "We'll only email you about the Business Program. Unsubscribe at any time.",
+        "We'll email you with program updates and occasional resources. Unsubscribe any time.",
     },
     trustBadges: { poweredByCrcLogo: true },
     callbackLinkLabel: "Or request a callback from our business team",
@@ -463,7 +463,7 @@ export const businessContent: CourseContent = {
   foundersWelcome: {
     eyebrow: "From the founders",
     heading: "A message from Lyall and Barbara",
-    image: "/images/founders.png",
+    image: "/images/founders-message.jpg",
     imageAlt: "Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner",
     paragraphs: [
       "We have a deep understanding of the unique needs facing Australian business owners and leadership teams, having worked alongside businesses of every size - from local hospitality and professional services firms to national brands - for 15+ years through CRC Public Relations.",
