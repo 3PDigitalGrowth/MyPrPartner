@@ -96,7 +96,7 @@ export function MobileDrawer({ open, onClose, expanded, setExpanded }: MobileDra
 
       <div className="shrink-0 bg-bg-grey px-5 py-4">
         <a
-          href="https://learn.myprpartner.com"
+          href="https://courses.myprpartner.com/login"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal px-5 py-3 text-[15px] font-semibold text-white shadow-sm transition-colors hover:bg-teal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2"

@@ -258,7 +258,7 @@ export default function Navigation() {
             </Link>
 
             <a
-              href="https://learn.myprpartner.com"
+              href="https://courses.myprpartner.com/login"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full bg-teal px-5 py-2 text-[14px] font-medium text-white transition-colors hover:bg-teal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2"
