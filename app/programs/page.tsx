@@ -67,7 +67,7 @@ const personaTiles: PersonaTile[] = [
   },
   {
     href: "/programs/business",
-    label: "I run or lead a business",
+    label: "I run or lead a business or charity",
     sublabel: "Owners, founders, executive teams",
     image: "/images/business/business-sticky-thumb.jpg",
     icon: Briefcase,
