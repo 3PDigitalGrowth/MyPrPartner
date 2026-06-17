@@ -164,7 +164,7 @@ const programs: Program[] = [
     lede:
       "A 12-month online PR, profile, reputation and crisis communications program for Australian business owners and leadership teams.",
     audience:
-      "Owners, founders and leadership teams - from local professional services firms to national brands.",
+      "Owners, founders and leadership teams - from local businesses to national brands and not for profits.",
     image: "/images/business/business-hero-bg.jpg",
     imageAlt:
       "An Australian business owner working through a leadership team planning session.",
@@ -172,7 +172,7 @@ const programs: Program[] = [
     pricing: "Founding-member discount - first 50 save 10%",
     outcomes: [
       "PR, profile and reputation building across 12 focused monthly modules",
-      "Crisis readiness built for leadership teams who haven't had to handle one yet",
+      "Establish your organisation as the trusted public voice of your industry",
       "Franchise, multi-location and group enrolments available at bulk rates",
     ],
     cta: "See the Business & NFP Program",
@@ -196,7 +196,7 @@ const programs: Program[] = [
     outcomes: [
       "Advocacy, media campaigns and member-trust building across 12 modules",
       "Crisis readiness for sector-defining issues and board-level moments",
-      "Peak body and federation enrolments available at bulk rates",
+      "Protect and strengthen your industry's reputation",
     ],
     cta: "See the Associations Program",
   },
