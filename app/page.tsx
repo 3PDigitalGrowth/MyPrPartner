@@ -391,7 +391,7 @@ export default function Home() {
                 <h2 className="font-heading text-[28px] md:text-[32px] font-bold text-text-dark leading-tight mb-6">A message from Lyall &amp; Barbara</h2>
                 <blockquote className="border-l-[3px] border-teal pl-6 space-y-4 text-[17px] text-text-medium leading-relaxed">
                   <p>Since 2010, our parent company CRC Public Relations has been assisting Australian and global businesses, charities, industry and professional associations, governments, schools and individuals to communicate more effectively and manage their reputations.</p>
-                  <p>We created My PR Partner so that every organisation can access world-class PR training, resources and support, without the cost of a full PR agency retainer.</p>
+                  <p>We created My PR Partner so that every organisation can access world-class PR training, resources and support, without the cost of a PR agency retainer.</p>
                   <p>We invite you to join the My PR Partner community.</p>
                 </blockquote>
                 <p className="mt-6 text-[14px] font-medium text-text-dark">- Lyall Mercer &amp; Barbara Gorogh, Co-founders</p>
