@@ -103,7 +103,7 @@ function WaitlistModal({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          formType: "contact",
+          formType: "waitlist",
           name,
           email,
           organisation,

@@ -11,7 +11,7 @@
 // denominator that renders correctly in Outlook, Gmail and Apple Mail.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export type FormType = "contact" | "resource" | "newsletter";
+export type FormType = "contact" | "resource" | "newsletter" | "waitlist";
 
 export type FormSubmission = {
   formType: FormType;
@@ -242,6 +242,40 @@ export function clientConfirmationEmail(sub: FormSubmission): {
     };
   }
 
+  if (sub.formType === "waitlist") {
+    // Topic arrives as "<Program> waitlist"; strip the suffix for clean copy.
+    // programRaw is for plain-text fields (subject, preheader, which clientShell
+    // escapes itself); program is pre-escaped for inlining into the HTML body.
+    const programRaw =
+      (sub.topic || "program").replace(/\s*waitlist$/i, "").trim() || "program";
+    const program = escapeHtml(programRaw);
+    return {
+      subject: `You're on the ${programRaw} waitlist`,
+      html: clientShell({
+        preheader: `You're on the founding-member waitlist for the ${programRaw}. We'll be in touch the moment enrolments open.`,
+        heading: `You're on the list${greetName}.`,
+        bodyHtml: `
+          ${paragraph(
+            `Thanks for putting your hand up for the <strong style="color:${TEXT_DARK};">${program}</strong>. You're now on the founding-member waitlist, which means you'll hear from us before enrolments open to the public.`
+          )}
+          ${calloutBox("What happens next", [
+            `<strong>1.</strong> We'll email you the moment enrolments open, ahead of the public.`,
+            `<strong>2.</strong> As a founding member, you lock in 10% off your first year.`,
+            `<strong>3.</strong> Nothing to pay now, and no obligation to go ahead.`,
+          ])}
+          ${paragraph(
+            `<strong style="color:${TEXT_DARK};">Want to tell us more about your team, or ask a question first?</strong> Just reply to this email. A person reads every reply, and we aim to come back to you within 24 hours on Australian business days.`
+          )}
+          ${paragraph(
+            `While you wait, you might find something useful in our <a href="${SITE_URL}/articles" style="color:${TEAL};text-decoration:none;font-weight:600;">articles</a> or the <a href="${SITE_URL}/programs" style="color:${TEAL};text-decoration:none;font-weight:600;">program overview</a>.`
+          )}
+          ${paragraph(`Talk soon,<br /><strong style="color:${TEXT_DARK};">The My PR Partner team</strong>`)}`,
+        footerReason:
+          "You're receiving this because you joined a program waitlist at myprpartner.com. We'll never sell your email or pass it on.",
+      }),
+    };
+  }
+
   // newsletter
   return {
     subject: "You're on the list",
@@ -278,6 +312,7 @@ const FORM_TYPE_LABELS: Record<FormType, string> = {
   contact: "Contact enquiry",
   resource: "Resource download",
   newsletter: "Newsletter signup",
+  waitlist: "Waitlist signup",
 };
 
 export function adminNotificationEmail(sub: FormSubmission): {
@@ -292,7 +327,9 @@ export function adminNotificationEmail(sub: FormSubmission): {
       ? `[myprpartner.com] Contact enquiry from ${sub.name || sub.email}${sub.topic ? ` · ${sub.topic}` : ""}`
       : sub.formType === "resource"
         ? `[myprpartner.com] ${sub.resourceLabel || "Resource"} download · ${who}`
-        : `[myprpartner.com] Newsletter signup · ${sub.email}`;
+        : sub.formType === "waitlist"
+          ? `[myprpartner.com] Waitlist signup · ${sub.name || sub.email}${sub.topic ? ` · ${sub.topic}` : ""}`
+          : `[myprpartner.com] Newsletter signup · ${sub.email}`;
 
   const rows: Array<[string, string | undefined]> = [
     ["Type", typeLabel],

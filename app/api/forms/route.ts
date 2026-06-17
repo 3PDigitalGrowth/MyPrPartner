@@ -27,7 +27,7 @@ const ADMIN_RECIPIENTS = (
 // onboarding sender (which can only deliver to the Resend account owner).
 const FROM = process.env.RESEND_FROM || "My PR Partner <onboarding@resend.dev>";
 
-const VALID_TYPES: FormType[] = ["contact", "resource", "newsletter"];
+const VALID_TYPES: FormType[] = ["contact", "resource", "newsletter", "waitlist"];
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function clip(value: unknown, max: number): string | undefined {
