@@ -275,7 +275,7 @@ const finalFunnel = [
     icon: Compass,
     eyebrow: "Coming soon",
     title: "Upcoming standalone courses",
-    body: "LinkedIn, media training, personal branding, content strategy and more - short, focused courses launching through 2026.",
+    body: "Social media, personal branding, media training, content strategy and more – short, focused courses launching through 2026.",
     cta: "See the pipeline",
     accent: "linear-gradient(135deg, #533278 0%, #A25CC8 100%)",
   },
