@@ -111,7 +111,7 @@ const programs: Program[] = [
   {
     slug: "crisis-masterclass",
     href: "/crisis-masterclass",
-    sector: "Flagship · cross-sector",
+    sector: "For leaders and PR professionals",
     icon: Shield,
     iconAccent: "linear-gradient(135deg, #1A2B4A 0%, #1E73BE 100%)",
     title: "Crisis Masterclass",
