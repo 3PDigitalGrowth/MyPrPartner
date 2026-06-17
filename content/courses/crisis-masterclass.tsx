@@ -399,7 +399,7 @@ export const crisisMasterclassContent: CourseContent = {
     badgeIcon: ShieldCheck,
     eyebrow: "Enrol today",
     price: "$340 p/m",
-    priceCurrencyNote: "AUD, incl. GST",
+    priceCurrencyNote: "AUD per month · ex GST",
     pricePlanNote: "Annual plan available - pay 11 months, get all 12.",
     primaryCtaLabel: "Enrol now",
     secondaryCta: { label: "Download course outline", href: "/downloads/crisis-masterclass-outline.pdf" },

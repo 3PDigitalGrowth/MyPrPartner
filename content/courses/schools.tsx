@@ -463,7 +463,7 @@ export const schoolsContent: CourseContent = {
     badgeIcon: GraduationCap,
     eyebrow: "Enrol your school",
     price: "$440",
-    priceCurrencyNote: "AUD per month",
+    priceCurrencyNote: "AUD per month · ex GST",
     pricePlanNote: "Pay annually and save $440",
     tierSelectorLabel: "Choose your level",
     defaultTierId: "train",
@@ -473,7 +473,7 @@ export const schoolsContent: CourseContent = {
         label: "Train Level",
         description: "Team training and resources",
         price: "$440",
-        priceCurrencyNote: "AUD per month",
+        priceCurrencyNote: "AUD per month · ex GST",
         pricePlanNote: "Pay annually and save $440",
         inclusionsTitle: "Inclusions tailored specifically for schools:",
         inclusions: [
@@ -489,7 +489,7 @@ export const schoolsContent: CourseContent = {
         label: "Support Level",
         description: "Training plus on-call PR support",
         price: "$840",
-        priceCurrencyNote: "AUD per month",
+        priceCurrencyNote: "AUD per month · ex GST",
         pricePlanNote: "Pay annually and save $840",
         inclusionsTitle: "Inclusions tailored specifically for schools:",
         inclusions: [
@@ -513,7 +513,7 @@ export const schoolsContent: CourseContent = {
         label: "Partner Level",
         description: "Full PR partnership with media training",
         price: "$1,340",
-        priceCurrencyNote: "AUD per month",
+        priceCurrencyNote: "AUD per month · ex GST",
         pricePlanNote: "Pay annually and save $1,340",
         inclusionsTitle: "Inclusions tailored specifically for schools:",
         inclusions: [

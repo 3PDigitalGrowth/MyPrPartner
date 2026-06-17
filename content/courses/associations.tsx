@@ -464,18 +464,15 @@ export const associationsContent: CourseContent = {
     // requires them. Kept here so we can flip back to a standard pricing card
     // by simply removing `waitlist` once enrolments open.
     price: "TBA",
-    priceCurrencyNote: "AUD per month",
+    priceCurrencyNote: "AUD per month · ex GST",
     pricePlanNote: "Pricing released to the waitlist first",
     primaryCtaLabel: "Join the waitlist",
     secondaryCta: {
       label: "Download program outline",
       href: "/downloads/associations-program-outline.pdf",
     },
-    inclusionsTitle: "What waitlist members receive",
-    inclusions: [
-      "First access to enrolments before public release",
-      "Full program outline",
-    ],
+    inclusionsTitle: "",
+    inclusions: [],
     waitlist: {
       signupUrl: WAITLIST_URL,
       headline: "Join the waitlist",

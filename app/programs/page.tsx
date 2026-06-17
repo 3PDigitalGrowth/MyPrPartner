@@ -243,8 +243,8 @@ const comparisonRows: ComparisonRow[] = [
     label: "Pricing",
     icon: Star,
     values: [
-      "From $340 / month",
-      "From $440 / month",
+      "From $340 / month · ex GST",
+      "From $440 / month · ex GST",
       "Founding-member 10% off",
       "Founding-member 10% off",
     ],
