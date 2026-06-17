@@ -365,7 +365,7 @@ export default function Home() {
                 { icon: Mail, title: "Fortnightly spotlights", text: "Regular email updates with PR insights, industry specific advice, and practical tips from our expert panel." },
                 { icon: MessageSquare, title: "Member portal & Q&A", text: "Submit questions and access all your training content through the secure member dashboard." },
                 { icon: Phone, title: "CRC Public Relations support", text: "Support-tier subscribers get personal direct phone, email and video access to CRC Public Relations consultants." },
-                { icon: Award, title: "Exclusive partnerships", text: "Access the world-leading Crisis Ready\u00AE program from Melissa Agnes of Crisis Ready Institute USA, available exclusively through My PR Partner in Australasia." },
+                { icon: Award, title: "Exclusive partnerships", text: "Access the world-leading Crisis Ready\u00AE course with Melissa Agnes, CEO of Crisis Ready Institute USA, available exclusively through My PR Partner in Australasia." },
               ].map((block) => (
                 <div key={block.title} className="text-center md:text-left">
                   <block.icon className="h-10 w-10 text-teal mb-4 mx-auto md:mx-0" />
