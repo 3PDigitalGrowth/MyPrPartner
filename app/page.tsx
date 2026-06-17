@@ -564,7 +564,7 @@ export default function Home() {
                   />
                   <FAQItem
                     question="Can I upgrade to a higher level before the end of my annual subscription?"
-                    answer="You can upgrade your subscription level or add an elective at any time. This will be considered the commencement of a new 12-month subscription, as each level offers different resources over the year of subscription."
+                    answer="You can upgrade your subscription level at any time. This will be considered the commencement of a new 12-month subscription, as each level offers different resources over the year of subscription."
                   />
                 </div>
               </div>
