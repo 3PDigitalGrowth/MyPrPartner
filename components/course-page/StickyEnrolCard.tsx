@@ -6,6 +6,10 @@ import Link from "next/link";
 import { ArrowRight, Check, Download, ShieldCheck, Sparkles } from "lucide-react";
 import type { CheckoutConfig, PricingBullet, SidebarContent, WaitlistContent } from "./types";
 import { getCourseCheckoutUrl } from "@/lib/checkout";
+import { useWaitlistModal } from "./WaitlistModal";
+
+const WAITLIST_CTA_CLASS =
+  "mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-teal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2";
 
 function normaliseBullet(b: PricingBullet): { text: string; highlighted: boolean } {
   return typeof b === "string" ? { text: b, highlighted: false } : { text: b.text, highlighted: !!b.highlighted };
@@ -82,6 +86,8 @@ function WaitlistBlock({
       : 0;
   const spotsRemaining = spots ? Math.max(0, spots.capacity - spots.claimed) : 0;
 
+  const modal = useWaitlistModal();
+
   return (
     <div>
       {waitlist.discountPill ? (
@@ -153,13 +159,17 @@ function WaitlistBlock({
         </div>
       ) : null}
 
-      <a
-        href={waitlistUrl}
-        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-teal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2"
-      >
-        {waitlist.ctaLabel}
-        <ArrowRight className="h-4 w-4" aria-hidden />
-      </a>
+      {modal.enabled ? (
+        <button type="button" onClick={modal.open} className={WAITLIST_CTA_CLASS}>
+          {waitlist.ctaLabel}
+          <ArrowRight className="h-4 w-4" aria-hidden />
+        </button>
+      ) : (
+        <a href={waitlistUrl} className={WAITLIST_CTA_CLASS}>
+          {waitlist.ctaLabel}
+          <ArrowRight className="h-4 w-4" aria-hidden />
+        </a>
+      )}
 
       {waitlist.benefits.length > 0 ? (
         <ul className="mt-5 space-y-2">

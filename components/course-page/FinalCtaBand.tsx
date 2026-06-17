@@ -5,6 +5,10 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { CheckoutConfig, FinalCtaContent } from "./types";
 import { getCourseCheckoutUrl } from "@/lib/checkout";
+import { useWaitlistModal } from "./WaitlistModal";
+
+const PRIMARY_CTA_CLASS =
+  "inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-[16px] font-semibold text-text-dark transition-colors hover:bg-white/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-text-dark";
 
 export default function FinalCtaBand({
   content,
@@ -15,6 +19,7 @@ export default function FinalCtaBand({
 }) {
   const url = getCourseCheckoutUrl(checkout, { utm_content: "final-cta" });
   const EyebrowIcon = content.eyebrowIcon;
+  const waitlist = useWaitlistModal();
   return (
     <section className="relative overflow-hidden bg-text-dark">
       <Image
@@ -44,13 +49,17 @@ export default function FinalCtaBand({
             {content.body}
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a
-              href={url}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-[16px] font-semibold text-text-dark transition-colors hover:bg-white/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-text-dark"
-            >
-              {content.primaryCtaLabel}
-              <ArrowRight className="h-4 w-4" aria-hidden />
-            </a>
+            {waitlist.enabled ? (
+              <button type="button" onClick={waitlist.open} className={PRIMARY_CTA_CLASS}>
+                {content.primaryCtaLabel}
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </button>
+            ) : (
+              <a href={url} className={PRIMARY_CTA_CLASS}>
+                {content.primaryCtaLabel}
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </a>
+            )}
             {content.secondaryCta ? (
               <Link
                 href={content.secondaryCta.href}

@@ -5,6 +5,10 @@ import Link from "next/link";
 import { ArrowRight, Check, Download } from "lucide-react";
 import type { CheckoutConfig, HeroContent } from "./types";
 import { getCourseCheckoutUrl } from "@/lib/checkout";
+import { useWaitlistModal } from "./WaitlistModal";
+
+const PRIMARY_CTA_CLASS =
+  "inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold text-text-dark transition-colors hover:bg-white/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-text-dark";
 
 export default function Hero({
   hero,
@@ -15,6 +19,7 @@ export default function Hero({
 }) {
   const checkoutUrl = getCourseCheckoutUrl(checkout, { utm_content: "hero" });
   const EyebrowIcon = hero.eyebrowIcon;
+  const waitlist = useWaitlistModal();
 
   return (
     <section className="relative overflow-hidden bg-text-dark">
@@ -67,13 +72,20 @@ export default function Hero({
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               {hero.primaryCta ? (
-                <a
-                  href={hero.primaryCta.useCheckoutUrl ? checkoutUrl : "#"}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold text-text-dark transition-colors hover:bg-white/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-text-dark"
-                >
-                  {hero.primaryCta.label}
-                  <ArrowRight className="h-4 w-4" aria-hidden />
-                </a>
+                waitlist.enabled ? (
+                  <button type="button" onClick={waitlist.open} className={PRIMARY_CTA_CLASS}>
+                    {hero.primaryCta.label}
+                    <ArrowRight className="h-4 w-4" aria-hidden />
+                  </button>
+                ) : (
+                  <a
+                    href={hero.primaryCta.useCheckoutUrl ? checkoutUrl : "#"}
+                    className={PRIMARY_CTA_CLASS}
+                  >
+                    {hero.primaryCta.label}
+                    <ArrowRight className="h-4 w-4" aria-hidden />
+                  </a>
+                )
               ) : null}
               {hero.secondaryCta ? (
                 <Link
