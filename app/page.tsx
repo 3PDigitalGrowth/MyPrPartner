@@ -516,7 +516,7 @@ export default function Home() {
               {[
                 { quote: "CRC Public Relations has helped us generate major, ongoing, national exposure and ensure that our message is widely heard.", name: "Peter White AM", title: "Managing Director", org: "Finance Brokers Association of Australia" },
                 { quote: "The invaluable customer relations support from CRC Public Relations helps ensure a high level of trust in, and growth for, our chain of more than 50 restaurants.", name: "Hamish Watson", title: "Director", org: "Cafe 63" },
-                { quote: "CRC Public Relations has developed a crisis communications plan for Christian schools and has assisted many of our member schools across Australia to effectively communicate when issues have arisen.", name: "Executive Officer", title: "", org: "Australian Association of Christian Schools" },
+                { quote: "CRC Public Relations has developed a crisis communications plan for Christian schools and has assisted many of our member schools across Australia to effectively communicate when issues have arisen.", name: "Executive Officer", title: "", org: "National schools association" },
               ].map((t) => (
                 <div key={t.name} className="bg-[#F7F8FA] rounded-card p-8">
                   <span className="block text-[48px] leading-none text-teal/20 font-heading font-bold mb-2">&ldquo;</span>

@@ -534,7 +534,7 @@ export default function ExpertTrainersPage() {
                     "CRC Public Relations has developed a crisis communications plan for Christian schools and has assisted many of our member schools across Australia to effectively communicate when issues have arisen.",
                   name: "Executive Officer",
                   title: "",
-                  org: "Australian Association of Christian Schools",
+                  org: "National schools association",
                 },
               ].map((t, i) => (
                 <figure
