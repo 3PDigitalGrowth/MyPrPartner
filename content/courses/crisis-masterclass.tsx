@@ -423,7 +423,7 @@ export const crisisMasterclassContent: CourseContent = {
     heading: "A message from Lyall and Melissa",
     images: [
       "/images/expert-lyall-real.png",
-      { src: "/images/melissa-agnes-stage.webp", className: "object-top" },
+      { src: "/images/melissa-agnes-stage.webp", className: "object-[50%_65%]" },
     ],
     imageAlt: "Melissa Agnes and Lyall Mercer, co-founders of My PR Partner",
     paragraphs: [
