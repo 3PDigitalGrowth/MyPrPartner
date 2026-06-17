@@ -347,26 +347,31 @@ export default function StickyEnrolCard({
           </div>
         ) : null}
 
-        <div className="mt-6 border-t border-[#F1F2F5] pt-5">
-          <p className="font-heading text-[13px] font-semibold text-text-dark">{displayInclusionsTitle}</p>
-          <ul className="mt-3 space-y-2">
-            {baseInclusions.map((b, i) => {
-              const item = normaliseBullet(b);
-              return <InclusionItem key={`base-${i}-${item.text}`} {...item} />;
-            })}
-          </ul>
-          {plusHeading && plusInclusions && plusInclusions.length > 0 ? (
-            <>
-              <p className="mt-4 font-heading text-[13px] font-semibold text-teal">{plusHeading}</p>
-              <ul className="mt-3 space-y-2">
-                {plusInclusions.map((b, i) => {
-                  const item = normaliseBullet(b);
-                  return <InclusionItem key={`plus-${i}-${item.text}`} {...item} />;
-                })}
-              </ul>
-            </>
-          ) : null}
-        </div>
+        {/* Inclusions list belongs to the pricing layout only. In waitlist
+            mode the WaitlistBlock already lists the benefits, so showing this
+            too would double up. */}
+        {showPricing ? (
+          <div className="mt-6 border-t border-[#F1F2F5] pt-5">
+            <p className="font-heading text-[13px] font-semibold text-text-dark">{displayInclusionsTitle}</p>
+            <ul className="mt-3 space-y-2">
+              {baseInclusions.map((b, i) => {
+                const item = normaliseBullet(b);
+                return <InclusionItem key={`base-${i}-${item.text}`} {...item} />;
+              })}
+            </ul>
+            {plusHeading && plusInclusions && plusInclusions.length > 0 ? (
+              <>
+                <p className="mt-4 font-heading text-[13px] font-semibold text-teal">{plusHeading}</p>
+                <ul className="mt-3 space-y-2">
+                  {plusInclusions.map((b, i) => {
+                    const item = normaliseBullet(b);
+                    return <InclusionItem key={`plus-${i}-${item.text}`} {...item} />;
+                  })}
+                </ul>
+              </>
+            ) : null}
+          </div>
+        ) : null}
 
         {sidebar.trustBadges ? (
           <div className="mt-5 flex items-center justify-between gap-3 border-t border-[#F1F2F5] pt-4 text-[12px] text-text-medium">
