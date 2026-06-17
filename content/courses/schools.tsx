@@ -119,7 +119,6 @@ export const schoolsContent: CourseContent = {
     { id: "what-youll-learn", label: "What's included" },
     { id: "structure", label: "12-month plan" },
     { id: "instructors", label: "Presenters" },
-    { id: "pricing", label: "Pricing" },
     { id: "faq", label: "FAQ" },
   ],
 
