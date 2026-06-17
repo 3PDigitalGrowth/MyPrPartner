@@ -361,7 +361,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 animate-fade-in-up">
               {[
                 { icon: PlayCircle, title: "Monthly video training", text: "Expert-led training sessions covering PR strategy, communications, media management, brand publicity, reputation protection and crisis communications. New content unlocks every month." },
-                { icon: FileDown, title: "Downloadable workbooks", text: "Fillable PDF workbooks and templates for each module. Build your crisis plan, media response guide, and communications toolkit." },
+                { icon: FileDown, title: "Downloadable workbooks", text: "Fillable PDF workbooks and templates for each module. Build your communications toolkit, media response guide, and crisis plan." },
                 { icon: Mail, title: "Fortnightly spotlights", text: "Regular email updates with curated PR insights, industry analysis, and practical tips from our expert panel." },
                 { icon: MessageSquare, title: "Member portal & Q&A", text: "Submit questions and access all your training content through the secure member dashboard." },
                 { icon: Phone, title: "CRC Public Relations support", text: "Support-tier subscribers get personal direct phone, email and video access to CRC Public Relations consultants." },
