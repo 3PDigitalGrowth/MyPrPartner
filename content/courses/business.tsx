@@ -403,9 +403,9 @@ export const businessContent: CourseContent = {
 
   sidebar: {
     thumbImage: "/images/business/business-sticky-thumb.jpg",
-    badge: "For business leadership teams",
+    badge: "For business and NFP leadership teams",
     badgeIcon: Briefcase,
-    eyebrow: "Enrol your business",
+    eyebrow: "Enrol your business or organisation",
     // The fields below are unused while waitlist mode is active, but the type
     // requires them. Kept here so we can flip back to a standard pricing card
     // by simply removing `waitlist` once enrolments open.
@@ -417,13 +417,8 @@ export const businessContent: CourseContent = {
       label: "Download program outline",
       href: "/downloads/business-program-outline.pdf",
     },
-    inclusionsTitle: "What waitlist members receive",
-    inclusions: [
-      "10% founding-member discount (first 50 businesses)",
-      "First access to enrolments before public release",
-      "Full program outline",
-      "Updates on launch date and pricing tiers",
-    ],
+    inclusionsTitle: "",
+    inclusions: [],
     waitlist: {
       signupUrl: WAITLIST_URL,
       headline: "Join the waitlist",
@@ -453,7 +448,7 @@ export const businessContent: CourseContent = {
         "We'll email you with program updates and occasional resources. Unsubscribe any time.",
     },
     trustBadges: { poweredByCrcLogo: true },
-    callbackLinkLabel: "Or request a callback from our business team",
+    callbackLinkLabel: "Or request a callback from our business and NFP team",
     callbackHref: "/contact",
   },
 
