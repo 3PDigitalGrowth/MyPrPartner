@@ -311,7 +311,7 @@ export const schoolsContent: CourseContent = {
 
   instructors: {
     eyebrow: "Your presenters",
-    heading: "Learn from Australia's leading schools PR and education specialists",
+    heading: "Learn from Australia's leading school PR and education specialists",
     intro:
       "Lead presenter is Lyall Mercer, supported by a panel of guest experts who each lead the month covering their specialty.",
     items: [
