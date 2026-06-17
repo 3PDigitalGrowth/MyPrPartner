@@ -227,7 +227,7 @@ export const schoolsContent: CourseContent = {
         ],
       },
       {
-        label: "Phase 3: Crisis-ready (Months 7 to 9)",
+        label: "Phase 3: Crisis ready (Months 7 to 9)",
         count: "Ready for the hardest days",
         modules: [
           {
