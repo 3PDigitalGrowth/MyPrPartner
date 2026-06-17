@@ -216,7 +216,6 @@ const comparisonRows: ComparisonRow[] = [
       "Any leader serious about crisis readiness",
       "School leadership, comms and marketing teams",
       "Owners, founders & executive teams",
-      "EDs, boards & fundraising teams",
       "CEOs & association leadership teams",
     ],
   },
@@ -224,7 +223,6 @@ const comparisonRows: ComparisonRow[] = [
     label: "Duration",
     icon: Calendar,
     values: [
-      "12 months · self-paced",
       "12 months · self-paced",
       "12 months · self-paced",
       "12 months · self-paced",
@@ -239,7 +237,6 @@ const comparisonRows: ComparisonRow[] = [
       "Available now",
       "Waitlist · Launching 2026",
       "Waitlist · Launching 2026",
-      "Waitlist · Launching 2026",
     ],
   },
   {
@@ -248,7 +245,6 @@ const comparisonRows: ComparisonRow[] = [
     values: [
       "From $340 / month",
       "From $440 / month",
-      "Founding-member 10% off",
       "Founding-member 10% off",
       "Founding-member 10% off",
     ],
@@ -261,7 +257,7 @@ const finalFunnel = [
     icon: MessageCircle,
     eyebrow: "Still weighing it up?",
     title: "Book a call with our team",
-    body: "Send us a short message about your team and your goals - a senior adviser will reply within one business day.",
+    body: "Send us a short message about your team and your goals - we will reply within one business day.",
     cta: "Contact the team",
     accent: "linear-gradient(135deg, #1A2B4A 0%, #1E73BE 100%)",
   },
