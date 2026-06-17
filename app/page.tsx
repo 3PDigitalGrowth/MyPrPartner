@@ -304,7 +304,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up">
               {[
-                { icon: BookOpen, title: "Practical training", body: "Monthly video training and downloadable workbooks + fortnightly Spotlight emails, from leading PR and crisis specialists across Australia and internationally." },
+                { icon: BookOpen, title: "Practical training", body: "Monthly video training and downloadable workbooks + fortnightly Spotlight emails, from leading PR specialists across Australia and internationally." },
                 { icon: FileText, title: "Ready-to-use resources", body: "Media release and crisis plan templates, media response guides and communications checklists your team can implement immediately." },
                 { icon: Headphones, title: "Ongoing expert support", body: "Access to CRC Public Relations consultants via phone, email, and video + access to trainers through the member portal when you need guidance." },
               ].map((card) => (
@@ -330,7 +330,7 @@ export default function Home() {
               {[
                 { image: "/images/card-schools.jpg", title: "Schools program", description: "Professional development in PR, media and crisis communications for school leaders and staff.", alt: "School leaders undertaking online PR and crisis communications training", href: "/programs/schools" },
                 { image: "/images/corporatevideomyprpartner.jpg", title: "Industry & professional associations program", description: "Practical PR skills and resources for association leaders and member organisations.", alt: "Association leaders undertaking online PR training in a boardroom", href: "/programs/industry-associations" },
-                { image: "/images/crisis masterclass home page.png", title: "Crisis masterclass", description: "Australia’s premier crisis communications training program with Melissa Agnes and expert panel.", alt: "Communications professional undertaking an online crisis communications masterclass", href: "/crisis-masterclass" },
+                { image: "/images/crisis masterclass home page.png", title: "Crisis masterclass", description: "Australia’s premier crisis communications training program in partnership with the Crisis Ready Institute.", alt: "Communications professional undertaking an online crisis communications masterclass", href: "/crisis-masterclass" },
               ].map((program) => (
                 <div key={program.title} className="bg-white rounded-card shadow-card overflow-hidden flex flex-col">
                   <div className="relative aspect-video">
