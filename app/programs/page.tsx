@@ -139,7 +139,7 @@ const programs: Program[] = [
     iconAccent: "linear-gradient(135deg, #0F6DA3 0%, #07AFBB 100%)",
     title: "Schools Program",
     lede:
-      "A 12-month online PR and crisis training program built for Australian school leadership teams.",
+      "School-specific content – including effective communication to school communities, media strategies, and handling the hardest allegations.",
     audience:
       "Principals, executive leadership, comms staff and crisis response teams - training together.",
     image: "/images/schools/schools-persona-principal.jpg",
@@ -157,7 +157,7 @@ const programs: Program[] = [
   {
     slug: "business",
     href: "/programs/business",
-    sector: "For Australian businesses",
+    sector: "For Australian businesses and charities",
     icon: Briefcase,
     iconAccent: "linear-gradient(135deg, #B8434A 0%, #E2894B 100%)",
     title: "Business & NFP Program",
