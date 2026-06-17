@@ -1,4 +1,4 @@
-﻿import {
+import {
   Award,
   BadgeCheck,
   Briefcase,
@@ -81,17 +81,17 @@ export const businessContent: CourseContent = {
   },
 
   hero: {
-    eyebrow: "For Australian business owners, founders & leadership teams",
+    eyebrow: "For Australian business and NFP leadership teams",
     eyebrowIcon: Briefcase,
     headline:
-      "Build the profile, trust and reputation your business needs to grow, and the skills to protect it",
+      "Build your business or organisation's trust and profile, and protect its reputation",
     tagline:
-      "The only Australian 12-month online public relations program built for busy Australian business owners and their teams",
+      "The only Australian 12-month online public relations program built for busy Australian and NFP managers, owners and teams",
     intro:
-      "Attract new customers, become the recognised voice of authority in your industry, and lead confidently through any issue or crisis. Join the My PR Partner business community.",
+      "Attract new customers or supporters, become the recognised voice of authority in your industry, and lead confidently through any issue or crisis. Join the My PR Partner business and NFP community.",
     outcomes: [
-      "Build a strong business profile that attracts new customers",
-      "Become the voice of authority for your industry",
+      "Build a strong business or organisation profile that attracts new customers or supporters",
+      "Become the voice of authority for your industry or sector",
       "Build trust in your brand, team and communications",
       "Develop effective media, communications and social media skills",
       "Manage negative issues and protect your reputation",
@@ -106,13 +106,13 @@ export const businessContent: CourseContent = {
     portraitImage: "/images/myprpartner business program.png",
     portraitCallout: {
       eyebrow: "Trusted by",
-      title: <>Australian businesses from cafés to national brands</>,
-      sub: "Powered by CRC Public Relations, with 15+ years in Australian business PR",
+      title: <>Australian businesses and NFPs, locally and nationally</>,
+      sub: "Powered by CRC Public Relations - 15+ years in Australian business and NFP",
     },
     trustStrip: {
       poweredByCrcLogo: true,
       items: [
-        "Built for Australian business owners and leadership teams",
+        "Built for Australian business and NFP leadership teams and owners",
         "Designed for founders, CEOs, marketing, comms & client-facing teams",
       ],
     },
@@ -138,10 +138,10 @@ export const businessContent: CourseContent = {
   overview: {
     eyebrow: "Overview",
     heading:
-      "Affordable PR training, resources and support that empowers your whole business team",
+      "Affordable PR training, resources and support that empowers your whole business or NFP team",
     paragraphs: [
-      "The My PR Partner Business Program is a 12-month online training program designed for busy Australian business owners, managers, and communication teams. Each team member learns at a time that suits them, and content is built with the full range of business roles in mind, so your owners, executive, marketing, communications and client-facing teams share the same language and pull in the same direction.",
-      "Built by CRC Public Relations, this is the distilled version of 15+ years of working alongside Australian businesses through their biggest moments, from proud growth stories and national media wins to the hardest moments when their reputation came under pressure.",
+      "The My PR Partner Business and NFP Program is a 12-month online training program designed for busy Australian business, charity and NFP owners, managers, and communication teams. Each team member learns at a time that suits them, and content is built with the full range of roles in mind, so your executive, marketing, communications and client-facing teams share the same language and pull in the same direction.",
+      "Built by CRC Public Relations, this is the distilled version of 15+ years of working alongside Australian businesses, charities and not for profit organisations through their biggest moments, from proud growth stories and national media wins to the hardest moments when their reputation came under pressure.",
       <blockquote
         key="buffett-quote"
         className="mt-2 rounded-xl border-l-4 border-teal bg-[#F7F8FA] px-6 py-5 italic text-text-dark"
@@ -155,14 +155,14 @@ export const businessContent: CourseContent = {
         </footer>
       </blockquote>,
     ],
-    keyLearningsTitle: "Why business owners choose this program",
+    keyLearningsTitle: "Why business and organisation leaders choose this program",
     keyLearnings: [
       "A shared PR mindset across owners, exec, marketing and client-facing teams",
-      "A ready-to-use library of resources, templates and checklists for business",
-      "Expert support from real Australian business PR consultants, not academics",
-      "Practical frameworks to grow profile, trust and new customer attraction",
+      "A ready-to-use library of resources, templates and checklists for business and NFPs",
+      "Expert support from real Australian corporate PR consultants, not academics",
+      "Practical frameworks to grow profile, trust and new customer and supporter attraction",
       "Guest presenters across media, social, reputation and crisis communications",
-      "Monthly interactive Q&A on your specific business circumstances",
+      "Monthly interactive Q&A on your specific business or NFP circumstances",
     ],
   },
 
@@ -194,7 +194,7 @@ export const businessContent: CourseContent = {
         icon: BadgeCheck,
         title: "Expertise",
         body:
-          "Access the expertise of PR and business experts who understand the realities of Australian business and what actually moves the needle for owners and leadership teams.",
+          "Access the expertise of PR, business, and NFP experts who understand the realities of Australian businesses and charities and what actually moves the needle for owners and leadership teams.",
       },
     ],
   },
@@ -210,34 +210,34 @@ export const businessContent: CourseContent = {
         count: "Build the mindset and find your voice",
         items: [
           "Month 1 · A PR mindset: How public relations underpins every growth and reputation win",
-          "Month 1 Resource: Communications tips for the whole business team",
+          "Month 1 Resource: Communications tips for the whole team",
           "Month 2 · Becoming the voice of authority in your industry or market",
           "Month 2 Resource: 5 step guide to becoming an expert media commentator",
           "Month 3 · Identifying your vulnerabilities before they escalate into a reputational issue",
-          "Month 3 Resource: The essential reputation checklist for business",
+          "Month 3 Resource: The essential reputation checklist for business (special option for NFP)",
         ],
       },
       {
         label: "Phase 2: Brand, growth and social media (Months 4 to 6)",
         count: "Get on the front foot",
         items: [
-          "Month 4 · PR that attracts new customers: the business growth PR strategy",
+          "Month 4 · PR that attracts new customers supporters or donors: the growth PR strategy",
           "Month 4 Resource: PR and content campaign template pack",
           "Month 5 · The LinkedIn playbook: Drive business in a time-effective way",
           "Month 5 Resource: LinkedIn tips and workbook",
-          "Month 6 · Using social media for business growth, with a social media specialist",
-          "Month 6 Resource: Business social media tips and response library",
+          "Month 6 · Using social media for business or organisation growth, with a social media specialist",
+          "Month 6 Resource: Business and NFP social media tips and response library",
         ],
       },
       {
         label: "Phase 3: Reputation, issues and crisis (Months 7 to 9)",
         count: "Grow trust, manage issues",
         items: [
-          "Month 7 \u00B7 Trust, reputation and turning negative issues into opportunities",
-          "Month 7 Resource: Issues-management framework for business",
-          "Month 8 \u00B7 Avoiding and preparing for a crisis: Planning for any business size",
+          "Month 7 · Trust, reputation and turning negative issues into opportunities",
+          "Month 7 Resource: Issues-management framework for business and NFP",
+          "Month 8 · Avoiding and preparing for a crisis: Planning for any size business or organisation",
           "Month 8 Resource: Crisis communication plan guide and templates",
-          "Month 9 \u00B7 Three questions you must ask to effectively communicate through a crisis",
+          "Month 9 · Three questions you must ask to effectively communicate through a crisis",
           "Month 9 Resource: Guide from the Crisis Ready Institute",
         ],
       },
@@ -245,11 +245,13 @@ export const businessContent: CourseContent = {
         label: "Phase 4: Mastery and application (Months 10 to 12)",
         count: "Sharpen and apply",
         items: [
-          "Month 10 \u00B7 Building a national or local media profile with a small team",
-          "Month 10 Resource: Media list and pitch templates for business",
-          "Month 11 \u00B7 Featured business owner: What worked, what didn't, and the lessons learned",
+          "Month 10 · Building a national or local media profile with a small team",
+          "Month 10 Resource: Media list and pitch templates",
+          "Month 11 · Featured business owner: What worked, what didn't, and the lessons learned",
           "Month 11 Resource: Best-practice PR playbook from a successful Australian business",
-          "Month 12 \u00B7 Media training for your spokespeople: the art of a great business interview",
+          "Month 11 option · Featured charity CEO: What worked, what didn't, and the lessons learned",
+          "Month 11 Resource: Best-practice PR playbook from a successful Australian charity",
+          "Month 12 · Media training for your spokespeople: the art of a great interview",
           "Month 12 is on call all year, so your spokespeople are media-ready whenever you need them",
         ],
       },
@@ -258,57 +260,50 @@ export const businessContent: CourseContent = {
 
   personas: {
     eyebrow: "Who it's for",
-    heading: "Business owners and founders",
+    heading: "Business and NFP owners, CEOs and leaders",
     intro:
-      "Elevate your business. Your marketing must be backed up by effective and PR-driven communication to your customers, staff and other stakeholders, that builds growth, trust, and a solid reputation.",
+      "Elevate your business or organisation. Your marketing must be backed up by effective and PR-driven communication to your customers, staff and other stakeholders, that builds growth, trust, and a solid reputation.",
     items: [
-      {
-        image: "/images/business_nfp.jpg",
-        icon: Briefcase,
-        title: "Business owners and founders",
-        body:
-          "Lead your business with confidence as the trusted voice and face of your brand, from day-to-day positioning to the moments your customers, staff and suppliers look to you for leadership.",
-      },
       {
         image: "/images/business/business-persona-ceo.jpg",
         icon: Building2,
-        title: "CEOs and managing directors",
+        title: "Business and NFP leaders",
         body:
-          "Turn your position, your team and your track record into measurable gains in profile, trust and commercial growth - and a reputation that stands up under pressure.",
+          "Turn your position, your team and your track record into measurable gains in profile, trust and growth - and a reputation that stands up under pressure.",
       },
       {
         image: "/images/business/business-persona-comms.jpg",
         icon: Megaphone,
         title: "Marketing and communications teams",
         body:
-          "Sharpen your content, channels and campaigns into consistent gains in customer acquisition, brand profile and public trust, backed by frameworks from real Australian PR experts.",
+          "Sharpen your content, channels and campaigns into consistent gains in customer, supporter or donor acquisition, brand profile and public trust, backed by frameworks from real Australian PR experts.",
       },
       {
         image: "/images/business/business-persona-client.jpg",
         icon: HandHeart,
-        title: "Client-facing and sales teams",
+        title: "Client-facing teams",
         body:
-          "Turn every customer conversation, review and referral into a brand moment - because reputation is built in the frontline interactions your customers remember most.",
+          "Turn every conversation, review and referral into a brand moment - because reputation is built in the frontline interactions your customers and supporters remember most.",
       },
     ],
   },
 
   instructors: {
     eyebrow: "Your presenters",
-    heading: "Learn from Australia's leading business PR specialists",
+    heading: "Learn from Australia's leading business and NFP PR specialists",
     intro:
-      "Lead presenter is Lyall Mercer, supported by a host of specialist experts and successful Australian business owners who each bring real-world experience to the program.",
+      "Lead presenter is Lyall Mercer, supported by a host of specialist experts and successful Australian business owners and charity CEOs who each bring real-world experience to the program.",
     items: [
       {
         image: "/images/instructors/lyall-mercer.png",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
-        bio: "Former journalist with a 25+ year PR career spanning six continents. Lyall has assisted Australian businesses, from hospitality and professional services to national brands, spoken at numerous business forums and conferences, and trained owners, executive teams and staff in the art of effective communication and reputation strategy.",
+        bio: "Former journalist with a 25+ year PR career spanning six continents. Lyall has assisted Australian businesses, from hospitality and professional services to national brands, as well as national charities and not for profits, spoken at numerous conferences, and trained executive teams and staff in the art of effective communication, and reputation and crisis strategy.",
       },
       {
         image: "/images/instructors/melissa-agnes.png",
         name: "Melissa Agnes",
-        title: "Featured presenter \u00B7 Founder, Crisis Ready Institute (USA)",
+        title: "Featured presenter · Founder, Crisis Ready Institute (USA)",
         bio: (
           <>
             Globally recognised authority on crisis communication and crisis leadership. Creator of the Crisis Ready<sup className="ml-0.5 align-super text-[10px]">®</sup> Model, presenting exclusively through My PR Partner in Australasia, with a dedicated session on protecting business reputation when your brand is under pressure.
@@ -317,42 +312,37 @@ export const businessContent: CourseContent = {
       },
     ],
     footnote:
-      "Plus training by leading Australian and international PR, digital, growth, reputation, social media, and crisis specialists, and discussions with successful Australian business owners across the year.",
+      "Plus training by leading Australian and international PR, digital, growth, reputation, social media, and crisis specialists, and discussions with successful Australian business owners and charity CEOs across the year.",
   },
 
   careerValue: {
-    eyebrow: "The value your business walks away with",
+    eyebrow: "The value your business or organisation walks away with",
     heading: "Outcomes that matter to your specific circumstances",
     items: [
       {
-        icon: Megaphone,
-        title: "Become the voice of authority",
-        body: "Position your business as the recognised, quoted voice in your industry, above your competitors.",
-      },
-      {
         icon: TrendingUp,
         title: "Attract new customers",
-        body: "Use PR and earned media to build a trusted profile that pulls the right customers towards you on repeat.",
+        body: "Use PR and earned media to build a trusted profile that pulls the right customers and supporters towards you.",
       },
       {
         icon: Heart,
-        title: "Grow customer trust",
-        body: "Increase the felt value of your brand so existing customers stay longer, spend more and send referrals your way.",
+        title: "Grow customer and supporter trust",
+        body: "Increase the felt value of your brand so existing customers and supporters stay longer, and become your advocates.",
       },
       {
         icon: Newspaper,
         title: "Own the media moment",
-        body: "Turn media interest, good or bad, into a chance to lead the conversation about your business and your industry.",
+        body: "Turn media interest, good or bad, into a chance to lead the conversation about your business, NFP or industry.",
       },
       {
         icon: Handshake,
         title: "Deepen stakeholder trust",
-        body: "Build the kind of credibility with customers, suppliers and staff that makes hard conversations easier and good years better.",
+        body: "Build the kind of credibility with customers, supporters, and staff that makes hard conversations easier and good years better.",
       },
       {
         icon: ShieldCheck,
         title: "Be issues and crisis ready",
-        body: "Leave the year with frameworks, holding statements and a calm, repeatable response process for when your business is under pressure.",
+        body: "Leave the year with frameworks, holding statements and a calm, repeatable response process for when your business or organisation is under pressure.",
       },
     ],
   },
@@ -466,9 +456,9 @@ export const businessContent: CourseContent = {
     image: "/images/founders-message.jpg",
     imageAlt: "Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner",
     paragraphs: [
-      "We have a deep understanding of the unique needs facing Australian business owners and leadership teams, having worked alongside businesses of every size - from local hospitality and professional services firms to national brands - for 15+ years through CRC Public Relations.",
-      "We've helped many businesses grow their profile, win new customers through trusted public relations, and protect their reputation when everything was on the line. That hard-won experience is what this program is built on.",
-      "We're excited to bring you high-quality training and resources, with optional support when you need it, that will help you and your team at an affordable cost. We hope to welcome you to our community of business leaders.",
+      "We have a deep understanding of the unique needs facing Australian business owners and leadership teams, not for profit organisations, and faith-based charities, having worked alongside organisations of every size - from local to national brands - for 15+ years through CRC Public Relations.",
+      "We've helped many businesses grow their profile, win new customers through trusted public relations, and protect their reputation when everything was on the line, and we've worked with national and global charities to help them prepare for and navigate issues and crises. That hard-won experience is what this program is built on.",
+      "We're excited to bring you high-quality training and resources, with optional support when you need it, that will help you and your team at an affordable cost. We hope to welcome you to our community of business and NFP leaders.",
     ],
     signoff: "Lyall Mercer and Barbara Gorogh, Co-founders",
     showCrcLogo: true,
@@ -493,12 +483,12 @@ export const businessContent: CourseContent = {
 
   relatedProgram: {
     eyebrow: "Want to go deeper on crisis?",
-    heading: "Add the Crisis Masterclass for your owner and executive team",
+    heading: "Add the Crisis Masterclass for your owner, CEO and executive team",
     body:
-      "The Business Program covers issues management and reputation defence. If your team wants the deepest crisis training available, we offer the Crisis Masterclass that includes the Crisis Ready\u00AE course with CEO of the Crisis Ready Institute Melissa Agnes. Enrol your owner and key executives in the Crisis Masterclass alongside your business program.",
+      "The Business and NFP Program covers issues management and reputation defence. If your team wants the deepest crisis training available, we offer the Crisis Masterclass that includes the Crisis Ready® course with CEO of the Crisis Ready Institute Melissa Agnes. Enrol your CEO, media spokesperson and key executives in the Crisis Masterclass alongside your business and NFP program.",
     thumbImage: "/images/crisis-masterclass/hero-bg-crisis.jpg",
     featureBullets: [
-      "Full 12-month Crisis Ready\u00AE course with Melissa Agnes",
+      "Full 12-month Crisis Ready® course with Melissa Agnes",
       "Monthly resources, workbooks and templates",
       "Regular Q&A and live discussion opportunities",
       "The only specialised crisis communications course of its type in Australia",
@@ -508,14 +498,14 @@ export const businessContent: CourseContent = {
   },
 
   finalCta: {
-    eyebrow: "For Australian business owners and leadership teams",
+    eyebrow: "For Australian business and NFP leadership teams",
     eyebrowIcon: Briefcase,
-    heading: "Be one of the first 50 businesses on the waitlist",
+    heading: "Be one of the first 50 businesses and organisations on the waitlist",
     body:
-      "Enrolments open soon. Founding-member businesses save 10% on year one and get first access before public release. Lock in your business's place today.",
+      "Enrolments open soon. Founding-member businesses and NFPs save 10% on year one and get first access before public release. Lock in your place today.",
     primaryCtaLabel: "Join the waitlist",
     secondaryCta: { label: "Talk to our business team", href: "/contact" },
-    footnote: "Powered by CRC Public Relations. 15+ years working with Australian businesses.",
+    footnote: "Powered by CRC Public Relations. 15+ years working with Australian businesses, charities and NFPs.",
     bgImage: "/images/business/business-final-cta-bg.jpg",
   },
 
