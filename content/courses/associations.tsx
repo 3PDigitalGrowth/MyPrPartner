@@ -473,23 +473,21 @@ export const associationsContent: CourseContent = {
     },
     inclusionsTitle: "What waitlist members receive",
     inclusions: [
-      "10% founding-member discount (first 50 association members)",
       "First access to enrolments before public release",
       "Full program outline",
-      "Updates on launch date and pricing tiers",
     ],
     waitlist: {
       signupUrl: WAITLIST_URL,
       headline: "Join the waitlist",
       subheadline:
         "Be first in line when enrolments open, and lock in the founding-member discount.",
-      discountPill: "First 50 save 10%",
+      discountPill: "First 20 save 10%",
       spots: {
-        capacity: 50,
+        capacity: 20,
         // Manually update as waitlist signups come in (or wire to a real
         // count source later). Conservative starting figure shows real
         // momentum without overstating it.
-        claimed: 17,
+        claimed: 8,
         label: "Founding member spots",
       },
       countdown: LAUNCH_DATE
@@ -540,7 +538,7 @@ export const associationsContent: CourseContent = {
 
   mobileBar: {
     label: "Industry Associations",
-    priceShort: "First 50 save 10%",
+    priceShort: "First 20 save 10%",
     ctaLabel: "Join the waitlist",
   },
 };
