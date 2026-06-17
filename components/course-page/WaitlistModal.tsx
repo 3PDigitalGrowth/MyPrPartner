@@ -136,7 +136,7 @@ function WaitlistModal({
 
       <div
         ref={cardRef}
-        className="relative z-10 max-h-[92vh] w-full animate-fade-in-up overflow-y-auto rounded-t-2xl bg-white shadow-2xl sm:max-w-md sm:rounded-2xl"
+        className="relative z-10 max-h-[92vh] w-full overflow-y-auto rounded-t-2xl bg-white shadow-2xl sm:max-w-md sm:rounded-2xl"
       >
         <button
           type="button"
