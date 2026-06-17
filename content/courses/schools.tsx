@@ -347,7 +347,7 @@ export const schoolsContent: CourseContent = {
       },
     ],
     footnote:
-      "Plus conversations with serving school principals, specialist social media experts, and PR, reputation, legal and safeguarding experts.",
+      "Plus conversations with serving school principals and specialist social media, PR, reputation, legal and safeguarding experts.",
   },
 
   testimonials: {
@@ -357,9 +357,9 @@ export const schoolsContent: CourseContent = {
       {
         quote:
           "CRC Public Relations has developed a crisis communications plan for Christian schools and has assisted many of our member schools across Australia to effectively communicate when issues have arisen.",
-        name: "",
-        title: "Executive officer",
-        org: "",
+        name: "Executive officer",
+        title: "",
+        org: "National schools association",
       },
       {
         quote:
@@ -437,7 +437,7 @@ export const schoolsContent: CourseContent = {
       },
       {
         q: "What if we want an even deeper dive on crisis?",
-        a: "The Schools Program covers everything most schools need, However if any of your team wants the deeper, personal crisis leadership available, we offer the crisis masterclass as a separate flagship program. This features the Crisis Ready course with Melissa Agnes, CEO of the Crisis Ready Institute USA as well as other crisis-specific resources. This is personal (not team) training and schools can enrol their principal, board chair, or communications manager in this separately.",
+        a: "The Schools Program covers everything most schools need, however if any of your team wants the deeper, personal crisis leadership available, we offer the crisis masterclass as a separate flagship program. This features the Crisis Ready course with Melissa Agnes, CEO of the Crisis Ready Institute USA as well as other crisis-specific resources. This is personal (not team) training and schools can enrol their principal, board chair, or communications manager in this separately.",
       },
       {
         q: "Do we get support between modules?",
