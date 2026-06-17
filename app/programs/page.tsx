@@ -118,7 +118,7 @@ const programs: Program[] = [
     lede:
       "Australia's premier crisis communications program, built with Melissa Agnes, CEO of the Crisis Ready Institute and the senior team at CRC Public Relations.",
     audience:
-      "Executives, boards, PR professionals and leadership teams serious about being crisis-ready.",
+      "Executives, PR and communications professionals, spokespeople and leadership teams serious about being crisis ready.",
     image: "/images/crisis-masterclass/Crisisallprograms.png",
     imageAlt:
       "An Australian executive preparing for a high-stakes communications moment.",
