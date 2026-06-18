@@ -529,6 +529,7 @@ export const schoolsContent: CourseContent = {
           "The essential reputational & vulnerability checklist for schools",
           "Issues & crisis communications planning 'templates and tips' for schools",
           "One hour crisis planning consultation",
+          "On-call PR or issues & crisis management assistance (6 hours)",
           { text: "Personal, ongoing phone, email & Zoom PR support (20 hours)", highlighted: true },
           { text: "Comprehensive, personalised online half-day media training", highlighted: true },
           "Access to special PR consultancy rates (for extra work if required over and above these inclusions)",
@@ -581,7 +582,7 @@ export const schoolsContent: CourseContent = {
       { label: "Access to special PR consultancy rates", tiers: ["support", "partner"] },
       {
         label: "On-call PR or issues & crisis management assistance (6 hours)",
-        tiers: ["support"],
+        tiers: ["support", "partner"],
       },
       {
         label: "Personal, ongoing phone, email & Zoom PR support (20 hours)",
