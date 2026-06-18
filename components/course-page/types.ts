@@ -184,6 +184,8 @@ export type PricingTier = {
   plusHeading?: string;
   /** Extra bullets rendered below the base inclusions under the plusHeading */
   plusInclusions?: PricingBullet[];
+  /** Tier-specific checkout URL. When set, overrides checkout.baseUrl for this tier. */
+  checkoutUrl?: string;
 };
 
 export type WaitlistContent = {

@@ -217,10 +217,13 @@ export default function StickyEnrolCard({
   const plusHeading = selectedTier?.plusHeading;
   const plusInclusions = selectedTier?.plusInclusions;
 
-  const checkoutUrl = getCourseCheckoutUrl(checkout, {
-    utm_content: placement,
-    ...(selectedTier ? { utm_term: selectedTier.id } : {}),
-  });
+  const checkoutUrl = getCourseCheckoutUrl(
+    selectedTier?.checkoutUrl ? { ...checkout, baseUrl: selectedTier.checkoutUrl } : checkout,
+    {
+      utm_content: placement,
+      ...(selectedTier ? { utm_term: selectedTier.id } : {}),
+    }
+  );
 
   const BadgeIcon = sidebar.badgeIcon;
   const waitlist = sidebar.waitlist;

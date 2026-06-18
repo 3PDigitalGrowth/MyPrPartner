@@ -18,14 +18,13 @@ import {
   Users,
 } from "lucide-react";
 import type { CourseContent } from "@/components/course-page/types";
-import { PLACEHOLDER_CHECKOUT_URL } from "@/lib/checkout";
+
 
 const SITE = "https://myprpartner.com";
 const PAGE_PATH = "/programs/schools";
 const HERO_IMAGE = "/images/schools/schools-hero-bg.jpg";
 
-const CHECKOUT_BASE_URL =
-  process.env.NEXT_PUBLIC_KAJABI_SCHOOLS_CHECKOUT_URL || PLACEHOLDER_CHECKOUT_URL;
+const CHECKOUT_BASE_URL = "https://courses.myprpartner.com/offers/MAk6DHVo/checkout";
 
 export const schoolsContent: CourseContent = {
   slug: "schools",
@@ -473,6 +472,7 @@ export const schoolsContent: CourseContent = {
         id: "train",
         label: "Train Level",
         description: "Team training and resources",
+        checkoutUrl: "https://courses.myprpartner.com/offers/MAk6DHVo/checkout",
         price: "$440",
         priceCurrencyNote: "AUD per month · ex GST",
         pricePlanNote: "Pay annually and save $440",
@@ -489,6 +489,7 @@ export const schoolsContent: CourseContent = {
         id: "support",
         label: "Support Level",
         description: "Training plus on-call PR support",
+        checkoutUrl: "https://courses.myprpartner.com/offers/VmsLWmX5/checkout",
         price: "$840",
         priceCurrencyNote: "AUD per month · ex GST",
         pricePlanNote: "Pay annually and save $840",
@@ -513,6 +514,7 @@ export const schoolsContent: CourseContent = {
         id: "partner",
         label: "Partner Level",
         description: "Full PR partnership with media training",
+        checkoutUrl: "https://courses.myprpartner.com/offers/3te7BxFH/checkout",
         price: "$1,340",
         priceCurrencyNote: "AUD per month · ex GST",
         pricePlanNote: "Pay annually and save $1,340",
