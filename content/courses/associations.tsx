@@ -46,12 +46,12 @@ export const associationsContent: CourseContent = {
     metaTitle:
       "Industry & Professional Associations PR Program | Advocacy, Reputation & Member Engagement Training | My PR Partner",
     metaDescription:
-      "A 12-month online PR, advocacy and reputation program for Australian industry, trade and professional association leadership teams. Built by CRC Public Relations with 15+ years of association experience. Join the waitlist - first 50 association members save 10%.",
+      "A 12-month online PR, advocacy and reputation program for Australian industry, trade and professional association leadership teams. Built by CRC Public Relations with 15+ years of association experience. Join the waitlist - first 20 association members save 10%.",
     canonicalUrl: `${SITE}${PAGE_PATH}`,
     ogImage: HERO_IMAGE,
     twitterTitle: "Industry & Professional Associations PR Program | My PR Partner",
     twitterDescription:
-      "A 12-month online PR program for Australian industry, trade and professional associations, powered by CRC Public Relations. Join the waitlist - first 50 save 10%.",
+      "A 12-month online PR program for Australian industry, trade and professional associations, powered by CRC Public Relations. Join the waitlist - first 20 save 10%.",
     courseWorkload: "PT12M",
   },
 
@@ -430,7 +430,7 @@ export const associationsContent: CourseContent = {
       },
       {
         q: "When do enrolments open?",
-        a: "We're opening enrolments to a small founding cohort of Australian associations in 2026. The first 50 association members on the waitlist receive a 10% founding-member discount on their first 12 months. Join the waitlist to lock in your place and your discount.",
+        a: "We're opening enrolments to a small founding cohort of Australian associations in 2026. The first 20 association members on the waitlist receive a 10% founding-member discount on their first 12 months. Join the waitlist to lock in your place and your discount.",
       },
       {
         q: "What if we want an even deeper dive on crisis?",
@@ -524,7 +524,7 @@ export const associationsContent: CourseContent = {
   finalCta: {
     eyebrow: "For Australian association leadership teams",
     eyebrowIcon: Building2,
-    heading: "Be one of the first 50 association members on the waitlist",
+    heading: "Be one of the first 20 association members on the waitlist",
     body:
       "Enrolments open soon. Founding-member associations save 10% on year one and get first access before public release. Lock in your association's place today.",
     primaryCtaLabel: "Join the waitlist",

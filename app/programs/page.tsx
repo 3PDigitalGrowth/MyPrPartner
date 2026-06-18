@@ -192,7 +192,7 @@ const programs: Program[] = [
     imageAlt:
       "The CEO of an Australian industry association leading a board advocacy session.",
     status: { label: "Launching 2026 · join waitlist", tone: "waitlist" },
-    pricing: "Founding-member discount - first 50 members save 10%",
+    pricing: "Founding-member discount - first 20 members save 10%",
     outcomes: [
       "Advocacy, media campaigns and member-trust building across 12 modules",
       "Crisis readiness for sector-defining issues and board-level moments",
