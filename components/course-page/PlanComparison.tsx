@@ -25,6 +25,8 @@ export default function PlanComparison({
       <div className="hidden md:block">
         <table className="w-full border-collapse text-left">
           <thead>
+            {/* Split into rows so plan names, descriptions and prices each
+                line up across columns even when descriptions wrap differently. */}
             <tr>
               <th className="w-[40%] p-3 align-bottom" />
               {tiers.map((t) => {
@@ -32,17 +34,37 @@ export default function PlanComparison({
                 return (
                   <th
                     key={t.id}
-                    className={`p-3 text-center align-bottom ${
+                    className={`px-3 pt-3 text-center align-bottom ${
                       active ? "rounded-t-xl bg-teal/5" : ""
                     }`}
                   >
                     <div className="font-heading text-[15px] font-bold text-text-dark">{t.label}</div>
+                  </th>
+                );
+              })}
+            </tr>
+            <tr>
+              <th className="p-0" />
+              {tiers.map((t) => {
+                const active = t.id === selectedTierId;
+                return (
+                  <th key={t.id} className={`px-3 text-center align-top ${active ? "bg-teal/5" : ""}`}>
                     {t.description ? (
-                      <div className="mt-0.5 text-[12px] font-normal leading-snug text-text-medium">
+                      <div className="text-[12px] font-normal leading-snug text-text-medium">
                         {t.description}
                       </div>
                     ) : null}
-                    <div className="mt-2 font-heading text-[20px] font-bold text-text-dark">{t.price}</div>
+                  </th>
+                );
+              })}
+            </tr>
+            <tr>
+              <th className="p-0" />
+              {tiers.map((t) => {
+                const active = t.id === selectedTierId;
+                return (
+                  <th key={t.id} className={`px-3 pb-3 pt-2 text-center align-bottom ${active ? "bg-teal/5" : ""}`}>
+                    <div className="font-heading text-[20px] font-bold text-text-dark">{t.price}</div>
                     <div className="text-[11px] font-normal text-text-medium">{t.priceCurrencyNote}</div>
                   </th>
                 );
