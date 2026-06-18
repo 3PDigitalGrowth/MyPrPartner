@@ -93,9 +93,9 @@ const projects: Project[] = [
     body: "This intervention will help 120 Ethiopian caregivers living in poverty to become economically self-sufficient so they can provide for their families' daily needs.",
     metricFigure: "120",
     metricLabel: "caregivers supported",
-    image: "/images/givingbackincomegeneration.jpg",
+    image: "/images/compassion-ethiopia-income-generation.png",
     imageAlt:
-      "Community-focused image representing income generation and family support in Ethiopia",
+      "Ethiopian woman caregiver with child, smiling with hope and dignity",
     accent: "linear-gradient(135deg, #0B7A58 0%, #37B288 100%)",
   },
   {
@@ -108,9 +108,9 @@ const projects: Project[] = [
     body: "This health intervention will promote and provide mental health services to 2,000 Compassion participants across Peru.",
     metricFigure: "2,000",
     metricLabel: "participants reached",
-    image: "/images/mentalhealth.jpg",
+    image: "/images/compassion-peru-mental-health.png",
     imageAlt:
-      "Image representing community mental-health and wellbeing support in Peru",
+      "Peruvian counsellor and young person in supportive conversation",
     accent: "linear-gradient(135deg, #B8434A 0%, #E2894B 100%)",
   },
   {
@@ -123,9 +123,9 @@ const projects: Project[] = [
     body: "This water and sanitation intervention will help to provide safe access to water in Thailand, transforming six communities and hundreds of children's lives through the gift of clean water.",
     metricFigure: "6",
     metricLabel: "communities transformed",
-    image: "/images/water.jpg",
+    image: "/images/compassion-thailand-water-sanitation.png",
     imageAlt:
-      "Image representing clean-water and sanitation projects for children in Thailand",
+      "Thai children collecting and drinking clean water at community facility",
     accent: "linear-gradient(135deg, #0F6DA3 0%, #07AFBB 100%)",
   },
 ];
@@ -172,7 +172,7 @@ export default function GivingBackPage() {
         <section className="relative overflow-hidden bg-text-dark">
           <div className="absolute inset-0">
             <Image
-              src="/images/charity/charity-hero-bg.jpg"
+              src="/images/giving-back-hero-banner.png"
               alt=""
               fill
               priority
