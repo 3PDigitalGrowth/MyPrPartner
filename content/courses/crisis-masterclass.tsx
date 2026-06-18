@@ -100,7 +100,7 @@ export const crisisMasterclassContent: CourseContent = {
     { icon: MonitorPlay, title: "100% online", sub: "Learn anywhere in Australasia" },
     { icon: Clock, title: "12-month access", sub: "Go at your own pace" },
     { icon: Users, title: "Expert trainers", sub: "Australian and international" },
-    { icon: ShieldCheck, title: "Exclusive and unique", sub: "Taught nowhere else" },
+    { icon: ShieldCheck, title: "Exclusive and unique", sub: "First in Australia" },
     { icon: Award, title: "Certificate of completion", sub: "Endorsed by CRC Public Relations" },
   ],
 
