@@ -460,17 +460,18 @@ export default function Home() {
                   <CheckCircle className="h-5 w-5 text-teal" />
                 </div>
                 <h2 className="font-heading text-[28px] md:text-[32px] font-bold text-text-dark leading-[1.2]">
-                  Free PR &amp; crisis readiness guide
+                  Five steps to becoming a trusted public voice
                 </h2>
                 <p className="mt-3 text-base text-text-medium leading-[1.7]">
-                  Download our 5-step guide to building a stronger public profile, protecting your reputation, and preparing your organisation for a crisis, written by the CRC Public Relations team.
+                  We live in an age of constant news. Journalists need fresh content every hour, and unlike advertising, the coverage costs you nothing. You don&apos;t need a public relations firm to begin. You need a few simple principles and the confidence to put your hand up. Follow these five steps and you can become a trusted voice in your field.
                 </p>
                 <ul className="mt-5 space-y-2.5">
                   {[
-                    "The essentials of an effective crisis communications plan",
-                    "How to handle media enquiries with confidence",
-                    "A reputation vulnerability checklist for your organisation",
-                    "Key steps to becoming your own PR resource",
+                    "Know the difference between coverage and marketing",
+                    "Know your authority to speak",
+                    "Ask what you can add to a story",
+                    "Monitor the media in your field",
+                    "Contact the journalist",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-[14px] text-text-medium">
                       <Check className="h-4 w-4 text-teal mt-0.5 flex-shrink-0" />
@@ -494,9 +495,9 @@ export default function Home() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-[200px] bg-white rounded-xl p-6 shadow-[0_8px_24px_rgba(0,0,0,0.15)] text-center">
                     <p className="text-[11px] font-medium text-teal uppercase tracking-[0.1em]">My PR Partner</p>
-                    <p className="mt-3 font-heading text-[16px] font-bold text-text-dark leading-tight">PR &amp; crisis readiness guide</p>
+                    <p className="mt-3 font-heading text-[16px] font-bold text-text-dark leading-tight">Trusted Public Voice guide</p>
                     <div className="mx-auto mt-3 h-[2px] w-10 bg-teal" />
-                    <p className="mt-3 text-[12px] text-text-medium">5 steps to protecting your reputation</p>
+                    <p className="mt-3 text-[12px] text-text-medium">Five practical steps</p>
                     <p className="mt-6 text-[10px] text-gray-400">Powered by CRC Public Relations</p>
                   </div>
                 </div>
