@@ -466,7 +466,7 @@ export const schoolsContent: CourseContent = {
     priceCurrencyNote: "AUD per month · ex GST",
     pricePlanNote: "Pay annually and save $440",
     tierSelectorLabel: "Choose your level",
-    defaultTierId: "train",
+    defaultTierId: "support",
     tiers: [
       {
         id: "train",
