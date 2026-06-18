@@ -3,10 +3,11 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check, Download, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Download, ListChecks, ShieldCheck, Sparkles } from "lucide-react";
 import type { CheckoutConfig, PricingBullet, SidebarContent, WaitlistContent } from "./types";
 import { getCourseCheckoutUrl } from "@/lib/checkout";
 import { useWaitlistModal } from "./WaitlistModal";
+import { usePlanSelection } from "./PlanSelection";
 
 const WAITLIST_CTA_CLASS =
   "mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-teal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2";
@@ -199,9 +200,7 @@ export default function StickyEnrolCard({
   placement: "sidebar" | "inline";
 }) {
   const tiers = sidebar.tiers;
-  const initialTierId =
-    sidebar.defaultTierId ?? (tiers && tiers.length > 0 ? tiers[0].id : undefined);
-  const [selectedTierId, setSelectedTierId] = useState<string | undefined>(initialTierId);
+  const { selectedTierId, setSelectedTierId, hasComparison, openCompare } = usePlanSelection();
 
   const selectedTier = useMemo(
     () => (tiers ? tiers.find((t) => t.id === selectedTierId) ?? tiers[0] : undefined),
@@ -324,7 +323,16 @@ export default function StickyEnrolCard({
                 {sidebar.primaryCtaLabel}
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
-              {sidebar.secondaryCta ? (
+              {hasComparison ? (
+                <button
+                  type="button"
+                  onClick={openCompare}
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-teal bg-transparent px-6 py-3 text-[14px] font-semibold text-teal transition-colors hover:bg-teal hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal"
+                >
+                  <ListChecks className="h-4 w-4" aria-hidden />
+                  Compare all plans
+                </button>
+              ) : sidebar.secondaryCta ? (
                 <Link
                   href={sidebar.secondaryCta.href}
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-teal bg-transparent px-6 py-3 text-[14px] font-semibold text-teal transition-colors hover:bg-teal hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal"
@@ -334,6 +342,15 @@ export default function StickyEnrolCard({
                 </Link>
               ) : null}
             </div>
+            {hasComparison && sidebar.secondaryCta ? (
+              <Link
+                href={sidebar.secondaryCta.href}
+                className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-medium text-teal hover:text-teal-dark"
+              >
+                <Download className="h-3.5 w-3.5" aria-hidden />
+                {sidebar.secondaryCta.label}
+              </Link>
+            ) : null}
           </>
         ) : sidebar.secondaryCta ? (
           <div className="mt-5">

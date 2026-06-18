@@ -12,9 +12,13 @@ import RelatedProgramBand from "./RelatedProgramBand";
 import FinalCtaBand from "./FinalCtaBand";
 import MobileEnrolBar from "./MobileEnrolBar";
 import { WaitlistModalProvider } from "./WaitlistModal";
+import { PlanSelectionProvider } from "./PlanSelection";
+import PlanCompareModal from "./PlanCompareModal";
 
 export default function CoursePage({ content }: { content: CourseContent }) {
   const revealRef = useScrollReveal();
+  const tiers = content.sidebar.tiers;
+  const hasComparison = !!content.planComparison && !!tiers && tiers.length > 0;
 
   return (
     <WaitlistModalProvider
@@ -22,17 +26,25 @@ export default function CoursePage({ content }: { content: CourseContent }) {
       courseName={content.mobileBar.label}
       slug={content.slug}
     >
-      <div ref={revealRef}>
-        <Hero hero={content.hero} checkout={content.checkout} />
-        <StatMetaBar stats={content.statBar} />
-        <InPageAnchorNav anchors={content.anchors} />
-        <BodyWithSidebar content={content} />
-        <FoundersWelcome content={content.foundersWelcome} />
-        {content.groupBand ? <GroupEnrolmentBand content={content.groupBand} /> : null}
-        {content.relatedProgram ? <RelatedProgramBand content={content.relatedProgram} /> : null}
-        <FinalCtaBand content={content.finalCta} checkout={content.checkout} />
-        <MobileEnrolBar bar={content.mobileBar} checkout={content.checkout} />
-      </div>
+      <PlanSelectionProvider
+        defaultTierId={content.sidebar.defaultTierId ?? tiers?.[0]?.id}
+        hasComparison={hasComparison}
+      >
+        <div ref={revealRef}>
+          <Hero hero={content.hero} checkout={content.checkout} />
+          <StatMetaBar stats={content.statBar} />
+          <InPageAnchorNav anchors={content.anchors} />
+          <BodyWithSidebar content={content} />
+          <FoundersWelcome content={content.foundersWelcome} />
+          {content.groupBand ? <GroupEnrolmentBand content={content.groupBand} /> : null}
+          {content.relatedProgram ? <RelatedProgramBand content={content.relatedProgram} /> : null}
+          <FinalCtaBand content={content.finalCta} checkout={content.checkout} />
+          <MobileEnrolBar bar={content.mobileBar} checkout={content.checkout} />
+        </div>
+        {hasComparison && content.planComparison && tiers ? (
+          <PlanCompareModal tiers={tiers} comparison={content.planComparison} />
+        ) : null}
+      </PlanSelectionProvider>
     </WaitlistModalProvider>
   );
 }

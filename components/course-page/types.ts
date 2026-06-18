@@ -262,6 +262,25 @@ export type SidebarContent = {
   waitlist?: WaitlistContent;
 };
 
+/** One inclusion row in the plan comparison; `tiers` lists which tier ids include it. */
+export type PlanComparisonFeature = {
+  label: string;
+  /** Tier ids (matching SidebarContent.tiers[].id) that include this feature. */
+  tiers: string[];
+  /** Render with the teal highlight treatment (headline inclusions). */
+  highlighted?: boolean;
+};
+
+export type PlanComparisonContent = {
+  eyebrow: string;
+  heading: string;
+  intro?: string;
+  /** Ordered inclusion rows shown against each tier. */
+  features: PlanComparisonFeature[];
+  /** Anchor id used by the in-page nav (e.g. "compare"). */
+  anchorId?: string;
+};
+
 export type FoundersWelcomeContent = {
   eyebrow: string;
   heading: string;
@@ -366,6 +385,8 @@ export type CourseContent = {
   careerValue: CareerValueContent;
   faq: FaqContent;
   sidebar: SidebarContent;
+  /** Optional plan comparison (matrix in-page + lightbox) for tiered courses. */
+  planComparison?: PlanComparisonContent;
   foundersWelcome: FoundersWelcomeContent;
   groupBand?: GroupBandContent;
   /** Optional cross-sell band for a related program (e.g. Schools -> Crisis Masterclass) */

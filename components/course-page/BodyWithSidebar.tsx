@@ -8,6 +8,7 @@ import Testimonials from "./Testimonials";
 import CareerValue from "./CareerValue";
 import FAQ from "./FAQ";
 import StickyEnrolCard from "./StickyEnrolCard";
+import PlanComparisonSection from "./PlanComparisonSection";
 
 export default function BodyWithSidebar({ content }: { content: CourseContent }) {
   return (
@@ -24,6 +25,12 @@ export default function BodyWithSidebar({ content }: { content: CourseContent })
               <Testimonials content={content.testimonials} />
             ) : null}
             <CareerValue content={content.careerValue} />
+            {content.planComparison && content.sidebar.tiers && content.sidebar.tiers.length > 0 ? (
+              <PlanComparisonSection
+                comparison={content.planComparison}
+                tiers={content.sidebar.tiers}
+              />
+            ) : null}
             <FAQ content={content.faq} />
           </div>
           <aside id="pricing" className="scroll-mt-28 lg:col-span-4">

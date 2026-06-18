@@ -119,6 +119,7 @@ export const schoolsContent: CourseContent = {
     { id: "what-youll-learn", label: "What's included" },
     { id: "structure", label: "12-month plan" },
     { id: "instructors", label: "Presenters" },
+    { id: "compare", label: "Compare plans" },
     { id: "faq", label: "FAQ" },
   ],
 
@@ -554,6 +555,45 @@ export const schoolsContent: CourseContent = {
     trustBadges: { poweredByCrcLogo: true },
     callbackLinkLabel: "Or request a callback from our schools team",
     callbackHref: "/contact",
+  },
+
+  planComparison: {
+    eyebrow: "Compare plans",
+    heading: "Choose the level of support that fits your school",
+    intro:
+      "Every level includes the full 12-month training program. Support and Partner add hands-on PR assistance and crisis-readiness from the CRC Public Relations team. Select a plan to load it into the enrolment panel.",
+    anchorId: "compare",
+    features: [
+      { label: "Monthly training video + workbook", tiers: ["train", "support", "partner"] },
+      { label: "Monthly practical team resource", tiers: ["train", "support", "partner"] },
+      { label: "Spotlight emails", tiers: ["train", "support", "partner"] },
+      { label: "Interactive Q&A", tiers: ["train", "support", "partner"] },
+      { label: "Bonus training and resources", tiers: ["train", "support", "partner"] },
+      {
+        label: "The essential reputational & vulnerability checklist for schools",
+        tiers: ["support", "partner"],
+      },
+      {
+        label: "Issues & crisis communications planning templates and tips for schools",
+        tiers: ["support", "partner"],
+      },
+      { label: "One hour crisis planning consultation", tiers: ["support", "partner"] },
+      { label: "Access to special PR consultancy rates", tiers: ["support", "partner"] },
+      {
+        label: "On-call PR or issues & crisis management assistance (6 hours)",
+        tiers: ["support"],
+      },
+      {
+        label: "Personal, ongoing phone, email & Zoom PR support (20 hours)",
+        tiers: ["partner"],
+        highlighted: true,
+      },
+      {
+        label: "Comprehensive, personalised online half-day media training",
+        tiers: ["partner"],
+        highlighted: true,
+      },
+    ],
   },
 
   foundersWelcome: {
