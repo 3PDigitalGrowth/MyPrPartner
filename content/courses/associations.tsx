@@ -318,7 +318,7 @@ export const associationsContent: CourseContent = {
           "Use PR and media strategies to effectively boost your advocacy, influence policy and legislation, and build the public case behind every meeting in Canberra or your state capital.",
       },
       {
-        image: "/images/associations/associations-persona-members.jpg",
+        image: "/images/industryassociationcolour.png",
         icon: HandHeart,
         title: "Membership teams",
         body:
