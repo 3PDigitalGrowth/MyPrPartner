@@ -661,7 +661,7 @@ export default function GivingBackPage() {
             <div className="mx-auto max-w-[760px] rounded-card border border-[#E5E7EB] bg-[#F7F8FA] p-8 text-center md:p-12">
               <SectionEyebrow>Keep exploring</SectionEyebrow>
               <SectionHeading>
-                Meet the senior firm and the trainers behind every subscription
+                Meet the firm and the trainers behind every subscription
               </SectionHeading>
               <p className="mx-auto mt-4 max-w-[600px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
                 My PR Partner is powered by CRC Public Relations - a boutique
