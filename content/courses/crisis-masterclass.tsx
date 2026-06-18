@@ -250,7 +250,7 @@ export const crisisMasterclassContent: CourseContent = {
           "Take your crisis communication and crisis leadership skills to new heights and hone your skills.",
       },
       {
-        image: "/images/crisis-masterclass/persona-executive.jpg",
+        image: "/images/associations/industryassociationindian.png",
         icon: Building2,
         title: "Business leaders and managers",
         body:
