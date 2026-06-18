@@ -264,7 +264,7 @@ export const crisisMasterclassContent: CourseContent = {
           "Learn not just how to communicate, but to connect with those most important in high-stakes moments.",
       },
       {
-        image: "/images/crisis-masterclass/persona-school-leader.jpg",
+        image: "/images/crisis-masterclass/Asaintilepicture.png",
         icon: Users,
         title: "Marketing, HR and legal teams",
         body:
