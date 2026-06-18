@@ -239,7 +239,7 @@ export default function GivingBackPage() {
               <div className="hidden lg:col-span-5 lg:block">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-card shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
                   <Image
-                    src="/images/compassionhero.webp"
+                    src="/compassionhero.png"
                     alt="Hopeful scene representing community impact and giving back"
                     fill
                     priority
