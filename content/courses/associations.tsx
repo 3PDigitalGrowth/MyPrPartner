@@ -464,7 +464,7 @@ export const associationsContent: CourseContent = {
     // requires them. Kept here so we can flip back to a standard pricing card
     // by simply removing `waitlist` once enrolments open.
     price: "TBA",
-    priceCurrencyNote: "AUD per month · ex GST",
+    priceCurrencyNote: "monthly instalment · ex GST",
     pricePlanNote: "Pricing released to the waitlist first",
     primaryCtaLabel: "Join the waitlist",
     secondaryCta: {

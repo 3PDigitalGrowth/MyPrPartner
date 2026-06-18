@@ -463,8 +463,8 @@ export const schoolsContent: CourseContent = {
     badgeIcon: GraduationCap,
     eyebrow: "Enrol your school",
     price: "$440",
-    priceCurrencyNote: "AUD per month · ex GST",
-    pricePlanNote: "Pay annually and save $440",
+    priceCurrencyNote: "monthly instalment · ex GST",
+    pricePlanNote: "Annual subscription — pay monthly or upfront",
     tierSelectorLabel: "Choose your level",
     defaultTierId: "support",
     tiers: [
@@ -474,8 +474,8 @@ export const schoolsContent: CourseContent = {
         description: "Team training and resources",
         checkoutUrl: "https://courses.myprpartner.com/offers/MAk6DHVo/checkout",
         price: "$440",
-        priceCurrencyNote: "AUD per month · ex GST",
-        pricePlanNote: "Pay annually and save $440",
+        priceCurrencyNote: "monthly instalment · ex GST",
+        pricePlanNote: "Annual subscription — pay monthly or upfront",
         inclusionsTitle: "Inclusions tailored specifically for schools:",
         inclusions: [
           "Monthly training video + workbook",
@@ -491,8 +491,8 @@ export const schoolsContent: CourseContent = {
         description: "Training plus on-call PR support",
         checkoutUrl: "https://courses.myprpartner.com/offers/VmsLWmX5/checkout",
         price: "$840",
-        priceCurrencyNote: "AUD per month · ex GST",
-        pricePlanNote: "Pay annually and save $840",
+        priceCurrencyNote: "monthly instalment · ex GST",
+        pricePlanNote: "Annual subscription — pay monthly or upfront",
         inclusionsTitle: "Inclusions tailored specifically for schools:",
         inclusions: [
           "Monthly training video + workbook",
@@ -516,8 +516,8 @@ export const schoolsContent: CourseContent = {
         description: "Full PR partnership with media training",
         checkoutUrl: "https://courses.myprpartner.com/offers/3te7BxFH/checkout",
         price: "$1,340",
-        priceCurrencyNote: "AUD per month · ex GST",
-        pricePlanNote: "Pay annually and save $1,340",
+        priceCurrencyNote: "monthly instalment · ex GST",
+        pricePlanNote: "Annual subscription — pay monthly or upfront",
         inclusionsTitle: "Inclusions tailored specifically for schools:",
         inclusions: [
           "Monthly training video + workbook",
@@ -659,7 +659,7 @@ export const schoolsContent: CourseContent = {
 
   mobileBar: {
     label: "Schools Program",
-    priceShort: "From $440 AUD/mo",
+    priceShort: "From $440/mo · annual plan",
     ctaLabel: "Enrol your school",
   },
 };

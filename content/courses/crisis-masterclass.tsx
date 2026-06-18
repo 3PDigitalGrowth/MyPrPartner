@@ -398,9 +398,9 @@ export const crisisMasterclassContent: CourseContent = {
     badge: "Flagship program",
     badgeIcon: ShieldCheck,
     eyebrow: "Enrol today",
-    price: "$340 p/m",
-    priceCurrencyNote: "AUD per month · ex GST",
-    pricePlanNote: "Annual plan available - pay 11 months, get all 12.",
+    price: "$340",
+    priceCurrencyNote: "monthly instalment · ex GST",
+    pricePlanNote: "Annual subscription — pay monthly or upfront (one month free)",
     primaryCtaLabel: "Enrol now",
     secondaryCta: { label: "Download course outline", href: "/downloads/crisis-masterclass-outline.pdf" },
     inclusionsTitle: "What's included",
@@ -467,7 +467,7 @@ export const crisisMasterclassContent: CourseContent = {
 
   mobileBar: {
     label: "Crisis Masterclass",
-    priceShort: "From $340 p/m AUD",
+    priceShort: "From $340/mo · annual plan",
     ctaLabel: "Enrol now",
   },
 };
