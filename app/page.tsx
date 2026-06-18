@@ -338,7 +338,7 @@ export default function Home() {
                   </div>
                   <div className="p-6 flex flex-col flex-1">
                     <h3 className="font-heading text-xl font-bold text-text-dark mb-2">{program.title}</h3>
-                    <p className="text-[14px] text-text-medium mb-3 flex-1 line-clamp-2">{program.description}</p>
+                    <p className="text-[14px] text-text-medium mb-3 flex-1">{program.description}</p>
                     <div className="flex items-center gap-2 text-[13px] text-gray-400 mb-4">
                       <Clock className="h-3.5 w-3.5" />
                       <span>12-month online program</span>
