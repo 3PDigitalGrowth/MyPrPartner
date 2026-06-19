@@ -221,7 +221,7 @@ export const businessContent: CourseContent = {
         label: "Phase 2: Brand, growth and social media (Months 4 to 6)",
         count: "Get on the front foot",
         items: [
-          "Month 4 · PR that attracts new customers supporters or donors: the growth PR strategy",
+          "Month 4 · PR that attracts new customers, supporters or donors: the growth PR strategy",
           "Month 4 Resource: PR and content campaign template pack",
           "Month 5 · The LinkedIn playbook: Drive business in a time-effective way",
           "Month 5 Resource: LinkedIn tips and workbook",
