@@ -86,7 +86,7 @@ export const businessContent: CourseContent = {
     headline:
       "Build your business or organisation's trust and profile, and protect its reputation",
     tagline:
-      "The only Australian 12-month online public relations program built for busy Australian and NFP managers, owners and teams",
+      "The only Australian 12-month online public relations program built for busy business and NFP managers, owners and teams",
     intro:
       "Attract new customers or supporters, become the recognised voice of authority in your industry, and lead confidently through any issue or crisis. Join the My PR Partner business and NFP community.",
     outcomes: [
