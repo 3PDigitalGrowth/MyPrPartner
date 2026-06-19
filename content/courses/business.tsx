@@ -262,14 +262,14 @@ export const businessContent: CourseContent = {
     eyebrow: "Who it's for",
     heading: "Business and NFP owners, CEOs and leaders",
     intro:
-      "Elevate your business or organisation. Your marketing must be backed up by effective and PR-driven communication to your customers, staff and other stakeholders, that builds growth, trust, and a solid reputation.",
+      "Elevate your business and build growth, trust, and a solid reputation through effective and PR-driven communication to your customers, staff and other stakeholders.",
     items: [
       {
         image: "/images/business_nfp.jpg",
         icon: Briefcase,
         title: "Business and NFP owners, CEOs and leaders",
         body:
-          "Elevate your business or organisation. Your marketing must be backed up by effective and PR-driven communication to your customers, staff and other stakeholders, that builds growth, trust, and a solid reputation.",
+          "Elevate your business and build growth, trust, and a solid reputation through effective and PR-driven communication to your customers, staff and other stakeholders.",
       },
       {
         image: "/images/business/business-persona-ceo.jpg",
