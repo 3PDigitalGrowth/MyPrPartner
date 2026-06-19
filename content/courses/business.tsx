@@ -274,9 +274,9 @@ export const businessContent: CourseContent = {
       {
         image: "/images/business/business-persona-ceo.jpg",
         icon: Building2,
-        title: "Business and NFP leaders",
+        title: "Charity and NFP leaders",
         body:
-          "Turn your position, your team and your track record into measurable gains in profile, trust and growth - and a reputation that stands up under pressure.",
+          "Stand out, build profile and gain greater supporter and donor trust, be prepared for any issue, and generate a reputation that stands up under pressure.",
       },
       {
         image: "/images/business/business-persona-comms.jpg",
