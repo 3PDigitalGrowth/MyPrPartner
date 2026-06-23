@@ -3,11 +3,12 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check, Download, ListChecks, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Download, FileText, ListChecks, ShieldCheck, Sparkles } from "lucide-react";
 import type { CheckoutConfig, PricingBullet, SidebarContent, WaitlistContent } from "./types";
 import { getCourseCheckoutUrl } from "@/lib/checkout";
 import { useWaitlistModal } from "./WaitlistModal";
 import { usePlanSelection } from "./PlanSelection";
+import InvoiceRequestModal from "./InvoiceRequestModal";
 
 const WAITLIST_CTA_CLASS =
   "mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-teal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2";
@@ -194,13 +195,18 @@ export default function StickyEnrolCard({
   sidebar,
   checkout,
   placement,
+  courseName,
+  slug,
 }: {
   sidebar: SidebarContent;
   checkout: CheckoutConfig;
   placement: "sidebar" | "inline";
+  courseName: string;
+  slug: string;
 }) {
   const tiers = sidebar.tiers;
   const { selectedTierId, setSelectedTierId, hasComparison, openCompare } = usePlanSelection();
+  const [invoiceOpen, setInvoiceOpen] = useState(false);
 
   const selectedTier = useMemo(
     () => (tiers ? tiers.find((t) => t.id === selectedTierId) ?? tiers[0] : undefined),
@@ -228,6 +234,10 @@ export default function StickyEnrolCard({
   const BadgeIcon = sidebar.badgeIcon;
   const waitlist = sidebar.waitlist;
   const showPricing = !waitlist;
+  const invoiceEnabled = !!sidebar.invoiceRequest?.enabled;
+  const invoiceHelperText =
+    sidebar.invoiceRequest?.helperText ??
+    "Prefer to pay by bank transfer or need a tax invoice to get approval before signing up to the course? Use the request below.";
 
   return (
     <div
@@ -326,6 +336,21 @@ export default function StickyEnrolCard({
                 {sidebar.primaryCtaLabel}
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </a>
+              {invoiceEnabled ? (
+                <div className="flex flex-col gap-2.5">
+                  <p className="text-[13px] leading-relaxed text-text-medium">
+                    {invoiceHelperText}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setInvoiceOpen(true)}
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-teal bg-transparent px-6 py-3 text-[14px] font-semibold text-teal transition-colors hover:bg-teal hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal"
+                  >
+                    <FileText className="h-4 w-4" aria-hidden />
+                    Request Invoice
+                  </button>
+                </div>
+              ) : null}
               {hasComparison ? (
                 <button
                   type="button"
@@ -436,6 +461,15 @@ export default function StickyEnrolCard({
           </Link>
         ) : null}
       </div>
+
+      {invoiceEnabled && invoiceOpen ? (
+        <InvoiceRequestModal
+          program={courseName}
+          slug={slug}
+          tierLabel={selectedTier?.label}
+          onClose={() => setInvoiceOpen(false)}
+        />
+      ) : null}
     </div>
   );
 }

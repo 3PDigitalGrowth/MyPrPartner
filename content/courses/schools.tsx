@@ -558,6 +558,11 @@ export const schoolsContent: CourseContent = {
     trustBadges: { poweredByCrcLogo: true },
     callbackLinkLabel: "Or request a callback from our schools team",
     callbackHref: "/contact",
+    invoiceRequest: {
+      enabled: true,
+      helperText:
+        "Prefer to pay by bank transfer or need a tax invoice to get approval before signing up to the course? Use the request below.",
+    },
   },
 
   planComparison: {

@@ -34,7 +34,13 @@ export default function BodyWithSidebar({ content }: { content: CourseContent })
             <FAQ content={content.faq} />
           </div>
           <aside id="pricing" className="scroll-mt-28 lg:col-span-4">
-            <StickyEnrolCard sidebar={content.sidebar} checkout={content.checkout} placement="sidebar" />
+            <StickyEnrolCard
+              sidebar={content.sidebar}
+              checkout={content.checkout}
+              placement="sidebar"
+              courseName={content.mobileBar.label}
+              slug={content.slug}
+            />
           </aside>
         </div>
       </div>

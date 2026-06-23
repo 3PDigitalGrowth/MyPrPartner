@@ -262,6 +262,13 @@ export type SidebarContent = {
    * inclusionsTitle/inclusions fields.
    */
   waitlist?: WaitlistContent;
+  /**
+   * When enabled, renders a secondary "Request Invoice" CTA + helper text under
+   * the Enrol button (pricing mode only). Opens an on-site modal that POSTs to
+   * /api/forms so a buyer can request a tax invoice / pay by bank transfer
+   * without going through Kajabi.
+   */
+  invoiceRequest?: { enabled: boolean; helperText?: string };
 };
 
 /** One inclusion row in the plan comparison; `tiers` lists which tier ids include it. */

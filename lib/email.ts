@@ -11,7 +11,7 @@
 // denominator that renders correctly in Outlook, Gmail and Apple Mail.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export type FormType = "contact" | "resource" | "newsletter" | "waitlist";
+export type FormType = "contact" | "resource" | "newsletter" | "waitlist" | "invoice";
 
 export type FormSubmission = {
   formType: FormType;
@@ -19,6 +19,8 @@ export type FormSubmission = {
   /** First name (resource forms) or full name (contact form). */
   name?: string;
   organisation?: string;
+  /** Australian Business Number, captured on invoice requests. */
+  abn?: string;
   phone?: string;
   topic?: string;
   message?: string;
@@ -286,6 +288,34 @@ export function clientConfirmationEmail(sub: FormSubmission): {
     };
   }
 
+  if (sub.formType === "invoice") {
+    // Topic arrives as "<Program>" or "<Program> - <Tier>".
+    const programRaw = (sub.topic || "your program").trim() || "your program";
+    const program = escapeHtml(programRaw);
+    return {
+      subject: "We've got your invoice request",
+      html: clientShell({
+        preheader: `We've got your invoice request for ${programRaw}. Our team will be in touch within 24 hours.`,
+        heading: `Thanks${greetName}. Your invoice request is with us.`,
+        bodyHtml: `
+          ${paragraph(
+            `We've received your request for an invoice for the <strong style="color:${TEXT_DARK};">${program}</strong>. There's nothing more you need to do right now.`
+          )}
+          ${calloutBox("What happens next", [
+            `<strong>1.</strong> Our team will be in touch within 24 hours with your tax invoice.`,
+            `<strong>2.</strong> You'll get everything you need to get started, including how to pay by bank transfer.`,
+            `<strong>3.</strong> Have a question first? Just reply to this email and a person will help.`,
+          ])}
+          ${paragraph(
+            `If you need to add a purchase order number, ABN or anything else for your accounts team, reply to this email and we'll include it on the invoice.`
+          )}
+          ${paragraph(`Talk soon,<br /><strong style="color:${TEXT_DARK};">The My PR Partner team</strong>`)}`,
+        footerReason:
+          "You're receiving this because you requested an invoice at myprpartner.com. We'll never sell your email or pass it on.",
+      }),
+    };
+  }
+
   // newsletter
   return {
     subject: "You're on the list",
@@ -323,6 +353,7 @@ const FORM_TYPE_LABELS: Record<FormType, string> = {
   resource: "Resource download",
   newsletter: "Newsletter signup",
   waitlist: "Waitlist signup",
+  invoice: "Invoice request",
 };
 
 export function adminNotificationEmail(sub: FormSubmission): {
@@ -341,13 +372,16 @@ export function adminNotificationEmail(sub: FormSubmission): {
         ? `[myprpartner.com] ${sub.resourceLabel || "Resource"} download · ${who}`
         : sub.formType === "waitlist"
           ? `[myprpartner.com] Waitlist signup · ${sub.name || sub.email}${sub.topic ? ` · ${sub.topic}` : ""}`
-          : `[myprpartner.com] Newsletter signup · ${sub.email}${fromWhere ? ` · ${fromWhere}` : ""}`;
+          : sub.formType === "invoice"
+            ? `[myprpartner.com] Invoice request · ${sub.name || sub.email}${sub.topic ? ` · ${sub.topic}` : ""}`
+            : `[myprpartner.com] Newsletter signup · ${sub.email}${fromWhere ? ` · ${fromWhere}` : ""}`;
 
   const rows: Array<[string, string | undefined]> = [
     ["Type", typeLabel],
     ["Name", sub.name],
     ["Email", sub.email],
     ["Organisation", sub.organisation],
+    ["ABN", sub.abn],
     ["Phone", sub.phone],
     ["Topic", sub.topic],
     ["Resource", sub.resourceLabel],

@@ -416,6 +416,11 @@ export const crisisMasterclassContent: CourseContent = {
     trustBadges: { poweredByCrcLogo: true, crisisReadyBadge: true },
     callbackLinkLabel: "Or request a callback from our team",
     callbackHref: "/contact",
+    invoiceRequest: {
+      enabled: true,
+      helperText:
+        "Prefer to pay by bank transfer or need a tax invoice to get approval before signing up to the course? Use the request below.",
+    },
   },
 
   foundersWelcome: {
