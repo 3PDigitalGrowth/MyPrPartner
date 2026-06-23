@@ -26,6 +26,8 @@ export type FormSubmission = {
   resourceLabel?: string;
   /** Site-relative PDF path for resource deliveries, e.g. "/downloads/pr-guide.pdf" */
   downloadHref?: string;
+  /** Preferred filename for the attached/downloaded PDF. */
+  downloadFilename?: string;
   /** Where on the site the form lives, e.g. "contact-page", "footer", "homepage" */
   source?: string;
   /** The path the form was submitted from, e.g. "/programs/schools". */

@@ -37,3 +37,6 @@ next-env.d.ts
 
 # local email template previews
 /email-previews
+
+# outline generator temp render files
+/scripts/.tmp/

@@ -157,6 +157,7 @@ function LeadMagnetForm() {
             email,
             resourceLabel: "Becoming a Trusted Public Voice guide",
             downloadHref: "/downloads/pr-guide.pdf",
+            downloadFilename: "My-PR-Partner-Trusted-Public-Voice.pdf",
             source: "homepage",
             pageName: "Homepage guide offer",
             pagePath: currentPagePath(),

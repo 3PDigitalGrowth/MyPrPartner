@@ -84,7 +84,7 @@ export const associationsContent: CourseContent = {
     eyebrowIcon: Building2,
     headline: "My PR Partner industry associations program",
     tagline:
-      "Position your association as the trusted voice and advocate for your industry",
+      "The only Australian 12-month online public relations program built for busy business and NFP managers, owners and teams",
     intro:
       "A 12-month online PR training program built exclusively for Australian industry and professional associations. CEOs, executive leaders, spokespeople, and communications, membership and marketing staff learn together, to maximise your impact.",
     outcomes: [
@@ -129,6 +129,7 @@ export const associationsContent: CourseContent = {
     { id: "structure", label: "12-month plan" },
     { id: "instructors", label: "Presenters" },
     { id: "pricing", label: "Waitlist" },
+    { id: "compare", label: "Compare plans" },
     { id: "faq", label: "FAQ" },
   ],
 
@@ -220,7 +221,7 @@ export const associationsContent: CourseContent = {
         modules: [
           {
             month: 4,
-            title: "Maximising impact \u2013 Using PR to influence policy and legislation",
+            title: "PR that attracts new customers, supporters or donors: the growth PR strategy",
             resource: "Government relations and advocacy template pack",
           },
           {
@@ -466,6 +467,34 @@ export const associationsContent: CourseContent = {
     price: "TBA",
     priceCurrencyNote: "monthly instalment · ex GST",
     pricePlanNote: "Pricing released to the waitlist first",
+    // Tiers power the in-page plan comparison + popup only. While the sidebar
+    // is in waitlist mode (`waitlist` set below) the sticky card ignores these
+    // and keeps showing the waitlist UI. Copy is drawn from the Train, Support
+    // and Partner association level pages on myprpartner.com.
+    defaultTierId: "support",
+    tiers: [
+      {
+        id: "train",
+        label: "Train Level",
+        description: "Team training and resources",
+        price: "$440",
+        priceCurrencyNote: "per month · ex GST",
+      },
+      {
+        id: "support",
+        label: "Support Level",
+        description: "Training plus on-call PR assistance",
+        price: "$840",
+        priceCurrencyNote: "per month · ex GST",
+      },
+      {
+        id: "partner",
+        label: "Partner Level",
+        description: "Full PR partnership with media training",
+        price: "$1,340",
+        priceCurrencyNote: "per month · ex GST",
+      },
+    ],
     primaryCtaLabel: "Join the waitlist",
     secondaryCta: {
       label: "Download program outline",
@@ -505,6 +534,48 @@ export const associationsContent: CourseContent = {
     trustBadges: { poweredByCrcLogo: true },
     callbackLinkLabel: "Or request a callback from our associations team",
     callbackHref: "/contact",
+  },
+
+  // Plan comparison copy is taken only from the Train, Support and Partner
+  // association level pages (the "YOU WILL RECEIVE" inclusions and pricing).
+  planComparison: {
+    eyebrow: "Compare plans",
+    heading: "Choose the level of support that fits your association",
+    intro:
+      "Every level includes the full 12-month training program. Support and Partner add hands-on PR assistance and support from the CRC Public Relations team.",
+    anchorId: "compare",
+    compareButtonLabel: "Compare all plans",
+    features: [
+      { label: "Monthly video & audio resources", tiers: ["train", "support", "partner"] },
+      { label: "Weekly Spotlight email", tiers: ["train", "support", "partner"] },
+      { label: "Interactive Q&A", tiers: ["train", "support", "partner"] },
+      { label: "Bonus training and resources", tiers: ["train", "support", "partner"] },
+      {
+        label: "Featured industry associations video training",
+        tiers: ["train", "support", "partner"],
+      },
+      {
+        label: "The essential PR and communication strategy checklist for associations",
+        tiers: ["support", "partner"],
+      },
+      {
+        label: "Communications 'templates and tips' pack for associations",
+        tiers: ["support", "partner"],
+      },
+      { label: "Strategy planning consultation", tiers: ["support", "partner"] },
+      { label: "Access to special PR consultancy rates", tiers: ["support", "partner"] },
+      { label: "On-call PR assistance (6 hours)", tiers: ["support"] },
+      {
+        label: "Personal, ongoing phone, email & Zoom PR support (20 hours)",
+        tiers: ["partner"],
+        highlighted: true,
+      },
+      {
+        label: "Comprehensive, personalised online half-day media training",
+        tiers: ["partner"],
+        highlighted: true,
+      },
+    ],
   },
 
   foundersWelcome: {

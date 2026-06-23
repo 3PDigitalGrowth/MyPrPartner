@@ -1,3 +1,5 @@
+import { readFile } from "fs/promises";
+import path from "path";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import {
@@ -36,6 +38,45 @@ function clip(value: unknown, max: number): string | undefined {
   return trimmed ? trimmed.slice(0, max) : undefined;
 }
 
+// Reads the requested lead-magnet PDF from public/downloads and returns it as a
+// Resend attachment. Locked to the /downloads/ folder so an arbitrary path can
+// never be read off disk. Returns an empty array (and the email still sends
+// with its download button) if anything is off.
+async function buildResourceAttachments(
+  sub: FormSubmission
+): Promise<Array<{ filename: string; content: Buffer }>> {
+  if (sub.formType !== "resource" || !sub.downloadHref) return [];
+
+  const href = sub.downloadHref;
+  if (
+    !href.startsWith("/downloads/") ||
+    !href.toLowerCase().endsWith(".pdf") ||
+    href.includes("..")
+  ) {
+    return [];
+  }
+
+  const downloadsDir = path.join(process.cwd(), "public", "downloads");
+  const filePath = path.join(process.cwd(), "public", href);
+  // Final guard: the resolved path must stay inside public/downloads.
+  if (!filePath.startsWith(downloadsDir)) return [];
+
+  try {
+    const content = await readFile(filePath);
+    const cleanName = (sub.downloadFilename || path.basename(href)).replace(
+      /[^\w.\- ]/g,
+      ""
+    );
+    const filename = cleanName.toLowerCase().endsWith(".pdf")
+      ? cleanName
+      : `${cleanName}.pdf`;
+    return [{ filename, content }];
+  } catch (err) {
+    console.error("[api/forms] Could not attach resource PDF:", href, err);
+    return [];
+  }
+}
+
 export async function POST(request: Request) {
   let body: Record<string, unknown>;
   try {
@@ -69,6 +110,7 @@ export async function POST(request: Request) {
     message: clip(body.message, 5000),
     resourceLabel: clip(body.resourceLabel, 200),
     downloadHref: clip(body.downloadHref, 300),
+    downloadFilename: clip(body.downloadFilename, 200),
     source: clip(body.source, 100),
     pagePath: clip(body.pagePath, 300),
     pageName: clip(body.pageName, 120),
@@ -96,6 +138,10 @@ export async function POST(request: Request) {
   const admin = adminNotificationEmail(submission);
   const confirmation = clientConfirmationEmail(submission);
 
+  // For resource downloads, attach the PDF so it goes out with the
+  // confirmation email (the email also carries a download button as a backup).
+  const attachments = await buildResourceAttachments(submission);
+
   const [adminResult, clientResult] = await Promise.allSettled([
     resend.emails.send({
       from: FROM,
@@ -110,6 +156,7 @@ export async function POST(request: Request) {
       replyTo: "info@myprpartner.com",
       subject: confirmation.subject,
       html: confirmation.html,
+      ...(attachments.length ? { attachments } : {}),
     }),
   ]);
 

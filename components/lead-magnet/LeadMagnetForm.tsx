@@ -43,6 +43,7 @@ export function LeadMagnetForm({
         email,
         resourceLabel,
         downloadHref,
+        downloadFilename,
         source: `lead-magnet-${variant}`,
         pageName: `${resourceLabel} download`,
         pagePath: currentPagePath(),

@@ -23,7 +23,7 @@ export default function PlanComparison({
     <div>
       {/* Desktop: comparison matrix */}
       <div className="hidden md:block">
-        <table className="w-full border-collapse text-left">
+        <table className="w-full table-fixed border-collapse text-left">
           <thead>
             {/* Split into rows so plan names, descriptions and prices each
                 line up across columns even when descriptions wrap differently. */}
@@ -112,7 +112,7 @@ export default function PlanComparison({
                       type="button"
                       onClick={() => onSelect(t.id)}
                       aria-pressed={active}
-                      className={`inline-flex w-full items-center justify-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2 ${
+                      className={`inline-flex w-full items-center justify-center gap-1.5 whitespace-nowrap rounded-full px-3 py-2 text-[13px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2 ${
                         active
                           ? "bg-teal text-white"
                           : "border border-teal text-teal hover:bg-teal hover:text-white"

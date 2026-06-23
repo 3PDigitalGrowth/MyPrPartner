@@ -355,16 +355,38 @@ export default function StickyEnrolCard({
               </Link>
             ) : null}
           </>
-        ) : sidebar.secondaryCta ? (
-          <div className="mt-5">
-            <Link
-              href={sidebar.secondaryCta.href}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-teal bg-transparent px-6 py-3 text-[14px] font-semibold text-teal transition-colors hover:bg-teal hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal"
-            >
-              <Download className="h-4 w-4" aria-hidden />
-              {sidebar.secondaryCta.label}
-            </Link>
-          </div>
+        ) : hasComparison || sidebar.secondaryCta ? (
+          <>
+            <div className="mt-5 flex flex-col gap-3">
+              {hasComparison ? (
+                <button
+                  type="button"
+                  onClick={openCompare}
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-teal bg-transparent px-6 py-3 text-[14px] font-semibold text-teal transition-colors hover:bg-teal hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal"
+                >
+                  <ListChecks className="h-4 w-4" aria-hidden />
+                  Compare all plans
+                </button>
+              ) : sidebar.secondaryCta ? (
+                <Link
+                  href={sidebar.secondaryCta.href}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-teal bg-transparent px-6 py-3 text-[14px] font-semibold text-teal transition-colors hover:bg-teal hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal"
+                >
+                  <Download className="h-4 w-4" aria-hidden />
+                  {sidebar.secondaryCta.label}
+                </Link>
+              ) : null}
+            </div>
+            {hasComparison && sidebar.secondaryCta ? (
+              <Link
+                href={sidebar.secondaryCta.href}
+                className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-medium text-teal hover:text-teal-dark"
+              >
+                <Download className="h-3.5 w-3.5" aria-hidden />
+                {sidebar.secondaryCta.label}
+              </Link>
+            ) : null}
+          </>
         ) : null}
 
         {/* Inclusions list belongs to the pricing layout only. In waitlist

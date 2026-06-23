@@ -281,6 +281,12 @@ export type PlanComparisonContent = {
   features: PlanComparisonFeature[];
   /** Anchor id used by the in-page nav (e.g. "compare"). */
   anchorId?: string;
+  /**
+   * When set, renders a button inside the comparison section that opens the
+   * full-screen compare popup. Useful on pages (e.g. pre-launch waitlist) where
+   * the sticky enrol card's "Compare all plans" button is hidden.
+   */
+  compareButtonLabel?: string;
 };
 
 export type FoundersWelcomeContent = {

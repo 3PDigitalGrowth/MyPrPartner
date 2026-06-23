@@ -123,7 +123,7 @@ export default function Footer() {
               </p>
               <div className="mt-3 flex items-center gap-3">
                 <a
-                  href="https://www.linkedin.com/company/my-prpartner/?viewAsMember=true"
+                  href="https://www.linkedin.com/company/my-prpartner/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="My PR Partner on LinkedIn"
@@ -132,7 +132,7 @@ export default function Footer() {
                   <LinkedinIcon className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://www.facebook.com/people/My-PR-Partner/100093729961913/"
+                  href="https://www.facebook.com/profile.php?id=100093729961913"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="My PR Partner on Facebook"

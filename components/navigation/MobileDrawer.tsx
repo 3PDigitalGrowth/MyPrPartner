@@ -44,8 +44,8 @@ function SocialInstagram({ className }: { className?: string }) {
 }
 
 const SOCIAL = [
-  { href: "https://www.linkedin.com/company/my-pr-partner", label: "LinkedIn", Icon: SocialLinkedin },
-  { href: "https://www.facebook.com/people/My-PR-Partner/100093729961913/", label: "Facebook", Icon: SocialFacebook },
+  { href: "https://www.linkedin.com/company/my-prpartner/", label: "LinkedIn", Icon: SocialLinkedin },
+  { href: "https://www.facebook.com/profile.php?id=100093729961913", label: "Facebook", Icon: SocialFacebook },
   { href: "https://www.instagram.com/myprpartner/", label: "Instagram", Icon: SocialInstagram },
 ] as const;
 
