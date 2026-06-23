@@ -26,6 +26,7 @@ import {
 import { useEffect, useRef, useState, useCallback } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { currentPagePath } from "@/lib/page-context";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -157,6 +158,8 @@ function LeadMagnetForm() {
             resourceLabel: "Becoming a Trusted Public Voice guide",
             downloadHref: "/downloads/pr-guide.pdf",
             source: "homepage",
+            pageName: "Homepage guide offer",
+            pagePath: currentPagePath(),
           }),
         }).catch((err) => console.error("Guide signup failed:", err));
         setSubmitted(true);

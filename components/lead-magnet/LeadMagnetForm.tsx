@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowRight, CheckCircle2, Download, Mail } from "lucide-react";
+import { currentPagePath } from "@/lib/page-context";
 
 type LeadMagnetFormProps = {
   resourceLabel: string;
@@ -43,6 +44,8 @@ export function LeadMagnetForm({
         resourceLabel,
         downloadHref,
         source: `lead-magnet-${variant}`,
+        pageName: `${resourceLabel} download`,
+        pagePath: currentPagePath(),
       }),
     }).catch((err) => console.error("Lead submission failed:", err));
 

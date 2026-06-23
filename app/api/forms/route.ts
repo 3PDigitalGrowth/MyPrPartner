@@ -17,7 +17,7 @@ import {
 
 const ADMIN_RECIPIENTS = (
   process.env.ADMIN_NOTIFICATION_EMAILS ||
-  "alex@3pdigital.com.au,lyall@crcpr.com.au,barbara@crcpr.com.au"
+  "info@myprpartner.com,alex@3pdigital.com.au"
 )
   .split(",")
   .map((e) => e.trim())
@@ -64,11 +64,14 @@ export async function POST(request: Request) {
     email,
     name: clip(body.name, 200),
     organisation: clip(body.organisation, 200),
+    phone: clip(body.phone, 60),
     topic: clip(body.topic, 200),
     message: clip(body.message, 5000),
     resourceLabel: clip(body.resourceLabel, 200),
     downloadHref: clip(body.downloadHref, 300),
     source: clip(body.source, 100),
+    pagePath: clip(body.pagePath, 300),
+    pageName: clip(body.pageName, 120),
   };
 
   // Only allow site-relative download paths into the confirmation email.

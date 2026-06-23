@@ -25,6 +25,18 @@ const nextConfig = {
       },
     ];
   },
+  async headers() {
+    return [
+      // Email preview pages are deployed for internal review only. Keep them out
+      // of every search index (covers crawlers that ignore the meta robots tag).
+      {
+        source: "/preview-output/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

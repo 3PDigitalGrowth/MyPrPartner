@@ -11,7 +11,6 @@ import {
   Star,
   User,
   Newspaper,
-  Mail,
   Check,
   ArrowUpRight,
   Compass,
@@ -19,6 +18,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { CoursesInterestForm } from "@/components/courses/CoursesInterestForm";
 
 export const metadata: Metadata = {
   title: "Upcoming Courses - My PR Partner",
@@ -358,112 +358,13 @@ export default function CoursesPage() {
               </div>
 
               <div className="lg:col-span-7">
-                <form
-                  action="mailto:info@myprpartner.com"
-                  method="post"
-                  encType="text/plain"
-                  className="rounded-card border border-white/20 bg-white p-6 shadow-card md:p-8"
-                >
-                  <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                    Courses waitlist
-                  </p>
-                  <h3 className="mt-1 font-heading text-[22px] font-bold text-text-dark">
-                    Tell us which courses you want first
-                  </h3>
-
-                  <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    <label className="block sm:col-span-2">
-                      <span className="text-[13px] font-medium text-text-dark">
-                        Full name <span className="text-teal">*</span>
-                      </span>
-                      <input
-                        type="text"
-                        name="Full name"
-                        required
-                        placeholder="Your name"
-                        className="mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
-                      />
-                    </label>
-                    <label className="block">
-                      <span className="text-[13px] font-medium text-text-dark">
-                        Email <span className="text-teal">*</span>
-                      </span>
-                      <input
-                        type="email"
-                        name="Email"
-                        required
-                        placeholder="you@example.com"
-                        className="mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
-                      />
-                    </label>
-                    <label className="block">
-                      <span className="text-[13px] font-medium text-text-dark">
-                        Organisation
-                      </span>
-                      <input
-                        type="text"
-                        name="Organisation"
-                        placeholder="Your organisation"
-                        className="mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
-                      />
-                    </label>
-                  </div>
-
-                  <fieldset className="mt-6">
-                    <legend className="text-[13px] font-medium text-text-dark">
-                      Which courses interest you most?{" "}
-                      <span className="font-normal text-text-medium">
-                        (tick any that apply)
-                      </span>
-                    </legend>
-                    <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
-                      {upcomingCourses.map((c) => (
-                        <label
-                          key={c.slug}
-                          className="flex items-start gap-2.5 rounded-lg border border-[#E5E7EB] bg-[#F7F8FA] px-3 py-2.5 text-[13.5px] leading-snug text-text-dark transition-colors hover:border-teal hover:bg-white"
-                        >
-                          <input
-                            type="checkbox"
-                            name={`Interested: ${c.title}`}
-                            value="yes"
-                            className="mt-0.5 h-4 w-4 flex-shrink-0 rounded border-[#E5E7EB] text-teal focus:ring-teal"
-                          />
-                          <span>
-                            <span className="font-semibold">{c.title}</span>
-                            <span className="block text-[12px] text-text-medium">
-                              with {c.trainerName}
-                            </span>
-                          </span>
-                        </label>
-                      ))}
-                    </div>
-                  </fieldset>
-
-                  <label className="mt-6 block">
-                    <span className="text-[13px] font-medium text-text-dark">
-                      Anything else we should know?
-                    </span>
-                    <textarea
-                      name="Notes"
-                      rows={3}
-                      placeholder="Optional - tell us about your team, your goals, or a specific topic you'd love to see."
-                      className="mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
-                    />
-                  </label>
-
-                  <button
-                    type="submit"
-                    className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-teal-dark sm:w-auto"
-                  >
-                    Register my interest
-                    <ArrowRight className="h-4 w-4" aria-hidden />
-                  </button>
-                  <p className="mt-4 flex items-center gap-2 text-[12.5px] text-text-medium">
-                    <Mail className="h-3.5 w-3.5 text-teal" aria-hidden />
-                    We&apos;ll only email you when a course you flagged opens
-                    for enrolment.
-                  </p>
-                </form>
+                <CoursesInterestForm
+                  courses={upcomingCourses.map((c) => ({
+                    slug: c.slug,
+                    title: c.title,
+                    trainerName: c.trainerName,
+                  }))}
+                />
               </div>
             </div>
           </div>

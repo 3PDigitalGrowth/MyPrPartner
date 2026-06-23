@@ -4,12 +4,12 @@ import { useState } from "react";
 import { ArrowRight, CheckCircle2, Mail } from "lucide-react";
 import { currentPagePath } from "@/lib/page-context";
 
-export function ContactForm({ topicOptions }: { topicOptions: string[] }) {
+export function AboutEnquiryForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "done" | "error">("idle");
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
   const [organisation, setOrganisation] = useState("");
-  const [topic, setTopic] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
 
@@ -24,14 +24,15 @@ export function ContactForm({ topicOptions }: { topicOptions: string[] }) {
         body: JSON.stringify({
           formType: "contact",
           name,
-          email,
           organisation,
-          topic,
+          email,
+          phone,
           message,
-          website,
-          source: "contact-page",
-          pageName: "Contact page",
+          topic: "Confidential enquiry",
+          source: "about-page",
+          pageName: "About page (confidential enquiry)",
           pagePath: currentPagePath(),
+          website,
         }),
       });
       setStatus(res.ok ? "done" : "error");
@@ -42,24 +43,24 @@ export function ContactForm({ topicOptions }: { topicOptions: string[] }) {
 
   if (status === "done") {
     return (
-      <div className="rounded-card border border-[#E5E7EB] bg-white p-6 shadow-card md:p-8">
+      <div className="rounded-card border border-white/20 bg-white p-6 shadow-card md:p-8">
         <div
           className="flex h-12 w-12 items-center justify-center rounded-xl text-white"
           style={{ background: "linear-gradient(135deg, #0B7A58 0%, #37B288 100%)" }}
         >
           <CheckCircle2 className="h-6 w-6" aria-hidden />
         </div>
-        <h2 className="mt-4 font-heading text-[24px] font-bold text-text-dark md:text-[28px]">
+        <h3 className="mt-4 font-heading text-[22px] font-bold text-text-dark">
           Your message is with us.
-        </h2>
+        </h3>
         <p className="mt-3 text-[15px] leading-relaxed text-text-medium">
           One of our experienced advisers will read it personally and reply
           within 24 hours on Australian business days. We&apos;ve also sent a
-          confirmation to your inbox with what happens next.
+          confirmation to your inbox.
         </p>
         <p className="mt-3 text-[14px] leading-relaxed text-text-medium">
-          Need us sooner? Reply to that confirmation email with URGENT in the
-          subject line.
+          If it&apos;s urgent, reply to that confirmation email with URGENT in
+          the subject line.
         </p>
       </div>
     );
@@ -68,19 +69,14 @@ export function ContactForm({ topicOptions }: { topicOptions: string[] }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-card border border-[#E5E7EB] bg-white p-6 shadow-card md:p-8"
+      className="rounded-card border border-white/20 bg-white p-6 shadow-card md:p-8"
     >
       <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-        Send us a message
+        Confidential enquiry
       </p>
-      <h2 className="mt-1 font-heading text-[24px] font-bold text-text-dark md:text-[28px]">
-        Tell us what you need
-      </h2>
-      <p className="mt-2 text-[14px] leading-relaxed text-text-medium">
-        Fill out the form and we&apos;ll be in touch. Required fields are
-        marked with an asterisk.
-      </p>
-
+      <h3 className="mt-1 font-heading text-[22px] font-bold text-text-dark">
+        Send a secure message to My PR Partner
+      </h3>
       <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
         <label className="block sm:col-span-2">
           <span className="text-[13px] font-medium text-text-dark">
@@ -88,11 +84,24 @@ export function ContactForm({ topicOptions }: { topicOptions: string[] }) {
           </span>
           <input
             type="text"
-            name="Full name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            autoComplete="name"
             placeholder="Your name"
+            className="mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
+          />
+        </label>
+        <label className="block sm:col-span-2">
+          <span className="text-[13px] font-medium text-text-dark">
+            Organisation
+          </span>
+          <input
+            type="text"
+            value={organisation}
+            onChange={(e) => setOrganisation(e.target.value)}
+            autoComplete="organization"
+            placeholder="Organisation"
             className="mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
           />
         </label>
@@ -102,59 +111,37 @@ export function ContactForm({ topicOptions }: { topicOptions: string[] }) {
           </span>
           <input
             type="email"
-            name="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            autoComplete="email"
             placeholder="you@example.com"
             className="mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
           />
         </label>
         <label className="block">
           <span className="text-[13px] font-medium text-text-dark">
-            Organisation
+            Phone <span className="text-teal">*</span>
           </span>
           <input
-            type="text"
-            name="Organisation"
-            value={organisation}
-            onChange={(e) => setOrganisation(e.target.value)}
-            placeholder="Your organisation"
+            type="tel"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+            autoComplete="tel"
+            placeholder="Best number"
             className="mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
           />
         </label>
         <label className="block sm:col-span-2">
           <span className="text-[13px] font-medium text-text-dark">
-            What&apos;s this about? <span className="text-teal">*</span>
-          </span>
-          <select
-            name="Topic"
-            value={topic}
-            onChange={(e) => setTopic(e.target.value)}
-            required
-            className="mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
-          >
-            <option value="" disabled>
-              Choose a topic
-            </option>
-            {topicOptions.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="block sm:col-span-2">
-          <span className="text-[13px] font-medium text-text-dark">
-            Your message <span className="text-teal">*</span>
+            Brief context
           </span>
           <textarea
-            name="Message"
-            rows={5}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            required
-            placeholder="Tell us what you're trying to solve - the more context you share, the more useful our reply will be."
+            rows={4}
+            placeholder="Tell us what you're trying to solve - picking a program, a group or team enrolment, or a more sensitive matter we can escalate."
             className="mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
           />
         </label>

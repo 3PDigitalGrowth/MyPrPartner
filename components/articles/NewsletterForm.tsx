@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowRight, CheckCircle2, Mail } from "lucide-react";
+import { currentPagePath } from "@/lib/page-context";
 
 type NewsletterFormProps = {
   theme?: "light" | "dark";
@@ -15,14 +16,28 @@ export function NewsletterForm({ theme = "dark" }: NewsletterFormProps) {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!email) return;
+    if (!email || status === "submitting") return;
     setStatus("submitting");
 
-    // NOTE: No backend wired up yet. When ready, POST {email, source: "articles"}
-    // to a Kajabi form / Formspree / Resend endpoint here. For now we simulate a
-    // successful subscription so the UX is complete.
-    await new Promise((r) => setTimeout(r, 400));
-    setStatus("done");
+    try {
+      await fetch("/api/forms", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "newsletter",
+          email,
+          source: "articles",
+          pageName: "Articles newsletter",
+          pagePath: currentPagePath(),
+        }),
+      });
+    } catch (err) {
+      console.error("Newsletter signup failed:", err);
+    } finally {
+      // A transient email failure shouldn't strand the visitor on a broken
+      // form; the confirmation email is the real receipt either way.
+      setStatus("done");
+    }
   }
 
   if (status === "done") {

@@ -19,6 +19,7 @@ export type FormSubmission = {
   /** First name (resource forms) or full name (contact form). */
   name?: string;
   organisation?: string;
+  phone?: string;
   topic?: string;
   message?: string;
   /** e.g. "Trusted Public Voice guide", "Crisis Vulnerability Checklist" */
@@ -27,6 +28,10 @@ export type FormSubmission = {
   downloadHref?: string;
   /** Where on the site the form lives, e.g. "contact-page", "footer", "homepage" */
   source?: string;
+  /** The path the form was submitted from, e.g. "/programs/schools". */
+  pagePath?: string;
+  /** A human-readable label for that page, e.g. "Schools Program". */
+  pageName?: string;
 };
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://myprpartner.com";
@@ -184,26 +189,29 @@ export function clientConfirmationEmail(sub: FormSubmission): {
         )
       : "";
     return {
-      subject: "We've received your message",
+      subject: "We've got your message",
       html: clientShell({
         preheader:
           "Your message is with us. An experienced adviser will reply within 24 hours.",
         heading: `Thanks${greetName}. Your message is with us.`,
         bodyHtml: `
           ${paragraph(
-            "Your enquiry has arrived and it will be read personally by one of our experienced advisers. Not a bot, not a ticket queue. A person."
+            "Your message has arrived, and it will be read by one of our experienced advisers. Not a bot. Not a ticket in a queue. A person."
           )}
           ${topicLine}
           ${calloutBox("What happens next", [
             `<strong>1.</strong> Your message goes straight to the adviser best placed to help.`,
             `<strong>2.</strong> We reply within 24 hours on Australian business days.`,
-            `<strong>3.</strong> You get a useful answer, not a sales pitch.`,
+            `<strong>3.</strong> You get a straight answer, not a sales pitch.`,
           ])}
           ${paragraph(
-            `<strong style="color:${TEXT_DARK};">Need us sooner?</strong> Reply to this email with URGENT in the subject line and we'll prioritise it. If the matter is sensitive or already in the media, say so. We'll treat it accordingly.`
+            `If the matter is sensitive, or it's already in the media, tell us when you reply and we'll treat it accordingly. Need us sooner? Reply with URGENT in the subject line and we'll move it to the top.`
           )}
           ${paragraph(
-            `While you wait, you may find something useful in our <a href="${SITE_URL}/articles" style="color:${TEAL};text-decoration:none;font-weight:600;">articles</a> or the <a href="${SITE_URL}/programs" style="color:${TEAL};text-decoration:none;font-weight:600;">program overview</a>.`
+            `From the outset, you're not just an enquiry to us. We're your adviser and advocate, and we have your back.`
+          )}
+          ${paragraph(
+            `While you wait, there may be something useful in our <a href="${SITE_URL}/articles" style="color:${TEAL};text-decoration:none;font-weight:600;">articles</a> or the <a href="${SITE_URL}/programs" style="color:${TEAL};text-decoration:none;font-weight:600;">program overview</a>.`
           )}
           ${paragraph(`Talk soon,<br /><strong style="color:${TEXT_DARK};">The My PR Partner team</strong>`)}`,
         footerReason:
@@ -228,13 +236,13 @@ export function clientConfirmationEmail(sub: FormSubmission): {
           )}
           ${button(`Download the ${label}`, downloadUrl)}
           ${calloutBox("One tip from our advisers", [
-            "Don't just file it away. Pick one item, put it to work this week, and you'll already be ahead of most organisations.",
+            "Don't just file it away. Pick one idea, put it to work this week, and you're already ahead of most organisations.",
           ])}
           ${paragraph(
-            `<strong style="color:${TEXT_DARK};">Questions about anything in it?</strong> Reply to this email. An experienced adviser reads every reply, and we aim to come back to you within 24 hours on Australian business days. Need us sooner? Put URGENT in the subject line.`
+            `<strong style="color:${TEXT_DARK};">A question about anything in it?</strong> Reply to this email. An experienced adviser reads every reply, and we aim to come back to you within 24 hours on Australian business days. Need us sooner? Put URGENT in the subject line.`
           )}
           ${paragraph(
-            `And when you're ready to go further, our <a href="${SITE_URL}/programs" style="color:${TEAL};text-decoration:none;font-weight:600;">sector programs</a> take your whole team from aware to genuinely ready.`
+            `When you're ready to go further, our <a href="${SITE_URL}/programs" style="color:${TEAL};text-decoration:none;font-weight:600;">sector programs</a> take your whole team from aware to genuinely ready.`
           )}
           ${paragraph(`Talk soon,<br /><strong style="color:${TEXT_DARK};">The My PR Partner team</strong>`)}`,
         footerReason: `You're receiving this because you requested the ${label} at myprpartner.com. We'll never sell your email or pass it on.`,
@@ -321,6 +329,8 @@ export function adminNotificationEmail(sub: FormSubmission): {
 } {
   const typeLabel = FORM_TYPE_LABELS[sub.formType];
   const who = sub.name ? `${sub.name} <${sub.email}>` : sub.email;
+  // Where it came from, in plain language, for the subject line.
+  const fromWhere = sub.pageName || sub.source;
 
   const subject =
     sub.formType === "contact"
@@ -329,15 +339,17 @@ export function adminNotificationEmail(sub: FormSubmission): {
         ? `[myprpartner.com] ${sub.resourceLabel || "Resource"} download · ${who}`
         : sub.formType === "waitlist"
           ? `[myprpartner.com] Waitlist signup · ${sub.name || sub.email}${sub.topic ? ` · ${sub.topic}` : ""}`
-          : `[myprpartner.com] Newsletter signup · ${sub.email}`;
+          : `[myprpartner.com] Newsletter signup · ${sub.email}${fromWhere ? ` · ${fromWhere}` : ""}`;
 
   const rows: Array<[string, string | undefined]> = [
     ["Type", typeLabel],
     ["Name", sub.name],
     ["Email", sub.email],
     ["Organisation", sub.organisation],
+    ["Phone", sub.phone],
     ["Topic", sub.topic],
     ["Resource", sub.resourceLabel],
+    ["Page", sub.pageName],
     ["Source", sub.source],
     [
       "Received",
@@ -359,6 +371,20 @@ export function adminNotificationEmail(sub: FormSubmission): {
       </tr>`
     )
     .join("");
+
+  // Page-aware footer line: a clickable link straight to the page the visitor
+  // submitted from, so the team can see the exact context in one click.
+  const pageLinkBlock = sub.pagePath
+    ? (() => {
+        const safePath = sub.pagePath!.startsWith("/") ? sub.pagePath! : `/${sub.pagePath}`;
+        const href = `${SITE_URL}${safePath}`;
+        return `
+    <p style="margin:24px 0 0 0;font-family:${FONT};font-size:13px;line-height:1.6;color:${TEXT_MEDIUM};">
+      Submitted from
+      <a href="${href}" style="color:${TEAL};text-decoration:none;font-weight:600;">${escapeHtml(safePath)}</a>
+    </p>`;
+      })()
+    : "";
 
   const messageBlock = sub.message
     ? `
@@ -383,6 +409,7 @@ export function adminNotificationEmail(sub: FormSubmission): {
                 ${fieldRows}
               </table>
               ${messageBlock}
+              ${pageLinkBlock}
               <p style="margin:24px 0 0 0;font-family:${FONT};font-size:13px;line-height:1.6;color:${TEXT_MEDIUM};">
                 Reply to this email to respond directly to ${escapeHtml(sub.name || sub.email)}.
               </p>
