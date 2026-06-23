@@ -561,7 +561,7 @@ export const schoolsContent: CourseContent = {
     invoiceRequest: {
       enabled: true,
       helperText:
-        "Prefer to pay by bank transfer or need a tax invoice to get approval before signing up to the course? Use the request below.",
+        "Prefer to pay by bank transfer or need a tax invoice to get approval before signing up to the course?",
     },
   },
 

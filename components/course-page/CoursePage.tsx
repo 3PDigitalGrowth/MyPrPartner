@@ -39,7 +39,7 @@ export default function CoursePage({ content }: { content: CourseContent }) {
           {content.groupBand ? <GroupEnrolmentBand content={content.groupBand} /> : null}
           {content.relatedProgram ? <RelatedProgramBand content={content.relatedProgram} /> : null}
           <FinalCtaBand content={content.finalCta} checkout={content.checkout} />
-          <MobileEnrolBar bar={content.mobileBar} checkout={content.checkout} />
+          <MobileEnrolBar bar={content.mobileBar} />
         </div>
         {hasComparison && content.planComparison && tiers ? (
           <PlanCompareModal tiers={tiers} comparison={content.planComparison} />

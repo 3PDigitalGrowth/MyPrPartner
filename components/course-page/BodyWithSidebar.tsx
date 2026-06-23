@@ -10,12 +10,17 @@ import FAQ from "./FAQ";
 import StickyEnrolCard from "./StickyEnrolCard";
 import PlanComparisonSection from "./PlanComparisonSection";
 
+const MAIN_COL_CLASS = "order-1 lg:order-none lg:col-span-8 lg:col-start-1";
+
 export default function BodyWithSidebar({ content }: { content: CourseContent }) {
+  const hasPlanComparison =
+    !!content.planComparison && !!content.sidebar.tiers && content.sidebar.tiers.length > 0;
+
   return (
     <section className="bg-white py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-8">
+          <div className={MAIN_COL_CLASS}>
             <Overview content={content.overview} />
             <WhatYoullLearn content={content.whatYoullLearn} />
             <CourseStructure content={content.courseStructure} />
@@ -24,16 +29,16 @@ export default function BodyWithSidebar({ content }: { content: CourseContent })
             {content.testimonials ? (
               <Testimonials content={content.testimonials} />
             ) : null}
-            <CareerValue content={content.careerValue} />
-            {content.planComparison && content.sidebar.tiers && content.sidebar.tiers.length > 0 ? (
-              <PlanComparisonSection
-                comparison={content.planComparison}
-                tiers={content.sidebar.tiers}
-              />
-            ) : null}
-            <FAQ content={content.faq} />
           </div>
-          <aside id="pricing" className="scroll-mt-28 lg:col-span-4">
+
+          <div className="order-2 lg:order-none lg:col-span-8 lg:col-start-1">
+            <CareerValue content={content.careerValue} />
+          </div>
+
+          <aside
+            id="pricing"
+            className="order-3 scroll-mt-28 lg:order-none lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:row-span-full lg:self-start"
+          >
             <StickyEnrolCard
               sidebar={content.sidebar}
               checkout={content.checkout}
@@ -42,6 +47,19 @@ export default function BodyWithSidebar({ content }: { content: CourseContent })
               slug={content.slug}
             />
           </aside>
+
+          {hasPlanComparison ? (
+            <div className="order-4 lg:order-none lg:col-span-8 lg:col-start-1">
+              <PlanComparisonSection
+                comparison={content.planComparison!}
+                tiers={content.sidebar.tiers!}
+              />
+            </div>
+          ) : null}
+
+          <div className="order-5 lg:order-none lg:col-span-8 lg:col-start-1">
+            <FAQ content={content.faq} />
+          </div>
         </div>
       </div>
     </section>

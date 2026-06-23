@@ -2,12 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import type { CheckoutConfig, MobileBarContent } from "./types";
-import { getCourseCheckoutUrl } from "@/lib/checkout";
+import type { MobileBarContent } from "./types";
 import { useWaitlistModal } from "./WaitlistModal";
 
 const CTA_CLASS =
   "inline-flex flex-shrink-0 items-center justify-center gap-2 rounded-full bg-teal px-5 py-3 text-[14px] font-semibold text-white transition-colors hover:bg-teal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal";
+
+function scrollToPricingCard() {
+  document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 function useShowMobileEnrolBar() {
   const [show, setShow] = useState(false);
@@ -31,15 +34,8 @@ function useShowMobileEnrolBar() {
   return show;
 }
 
-export default function MobileEnrolBar({
-  bar,
-  checkout,
-}: {
-  bar: MobileBarContent;
-  checkout: CheckoutConfig;
-}) {
+export default function MobileEnrolBar({ bar }: { bar: MobileBarContent }) {
   const show = useShowMobileEnrolBar();
-  const url = getCourseCheckoutUrl(checkout, { utm_content: "mobile-bar" });
   const waitlist = useWaitlistModal();
   return (
     <div
@@ -64,10 +60,15 @@ export default function MobileEnrolBar({
             <ArrowRight className="h-4 w-4" aria-hidden />
           </button>
         ) : (
-          <a href={url} tabIndex={show ? 0 : -1} className={CTA_CLASS}>
+          <button
+            type="button"
+            onClick={scrollToPricingCard}
+            tabIndex={show ? 0 : -1}
+            className={CTA_CLASS}
+          >
             {bar.ctaLabel}
             <ArrowRight className="h-4 w-4" aria-hidden />
-          </a>
+          </button>
         )}
       </div>
     </div>

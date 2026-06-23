@@ -1,14 +1,20 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check, Download, FileText, ListChecks, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Check, CreditCard, Download, FileText, ListChecks, ShieldCheck, Sparkles } from "lucide-react";
 import type { CheckoutConfig, PricingBullet, SidebarContent, WaitlistContent } from "./types";
 import { getCourseCheckoutUrl } from "@/lib/checkout";
 import { useWaitlistModal } from "./WaitlistModal";
 import { usePlanSelection } from "./PlanSelection";
 import InvoiceRequestModal from "./InvoiceRequestModal";
+
+const ENROL_PRIMARY_CLASS =
+  "inline-flex items-center justify-center gap-2 rounded-full bg-teal px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-teal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2";
+
+const ENROL_OUTLINED_CLASS =
+  "inline-flex items-center justify-center gap-2 rounded-full border border-teal bg-transparent px-6 py-3 text-[14px] font-semibold text-teal transition-colors hover:bg-teal hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal";
 
 const WAITLIST_CTA_CLASS =
   "mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-teal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2";
@@ -206,7 +212,9 @@ export default function StickyEnrolCard({
 }) {
   const tiers = sidebar.tiers;
   const { selectedTierId, setSelectedTierId, hasComparison, openCompare } = usePlanSelection();
+  const [enrolStep, setEnrolStep] = useState<"idle" | "choose">("idle");
   const [invoiceOpen, setInvoiceOpen] = useState(false);
+  const enrolCtaRef = useRef<HTMLButtonElement>(null);
 
   const selectedTier = useMemo(
     () => (tiers ? tiers.find((t) => t.id === selectedTierId) ?? tiers[0] : undefined),
@@ -235,9 +243,30 @@ export default function StickyEnrolCard({
   const waitlist = sidebar.waitlist;
   const showPricing = !waitlist;
   const invoiceEnabled = !!sidebar.invoiceRequest?.enabled;
-  const invoiceHelperText =
+  const invoiceChooseSubtext =
     sidebar.invoiceRequest?.helperText ??
-    "Prefer to pay by bank transfer or need a tax invoice to get approval before signing up to the course? Use the request below.";
+    "Prefer to pay by bank transfer or need a tax invoice to get approval before signing up to the course?";
+
+  useEffect(() => {
+    setEnrolStep("idle");
+  }, [selectedTierId]);
+
+  useEffect(() => {
+    if (enrolStep !== "choose") return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setEnrolStep("idle");
+        enrolCtaRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [enrolStep]);
+
+  function closeInvoiceModal() {
+    setInvoiceOpen(false);
+    setEnrolStep("idle");
+  }
 
   return (
     <div
@@ -329,28 +358,56 @@ export default function StickyEnrolCard({
             <p className="mt-1 text-[13px] text-text-medium">{displayPlanNote}</p>
 
             <div className="mt-5 flex flex-col gap-3">
-              <a
-                href={checkoutUrl}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-teal px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-teal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2"
-              >
-                {sidebar.primaryCtaLabel}
-                <ArrowRight className="h-4 w-4" aria-hidden />
-              </a>
-              {invoiceEnabled ? (
-                <div className="flex flex-col gap-2.5">
-                  <p className="text-[13px] leading-relaxed text-text-medium">
-                    {invoiceHelperText}
-                  </p>
+              {invoiceEnabled && enrolStep === "choose" ? (
+                <div aria-live="polite" className="flex flex-col gap-3">
+                  <div>
+                    <p className="font-heading text-[15px] font-semibold text-text-dark">
+                      How would you like to enrol?
+                    </p>
+                    <p className="mt-1.5 text-[13px] leading-relaxed text-text-medium">
+                      {invoiceChooseSubtext}
+                    </p>
+                  </div>
+                  <a href={checkoutUrl} className={ENROL_PRIMARY_CLASS}>
+                    <CreditCard className="h-4 w-4" aria-hidden />
+                    Enrol with card payment
+                    <ArrowRight className="h-4 w-4" aria-hidden />
+                  </a>
                   <button
                     type="button"
                     onClick={() => setInvoiceOpen(true)}
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-teal bg-transparent px-6 py-3 text-[14px] font-semibold text-teal transition-colors hover:bg-teal hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal"
+                    className={ENROL_OUTLINED_CLASS}
                   >
                     <FileText className="h-4 w-4" aria-hidden />
-                    Request Invoice
+                    Enrol with invoice
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEnrolStep("idle");
+                      enrolCtaRef.current?.focus();
+                    }}
+                    className="text-[13px] font-medium text-teal hover:text-teal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2"
+                  >
+                    Back
                   </button>
                 </div>
-              ) : null}
+              ) : invoiceEnabled ? (
+                <button
+                  ref={enrolCtaRef}
+                  type="button"
+                  onClick={() => setEnrolStep("choose")}
+                  className={ENROL_PRIMARY_CLASS}
+                >
+                  {sidebar.primaryCtaLabel}
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </button>
+              ) : (
+                <a href={checkoutUrl} className={ENROL_PRIMARY_CLASS}>
+                  {sidebar.primaryCtaLabel}
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </a>
+              )}
               {hasComparison ? (
                 <button
                   type="button"
@@ -467,7 +524,7 @@ export default function StickyEnrolCard({
           program={courseName}
           slug={slug}
           tierLabel={selectedTier?.label}
-          onClose={() => setInvoiceOpen(false)}
+          onClose={closeInvoiceModal}
         />
       ) : null}
     </div>

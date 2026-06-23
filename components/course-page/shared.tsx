@@ -26,14 +26,18 @@ export function useScrollReveal() {
 export function useActiveAnchor(ids: readonly string[]) {
   const [active, setActive] = useState<string>(ids[0] ?? "");
   useEffect(() => {
+    const desktopQuery = window.matchMedia("(min-width: 1024px)");
+
     const handler = () => {
       const offset = 200;
-      // "pricing" anchors the sticky sidebar which sits level with the very
-      // first content section, so it would otherwise win the normal
-      // last-past-the-offset check and stay active the whole scroll. Exclude
-      // it from the regular progression and only light it up once the user
-      // has scrolled past the last content section below.
-      const sectionIds = ids.filter((id) => id !== "pricing");
+      const isDesktop = desktopQuery.matches;
+      // On desktop, "pricing" anchors the sticky sidebar at the top of the
+      // body grid, so exclude it from the normal scroll loop and only light
+      // it up once the user has scrolled past the last content section. On
+      // mobile the card sits mid-page after CareerValue, so treat it like any
+      // other section.
+      const sectionIds =
+        isDesktop && ids.includes("pricing") ? ids.filter((id) => id !== "pricing") : [...ids];
       let current = sectionIds[0] ?? ids[0] ?? "";
       for (const id of sectionIds) {
         const el = document.getElementById(id);
@@ -41,8 +45,9 @@ export function useActiveAnchor(ids: readonly string[]) {
         const top = el.getBoundingClientRect().top;
         if (top - offset <= 0) current = id;
       }
-      if (ids.includes("pricing")) {
-        const lastSectionId = sectionIds[sectionIds.length - 1];
+      if (isDesktop && ids.includes("pricing")) {
+        const desktopSectionIds = ids.filter((id) => id !== "pricing");
+        const lastSectionId = desktopSectionIds[desktopSectionIds.length - 1];
         const lastEl = lastSectionId ? document.getElementById(lastSectionId) : null;
         if (lastEl) {
           const lastBottom = lastEl.getBoundingClientRect().bottom;
@@ -54,9 +59,11 @@ export function useActiveAnchor(ids: readonly string[]) {
     handler();
     window.addEventListener("scroll", handler, { passive: true });
     window.addEventListener("resize", handler);
+    desktopQuery.addEventListener("change", handler);
     return () => {
       window.removeEventListener("scroll", handler);
       window.removeEventListener("resize", handler);
+      desktopQuery.removeEventListener("change", handler);
     };
   }, [ids]);
   return active;
