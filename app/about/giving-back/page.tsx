@@ -195,15 +195,13 @@ export default function GivingBackPage() {
                   Compassion × My PR Partner
                 </div>
                 <h1 className="font-heading text-[34px] font-bold leading-[1.08] text-white sm:text-[44px] md:text-[54px]">
-                  When you invest in your team,{" "}
+                  My PR Partner believes in communicating in a way that elevates others,{" "}
                   <span className="text-teal-light">
-                    someone else&apos;s life changes too
+                    rather than tears them down.
                   </span>
                 </h1>
                 <p className="mt-5 max-w-[640px] text-[16px] leading-relaxed text-white/85 md:text-[18px]">
-                  My PR Partner believes in communicating in a way that
-                  elevates others, rather than tears them down. We also
-                  believe that as a company, we have a responsibility to use a
+                  We also believe that as a company, we have a responsibility to use a
                   portion of our revenue for the greater good. That&apos;s why
                   we&apos;ve partnered with Compassion Australia.
                 </p>
@@ -275,10 +273,7 @@ export default function GivingBackPage() {
               </div>
               <SectionEyebrow>Our belief</SectionEyebrow>
               <p className="mt-4 font-heading text-[22px] font-medium leading-[1.35] text-text-dark md:text-[28px]">
-                We believe in communicating in a way that elevates others,
-                rather than tears them down - and that as a company, we have a
-                responsibility to use a portion of our revenue for the greater
-                good.
+                We also believe that as a company, we have a responsibility to use a portion of our revenue for the greater good. That&apos;s why we&apos;ve partnered with Compassion Australia.
               </p>
               <p className="mt-6 text-[15.5px] leading-relaxed text-text-medium md:text-[16.5px]">
                 So when you join the My PR Partner community, you are also

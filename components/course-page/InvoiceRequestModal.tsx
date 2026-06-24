@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { ArrowRight, CheckCircle2, X } from "lucide-react";
 import { currentPagePath } from "@/lib/page-context";
 
@@ -32,7 +33,12 @@ export default function InvoiceRequestModal({
   const [abn, setAbn] = useState("");
   const [message, setMessage] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
+  const [mounted, setMounted] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -80,7 +86,9 @@ export default function InvoiceRequestModal({
     }
   }
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <div
       className="fixed inset-0 z-[100] flex items-end justify-center sm:items-center sm:p-4"
       role="dialog"
@@ -268,6 +276,7 @@ export default function InvoiceRequestModal({
           </form>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
