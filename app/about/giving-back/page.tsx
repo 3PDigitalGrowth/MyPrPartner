@@ -273,6 +273,12 @@ export default function GivingBackPage() {
               <p className="mt-4 font-heading text-[22px] font-medium leading-[1.35] text-text-dark md:text-[28px]">
                 We also believe that as a company, we have a responsibility to use a portion of our revenue for the greater good. That&apos;s why we&apos;ve partnered with Compassion Australia.
               </p>
+              <p className="mt-6 text-[15.5px] leading-relaxed text-text-medium md:text-[16.5px]">
+                So when you join the My PR Partner community, you are also
+                part of making someone&apos;s life better in a tangible way.
+                It&apos;s not a marketing slogan - it&apos;s a line item in
+                how we run the business.
+              </p>
             </div>
           </div>
         </section>
