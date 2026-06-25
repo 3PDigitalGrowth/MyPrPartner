@@ -195,15 +195,16 @@ export default function GivingBackPage() {
                   Compassion × My PR Partner
                 </div>
                 <h1 className="font-heading text-[34px] font-bold leading-[1.08] text-white sm:text-[44px] md:text-[54px]">
-                  My PR Partner believes in communicating in a way that elevates others,{" "}
+                  When you invest in your team,{" "}
                   <span className="text-teal-light">
-                    rather than tears them down.
+                    someone else&apos;s life changes too
                   </span>
                 </h1>
+                <p className="mt-4 max-w-[560px] text-[15px] font-medium leading-relaxed text-white/90 md:text-[17px]">
+                  My PR Partner believes in communicating in a way that elevates others, rather than tears them down.
+                </p>
                 <p className="mt-5 max-w-[640px] text-[16px] leading-relaxed text-white/85 md:text-[18px]">
-                  We also believe that as a company, we have a responsibility to use a
-                  portion of our revenue for the greater good. That&apos;s why
-                  we&apos;ve partnered with Compassion Australia.
+                  So when you join the My PR Partner community, you are also part of making someone&apos;s life better in a tangible way. It&apos;s not a marketing slogan - it&apos;s a line item in how we run the business.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <a
