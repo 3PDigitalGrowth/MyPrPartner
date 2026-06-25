@@ -203,9 +203,6 @@ export default function GivingBackPage() {
                 <p className="mt-4 max-w-[560px] text-[15px] font-medium leading-relaxed text-white/90 md:text-[17px]">
                   My PR Partner believes in communicating in a way that elevates others, rather than tears them down.
                 </p>
-                <p className="mt-5 max-w-[640px] text-[16px] leading-relaxed text-white/85 md:text-[18px]">
-                  So when you join the My PR Partner community, you are also part of making someone&apos;s life better in a tangible way. It&apos;s not a marketing slogan - it&apos;s a line item in how we run the business.
-                </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <a
                     href={COMPASSION_DONATE_URL}
