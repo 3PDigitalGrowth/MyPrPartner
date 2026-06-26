@@ -383,7 +383,7 @@ export function adminNotificationEmail(sub: FormSubmission): {
     ["Organisation", sub.organisation],
     ["ABN", sub.abn],
     ["Phone", sub.phone],
-    ["Topic", sub.topic],
+    [sub.formType === "invoice" ? "Plan" : "Topic", sub.topic],
     ["Resource", sub.resourceLabel],
     ["Page", sub.pageName],
     ["Source", sub.source],
