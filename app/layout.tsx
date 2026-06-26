@@ -48,6 +48,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} ${plusJakartaSans.variable}`}>
       <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-L65KCFNGNR"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-L65KCFNGNR');
+          `}
+        </Script>
         <Script id="ms-clarity" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
