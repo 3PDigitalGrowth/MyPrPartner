@@ -19,7 +19,16 @@ import {
 
 const ADMIN_RECIPIENTS = (
   process.env.ADMIN_NOTIFICATION_EMAILS ||
-  "info@myprpartner.com,alex@3pdigital.com.au"
+  "info@myprpartner.com"
+)
+  .split(",")
+  .map((e) => e.trim())
+  .filter(Boolean);
+
+// BCC'd on every admin notification (kept off the visible To line).
+const ADMIN_BCC = (
+  process.env.ADMIN_NOTIFICATION_BCC ||
+  "alex@3pdigital.com.au"
 )
   .split(",")
   .map((e) => e.trim())
@@ -147,6 +156,7 @@ export async function POST(request: Request) {
     resend.emails.send({
       from: FROM,
       to: ADMIN_RECIPIENTS,
+      ...(ADMIN_BCC.length ? { bcc: ADMIN_BCC } : {}),
       replyTo: submission.name ? `${submission.name} <${email}>` : email,
       subject: admin.subject,
       html: admin.html,
