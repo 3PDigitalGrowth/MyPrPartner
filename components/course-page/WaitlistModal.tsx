@@ -225,12 +225,13 @@ function WaitlistModal({
               </label>
               <label className="block">
                 <span className="text-[13px] font-medium text-text-dark">
-                  Organisation <span className="text-text-medium">(optional)</span>
+                  Organisation <span className="text-teal">*</span>
                 </span>
                 <input
                   type="text"
                   value={organisation}
                   onChange={(e) => setOrganisation(e.target.value)}
+                  required
                   autoComplete="organization"
                   placeholder="Your business or organisation"
                   className={inputClass}

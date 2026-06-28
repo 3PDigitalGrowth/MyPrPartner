@@ -123,12 +123,13 @@ export function CoursesInterestForm({ courses }: { courses: CourseOption[] }) {
         </label>
         <label className="block">
           <span className="text-[13px] font-medium text-text-dark">
-            Organisation
+            Organisation <span className="text-teal">*</span>
           </span>
           <input
             type="text"
             value={organisation}
             onChange={(e) => setOrganisation(e.target.value)}
+            required
             autoComplete="organization"
             placeholder="Your organisation"
             className="mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"

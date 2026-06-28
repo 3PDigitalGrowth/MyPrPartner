@@ -109,11 +109,22 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "A valid email is required" }, { status: 400 });
   }
 
+  // Organisation is compulsory on every form that collects it (contact,
+  // invoice, waitlist) so we always know which company the enquiry is from.
+  const ORG_REQUIRED_TYPES: FormType[] = ["contact", "invoice", "waitlist"];
+  const organisation = clip(body.organisation, 200);
+  if (ORG_REQUIRED_TYPES.includes(formType) && !organisation) {
+    return NextResponse.json(
+      { ok: false, error: "Organisation is required" },
+      { status: 400 }
+    );
+  }
+
   const submission: FormSubmission = {
     formType,
     email,
     name: clip(body.name, 200),
-    organisation: clip(body.organisation, 200),
+    organisation,
     abn: clip(body.abn, 60),
     phone: clip(body.phone, 60),
     topic: clip(body.topic, 200),
