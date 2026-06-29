@@ -57,7 +57,7 @@ export const crisisChecklistConfig: LeadMagnetConfig = {
       {
         title: "Social media",
         teaser:
-          "It's used by almost every organisation and can add great value. But what when it goes wrong? We've all seen it happen – a post that backfires, a comment that offends, a personal post that impacts your organisation?",
+          "It's used by almost every organisation and can add great value. But what happens when it goes wrong? We've all seen it happen – a post that backfires, a comment that offends, a personal post that impacts your organisation.",
         icon: Share2,
         accent: "linear-gradient(135deg, #533278 0%, #A25CC8 100%)",
       },
@@ -71,7 +71,7 @@ export const crisisChecklistConfig: LeadMagnetConfig = {
       {
         title: "Complaint escalation",
         teaser:
-          "What do your customers, suppliers, donors, supporters and staff do when they can't resolve an issue and are angry? Social media! Maybe even the mainstream media! It should never get to this point and smart organisations prioritise this.",
+          "Where do your customers, suppliers, donors, supporters and staff go when they can't resolve an issue and are angry? Social media! Maybe even the mainstream media! It should never get to this point and smart organisations prioritise this.",
         icon: AlertTriangle,
         accent: "linear-gradient(135deg, #0F6DA3 0%, #07AFBB 100%)",
       },
