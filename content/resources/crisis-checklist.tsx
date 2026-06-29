@@ -95,7 +95,7 @@ export const crisisChecklistConfig: LeadMagnetConfig = {
   authority: {
     eyebrow: "Why trust this checklist",
     title: "Built from real engagements, not theory.",
-    body: "Each checkpoint covers areas that we know from experience can expose you to issues that can escalate. Answer honestly, fix the gaps, and you can avoid problems. You'll also be better prepared when issues arise. Here are some key areas the checklist covers.",
+    body: "The checkpoints in this checklist are based on issues and crises that CRC Public Relations senior advisers have dealt with for more than 15 years of real crisis work – Private and public companies, government, peak bodies, schools, faith-based organisations, Pacific governments and NGOs.",
     bullets: [
       "Built from 15+ years of live crisis engagements, not a textbook",
       "Based on vulnerabilities within many companies and not-for-profits",
