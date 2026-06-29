@@ -37,7 +37,7 @@ export default function BodyWithSidebar({ content }: { content: CourseContent })
 
           <aside
             id="pricing"
-            className="order-3 scroll-mt-28 lg:order-none lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:row-span-full lg:self-start"
+            className="order-3 scroll-mt-28 lg:order-none lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:row-span-full"
           >
             <StickyEnrolCard
               sidebar={content.sidebar}
