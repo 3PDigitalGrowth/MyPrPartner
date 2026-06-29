@@ -529,7 +529,6 @@ const schools = {
           "The essential reputational & vulnerability checklist for schools",
           "Issues & crisis communications planning 'templates and tips' for schools",
           "One hour crisis planning consultation",
-          "On-call PR or issues & crisis management assistance (6 hours)",
           { text: "Personal, ongoing phone, email & Zoom PR support (20 hours)", hl: true },
           { text: "Comprehensive, personalised online half-day media training", hl: true },
           "Access to special PR consultancy rates (for extra work if required over and above these inclusions)",
@@ -548,8 +547,7 @@ const schools = {
       "Monthly interactive Q&A with Lyall and the expert panel",
       "Crisis Ready\u00AE input from Melissa Agnes (Month 7)",
       "Guest-led modules with Tim Sterne and Tim Whincop",
-      "On-call spokesperson media training (Month 12)",
-      "Certificate of completion for participating staff",
+      "Spokesperson media training (Month 12)",
     ],
   },
   cta: {
