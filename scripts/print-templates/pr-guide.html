@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 Steps to a Trusted Public Voice — My PR Partner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 210mm;
+      height: 297mm;
+      overflow: hidden;
+      background: #ffffff;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 8.2pt;
+      color: #14233a;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── Header band ── */
+    .header-band {
+      flex-shrink: 0;
+      background-color: #14233a;
+      height: 31mm;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 15mm 0 15mm;
+    }
+
+    .header-band span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 6pt;
+      letter-spacing: 0.32em;
+      color: #8fa0b8;
+      text-transform: uppercase;
+    }
+
+    /* ── Content area ── */
+    .content {
+      flex-shrink: 0;
+      height: 223mm;
+      padding: 7mm 17mm 0 15mm;
+      overflow: hidden;
+    }
+
+    .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 6pt;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #946f3a;
+    }
+
+    h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 22pt;
+      font-weight: 700;
+      line-height: 1.05;
+      color: #14233a;
+      margin-top: 2.5mm;
+    }
+
+    .subtitle {
+      font-size: 8.7pt;
+      color: #14233a;
+      margin-top: 2mm;
+      line-height: 1.4;
+    }
+
+    .subtitle strong {
+      font-weight: 500;
+    }
+
+    /* ── Intro paragraphs — single column ── */
+    .intro {
+      margin-top: 3.5mm;
+      font-size: 8.2pt;
+      color: #3a4658;
+      line-height: 1.5;
+    }
+
+    .intro p + p {
+      margin-top: 2mm;
+    }
+
+    /* ── Steps grid ── */
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 9mm;
+      margin-top: 4mm;
+    }
+
+    .step {
+      margin-bottom: 3.5mm;
+    }
+
+    .step:last-child {
+      margin-bottom: 0;
+    }
+
+    .step-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8.7pt;
+      font-weight: 700;
+      color: #14233a;
+      line-height: 1.25;
+    }
+
+    .step-number {
+      color: #946f3a;
+      margin-right: 1.5mm;
+    }
+
+    .step-body {
+      margin-top: 1.5mm;
+      font-size: 7.8pt;
+      color: #3a4658;
+      line-height: 1.5;
+    }
+
+    .step-body p + p {
+      margin-top: 1.5mm;
+    }
+
+    /* ── CTA band ── */
+    .cta-band {
+      flex-shrink: 0;
+      background-color: #14233a;
+      height: 21mm;
+      padding: 0 15mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cta-left p.cta-eyebrow {
+      font-size: 5.5pt;
+      letter-spacing: 0.28em;
+      color: #8fa0b8;
+      text-transform: uppercase;
+    }
+
+    .cta-left p.cta-tagline {
+      font-size: 9pt;
+      color: #ffffff;
+      font-weight: 500;
+      margin-top: 1.5mm;
+    }
+
+    .cta-left p.cta-powered {
+      font-size: 5pt;
+      letter-spacing: 0.22em;
+      color: #5e5c56;
+      text-transform: uppercase;
+      margin-top: 2mm;
+    }
+
+    .cta-right {
+      text-align: right;
+    }
+
+    .cta-right p.talk-label {
+      font-size: 5.5pt;
+      letter-spacing: 0.28em;
+      color: #8fa0b8;
+      text-transform: uppercase;
+    }
+
+    .cta-right p.talk-number {
+      font-size: 9pt;
+      color: #ffffff;
+      font-weight: 700;
+      margin-top: 1.5mm;
+    }
+
+    /* ── Footer band ── */
+    .footer-band {
+      flex-shrink: 0;
+      background-color: #0d1929;
+      height: 22mm;
+      padding: 0 15mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-name {
+      font-size: 6pt;
+      letter-spacing: 0.22em;
+      color: #8fa0b8;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .footer-contact {
+      font-size: 6pt;
+      color: #8fa0b8;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-contact a {
+      color: #8fa0b8;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Header band -->
+    <div class="header-band">
+      <span>5 Steps to a Trusted Public Voice</span>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+      <p class="eyebrow">Media &amp; Public Relations</p>
+
+      <h1>5 Steps to becoming a trusted public voice</h1>
+
+      <p class="subtitle">From <strong>My PR Partner</strong>.</p>
+      <!-- "Powered by CRC Public Relations..." removed per client feedback -->
+
+      <!-- Intro: single column (was 2 columns) -->
+      <div class="intro">
+        <p>We live in an age of 24/7 news, where content is produced endlessly by news organisations across the nation and the globe, and social media spreads it quickly and widely. To meet that demand, journalists and media outlets need content continually.</p>
+        <p>The good news is that you can be a source of that content, and unlike advertising, media exposure is free. You may not have the expertise of a PR firm, but if you understand a few principles and follow these five steps, you can make a great start.</p>
+      </div>
+
+      <!-- Steps: two columns -->
+      <div class="steps">
+
+        <!-- Left column: steps 1–3 -->
+        <div>
+          <div class="step">
+            <p class="step-heading"><span class="step-number">1</span>Understand the difference between PR / media coverage and marketing</p>
+            <div class="step-body">
+              <p>Do not expect free marketing or advertising. What you have to say, or what you are doing, must be newsworthy, because it is the news. Have a realistic expectation of the story and how you will be portrayed, and present your pitch to the journalist as a matter of public interest. If you want to promote a new product or service, or publicise an expansion, make sure it has news value. Your new product might meet a community need, be a technological breakthrough, or help the environment. All of these carry public interest value when presented the right way.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <p class="step-heading"><span class="step-number">2</span>Consider your authority to speak about a subject</p>
+            <div class="step-body">
+              <p>Most news stories carry comments from a variety of people, because the journalist wants to present several angles and give the reader, listener or viewer a complete picture. Journalists are often not experts on the subjects they cover, so they look for people who are. Be willing to share your knowledge and advice in your area of expertise. When you are included in a story, it does not just build your credibility with clients and prospects, it also gives you great content for your marketing and social media.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <p class="step-heading"><span class="step-number">3</span>Ask what value you can add to a current story</p>
+            <div class="step-body">
+              <p>When a story breaks, there are almost always many follow-ups, each with a different theme and featuring different people. Media outlets want to keep covering an issue while public interest is high, but they need fresh angles. When you see something that relates to your expertise or your business, ask whether there is anything of interest you can add. Do not undervalue yourself or your input. Your knowledge or opinion could be exactly what is needed.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column: steps 4–5 -->
+        <div>
+          <div class="step">
+            <p class="step-heading"><span class="step-number">4</span>Monitor the media for stories that relate to your expertise</p>
+            <div class="step-body">
+              <p>Anyone can keep an eye on what is appearing across digital media, and most stories are online, by creating a Google Alert with the key words you want. It is free, and to find out how, well, just Google it. This way you can see what is being said about your industry, react quickly, and apply the steps above.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <p class="step-heading"><span class="step-number">5</span>Contact the journalist or media outlet</p>
+            <div class="step-body">
+              <p>By now you know you possess specific knowledge and expertise, or you have a new product that could be of public interest. Perhaps you have seen an article and believe you can bring a different angle for a strong follow-up. But how do you let the outlet or journalist know, and what do you say?</p>
+              <p>You may not know how to write a media release, but you can send a brief email (a thesis will not be read) or message them on social media. Introduce yourself and make a pitch: tell them what you have to say and how it adds to their story or is of news interest. Most stories name the journalist, and some include contact details. If not, look them up on social media, or call the outlet and ask how to reach them.</p>
+              <p>Do not be shy, and do not worry if they are not interested. Not every pitch will land, but if you keep trying, you will get a breakthrough. Good luck.</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /steps -->
+    </div><!-- /content -->
+
+    <!-- CTA band -->
+    <div class="cta-band">
+      <div class="cta-left">
+        <p class="cta-eyebrow">Take the next step with My PR Partner</p>
+        <p class="cta-tagline">Become a trusted public voice in your industry.</p>
+        <p class="cta-powered">Powered by CRC Public Relations</p>
+      </div>
+      <div class="cta-right">
+        <p class="talk-label">Talk to us</p>
+        <p class="talk-number">1300 182 186</p>
+      </div>
+    </div>
+
+    <!-- Footer band -->
+    <div class="footer-band">
+      <span class="footer-name">My PR Partner</span>
+      <span class="footer-contact">
+        <a href="https://www.myprpartner.com">myprpartner.com</a>
+        &nbsp;&middot;&nbsp;
+        <a href="mailto:info@myprpartner.com">info@myprpartner.com</a>
+        &nbsp;&middot;&nbsp;
+        1300 182 186
+      </span>
+    </div>
+
+  </div>
+</body>
+</html>
