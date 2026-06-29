@@ -65,6 +65,7 @@ function buildHtml(d) {
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   html, body { font-family: "DM Sans", Arial, sans-serif; color: ${C.textDark}; font-size: 10.5pt; line-height: 1.5; }
   h1,h2,h3,h4 { font-family: "Plus Jakarta Sans", Arial, sans-serif; color: ${C.textDark}; line-height: 1.18; }
+  a { color: inherit; text-decoration: none; }
   .page { width: 210mm; position: relative; break-after: page; page-break-after: always; }
   .page:last-child { break-after: auto; page-break-after: auto; }
   .cover { width: 210mm; height: 296mm; position: relative; overflow: hidden; break-after: page; page-break-after: always; }
@@ -308,13 +309,13 @@ function buildHtml(d) {
             <h3>${esc(d.cta.heading)}</h3>
             <p>${esc(d.cta.body)}</p>
           </div>
-          <div class="btn">${esc(d.cta.btn)}<small>${esc(d.cta.btnSub)}</small></div>
+          <a class="btn" href="https://${esc(String(d.cta.btnSub).replace(/^https?:\/\//, ""))}">${esc(d.cta.btn)}<small>${esc(d.cta.btnSub)}</small></a>
         </div>
 
         <div class="foot">
           <img src="${logo}" alt="My PR Partner" />
           <div class="meta">
-            <b>myprpartner.com</b> &nbsp;·&nbsp; info@myprpartner.com<br/>
+            <b><a href="https://myprpartner.com">myprpartner.com</a></b> &nbsp;·&nbsp; <a href="mailto:info@myprpartner.com">info@myprpartner.com</a><br/>
             Powered by CRC Public Relations
           </div>
         </div>
