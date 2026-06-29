@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import { CoursesInterestForm } from "@/components/courses/CoursesInterestForm";
 
 export const metadata: Metadata = {
@@ -155,6 +156,12 @@ const programFunnelCards = [
 export default function CoursesPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://myprpartner.com/" },
+          { name: "Courses", url: "https://myprpartner.com/courses" },
+        ]}
+      />
       <Navbar />
       <main className="pt-[72px] lg:pt-[72px]">
         {/* ── HERO ── */}

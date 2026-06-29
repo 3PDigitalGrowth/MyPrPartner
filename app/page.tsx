@@ -26,7 +26,37 @@ import {
 import { useEffect, useRef, useState, useCallback } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { FaqJsonLd } from "@/components/seo/StructuredData";
 import { currentPagePath } from "@/lib/page-context";
+
+// Single source of truth for the homepage FAQ — drives both the visible
+// accordion and the FAQPage structured data.
+const HOME_FAQS: { question: string; answer: string }[] = [
+  {
+    question: "Who owns My PR Partner and what experience do they have?",
+    answer:
+      "My PR Partner is part of CRC Public Relations, a national PR company led by a team with decades of combined local and international experience in public relations and crisis communications. CRC Public Relations was established in 2010 and has worked with organisations across more than 15 industries including schools, industry associations, government, legal, health, and corporate sectors.",
+  },
+  {
+    question: "Are the Support and Partner levels similar to engaging a PR consultancy?",
+    answer:
+      "Both of these levels allow for a personal relationship with CRC Public Relations and regular, ongoing PR support. These levels are ideal for an organisation that wants a relationship with a PR company without the usual costs. For an affordable monthly budget, any organisation can now engage CRC Public Relations through My PR Partner.",
+  },
+  {
+    question: "Can I cancel my subscription?",
+    answer:
+      "My PR Partner is an annual subscription-based service. You can cancel your auto-renewal at any time during your plan term, however your plan will continue for the duration of your 12-month subscription period. All monthly instalments remaining as part of the subscription are required to be paid either monthly or in full. We will continue to provide all agreed resources, training and services until the end of your subscription period.",
+  },
+  {
+    question: "Can I pay annually by invoice?",
+    answer: "Yes, we can invoice for annual subscriptions for all programs on all levels.",
+  },
+  {
+    question: "Can I upgrade to a higher level before the end of my annual subscription?",
+    answer:
+      "You can upgrade your subscription level at any time. This will be considered the commencement of a new 12-month subscription, as each level offers different resources over the year of subscription.",
+  },
+];
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -551,26 +581,9 @@ export default function Home() {
               {/* Right column - FAQ cards in two columns */}
               <div className="lg:col-span-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <FAQItem
-                    question="Who owns My PR Partner and what experience do they have?"
-                    answer="My PR Partner is part of CRC Public Relations, a national PR company led by a team with decades of combined local and international experience in public relations and crisis communications. CRC Public Relations was established in 2010 and has worked with organisations across more than 15 industries including schools, industry associations, government, legal, health, and corporate sectors."
-                  />
-                  <FAQItem
-                    question="Are the Support and Partner levels similar to engaging a PR consultancy?"
-                    answer="Both of these levels allow for a personal relationship with CRC Public Relations and regular, ongoing PR support. These levels are ideal for an organisation that wants a relationship with a PR company without the usual costs. For an affordable monthly budget, any organisation can now engage CRC Public Relations through My PR Partner."
-                  />
-                  <FAQItem
-                    question="Can I cancel my subscription?"
-                    answer="My PR Partner is an annual subscription-based service. You can cancel your auto-renewal at any time during your plan term, however your plan will continue for the duration of your 12-month subscription period. All monthly instalments remaining as part of the subscription are required to be paid either monthly or in full. We will continue to provide all agreed resources, training and services until the end of your subscription period."
-                  />
-                  <FAQItem
-                    question="Can I pay annually by invoice?"
-                    answer="Yes, we can invoice for annual subscriptions for all programs on all levels."
-                  />
-                  <FAQItem
-                    question="Can I upgrade to a higher level before the end of my annual subscription?"
-                    answer="You can upgrade your subscription level at any time. This will be considered the commencement of a new 12-month subscription, as each level offers different resources over the year of subscription."
-                  />
+                  {HOME_FAQS.map((f) => (
+                    <FAQItem key={f.question} question={f.question} answer={f.answer} />
+                  ))}
                 </div>
               </div>
             </div>
@@ -609,6 +622,7 @@ export default function Home() {
           }),
         }}
       />
+      <FaqJsonLd items={HOME_FAQS} />
     </div>
   );
 }

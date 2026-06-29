@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE = "https://www.myprpartner.com";
+const BASE = "https://myprpartner.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/programs/schools",             priority: 0.9,  changeFrequency: "weekly" },
     { url: "/programs/business",            priority: 0.9,  changeFrequency: "weekly" },
     { url: "/programs/industry-associations", priority: 0.9, changeFrequency: "weekly" },
-    { url: "/programs/charity",             priority: 0.9,  changeFrequency: "weekly" },
+    // Charity program temporarily hidden (redirects to /programs/business); excluded from sitemap.
     { url: "/crisis-masterclass",           priority: 0.8,  changeFrequency: "weekly" },
     { url: "/courses",                      priority: 0.7,  changeFrequency: "weekly" },
     { url: "/resources/pr-guide",           priority: 0.8,  changeFrequency: "monthly" },

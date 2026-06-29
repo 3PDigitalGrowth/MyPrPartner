@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
@@ -126,6 +127,12 @@ const resourceCards: FunnelCard[] = [
 export default function ContactPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://myprpartner.com/" },
+          { name: "Contact", url: "https://myprpartner.com/contact" },
+        ]}
+      />
       <Navbar />
       <main className="pt-[72px] lg:pt-[72px]">
         {/* ── COMPACT HERO ── */}

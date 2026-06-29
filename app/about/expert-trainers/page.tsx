@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import { TrainerFilter } from "./TrainerFilter";
 
 export const metadata: Metadata = {
@@ -391,6 +392,13 @@ export default function ExpertTrainersPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://myprpartner.com/" },
+          { name: "About", url: "https://myprpartner.com/about" },
+          { name: "Expert trainers", url: "https://myprpartner.com/about/expert-trainers" },
+        ]}
+      />
       <Navbar />
       <main className="pt-[72px] lg:pt-[72px]">
         {/* ── HERO ── */}

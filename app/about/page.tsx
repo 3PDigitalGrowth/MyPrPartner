@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import { AboutEnquiryForm } from "@/components/about/AboutEnquiryForm";
 
 export const metadata: Metadata = {
@@ -185,6 +186,12 @@ function LeaderAvatar({ leader, size = 104 }: { leader: Leader; size?: number })
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://myprpartner.com/" },
+          { name: "About", url: "https://myprpartner.com/about" },
+        ]}
+      />
       <Navbar />
       <main className="pt-[72px] lg:pt-[72px]">
         {/* ── HERO ── */}

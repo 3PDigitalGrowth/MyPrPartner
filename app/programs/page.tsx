@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "All Programs - Find the Right One for Your Team | My PR Partner",
@@ -288,6 +289,12 @@ const finalFunnel = [
 export default function ProgramsPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://myprpartner.com/" },
+          { name: "Programs", url: "https://myprpartner.com/programs" },
+        ]}
+      />
       <Navbar />
       <main className="pt-[72px] lg:pt-[72px]">
         {/* ── HERO ── */}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
+import { JsonLd } from "@/components/seo/StructuredData";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -18,9 +19,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://myprpartner.com"),
   title: "Public Relations Training & Crisis Communications Courses | My PR Partner",
   description:
     "Australia's specialist PR training platform. Expert-led programs for schools, associations, and communications professionals. Crisis communications courses powered by CRC Public Relations.",
+  // Child pages override this with their own canonical; only the homepage inherits "/".
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Public Relations Training & Crisis Communications Courses | My PR Partner",
     description:
@@ -46,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${plusJakartaSans.variable}`}>
+    <html lang="en-AU" className={`${dmSans.variable} ${plusJakartaSans.variable}`}>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-L65KCFNGNR"
@@ -71,6 +75,15 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="font-body antialiased">
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "My PR Partner",
+            url: "https://myprpartner.com",
+            publisher: { "@type": "Organization", name: "My PR Partner" },
+          }}
+        />
         {children}
       </body>
     </html>

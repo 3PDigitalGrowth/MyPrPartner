@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CourseJsonLd from "@/components/CourseJsonLd";
+import { FaqJsonLd, BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import CrisisMasterclassClient from "./CrisisMasterclassClient";
 import { crisisMasterclassContent as content } from "@/content/courses/crisis-masterclass";
 
@@ -41,6 +42,17 @@ export default function CrisisMasterclassPage() {
         instructors={content.schema.instructors}
         courseMode="online"
         courseWorkload={content.seo.courseWorkload}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://myprpartner.com/" },
+          { name: "Crisis Masterclass", url: content.seo.canonicalUrl },
+        ]}
+      />
+      <FaqJsonLd
+        items={content.faq.items
+          .filter((i) => typeof i.a === "string")
+          .map((i) => ({ question: i.q, answer: i.a as string }))}
       />
       <Navbar />
       <main className="pt-[72px] lg:pt-[72px]">

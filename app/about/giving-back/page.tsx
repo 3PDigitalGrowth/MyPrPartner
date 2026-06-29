@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "Giving Back - Compassion × My PR Partner",
@@ -166,6 +167,13 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 export default function GivingBackPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://myprpartner.com/" },
+          { name: "About", url: "https://myprpartner.com/about" },
+          { name: "Giving back", url: "https://myprpartner.com/about/giving-back" },
+        ]}
+      />
       <Navbar />
       <main className="pt-[72px] lg:pt-[72px]">
         {/* ── HERO ── */}

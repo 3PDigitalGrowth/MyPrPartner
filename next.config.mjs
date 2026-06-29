@@ -17,7 +17,16 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Canonical host is the bare apex (myprpartner.com). Permanently redirect
+      // the www host so ranking signals consolidate on one origin.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.myprpartner.com" }],
+        destination: "https://myprpartner.com/:path*",
+        permanent: true,
+      },
       // Charity & NFP program hidden - fold any traffic into the Business program.
+      // Temporary (may return), so kept as a 302 and removed from the sitemap.
       {
         source: "/programs/charity",
         destination: "/programs/business",

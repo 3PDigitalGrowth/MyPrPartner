@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LeadMagnetPage } from "@/components/lead-magnet/LeadMagnetPage";
+import { BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import { crisisChecklistConfig } from "@/content/resources/crisis-checklist";
 
 export const metadata: Metadata = {
@@ -23,5 +24,15 @@ export const metadata: Metadata = {
 };
 
 export default function CrisisChecklistPage() {
-  return <LeadMagnetPage config={crisisChecklistConfig} />;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://myprpartner.com/" },
+          { name: "Crisis Vulnerability Checklist", url: crisisChecklistConfig.meta.canonical },
+        ]}
+      />
+      <LeadMagnetPage config={crisisChecklistConfig} />
+    </>
+  );
 }

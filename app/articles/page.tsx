@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import { ArticlesGrid } from "@/components/articles/ArticlesGrid";
 import { FeaturedArticle } from "@/components/articles/FeaturedArticle";
 import { NewsletterForm } from "@/components/articles/NewsletterForm";
@@ -52,6 +53,12 @@ export default async function ArticlesPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://myprpartner.com/" },
+          { name: "Articles & insights", url: "https://myprpartner.com/articles" },
+        ]}
+      />
       <Navbar />
       <main className="pt-[72px] lg:pt-[72px]">
         {/* ── HERO ── */}

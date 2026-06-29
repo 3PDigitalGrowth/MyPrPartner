@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LeadMagnetPage } from "@/components/lead-magnet/LeadMagnetPage";
+import { BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import { prGuideConfig } from "@/content/resources/pr-guide";
 
 export const metadata: Metadata = {
@@ -23,5 +24,15 @@ export const metadata: Metadata = {
 };
 
 export default function PrGuidePage() {
-  return <LeadMagnetPage config={prGuideConfig} />;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://myprpartner.com/" },
+          { name: "Becoming a Trusted Public Voice", url: prGuideConfig.meta.canonical },
+        ]}
+      />
+      <LeadMagnetPage config={prGuideConfig} />
+    </>
+  );
 }

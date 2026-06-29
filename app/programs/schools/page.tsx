@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CourseJsonLd from "@/components/CourseJsonLd";
+import { FaqJsonLd, BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import SchoolsClient from "./SchoolsClient";
 import { schoolsContent as content } from "@/content/courses/schools";
 
@@ -41,6 +42,18 @@ export default function SchoolsPage() {
         instructors={content.schema.instructors}
         courseMode="online"
         courseWorkload={content.seo.courseWorkload}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://myprpartner.com/" },
+          { name: "Programs", url: "https://myprpartner.com/programs" },
+          { name: "Schools program", url: content.seo.canonicalUrl },
+        ]}
+      />
+      <FaqJsonLd
+        items={content.faq.items
+          .filter((i) => typeof i.a === "string")
+          .map((i) => ({ question: i.q, answer: i.a as string }))}
       />
       <Navbar />
       <main className="pt-[72px] lg:pt-[72px]">
