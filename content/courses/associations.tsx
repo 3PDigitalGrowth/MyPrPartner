@@ -84,7 +84,7 @@ export const associationsContent: CourseContent = {
     eyebrowIcon: Building2,
     headline: "My PR Partner industry associations program",
     tagline:
-      "The only Australian 12-month online public relations program built for busy business and NFP managers, owners and teams",
+      "Position your association as the trusted voice and advocate for your industry",
     intro:
       "A 12-month online PR training program built exclusively for Australian industry and professional associations. CEOs, executive leaders, spokespeople, and communications, membership and marketing staff learn together, to maximise your impact.",
     outcomes: [
