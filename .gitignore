@@ -40,3 +40,4 @@ next-env.d.ts
 
 # outline generator temp render files
 /scripts/.tmp/
+.gstack/

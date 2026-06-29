@@ -175,13 +175,13 @@ export const crisisMasterclassContent: CourseContent = {
     modules: [
       {
         month: 1,
-        title: "Redefining crisis readiness",
+        title: "Defining crisis readiness",
         note: "Mindset before methodology \u2014 shift from reactive to proactive and lead from presence, not panic.",
       },
       {
         month: 2,
         title: "Issue vs. crisis: getting the distinction right",
-        note: "Distinguish issues from crises, learn the six thresholds of impact and calibrate your response.",
+        note: "Distinguish issues from crises, learn the thresholds of impact and calibrate your response.",
       },
       {
         month: 3,
@@ -190,38 +190,38 @@ export const crisisMasterclassContent: CourseContent = {
       },
       {
         month: 4,
-        title: "Owning accountability without fuelling liability",
-        note: "The art of the public apology \u2014 high-integrity communication that honours stakeholders and strengthens trust.",
+        title: "Four levels of safety in crisis communication",
+        note: "Creating safety so your stakeholders can hear you, trust you, and follow your leadership.",
       },
       {
         month: 5,
-        title: "Layering and long-term trust",
-        note: "Strategic communication in cascading events \u2014 anticipate next steps, maintain transparency and foster lasting trust.",
+        title: "Leading from energetic safety",
+        note: "Heart-brain coherence and the foundation of your ability to lend deep safety to those you\u2019re leading.",
       },
       {
         month: 6,
-        title: "Governing the message internally and externally",
-        note: "Align leadership, legal, HR and comms to speak with one coherent, values-based voice.",
+        title: "Strategic storytelling in crisis communication",
+        note: "Crisis as an onion and strategic narrative layering so you can take stakeholders on the journey.",
       },
       {
         month: 7,
-        title: "Timelines of response & owning your narrative",
-        note: "Tactical frameworks for proactive, strategically reactive, and layered crisis responses.",
+        title: "From tragedy to trust: Maple Leaf Foods masterclass",
+        note: "Bringing everything together: mindset, emotion, safety, coherence, and layered storytelling.",
       },
       {
         month: 8,
-        title: "Navigating the modern noise: AI, disinformation, misinformation & deepfakes",
-        note: "Own truth in an age of manufactured doubt \u2014 monitor, verify and respond to AI-generated content and coordinated disinformation.",
+        title: "Timelines of response & owning your narrative",
+        note: "The difference between owning your narrative and losing control of it.",
       },
       {
         month: 9,
-        title: "Building your crisis response program",
-        note: "From insight to infrastructure \u2014 scenario playbooks, activation criteria, roles, workflows and a template library.",
+        title: "Crisis as a Leadership Mirror",
+        note: "Use crisis moments to reflect, recalibrate, and rise into a more integrated leadership presence.",
       },
       {
         month: 10,
-        title: "Moving through resistance: the five Crisis Ready\u00AE hindrances",
-        note: "Recognise and neutralise the five forces that derail capable teams in a crisis.",
+        title: "Owning accountability without fuelling liability",
+        note: "The art of the public apology: high-integrity communication that honours stakeholders and strengthens trust.",
       },
       {
         month: 11,
@@ -230,8 +230,8 @@ export const crisisMasterclassContent: CourseContent = {
       },
       {
         month: 12,
-        title: "Capstone tabletop simulation",
-        note: "Practice. Pressure-test. Embody. A facilitated, real-time drill applying every framework from the year.",
+        title: "Becoming the Crisis Ready\u00AE Communicator",
+        note: "Step into your role as a calm, credible voice in the noise of uncertainty.",
       },
     ],
   },
