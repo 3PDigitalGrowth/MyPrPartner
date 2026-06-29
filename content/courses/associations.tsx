@@ -564,7 +564,6 @@ export const associationsContent: CourseContent = {
       },
       { label: "Strategy planning consultation", tiers: ["support", "partner"] },
       { label: "Access to special PR consultancy rates", tiers: ["support", "partner"] },
-      { label: "On-call PR assistance (6 hours)", tiers: ["support"] },
       {
         label: "Personal, ongoing phone, email & Zoom PR support (20 hours)",
         tiers: ["partner"],
