@@ -793,7 +793,7 @@ const associations = {
   heroEyebrow: "For Australian industry, trade & professional associations",
   title: "My PR Partner Industry & Professional Associations Program",
   tagline:
-    "The only Australian 12-month online public relations program built for busy business and NFP managers, owners and teams",
+    "Position your association as the trusted voice and advocate for your industry",
   intro:
     "A 12-month online PR training program built exclusively for Australian industry and professional associations. CEOs, executive leaders, spokespeople, and communications, membership and marketing staff learn together, to maximise your impact.",
   outcomes: [
