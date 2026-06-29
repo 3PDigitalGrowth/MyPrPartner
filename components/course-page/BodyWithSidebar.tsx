@@ -16,10 +16,18 @@ export default function BodyWithSidebar({ content }: { content: CourseContent })
   const hasPlanComparison =
     !!content.planComparison && !!content.sidebar.tiers && content.sidebar.tiers.length > 0;
 
+  // The sticky sidebar spans all rows of the left column via `lg:row-span-full`
+  // (grid-row: 1 / -1). For `-1` to reach the final row, the grid needs
+  // EXPLICIT rows — otherwise it collapses to row 1 and the card scrolls off
+  // about halfway down. Left column rows: main block, CareerValue, [PlanComparison], FAQ.
+  const gridRowsClass = hasPlanComparison
+    ? "lg:[grid-template-rows:repeat(4,auto)]"
+    : "lg:[grid-template-rows:repeat(3,auto)]";
+
   return (
     <section className="bg-white py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className={`grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12 ${gridRowsClass}`}>
           <div className={MAIN_COL_CLASS}>
             <Overview content={content.overview} />
             <WhatYoullLearn content={content.whatYoullLearn} />
