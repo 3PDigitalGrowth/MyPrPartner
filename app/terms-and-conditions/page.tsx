@@ -8,6 +8,16 @@ export const metadata: Metadata = {
   description:
     "The terms and conditions covering subscriptions, automatic renewal, event registration, products and services from My PR Partner and CRC Public Relations.",
   alternates: { canonical: "https://myprpartner.com/terms-and-conditions" },
+  openGraph: {
+    title: "Terms and Conditions - My PR Partner",
+    description:
+      "Terms covering subscriptions, automatic renewal, event registration, products and services from My PR Partner and CRC Public Relations.",
+    url: "https://myprpartner.com/terms-and-conditions",
+    siteName: "My PR Partner",
+    type: "website",
+    locale: "en_AU",
+  },
+  twitter: { card: "summary" },
 };
 
 export default function TermsAndConditionsPage() {

@@ -619,6 +619,11 @@ export default function Home() {
             description: "Australia\u2019s specialist PR training platform. Expert-led programs for schools, associations, and communications professionals.",
             parentOrganization: { "@type": "Organization", name: "CRC Public Relations", url: "https://crcpr.com.au" },
             contactPoint: { "@type": "ContactPoint", contactType: "customer service", url: "https://myprpartner.com/contact" },
+            sameAs: [
+              "https://www.linkedin.com/company/my-prpartner/",
+              "https://www.facebook.com/profile.php?id=100093729961913",
+              "https://www.instagram.com/myprpartner/",
+            ],
           }),
         }}
       />
