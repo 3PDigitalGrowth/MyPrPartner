@@ -652,16 +652,55 @@ const business = {
       "Monthly interactive Q&A on your specific business or NFP circumstances",
     ],
   },
-  waitlist: {
-    heading: "Be one of the first 50 businesses and organisations on the waitlist",
+  // Plan comparison mirrors the site's business plan comparison (Train,
+  // Support and Partner levels), replacing the waitlist box on page 5 in line
+  // with the associations outline.
+  plans: {
+    heading: "Choose the level of support that fits your business or organisation",
     intro:
-      "Enrolments open soon. Founding-member businesses and NFPs save 10% on year one and get first access before public release. Lock in your place today.",
-    pill: "First 50 save 10%",
-    benefits: [
-      "10% founding-member discount on year one",
-      "First access to enrolment before public release",
-      "Full program outline",
+      "Every level includes the full 12-month training program. Support and Partner add hands-on PR assistance and support from the CRC Public Relations team.",
+    tiers: [
+      {
+        name: "Train Level", desc: "Team training and resources", price: "$440",
+        priceNote: "per month · ex GST",
+        baseHeading: "You will receive:",
+        base: [
+          "Monthly training video + workbook",
+          "Monthly practical team resource",
+          "Spotlight emails",
+          "Interactive Q&A",
+          "Bonus training and resources",
+        ],
+      },
+      {
+        name: "Support Level", desc: "Training plus on-call PR assistance", price: "$840", featured: true,
+        priceNote: "per month · ex GST",
+        base: [],
+        plusHeading: "Train Level PLUS:",
+        plus: [
+          "The essential reputation checklist for business (special option for NFP)",
+          "Issues & crisis communications planning 'templates and tips' for business and NFP",
+          "Strategy planning consultation",
+          "Access to special PR consultancy rates",
+          "On-call PR or issues & crisis management assistance (6 hours)",
+        ],
+      },
+      {
+        name: "Partner Level", desc: "Full PR partnership with media training", price: "$1,340",
+        priceNote: "per month · ex GST",
+        base: [],
+        plusHeading: "Train Level PLUS:",
+        plus: [
+          "The essential reputation checklist for business (special option for NFP)",
+          "Issues & crisis communications planning 'templates and tips' for business and NFP",
+          "Strategy planning consultation",
+          "Access to special PR consultancy rates",
+          { text: "Personal, ongoing phone, email & Zoom PR support (20 hours)", hl: true },
+          { text: "Comprehensive, personalised online half-day media training", hl: true },
+        ],
+      },
     ],
+    footnote: "Pricing released to the waitlist first · First 50 save 10%",
   },
   cta: {
     heading: "Join the waitlist",
