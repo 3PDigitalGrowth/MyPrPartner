@@ -29,8 +29,18 @@ export default function InvoiceRequestModal({
   const [status, setStatus] = useState<"idle" | "submitting" | "done" | "error">("idle");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [country, setCountry] = useState("Australia");
+  const [address1, setAddress1] = useState("");
+  const [address2, setAddress2] = useState("");
+  const [city, setCity] = useState("");
+  const [postcode, setPostcode] = useState("");
+  const [state, setState] = useState("");
   const [organisation, setOrganisation] = useState("");
+  const [organisationSize, setOrganisationSize] = useState("");
   const [abn, setAbn] = useState("");
+  const [industry, setIndustry] = useState("");
+  const [position, setPosition] = useState("");
   const [message, setMessage] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
   const [mounted, setMounted] = useState(false);
@@ -48,7 +58,7 @@ export default function InvoiceRequestModal({
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const focusTimer = window.setTimeout(() => {
-      cardRef.current?.querySelector<HTMLInputElement>("#invoice-name")?.focus();
+      cardRef.current?.querySelector<HTMLInputElement>("#invoice-email")?.focus();
     }, 60);
     return () => {
       document.removeEventListener("keydown", onKey);
@@ -69,8 +79,18 @@ export default function InvoiceRequestModal({
           formType: "invoice",
           name,
           email,
+          phone,
+          country,
+          address1,
+          address2,
+          city,
+          postcode,
+          state,
           organisation,
+          organisationSize,
           abn,
+          industry,
+          position,
           message,
           topic: tierLabel ? `${program} - ${tierLabel}` : program,
           source: `${slug}-invoice`,
@@ -104,7 +124,7 @@ export default function InvoiceRequestModal({
 
       <div
         ref={cardRef}
-        className="relative z-10 max-h-[92vh] w-full overflow-y-auto rounded-t-2xl bg-white shadow-2xl sm:max-w-md sm:rounded-2xl"
+        className="relative z-10 max-h-[92vh] w-full overflow-y-auto rounded-t-2xl bg-white shadow-2xl sm:max-w-lg sm:rounded-2xl"
       >
         <button
           type="button"
@@ -172,27 +192,19 @@ export default function InvoiceRequestModal({
               up? Send us your details and we&apos;ll be in touch within 24 hours.
             </p>
 
+            {/* Field set and grouping mirror the Kajabi checkout: Contact
+                (email, name, address, phone) then Additional information
+                (organisation, size, ABN, industry, position). */}
             <div className="mt-5 space-y-4">
+              <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-text-medium">
+                Contact
+              </p>
               <label className="block">
                 <span className="text-[13px] font-medium text-text-dark">
-                  Name <span className="text-teal">*</span>
+                  Email <span className="text-teal">*</span>
                 </span>
                 <input
-                  id="invoice-name"
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                  autoComplete="name"
-                  placeholder="Your name"
-                  className={inputClass}
-                />
-              </label>
-              <label className="block">
-                <span className="text-[13px] font-medium text-text-dark">
-                  Work email <span className="text-teal">*</span>
-                </span>
-                <input
+                  id="invoice-email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -202,6 +214,116 @@ export default function InvoiceRequestModal({
                   className={inputClass}
                 />
               </label>
+              <label className="block">
+                <span className="text-[13px] font-medium text-text-dark">
+                  First and last name <span className="text-teal">*</span>
+                </span>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                  autoComplete="name"
+                  placeholder="Full name"
+                  className={inputClass}
+                />
+              </label>
+              <label className="block">
+                <span className="text-[13px] font-medium text-text-dark">
+                  Country <span className="text-teal">*</span>
+                </span>
+                <input
+                  type="text"
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
+                  required
+                  autoComplete="country-name"
+                  className={inputClass}
+                />
+              </label>
+              <label className="block">
+                <span className="text-[13px] font-medium text-text-dark">
+                  Address <span className="text-teal">*</span>
+                </span>
+                <input
+                  type="text"
+                  value={address1}
+                  onChange={(e) => setAddress1(e.target.value)}
+                  required
+                  autoComplete="address-line1"
+                  placeholder="Street address"
+                  className={inputClass}
+                />
+              </label>
+              <label className="block">
+                <span className="text-[13px] font-medium text-text-dark">Apt, suite</span>
+                <input
+                  type="text"
+                  value={address2}
+                  onChange={(e) => setAddress2(e.target.value)}
+                  autoComplete="address-line2"
+                  placeholder="Optional"
+                  className={inputClass}
+                />
+              </label>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <label className="block">
+                  <span className="text-[13px] font-medium text-text-dark">
+                    City <span className="text-teal">*</span>
+                  </span>
+                  <input
+                    type="text"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                    required
+                    autoComplete="address-level2"
+                    className={inputClass}
+                  />
+                </label>
+                <label className="block">
+                  <span className="text-[13px] font-medium text-text-dark">
+                    Postcode <span className="text-teal">*</span>
+                  </span>
+                  <input
+                    type="text"
+                    value={postcode}
+                    onChange={(e) => setPostcode(e.target.value)}
+                    required
+                    autoComplete="postal-code"
+                    className={inputClass}
+                  />
+                </label>
+              </div>
+              <label className="block">
+                <span className="text-[13px] font-medium text-text-dark">
+                  State/Province/Region <span className="text-teal">*</span>
+                </span>
+                <input
+                  type="text"
+                  value={state}
+                  onChange={(e) => setState(e.target.value)}
+                  required
+                  autoComplete="address-level1"
+                  className={inputClass}
+                />
+              </label>
+              <label className="block">
+                <span className="text-[13px] font-medium text-text-dark">
+                  Phone number <span className="text-teal">*</span>
+                </span>
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                  autoComplete="tel"
+                  className={inputClass}
+                />
+              </label>
+
+              <p className="pt-2 text-[12px] font-semibold uppercase tracking-[0.12em] text-text-medium">
+                Additional information
+              </p>
               <label className="block">
                 <span className="text-[13px] font-medium text-text-dark">
                   Organisation <span className="text-teal">*</span>
@@ -217,6 +339,23 @@ export default function InvoiceRequestModal({
                 />
               </label>
               <label className="block">
+                <span className="text-[13px] font-medium text-text-dark">
+                  Company / organisation size
+                </span>
+                <select
+                  value={organisationSize}
+                  onChange={(e) => setOrganisationSize(e.target.value)}
+                  className={`${inputClass} ${organisationSize ? "" : "text-gray-400"}`}
+                >
+                  <option value="">Select...</option>
+                  <option value="Just me">Just me</option>
+                  <option value="2-10 people">2-10 people</option>
+                  <option value="11-50 people">11-50 people</option>
+                  <option value="51-200 people">51-200 people</option>
+                  <option value="200+ people">200+ people</option>
+                </select>
+              </label>
+              <label className="block">
                 <span className="text-[13px] font-medium text-text-dark">ABN</span>
                 <input
                   type="text"
@@ -227,6 +366,27 @@ export default function InvoiceRequestModal({
                   className={inputClass}
                 />
               </label>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <label className="block">
+                  <span className="text-[13px] font-medium text-text-dark">Industry</span>
+                  <input
+                    type="text"
+                    value={industry}
+                    onChange={(e) => setIndustry(e.target.value)}
+                    className={inputClass}
+                  />
+                </label>
+                <label className="block">
+                  <span className="text-[13px] font-medium text-text-dark">Position</span>
+                  <input
+                    type="text"
+                    value={position}
+                    onChange={(e) => setPosition(e.target.value)}
+                    autoComplete="organization-title"
+                    className={inputClass}
+                  />
+                </label>
+              </div>
               <label className="block">
                 <span className="text-[13px] font-medium text-text-dark">
                   Anything you&apos;d like us to know?

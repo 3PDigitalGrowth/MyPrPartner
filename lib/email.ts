@@ -22,6 +22,19 @@ export type FormSubmission = {
   /** Australian Business Number, captured on invoice requests. */
   abn?: string;
   phone?: string;
+  /** Billing address fields, captured on invoice requests (mirrors the Kajabi checkout). */
+  address1?: string;
+  /** Apt, suite, unit etc. */
+  address2?: string;
+  city?: string;
+  state?: string;
+  postcode?: string;
+  country?: string;
+  /** Company / organisation size band, e.g. "11-50 people". */
+  organisationSize?: string;
+  industry?: string;
+  /** The submitter's role/position at the organisation. */
+  position?: string;
   topic?: string;
   message?: string;
   /** e.g. "Trusted Public Voice guide", "Crisis Vulnerability Checklist" */
@@ -376,13 +389,22 @@ export function adminNotificationEmail(sub: FormSubmission): {
             ? `[myprpartner.com] Invoice request · ${sub.name || sub.email}${sub.topic ? ` · ${sub.topic}` : ""}`
             : `[myprpartner.com] Newsletter signup · ${sub.email}${fromWhere ? ` · ${fromWhere}` : ""}`;
 
+  // One-line billing address for the details table (invoice requests).
+  const address = [sub.address1, sub.address2, sub.city, sub.state, sub.postcode, sub.country]
+    .filter(Boolean)
+    .join(", ");
+
   const rows: Array<[string, string | undefined]> = [
     ["Type", typeLabel],
     ["Name", sub.name],
     ["Email", sub.email],
-    ["Organisation", sub.organisation],
-    ["ABN", sub.abn],
     ["Phone", sub.phone],
+    ["Address", address || undefined],
+    ["Organisation", sub.organisation],
+    ["Organisation size", sub.organisationSize],
+    ["ABN", sub.abn],
+    ["Industry", sub.industry],
+    ["Position", sub.position],
     [sub.formType === "invoice" ? "Plan" : "Topic", sub.topic],
     ["Resource", sub.resourceLabel],
     ["Page", sub.pageName],
