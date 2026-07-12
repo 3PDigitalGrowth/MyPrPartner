@@ -19,8 +19,6 @@ export type FormSubmission = {
   /** First name (resource forms) or full name (contact form). */
   name?: string;
   organisation?: string;
-  /** Australian Business Number, captured on invoice requests. */
-  abn?: string;
   phone?: string;
   /** Billing address fields, captured on invoice requests (mirrors the Kajabi checkout). */
   address1?: string;
@@ -402,7 +400,6 @@ export function adminNotificationEmail(sub: FormSubmission): {
     ["Address", address || undefined],
     ["Organisation", sub.organisation],
     ["Organisation size", sub.organisationSize],
-    ["ABN", sub.abn],
     ["Industry", sub.industry],
     ["Position", sub.position],
     [sub.formType === "invoice" ? "Plan" : "Topic", sub.topic],

@@ -125,7 +125,6 @@ export async function POST(request: Request) {
     email,
     name: clip(body.name, 200),
     organisation,
-    abn: clip(body.abn, 60),
     phone: clip(body.phone, 60),
     address1: clip(body.address1, 200),
     address2: clip(body.address2, 200),

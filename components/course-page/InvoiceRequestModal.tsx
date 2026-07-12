@@ -38,7 +38,6 @@ export default function InvoiceRequestModal({
   const [state, setState] = useState("");
   const [organisation, setOrganisation] = useState("");
   const [organisationSize, setOrganisationSize] = useState("");
-  const [abn, setAbn] = useState("");
   const [industry, setIndustry] = useState("");
   const [position, setPosition] = useState("");
   const [message, setMessage] = useState("");
@@ -88,7 +87,6 @@ export default function InvoiceRequestModal({
           state,
           organisation,
           organisationSize,
-          abn,
           industry,
           position,
           message,
@@ -194,7 +192,8 @@ export default function InvoiceRequestModal({
 
             {/* Field set and grouping mirror the Kajabi checkout: Contact
                 (email, name, address, phone) then Additional information
-                (organisation, size, ABN, industry, position). */}
+                (organisation, size, industry, position). ABN removed at the
+                client's request; buyers can reply with it for the invoice. */}
             <div className="mt-5 space-y-4">
               <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-text-medium">
                 Contact
@@ -354,17 +353,6 @@ export default function InvoiceRequestModal({
                   <option value="51-200 people">51-200 people</option>
                   <option value="200+ people">200+ people</option>
                 </select>
-              </label>
-              <label className="block">
-                <span className="text-[13px] font-medium text-text-dark">ABN</span>
-                <input
-                  type="text"
-                  value={abn}
-                  onChange={(e) => setAbn(e.target.value)}
-                  inputMode="numeric"
-                  placeholder="For the tax invoice"
-                  className={inputClass}
-                />
               </label>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <label className="block">
