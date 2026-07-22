@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Evidence Behind Emotion-Led Crisis Management — My PR Partner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    @page { size: A4; margin: 0; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Approved palette (matches pr-guide / crisis-checklist) ── */
+    :root {
+      --cream:  #faf9f4;
+      --navy:   #14233a;
+      --body:   #3a4658;
+      --muted:  #5e5c56;
+      --gold:   #946f3a;
+      --gold2:  #b0894f;
+      --band:   #8fa0b8;
+      --rule:   #ddd9cf;
+    }
+
+    html, body {
+      width: 210mm;
+      background: var(--cream);
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 8.2pt;
+      color: var(--navy);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      display: flex;
+      flex-direction: column;
+      background: var(--cream);
+      overflow: hidden;
+      page-break-after: always;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    /* ── Header ── */
+    .header {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11mm 15mm 0 15mm;
+    }
+    .header .logo { height: 13mm; width: auto; }
+    .header .header-eyebrow {
+      font-size: 6.8pt;
+      letter-spacing: 0.28em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .header-rule {
+      flex-shrink: 0;
+      height: 0.6pt;
+      background: var(--navy);
+      margin: 4.5mm 15mm 0 15mm;
+    }
+
+    /* ── Content ── */
+    .content {
+      flex: 1 1 auto;
+      padding: 6mm 17mm 0 15mm;
+      overflow: hidden;
+    }
+
+    .eyebrow {
+      font-size: 8pt;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 22pt;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--navy);
+      margin-top: 2.5mm;
+    }
+
+    .subtitle {
+      font-size: 10.5pt;
+      color: var(--body);
+      margin-top: 2.5mm;
+    }
+    .subtitle strong { color: var(--navy); font-weight: 500; }
+
+    h2 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 13pt;
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 5mm;
+      margin-bottom: 1.8mm;
+    }
+    h2:first-child { margin-top: 0; }
+
+    .prose p {
+      font-size: 8.7pt;
+      color: var(--body);
+      line-height: 1.55;
+      margin-top: 2mm;
+    }
+    .prose p:first-of-type { margin-top: 0; }
+    .prose strong { color: var(--navy); font-weight: 700; }
+
+    /* ── Pull-stat row ── */
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 6mm;
+      margin: 5mm 0 1mm 0;
+      padding: 4mm 0;
+      border-top: 0.6pt solid var(--rule);
+      border-bottom: 0.6pt solid var(--rule);
+    }
+    .stat-number {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 17pt;
+      font-weight: 700;
+      color: var(--gold2);
+      line-height: 1.1;
+    }
+    .stat-label {
+      font-size: 7.2pt;
+      color: var(--muted);
+      line-height: 1.4;
+      margin-top: 1.2mm;
+    }
+
+    /* ── References ── */
+    .refs { margin-top: 2.5mm; }
+    .refs p {
+      font-size: 6.9pt;
+      color: var(--muted);
+      line-height: 1.45;
+      margin-top: 1.4mm;
+      padding-left: 4mm;
+      text-indent: -4mm;
+    }
+    .refs-note {
+      font-size: 6.9pt;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 2.5mm;
+    }
+
+    /* ── CTA band ── */
+    .cta-band {
+      flex-shrink: 0;
+      position: relative;
+      background-color: var(--navy);
+      height: 24mm;
+      margin: 0 15mm;
+      padding: 0 9mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+    .cta-band::after {
+      content: "";
+      position: absolute;
+      top: -30mm;
+      right: -34mm;
+      width: 80mm;
+      height: 80mm;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.16);
+    }
+    .cta-left, .cta-right { position: relative; z-index: 1; }
+    .cta-eyebrow {
+      font-size: 6.8pt;
+      letter-spacing: 0.26em;
+      color: var(--gold2);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .cta-tagline {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 13pt;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 1.8mm;
+    }
+    .cta-powered {
+      font-size: 6.6pt;
+      letter-spacing: 0.22em;
+      color: var(--band);
+      text-transform: uppercase;
+      margin-top: 2.2mm;
+    }
+    .cta-right { text-align: right; }
+    .talk-label {
+      font-size: 6.8pt;
+      letter-spacing: 0.26em;
+      color: var(--band);
+      text-transform: uppercase;
+    }
+    .talk-number {
+      font-size: 11pt;
+      color: #ffffff;
+      font-weight: 700;
+      margin-top: 1.5mm;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      flex-shrink: 0;
+      margin: 5mm 15mm 6mm 15mm;
+      padding-top: 3.5mm;
+      border-top: 0.6pt solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-name {
+      font-size: 7pt;
+      letter-spacing: 0.22em;
+      color: var(--navy);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .footer-contact {
+      font-size: 7pt;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+    .footer-contact a { color: var(--muted); }
+    .footer-page {
+      font-size: 7pt;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ PAGE 1 ═══════════ -->
+  <div class="page">
+    <div class="header">
+      <img class="logo" src="../../public/my-pr-partner-logo-horz.png" alt="My PR Partner" />
+      <span class="header-eyebrow">Research Briefing</span>
+    </div>
+    <div class="header-rule"></div>
+
+    <div class="content">
+      <p class="eyebrow">Crisis Communications Research</p>
+      <h1>The evidence behind <span style="color: var(--gold);">emotion-led</span> crisis management</h1>
+      <p class="subtitle">What peer-reviewed research says about emotion, empathy and outcomes in crisis communication. From <strong>My PR Partner</strong>, July 2026.</p>
+
+      <div class="stats">
+        <div>
+          <p class="stat-number">80%</p>
+          <p class="stat-label">Jacinda Ardern's approval rating during the early pandemic, against a G7 leader average of 48%, in the most-studied case of empathetic crisis leadership.</p>
+        </div>
+        <div>
+          <p class="stat-number">3 months</p>
+          <p class="stat-label">How long negative stock market effects persisted after CEOs displayed inappropriate emotion in public apologies (ten Brinke &amp; Adams, 2015).</p>
+        </div>
+        <div>
+          <p class="stat-number">r = .23</p>
+          <p class="stat-label">The small effect the traditional strategy-matching playbook has on reputation, by its own field's meta-analysis (Ma &amp; Zhan, 2016).</p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h2>The question</h2>
+        <p>Crisis communication has a well-established rulebook. Frameworks such as Situational Crisis Communication Theory (SCCT) train practitioners to assess responsibility, select a matching response strategy and protect the organisation's reputation. What that rulebook has historically said far less about is emotion: what the people affected by a crisis are feeling, and what the organisation itself expresses when it responds. A fair question for any communications leader is whether an emotional dimension actually produces better outcomes, or whether it is simply a softer style of delivery.</p>
+        <p>Over the past decade, a body of peer-reviewed research, most of it controlled experiments published in leading public relations and management journals, has answered that question directly. The short version: <strong>emotion is not a soft add-on to crisis management.</strong> It is a measurable driver of reputation, forgiveness, purchase intention and, in at least one landmark study, share price.</p>
+
+        <h2>What controlled experiments show</h2>
+        <p>The foundational study is van der Meer and Verhoeven (2014) in <em>Public Relations Review</em>. Using a vignette experiment simulating an organisational crisis, the researchers found that beyond the choice of response strategy, the emotions the organisation communicated (shame and regret) had a positive effect on corporate reputation. Emotional signals reduced public anger and increased acceptance of the organisation's message.</p>
+        <p>Empathy has since emerged as the central mechanism. Across three experiments, Schoofs, Claeys, De Waele and Cauberghe (2019) showed that stakeholders' empathy towards an organisation provides a second explanation for reputational outcomes, alongside the responsibility judgements that earlier research had treated as the whole story. The traditional model, in other words, was incomplete: how much the public blames an organisation matters, and so does whether they feel with it.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="footer-name">My PR Partner</span>
+      <span class="footer-contact"><a href="https://www.myprpartner.com">myprpartner.com</a> &middot; <a href="mailto:info@myprpartner.com">info@myprpartner.com</a> &middot; 1300 182 186</span>
+      <span class="footer-page">1 / 3</span>
+    </div>
+  </div>
+
+  <!-- ═══════════ PAGE 2 ═══════════ -->
+  <div class="page">
+    <div class="header">
+      <img class="logo" src="../../public/my-pr-partner-logo-horz.png" alt="My PR Partner" />
+      <span class="header-eyebrow">The Evidence Behind Emotion-Led Crisis Management</span>
+    </div>
+    <div class="header-rule"></div>
+
+    <div class="content">
+      <div class="prose">
+        <p>Later experiments measured the effect of specific communicated emotions on hard organisational outcomes. Schoofs and Claeys (2021), in the <em>Journal of Business Research</em>, found that a chief executive verbally expressing sadness increased public empathy towards the CEO, which in turn improved the organisation's reputation, and that in the post-crisis stage both verbal and facial expressions of sadness improved reputation. Ndone, Warner and Duffy (2022) ran a 922-participant experiment and found that expressed guilt outperformed expressed anger regardless of the response strategy chosen, and that rebuilding strategies outperformed denial. Ndone and Park (2022) demonstrated with 648 participants that both cognitive and affective empathy mediate the relationship between crisis type, reputation and forgiveness, and that publics feel more empathy towards organisations that use rebuilding strategies than towards those that deny. Most recently, Ndone (2025) showed across 686 participants that publics' empathy amplifies or diminishes the effectiveness of crisis response strategies on reputation, forgiveness and purchase intention.</p>
+        <p>Two further studies round out the picture. Kim and Cameron (2011), in <em>Communication Research</em>, demonstrated that the emotional framing of crisis news changes how publics process information and evaluate the company, and that the advantage of emotional appeals in corporate responses depends on how the crisis has been framed by the media. Xiao, Hudders, Claeys and Cauberghe (2018) extended the outcomes studied beyond reputation, examining how emotions expressed in crisis responses shape consumers' negative word-of-mouth intentions.</p>
+
+        <h2>The financial evidence</h2>
+        <p>The strongest commercial proof point comes from ten Brinke and Adams (2015) in <em>Organizational Behavior and Human Decision Processes</em>. Analysing real corporate apology videos alongside archival stock market data, they found that displays of inappropriate emotion (happiness) during public apologies were associated with negative stock market returns, with adverse financial effects persisting up to three months after the apology. Displays of sadness had a protective effect on returns, and the effects were stronger when the apology was delivered by a higher-status representative. Their follow-up experiment explained the mechanism: observers read a smile during an apology as insincerity, which reduced their confidence in the organisation. <strong>Markets, in short, price emotional congruence.</strong></p>
+
+        <h2>The limits of the traditional playbook</h2>
+        <p>The case for an emotion-led approach is strengthened by what the traditional framework's own evidence base shows. Ma and Zhan (2016) conducted the meta-analysis of SCCT research in the <em>Journal of Public Relations Research</em> and found that the effectiveness of crisis response strategies in protecting reputation is in fact rather limited: the strategy-matching construct at the heart of the model had only a small effect (r = .23), while attributions of responsibility carried far more weight. The dominant playbook, by its own meta-analysis, explains less than most practitioners assume.</p>
+        <p>Notably, even the architects of SCCT found early evidence pointing towards emotion. Coombs and Holladay (2008) reported that both apology and expressed sympathy produced higher post-crisis reputation than information alone, and concluded that in certain circumstances a statement of sympathy accompanied by information could substitute for a formal apology. Expressed compassion, in their own data, performed on par with the field's supposed gold-standard response.</p>
+
+        <h2>Crisis leadership in practice: the New Zealand case</h2>
+        <p>The most studied real-world demonstration of emotion-led crisis leadership is Jacinda Ardern's handling of the Covid-19 pandemic. McGuire, Cunningham, Reynolds and Matthews-Smith (2020), in <em>Human Resource Development International</em>, analysed 40 of Ardern's speeches and public statements from March and April 2020 and concluded that an effective pandemic response required not only planning and coordination but the ability to communicate clear, consistent messages in an empathetic manner, in a period when New Zealand recorded a far lower transmission rate than most industrialised nations.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="footer-name">My PR Partner</span>
+      <span class="footer-contact"><a href="https://www.myprpartner.com">myprpartner.com</a> &middot; <a href="mailto:info@myprpartner.com">info@myprpartner.com</a> &middot; 1300 182 186</span>
+      <span class="footer-page">2 / 3</span>
+    </div>
+  </div>
+
+  <!-- ═══════════ PAGE 3 ═══════════ -->
+  <div class="page">
+    <div class="header">
+      <img class="logo" src="../../public/my-pr-partner-logo-horz.png" alt="My PR Partner" />
+      <span class="header-eyebrow">The Evidence Behind Emotion-Led Crisis Management</span>
+    </div>
+    <div class="header-rule"></div>
+
+    <div class="content">
+      <div class="prose">
+        <p>Voina and Stoica (2023), in <em>Media and Communication</em>, analysed Ardern's crisis communication as an ethics of care built on empathy and responsiveness, noting that her approval rating exceeded 80 per cent during the initial stages of the pandemic against a G7 leader average of 48 per cent. Simpson, Rego, Berti, Clegg and Cunha (2022), in <em>Leadership</em>, theorised her compassionate leadership, widely described as "kind and strong", as a means of building legitimacy and resources in an upward spiral, challenging the assumption that compassion and effectiveness trade off against each other.</p>
+
+        <h2>Reading the evidence honestly</h2>
+        <p>Three qualifications matter. First, most of the direct evidence comes from controlled scenario experiments. These are strong on causation but should be generalised to live crises with care; the stock market findings of ten Brinke and Adams (2015) and the New Zealand case studies help offset this by grounding the pattern in real-world outcomes.</p>
+        <p>Second, the effects are conditional rather than blanket. Which emotion is expressed, at which stage of the crisis, and how sincerely, all change the result: sadness built empathy but reduced perceived competence in the acute stage, guilt outperformed anger, and insincere smiles were punished by investors. Emotion-led crisis practice is therefore a discipline of matching emotional expression to the moment, not simply an instruction to be more emotional.</p>
+        <p>Third, this remains a young literature. What it firmly establishes is that emotion-centred, empathetic crisis communication drives reputational, behavioural and financial outcomes that purely rational frameworks are incomplete without it. That is the evidence base on which emotionally intelligent crisis leadership now stands.</p>
+
+        <h2>References</h2>
+      </div>
+      <div class="refs">
+        <p>Coombs, W. T., &amp; Holladay, S. J. (2008). Comparing apology to equivalent crisis response strategies: Clarifying apology's role and value in crisis communication. <em>Public Relations Review, 34</em>(3), 252-257.</p>
+        <p>Kim, H. J., &amp; Cameron, G. T. (2011). Emotions matter in crisis: The role of anger and sadness in the publics' response to crisis news framing and corporate crisis response. <em>Communication Research, 38</em>(6), 826-855.</p>
+        <p>Ma, L., &amp; Zhan, M. (2016). Effects of attributed responsibility and response strategies on organizational reputation: A meta-analysis of situational crisis communication theory research. <em>Journal of Public Relations Research, 28</em>(2), 102-119.</p>
+        <p>McGuire, D., Cunningham, J. E. A., Reynolds, K., &amp; Matthews-Smith, G. (2020). Beating the virus: An examination of the crisis communication approach taken by New Zealand Prime Minister Jacinda Ardern during the Covid-19 pandemic. <em>Human Resource Development International, 23</em>(4).</p>
+        <p>Ndone, J. (2025). We feel, we understand: Examining the moderating effects of publics' empathy on crisis outcomes across crisis types and response strategies. <em>Journal of Contingencies and Crisis Management, 33</em>.</p>
+        <p>Ndone, J., &amp; Park, J. (2022). Crisis communication: The mediating role of cognitive and affective empathy in the relationship between crisis type and crisis response strategy on post-crisis reputation and forgiveness. <em>Public Relations Review, 48</em>(1), 102136.</p>
+        <p>Ndone, J., Warner, B., &amp; Duffy, M. E. (2022). Emotional crisis communication: The effects of CEO's expression of guilt and anger on organizational reputation. <em>International Journal of Strategic Communication, 16</em>(5).</p>
+        <p>Schoofs, L., &amp; Claeys, A.-S. (2021). Communicating sadness: The impact of emotional crisis communication on the organizational post-crisis reputation. <em>Journal of Business Research, 130</em>, 271-282.</p>
+        <p>Schoofs, L., Claeys, A.-S., De Waele, A., &amp; Cauberghe, V. (2019). The role of empathy in crisis communication: Providing a deeper understanding of how organizational crises and crisis communication affect reputation. <em>Public Relations Review, 45</em>(5), 101851.</p>
+        <p>Simpson, A. V., Rego, A., Berti, M., Clegg, S., &amp; Cunha, M. P. (2022). Theorizing compassionate leadership from the case of Jacinda Ardern: Legitimacy, paradox and resource conservation. <em>Leadership</em>.</p>
+        <p>ten Brinke, L., &amp; Adams, G. S. (2015). Saving face? When emotion displays during public apologies mitigate damage to organizational performance. <em>Organizational Behavior and Human Decision Processes, 130</em>, 1-12.</p>
+        <p>van der Meer, T. G. L. A., &amp; Verhoeven, J. W. M. (2014). Emotional crisis communication. <em>Public Relations Review, 40</em>(3), 526-536.</p>
+        <p>Voina, A., &amp; Stoica, M. (2023). Reframing leadership: Jacinda Ardern's response to the Covid-19 pandemic. <em>Media and Communication, 11</em>(1).</p>
+        <p>Xiao, Y., Hudders, L., Claeys, A.-S., &amp; Cauberghe, V. (2018). The impact of expressing mixed-valence emotions in organizational crisis communication on consumer's negative word-of-mouth intention. <em>Public Relations Review, 44</em>(5), 794-806.</p>
+      </div>
+      <p class="refs-note">All sources are peer-reviewed journal articles. Journal article titles retain their original spelling.</p>
+    </div>
+
+    <div class="cta-band">
+      <div class="cta-left">
+        <p class="cta-eyebrow">Put the evidence into practice</p>
+        <p class="cta-tagline">The Crisis Masterclass, with Melissa Agnes.</p>
+        <p class="cta-powered">myprpartner.com/crisis-masterclass &middot; Powered by CRC Public Relations</p>
+      </div>
+      <div class="cta-right">
+        <p class="talk-label">Talk to us</p>
+        <p class="talk-number">1300 182 186</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="footer-name">My PR Partner</span>
+      <span class="footer-contact"><a href="https://www.myprpartner.com">myprpartner.com</a> &middot; <a href="mailto:info@myprpartner.com">info@myprpartner.com</a> &middot; 1300 182 186</span>
+      <span class="footer-page">3 / 3</span>
+    </div>
+  </div>
+
+</body>
+</html>

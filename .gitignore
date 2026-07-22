@@ -41,3 +41,6 @@ next-env.d.ts
 # outline generator temp render files
 /scripts/.tmp/
 .gstack/
+
+# EDM campaign working folder: purchased contact lists (PII) + course transcripts. Never commit.
+/crisis_mc_content_library/

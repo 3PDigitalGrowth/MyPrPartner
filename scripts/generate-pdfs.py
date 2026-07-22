@@ -33,6 +33,18 @@ TEMPLATES = {
         "template": "pr-guide.html",
         "output": "pr-guide.pdf",
     },
+    "evidence-emotion-led-crisis": {
+        "template": "evidence-emotion-led-crisis.html",
+        "output": "evidence-emotion-led-crisis.pdf",
+    },
+    "crisis-first-24-hours": {
+        "template": "crisis-first-24-hours.html",
+        "output": "crisis-first-24-hours.pdf",
+    },
+    "school-deepfake-response": {
+        "template": "school-deepfake-response.html",
+        "output": "school-deepfake-response.pdf",
+    },
 }
 
 

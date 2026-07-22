@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The First 24 Hours — My PR Partner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    @page { size: A4; margin: 0; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Approved palette (matches pr-guide / crisis-checklist) ── */
+    :root {
+      --cream:  #faf9f4;
+      --navy:   #14233a;
+      --body:   #3a4658;
+      --muted:  #5e5c56;
+      --gold:   #946f3a;
+      --gold2:  #b0894f;
+      --band:   #8fa0b8;
+      --rule:   #ddd9cf;
+    }
+
+    html, body {
+      width: 210mm;
+      height: 297mm;
+      overflow: hidden;
+      background: var(--cream);
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 8.2pt;
+      color: var(--navy);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      display: flex;
+      flex-direction: column;
+      background: var(--cream);
+      overflow: hidden;
+    }
+
+    .header {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11mm 15mm 0 15mm;
+    }
+    .header .logo { height: 13mm; width: auto; }
+    .header .header-eyebrow {
+      font-size: 6.8pt;
+      letter-spacing: 0.28em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .header-rule {
+      flex-shrink: 0;
+      height: 0.6pt;
+      background: var(--navy);
+      margin: 4.5mm 15mm 0 15mm;
+    }
+
+    .content {
+      flex: 1 1 auto;
+      padding: 6mm 17mm 0 15mm;
+      overflow: hidden;
+    }
+
+    .eyebrow {
+      font-size: 8pt;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 23pt;
+      font-weight: 700;
+      line-height: 1.08;
+      color: var(--navy);
+      margin-top: 2.5mm;
+    }
+    h1 .hl { color: var(--gold); }
+
+    .subtitle {
+      font-size: 10.5pt;
+      color: var(--body);
+      margin-top: 2.5mm;
+    }
+    .subtitle strong { color: var(--navy); font-weight: 500; }
+
+    .intro {
+      margin-top: 3mm;
+      font-size: 8.7pt;
+      color: var(--body);
+      line-height: 1.5;
+    }
+
+    /* ── Two-column layout ── */
+    .cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 9mm;
+      margin-top: 4.5mm;
+    }
+
+    .section-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 12pt;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2mm;
+    }
+    .section-title .num {
+      font-family: 'Source Serif 4', Georgia, serif;
+      color: var(--gold2);
+      margin-right: 2mm;
+    }
+
+    .block { margin-bottom: 3.2mm; }
+
+    .item { margin-bottom: 2.2mm; }
+    .item-heading {
+      font-size: 8.8pt;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+    .item-heading .time {
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .item-body {
+      margin-top: 0.8mm;
+      font-size: 8pt;
+      color: var(--body);
+      line-height: 1.45;
+    }
+
+    /* ── Formula panel ── */
+    .formula {
+      border: 0.8pt solid var(--rule);
+      background: #ffffff;
+      padding: 4mm 4.5mm;
+      margin-bottom: 4mm;
+    }
+    .formula-step { display: flex; margin-bottom: 2.8mm; }
+    .formula-step:last-child { margin-bottom: 0; }
+    .formula-num {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15pt;
+      font-weight: 700;
+      color: var(--gold2);
+      width: 7mm;
+      flex-shrink: 0;
+      line-height: 1.1;
+    }
+    .formula-body .item-heading { font-size: 9.2pt; }
+    .formula-body .item-body { font-size: 8pt; }
+
+    .rule-line {
+      border-top: 0.6pt solid var(--rule);
+      margin: 3.5mm 0;
+    }
+
+    .dont {
+      font-size: 8pt;
+      color: var(--body);
+      line-height: 1.5;
+    }
+    .dont strong { color: var(--gold); font-weight: 700; }
+
+    /* ── CTA band ── */
+    .cta-band {
+      flex-shrink: 0;
+      position: relative;
+      background-color: var(--navy);
+      height: 24mm;
+      margin: 0 15mm;
+      padding: 0 9mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+    .cta-band::after {
+      content: "";
+      position: absolute;
+      top: -30mm;
+      right: -34mm;
+      width: 80mm;
+      height: 80mm;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.16);
+    }
+    .cta-left, .cta-right { position: relative; z-index: 1; }
+    .cta-eyebrow {
+      font-size: 6.8pt;
+      letter-spacing: 0.26em;
+      color: var(--gold2);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .cta-tagline {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 13pt;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 1.8mm;
+    }
+    .cta-powered {
+      font-size: 6.6pt;
+      letter-spacing: 0.22em;
+      color: var(--band);
+      text-transform: uppercase;
+      margin-top: 2.2mm;
+    }
+    .cta-right { text-align: right; }
+    .talk-label {
+      font-size: 6.8pt;
+      letter-spacing: 0.26em;
+      color: var(--band);
+      text-transform: uppercase;
+    }
+    .talk-number {
+      font-size: 11pt;
+      color: #ffffff;
+      font-weight: 700;
+      margin-top: 1.5mm;
+    }
+
+    .footer {
+      flex-shrink: 0;
+      margin: 5mm 15mm 6mm 15mm;
+      padding-top: 3.5mm;
+      border-top: 0.6pt solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-name {
+      font-size: 7pt;
+      letter-spacing: 0.22em;
+      color: var(--navy);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .footer-contact {
+      font-size: 7pt;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+    .footer-contact a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="header">
+      <img class="logo" src="../../public/my-pr-partner-logo-horz.png" alt="My PR Partner" />
+      <span class="header-eyebrow">The First 24 Hours</span>
+    </div>
+    <div class="header-rule"></div>
+
+    <div class="content">
+
+      <p class="eyebrow">Crisis Communications</p>
+
+      <h1>The first <span class="hl">24 hours</span>: a leader's desk guide</h1>
+
+      <p class="subtitle">From <strong>My PR Partner</strong>. Keep it printed. You will not have time to look for it later.</p>
+
+      <div class="intro">
+        <p>When a crisis becomes public, the outcome is rarely decided by the incident itself. It is decided by the response, and most of the response is decided in the first 24 hours. This guide covers the three moves that matter most: categorise correctly, act in the right order, and communicate in a way people can actually hear.</p>
+      </div>
+
+      <div class="cols">
+
+        <!-- Left column -->
+        <div>
+          <div class="block">
+            <p class="section-title"><span class="num">1</span>First, get the label right: issue or crisis?</p>
+            <div class="item">
+              <p class="item-body">Mislabelling is the fastest way to escalate harm. Treat a crisis as an issue and you respond too little, too late. Treat an issue as a crisis and you inflict the crisis response penalty: unnecessary alarm and squandered trust. Before anything else, ask:</p>
+            </div>
+            <div class="item">
+              <p class="item-heading">Does it threaten operations, safety or viability?</p>
+              <p class="item-body">Could this materially interrupt what the organisation does, put people at risk, or threaten its licence to operate?</p>
+            </div>
+            <div class="item">
+              <p class="item-heading">Are emotions running, or about to run, publicly?</p>
+              <p class="item-body">Is the story spreading beyond the people directly involved? Are stakeholders frightened, angry or organising?</p>
+            </div>
+            <div class="item">
+              <p class="item-heading">Will the response be judged, not just the incident?</p>
+              <p class="item-body">If leadership's handling of the situation is itself likely to become the story, treat it as a crisis.</p>
+            </div>
+            <div class="item">
+              <p class="item-body">Mostly no: manage it as an issue and keep monitoring. Mostly yes: it is a crisis. Move to step two now.</p>
+            </div>
+          </div>
+
+          <div class="block">
+            <p class="section-title"><span class="num">2</span>The first hours, in order</p>
+            <div class="item">
+              <p class="item-heading"><span class="time">Hour 1:</span> Convene and hold the line</p>
+              <p class="item-body">Assemble your response team, agree who speaks, and issue a brief holding statement that acknowledges the situation and commits to updates. Silence is read as indifference.</p>
+            </div>
+            <div class="item">
+              <p class="item-heading"><span class="time">Hours 1-4:</span> People before reputation</p>
+              <p class="item-body">Address the people affected first, directly where possible, before the media and the general public. Stakeholders should never learn important news from a journalist.</p>
+            </div>
+            <div class="item">
+              <p class="item-heading"><span class="time">Hours 4-12:</span> Communicate in layers</p>
+              <p class="item-body">Answer what people actually need to know, in the channels they actually use. Anticipate the next round of questions and prepare answers before they are asked.</p>
+            </div>
+            <div class="item">
+              <p class="item-heading"><span class="time">Hours 12-24:</span> Commit to the long game</p>
+              <p class="item-body">Set a rhythm of updates and keep every promise, however small. Trust is rebuilt through kept commitments.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div>
+          <div class="block">
+            <p class="section-title"><span class="num">3</span>Say it so people can hear it</p>
+            <p class="dont" style="margin-bottom: 2.5mm;">In a crisis, the people you are leading are in a fear state, and fear shuts down reasoning. This is why facts, statistics and legally polished statements fail on their own: <strong>you cannot beat emotion with logic.</strong> The Crisis Ready&reg; formula taught in our Masterclass gives every communication three moves, in this order:</p>
+
+            <div class="formula">
+              <div class="formula-step">
+                <p class="formula-num">1</p>
+                <div class="formula-body">
+                  <p class="item-heading">Validate</p>
+                  <p class="item-body">Name what people are experiencing and feeling, plainly and without spin. People who feel seen and heard can begin to trust. You do not have to agree with how they feel to validate that they feel it. And never follow validation with the word "but": it deletes everything said before it.</p>
+                </div>
+              </div>
+              <div class="formula-step">
+                <p class="formula-num">2</p>
+                <div class="formula-body">
+                  <p class="item-heading">Relate</p>
+                  <p class="item-body">Show, as a human being, that you understand why they feel that way. Connection is the goal; it is what brings people out of survival mode and back to where they can listen.</p>
+                </div>
+              </div>
+              <div class="formula-step">
+                <p class="formula-num">3</p>
+                <div class="formula-body">
+                  <p class="item-heading">Reassure</p>
+                  <p class="item-body">Only now provide the facts, the plan and the commitments. Prove your reassurance with action, and close with credible hope: what you are doing, by when, and how people will know.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rule-line"></div>
+
+            <p class="section-title" style="font-size: 11pt;">The five mistakes that make it worse</p>
+            <p class="dont"><strong>1.</strong> Waiting for every fact before saying anything at all.</p>
+            <p class="dont"><strong>2.</strong> Leading with legal language while your community is frightened or angry.</p>
+            <p class="dont"><strong>3.</strong> Letting stakeholders hear it from the media first.</p>
+            <p class="dont"><strong>4.</strong> Overpromising in hour one and underdelivering in week one.</p>
+            <p class="dont"><strong>5.</strong> Treating the response as a moment instead of a months-long rebuild of trust.</p>
+          </div>
+        </div>
+
+      </div><!-- /cols -->
+    </div><!-- /content -->
+
+    <div class="cta-band">
+      <div class="cta-left">
+        <p class="cta-eyebrow">Be ready before you need to be</p>
+        <p class="cta-tagline">The Crisis Masterclass, with Melissa Agnes.</p>
+        <p class="cta-powered">myprpartner.com/crisis-masterclass &middot; Powered by CRC Public Relations</p>
+      </div>
+      <div class="cta-right">
+        <p class="talk-label">Talk to us</p>
+        <p class="talk-number">1300 182 186</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="footer-name">My PR Partner</span>
+      <span class="footer-contact">
+        <a href="https://www.myprpartner.com">myprpartner.com</a>
+        &middot;
+        <a href="mailto:info@myprpartner.com">info@myprpartner.com</a>
+        &middot;
+        1300 182 186
+      </span>
+    </div>
+
+  </div>
+</body>
+</html>
