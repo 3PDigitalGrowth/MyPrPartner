@@ -244,7 +244,8 @@ export default function Footer() {
           <div className="flex flex-col items-center justify-between gap-4 text-[12.5px] text-text-medium sm:flex-row">
             <p className="text-center sm:text-left">
               &copy; 2026 My PR Partner and CRC Public Relations. All rights
-              reserved.
+              reserved.{" "}
+              <a href="https://www.3pdigital.com.au" target="_blank" rel="noopener" className="transition-colors hover:text-teal">Proudly supported by 3P Digital</a>
             </p>
             <div className="flex items-center gap-4">
               <Link href="/privacy-policy" className="transition-colors hover:text-teal">
