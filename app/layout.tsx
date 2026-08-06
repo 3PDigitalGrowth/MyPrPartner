@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import { JsonLd } from "@/components/seo/StructuredData";
+import { EditModeBridge } from "@/components/admin/EditModeBridge";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -84,6 +85,7 @@ export default function RootLayout({
             publisher: { "@type": "Organization", name: "My PR Partner" },
           }}
         />
+        <EditModeBridge />
         {children}
       </body>
     </html>

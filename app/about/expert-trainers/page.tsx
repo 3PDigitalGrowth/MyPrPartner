@@ -16,6 +16,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import { TrainerFilter } from "./TrainerFilter";
+import { T, copySrc, imgBind } from "@/components/editable";
 
 export const metadata: Metadata = {
   title:
@@ -257,7 +258,15 @@ const paletteGradients: Record<Trainer["palette"], string> = {
   plum: "linear-gradient(135deg, #533278 0%, #A25CC8 100%)",
 };
 
-function TrainerAvatar({ trainer, size = 96 }: { trainer: Trainer; size?: number }) {
+function TrainerAvatar({
+  trainer,
+  size = 96,
+  imgId,
+}: {
+  trainer: Trainer;
+  size?: number;
+  imgId: string;
+}) {
   if (trainer.image) {
     return (
       <div
@@ -265,11 +274,12 @@ function TrainerAvatar({ trainer, size = 96 }: { trainer: Trainer; size?: number
         style={{ width: size, height: size }}
       >
         <Image
-          src={trainer.image}
+          src={copySrc(imgId, trainer.image)}
           alt={`${trainer.name}, ${trainer.title}`}
           fill
           sizes={`${size}px`}
           className="object-cover object-top"
+          {...imgBind(imgId)}
         />
       </div>
     );
@@ -328,32 +338,34 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
   );
 }
 
-function TrainerCard({ trainer }: { trainer: Trainer }) {
+function TrainerCard({ trainer, index }: { trainer: Trainer; index: number }) {
   return (
     <article className="flex h-full flex-col rounded-card border border-[#E5E7EB] bg-white p-6 shadow-sm transition-shadow hover:shadow-card md:p-7">
       <header className="flex items-start gap-5">
-        <TrainerAvatar trainer={trainer} size={88} />
+        <TrainerAvatar trainer={trainer} size={88} imgId={`trainers.list.${index}.image`} />
         <div className="min-w-0">
           <h3 className="font-heading text-[18px] font-bold leading-tight text-text-dark md:text-[19px]">
-            {trainer.name}
+            <T id={`trainers.list.${index}.name`}>{trainer.name}</T>
           </h3>
-          <p className="mt-1 text-[13px] font-semibold text-teal">{trainer.title}</p>
+          <p className="mt-1 text-[13px] font-semibold text-teal">
+            <T id={`trainers.list.${index}.title`}>{trainer.title}</T>
+          </p>
           <p className="mt-0.5 text-[13px] text-text-medium">
             {trainer.org ? (
               <>
-                {trainer.org}
+                <T id={`trainers.list.${index}.org`}>{trainer.org}</T>
                 <span aria-hidden className="mx-1.5 text-text-medium/40">·</span>
               </>
             ) : null}
             <span className="inline-flex items-center gap-1 text-text-medium">
               <Globe2 className="h-3 w-3" aria-hidden />
-              {trainer.location}
+              <T id={`trainers.list.${index}.location`}>{trainer.location}</T>
             </span>
           </p>
         </div>
       </header>
       <p className="mt-5 flex-1 text-[14.5px] leading-relaxed text-text-medium">
-        {trainer.bio}
+        <T id={`trainers.list.${index}.bio`}>{trainer.bio}</T>
       </p>
       {trainer.programs.length > 0 ? (
         <footer className="mt-5 flex flex-wrap gap-2 border-t border-[#F1F2F5] pt-4">
@@ -366,7 +378,7 @@ function TrainerCard({ trainer }: { trainer: Trainer }) {
                 href={prog.href}
                 className="inline-flex items-center gap-1.5 rounded-full bg-[#F2FAFB] px-3 py-1 text-[11.5px] font-medium text-teal-dark transition-colors hover:bg-teal/10"
               >
-                {prog.label}
+                <T id={`trainers.programlabel.${prog.id}`}>{prog.label}</T>
               </Link>
             );
           })}
@@ -382,12 +394,12 @@ function TrainerCard({ trainer }: { trainer: Trainer }) {
 
 export default function ExpertTrainersPage() {
   const expertiseAreas = specialtyGroups.map((g) => ({ id: g.id, label: g.label }));
-  const trainerItems = trainers.map((t) => ({
+  const trainerItems = trainers.map((t, index) => ({
     id: t.slug,
     expertise: specialtyGroups
       .filter((g) => g.trainers.includes(t.slug))
       .map((g) => g.id),
-    node: <TrainerCard trainer={t} />,
+    node: <TrainerCard trainer={t} index={index} />,
   }));
 
   return (
@@ -405,12 +417,13 @@ export default function ExpertTrainersPage() {
         <section className="relative overflow-hidden bg-text-dark">
           <div className="absolute inset-0">
             <Image
-              src="/images/hero-programs.jpg"
+              src={copySrc("trainers.hero.background", "/images/hero-programs.jpg")}
               alt=""
               fill
               priority
               sizes="100vw"
               className="object-cover opacity-35"
+              {...imgBind("trainers.hero.background")}
             />
             <div
               className="absolute inset-0"
@@ -424,23 +437,27 @@ export default function ExpertTrainersPage() {
             <div className="max-w-[820px]">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[12px] font-medium uppercase tracking-[0.14em] text-white/90 backdrop-blur">
                 <Users className="h-3.5 w-3.5" aria-hidden />
-                Expert trainers
+                <T id="trainers.hero.badge">Expert trainers</T>
               </div>
               <h1 className="font-heading text-[34px] font-bold leading-[1.08] text-white sm:text-[44px] md:text-[54px]">
-                You&apos;ll be trained and supported by the best in their business
+                <T id="trainers.hero.title">
+                  You&apos;ll be trained and supported by the best in their business
                 from across Australia and the globe
+                </T>
               </h1>
               <p className="mt-5 max-w-[680px] text-[16px] leading-relaxed text-white/85 md:text-[18px]">
-                Here are just a few of the experts you&apos;ll meet as part of the
+                <T id="trainers.hero.subtitle">
+                  Here are just a few of the experts you&apos;ll meet as part of the
                 My PR Partner community - with many more specialists across
                 every area of public relations and reputation management.
+                </T>
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Link
                   href="/programs"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold text-text-dark transition-colors hover:bg-white/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-text-dark"
                 >
-                  Explore programs
+                  <T id="trainers.hero.cta.primary">Explore programs</T>
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </Link>
                 <Link
@@ -448,13 +465,13 @@ export default function ExpertTrainersPage() {
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-white/50 bg-transparent px-7 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
                   <Shield className="h-4 w-4" aria-hidden />
-                  Crisis Masterclass
+                  <T id="trainers.hero.cta.secondary">Crisis Masterclass</T>
                 </Link>
               </div>
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/15 pt-6 text-[12px] text-white/70">
-                
+
                 <span aria-hidden className="text-white/30">|</span>
-                <span>Presenters across 4 continents</span>
+                <span><T id="trainers.hero.trust.item1">Presenters across 4 continents</T></span>
               </div>
             </div>
           </div>
@@ -469,13 +486,13 @@ export default function ExpertTrainersPage() {
                 { stat: "200+", label: "Combined years of PR experience" },
                 { stat: "4", label: "Continents represented" },
                 { stat: "Every", label: "Area of public relations" },
-              ].map((s) => (
+              ].map((s, index) => (
                 <div key={s.label} className="flex flex-col items-center">
                   <p className="font-heading text-[30px] font-bold text-text-dark md:text-[38px]">
-                    {s.stat}
+                    <T id={`trainers.stats.${index}.value`}>{s.stat}</T>
                   </p>
                   <p className="mt-1 text-[13px] text-text-medium md:text-[14px]">
-                    {s.label}
+                    <T id={`trainers.stats.${index}.label`}>{s.label}</T>
                   </p>
                 </div>
               ))}
@@ -487,14 +504,18 @@ export default function ExpertTrainersPage() {
         <section className="bg-[#F7F8FA]">
           <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-10 lg:px-8">
             <div className="max-w-[640px]">
-              <SectionEyebrow>Meet the team</SectionEyebrow>
+              <SectionEyebrow>
+                <T id="trainers.jumpnav.eyebrow">Meet the team</T>
+              </SectionEyebrow>
               <h2 className="mt-2 font-heading text-[22px] font-bold text-text-dark md:text-[26px]">
-                Jump to the expertise you need
+                <T id="trainers.jumpnav.heading">Jump to the expertise you need</T>
               </h2>
               <p className="mt-3 text-[15px] leading-relaxed text-text-medium md:text-[16px]">
-                Our presenters work across multiple areas, so everyone is tagged by
+                <T id="trainers.jumpnav.body">
+                  Our presenters work across multiple areas, so everyone is tagged by
                 expertise rather than boxed into one category. Tap a category below to
                 filter the team - or browse everyone.
+                </T>
               </p>
             </div>
           </div>
@@ -505,9 +526,11 @@ export default function ExpertTrainersPage() {
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
             <TrainerFilter areas={expertiseAreas} items={trainerItems} />
             <p className="mt-14 rounded-card border border-dashed border-[#E5E7EB] bg-[#F7F8FA] p-6 text-center text-[14.5px] italic text-text-medium md:p-7">
-              These are just a few of the experts you&apos;ll meet inside the My PR
+              <T id="trainers.groups.footer">
+                These are just a few of the experts you&apos;ll meet inside the My PR
               Partner community - there are many more specialists across every
               area of public relations, reputation, media and crisis.
+              </T>
             </p>
           </div>
         </section>
@@ -516,9 +539,13 @@ export default function ExpertTrainersPage() {
         <section className="bg-white">
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
             <div className="mx-auto max-w-[720px] text-center">
-              <SectionEyebrow>Trusted by leaders</SectionEyebrow>
+              <SectionEyebrow>
+                <T id="trainers.testimonials.eyebrow">Trusted by leaders</T>
+              </SectionEyebrow>
               <SectionHeading>
-                Why Australian organisations choose our trainers
+                <T id="trainers.testimonials.heading">
+                  Why Australian organisations choose our trainers
+                </T>
               </SectionHeading>
             </div>
             <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -550,15 +577,19 @@ export default function ExpertTrainersPage() {
                   className="flex h-full flex-col rounded-card border border-[#E5E7EB] bg-[#F7F8FA] p-6 md:p-7"
                 >
                   <blockquote className="flex-1 text-[15px] italic leading-relaxed text-text-dark">
-                    &ldquo;{t.quote}&rdquo;
+                    &ldquo;<T id={`trainers.testimonials.${i}.quote`}>{t.quote}</T>&rdquo;
                   </blockquote>
                   <figcaption className="mt-5 border-t border-[#E5E7EB] pt-4 text-[13px]">
                     {t.name ? (
-                      <p className="font-heading font-bold text-text-dark">{t.name}</p>
+                      <p className="font-heading font-bold text-text-dark">
+                        <T id={`trainers.testimonials.${i}.name`}>{t.name}</T>
+                      </p>
                     ) : null}
                     {[t.title, t.org].filter(Boolean).length > 0 ? (
                       <p className="text-text-medium">
-                        {[t.title, t.org].filter(Boolean).join(", ")}
+                        <T id={`trainers.testimonials.${i}.role`}>
+                          {[t.title, t.org].filter(Boolean).join(", ")}
+                        </T>
                       </p>
                     ) : null}
                   </figcaption>
@@ -573,17 +604,21 @@ export default function ExpertTrainersPage() {
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-18 lg:px-8">
             <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
               <div className="lg:col-span-7">
-                <SectionEyebrow>Why trainer quality matters</SectionEyebrow>
+                <SectionEyebrow>
+                  <T id="trainers.outcomes.eyebrow">Why trainer quality matters</T>
+                </SectionEyebrow>
                 <SectionHeading>
-                  Practitioners, not academics.
+                  <T id="trainers.outcomes.heading.line1">Practitioners, not academics.</T>
                   <br />
-                  Live, tested guidance you can use on Monday
+                  <T id="trainers.outcomes.heading.line2">Live, tested guidance you can use on Monday</T>
                 </SectionHeading>
                 <p className="mt-5 text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                  Every trainer inside My PR Partner is actively consulting to real
+                  <T id="trainers.outcomes.body">
+                    Every trainer inside My PR Partner is actively consulting to real
                   organisations. That means your learning isn&apos;t theory from a textbook
                   - it&apos;s frameworks, scripts and decisions that have been stress-tested
                   inside boardrooms, newsrooms and live crisis responses.
+                  </T>
                 </p>
                 <ul className="mt-7 space-y-3">
                   {[
@@ -591,7 +626,7 @@ export default function ExpertTrainersPage() {
                     "Global perspective - Australia, New Zealand, the USA, UK, Europe and Africa",
                     "Cross-sector depth - corporate, schools, associations, charities and NFPs",
                     "Exclusive Australasian access to the Crisis Ready® Institute with CEO Melissa Agnes",
-                  ].map((item) => (
+                  ].map((item, index) => (
                     <li
                       key={item}
                       className="flex items-start gap-3 text-[15px] leading-relaxed text-text-dark"
@@ -603,7 +638,7 @@ export default function ExpertTrainersPage() {
                       >
                         <Check className="h-3 w-3" />
                       </span>
-                      {item}
+                      <T id={`trainers.outcomes.list.${index}`}>{item}</T>
                     </li>
                   ))}
                 </ul>
@@ -612,25 +647,26 @@ export default function ExpertTrainersPage() {
                     href="/programs"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-teal px-7 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-teal-dark"
                   >
-                    Explore programs
+                    <T id="trainers.outcomes.cta.primary">Explore programs</T>
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link
                     href="/about"
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5E7EB] px-7 py-3.5 text-[15px] font-semibold text-text-dark transition-colors hover:border-teal hover:text-teal"
                   >
-                    About My PR Partner
+                    <T id="trainers.outcomes.cta.secondary">About My PR Partner</T>
                   </Link>
                 </div>
               </div>
               <div className="lg:col-span-5">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-card shadow-card">
                   <Image
-                    src="/images/experttrainersfooter.png"
+                    src={copySrc("trainers.outcomes.image", "/images/experttrainersfooter.png")}
                     alt="Senior PR practitioner delivering crisis communications training"
                     fill
                     sizes="(min-width: 1024px) 35vw, 100vw"
                     className="object-cover"
+                    {...imgBind("trainers.outcomes.image")}
                   />
                   <div
                     className="absolute inset-0"
@@ -641,11 +677,13 @@ export default function ExpertTrainersPage() {
                   />
                   <div className="absolute inset-x-5 bottom-5 rounded-xl bg-white/95 p-5 backdrop-blur">
                     <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-teal">
-                      Real-world
+                      <T id="trainers.outcomes.caption.eyebrow">Real-world</T>
                     </p>
                     <p className="mt-1 font-heading text-[15px] font-bold text-text-dark">
-                      The same team that advises CEOs, boards and governments in live
+                      <T id="trainers.outcomes.caption.text">
+                        The same team that advises CEOs, boards and governments in live
                       crisis situations is the team teaching inside your program.
+                      </T>
                     </p>
                   </div>
                 </div>
@@ -658,11 +696,12 @@ export default function ExpertTrainersPage() {
         <section className="relative overflow-hidden bg-text-dark">
           <div className="absolute inset-0">
             <Image
-              src="/images/crisis-masterclass/final-cta-bg.jpg"
+              src={copySrc("trainers.finalcta.background", "/images/crisis-masterclass/final-cta-bg.jpg")}
               alt=""
               fill
               sizes="100vw"
               className="object-cover opacity-35"
+              {...imgBind("trainers.finalcta.background")}
             />
             <div
               className="absolute inset-0"
@@ -676,22 +715,24 @@ export default function ExpertTrainersPage() {
             <div className="mx-auto max-w-[760px] text-center">
               <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-white/90 backdrop-blur">
                 <Megaphone className="h-3.5 w-3.5" aria-hidden />
-                Ready when you are
+                <T id="trainers.finalcta.badge">Ready when you are</T>
               </p>
               <h2 className="mt-5 font-heading text-[30px] font-bold leading-tight text-white md:text-[40px]">
-                Ready to learn from the best in the business?
+                <T id="trainers.finalcta.heading">Ready to learn from the best in the business?</T>
               </h2>
               <p className="mx-auto mt-4 max-w-[620px] text-[16px] leading-relaxed text-white/85 md:text-[17px]">
-                Pick the program built for your organisation and start learning
+                <T id="trainers.finalcta.body">
+                  Pick the program built for your organisation and start learning
                 from trainers who&apos;ve stood beside the CEOs, boards and
                 governments you read about.
+                </T>
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Link
                   href="/programs"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-[16px] font-semibold text-text-dark transition-colors hover:bg-white/95"
                 >
-                  Explore programs
+                  <T id="trainers.finalcta.cta.primary">Explore programs</T>
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </Link>
                 <Link
@@ -699,13 +740,13 @@ export default function ExpertTrainersPage() {
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-white/50 px-8 py-4 text-[16px] font-semibold text-white transition-colors hover:bg-white/10"
                 >
                   <Shield className="h-4 w-4" aria-hidden />
-                  Crisis Masterclass
+                  <T id="trainers.finalcta.cta.secondary">Crisis Masterclass</T>
                 </Link>
               </div>
               <p className="mt-6 text-[13px] text-white/70">
-                Prefer to talk first?{" "}
+                <T id="trainers.finalcta.footer.text">Prefer to talk first?</T>{" "}
                 <Link href="/contact" className="underline hover:text-white">
-                  Request a callback from our team
+                  <T id="trainers.finalcta.footer.linktext">Request a callback from our team</T>
                 </Link>
                 .
               </p>

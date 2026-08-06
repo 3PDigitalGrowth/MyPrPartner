@@ -1,8 +1,13 @@
 import { Check, ChevronDown, FileText } from "lucide-react";
 import type { CourseStructureContent, StructureModule } from "./types";
 import { SectionEyebrow, SectionHeading } from "./shared";
+import { MT } from "@/components/editable";
+import { useCopyId } from "./copy-base";
 
-function ModuleCard({ m }: { m: StructureModule }) {
+/** `idKey` is the content-path prefix for this module, e.g.
+ * "courseStructure.modules.0" or "courseStructure.groups.1.modules.2". */
+function ModuleCard({ m, idKey }: { m: StructureModule; idKey: string }) {
+  const cid = useCopyId();
   return (
     <li className="flex gap-3 rounded-xl border border-[#E5E7EB] bg-white px-3.5 py-3 transition-colors hover:border-teal/40">
       <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-teal/10">
@@ -15,20 +20,20 @@ function ModuleCard({ m }: { m: StructureModule }) {
           Month {m.month}
         </p>
         <p className="mt-0.5 font-heading text-[15px] font-semibold leading-snug text-text-dark antialiased">
-          {m.title}
+          <MT id={cid(`${idKey}.title`)}>{m.title}</MT>
         </p>
         {m.resource ? (
           <p className="mt-2 flex items-start gap-1.5 text-[13px] leading-snug text-text-medium">
             <FileText className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-teal" aria-hidden />
             <span>
               <span className="font-medium text-teal">Resource:</span>{" "}
-              {m.resource}
+              <MT id={cid(`${idKey}.resource`)}>{m.resource}</MT>
             </span>
           </p>
         ) : null}
         {m.note ? (
           <p className="mt-2 text-[13px] italic leading-snug text-text-medium">
-            {m.note}
+            <MT id={cid(`${idKey}.note`)}>{m.note}</MT>
           </p>
         ) : null}
       </div>
@@ -38,17 +43,24 @@ function ModuleCard({ m }: { m: StructureModule }) {
 
 export default function CourseStructure({ content }: { content: CourseStructureContent }) {
   const useModules = !!content.modules && content.modules.length > 0;
+  const cid = useCopyId();
 
   return (
     <section id="structure" className="scroll-mt-28 mt-14 animate-fade-in-up md:mt-16">
-      <SectionEyebrow>{content.eyebrow}</SectionEyebrow>
-      <SectionHeading>{content.heading}</SectionHeading>
-      <p className="mt-4 text-[16px] leading-relaxed text-text-medium">{content.intro}</p>
+      <SectionEyebrow>
+        <MT id={cid("courseStructure.eyebrow")}>{content.eyebrow}</MT>
+      </SectionEyebrow>
+      <SectionHeading>
+        <MT id={cid("courseStructure.heading")}>{content.heading}</MT>
+      </SectionHeading>
+      <p className="mt-4 text-[16px] leading-relaxed text-text-medium">
+        <MT id={cid("courseStructure.intro")}>{content.intro}</MT>
+      </p>
 
       {useModules ? (
         <ol className="mt-6 grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-x-4 md:gap-y-2">
           {content.modules!.map((m, i) => (
-            <ModuleCard key={`${m.month}-${i}`} m={m} />
+            <ModuleCard key={`${m.month}-${i}`} m={m} idKey={`courseStructure.modules.${i}`} />
           ))}
         </ol>
       ) : (
@@ -64,9 +76,11 @@ export default function CourseStructure({ content }: { content: CourseStructureC
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 [&::-webkit-details-marker]:hidden">
                   <div className="min-w-0">
                     <p className="font-heading text-[16px] font-bold text-text-dark md:text-[17px]">
-                      {g.label}
+                      <MT id={cid(`courseStructure.groups.${i}.label`)}>{g.label}</MT>
                     </p>
-                    <p className="mt-0.5 text-[13px] text-text-medium">{g.count}</p>
+                    <p className="mt-0.5 text-[13px] text-text-medium">
+                      <MT id={cid(`courseStructure.groups.${i}.count`)}>{g.count}</MT>
+                    </p>
                   </div>
                   <ChevronDown
                     className="h-5 w-5 flex-shrink-0 text-text-medium transition-transform duration-200 group-open:rotate-180"
@@ -76,19 +90,25 @@ export default function CourseStructure({ content }: { content: CourseStructureC
                 <div className="border-t border-[#F1F2F5] px-6 py-5">
                   {hasModules ? (
                     <ol className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-x-4 md:gap-y-2">
-                      {g.modules!.map((m, i) => (
-                        <ModuleCard key={`${g.label}-${m.month}-${i}`} m={m} />
+                      {g.modules!.map((m, j) => (
+                        <ModuleCard
+                          key={`${g.label}-${m.month}-${j}`}
+                          m={m}
+                          idKey={`courseStructure.groups.${i}.modules.${j}`}
+                        />
                       ))}
                     </ol>
                   ) : (
                     <ul className="space-y-2.5">
-                      {g.items?.map((item) => (
+                      {g.items?.map((item, j) => (
                         <li
                           key={item}
                           className="flex items-start gap-2.5 text-[14px] text-text-medium"
                         >
                           <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-teal" aria-hidden />
-                          <span>{item}</span>
+                          <span>
+                            <MT id={cid(`courseStructure.groups.${i}.items.${j}`)}>{item}</MT>
+                          </span>
                         </li>
                       ))}
                     </ul>

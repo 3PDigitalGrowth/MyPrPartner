@@ -16,6 +16,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { T, copySrc, imgBind } from "@/components/editable";
 
 export const metadata: Metadata = {
   title: "Contact Us - My PR Partner",
@@ -139,7 +140,8 @@ export default function ContactPage() {
         <section className="relative overflow-hidden bg-text-dark">
           <div className="absolute inset-0">
             <Image
-              src="/images/associations/associations-final-cta-bg.jpg"
+              src={copySrc("contact.hero.bg-image", "/images/associations/associations-final-cta-bg.jpg")}
+              {...imgBind("contact.hero.bg-image")}
               alt=""
               fill
               priority
@@ -158,16 +160,18 @@ export default function ContactPage() {
             <div className="mx-auto max-w-[760px] text-center">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[12px] font-medium uppercase tracking-[0.14em] text-white/90 backdrop-blur">
                 <MessageSquare className="h-3.5 w-3.5" aria-hidden />
-                Contact us
+                <T id="contact.hero.badge">Contact us</T>
               </div>
               <h1 className="font-heading text-[32px] font-bold leading-[1.1] text-white sm:text-[40px] md:text-[48px]">
-                Let&apos;s talk about what you&apos;re trying to solve
+                <T id="contact.hero.title">Let&apos;s talk about what you&apos;re trying to solve</T>
               </h1>
               <p className="mx-auto mt-5 max-w-[620px] text-[16px] leading-relaxed text-white/85 md:text-[17px]">
-                Send the team a note. Whether you&apos;re picking the right
-                program, planning a team enrolment, or navigating something
-                more sensitive, we&apos;ll read it carefully and come back to
-                you with a useful reply - not a sales pitch.
+                <T id="contact.hero.subtitle">
+                  Send the team a note. Whether you&apos;re picking the right
+                  program, planning a team enrolment, or navigating something
+                  more sensitive, we&apos;ll read it carefully and come back to
+                  you with a useful reply - not a sales pitch.
+                </T>
               </p>
             </div>
           </div>
@@ -195,10 +199,10 @@ export default function ContactPage() {
                     <ShieldCheck className="h-5 w-5" aria-hidden />
                   </div>
                   <h3 className="mt-4 font-heading text-[20px] font-bold text-text-dark">
-                    What happens after you hit send
+                    <T id="contact.trust.title">What happens after you hit send</T>
                   </h3>
                   <ul className="mt-5 space-y-3">
-                    {trustBullets.map((b) => (
+                    {trustBullets.map((b, index) => (
                       <li
                         key={b}
                         className="flex items-start gap-3 text-[14.5px] leading-relaxed text-text-medium"
@@ -213,7 +217,7 @@ export default function ContactPage() {
                         >
                           <Check className="h-3 w-3" />
                         </span>
-                        {b}
+                        <T id={`contact.trust.bullets.${index}`}>{b}</T>
                       </li>
                     ))}
                   </ul>
@@ -221,15 +225,17 @@ export default function ContactPage() {
 
                 <div className="mt-6 rounded-card border border-[#E5E7EB] bg-white p-6 shadow-sm md:p-7">
                   <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                    Before you write
+                    <T id="contact.before-you-write.eyebrow">Before you write</T>
                   </p>
                   <h3 className="mt-1 font-heading text-[20px] font-bold text-text-dark">
-                    The answer might already be here
+                    <T id="contact.before-you-write.title">The answer might already be here</T>
                   </h3>
                   <p className="mt-3 text-[14.5px] leading-relaxed text-text-medium">
-                    Most questions we get are answered faster by browsing a
-                    program page or our articles library. Worth a 60-second
-                    look before you wait on a reply.
+                    <T id="contact.before-you-write.subtitle">
+                      Most questions we get are answered faster by browsing a
+                      program page or our articles library. Worth a 60-second
+                      look before you wait on a reply.
+                    </T>
                   </p>
                   <div className="mt-5 flex flex-col gap-2.5">
                     <Link
@@ -238,7 +244,7 @@ export default function ContactPage() {
                     >
                       <span className="inline-flex items-center gap-2">
                         <Compass className="h-4 w-4 text-teal" aria-hidden />
-                        Browse all programs
+                        <T id="contact.before-you-write.links.programs">Browse all programs</T>
                       </span>
                       <ArrowRight className="h-4 w-4" aria-hidden />
                     </Link>
@@ -248,7 +254,7 @@ export default function ContactPage() {
                     >
                       <span className="inline-flex items-center gap-2">
                         <Newspaper className="h-4 w-4 text-teal" aria-hidden />
-                        Articles &amp; insights
+                        <T id="contact.before-you-write.links.articles">Articles &amp; insights</T>
                       </span>
                       <ArrowRight className="h-4 w-4" aria-hidden />
                     </Link>
@@ -258,7 +264,7 @@ export default function ContactPage() {
                     >
                       <span className="inline-flex items-center gap-2">
                         <Users className="h-4 w-4 text-teal" aria-hidden />
-                        Meet the trainers
+                        <T id="contact.before-you-write.links.trainers">Meet the trainers</T>
                       </span>
                       <ArrowRight className="h-4 w-4" aria-hidden />
                     </Link>
@@ -274,19 +280,21 @@ export default function ContactPage() {
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
             <div className="mx-auto max-w-[760px] text-center">
               <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                While you&apos;re here
+                <T id="contact.funnel.eyebrow">While you&apos;re here</T>
               </p>
               <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[36px]">
-                Keep exploring - most answers are one click away
+                <T id="contact.funnel.title">Keep exploring - most answers are one click away</T>
               </h2>
               <p className="mx-auto mt-4 max-w-[620px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                If you&apos;d rather dig in yourself before you send a
-                message, these are the places people usually head next.
+                <T id="contact.funnel.subtitle">
+                  If you&apos;d rather dig in yourself before you send a
+                  message, these are the places people usually head next.
+                </T>
               </p>
             </div>
 
             <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
-              {funnelCards.map((card) => {
+              {funnelCards.map((card, index) => {
                 const Icon = card.icon;
                 return (
                   <Link
@@ -301,16 +309,16 @@ export default function ContactPage() {
                       <Icon className="h-5 w-5" aria-hidden />
                     </div>
                     <p className="mt-5 text-[12px] font-medium uppercase tracking-[0.12em] text-teal">
-                      {card.eyebrow}
+                      <T id={`contact.funnel.cards.${index}.eyebrow`}>{card.eyebrow}</T>
                     </p>
                     <h3 className="mt-1 font-heading text-[20px] font-bold leading-snug text-text-dark">
-                      {card.title}
+                      <T id={`contact.funnel.cards.${index}.title`}>{card.title}</T>
                     </h3>
                     <p className="mt-3 flex-1 text-[14.5px] leading-relaxed text-text-medium">
-                      {card.body}
+                      <T id={`contact.funnel.cards.${index}.body`}>{card.body}</T>
                     </p>
                     <span className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-teal transition-colors group-hover:text-teal-dark">
-                      {card.cta}
+                      <T id={`contact.funnel.cards.${index}.cta`}>{card.cta}</T>
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
                     </span>
                   </Link>
@@ -319,7 +327,7 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
-              {resourceCards.map((card) => {
+              {resourceCards.map((card, index) => {
                 const Icon = card.icon;
                 return (
                   <Link
@@ -336,16 +344,16 @@ export default function ContactPage() {
                       </div>
                       <div className="min-w-0 flex-1">
                         <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-teal">
-                          {card.eyebrow}
+                          <T id={`contact.resources.cards.${index}.eyebrow`}>{card.eyebrow}</T>
                         </p>
                         <h3 className="mt-1 font-heading text-[18px] font-bold leading-snug text-text-dark">
-                          {card.title}
+                          <T id={`contact.resources.cards.${index}.title`}>{card.title}</T>
                         </h3>
                         <p className="mt-2 text-[14px] leading-relaxed text-text-medium">
-                          {card.body}
+                          <T id={`contact.resources.cards.${index}.body`}>{card.body}</T>
                         </p>
                         <span className="mt-4 inline-flex items-center gap-2 text-[13.5px] font-semibold text-teal transition-colors group-hover:text-teal-dark">
-                          {card.cta}
+                          <T id={`contact.resources.cards.${index}.cta`}>{card.cta}</T>
                           <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
                         </span>
                       </div>

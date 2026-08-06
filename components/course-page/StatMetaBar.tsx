@@ -1,6 +1,9 @@
 import type { StatItem } from "./types";
+import { MT } from "@/components/editable";
+import { useCopyId } from "./copy-base";
 
 export default function StatMetaBar({ stats }: { stats: StatItem[] }) {
+  const cid = useCopyId();
   const cols =
     stats.length >= 5
       ? "lg:grid-cols-5"
@@ -23,8 +26,12 @@ export default function StatMetaBar({ stats }: { stats: StatItem[] }) {
             >
               <s.icon className="h-6 w-6 flex-shrink-0 text-teal" aria-hidden />
               <div className="min-w-0">
-                <p className="font-heading text-[14px] font-semibold text-text-dark">{s.title}</p>
-                <p className="mt-0.5 text-[12px] text-text-medium">{s.sub}</p>
+                <p className="font-heading text-[14px] font-semibold text-text-dark">
+                  <MT id={cid(`statBar.${i}.title`)}>{s.title}</MT>
+                </p>
+                <p className="mt-0.5 text-[12px] text-text-medium">
+                  <MT id={cid(`statBar.${i}.sub`)}>{s.sub}</MT>
+                </p>
               </div>
             </div>
           ))}

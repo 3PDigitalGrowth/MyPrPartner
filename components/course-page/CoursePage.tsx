@@ -14,6 +14,7 @@ import MobileEnrolBar from "./MobileEnrolBar";
 import { WaitlistModalProvider } from "./WaitlistModal";
 import { PlanSelectionProvider } from "./PlanSelection";
 import PlanCompareModal from "./PlanCompareModal";
+import { CopyBaseProvider } from "./copy-base";
 
 export default function CoursePage({ content }: { content: CourseContent }) {
   const revealRef = useScrollReveal();
@@ -21,6 +22,7 @@ export default function CoursePage({ content }: { content: CourseContent }) {
   const hasComparison = !!content.planComparison && !!tiers && tiers.length > 0;
 
   return (
+    <CopyBaseProvider base={`course.${content.slug}`}>
     <WaitlistModalProvider
       enabled={!!content.sidebar.waitlist}
       courseName={content.mobileBar.label}
@@ -46,5 +48,6 @@ export default function CoursePage({ content }: { content: CourseContent }) {
         ) : null}
       </PlanSelectionProvider>
     </WaitlistModalProvider>
+    </CopyBaseProvider>
   );
 }

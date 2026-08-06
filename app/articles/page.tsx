@@ -20,6 +20,7 @@ import { ArticlesGrid } from "@/components/articles/ArticlesGrid";
 import { FeaturedArticle } from "@/components/articles/FeaturedArticle";
 import { NewsletterForm } from "@/components/articles/NewsletterForm";
 import { ARTICLE_CATEGORIES, getAllArticles } from "@/lib/articles";
+import { T, copySrc, imgBind } from "@/components/editable";
 
 export const metadata: Metadata = {
   title: "Articles & Insights - My PR Partner",
@@ -65,7 +66,8 @@ export default async function ArticlesPage() {
         <section className="relative overflow-hidden bg-text-dark">
           <div className="absolute inset-0">
             <Image
-              src="/images/hero-programs.jpg"
+              src={copySrc("articles.hero.bg-image", "/images/hero-programs.jpg")}
+              {...imgBind("articles.hero.bg-image")}
               alt=""
               fill
               priority
@@ -84,18 +86,22 @@ export default async function ArticlesPage() {
             <div className="mx-auto max-w-[820px] text-center">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[12px] font-medium uppercase tracking-[0.14em] text-white/90 backdrop-blur">
                 <Newspaper className="h-3.5 w-3.5" aria-hidden />
-                Articles &amp; insights
+                <T id="articles.hero.badge">Articles &amp; insights</T>
               </div>
               <h1 className="font-heading text-[34px] font-bold leading-[1.08] text-white sm:text-[44px] md:text-[52px]">
-                Practical PR writing{" "}
+                <T id="articles.hero.title-line1">Practical PR writing</T>{" "}
                 <span className="text-teal-light">
-                  from senior advisers, not marketers.
+                  <T id="articles.hero.title-line2">
+                    from senior advisers, not marketers.
+                  </T>
                 </span>
               </h1>
               <p className="mx-auto mt-5 max-w-[680px] text-[16px] leading-relaxed text-white/85 md:text-[18px]">
-                Short, useful pieces on crisis, reputation, media and strategy -
-                written by the people who sit in the room when the decisions
-                get made. Free, no sign-up required.
+                <T id="articles.hero.subtitle">
+                  Short, useful pieces on crisis, reputation, media and strategy -
+                  written by the people who sit in the room when the decisions
+                  get made. Free, no sign-up required.
+                </T>
               </p>
             </div>
           </div>
@@ -113,17 +119,21 @@ export default async function ArticlesPage() {
               </div>
               <div>
                 <p className="font-heading text-[16px] font-bold text-text-dark md:text-[17px]">
-                  Our first articles are on the way.
+                  <T id="articles.launch-note.title">Our first articles are on the way.</T>
                 </p>
                 <p className="mt-1.5 text-[14px] leading-relaxed text-text-medium">
-                  We&apos;re putting the finishing touches on the library -{" "}
+                  <T id="articles.launch-note.body-start">
+                    We&apos;re putting the finishing touches on the library -
+                  </T>{" "}
                   <Link
                     href="#subscribe"
                     className="font-semibold text-teal underline-offset-4 hover:text-teal-dark hover:underline"
                   >
-                    subscribe
+                    <T id="articles.launch-note.body-cta">subscribe</T>
                   </Link>{" "}
-                  to get each new article the day it goes live.
+                  <T id="articles.launch-note.body-end">
+                    to get each new article the day it goes live.
+                  </T>
                 </p>
               </div>
             </div>
@@ -137,7 +147,7 @@ export default async function ArticlesPage() {
               <div className="flex items-center gap-2">
                 <Sparkles className="h-4 w-4 text-teal" aria-hidden />
                 <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                  Featured read
+                  <T id="articles.featured.eyebrow">Featured read</T>
                 </p>
               </div>
               <div className="mt-5">
@@ -153,14 +163,16 @@ export default async function ArticlesPage() {
             <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
               <div className="max-w-[620px]">
                 <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                  The library
+                  <T id="articles.library.eyebrow">The library</T>
                 </p>
                 <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[36px]">
-                  Browse the full library
+                  <T id="articles.library.title">Browse the full library</T>
                 </h2>
                 <p className="mt-3 text-[15.5px] leading-relaxed text-text-medium md:text-[16px]">
-                  Filter by the lens you need - crisis response, reputation
-                  work, media or strategy.
+                  <T id="articles.library.subtitle">
+                    Filter by the lens you need - crisis response, reputation
+                    work, media or strategy.
+                  </T>
                 </p>
               </div>
             </div>
@@ -178,7 +190,8 @@ export default async function ArticlesPage() {
         >
           <div className="absolute inset-0">
             <Image
-              src="/images/lead-magnet-bg.jpg"
+              src={copySrc("articles.newsletter.bg-image", "/images/lead-magnet-bg.jpg")}
+              {...imgBind("articles.newsletter.bg-image")}
               alt=""
               fill
               sizes="100vw"
@@ -197,15 +210,17 @@ export default async function ArticlesPage() {
               <div className="lg:col-span-6">
                 <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-white/90 backdrop-blur">
                   <Sparkles className="h-3.5 w-3.5" aria-hidden />
-                  Stay close to the work
+                  <T id="articles.newsletter.badge">Stay close to the work</T>
                 </p>
                 <h2 className="mt-5 font-heading text-[28px] font-bold leading-tight text-white md:text-[38px]">
-                  Get new articles in your inbox, the day they go live.
+                  <T id="articles.newsletter.title">Get new articles in your inbox, the day they go live.</T>
                 </h2>
                 <p className="mt-5 text-[16px] leading-relaxed text-white/85 md:text-[17px]">
-                  One thoughtful email, fortnightly at most, with the full
-                  article and any practical templates that come with it.
-                  Unsubscribe with one click, any time.
+                  <T id="articles.newsletter.subtitle">
+                    One thoughtful email, fortnightly at most, with the full
+                    article and any practical templates that come with it.
+                    Unsubscribe with one click, any time.
+                  </T>
                 </p>
               </div>
               <div className="lg:col-span-6">
@@ -220,20 +235,22 @@ export default async function ArticlesPage() {
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
             <div className="mx-auto max-w-[760px] text-center">
               <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                When reading is not enough
+                <T id="articles.cross-sell.eyebrow">When reading is not enough</T>
               </p>
               <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[36px]">
-                Ready to go from reading to capability?
+                <T id="articles.cross-sell.title">Ready to go from reading to capability?</T>
               </h2>
               <p className="mx-auto mt-4 max-w-[640px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                Articles get you thinking. These take you further - free tools
-                you can use today, or the senior-led programs we&apos;re best
-                known for.
+                <T id="articles.cross-sell.subtitle">
+                  Articles get you thinking. These take you further - free tools
+                  you can use today, or the senior-led programs we&apos;re best
+                  known for.
+                </T>
               </p>
             </div>
 
             <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-              {crossSells.map((card) => {
+              {crossSells.map((card, index) => {
                 const Icon = card.icon;
                 return (
                   <Link
@@ -248,16 +265,16 @@ export default async function ArticlesPage() {
                       <Icon className="h-5 w-5" aria-hidden />
                     </div>
                     <p className="mt-5 text-[12px] font-medium uppercase tracking-[0.12em] text-teal">
-                      {card.eyebrow}
+                      <T id={`articles.cross-sell.cards.${index}.eyebrow`}>{card.eyebrow}</T>
                     </p>
                     <h3 className="mt-1 font-heading text-[18px] font-bold leading-snug text-text-dark">
-                      {card.title}
+                      <T id={`articles.cross-sell.cards.${index}.title`}>{card.title}</T>
                     </h3>
                     <p className="mt-2 flex-1 text-[14px] leading-relaxed text-text-medium">
-                      {card.body}
+                      <T id={`articles.cross-sell.cards.${index}.body`}>{card.body}</T>
                     </p>
                     <span className="mt-5 inline-flex items-center gap-2 text-[13.5px] font-semibold text-teal transition-colors group-hover:text-teal-dark">
-                      {card.cta}
+                      <T id={`articles.cross-sell.cards.${index}.cta`}>{card.cta}</T>
                       <ArrowRight
                         className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
                         aria-hidden
@@ -275,22 +292,24 @@ export default async function ArticlesPage() {
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-18 lg:px-8">
             <div className="mx-auto max-w-[780px] rounded-card border border-[#E5E7EB] bg-[#F7F8FA] p-8 text-center md:p-12">
               <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                Something more specific?
+                <T id="articles.final.eyebrow">Something more specific?</T>
               </p>
               <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[34px]">
-                If your situation is bigger than an article, start a conversation.
+                <T id="articles.final.title">If your situation is bigger than an article, start a conversation.</T>
               </h2>
               <p className="mx-auto mt-4 max-w-[620px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                Every enquiry is reviewed by an adviser - not a sales
-                funnel - and escalated to CRC Public Relations when the matter
-                warrants it.
+                <T id="articles.final.subtitle">
+                  Every enquiry is reviewed by an adviser - not a sales
+                  funnel - and escalated to CRC Public Relations when the matter
+                  warrants it.
+                </T>
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-teal px-7 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-teal-dark"
                 >
-                  Contact the team
+                  <T id="articles.final.cta-primary">Contact the team</T>
                   <ArrowUpRight className="h-4 w-4" aria-hidden />
                 </Link>
                 <Link
@@ -298,7 +317,7 @@ export default async function ArticlesPage() {
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5E7EB] bg-white px-7 py-3.5 text-[15px] font-semibold text-text-dark transition-colors hover:border-teal hover:text-teal"
                 >
                   <Compass className="h-4 w-4 text-teal" aria-hidden />
-                  Browse all programs
+                  <T id="articles.final.cta-secondary">Browse all programs</T>
                 </Link>
               </div>
             </div>

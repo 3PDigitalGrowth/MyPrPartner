@@ -20,6 +20,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import { CoursesInterestForm } from "@/components/courses/CoursesInterestForm";
+import { T, copySrc, imgBind } from "@/components/editable";
 
 export const metadata: Metadata = {
   title: "Upcoming Courses - My PR Partner",
@@ -168,7 +169,8 @@ export default function CoursesPage() {
         <section className="relative overflow-hidden bg-text-dark">
           <div className="absolute inset-0">
             <Image
-              src="/images/crisis-masterclass/hero-bg-crisis.jpg"
+              src={copySrc("courses.hero.bg-image", "/images/crisis-masterclass/hero-bg-crisis.jpg")}
+              {...imgBind("courses.hero.bg-image")}
               alt=""
               fill
               priority
@@ -187,38 +189,44 @@ export default function CoursesPage() {
             <div className="mx-auto max-w-[820px] text-center">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[12px] font-medium uppercase tracking-[0.14em] text-white/90 backdrop-blur">
                 <Sparkles className="h-3.5 w-3.5" aria-hidden />
-                Launching 2026
+                <T id="courses.hero.badge">Launching 2026</T>
               </div>
               <h1 className="font-heading text-[34px] font-bold leading-[1.08] text-white sm:text-[44px] md:text-[52px]">
-                Short, focused courses -{" "}
+                <T id="courses.hero.title-line1">Short, focused courses -</T>{" "}
                 <span className="text-teal-light">
-                  coming to My PR Partner soon
+                  <T id="courses.hero.title-line2">
+                    coming to My PR Partner soon
+                  </T>
                 </span>
               </h1>
               <p className="mx-auto mt-5 max-w-[660px] text-[16px] leading-relaxed text-white/85 md:text-[18px]">
-                Standalone courses on social media, LinkedIn strategy,
-                media training, personal branding, content strategy and
-                more - each delivered by a senior practitioner, built for
-                a specific outcome, and available on its own (no annual
-                subscription required).
+                <T id="courses.hero.subtitle">
+                  Standalone courses on social media, LinkedIn strategy,
+                  media training, personal branding, content strategy and
+                  more - each delivered by a senior practitioner, built for
+                  a specific outcome, and available on its own (no annual
+                  subscription required).
+                </T>
               </p>
               <p className="mx-auto mt-4 max-w-[600px] text-[15px] leading-relaxed text-white/75">
-                Register your interest to be first to enrol when each course
-                opens - with founding-member pricing locked in.
+                <T id="courses.hero.subtitle-2">
+                  Register your interest to be first to enrol when each course
+                  opens - with founding-member pricing locked in.
+                </T>
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
                 <Link
                   href="#register"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold text-text-dark transition-colors hover:bg-white/95"
                 >
-                  Register your interest
+                  <T id="courses.hero.cta-primary">Register your interest</T>
                   <ArrowDown className="h-4 w-4" aria-hidden />
                 </Link>
                 <Link
                   href="#courses"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-white/50 bg-transparent px-7 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
                 >
-                  See the pipeline
+                  <T id="courses.hero.cta-secondary">See the pipeline</T>
                 </Link>
               </div>
             </div>
@@ -230,20 +238,22 @@ export default function CoursesPage() {
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
             <div className="mx-auto max-w-[760px] text-center">
               <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                The pipeline
+                <T id="courses.pipeline.eyebrow">The pipeline</T>
               </p>
               <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[36px]">
-                Four courses in development - with more to follow
+                <T id="courses.pipeline.title">Four courses in development - with more to follow</T>
               </h2>
               <p className="mx-auto mt-4 max-w-[640px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                Each course is short, focused, self-paced, and delivered by a
-                specialist practitioner whose day job is the subject
-                they&apos;re teaching.
+                <T id="courses.pipeline.subtitle">
+                  Each course is short, focused, self-paced, and delivered by a
+                  specialist practitioner whose day job is the subject
+                  they&apos;re teaching.
+                </T>
               </p>
             </div>
 
             <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2">
-              {upcomingCourses.map((c) => {
+              {upcomingCourses.map((c, index) => {
                 const Icon = c.icon;
                 return (
                   <article
@@ -261,33 +271,35 @@ export default function CoursesPage() {
                         className="inline-flex items-center gap-1.5 rounded-full bg-[#F7F8FA] px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-[0.1em] text-teal"
                       >
                         <Sparkles className="h-3 w-3" aria-hidden />
-                        {c.status}
+                        <T id={`courses.cards.${index}.status`}>{c.status}</T>
                       </span>
                     </header>
                     <p className="mt-5 text-[12px] font-medium uppercase tracking-[0.12em] text-teal">
-                      {c.category}
+                      <T id={`courses.cards.${index}.category`}>{c.category}</T>
                     </p>
                     <h3 className="mt-1 font-heading text-[20px] font-bold leading-snug text-text-dark">
-                      {c.title}
+                      <T id={`courses.cards.${index}.title`}>{c.title}</T>
                     </h3>
                     <p className="mt-3 text-[15px] font-medium leading-relaxed text-text-dark">
-                      {c.oneLiner}
+                      <T id={`courses.cards.${index}.one-liner`}>{c.oneLiner}</T>
                     </p>
                     <p className="mt-3 flex-1 text-[14.5px] leading-relaxed text-text-medium">
-                      {c.body}
+                      <T id={`courses.cards.${index}.body`}>{c.body}</T>
                     </p>
                     <div className="mt-5 flex items-center justify-between border-t border-[#F1F2F5] pt-4 text-[13px]">
                       <div>
                         <p className="font-semibold text-text-dark">
-                          {c.trainerName}
+                          <T id={`courses.cards.${index}.trainer-name`}>{c.trainerName}</T>
                         </p>
-                        <p className="text-text-medium">{c.trainerRole}</p>
+                        <p className="text-text-medium">
+                          <T id={`courses.cards.${index}.trainer-role`}>{c.trainerRole}</T>
+                        </p>
                       </div>
                       <Link
                         href="#register"
                         className="inline-flex flex-shrink-0 items-center gap-1.5 font-semibold text-teal hover:text-teal-dark"
                       >
-                        Register interest
+                        <T id="courses.cards.register-cta">Register interest</T>
                         <ArrowDown className="h-3.5 w-3.5" aria-hidden />
                       </Link>
                     </div>
@@ -297,12 +309,12 @@ export default function CoursesPage() {
             </div>
 
             <p className="mt-8 text-center text-[14px] text-text-medium">
-              Want to know who&apos;s behind the courses?{" "}
+              <T id="courses.pipeline.footnote">Want to know who&apos;s behind the courses?</T>{" "}
               <Link
                 href="/about/expert-trainers"
                 className="font-semibold text-teal underline hover:text-teal-dark"
               >
-                Meet the full panel of expert trainers
+                <T id="courses.pipeline.footnote-cta">Meet the full panel of expert trainers</T>
               </Link>
               .
             </p>
@@ -316,7 +328,8 @@ export default function CoursesPage() {
         >
           <div className="absolute inset-0">
             <Image
-              src="/images/associations/associations-final-cta-bg.jpg"
+              src={copySrc("courses.register.bg-image", "/images/associations/associations-final-cta-bg.jpg")}
+              {...imgBind("courses.register.bg-image")}
               alt=""
               fill
               sizes="100vw"
@@ -335,19 +348,21 @@ export default function CoursesPage() {
               <div className="lg:col-span-5">
                 <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-white/90 backdrop-blur">
                   <Sparkles className="h-3.5 w-3.5" aria-hidden />
-                  Register your interest
+                  <T id="courses.register.badge">Register your interest</T>
                 </p>
                 <h2 className="mt-5 font-heading text-[28px] font-bold leading-tight text-white md:text-[38px]">
-                  Be first to enrol - and save 10% as a founding member
+                  <T id="courses.register.title">Be first to enrol - and save 10% as a founding member</T>
                 </h2>
                 <p className="mt-5 text-[16px] leading-relaxed text-white/85 md:text-[17px]">
-                  Add your name and we&apos;ll email you when a course
-                  you&apos;ve flagged opens for enrolment, plus the occasional
-                  update. No subscription required - just first access to the
-                  courses you actually want.
+                  <T id="courses.register.subtitle">
+                    Add your name and we&apos;ll email you when a course
+                    you&apos;ve flagged opens for enrolment, plus the occasional
+                    update. No subscription required - just first access to the
+                    courses you actually want.
+                  </T>
                 </p>
                 <ul className="mt-7 space-y-2.5">
-                  {waitlistBenefits.map((b) => (
+                  {waitlistBenefits.map((b, index) => (
                     <li
                       key={b}
                       className="flex items-start gap-3 text-[15px] leading-relaxed text-white/90"
@@ -358,7 +373,7 @@ export default function CoursesPage() {
                       >
                         <Check className="h-3 w-3" />
                       </span>
-                      {b}
+                      <T id={`courses.register.benefits.${index}`}>{b}</T>
                     </li>
                   ))}
                 </ul>
@@ -382,20 +397,22 @@ export default function CoursesPage() {
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
             <div className="mx-auto max-w-[760px] text-center">
               <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                Don&apos;t want to wait?
+                <T id="courses.dont-wait.eyebrow">Don&apos;t want to wait?</T>
               </p>
               <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[36px]">
-                You don&apos;t have to wait for the course library to start
+                <T id="courses.dont-wait.title">You don&apos;t have to wait for the course library to start</T>
               </h2>
               <p className="mx-auto mt-4 max-w-[620px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                The full sector programs and the Crisis Masterclass are
-                already live - senior-led training your team can enrol
-                in today.
+                <T id="courses.dont-wait.subtitle">
+                  The full sector programs and the Crisis Masterclass are
+                  already live - senior-led training your team can enrol
+                  in today.
+                </T>
               </p>
             </div>
 
             <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
-              {programFunnelCards.map((card) => {
+              {programFunnelCards.map((card, index) => {
                 const Icon = card.icon;
                 return (
                   <Link
@@ -410,16 +427,16 @@ export default function CoursesPage() {
                       <Icon className="h-5 w-5" aria-hidden />
                     </div>
                     <p className="mt-5 text-[12px] font-medium uppercase tracking-[0.12em] text-teal">
-                      {card.eyebrow}
+                      <T id={`courses.dont-wait.cards.${index}.eyebrow`}>{card.eyebrow}</T>
                     </p>
                     <h3 className="mt-1 font-heading text-[20px] font-bold leading-snug text-text-dark">
-                      {card.title}
+                      <T id={`courses.dont-wait.cards.${index}.title`}>{card.title}</T>
                     </h3>
                     <p className="mt-3 flex-1 text-[14.5px] leading-relaxed text-text-medium">
-                      {card.body}
+                      <T id={`courses.dont-wait.cards.${index}.body`}>{card.body}</T>
                     </p>
                     <span className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-teal transition-colors group-hover:text-teal-dark">
-                      {card.cta}
+                      <T id={`courses.dont-wait.cards.${index}.cta`}>{card.cta}</T>
                       <ArrowRight
                         className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
                         aria-hidden
@@ -437,22 +454,24 @@ export default function CoursesPage() {
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-18 lg:px-8">
             <div className="mx-auto max-w-[760px] rounded-card border border-[#E5E7EB] bg-[#F7F8FA] p-8 text-center md:p-12">
               <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                Have a specific need?
+                <T id="courses.final.eyebrow">Have a specific need?</T>
               </p>
               <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[34px]">
-                Want a course we haven&apos;t announced yet?
+                <T id="courses.final.title">Want a course we haven&apos;t announced yet?</T>
               </h2>
               <p className="mx-auto mt-4 max-w-[600px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                If your team has a specific training need that isn&apos;t on
-                the pipeline above, tell us. Every enquiry is reviewed - and
-                genuinely shapes what we build next.
+                <T id="courses.final.subtitle">
+                  If your team has a specific training need that isn&apos;t on
+                  the pipeline above, tell us. Every enquiry is reviewed - and
+                  genuinely shapes what we build next.
+                </T>
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-teal px-8 py-4 text-[16px] font-semibold text-white transition-colors hover:bg-teal-dark"
                 >
-                  Contact the team
+                  <T id="courses.final.cta-primary">Contact the team</T>
                   <ArrowUpRight className="h-4 w-4" aria-hidden />
                 </Link>
                 <Link
@@ -460,7 +479,7 @@ export default function CoursesPage() {
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5E7EB] bg-white px-8 py-4 text-[16px] font-semibold text-text-dark transition-colors hover:border-teal hover:text-teal"
                 >
                   <Newspaper className="h-4 w-4" aria-hidden />
-                  Read the articles
+                  <T id="courses.final.cta-secondary">Read the articles</T>
                 </Link>
               </div>
             </div>

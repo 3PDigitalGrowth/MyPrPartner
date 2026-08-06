@@ -28,6 +28,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FaqJsonLd } from "@/components/seo/StructuredData";
 import { currentPagePath } from "@/lib/page-context";
+import { T, copySrc, imgBind } from "@/components/editable";
 
 // Single source of truth for the homepage FAQ — drives both the visible
 // accordion and the FAQPage structured data.
@@ -129,7 +130,7 @@ function VideoPlayer() {
   );
 }
 
-function FAQItem({ question, answer, defaultOpen = false }: { question: string; answer: string; defaultOpen?: boolean }) {
+function FAQItem({ id, question, answer, defaultOpen = false }: { id: string; question: string; answer: string; defaultOpen?: boolean }) {
   const [open, setOpen] = useState(defaultOpen);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -140,9 +141,9 @@ function FAQItem({ question, answer, defaultOpen = false }: { question: string; 
         className="flex w-full items-start justify-between text-left gap-3"
       >
         <div className="flex-1 min-w-0">
-          <span className="block text-[15px] font-medium text-text-dark">{question}</span>
+          <span className="block text-[15px] font-medium text-text-dark"><T id={`${id}.question`}>{question}</T></span>
           <p className={`mt-2 text-[14px] text-text-medium leading-relaxed ${open ? "" : "line-clamp-2"}`}>
-            {answer}
+            <T id={`${id}.answer`}>{answer}</T>
           </p>
         </div>
         <ChevronDown className={`h-4 w-4 text-gray-400 flex-shrink-0 mt-1 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
@@ -152,10 +153,10 @@ function FAQItem({ question, answer, defaultOpen = false }: { question: string; 
         className="overflow-hidden transition-all duration-300 ease-in-out"
         style={{ maxHeight: open ? contentRef.current?.scrollHeight ?? 500 : 0, opacity: open ? 1 : 0 }}
       >
-        <p className="mt-3 text-[14px] text-teal font-medium cursor-pointer" onClick={() => setOpen(false)}>Show less</p>
+        <p className="mt-3 text-[14px] text-teal font-medium cursor-pointer" onClick={() => setOpen(false)}><T id="home.faq.toggle.show_less">Show less</T></p>
       </div>
       {!open && (
-        <p className="mt-3 text-[14px] text-teal font-medium cursor-pointer" onClick={() => setOpen(true)}>Read more</p>
+        <p className="mt-3 text-[14px] text-teal font-medium cursor-pointer" onClick={() => setOpen(true)}><T id="home.faq.toggle.read_more">Read more</T></p>
       )}
     </div>
   );
@@ -168,7 +169,7 @@ function LeadMagnetForm() {
   if (submitted) {
     return (
       <p className="text-[15px] font-medium text-teal mt-7">
-        Thanks! Check your inbox for the guide.
+        <T id="home.leadmagnet.form.success">Thanks! Check your inbox for the guide.</T>
       </p>
     );
   }
@@ -209,7 +210,7 @@ function LeadMagnetForm() {
         type="submit"
         className="rounded-full bg-teal px-7 py-3.5 text-[14px] font-medium text-white hover:bg-teal-dark transition-colors whitespace-nowrap"
       >
-        Get the free guide
+        <T id="home.leadmagnet.form.submit">Get the free guide</T>
       </button>
     </form>
   );
@@ -233,17 +234,17 @@ export default function Home() {
                 <div className="mx-auto max-w-[720px] text-center animate-fade-in-up">
                   
                   <h1 className="font-heading text-[36px] md:text-[52px] font-bold text-text-dark leading-[1.1] tracking-tight">
-                    Online public relations training, resources &amp; support
+                    <T id="home.hero.title">Online public relations training, resources &amp; support</T>
                   </h1>
                   <p className="mt-4 mx-auto max-w-[600px] text-[20px] text-text-medium">
-                    Tailored programs backed by 25+ years of corporate PR, reputation and crisis and consulting experience
+                    <T id="home.hero.subtitle">Tailored programs backed by 25+ years of corporate PR, reputation and crisis and consulting experience</T>
                   </p>
                   <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <Link href="#programs" className="rounded-full bg-teal px-7 py-3 text-sm font-medium text-white hover:bg-teal-dark transition-colors">
-                      Explore programs
+                      <T id="home.hero.cta_primary">Explore programs</T>
                     </Link>
                     <Link href="/programs" className="rounded-full border border-teal px-7 py-3 text-sm font-medium text-teal hover:bg-teal hover:text-white transition-colors">
-                      View plans &amp; pricing
+                      <T id="home.hero.cta_secondary">View plans &amp; pricing</T>
                     </Link>
                   </div>
                 </div>
@@ -255,21 +256,21 @@ export default function Home() {
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in-up">
                   <Link href="#programs" className="group relative block overflow-hidden rounded-card min-h-[240px] md:min-h-[320px]">
-                    <Image src="/images/hero-programs.jpg" alt="Australian company team learning online PR training in a modern meeting room" fill className="object-cover transition-transform duration-500 group-hover:scale-105" priority />
+                    <Image src={copySrc("home.hero.split.programs.image", "/images/hero-programs.jpg")} {...imgBind("home.hero.split.programs.image")} alt="Australian company team learning online PR training in a modern meeting room" fill className="object-cover transition-transform duration-500 group-hover:scale-105" priority />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20" />
                     <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
-                      <h2 className="font-heading text-[28px] font-bold text-white">Programs for organisations</h2>
-                      <p className="mt-2 text-[15px] text-white/85 max-w-[380px]">Tailored training, resources and support for schools, industry and professional associations.</p>
-                      <span className="mt-5 inline-block rounded-full bg-white px-6 py-2.5 text-sm font-medium text-text-dark hover:bg-gray-50 transition-colors">Find out more</span>
+                      <h2 className="font-heading text-[28px] font-bold text-white"><T id="home.hero.split.programs.title">Programs for organisations</T></h2>
+                      <p className="mt-2 text-[15px] text-white/85 max-w-[380px]"><T id="home.hero.split.programs.description">Tailored training, resources and support for schools, industry and professional associations.</T></p>
+                      <span className="mt-5 inline-block rounded-full bg-white px-6 py-2.5 text-sm font-medium text-text-dark hover:bg-gray-50 transition-colors"><T id="home.hero.split.programs.cta">Find out more</T></span>
                     </div>
                   </Link>
                   <Link href="#programs" className="group relative block overflow-hidden rounded-card min-h-[240px] md:min-h-[320px]">
-                    <Image src="/images/hero-masterclass.jpg" alt="PR professional participating in an online crisis masterclass via laptop" fill className="object-cover transition-transform duration-500 group-hover:scale-105" priority />
+                    <Image src={copySrc("home.hero.split.masterclass.image", "/images/hero-masterclass.jpg")} {...imgBind("home.hero.split.masterclass.image")} alt="PR professional participating in an online crisis masterclass via laptop" fill className="object-cover transition-transform duration-500 group-hover:scale-105" priority />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20" />
                     <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
-                      <h2 className="font-heading text-[28px] font-bold text-white">Online crisis masterclass</h2>
-                      <p className="mt-2 text-[15px] text-white/85 max-w-[380px]">For PR and communications professionals and business leaders. 12-month expert-led program.</p>
-                      <span className="mt-5 inline-block rounded-full bg-white px-6 py-2.5 text-sm font-medium text-text-dark hover:bg-gray-50 transition-colors">Find out more</span>
+                      <h2 className="font-heading text-[28px] font-bold text-white"><T id="home.hero.split.masterclass.title">Online crisis masterclass</T></h2>
+                      <p className="mt-2 text-[15px] text-white/85 max-w-[380px]"><T id="home.hero.split.masterclass.description">For PR and communications professionals and business leaders. 12-month expert-led program.</T></p>
+                      <span className="mt-5 inline-block rounded-full bg-white px-6 py-2.5 text-sm font-medium text-text-dark hover:bg-gray-50 transition-colors"><T id="home.hero.split.masterclass.cta">Find out more</T></span>
                     </div>
                   </Link>
                 </div>
@@ -283,21 +284,21 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center animate-fade-in-up">
               <div className="lg:col-span-7">
-                <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-3">About My PR Partner</p>
+                <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-3"><T id="home.about.eyebrow">About My PR Partner</T></p>
                 <h2 className="font-heading text-[26px] md:text-[32px] font-bold text-text-dark leading-[1.2]">
-                  What is public relations and why is it vital to success?
+                  <T id="home.about.title">What is public relations and why is it vital to success?</T>
                 </h2>
                 <div className="mt-5 space-y-4 text-base text-text-medium leading-relaxed">
-                  <p>Public relations is how your organisation builds trust, manages its reputation, and communicates with the people who matter most: your customers, your community, your stakeholders, and the media.</p>
-                  <p>Every organisation does PR, whether they realise it or not. The question is whether you&apos;re doing it well, or leaving it to chance.</p>
-                  <p>My PR Partner gives you the training, resources, and expert support to take control of your public relations, on your terms, at a fraction of the cost of a traditional PR agency.</p>
+                  <p><T id="home.about.paragraph.0">Public relations is how your organisation builds trust, manages its reputation, and communicates with the people who matter most: your customers, your community, your stakeholders, and the media.</T></p>
+                  <p><T id="home.about.paragraph.1">Every organisation does PR, whether they realise it or not. The question is whether you&apos;re doing it well, or leaving it to chance.</T></p>
+                  <p><T id="home.about.paragraph.2">My PR Partner gives you the training, resources, and expert support to take control of your public relations, on your terms, at a fraction of the cost of a traditional PR agency.</T></p>
                 </div>
                 <div className="mt-7">
                   <Link href="#programs" className="inline-block rounded-full bg-teal px-7 py-3 text-sm font-medium text-white hover:bg-teal-dark transition-colors">
-                    Explore programs
+                    <T id="home.about.cta_primary">Explore programs</T>
                   </Link>
                   <Link href="#programs" className="ml-4 text-[14px] font-medium text-teal hover:text-teal-dark transition-colors">
-                    Or view plans &amp; pricing &rarr;
+                    <T id="home.about.cta_secondary">Or view plans &amp; pricing &rarr;</T>
                   </Link>
                 </div>
               </div>
@@ -320,8 +321,8 @@ export default function Home() {
               ].map((item, i) => (
                 <div key={item.line1} className={`flex flex-col items-center text-center px-4 ${i > 0 ? "md:border-l md:border-[#E5E7EB]" : ""}`}>
                   <item.icon className="h-7 w-7 text-teal mb-3" />
-                  <span className="text-[14px] font-medium text-text-dark">{item.line1}</span>
-                  <span className="text-[13px] text-gray-400">{item.line2}</span>
+                  <span className="text-[14px] font-medium text-text-dark"><T id={`home.trust.${i}.line1`}>{item.line1}</T></span>
+                  <span className="text-[13px] text-gray-400"><T id={`home.trust.${i}.line2`}>{item.line2}</T></span>
                 </div>
               ))}
             </div>
@@ -332,20 +333,20 @@ export default function Home() {
         <section className="bg-bg-grey py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-[700px] text-center mb-12 animate-fade-in-up">
-              <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-4">Why My PR Partner</p>
-              <h2 className="font-heading text-[28px] md:text-[36px] font-bold text-text-dark leading-tight">Build the skills your organisation needs to grow your influence, manage your reputation, engage with media, and prepare for a crisis</h2>
-              <p className="mt-4 mx-auto max-w-[600px] text-[17px] text-text-medium">Most organisations don&apos;t have a dedicated PR resource. They miss opportunities, and when issues arise or media comes calling, teams are left without the skills, plans or support they need.</p>
+              <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-4"><T id="home.why.eyebrow">Why My PR Partner</T></p>
+              <h2 className="font-heading text-[28px] md:text-[36px] font-bold text-text-dark leading-tight"><T id="home.why.title">Build the skills your organisation needs to grow your influence, manage your reputation, engage with media, and prepare for a crisis</T></h2>
+              <p className="mt-4 mx-auto max-w-[600px] text-[17px] text-text-medium"><T id="home.why.subtitle">Most organisations don&apos;t have a dedicated PR resource. They miss opportunities, and when issues arise or media comes calling, teams are left without the skills, plans or support they need.</T></p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up">
               {[
                 { icon: BookOpen, title: "Practical training", body: "Monthly video training and downloadable workbooks + fortnightly Spotlight emails, from leading PR specialists across Australia and internationally." },
                 { icon: FileText, title: "Ready-to-use resources", body: "Media release and crisis plan templates, media response guides and communications checklists your team can implement immediately." },
                 { icon: Headphones, title: "Ongoing expert support", body: "Access to CRC Public Relations consultants via phone, email, and video + access to trainers through the member portal when you need guidance." },
-              ].map((card) => (
+              ].map((card, index) => (
                 <div key={card.title} className="bg-white rounded-card p-8 shadow-card">
                   <card.icon className="h-8 w-8 text-teal mb-4" />
-                  <h3 className="font-heading text-lg font-bold text-text-dark mb-2">{card.title}</h3>
-                  <p className="text-[15px] text-text-medium leading-relaxed">{card.body}</p>
+                  <h3 className="font-heading text-lg font-bold text-text-dark mb-2"><T id={`home.why.cards.${index}.title`}>{card.title}</T></h3>
+                  <p className="text-[15px] text-text-medium leading-relaxed"><T id={`home.why.cards.${index}.body`}>{card.body}</T></p>
                 </div>
               ))}
             </div>
@@ -356,28 +357,28 @@ export default function Home() {
         <section id="programs" className="bg-bg-grey py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
-              <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-4">Our programs</p>
-              <h2 className="font-heading text-[28px] md:text-[36px] font-bold text-text-dark leading-tight">Tailored programs for every organisation</h2>
-              <p className="mt-4 mx-auto max-w-[640px] text-base text-text-medium">Each program includes monthly expert-led training, downloadable resources and templates, and access to the member portal.</p>
+              <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-4"><T id="home.programs.eyebrow">Our programs</T></p>
+              <h2 className="font-heading text-[28px] md:text-[36px] font-bold text-text-dark leading-tight"><T id="home.programs.title">Tailored programs for every organisation</T></h2>
+              <p className="mt-4 mx-auto max-w-[640px] text-base text-text-medium"><T id="home.programs.subtitle">Each program includes monthly expert-led training, downloadable resources and templates, and access to the member portal.</T></p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in-up">
               {[
                 { image: "/images/card-schools.jpg", title: "Schools program", description: "Professional development in PR, media and crisis communications for school leaders and staff.", alt: "School leaders undertaking online PR and crisis communications training", href: "/programs/schools" },
                 { image: "/images/corporatevideomyprpartner.png", title: "Industry & professional associations program", description: "Practical PR skills and resources for association leaders and member organisations.", alt: "Association leaders undertaking online PR training in a boardroom", href: "/programs/industry-associations" },
                 { image: "/images/crisis masterclass home page.png", title: "Crisis masterclass", description: "Australia’s premier crisis communications training program in partnership with the Crisis Ready Institute.", alt: "Communications professional undertaking an online crisis communications masterclass", href: "/crisis-masterclass" },
-              ].map((program) => (
+              ].map((program, index) => (
                 <div key={program.title} className="bg-white rounded-card shadow-card overflow-hidden flex flex-col">
                   <div className="relative aspect-video">
                     <Image src={program.image} alt={program.alt} fill className="object-cover" />
                   </div>
                   <div className="p-6 flex flex-col flex-1">
-                    <h3 className="font-heading text-xl font-bold text-text-dark mb-2">{program.title}</h3>
-                    <p className="text-[14px] text-text-medium mb-3 flex-1">{program.description}</p>
+                    <h3 className="font-heading text-xl font-bold text-text-dark mb-2"><T id={`home.programs.items.${index}.title`}>{program.title}</T></h3>
+                    <p className="text-[14px] text-text-medium mb-3 flex-1"><T id={`home.programs.items.${index}.description`}>{program.description}</T></p>
                     <div className="flex items-center gap-2 text-[13px] text-gray-400 mb-4">
                       <Clock className="h-3.5 w-3.5" />
-                      <span>12-month online program</span>
+                      <span><T id={`home.programs.items.${index}.duration`}>12-month online program</T></span>
                     </div>
-                    <Link href={program.href} className="block w-full rounded-full bg-teal py-2.5 text-center text-sm font-medium text-white hover:bg-teal-dark transition-colors">View program</Link>
+                    <Link href={program.href} className="block w-full rounded-full bg-teal py-2.5 text-center text-sm font-medium text-white hover:bg-teal-dark transition-colors"><T id={`home.programs.items.${index}.cta`}>View program</T></Link>
                   </div>
                 </div>
               ))}
@@ -389,8 +390,8 @@ export default function Home() {
         <section className="bg-white py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14 animate-fade-in-up">
-              <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-4">What&apos;s included</p>
-              <h2 className="font-heading text-[28px] md:text-[36px] font-bold text-text-dark leading-tight">Every program includes</h2>
+              <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-4"><T id="home.included.eyebrow">What&apos;s included</T></p>
+              <h2 className="font-heading text-[28px] md:text-[36px] font-bold text-text-dark leading-tight"><T id="home.included.title">Every program includes</T></h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 animate-fade-in-up">
               {[
@@ -400,11 +401,11 @@ export default function Home() {
                 { icon: MessageSquare, title: "Member portal & Q&A", text: "Submit questions and access all your training content through the secure member dashboard." },
                 { icon: Phone, title: "CRC Public Relations support", text: "Support-tier subscribers get personal direct phone, email and video access to CRC Public Relations consultants." },
                 { icon: Award, title: "Exclusive partnerships", text: "Access the world-leading Crisis Ready\u00AE course with Melissa Agnes, CEO of Crisis Ready Institute USA, available exclusively through My PR Partner in Australasia." },
-              ].map((block) => (
+              ].map((block, index) => (
                 <div key={block.title} className="text-center md:text-left">
                   <block.icon className="h-10 w-10 text-teal mb-4 mx-auto md:mx-0" />
-                  <h3 className="font-heading text-[17px] font-bold text-text-dark mb-2">{block.title}</h3>
-                  <p className="text-[14px] text-text-medium leading-relaxed">{block.text}</p>
+                  <h3 className="font-heading text-[17px] font-bold text-text-dark mb-2"><T id={`home.included.items.${index}.title`}>{block.title}</T></h3>
+                  <p className="text-[14px] text-text-medium leading-relaxed"><T id={`home.included.items.${index}.text`}>{block.text}</T></p>
                 </div>
               ))}
             </div>
@@ -417,18 +418,18 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-16 items-center animate-fade-in-up">
               <div className="md:col-span-2">
                 <div className="relative aspect-[3/4] max-w-[320px] mx-auto md:mx-0 rounded-card overflow-hidden">
-                  <Image src="/images/founders-message.jpg" alt="Lyall Mercer and Barbara Gorogh" fill className="object-cover" />
+                  <Image src={copySrc("home.founders.image", "/images/founders-message.jpg")} {...imgBind("home.founders.image")} alt="Lyall Mercer and Barbara Gorogh" fill className="object-cover" />
                 </div>
               </div>
               <div className="md:col-span-3">
-                <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-3">From the founders</p>
-                <h2 className="font-heading text-[28px] md:text-[32px] font-bold text-text-dark leading-tight mb-6">A message from Lyall &amp; Barbara</h2>
+                <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-3"><T id="home.founders.eyebrow">From the founders</T></p>
+                <h2 className="font-heading text-[28px] md:text-[32px] font-bold text-text-dark leading-tight mb-6"><T id="home.founders.title">A message from Lyall &amp; Barbara</T></h2>
                 <blockquote className="border-l-[3px] border-teal pl-6 space-y-4 text-[17px] text-text-medium leading-relaxed">
-                  <p>Since 2010, our parent company CRC Public Relations has been assisting Australian and global businesses, charities, industry and professional associations, governments, schools and individuals to communicate more effectively and manage their reputations.</p>
-                  <p>We created My PR Partner so that every organisation can access world-class PR training, resources and support, without the cost of a PR agency retainer.</p>
-                  <p>We invite you to join the My PR Partner community.</p>
+                  <p><T id="home.founders.quote.0">Since 2010, our parent company CRC Public Relations has been assisting Australian and global businesses, charities, industry and professional associations, governments, schools and individuals to communicate more effectively and manage their reputations.</T></p>
+                  <p><T id="home.founders.quote.1">We created My PR Partner so that every organisation can access world-class PR training, resources and support, without the cost of a PR agency retainer.</T></p>
+                  <p><T id="home.founders.quote.2">We invite you to join the My PR Partner community.</T></p>
                 </blockquote>
-                <p className="mt-6 text-[14px] font-medium text-text-dark">- Lyall Mercer &amp; Barbara Gorogh, Co-founders</p>
+                <p className="mt-6 text-[14px] font-medium text-text-dark"><T id="home.founders.attribution">- Lyall Mercer &amp; Barbara Gorogh, Co-founders</T></p>
                 
               </div>
             </div>
@@ -439,9 +440,9 @@ export default function Home() {
         <section id="experts" className="bg-white py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
-              <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-4">Your expert team</p>
-              <h2 className="font-heading text-[28px] md:text-[36px] font-bold text-text-dark leading-tight">Learn from leading national and international public relations experts and industry specialists</h2>
-              <p className="mt-4 mx-auto max-w-[640px] text-base text-text-medium">Every program module and session is delivered by practitioners with decades of real-world consulting experience, not academics.</p>
+              <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-4"><T id="home.experts.eyebrow">Your expert team</T></p>
+              <h2 className="font-heading text-[28px] md:text-[36px] font-bold text-text-dark leading-tight"><T id="home.experts.title">Learn from leading national and international public relations experts and industry specialists</T></h2>
+              <p className="mt-4 mx-auto max-w-[640px] text-base text-text-medium"><T id="home.experts.subtitle">Every program module and session is delivered by practitioners with decades of real-world consulting experience, not academics.</T></p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto animate-fade-in-up">
               {[
@@ -459,24 +460,24 @@ export default function Home() {
                   title: "Founder, Crisis Ready Institute (USA)",
                   bio: "Globally recognised authority on crisis communication and crisis leadership. Presenting exclusively through My PR Partner in Australasia. Creator of the Crisis Ready\u00AE Model and best-selling author, Melissa has worked with global players including NATO, the Pentagon, financial firms, technology companies, healthcare organisations, law enforcement agencies, aviation organisations, global non-profits, and many others.",
                 },
-              ].map((expert) => (
+              ].map((expert, index) => (
                 <div key={expert.name} className="rounded-card border border-gray-200 p-8 text-center">
-                  <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.12em] text-teal">{expert.developer}</p>
+                  <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.12em] text-teal"><T id={`home.experts.items.${index}.developer`}>{expert.developer}</T></p>
                   <div className="mx-auto mb-4 h-[160px] w-[160px] overflow-hidden rounded-xl relative">
                     <Image src={expert.image} alt={expert.name} fill className="object-cover object-top" />
                   </div>
-                  <h3 className="font-heading text-lg font-bold text-text-dark">{expert.name}</h3>
-                  <p className="mt-1 text-sm text-teal font-medium">{expert.title}</p>
-                  <p className="mt-3 text-sm text-text-medium leading-relaxed">{expert.bio}</p>
+                  <h3 className="font-heading text-lg font-bold text-text-dark"><T id={`home.experts.items.${index}.name`}>{expert.name}</T></h3>
+                  <p className="mt-1 text-sm text-teal font-medium"><T id={`home.experts.items.${index}.title`}>{expert.title}</T></p>
+                  <p className="mt-3 text-sm text-text-medium leading-relaxed"><T id={`home.experts.items.${index}.bio`}>{expert.bio}</T></p>
                 </div>
               ))}
             </div>
             <div className="mt-8 text-center animate-fade-in-up">
               <p className="mx-auto max-w-[620px] text-[15px] leading-relaxed text-text-medium">
-                Plus national and international expert presenters across the My PR Partner programs.
+                <T id="home.experts.footnote">Plus national and international expert presenters across the My PR Partner programs.</T>
               </p>
               <Link href="/about/expert-trainers" className="mt-4 inline-block text-[15px] font-medium text-teal hover:text-teal-dark transition-colors">
-                Meet the full expert trainer panel &rarr;
+                <T id="home.experts.cta">Meet the full expert trainer panel &rarr;</T>
               </Link>
             </div>
           </div>
@@ -494,10 +495,10 @@ export default function Home() {
                   <CheckCircle className="h-5 w-5 text-teal" />
                 </div>
                 <h2 className="font-heading text-[28px] md:text-[32px] font-bold text-text-dark leading-[1.2]">
-                  Five steps to becoming a trusted public voice
+                  <T id="home.leadmagnet.title">Five steps to becoming a trusted public voice</T>
                 </h2>
                 <p className="mt-3 text-base text-text-medium leading-[1.7]">
-                  We live in an age of constant news. Journalists need fresh content every hour, and unlike advertising, the coverage costs you nothing. You don&apos;t need a public relations firm to begin. You need a few simple principles and the confidence to put your hand up. Follow these five steps and you can become a trusted voice in your field.
+                  <T id="home.leadmagnet.description">We live in an age of constant news. Journalists need fresh content every hour, and unlike advertising, the coverage costs you nothing. You don&apos;t need a public relations firm to begin. You need a few simple principles and the confidence to put your hand up. Follow these five steps and you can become a trusted voice in your field.</T>
                 </p>
                 <ul className="mt-5 space-y-2.5">
                   {[
@@ -506,21 +507,22 @@ export default function Home() {
                     "Ask what you can add to a story",
                     "Monitor the media in your field",
                     "Contact the journalist",
-                  ].map((item) => (
+                  ].map((item, index) => (
                     <li key={item} className="flex items-start gap-2.5 text-[14px] text-text-medium">
                       <Check className="h-4 w-4 text-teal mt-0.5 flex-shrink-0" />
-                      <span>{item}</span>
+                      <span><T id={`home.leadmagnet.steps.${index}`}>{item}</T></span>
                     </li>
                   ))}
                 </ul>
                 <LeadMagnetForm />
-                <p className="mt-3 text-[12px] text-gray-400">We respect your privacy. Unsubscribe anytime.</p>
+                <p className="mt-3 text-[12px] text-gray-400"><T id="home.leadmagnet.privacy">We respect your privacy. Unsubscribe anytime.</T></p>
               </div>
 
               {/* Right side */}
               <div className="lg:col-span-5 relative min-h-[280px] lg:min-h-0">
                 <Image
-                  src="/images/lead-magnet-bg.jpg"
+                  src={copySrc("home.leadmagnet.image", "/images/lead-magnet-bg.jpg")}
+                  {...imgBind("home.leadmagnet.image")}
                   alt="Professional desk with notebook and documents"
                   fill
                   className="object-cover"
@@ -528,11 +530,11 @@ export default function Home() {
                 <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(7,175,187,0.85) 0%, rgba(30,115,190,0.75) 100%)" }} />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-[200px] bg-white rounded-xl p-6 shadow-[0_8px_24px_rgba(0,0,0,0.15)] text-center">
-                    <p className="text-[11px] font-medium text-teal uppercase tracking-[0.1em]">My PR Partner</p>
-                    <p className="mt-3 font-heading text-[16px] font-bold text-text-dark leading-tight">Trusted Public Voice guide</p>
+                    <p className="text-[11px] font-medium text-teal uppercase tracking-[0.1em]"><T id="home.leadmagnet.card.eyebrow">My PR Partner</T></p>
+                    <p className="mt-3 font-heading text-[16px] font-bold text-text-dark leading-tight"><T id="home.leadmagnet.card.title">Trusted Public Voice guide</T></p>
                     <div className="mx-auto mt-3 h-[2px] w-10 bg-teal" />
-                    <p className="mt-3 text-[12px] text-text-medium">Five practical steps</p>
-                    <p className="mt-6 text-[10px] text-gray-400">Powered by CRC Public Relations</p>
+                    <p className="mt-3 text-[12px] text-text-medium"><T id="home.leadmagnet.card.subtitle">Five practical steps</T></p>
+                    <p className="mt-6 text-[10px] text-gray-400"><T id="home.leadmagnet.card.footer">Powered by CRC Public Relations</T></p>
                   </div>
                 </div>
               </div>
@@ -544,21 +546,21 @@ export default function Home() {
         <section className="bg-white py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 animate-fade-in-up">
-              <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-teal mb-4">Hear from our clients</p>
-              <h2 className="font-heading text-[28px] md:text-[32px] font-bold text-text-dark leading-tight">My PR Partner can help you achieve these same results</h2>
+              <p className="text-[12px] font-medium uppercase tracking-[0.12em] text-teal mb-4"><T id="home.testimonials.eyebrow">Hear from our clients</T></p>
+              <h2 className="font-heading text-[28px] md:text-[32px] font-bold text-text-dark leading-tight"><T id="home.testimonials.title">My PR Partner can help you achieve these same results</T></h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in-up">
               {[
                 { quote: "CRC Public Relations has helped us generate major, ongoing, national exposure and ensure that our message is widely heard.", name: "Peter White AM", title: "Managing Director", org: "Finance Brokers Association of Australia" },
                 { quote: "The invaluable customer relations support from CRC Public Relations helps ensure a high level of trust in, and growth for, our chain of more than 50 restaurants.", name: "Hamish Watson", title: "Director", org: "Cafe 63" },
                 { quote: "CRC Public Relations has developed a crisis communications plan for Christian schools and has assisted many of our member schools across Australia to effectively communicate when issues have arisen.", name: "Executive Officer", title: "", org: "National schools association" },
-              ].map((t) => (
+              ].map((t, index) => (
                 <div key={t.name} className="bg-[#F7F8FA] rounded-card p-8">
                   <span className="block text-[48px] leading-none text-teal/20 font-heading font-bold mb-2">&ldquo;</span>
-                  <p className="text-base text-text-medium italic leading-relaxed mb-5">{t.quote}</p>
+                  <p className="text-base text-text-medium italic leading-relaxed mb-5"><T id={`home.testimonials.items.${index}.quote`}>{t.quote}</T></p>
                   <div className="mt-5">
-                    <p className="text-[15px] font-medium text-text-dark">{t.name}</p>
-                    <p className="text-[14px] text-gray-400">{t.title ? `${t.title}, ` : ""}{t.org}</p>
+                    <p className="text-[15px] font-medium text-text-dark"><T id={`home.testimonials.items.${index}.name`}>{t.name}</T></p>
+                    <p className="text-[14px] text-gray-400"><T id={`home.testimonials.items.${index}.attribution`}>{t.title ? `${t.title}, ${t.org}` : t.org}</T></p>
                   </div>
                 </div>
               ))}
@@ -572,17 +574,17 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 animate-fade-in-up">
               {/* Left column - heading */}
               <div className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start">
-                <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-4">Common questions</p>
-                <h2 className="font-heading text-[28px] md:text-[32px] font-bold text-text-dark leading-tight">Frequently asked questions</h2>
-                <p className="mt-4 text-[15px] text-text-medium leading-relaxed">Everything you need to know about My PR Partner. Can&apos;t find the answer you&apos;re looking for?</p>
-                <Link href="/contact" className="inline-block mt-5 text-[15px] font-medium text-teal hover:text-teal-dark transition-colors">Get in touch &rarr;</Link>
+                <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-4"><T id="home.faq.eyebrow">Common questions</T></p>
+                <h2 className="font-heading text-[28px] md:text-[32px] font-bold text-text-dark leading-tight"><T id="home.faq.title">Frequently asked questions</T></h2>
+                <p className="mt-4 text-[15px] text-text-medium leading-relaxed"><T id="home.faq.subtitle">Everything you need to know about My PR Partner. Can&apos;t find the answer you&apos;re looking for?</T></p>
+                <Link href="/contact" className="inline-block mt-5 text-[15px] font-medium text-teal hover:text-teal-dark transition-colors"><T id="home.faq.cta">Get in touch &rarr;</T></Link>
               </div>
 
               {/* Right column - FAQ cards in two columns */}
               <div className="lg:col-span-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {HOME_FAQS.map((f) => (
-                    <FAQItem key={f.question} question={f.question} answer={f.answer} />
+                  {HOME_FAQS.map((f, index) => (
+                    <FAQItem key={f.question} id={`home.faq.items.${index}`} question={f.question} answer={f.answer} />
                   ))}
                 </div>
               </div>
@@ -594,11 +596,11 @@ export default function Home() {
         <section id="cta" className="bg-white py-8">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="bg-teal rounded-3xl px-8 py-20 text-center animate-fade-in-up">
-              <h2 className="font-heading text-[28px] md:text-[36px] font-bold text-white leading-tight mb-4">Ready to build your team&apos;s PR capability?</h2>
-              <p className="text-lg text-white/90 mb-8">Find the program that fits your organisation and start building your team&apos;s PR capability today.</p>
+              <h2 className="font-heading text-[28px] md:text-[36px] font-bold text-white leading-tight mb-4"><T id="home.cta.title">Ready to build your team&apos;s PR capability?</T></h2>
+              <p className="text-lg text-white/90 mb-8"><T id="home.cta.subtitle">Find the program that fits your organisation and start building your team&apos;s PR capability today.</T></p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="#programs" className="rounded-full bg-white px-8 py-3 text-sm font-medium text-text-dark hover:bg-gray-50 transition-colors">Explore programs</Link>
-                <Link href="/contact" className="rounded-full border-2 border-white px-8 py-3 text-sm font-medium text-white hover:bg-white/10 transition-colors">Contact us</Link>
+                <Link href="#programs" className="rounded-full bg-white px-8 py-3 text-sm font-medium text-text-dark hover:bg-gray-50 transition-colors"><T id="home.cta.primary">Explore programs</T></Link>
+                <Link href="/contact" className="rounded-full border-2 border-white px-8 py-3 text-sm font-medium text-white hover:bg-white/10 transition-colors"><T id="home.cta.secondary">Contact us</T></Link>
               </div>
             </div>
           </div>

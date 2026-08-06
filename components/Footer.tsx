@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, Mail, Sparkles } from "lucide-react";
 import { FooterNewsletter } from "./FooterNewsletter";
+import { T, copySrc, imgBind } from "@/components/editable";
 
 function LinkedinIcon({ className }: { className?: string }) {
   return (
@@ -70,14 +71,16 @@ export default function Footer() {
               <div className="lg:col-span-6">
                 <p className="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/[0.08] px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-teal-dark">
                   <Sparkles className="h-3.5 w-3.5" aria-hidden />
-                  Stay in the loop
+                  <T id="footer.newsletter.badge">Stay in the loop</T>
                 </p>
                 <h2 className="mt-4 font-heading text-[22px] font-bold leading-tight text-text-dark md:text-[28px]">
-                  Specialist-adviser thinking - straight to your inbox.
+                  <T id="footer.newsletter.title">Specialist-adviser thinking - straight to your inbox.</T>
                 </h2>
                 <p className="mt-3 max-w-[520px] text-[14.5px] leading-relaxed text-text-medium">
-                  New articles, program launches and practical templates.
-                  Fortnightly at most, unsubscribe in one click.
+                  <T id="footer.newsletter.subtitle">
+                    New articles, program launches and practical templates.
+                    Fortnightly at most, unsubscribe in one click.
+                  </T>
                 </p>
               </div>
               <div className="lg:col-span-6">
@@ -99,7 +102,8 @@ export default function Footer() {
               aria-label="My PR Partner home"
             >
               <Image
-                src="/my-pr-partner-logo-horz.png"
+                src={copySrc("footer.brand.logo", "/my-pr-partner-logo-horz.png")}
+                {...imgBind("footer.brand.logo")}
                 alt="My PR Partner"
                 width={2362}
                 height={893}
@@ -108,18 +112,20 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-5 max-w-[380px] text-[14.5px] leading-relaxed text-text-medium">
-              Public relations training, resources and support for Australian
-              and New Zealand organisations.
+              <T id="footer.brand.description">
+                Public relations training, resources and support for Australian
+                and New Zealand organisations.
+              </T>
             </p>
             <p className="mt-4 max-w-[380px] text-[14.5px] leading-relaxed text-text-medium">
-              Powered by CRC Public Relations.
+              <T id="footer.brand.powered-by">Powered by CRC Public Relations.</T>
             </p>
 
-            
+
 
             <div className="mt-7">
               <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-text-medium">
-                Follow along
+                <T id="footer.brand.follow-label">Follow along</T>
               </p>
               <div className="mt-3 flex items-center gap-3">
                 <a
@@ -156,7 +162,7 @@ export default function Footer() {
           {/* Programs */}
           <div className="md:col-span-2 lg:col-span-3">
             <h3 className="text-[12px] font-semibold uppercase tracking-[0.14em] text-text-dark">
-              Programs
+              <T id="footer.columns.programs.heading">Programs</T>
             </h3>
             <ul className="mt-4 space-y-3">
               {programLinks.map((link) => (
@@ -175,7 +181,7 @@ export default function Footer() {
           {/* Company */}
           <div className="md:col-span-2 lg:col-span-2">
             <h3 className="text-[12px] font-semibold uppercase tracking-[0.14em] text-text-dark">
-              Company
+              <T id="footer.columns.company.heading">Company</T>
             </h3>
             <ul className="mt-4 space-y-3">
               {companyLinks.map((link) => (
@@ -194,7 +200,7 @@ export default function Footer() {
           {/* Resources */}
           <div className="md:col-span-2 lg:col-span-3">
             <h3 className="text-[12px] font-semibold uppercase tracking-[0.14em] text-text-dark">
-              Free resources
+              <T id="footer.columns.resources.heading">Free resources</T>
             </h3>
             <ul className="mt-4 space-y-3">
               {resourceLinks.map((link) => (
@@ -213,7 +219,7 @@ export default function Footer() {
               className="mt-5 inline-flex items-center gap-2 text-[13.5px] font-semibold text-teal transition-colors hover:text-teal-dark"
             >
               <Mail className="h-4 w-4" aria-hidden />
-              Send us a message
+              <T id="footer.columns.resources.contact-cta">Send us a message</T>
               <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
             </Link>
           </div>
@@ -224,14 +230,14 @@ export default function Footer() {
       <div className="border-t border-[#EEF0F3] bg-white">
         <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
           <p className="text-center text-[13.5px] text-text-medium">
-            Need immediate crisis support?{" "}
+            <T id="footer.crisis-strip.text">Need immediate crisis support?</T>{" "}
             <a
               href="https://crcpr.com.au"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 font-semibold text-teal transition-colors hover:text-teal-dark"
             >
-              Contact CRC Public Relations
+              <T id="footer.crisis-strip.cta">Contact CRC Public Relations</T>
               <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
             </a>
           </p>
@@ -243,8 +249,10 @@ export default function Footer() {
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-between gap-4 text-[12.5px] text-text-medium sm:flex-row">
             <p className="text-center sm:text-left">
-              &copy; 2026 My PR Partner and CRC Public Relations. All rights
-              reserved.{" "}
+              <T id="footer.bottom-bar.copyright">
+                &copy; 2026 My PR Partner and CRC Public Relations. All rights
+                reserved.
+              </T>{" "}
               <a href="https://www.3pdigital.com.au" target="_blank" rel="noopener" className="transition-colors hover:text-teal">Proudly supported by 3P Digital</a>
             </p>
             <div className="flex items-center gap-4">

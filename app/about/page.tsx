@@ -18,6 +18,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import { AboutEnquiryForm } from "@/components/about/AboutEnquiryForm";
+import { T, copySrc, imgBind } from "@/components/editable";
 
 export const metadata: Metadata = {
   title: "Our Story - My PR Partner, Powered by CRC Public Relations",
@@ -144,7 +145,15 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
   );
 }
 
-function LeaderAvatar({ leader, size = 104 }: { leader: Leader; size?: number }) {
+function LeaderAvatar({
+  leader,
+  size = 104,
+  imgId,
+}: {
+  leader: Leader;
+  size?: number;
+  imgId: string;
+}) {
   if (leader.image) {
     return (
       <div
@@ -152,11 +161,12 @@ function LeaderAvatar({ leader, size = 104 }: { leader: Leader; size?: number })
         style={{ width: size, height: size }}
       >
         <Image
-          src={leader.image}
+          src={copySrc(imgId, leader.image)}
           alt={`${leader.name}, ${leader.role}`}
           fill
           sizes={`${size}px`}
           className="object-cover object-top"
+          {...imgBind(imgId)}
         />
       </div>
     );
@@ -198,12 +208,13 @@ export default function AboutPage() {
         <section className="relative overflow-hidden bg-text-dark">
           <div className="absolute inset-0">
             <Image
-              src="/images/crisis-masterclass/hero-bg-crisis.jpg"
+              src={copySrc("about.hero.background", "/images/crisis-masterclass/hero-bg-crisis.jpg")}
               alt=""
               fill
               priority
               sizes="100vw"
               className="object-cover opacity-35"
+              {...imgBind("about.hero.background")}
             />
             <div
               className="absolute inset-0"
@@ -218,26 +229,30 @@ export default function AboutPage() {
               <div className="lg:col-span-7">
                 <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[12px] font-medium uppercase tracking-[0.14em] text-white/90 backdrop-blur">
                   <Briefcase className="h-3.5 w-3.5" aria-hidden />
-                  Our story
+                  <T id="about.hero.badge">Our story</T>
                 </div>
                 <h1 className="font-heading text-[34px] font-bold leading-[1.08] text-white sm:text-[44px] md:text-[54px]">
-                  My PR Partner is powered by{" "}
-                  <span className="text-teal-light">CRC Public Relations</span>
+                  <T id="about.hero.title.prefix">My PR Partner is powered by</T>{" "}
+                  <span className="text-teal-light">
+                    <T id="about.hero.title.highlight">CRC Public Relations</T>
+                  </span>
                 </h1>
                 <p className="mt-5 max-w-[640px] text-[16px] leading-relaxed text-white/85 md:text-[18px]">
-                  My PR Partner is the online training platform built and
+                  <T id="about.hero.subtitle">
+                    My PR Partner is the online training platform built and
                   delivered by the senior advisers at CRC Public Relations
                   - the boutique Australian firm that has spent 15+ years
                   inside real boardrooms, real crises, and real high-stakes
                   decisions. We built My PR Partner because that experience
                   doesn&apos;t belong behind a consulting-firm paywall.
+                  </T>
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Link
                     href="/programs"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold text-text-dark transition-colors hover:bg-white/95"
                   >
-                    Explore programs
+                    <T id="about.hero.cta.primary">Explore programs</T>
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link
@@ -245,33 +260,34 @@ export default function AboutPage() {
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-white/50 bg-transparent px-7 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
                   >
                     <Users className="h-4 w-4" aria-hidden />
-                    Meet our trainers
+                    <T id="about.hero.cta.secondary">Meet our trainers</T>
                   </Link>
                 </div>
                 <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/15 pt-6 text-[12px] text-white/70">
-                  
+
                   <span aria-hidden className="text-white/30">|</span>
-                  <span>Built from real engagements</span>
+                  <span><T id="about.hero.trust.item1">Built from real engagements</T></span>
                   <span aria-hidden className="text-white/30">|</span>
-                  <span>Not your average online course</span>
+                  <span><T id="about.hero.trust.item2">Not your average online course</T></span>
                 </div>
               </div>
               <div className="hidden lg:col-span-5 lg:block">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-card shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
                   <Image
-                    src="/images/MyPrPartnerHeadshots2025-12.jpg"
+                    src={copySrc("about.hero.image", "/images/MyPrPartnerHeadshots2025-12.jpg")}
                     alt="Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner"
                     fill
                     priority
                     sizes="(min-width: 1024px) 40vw, 100vw"
                     className="object-cover"
+                    {...imgBind("about.hero.image")}
                   />
                   <div className="absolute bottom-5 left-5 right-5 rounded-xl bg-white/95 p-4 backdrop-blur">
                     <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-teal">
-                      Our founders
+                      <T id="about.hero.caption.eyebrow">Our founders</T>
                     </p>
                     <p className="mt-1 font-heading text-[15px] font-bold text-text-dark">
-                      Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner.
+                      <T id="about.hero.caption.text">Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner.</T>
                     </p>
                   </div>
                 </div>
@@ -284,19 +300,25 @@ export default function AboutPage() {
         <section className="bg-white">
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
             <div className="mx-auto max-w-[760px] text-center">
-              <SectionEyebrow>What makes us different</SectionEyebrow>
+              <SectionEyebrow>
+                <T id="about.why.eyebrow">What makes us different</T>
+              </SectionEyebrow>
               <SectionHeading>
-                Online training designed by practitioners, not by marketers
+                <T id="about.why.heading">
+                  Online training designed by practitioners, not by marketers
+                </T>
               </SectionHeading>
               <p className="mx-auto mt-4 max-w-[640px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                Every My PR Partner program is built
+                <T id="about.why.body">
+                  Every My PR Partner program is built
                 from - and delivered with - the same senior-adviser
                 experience CRC Public Relations uses to counsel boards and
                 governments at the highest level.
+                </T>
               </p>
             </div>
             <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
-              {whyPillars.map((p) => {
+              {whyPillars.map((p, index) => {
                 const Icon = p.icon;
                 return (
                   <article
@@ -310,13 +332,13 @@ export default function AboutPage() {
                       <Icon className="h-5 w-5" aria-hidden />
                     </div>
                     <p className="mt-5 text-[12px] font-medium uppercase tracking-[0.12em] text-teal">
-                      {p.eyebrow}
+                      <T id={`about.pillars.${index}.eyebrow`}>{p.eyebrow}</T>
                     </p>
                     <h3 className="mt-1 font-heading text-[22px] font-bold text-text-dark">
-                      {p.heading}
+                      <T id={`about.pillars.${index}.heading`}>{p.heading}</T>
                     </h3>
                     <p className="mt-3 text-[15px] leading-relaxed text-text-medium">
-                      {p.body}
+                      <T id={`about.pillars.${index}.body`}>{p.body}</T>
                     </p>
                   </article>
                 );
@@ -330,48 +352,59 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
             <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
               <div className="lg:col-span-7">
-                <SectionEyebrow>Why this matters for your team</SectionEyebrow>
+                <SectionEyebrow>
+                  <T id="about.firm.eyebrow">Why this matters for your team</T>
+                </SectionEyebrow>
                 <SectionHeading>
-                  The training you buy is only as good as the experience
+                  <T id="about.firm.heading">
+                    The training you buy is only as good as the experience
                   behind it
+                  </T>
                 </SectionHeading>
                 <div className="mt-6 space-y-5 text-[16px] leading-relaxed text-text-medium md:text-[17px]">
                   <p>
-                    CRC Public Relations - the firm that powers every
+                    <T id="about.firm.body.1">
+                      CRC Public Relations - the firm that powers every
                     My PR Partner program - was founded on a simple
                     principle: that organisations facing their most
                     significant communications challenges deserve direct
                     access to experienced senior advisers, not account
                     managers or junior staff.
+                    </T>
                   </p>
                   <p>
-                    For 15+ years CRC Public Relations has honoured that
+                    <T id="about.firm.body.2">
+                      For 15+ years CRC Public Relations has honoured that
                     principle for its clients. My PR Partner carries the same
                     principle into online training: no recycled content, no
                     off-the-shelf templates from overseas course libraries -
                     every module is shaped by the same senior team that advises
                     CRC Public Relations&apos; clients through their most
                     sensitive moments.
+                    </T>
                   </p>
                   <p>
-                    Those clients include national and international
+                    <T id="about.firm.body.3">
+                      Those clients include national and international
                     companies, governments, industry associations, independent
                     schools, faith-based organisations, child care and aged
                     care providers, NGOs, heads of state, and high profile
                     leaders and personalities. When you enrol in a My PR
                     Partner program, you&apos;re tapping into the same
                     experience that shaped every one of those engagements.
+                    </T>
                   </p>
                 </div>
               </div>
               <div className="lg:col-span-5">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-card shadow-card">
                   <Image
-                    src="/images/associations/associations-hero-bg.jpg"
+                    src={copySrc("about.firm.image", "/images/associations/associations-hero-bg.jpg")}
                     alt="Senior communications advisers in a boardroom setting"
                     fill
                     sizes="(min-width: 1024px) 35vw, 100vw"
                     className="object-cover"
+                    {...imgBind("about.firm.image")}
                   />
                   <div
                     className="absolute inset-0"
@@ -382,12 +415,14 @@ export default function AboutPage() {
                   />
                   <div className="absolute inset-x-5 bottom-5 rounded-xl bg-white/95 p-5 backdrop-blur">
                     <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-teal">
-                      Who we advise
+                      <T id="about.firm.caption.eyebrow">Who we advise</T>
                     </p>
                     <p className="mt-1 font-heading text-[15px] font-bold text-text-dark">
-                      Companies, governments, professional and industry
+                      <T id="about.firm.caption.text">
+                        Companies, governments, professional and industry
                       associations, schools, faith-based bodies, child &amp;
                       aged care, and Pacific organisations.
+                      </T>
                     </p>
                   </div>
                 </div>
@@ -406,19 +441,25 @@ export default function AboutPage() {
               >
                 <Quote className="h-5 w-5" aria-hidden />
               </div>
-              <SectionEyebrow>Our mission</SectionEyebrow>
+              <SectionEyebrow>
+                <T id="about.mission.eyebrow">Our mission</T>
+              </SectionEyebrow>
               <p className="mt-4 font-heading text-[22px] font-medium leading-[1.35] text-text-dark md:text-[28px]">
-                CRC Public Relations can only advise a finite number of clients
+                <T id="about.mission.quote">
+                  CRC Public Relations can only advise a finite number of clients
                 directly. My PR Partner is how 15+ years of senior-level
                 judgement - real boardrooms, real results, real decisions -
                 becomes a program your team can enrol in today.
+                </T>
               </p>
               <p className="mt-6 text-[15.5px] leading-relaxed text-text-medium md:text-[16.5px]">
-                You&apos;re not learning from a course creator or a generic
+                <T id="about.mission.body">
+                  You&apos;re not learning from a course creator or a generic
                 training library. You&apos;re learning from a boutique firm
                 that was hired for the exact situations we teach - with the
                 same senior advisers who take a genuine, long-term interest in
                 the organisations they work with.
+                </T>
               </p>
             </div>
           </div>
@@ -428,52 +469,60 @@ export default function AboutPage() {
         <section id="leadership" className="scroll-mt-28 bg-white">
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
             <div className="mx-auto max-w-[760px] text-center">
-              <SectionEyebrow>Leadership team</SectionEyebrow>
+              <SectionEyebrow>
+                <T id="about.leadership.eyebrow">Leadership team</T>
+              </SectionEyebrow>
               <SectionHeading>
-                The people who shape the advice also shape the training
+                <T id="about.leadership.heading">
+                  The people who shape the advice also shape the training
+                </T>
               </SectionHeading>
               <p className="mx-auto mt-4 max-w-[640px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                My PR Partner isn&apos;t run by course creators. It&apos;s
+                <T id="about.leadership.intro">
+                  My PR Partner isn&apos;t run by course creators. It&apos;s
                 run by the same senior CRC Public Relations advisers who lead
                 client engagements at the highest level - and who
                 shape, review and deliver every program you enrol in.
+                </T>
               </p>
             </div>
             <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-              {leadershipTeam.map((leader) => (
+              {leadershipTeam.map((leader, index) => (
                 <article
                   key={leader.slug}
                   className="flex h-full flex-col rounded-card border border-[#E5E7EB] bg-white p-7 shadow-sm md:p-8"
                 >
                   <header className="flex items-start gap-5">
-                    <LeaderAvatar leader={leader} size={104} />
+                    <LeaderAvatar leader={leader} size={104} imgId={`about.leadership.${index}.image`} />
                     <div className="min-w-0 pt-1">
                       <h3 className="font-heading text-[22px] font-bold leading-tight text-text-dark md:text-[24px]">
-                        {leader.name}
+                        <T id={`about.leadership.${index}.name`}>{leader.name}</T>
                       </h3>
                       <p className="mt-1 text-[13.5px] font-semibold text-teal">
-                        {leader.role}
+                        <T id={`about.leadership.${index}.role`}>{leader.role}</T>
                       </p>
                     </div>
                   </header>
                   <p className="mt-5 text-[15.5px] font-medium leading-relaxed text-text-dark">
-                    {leader.tagline}
+                    <T id={`about.leadership.${index}.tagline`}>{leader.tagline}</T>
                   </p>
                   <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-text-medium">
                     {leader.bio.map((paragraph, i) => (
-                      <p key={i}>{paragraph}</p>
+                      <p key={i}>
+                        <T id={`about.leadership.${index}.bio.${i}`}>{paragraph}</T>
+                      </p>
                     ))}
                   </div>
                 </article>
               ))}
             </div>
             <p className="mt-8 text-center text-[14px] text-text-medium">
-              Want to meet the 10+ expert trainers who deliver each program?{" "}
+              <T id="about.leadership.footer.text">Want to meet the 10+ expert trainers who deliver each program?</T>{" "}
               <Link
                 href="/about/expert-trainers"
                 className="font-semibold text-teal underline hover:text-teal-dark"
               >
-                See the full panel of presenters
+                <T id="about.leadership.footer.linktext">See the full panel of presenters</T>
               </Link>
               .
             </p>
@@ -487,11 +536,12 @@ export default function AboutPage() {
         >
           <div className="absolute inset-0">
             <Image
-              src="/images/associations/associations-final-cta-bg.jpg"
+              src={copySrc("about.enquiry.background", "/images/associations/associations-final-cta-bg.jpg")}
               alt=""
               fill
               sizes="100vw"
               className="object-cover opacity-30"
+              {...imgBind("about.enquiry.background")}
             />
             <div
               className="absolute inset-0"
@@ -506,20 +556,22 @@ export default function AboutPage() {
               <div className="lg:col-span-6">
                 <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.14em] text-white/90 backdrop-blur">
                   <Shield className="h-3.5 w-3.5" aria-hidden />
-                  Enquiry
+                  <T id="about.enquiry.badge">Enquiry</T>
                 </p>
                 <h2 className="mt-5 font-heading text-[28px] font-bold leading-tight text-white md:text-[38px]">
-                  Have a question about a program or your team?
+                  <T id="about.enquiry.heading">Have a question about a program or your team?</T>
                 </h2>
                 <p className="mt-5 max-w-[540px] text-[16px] leading-relaxed text-white/85 md:text-[17px]">
-                  Whether you&apos;re picking the right program for your
+                  <T id="about.enquiry.body">
+                    Whether you&apos;re picking the right program for your
                   sector, planning a team or group enrolment, or navigating
                   something more sensitive, drop us a note. Every enquiry is
                   reviewed by a senior adviser - and escalated to
                   CRC Public Relations directly when the matter warrants it.
+                  </T>
                 </p>
                 <ul className="mt-7 space-y-2.5">
-                  {enquiryBenefits.map((b) => (
+                  {enquiryBenefits.map((b, index) => (
                     <li
                       key={b}
                       className="flex items-start gap-3 text-[15px] leading-relaxed text-white/90"
@@ -530,7 +582,7 @@ export default function AboutPage() {
                       >
                         <Check className="h-3 w-3" />
                       </span>
-                      {b}
+                      <T id={`about.enquiry.benefits.${index}`}>{b}</T>
                     </li>
                   ))}
                 </ul>
@@ -547,23 +599,29 @@ export default function AboutPage() {
         <section className="bg-white">
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-18 lg:px-8">
             <div className="mx-auto max-w-[760px] rounded-card border border-[#E5E7EB] bg-[#F7F8FA] p-8 text-center md:p-12">
-              <SectionEyebrow>Learn from the firm</SectionEyebrow>
+              <SectionEyebrow>
+                <T id="about.finalcta.eyebrow">Learn from the firm</T>
+              </SectionEyebrow>
               <SectionHeading>
-                Want CRC Public Relations&apos; senior advisory experience,
+                <T id="about.finalcta.heading">
+                  Want CRC Public Relations&apos; senior advisory experience,
                 in a program you can enrol in today?
+                </T>
               </SectionHeading>
               <p className="mx-auto mt-4 max-w-[600px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                My PR Partner is how CRC Public Relations opens up 15+ years of
+                <T id="about.finalcta.body">
+                  My PR Partner is how CRC Public Relations opens up 15+ years of
                 corporate, crisis and reputation experience to organisations
                 that can&apos;t all engage the firm directly. Pick the program
                 built for your sector.
+                </T>
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Link
                   href="/programs"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-teal px-8 py-4 text-[16px] font-semibold text-white transition-colors hover:bg-teal-dark"
                 >
-                  Explore programs
+                  <T id="about.finalcta.cta.primary">Explore programs</T>
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </Link>
                 <Link
@@ -571,18 +629,18 @@ export default function AboutPage() {
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E5E7EB] bg-white px-8 py-4 text-[16px] font-semibold text-text-dark transition-colors hover:border-teal hover:text-teal"
                 >
                   <Shield className="h-4 w-4" aria-hidden />
-                  Crisis Masterclass
+                  <T id="about.finalcta.cta.secondary">Crisis Masterclass</T>
                 </Link>
               </div>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[12.5px] text-text-medium">
                 <span className="inline-flex items-center gap-1.5">
                   <Award className="h-3.5 w-3.5 text-teal" aria-hidden />
-                  Powered by CRC Public Relations
+                  <T id="about.finalcta.trust.item1">Powered by CRC Public Relations</T>
                 </span>
                 <span aria-hidden className="text-text-medium/40">|</span>
                 <span className="inline-flex items-center gap-1.5">
                   <Globe2 className="h-3.5 w-3.5 text-teal" aria-hidden />
-                  Trusted across Australia and the Pacific
+                  <T id="about.finalcta.trust.item2">Trusted across Australia and the Pacific</T>
                 </span>
               </div>
             </div>

@@ -22,6 +22,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BreadcrumbJsonLd } from "@/components/seo/StructuredData";
+import { T, copySrc, imgBind } from "@/components/editable";
 
 export const metadata: Metadata = {
   title: "All Programs - Find the Right One for Your Team | My PR Partner",
@@ -301,7 +302,8 @@ export default function ProgramsPage() {
         <section className="relative overflow-hidden bg-text-dark">
           <div className="absolute inset-0">
             <Image
-              src="/images/crisis-masterclass/group-enrolment-bg.jpg"
+              src={copySrc("programs.hero.bg-image", "/images/crisis-masterclass/group-enrolment-bg.jpg")}
+              {...imgBind("programs.hero.bg-image")}
               alt=""
               fill
               priority
@@ -320,31 +322,35 @@ export default function ProgramsPage() {
             <div className="mx-auto max-w-[860px] text-center">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[12px] font-medium uppercase tracking-[0.14em] text-white/90 backdrop-blur">
                 <Compass className="h-3.5 w-3.5" aria-hidden />
-                Our programs
+                <T id="programs.hero.badge">Our programs</T>
               </div>
               <h1 className="font-heading text-[34px] font-bold leading-[1.08] text-white sm:text-[44px] md:text-[52px]">
-                Four programs.{" "}
-                <span className="text-teal-light">One built for your team.</span>
+                <T id="programs.hero.title-line1">Four programs.</T>{" "}
+                <span className="text-teal-light">
+                  <T id="programs.hero.title-line2">One built for your team.</T>
+                </span>
               </h1>
               <p className="mx-auto mt-5 max-w-[680px] text-[16px] leading-relaxed text-white/85 md:text-[18px]">
-                Every My PR Partner program is designed by the senior advisers
-                at CRC Public Relations for a specific sector and a specific
-                kind of leadership team. Find the one built for yours in under
-                two minutes.
+                <T id="programs.hero.subtitle">
+                  Every My PR Partner program is designed by the senior advisers
+                  at CRC Public Relations for a specific sector and a specific
+                  kind of leadership team. Find the one built for yours in under
+                  two minutes.
+                </T>
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
                 <Link
                   href="#match"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold text-text-dark transition-colors hover:bg-white/95"
                 >
-                  Help me find mine
+                  <T id="programs.hero.cta-primary">Help me find mine</T>
                   <ArrowDown className="h-4 w-4" aria-hidden />
                 </Link>
                 <Link
                   href="#programs"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-white/50 bg-transparent px-7 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
                 >
-                  See every program
+                  <T id="programs.hero.cta-secondary">See every program</T>
                 </Link>
               </div>
             </div>
@@ -356,20 +362,22 @@ export default function ProgramsPage() {
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-18 lg:px-8">
             <div className="mx-auto max-w-[760px] text-center">
               <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                Match your team
+                <T id="programs.match.eyebrow">Match your team</T>
               </p>
               <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[36px]">
-                Which of these sounds most like you?
+                <T id="programs.match.title">Which of these sounds most like you?</T>
               </h2>
               <p className="mx-auto mt-4 max-w-[620px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                Tap the persona closest to your role. We&apos;ll take you to
-                the program built specifically for your sector and leadership
-                team.
+                <T id="programs.match.subtitle">
+                  Tap the persona closest to your role. We&apos;ll take you to
+                  the program built specifically for your sector and leadership
+                  team.
+                </T>
               </p>
             </div>
 
             <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {personaTiles.map((p) => {
+              {personaTiles.map((p, index) => {
                 const Icon = p.icon;
                 return (
                   <Link
@@ -379,7 +387,8 @@ export default function ProgramsPage() {
                   >
                     <div className="relative h-44 w-full overflow-hidden bg-[#F7F8FA]">
                       <Image
-                        src={p.image}
+                        src={copySrc(`programs.personas.${index}.image`, p.image)}
+                        {...imgBind(`programs.personas.${index}.image`)}
                         alt=""
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
@@ -392,13 +401,13 @@ export default function ProgramsPage() {
                     </div>
                     <div className="flex flex-1 flex-col p-5">
                       <p className="font-heading text-[15.5px] font-bold leading-snug text-text-dark">
-                        {p.label}
+                        <T id={`programs.personas.${index}.label`}>{p.label}</T>
                       </p>
                       <p className="mt-1.5 text-[12.5px] leading-relaxed text-text-medium">
-                        {p.sublabel}
+                        <T id={`programs.personas.${index}.sublabel`}>{p.sublabel}</T>
                       </p>
                       <span className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-teal transition-colors group-hover:text-teal-dark">
-                        See the program
+                        <T id="programs.personas.cta-label">See the program</T>
                         <ArrowRight
                           className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
                           aria-hidden
@@ -417,19 +426,21 @@ export default function ProgramsPage() {
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
             <div className="mx-auto max-w-[760px] text-center">
               <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                Every program, side by side
+                <T id="programs.grid.eyebrow">Every program, side by side</T>
               </p>
               <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[36px]">
-                All four programs at a glance
+                <T id="programs.grid.title">All four programs at a glance</T>
               </h2>
               <p className="mx-auto mt-4 max-w-[640px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                Each card links to the full program page. Start with the one
-                that fits your sector and leadership team.
+                <T id="programs.grid.subtitle">
+                  Each card links to the full program page. Start with the one
+                  that fits your sector and leadership team.
+                </T>
               </p>
             </div>
 
             <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-              {programs.map((p) => {
+              {programs.map((p, index) => {
                 const Icon = p.icon;
                 return (
                   <article
@@ -438,7 +449,8 @@ export default function ProgramsPage() {
                   >
                     <div className="relative h-56 w-full overflow-hidden bg-[#EEF0F3] md:h-64">
                       <Image
-                        src={p.image}
+                        src={copySrc(`programs.cards.${index}.image`, p.image)}
+                        {...imgBind(`programs.cards.${index}.image`)}
                         alt={p.imageAlt}
                         fill
                         sizes="(max-width: 1024px) 100vw, 50vw"
@@ -458,7 +470,7 @@ export default function ProgramsPage() {
                           ) : (
                             <Sparkles className="h-3 w-3" aria-hidden />
                           )}
-                          {p.status.label}
+                          <T id={`programs.cards.${index}.status`}>{p.status.label}</T>
                         </span>
                       </div>
                       <div className="absolute bottom-4 left-4 right-4 flex items-start gap-3">
@@ -470,10 +482,10 @@ export default function ProgramsPage() {
                         </div>
                         <div>
                           <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-white/85">
-                            {p.sector}
+                            <T id={`programs.cards.${index}.sector`}>{p.sector}</T>
                           </p>
                           <h3 className="font-heading text-[22px] font-bold leading-snug text-white">
-                            {p.title}
+                            <T id={`programs.cards.${index}.title`}>{p.title}</T>
                           </h3>
                         </div>
                       </div>
@@ -481,17 +493,17 @@ export default function ProgramsPage() {
 
                     <div className="flex flex-1 flex-col p-6 md:p-7">
                       <p className="text-[15.5px] font-medium leading-relaxed text-text-dark">
-                        {p.lede}
+                        <T id={`programs.cards.${index}.lede`}>{p.lede}</T>
                       </p>
                       <p className="mt-2 text-[14px] leading-relaxed text-text-medium">
                         <span className="font-semibold text-text-dark">
-                          Built for:
+                          <T id="programs.cards.built-for-label">Built for:</T>
                         </span>{" "}
-                        {p.audience}
+                        <T id={`programs.cards.${index}.audience`}>{p.audience}</T>
                       </p>
 
                       <ul className="mt-5 space-y-2.5">
-                        {p.outcomes.map((o) => (
+                        {p.outcomes.map((o, oi) => (
                           <li
                             key={o}
                             className="flex items-start gap-2.5 text-[14px] leading-relaxed text-text-medium"
@@ -502,7 +514,7 @@ export default function ProgramsPage() {
                             >
                               <Check className="h-2.5 w-2.5" />
                             </span>
-                            {o}
+                            <T id={`programs.cards.${index}.outcomes.${oi}`}>{o}</T>
                           </li>
                         ))}
                       </ul>
@@ -510,17 +522,17 @@ export default function ProgramsPage() {
                       <div className="mt-auto flex flex-col gap-3 border-t border-[#F1F2F5] pt-5 sm:flex-row sm:items-center sm:justify-between">
                         <div>
                           <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-text-medium">
-                            Pricing
+                            <T id="programs.cards.pricing-label">Pricing</T>
                           </p>
                           <p className="mt-0.5 font-heading text-[15.5px] font-bold text-text-dark">
-                            {p.pricing}
+                            <T id={`programs.cards.${index}.pricing`}>{p.pricing}</T>
                           </p>
                         </div>
                         <Link
                           href={p.href}
                           className="inline-flex items-center justify-center gap-2 rounded-full bg-teal px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-teal-dark"
                         >
-                          {p.cta}
+                          <T id={`programs.cards.${index}.cta`}>{p.cta}</T>
                           <ArrowRight className="h-3.5 w-3.5" aria-hidden />
                         </Link>
                       </div>
@@ -537,10 +549,10 @@ export default function ProgramsPage() {
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
             <div className="mx-auto max-w-[760px] text-center">
               <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                Compare at a glance
+                <T id="programs.comparison.eyebrow">Compare at a glance</T>
               </p>
               <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[36px]">
-                Programs side by side
+                <T id="programs.comparison.title">Programs side by side</T>
               </h2>
             </div>
 
@@ -551,7 +563,7 @@ export default function ProgramsPage() {
                     <th className="sticky left-0 z-20 w-[150px] bg-white p-4 text-[12px] font-medium uppercase tracking-[0.12em] text-text-medium shadow-[2px_0_5px_-2px_rgba(16,24,40,0.08)] after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-[#E5E7EB] sm:w-[160px]">
                       &nbsp;
                     </th>
-                    {programs.map((p) => {
+                    {programs.map((p, index) => {
                       const Icon = p.icon;
                       return (
                         <th
@@ -569,7 +581,7 @@ export default function ProgramsPage() {
                               <Icon className="h-4 w-4" aria-hidden />
                             </span>
                             <span className="font-heading text-[14px] font-bold leading-snug text-text-dark group-hover:text-teal">
-                              {p.title}
+                              <T id={`programs.cards.${index}.title`}>{p.title}</T>
                             </span>
                           </Link>
                         </th>
@@ -578,7 +590,7 @@ export default function ProgramsPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {comparisonRows.map((row) => {
+                  {comparisonRows.map((row, ri) => {
                     const RowIcon = row.icon;
                     return (
                       <tr
@@ -594,7 +606,7 @@ export default function ProgramsPage() {
                               className="h-4 w-4 text-teal"
                               aria-hidden
                             />
-                            {row.label}
+                            <T id={`programs.comparison.rows.${ri}.label`}>{row.label}</T>
                           </span>
                         </th>
                         {row.values.map((v, i) => (
@@ -602,7 +614,7 @@ export default function ProgramsPage() {
                             key={i}
                             className="p-4 align-top text-[13.5px] leading-relaxed text-text-medium"
                           >
-                            {v}
+                            <T id={`programs.comparison.rows.${ri}.values.${i}`}>{v}</T>
                           </td>
                         ))}
                       </tr>
@@ -612,13 +624,15 @@ export default function ProgramsPage() {
               </table>
             </ScrollHintTable>
             <p className="mt-6 text-center text-[13px] text-text-medium">
-              Every program is designed and delivered by senior advisers at
-              CRC Public Relations.{" "}
+              <T id="programs.comparison.footnote">
+                Every program is designed and delivered by senior advisers at
+                CRC Public Relations.
+              </T>{" "}
               <Link
                 href="/about"
                 className="font-semibold text-teal underline hover:text-teal-dark"
               >
-                How we build our programs
+                <T id="programs.comparison.footnote-cta">How we build our programs</T>
               </Link>
               .
             </p>
@@ -630,19 +644,21 @@ export default function ProgramsPage() {
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
             <div className="mx-auto max-w-[760px] text-center">
               <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
-                Still not sure?
+                <T id="programs.final.eyebrow">Still not sure?</T>
               </p>
               <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-text-dark md:text-[36px]">
-                Three ways to work out the right next step
+                <T id="programs.final.title">Three ways to work out the right next step</T>
               </h2>
               <p className="mx-auto mt-4 max-w-[620px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                Have a quick conversation, read a few articles, or see
-                what&apos;s coming next - whichever works best for you.
+                <T id="programs.final.subtitle">
+                  Have a quick conversation, read a few articles, or see
+                  what&apos;s coming next - whichever works best for you.
+                </T>
               </p>
             </div>
 
             <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
-              {finalFunnel.map((f) => {
+              {finalFunnel.map((f, index) => {
                 const Icon = f.icon;
                 return (
                   <Link
@@ -657,16 +673,16 @@ export default function ProgramsPage() {
                       <Icon className="h-5 w-5" aria-hidden />
                     </div>
                     <p className="mt-5 text-[12px] font-medium uppercase tracking-[0.12em] text-teal">
-                      {f.eyebrow}
+                      <T id={`programs.final.cards.${index}.eyebrow`}>{f.eyebrow}</T>
                     </p>
                     <h3 className="mt-1 font-heading text-[20px] font-bold leading-snug text-text-dark">
-                      {f.title}
+                      <T id={`programs.final.cards.${index}.title`}>{f.title}</T>
                     </h3>
                     <p className="mt-3 flex-1 text-[14.5px] leading-relaxed text-text-medium">
-                      {f.body}
+                      <T id={`programs.final.cards.${index}.body`}>{f.body}</T>
                     </p>
                     <span className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-teal transition-colors group-hover:text-teal-dark">
-                      {f.cta}
+                      <T id={`programs.final.cards.${index}.cta`}>{f.cta}</T>
                       <ArrowRight
                         className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
                         aria-hidden

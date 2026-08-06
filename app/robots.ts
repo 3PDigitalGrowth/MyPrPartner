@@ -8,8 +8,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        // API routes carry no indexable content; preview-output is internal only.
-        disallow: ["/api/", "/preview-output/"],
+        // API routes carry no indexable content; preview-output and the
+        // content editor are internal only.
+        disallow: ["/api/", "/preview-output/", "/admin"],
       },
     ],
     sitemap: `${BASE}/sitemap.xml`,
