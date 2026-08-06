@@ -1,5 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    // The /admin routes are the site's only serverless functions. Without
+    // these excludes Vercel's file tracer drags the whole workspace (265 MB
+    // crisis_mc_content_library, 185 MB public/) into each function bundle
+    // and blows the 250 MB uncompressed limit. public/ is served from the
+    // CDN, never read by function code.
+    outputFileTracingExcludes: {
+      "*": [
+        "./crisis_mc_content_library/**",
+        "./public/**",
+        "./docs/**",
+        "./email-previews/**",
+        "./scripts/**",
+      ],
+    },
+  },
   images: {
     remotePatterns: [
       // Contentful media CDN - for article hero images and author avatars
