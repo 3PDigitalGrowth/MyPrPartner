@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title:
     "Expert PR Trainers & Presenters | My PR Partner",
   description:
-    "Meet the 12+ public relations, crisis communications and reputation specialists who deliver My PR Partner programs - leaders in their field from Australia, New Zealand, the USA and beyond.",
+    "Meet the 10+ public relations, crisis communications and reputation specialists who deliver My PR Partner programs - leaders in their field from Australia, New Zealand, the USA and beyond.",
   alternates: { canonical: "https://myprpartner.com/about/expert-trainers" },
   openGraph: {
     title: "Expert PR Trainers & Presenters | My PR Partner",
@@ -147,18 +147,6 @@ const trainers: Trainer[] = [
     programs: ["business"],
   },
   {
-    slug: "jonathan-hawkes",
-    name: "Jonathan Hawkes",
-    title: "Campaigner & Communication Adviser",
-    org: "Uncommon Asymmetry",
-    location: "Australia",
-    bio: "Jonathan is a highly experienced campaigner, communication professional and adviser, having worked on many industry positioning campaigns and over 30 state and federal campaigns for more than 20 years. He is a former federal director for the National Party of Australia, director of the 2010 state campaign for the Tasmanian Liberal Party, and a senior media adviser to cabinet ministers and political leaders. Jonathan knows how to compete for attention and message space, and achieve influence and successful advocacy.",
-    image: "/images/instructors/jonathan-hawkes.png",
-    initials: "JH",
-    palette: "navy",
-    programs: ["associations"],
-  },
-  {
     slug: "vincent-potage",
     name: "Vincent Potage",
     title: "Strategic Communicator · MBA, CIPR (UK)",
@@ -224,7 +212,7 @@ const specialtyGroups: SpecialtyGroup[] = [
     blurb:
       "Journalists, strategists, podcasters and campaigners who know how to earn attention, shape the conversation and influence outcomes.",
     icon: Newspaper,
-    trainers: ["trevor-young", "jonathan-hawkes", "cavill-stone", "vincent-potage", "julie-mason", "lyall-mercer"],
+    trainers: ["trevor-young", "cavill-stone", "vincent-potage", "julie-mason", "lyall-mercer"],
   },
   {
     id: "growth",
@@ -482,7 +470,7 @@ export default function ExpertTrainersPage() {
           <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-12 lg:px-8">
             <div className="grid grid-cols-2 gap-6 text-center md:grid-cols-4">
               {[
-                { stat: "12+", label: "Expert presenters" },
+                { stat: "10+", label: "Expert presenters" },
                 { stat: "200+", label: "Combined years of PR experience" },
                 { stat: "4", label: "Continents represented" },
                 { stat: "Every", label: "Area of public relations" },
