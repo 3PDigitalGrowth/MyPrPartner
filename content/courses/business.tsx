@@ -303,7 +303,7 @@ export const businessContent: CourseContent = {
       "Lead presenter is Lyall Mercer, supported by a host of specialist experts and successful Australian business owners and charity CEOs who each bring real-world experience to the program.",
     items: [
       {
-        image: "/images/instructors/lyall-mercer.png",
+        image: "/images/founders-2026/lyall-business.jpg",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
         bio: "Former journalist with a 25+ year PR career spanning six continents. Lyall has assisted Australian businesses, from hospitality and professional services to national brands, as well as national charities and not for profits, spoken at numerous conferences, and trained executive teams and staff in the art of effective communication, and reputation and crisis strategy.",
@@ -524,7 +524,7 @@ export const businessContent: CourseContent = {
   foundersWelcome: {
     eyebrow: "From the founders",
     heading: "A message from Lyall and Barbara",
-    image: "/images/founders-message.jpg",
+    image: "/images/founders-2026/founders-business.jpg",
     imageAlt: "Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner",
     paragraphs: [
       "We have a deep understanding of the unique needs facing Australian business owners and leadership teams, not for profit organisations, and faith-based charities, having worked alongside organisations of every size - from local to national brands - for 15+ years through CRC Public Relations.",

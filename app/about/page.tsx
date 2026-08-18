@@ -90,7 +90,7 @@ const leadershipTeam: Leader[] = [
       "For more than 25 years, Lyall has advised national and international companies and organisations, governments, senior executives, politicians, celebrities and sporting figures across Australia, the Pacific, and internationally. He has coordinated international media conferences, walked clients through issues that have generated intense national and global media exposure, and has been a keynote speaker and presenter at corporate, industry and faith-based conferences across Australia and the USA. As an expert commentator in the area of crisis communications, Lyall has been quoted or interviewed by news organisations from around the world.",
       "Clients engage Lyall when the matter requires senior judgement, calm counsel, and direct access to someone who has seen how high-stakes situations actually unfold.",
     ],
-    image: "/images/instructors/lyall-mercer.png",
+    image: "/images/founders-2026/lyall-card.jpg",
     initials: "LM",
     palette: "navy",
   },
@@ -104,7 +104,7 @@ const leadershipTeam: Leader[] = [
       "Barbara has worked across Australia and the Pacific region for more than a decade, dealing with companies, organisations and governments in the area of corporate communications and reputation management. She has overseen major online corporate and government communications campaigns designed to achieve vital client objectives, and developed a specialty area in reputation management in the B2C environment. Barbara also oversees digital and social media strategies for our clients - which form an important part of every public relations, reputation and crisis strategy - and the development of our digital team based across Australia and the Pacific.",
       "Barbara's work in the media monitoring space ensures our clients are ahead of the stories that matter.",
     ],
-    image: "/images/instructors/barbara-gorogh.png",
+    image: "/images/founders-2026/barbara-card.jpg",
     initials: "BG",
     palette: "teal",
   },
@@ -274,7 +274,7 @@ export default function AboutPage() {
               <div className="hidden lg:col-span-5 lg:block">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-card shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
                   <Image
-                    src={copySrc("about.hero.image", "/images/MyPrPartnerHeadshots2025-12.jpg")}
+                    src={copySrc("about.hero.image", "/images/founders-2026/founders-hero.jpg")}
                     alt="Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner"
                     fill
                     priority

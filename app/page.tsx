@@ -418,7 +418,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-16 items-center animate-fade-in-up">
               <div className="md:col-span-2">
                 <div className="relative aspect-[3/4] max-w-[320px] mx-auto md:mx-0 rounded-card overflow-hidden">
-                  <Image src={copySrc("home.founders.image", "/images/founders-message.jpg")} {...imgBind("home.founders.image")} alt="Lyall Mercer and Barbara Gorogh" fill className="object-cover" />
+                  <Image src={copySrc("home.founders.image", "/images/founders-2026/founders-home.jpg")} {...imgBind("home.founders.image")} alt="Lyall Mercer and Barbara Gorogh" fill className="object-cover" />
                 </div>
               </div>
               <div className="md:col-span-3">
@@ -447,7 +447,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto animate-fade-in-up">
               {[
                 {
-                  image: "/images/instructors/lyall-mercer.png",
+                  image: "/images/founders-2026/lyall-panel.jpg",
                   name: "Lyall Mercer",
                   developer: "Training developer - Business, charity, schools, industry associations",
                   title: "Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",

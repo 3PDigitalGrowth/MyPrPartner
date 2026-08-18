@@ -280,7 +280,7 @@ export const crisisMasterclassContent: CourseContent = {
       "Every module is developed and delivered by practising consultants who live this work every day, not academics.",
     items: [
       {
-        image: "/images/instructors/lyall-mercer.png",
+        image: "/images/founders-2026/lyall-crisis.jpg",
         name: "Lyall Mercer",
         title: "Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
         bio: "Former journalist with a 25+ year PR career spanning six continents. Lyall has consulted to national and international companies, governments, executives and industry leaders in crisis communications and reputation management.",
@@ -427,7 +427,7 @@ export const crisisMasterclassContent: CourseContent = {
     eyebrow: "From the Crisis Masterclass leaders",
     heading: "A message from Lyall and Melissa",
     images: [
-      "/images/expert-lyall-real.png",
+      "/images/founders-2026/lyall-welcome-crisis.jpg",
       { src: "/images/melissa-agnes-stage.webp", className: "object-[50%_65%]" },
     ],
     imageAlt: "Melissa Agnes and Lyall Mercer, co-founders of My PR Partner",

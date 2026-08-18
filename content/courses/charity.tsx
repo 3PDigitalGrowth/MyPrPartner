@@ -300,7 +300,7 @@ export const charityContent: CourseContent = {
       "Lead presenter is Lyall Mercer, supported by a panel of guest experts and successful Australian charity leaders who each bring real not-for-profit experience to the program.",
     items: [
       {
-        image: "/images/instructors/lyall-mercer.png",
+        image: "/images/founders-2026/lyall-charity.jpg",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
         bio: "Former journalist with a 25+ year PR career spanning six continents. Lyall has worked alongside Australian charities, not-for-profits and community organisations for 25+ years - from community services and health charities to national foundations - training executive directors, boards and staff in the art of effective communication, reputation and fundraising strategy.",
@@ -467,7 +467,7 @@ export const charityContent: CourseContent = {
   foundersWelcome: {
     eyebrow: "From the founders",
     heading: "A message from Lyall and Barbara",
-    image: "/images/founders.png",
+    image: "/images/founders-2026/founders-charity.jpg",
     imageAlt: "Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner",
     paragraphs: [
       "We have a deep understanding of the unique needs facing Australian charities and not-for-profits, having worked alongside organisations of every size - from small community charities and DGR-endorsed not-for-profits to national foundations - for 15+ years through CRC Public Relations.",

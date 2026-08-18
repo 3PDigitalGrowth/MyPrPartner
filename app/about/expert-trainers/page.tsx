@@ -69,7 +69,7 @@ const trainers: Trainer[] = [
     org: "My PR Partner",
     location: "Australia",
     bio: "Co-founder of My PR Partner and lead strategist for CRC Public Relations, Lyall is widely regarded across Australasia as a leader in corporate public relations, reputation and issues management, and crisis communications. A former journalist with 25+ years of front-line public relations experience with clients and media on every continent, he has advised national and international companies and organisations, governments, executives, politicians, heads of state, celebrities, sporting figures, industry associations and schools; as well as coordinating international media conferences and speaking at events across the world.",
-    image: "/images/instructors/lyall-mercer.png",
+    image: "/images/founders-2026/lyall-trainer.jpg",
     initials: "LM",
     palette: "navy",
     programs: ["crisis", "schools", "associations", "business", "charity"],

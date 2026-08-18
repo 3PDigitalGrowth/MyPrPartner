@@ -315,7 +315,7 @@ export const schoolsContent: CourseContent = {
       "Lead presenter is Lyall Mercer, supported by a panel of guest experts covering their specialty area of expertise.",
     items: [
       {
-        image: "/images/instructors/lyall-mercer.png",
+        image: "/images/founders-2026/lyall-schools.jpg",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
         bio: "Former journalist with a 25+ year PR career spanning six continents. Lyall has guided Australian schools, charities, associations, businesses and governments through crisis moments and reputation-building campaigns for 25+ years.",
@@ -603,7 +603,7 @@ export const schoolsContent: CourseContent = {
   foundersWelcome: {
     eyebrow: "From the founders",
     heading: "A message from Lyall and Barbara",
-    image: "/images/founders.png",
+    image: "/images/founders-2026/founders-schools.jpg",
     imageAlt: "Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner",
     paragraphs: [
       "We built the Schools Program because Australian schools \u2013 particularly independent and faith based \u2013 are under more media, public and parent scrutiny than ever before. Most are not equipped to handle challenging issues and communication training isn\u2019t offered to educators. Too many schools fail at communicating during high-stakes moments, are not building trust with their community, and don\u2019t take advantage of positive opportunities to showcase their school in a positive light.",

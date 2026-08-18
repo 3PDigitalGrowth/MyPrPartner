@@ -335,7 +335,7 @@ export const associationsContent: CourseContent = {
       "Lyall Mercer leads the program, with Australian guest presenters, specialty experts and association leaders joining throughout the year across various modules.",
     items: [
       {
-        image: "/images/instructors/lyall-mercer.png",
+        image: "/images/founders-2026/lyall-associations.jpg",
         name: "Lyall Mercer",
         title: "Lead presenter | Co-founder, My PR Partner | Lead Strategist, CRC Public Relations",
         bio: "Former journalist with a 25+ year international PR career. Lyall has assisted state and federal industry and professional associations across Australia, New Zealand and the USA for 15+ years, spoken at numerous association forums and conferences, and trained executive teams, boards and staff in the art of effective communication and strategy.",
@@ -581,7 +581,7 @@ export const associationsContent: CourseContent = {
   foundersWelcome: {
     eyebrow: "From the founders",
     heading: "A message from Lyall and Barbara",
-    image: "/images/founders.png",
+    image: "/images/founders-2026/founders-associations.jpg",
     imageAlt: "Lyall Mercer and Barbara Gorogh, co-founders of My PR Partner",
     paragraphs: [
       "We have a deep understanding of the unique needs facing industry, trade and professional associations and peak bodies, having worked alongside many state and national associations for 15+ years through CRC Public Relations.",
