@@ -16,6 +16,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/courses",                      priority: 0.7,  changeFrequency: "weekly" },
     { url: "/resources/pr-guide",           priority: 0.8,  changeFrequency: "monthly" },
     { url: "/resources/crisis-checklist",   priority: 0.8,  changeFrequency: "monthly" },
+
+    // Standalone search landing pages (added 2 Sep 2026). These are deliberately
+    // NOT in the header, footer or any existing page's links: they were briefed
+    // as orphan pages so the approved site navigation stays untouched. That
+    // makes the sitemap their only discovery path, which is why they carry a
+    // real priority here rather than being left out.
+    //
+    // Trade-off worth knowing: an orphan page receives no internal PageRank, so
+    // it competes on its own content alone and will rank slower than it would
+    // with links from /programs, /crisis-masterclass and /resources. Adding
+    // those inbound links later is a small change and is the single biggest
+    // thing that would lift these three. Each page links out heavily and the
+    // three cross-link to each other, so they pass equity on, they just do not
+    // receive any.
+    { url: "/crisis-media-training",        priority: 0.8,  changeFrequency: "monthly" },
+    { url: "/pr-training-for-small-business", priority: 0.8, changeFrequency: "monthly" },
+    { url: "/resources/school-crisis-communication-plan", priority: 0.8, changeFrequency: "monthly" },
     { url: "/articles",                     priority: 0.7,  changeFrequency: "weekly" },
     { url: "/about",                        priority: 0.6,  changeFrequency: "monthly" },
     { url: "/about/expert-trainers",        priority: 0.6,  changeFrequency: "monthly" },

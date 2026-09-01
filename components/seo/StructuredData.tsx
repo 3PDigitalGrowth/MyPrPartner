@@ -31,6 +31,52 @@ export function FaqJsonLd({
   );
 }
 
+/**
+ * HowTo structured data for step-by-step guides. Google no longer shows the
+ * HowTo rich result on desktop or mobile search, but the markup still helps
+ * search engines and AI assistants parse the sequence, so it stays worth
+ * emitting on genuinely procedural pages.
+ */
+export function HowToJsonLd({
+  name,
+  description,
+  url,
+  image,
+  steps,
+  totalTime,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  image?: string;
+  steps: { name: string; text: string }[];
+  totalTime?: string;
+}) {
+  if (!steps.length) return null;
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name,
+        description,
+        ...(image ? { image } : {}),
+        ...(totalTime ? { totalTime } : {}),
+        step: steps.map((s, idx) => ({
+          "@type": "HowToStep",
+          position: idx + 1,
+          name: s.name,
+          text: s.text,
+          url: `${url}#${s.name
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-+|-+$/g, "")}`,
+        })),
+      }}
+    />
+  );
+}
+
 export function BreadcrumbJsonLd({
   items,
 }: {
