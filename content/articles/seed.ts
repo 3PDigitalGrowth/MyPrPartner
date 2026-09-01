@@ -27,7 +27,7 @@ export const seedArticles: Article[] = [
       initials: "LM",
       avatarAccent: "linear-gradient(135deg, #1A2B4A 0%, #1E73BE 100%)",
     },
-    publishedAt: "2026-09-02",
+    publishedAt: "2026-08-19",
     readTimeMinutes: 14,
     featured: true,
     tags: ["press releases", "media relations", "earned media"],
