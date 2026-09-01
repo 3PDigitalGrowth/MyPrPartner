@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Clock, Sparkles } from "lucide-react";
 import { formatPublishedDate, type Article } from "@/lib/articles";
 import { AuthorByline } from "./AuthorByline";
@@ -9,7 +10,9 @@ type FeaturedArticleProps = {
 
 export function FeaturedArticle({ article }: FeaturedArticleProps) {
   return (
-    <article className="group overflow-hidden rounded-card border border-[#E5E7EB] bg-white shadow-card">
+    <Link
+      href={`/articles/${article.slug}`}
+      className="group block overflow-hidden rounded-card border border-[#E5E7EB] bg-white shadow-card">
       <div className="grid grid-cols-1 lg:grid-cols-12">
         <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F7F8FA] lg:col-span-7 lg:aspect-auto lg:min-h-[420px]">
           <Image
@@ -48,6 +51,6 @@ export function FeaturedArticle({ article }: FeaturedArticleProps) {
           </div>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }

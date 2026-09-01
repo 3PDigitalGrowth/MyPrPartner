@@ -107,7 +107,8 @@ export default async function ArticlesPage() {
           </div>
         </section>
 
-        {/* ── LAUNCH STATUS NOTE ── */}
+        {/* ── LAUNCH STATUS NOTE (only while the library is empty) ── */}
+        {articles.length === 0 && (
         <section className="bg-white">
           <div className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:px-8">
             <div className="mx-auto flex max-w-[880px] items-start gap-4 rounded-card border border-[#E5E7EB] bg-[#F7F8FA] p-5 md:p-6">
@@ -139,6 +140,7 @@ export default async function ArticlesPage() {
             </div>
           </div>
         </section>
+        )}
 
         {/* ── FEATURED ARTICLE ── */}
         {featured && (

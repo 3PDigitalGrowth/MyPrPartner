@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Clock } from "lucide-react";
 import { formatPublishedDate, type Article } from "@/lib/articles";
 import { AuthorByline } from "./AuthorByline";
@@ -9,7 +10,9 @@ type ArticleCardProps = {
 
 export function ArticleCard({ article }: ArticleCardProps) {
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-card border border-[#E5E7EB] bg-white shadow-sm transition-shadow hover:shadow-card">
+    <Link
+      href={`/articles/${article.slug}`}
+      className="group flex h-full flex-col overflow-hidden rounded-card border border-[#E5E7EB] bg-white shadow-sm transition-shadow hover:shadow-card">
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F7F8FA]">
         <Image
           src={article.heroImage}
@@ -41,6 +44,6 @@ export function ArticleCard({ article }: ArticleCardProps) {
           </div>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }

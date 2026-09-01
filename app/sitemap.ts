@@ -34,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/pr-training-for-small-business", priority: 0.8, changeFrequency: "monthly" },
     { url: "/resources/school-crisis-communication-plan", priority: 0.8, changeFrequency: "monthly" },
     { url: "/articles",                     priority: 0.7,  changeFrequency: "weekly" },
+    { url: "/articles/crafting-effective-press-releases", priority: 0.7, changeFrequency: "monthly" },
     { url: "/about",                        priority: 0.6,  changeFrequency: "monthly" },
     { url: "/about/expert-trainers",        priority: 0.6,  changeFrequency: "monthly" },
     { url: "/about/giving-back",            priority: 0.6,  changeFrequency: "monthly" },
