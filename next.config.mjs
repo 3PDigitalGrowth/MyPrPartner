@@ -45,6 +45,71 @@ const nextConfig = {
         destination: "/programs/business",
         permanent: false,
       },
+
+      // ---------------------------------------------------------------------
+      // Legacy WordPress URL map (added 2 Sep 2026).
+      //
+      // Google still ranks the pre-rebuild WordPress URLs and people still land
+      // on them. Over 2 Jun - 30 Aug 2026 these paths took 281 Australian
+      // impressions in Search Console and 292 page views in GA4, and every one
+      // of them 404'd. Several still rank at positions 1-3 for their old
+      // queries, so the link equity they carry is worth recovering.
+      //
+      // All permanent (308) - these moves are final, and a 308 tells Google to
+      // transfer ranking signals to the new URL. Next normalises the trailing
+      // slash first, so "/schools/" resolves via "/schools" and needs no
+      // separate entry.
+      // ---------------------------------------------------------------------
+
+      // Program pages moved under /programs/
+      { source: "/schools", destination: "/programs/schools", permanent: true },
+      { source: "/business", destination: "/programs/business", permanent: true },
+      {
+        source: "/industry-associations",
+        destination: "/programs/industry-associations",
+        permanent: true,
+      },
+      {
+        source: "/train-level-associations",
+        destination: "/programs/industry-associations",
+        permanent: true,
+      },
+
+      // About section moved under /about/
+      { source: "/expert-trainers", destination: "/about/expert-trainers", permanent: true },
+      { source: "/giving-back", destination: "/about/giving-back", permanent: true },
+
+      // Old WooCommerce product URL for the masterclass.
+      {
+        source: "/product/crisis-masterclass",
+        destination: "/crisis-masterclass",
+        permanent: true,
+      },
+
+      // Pricing, plan-comparison and resource pages the rebuild folded into
+      // the single /programs overview.
+      { source: "/plan-pricing", destination: "/programs", permanent: true },
+      { source: "/pr-support-options", destination: "/programs", permanent: true },
+      { source: "/training-resources", destination: "/programs", permanent: true },
+      { source: "/train-level", destination: "/programs", permanent: true },
+
+      // Standalone video page had no equivalent in the rebuild.
+      { source: "/video", destination: "/", permanent: true },
+
+      // Member area lives on Kajabi, not here. /members/* was the old
+      // logged-in course area (53 GA4 views on the crisis masterclass path
+      // alone), so send those people to the course login rather than the
+      // marketing page - they already bought it.
+      {
+        source: "/login",
+        destination: "https://courses.myprpartner.com/login",
+        permanent: true,
+      },
+      {
+        source: "/members/:path*",
+        destination: "https://courses.myprpartner.com/login",
+        permanent: true,
+      },
     ];
   },
   async headers() {
