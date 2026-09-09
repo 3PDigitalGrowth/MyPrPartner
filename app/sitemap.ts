@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { registeredSlugs as melissaArticleSlugs } from "@/content/articles/registry";
 
 const BASE = "https://myprpartner.com";
 
@@ -33,8 +34,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/crisis-media-training",        priority: 0.8,  changeFrequency: "monthly" },
     { url: "/pr-training-for-small-business", priority: 0.8, changeFrequency: "monthly" },
     { url: "/resources/school-crisis-communication-plan", priority: 0.8, changeFrequency: "monthly" },
+    // Melissa Agnes hub pages (added 10 Sep 2026). Linked from the articles,
+    // the presenter page and each other, so they receive internal equity.
+    { url: "/crisis-ready-formula",         priority: 0.8,  changeFrequency: "monthly" },
+    { url: "/issue-or-crisis",              priority: 0.8,  changeFrequency: "monthly" },
+    { url: "/melissa-agnes",                priority: 0.8,  changeFrequency: "weekly" },
+    { url: "/crisis-masterclass/inside",    priority: 0.8,  changeFrequency: "monthly" },
+    { url: "/case-study/maple-leaf-foods",  priority: 0.7,  changeFrequency: "monthly" },
     { url: "/articles",                     priority: 0.7,  changeFrequency: "weekly" },
     { url: "/articles/crafting-effective-press-releases", priority: 0.7, changeFrequency: "monthly" },
+    ...melissaArticleSlugs.map((slug) => ({
+      url: `/articles/${slug}`,
+      priority: 0.7,
+      changeFrequency: "monthly" as const,
+    })),
     { url: "/about",                        priority: 0.6,  changeFrequency: "monthly" },
     { url: "/about/expert-trainers",        priority: 0.6,  changeFrequency: "monthly" },
     { url: "/about/giving-back",            priority: 0.6,  changeFrequency: "monthly" },

@@ -355,6 +355,15 @@ function TrainerCard({ trainer, index }: { trainer: Trainer; index: number }) {
       <p className="mt-5 flex-1 text-[14.5px] leading-relaxed text-text-medium">
         <T id={`trainers.list.${index}.bio`}>{trainer.bio}</T>
       </p>
+      {trainer.slug === "melissa-agnes" ? (
+        <Link
+          href="/melissa-agnes"
+          className="mt-4 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-teal transition-colors hover:text-teal-dark"
+        >
+          Melissa&apos;s articles, talks and course
+          <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+        </Link>
+      ) : null}
       {trainer.programs.length > 0 ? (
         <footer className="mt-5 flex flex-wrap gap-2 border-t border-[#F1F2F5] pt-4">
           {trainer.programs.map((p) => {

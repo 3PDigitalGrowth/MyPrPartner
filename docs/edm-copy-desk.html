@@ -1,0 +1,883 @@
+<title>EDM Copy Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style id="appcss">
+  :root{
+    color-scheme:light dark;
+    --bg:#F4F6F8; --surface:#FFFFFF; --surface-2:#EDF1F5; --surface-3:#E3E9F0;
+    --ink:#16233B; --ink-2:#33425C; --muted:#5C6A80; --faint:#8A97A8;
+    --rule:#DBE2EA; --rule-strong:#C2CDDA;
+    --teal:#07AFBB; --teal-deep:#05808A; --teal-wash:#E4EEF1;
+    --gold:#A6862F; --gold-wash:#F6EFDD;
+    --green:#2F7A45; --green-wash:#E2F0E6;
+    --red:#A8443C;
+    --shadow:0 1px 2px rgba(22,35,59,.06), 0 8px 24px rgba(22,35,59,.05);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0D141F; --surface:#151F2C; --surface-2:#1B2735; --surface-3:#22303F;
+      --ink:#E7ECF3; --ink-2:#C3CDDA; --muted:#96A3B6; --faint:#6F7D91;
+      --rule:#25313F; --rule-strong:#33414F;
+      --teal:#45C9D3; --teal-deep:#7FDDE4; --teal-wash:#16323A;
+      --gold:#D6B863; --gold-wash:#332C15;
+      --green:#68B87A; --green-wash:#152B1C;
+      --red:#DE7A70;
+      --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.28);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0D141F; --surface:#151F2C; --surface-2:#1B2735; --surface-3:#22303F;
+    --ink:#E7ECF3; --ink-2:#C3CDDA; --muted:#96A3B6; --faint:#6F7D91;
+    --rule:#25313F; --rule-strong:#33414F;
+    --teal:#45C9D3; --teal-deep:#7FDDE4; --teal-wash:#16323A;
+    --gold:#D6B863; --gold-wash:#332C15;
+    --green:#68B87A; --green-wash:#152B1C;
+    --red:#DE7A70;
+    --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.28);
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0; padding:0}
+  img{max-width:100%}
+  [hidden]{display:none !important}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:"DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size:16px; line-height:1.6;
+  }
+  h1,h2,h3{font-family:"Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif; margin:0; text-wrap:balance}
+  .mono{font-family:"IBM Plex Mono", ui-monospace, monospace}
+  .eyebrow{
+    font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.685rem; font-weight:500;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--faint);
+  }
+  :focus-visible{outline:2px solid var(--teal); outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){*{transition:none !important; animation:none !important}}
+
+  /* ---- action bar ---- */
+  .bar{
+    position:sticky; top:0; z-index:40; background:var(--surface);
+    border-bottom:1px solid var(--rule-strong); box-shadow:var(--shadow);
+  }
+  .bar-in{
+    max-width:1240px; margin:0 auto; padding:12px 24px;
+    display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+  }
+  .brand{display:flex; flex-direction:column; gap:2px; margin-right:auto}
+  .brand h1{font-size:1.06rem; font-weight:800; letter-spacing:-.015em}
+  .brand .sub{font-size:.78rem; color:var(--muted)}
+  .who{display:flex; align-items:center; gap:8px}
+  .who label{font-size:.78rem; color:var(--muted); white-space:nowrap}
+  select, input[type=text], textarea{
+    font-family:inherit; font-size:inherit; color:var(--ink);
+    background:var(--surface); border:1px solid var(--rule-strong); border-radius:4px;
+  }
+  select{padding:6px 9px; font-size:.85rem}
+  .btn{
+    font-family:"Plus Jakarta Sans", sans-serif; font-weight:700; font-size:.87rem;
+    padding:9px 17px; border-radius:4px; border:1px solid transparent; cursor:pointer;
+    background:var(--surface-2); color:var(--ink); transition:background .12s ease, opacity .12s ease;
+  }
+  .btn:hover:not(:disabled){background:var(--surface-3)}
+  .btn:disabled{opacity:.42; cursor:not-allowed}
+  .btn.primary{background:var(--teal-deep); color:#fff; border-color:var(--teal-deep)}
+  .btn.primary:hover:not(:disabled){filter:brightness(1.08); background:var(--teal-deep)}
+  .btn.approve{background:transparent; color:var(--green); border-color:var(--green)}
+  .btn.approve:hover:not(:disabled){background:var(--green-wash)}
+  .dirty{
+    font-family:"IBM Plex Mono", monospace; font-size:.7rem; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--gold); white-space:nowrap;
+  }
+  .saving{font-size:.82rem; color:var(--muted)}
+  .banner{
+    max-width:1240px; margin:0 auto; padding:10px 24px; font-size:.86rem;
+    background:var(--gold-wash); color:var(--ink-2); border-bottom:1px solid var(--rule);
+  }
+  .banner.err{background:var(--surface-2); color:var(--red)}
+
+  /* ---- layout ---- */
+  .wrap{max-width:1240px; margin:0 auto; padding:26px 24px 90px; display:grid; grid-template-columns:272px 1fr; gap:34px; align-items:start}
+  nav.side{position:sticky; top:78px; display:grid; gap:16px}
+  .navgroup{display:grid; gap:2px}
+  .navgroup > .eyebrow{padding:0 0 7px}
+  .navbtn{
+    display:grid; gap:3px; text-align:left; width:100%; cursor:pointer;
+    background:transparent; border:0; border-left:2px solid var(--rule);
+    padding:9px 12px; font-family:inherit; color:var(--ink-2); border-radius:0 3px 3px 0;
+  }
+  .navbtn:hover{background:var(--surface-2)}
+  .navbtn.on{background:var(--surface); border-left-color:var(--teal); color:var(--ink); box-shadow:var(--shadow)}
+  .navbtn .nm{font-size:.9rem; font-weight:500; line-height:1.3}
+  .navbtn .mt{font-family:"IBM Plex Mono", monospace; font-size:.68rem; color:var(--faint); letter-spacing:.04em}
+  .navbtn .mt b{font-weight:500}
+
+  /* ---- cohort ---- */
+  .cohead{border-top:2px solid var(--ink); padding-top:14px; margin-bottom:20px}
+  .cohead h2{font-size:1.5rem; font-weight:700; letter-spacing:-.017em; margin:5px 0 10px}
+  .facts{display:flex; flex-wrap:wrap; gap:0 26px; margin-top:10px}
+  .fact{display:grid; gap:1px; padding:6px 0}
+  .fact .k{font-family:"IBM Plex Mono", monospace; font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--faint)}
+  .fact .v{font-size:.88rem; color:var(--ink-2); font-variant-numeric:tabular-nums}
+
+  .chip{
+    display:inline-flex; align-items:center; gap:6px; font-family:"IBM Plex Mono", monospace;
+    font-size:.68rem; letter-spacing:.06em; padding:3px 9px; border-radius:3px; white-space:nowrap;
+  }
+  .chip.draft{background:var(--surface-2); color:var(--muted)}
+  .chip.ok{background:var(--green-wash); color:var(--green)}
+  .chip.stale{background:var(--gold-wash); color:var(--gold)}
+  .chip.hold{background:transparent; border:1px solid var(--gold); color:var(--gold)}
+
+  .guide{
+    background:var(--surface); border:1px solid var(--rule); border-left:2px solid var(--gold);
+    border-radius:0 4px 4px 0; padding:14px 18px; margin:0 0 22px;
+  }
+  .guide .eyebrow{display:block; color:var(--gold); margin-bottom:7px}
+  .guide textarea{width:100%; border:0; background:transparent; padding:0; font-size:.9rem; color:var(--ink-2); resize:none; line-height:1.55}
+  .guide textarea:focus{outline:none}
+
+  .email{
+    background:var(--surface); border:1px solid var(--rule); border-radius:4px;
+    box-shadow:var(--shadow); margin-bottom:16px; overflow:hidden;
+  }
+  .email > header{
+    display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+    padding:12px 20px; background:var(--surface-2); border-bottom:1px solid var(--rule);
+  }
+  .email > header h3{font-size:.95rem; font-weight:700}
+  .email > header .day{font-family:"IBM Plex Mono", monospace; font-size:.7rem; letter-spacing:.09em; text-transform:uppercase; color:var(--teal-deep)}
+  .email > header .cnt{margin-left:auto; font-family:"IBM Plex Mono", monospace; font-size:.68rem; color:var(--faint); font-variant-numeric:tabular-nums}
+  .fields{padding:16px 20px 20px; display:grid; gap:14px}
+  .field{display:grid; gap:5px}
+  .field > label{font-family:"IBM Plex Mono", monospace; font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--faint)}
+  .field input[type=text]{padding:9px 11px; width:100%}
+  .field input.subj{font-family:"Plus Jakarta Sans", sans-serif; font-weight:700; font-size:1rem}
+  .field textarea{
+    padding:13px 14px; width:100%; line-height:1.65; resize:vertical; min-height:150px;
+    font-size:.95rem; background:var(--surface-2);
+  }
+  .field textarea:focus, .field input:focus{outline:2px solid var(--teal); outline-offset:-1px; background:var(--surface)}
+  .hint{font-size:.78rem; color:var(--faint)}
+  .hint code{font-family:"IBM Plex Mono", monospace; background:var(--surface-2); padding:1px 5px; border-radius:3px; font-size:.92em}
+
+  /* ---- approve panel ---- */
+  .approve-panel{
+    background:var(--surface); border:1px solid var(--green); border-radius:4px;
+    padding:16px 20px; margin:0 0 20px; display:grid; gap:12px; box-shadow:var(--shadow);
+  }
+  .approve-panel h3{font-size:.98rem}
+  .approve-panel .row{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+  .approve-panel input[type=text]{padding:8px 11px; flex:1 1 260px; min-width:0}
+  .approve-panel p{margin:0; font-size:.85rem; color:var(--muted)}
+
+  /* ---- history ---- */
+  .history{margin-top:34px; border-top:1px solid var(--rule-strong); padding-top:16px}
+  .history h3{font-size:.92rem; margin-bottom:10px}
+  .hlist{display:grid; gap:0}
+  .hrow{
+    display:grid; grid-template-columns:96px 1fr auto; gap:14px; padding:8px 0;
+    border-bottom:1px solid var(--rule); font-size:.85rem; color:var(--ink-2); align-items:baseline;
+  }
+  .hrow .t{font-family:"IBM Plex Mono", monospace; font-size:.7rem; color:var(--faint); font-variant-numeric:tabular-nums}
+  .hrow .w{font-family:"IBM Plex Mono", monospace; font-size:.7rem; color:var(--muted); text-align:right; white-space:nowrap}
+  .empty{font-size:.86rem; color:var(--faint); padding:8px 0}
+
+  @media (max-width:900px){
+    .wrap{grid-template-columns:1fr; gap:22px}
+    nav.side{position:static}
+    .navgroup{grid-template-columns:1fr}
+  }
+  @media (max-width:640px){
+    .bar-in, .wrap, .banner{padding-left:16px; padding-right:16px}
+    .brand{margin-right:0; width:100%}
+    .hrow{grid-template-columns:1fr; gap:2px}
+    .hrow .w{text-align:left}
+  }
+</style>
+
+<div id="app"></div>
+
+<script id="appstate" type="application/json">
+{
+  "rev": 3,
+  "updatedAt": "2026-09-09T04:48:40Z",
+  "updatedBy": "3P Digital",
+  "approvals": {},
+  "history": [
+    {
+      "at": "2026-09-09T04:48:40Z",
+      "by": "3P Digital",
+      "text": "Copy updated: Business tier openers, Business shared body. Tier 5 is now dual purpose: 5a owners and leaders, 5b comms professionals inside the same businesses, with its own opener. Counts from the 9 September re-cut."
+    },
+    {
+      "at": "2026-09-09T04:35:46Z",
+      "by": "3P Digital",
+      "text": "Copy updated: Business tier openers, Business shared body. Added the Tier 5 general business opener, narrowed Tier 4 to construction, mining and energy, and replaced the audience counts with the 9 September send-file cut."
+    }
+  ],
+  "cohorts": [
+    {
+      "id": "schools-ind-cath",
+      "group": "Schools",
+      "name": "Independent and Catholic schools",
+      "rev": 1,
+      "audience": "3,061 deliverable addresses",
+      "product": "Schools Program. Train $440, Support $840, Partner $1,340 a month per school",
+      "landing": "/programs/schools",
+      "cadence": "Day 0, 3, 7, 10",
+      "status": "live",
+      "note": "The Crisis Masterclass is not mentioned anywhere in this sequence. The site itself positions it as separate personal training for a principal or board chair, so a school leader who wants that will find it once they are in.\n\nThe arc is value, then growth, then protection, then offer. Emails 2 and 3 deliberately split the program's two halves: most competitors only sell the crisis half, and the enrolments half is what makes a principal read past email 1.\n\nPrice anchor is per school, not per seat, and email 4 leads with Support Level because that is the one most schools choose.\n\nCourse hooks the copy is built on, keep them if it gets rewritten: sliding doors moments (Month 2), school of choice through free positive publicity (Month 4), template media releases and media policy (Months 4 and 5), Tim Sterne on allegations (Month 3), Tim Whincop on board and governance risk (Month 8), Dan Brown of Emmanuel College on tragedy (Month 9), Crisis Ready input from Melissa Agnes (Month 7), spokesperson media training on call all year (Month 12), the 10 day free trial, and one month free for annual payers.\n\nCatholic variant, email 4, insert after the pricing block:\n\"If this sits better as a diocesan conversation than a single school one, say the word and I will bring the same program to your Catholic Education office. Several schools in one system is a straightforward arrangement for us.\"",
+      "emails": [
+        {
+          "id": "s1",
+          "label": "Value, no ask",
+          "day": "Day 0",
+          "subject": "The other emergency plan, {{school_name}}",
+          "preview": "A 10-minute self-check most schools have never run.",
+          "body": "Good morning {{first_name}},\n\nEvery school has an evacuation plan. Very few have a plan for the other kind of emergency: the parent Facebook group boiling over, an AI deepfake of a student, a reporter calling the office at 4pm on a Friday.\n\nThe ACU Principal Wellbeing Survey found 87.6% of principals now experience cyberbullying from parents or caregivers. The pile-on is not a rare event any more. It is a term-three certainty somewhere in Australia.\n\nIn our work with schools we call the early ones sliding doors moments: the complaint, the post, the staff matter that could go either way depending entirely on what the school does in the next few hours. Most never become a story. The ones that do usually showed the same warning signs first.\n\nWe have put the structure on a page: who speaks, what goes out in the first hour, and what waits. Free, direct download, no sign-up.\n\n[Download the school crisis communication plan]\n\nRun it past your leadership team this week. If it surfaces gaps, I will show you how other schools are closing them in my next note.\n\nLyall Mercer\nCo-founder, My PR Partner. Lead Strategist, CRC Public Relations"
+        },
+        {
+          "id": "s2",
+          "label": "The half nobody budgets for",
+          "day": "Day 3",
+          "subject": "The half of school PR nobody budgets for",
+          "preview": "Reputation work is an enrolments strategy before it is a crisis one.",
+          "body": "Good morning {{first_name}},\n\nMost conversations about school PR start at the worst day. Worth saying that it is only half of the work, and probably the smaller half.\n\nThe other half is what fills your enrolments. Schools become the school of choice in their area because the community keeps hearing good things from sources that are not advertising: local media running the story you offered them, parents repeating something they were told well, and staff who all describe the school the same way.\n\nNone of that happens by accident, and it costs a great deal less than another advertising campaign. It is a habit. Knowing what is actually newsworthy about your own school. Having a media release ready that a journalist can actually use. Building a communications culture where everyone from the front office up understands they are part of the school's reputation.\n\nThe Schools Program spends three of its twelve months there: building the PR mindset across the whole team, then becoming the school of choice through free positive publicity, then handling media interest so the relationship is already warm long before you need it. Every month lands with the practical piece as well, including template media releases and a media policy your team can adapt the same week.\n\n[See the 12-month plan]\n\nLyall"
+        },
+        {
+          "id": "s3",
+          "label": "The hardest days, and why it is a team licence",
+          "day": "Day 7",
+          "subject": "Nobody should be learning this during it",
+          "preview": "Allegations, governance, tragedy. The three schools are least trained for.",
+          "body": "Good morning {{first_name}},\n\nPrincipals tell us the same thing over and over: they learned crisis handling on the job, usually during one.\n\nThe three that come up most are the three schools are least trained for. An allegation, where due process and reputation pull in opposite directions from the first hour. A governance question, where the board's exposure is a different shape from the school's and nobody has ever explained the difference. And a death in the community, where every instinct to say something kind can land badly with a grieving family.\n\nThe Schools Program gives each of those a month, and brings in the person who actually knows.\n\nTim Sterne on handling allegations. Former teacher, former police detective, now an ethics and integrity specialist working with schools across Australia and New Zealand.\n\nTim Whincop of Vocare Law on school board and governance risk. That is the month we ask you to bring your board chair in for.\n\nAnd on tragedy, a conversation between me and Dan Brown, Principal of Emmanuel College, about what it is actually like and what he would do differently. Month 7 carries Crisis Ready input from Melissa Agnes of the Crisis Ready Institute, and Month 12 is media training for your spokespeople, on call all year so they are ready whenever you need them.\n\nHere is why it is a whole-school licence rather than a seat. On the day, the deputy, the business manager, the communications officer and the board chair all get pulled in. If one person did the training, one person knows the plan.\n\n[See what the 12 months cover]\n\nLyall"
+        },
+        {
+          "id": "s4",
+          "label": "Levels, trial, close",
+          "day": "Day 10",
+          "subject": "Ten days to decide, {{first_name}}",
+          "preview": "What it costs, what is in it, and how to try it without committing.",
+          "body": "Good morning {{first_name}},\n\nLast note from me, and it is the practical one. The Schools Program runs at three levels, billed as an annual subscription per school that you can pay monthly or upfront.\n\nTrain, $440 a month. Twelve monthly training videos and team workbooks, a practical resource every month, fortnightly Spotlight emails, and the monthly live Q&A where you bring your own situation.\n\nSupport, $840 a month, and the level most schools choose. Everything in Train, plus the reputation and vulnerability checklist for schools, crisis communication planning templates, a one hour crisis planning consultation, and six hours of on-call PR and issues assistance from the senior team at CRC Public Relations.\n\nPartner, $1,340 a month. Everything above, with twenty hours of ongoing phone, email and Zoom support, and a personalised half-day online media training for your spokespeople.\n\nFor comparison, a single external training day runs $7,000 to $15,000, and everyone is back at their desk by Monday having forgotten most of it.\n\nTwo things worth knowing before you decide. There is a ten day free trial, so your payment is not processed until the program has been in front of your team for a week and a half. And annual subscribers get a month free and can pay by invoice.\n\n[Enrol your school, or start the 10 day trial]\n\nOne last question before I leave you be. If tomorrow morning a parent group, a journalist and a lawyer all had your school's name in their mouths, who on your team knows exactly what to say in the first hour? If the answer is \"we would work it out\", that is the gap, and it is the same one nearly every principal describes to us.\n\nEither way, keep the plan template, and my door stays open. Reply any time.\n\nLyall"
+        }
+      ]
+    },
+    {
+      "id": "schools-gov",
+      "group": "Schools",
+      "name": "Government schools",
+      "rev": 1,
+      "audience": "7,088 deliverable addresses",
+      "product": "None. Value only.",
+      "landing": "/resources/school-crisis-communication-plan",
+      "cadence": "Single send",
+      "status": "live",
+      "note": "No price, no product, no sequence. One send only. A principal in a government school cannot approve a subscription of this size, so the ask would fail for structural reasons rather than interest.\n\nReplies get a human answer from Lyall. Names that reply move to a separate list for the department-level approach.",
+      "emails": [
+        {
+          "id": "g1",
+          "label": "Value only, single send",
+          "day": "Day 0",
+          "subject": "The plan for the other kind of emergency",
+          "preview": "A school crisis communication plan, free, no sign-up.",
+          "body": "Good morning {{first_name}},\n\nEvery school has an evacuation plan. Very few have one for the other kind of emergency: the parent Facebook group boiling over, an AI deepfake of a student, a reporter calling the office at 4pm on a Friday.\n\nThe ACU Principal Wellbeing Survey found 87.6% of principals now experience cyberbullying from parents or caregivers, and more than half have seriously considered leaving. Almost every principal we work with says the same thing about crisis handling: they learned it on the job, usually during one.\n\nWe have put the structure on a page: who speaks, what goes out in the first hour, what waits, and how to hold a community that is frightened rather than informed. There is a section on the early sliding doors moments too, the complaint or the post that could go either way depending on what the school does in the next few hours.\n\nFree, direct download, no form.\n\n[Download the school crisis communication plan]\n\nIt is yours to keep and use. If it is useful and you would like the fuller picture of how we work with schools, reply and I will send it through. Otherwise you will not hear from me again.\n\nLyall Mercer\nCo-founder, My PR Partner. Lead Strategist, CRC Public Relations"
+        }
+      ]
+    },
+    {
+      "id": "councils",
+      "group": "Public sector",
+      "name": "Local councils",
+      "rev": 1,
+      "audience": "523 CEOs, GMs and mayors",
+      "product": "Crisis Masterclass, $340 a month",
+      "landing": "/crisis-masterclass",
+      "cadence": "Day 0, 3, 7, 10",
+      "status": "live",
+      "note": "The council variant is folded into the body rather than bracketed as an aside. Verify each address against the council's own website and record the source URL before sending, all 523 rows.",
+      "emails": [
+        {
+          "id": "c1",
+          "label": "Value, no ask",
+          "day": "Day 0",
+          "subject": "The next pile-on won't wait for a comms hire",
+          "preview": "The evidence on what actually works in a crisis.",
+          "body": "Good morning {{first_name}},\n\nA new MAV/ANU report confirms what most GMs already feel: disinformation, harassment and AI deepfakes aimed at councils and councillors are rising. And in most councils the CEO or GM is the de facto spokesperson, whether they chose it or not.\n\nWe have published a research paper that most communications advisers have not caught up with yet: the peer-reviewed evidence on emotion-led crisis management. Why validation beats legal-speak, why markets punished insincere apologies for three months, and why Jacinda Ardern's crisis approval hit 80% while G7 leaders averaged 48%.\n\n[Download: The Evidence Behind Emotion-Led Crisis Management]\n\nIt is a 10-minute read, and it will change how you brief your council on reputational risk.\n\nLyall Mercer\nCo-founder, My PR Partner. Lead Strategist, CRC Public Relations"
+        },
+        {
+          "id": "c2",
+          "label": "The gap and the authority",
+          "day": "Day 3",
+          "subject": "A comms team of one",
+          "preview": "In most councils, the CEO is the crisis plan.",
+          "body": "Good morning {{first_name}},\n\nMost councils run a communications team of one. Some run none, and then the CEO is the plan.\n\nThat works until the day it does not: a flood, a censure motion, a contractor's mistake, a social media pile-on that arrives faster than the facts. On that day the difference is not budget, it is preparation.\n\nThe Crisis Masterclass is the 12-month online program we built with Melissa Agnes, CEO of the Crisis Ready Institute in the United States and one of the world's leading crisis communication authorities. It is exclusive to My PR Partner in Australasia. Monthly sessions, self-paced, live Q&A, and a certificate of completion endorsed by CRC Public Relations.\n\nIt exists for exactly this: leaders who are the spokesperson whether they chose it or not.\n\n[See the full course outline]\n\nLyall"
+        },
+        {
+          "id": "c3",
+          "label": "Offer and delegation angle",
+          "day": "Day 7",
+          "subject": "Under your delegation, no procurement round",
+          "preview": "$340 a month against $1,195 a seat.",
+          "body": "Good morning {{first_name}},\n\nThe going rate for crisis communications training in Australia is $1,195 per person for a two-day workshop, or $7,000 to $15,000 for a facilitator day. Then everyone goes back to work and forgets it by Christmas.\n\nThe Crisis Masterclass takes the opposite approach: $340 a month (ex GST) for twelve months of structured, expert-led capability building, with Australian case studies and access to the experts through the monthly Q&A.\n\nAt that price point the subscription sits within standard manager delegation at almost every council. No tender, no quote round, just a defensible monthly professional development line for you or your communications officer.\n\n[Enrol in the Crisis Masterclass]\n\nHappy to answer anything by reply. I read these personally.\n\nLyall"
+        },
+        {
+          "id": "c4",
+          "label": "Close, with the group option",
+          "day": "Day 10",
+          "subject": "Two ways to do this, {{first_name}}",
+          "preview": "For you, or for the executive team.",
+          "body": "Good morning {{first_name}},\n\nLast note from me, with two options on the table.\n\nOption one: enrol yourself or your communications lead. $340 a month, start immediately, certificate at the end.\n\n[Enrol here]\n\nOption two: bring the executive team and your communications staff through together at a group rate. When a council handles a bad week well it is almost never one trained person, it is a group who all recognise what is happening at the same time.\n\nIf option two is worth a look, reply with a good time for a 20-minute call.\n\nEither way, thanks for reading, and the research paper is yours to keep.\n\nLyall"
+        }
+      ]
+    },
+    {
+      "id": "biz-openers",
+      "group": "Business",
+      "name": "Business tier openers",
+      "rev": 3,
+      "audience": "88,279 across five tiers, six openers",
+      "product": "Crisis Masterclass, $340 a month",
+      "landing": "/crisis-media-training and /pr-training-for-small-business",
+      "cadence": "Day 0 only",
+      "status": "live",
+      "note": "Email 1 is the only email that differs by tier. Emails 2, 3 and 4 are shared, and live in the next cohort.\n\nFive tiers since 9 September, six openers. Tier 4 is now construction, mining and energy only, which is where the site language belongs. Transport, security and fitness moved into Tier 5, general business, along with business services, IT and software, manufacturing, retail, consultants, architects, engineers and everything else in the 10 to 500 employee band that is not in Tiers 1 to 4. Tier 5 had a cleaning pass the others did not: agency, media, comms and recruitment names, known enterprise names, and any firm with ten or more contacts on the list (a branch office, not a 10 to 500 business) were dropped.\n\nTier 5 is dual purpose and splits by job title. 5a goes to owners and leaders (CEO, MD, GM, director, founder). 5b goes to the comms professional inside the same businesses: marketing managers and directors, brand managers, communications managers, heads of marketing, social media managers. For 5b the title filter was widened past the decision-maker pattern, because in a 50-person business the marketing manager is the comms function. Roughly 300 of the 5b rows are coordinator, assistant or executive titles; they stay in for now as forwarders, easy to drop if you would rather keep 5b to buyer level.\n\nSend file sizes from the 9 September cut, one contact per email address: Tier 1 care and health 5,112. Tier 2 hospitality and food 6,302. Tier 3 professional and finance 19,832. Tier 4 construction, mining and energy 13,146. Tier 5a general business, leaders 37,737. Tier 5b general business, comms professionals 6,150. Total 88,279.\n\nCare, hospitality, construction and both general files point at /crisis-media-training. Professional and finance points at /pr-training-for-small-business.\n\nUnnamed-contact variant for any tier: salutation becomes \"Good morning,\" and the subject line carries {{business_name}} instead of the first name.",
+      "emails": [
+        {
+          "id": "b1a",
+          "label": "Tier 1, care and health",
+          "day": "Day 0",
+          "subject": "Your plan covers the incident. Not the phone calls after it.",
+          "preview": "The first 24 hours, on one page. Free.",
+          "body": "Good morning {{first_name}},\n\nEvery care and health provider has an incident procedure. Almost none has a plan for what happens in the hours afterwards: the family that wants answers now, the regulator that wants them in writing, and the journalist who has already spoken to someone else.\n\nThat gap is where good organisations get hurt. The clinical response is right, the communication around it is improvised, and the improvised part is what people remember.\n\nWe have put the first day on one page: how to tell an issue from a crisis, who says what and in what order, and the communication formula that holds an angry or frightened audience when facts alone will not.\n\nFree, direct download, no sign-up:\n\n[Download The First 24 Hours desk guide]\n\nKeep it near the phone, and hope you never need it. In my next note I will show you what the organisations that handle these moments well do differently.\n\nLyall Mercer\nCo-founder, My PR Partner. Lead Strategist, CRC Public Relations"
+        },
+        {
+          "id": "b1b",
+          "label": "Tier 2, hospitality and food",
+          "day": "Day 0",
+          "subject": "Your crisis plan covers the fire. Not the Facebook post.",
+          "preview": "The first 24 hours, on one page. Free.",
+          "body": "Good morning {{first_name}},\n\nEvery venue has insurance for the fire, the flood and the break-in. Almost none has a plan for the crisis that actually arrives first: the one-star pile-on, the staff dispute that ends up on social, the journalist calling about something a customer posted at 11pm.\n\nThat one moves faster than anything in the insurance policy. By the time someone decides who should respond, the screenshot is already circulating.\n\nWe have put the first day on one page: how to tell an issue from a crisis, who says what and in what order, and the communication formula that calms an angry audience when facts alone will not.\n\nFree, direct download, no sign-up:\n\n[Download The First 24 Hours desk guide]\n\nPrint it, keep it near the pass, and hope you never need it. In my next note I will show you what the venues that handle these moments well do differently.\n\nLyall Mercer\nCo-founder, My PR Partner. Lead Strategist, CRC Public Relations"
+        },
+        {
+          "id": "b1c",
+          "label": "Tier 3, professional and finance",
+          "day": "Day 0",
+          "subject": "When trust is the product, {{business_name}}",
+          "preview": "The first 24 hours, on one page. Free.",
+          "body": "Good morning {{first_name}},\n\nIn your business the product is trust. That makes the risk a different shape from most: a fire closes a building for a week, but a story about judgment or conduct sits in a search result for years, and clients read it before they ring.\n\nMost firms carry professional indemnity cover and nothing at all for the communication side. The legal advice on the day is usually to say very little, which is right for the file and almost always wrong for the client base watching.\n\nWe have put the first day on one page: how to tell an issue from a crisis, who says what and in what order, and how to hold a client base when legally-approved language alone will not.\n\nFree, direct download, no sign-up:\n\n[Download The First 24 Hours desk guide]\n\nKeep it somewhere you can find it under pressure. In my next note I will show you what the firms that handle these moments well do differently.\n\nLyall Mercer\nCo-founder, My PR Partner. Lead Strategist, CRC Public Relations"
+        },
+        {
+          "id": "b1d",
+          "label": "Tier 4, construction, mining and energy",
+          "day": "Day 0",
+          "subject": "The site incident is hour one. The story is hour two.",
+          "preview": "The first 24 hours, on one page. Free.",
+          "body": "Good morning {{first_name}},\n\nYour safety systems cover the incident itself, and they are usually good. What almost nobody has written down is what happens next: the family that needs to hear from you before they hear it somewhere else, the regulator, the client, and the crew standing in the car park with phones out.\n\nThe communication in those first hours decides whether the incident stays an incident or becomes the thing the business is known for.\n\nWe have put the first day on one page: how to tell an issue from a crisis, who says what and in what order, and the communication formula that holds people when facts alone will not.\n\nFree, direct download, no sign-up:\n\n[Download The First 24 Hours desk guide]\n\nPut it in the site office and hope you never need it. In my next note I will show you what the operators who handle these moments well do differently.\n\nLyall Mercer\nCo-founder, My PR Partner. Lead Strategist, CRC Public Relations"
+        },
+        {
+          "id": "b1e",
+          "label": "Tier 5a, general business, owner or leader",
+          "day": "Day 0",
+          "subject": "There is no comms team. There is you, and the phone.",
+          "preview": "The first 24 hours, on one page. Free.",
+          "body": "Good morning {{first_name}},\n\nMost businesses your size do not have a communications team. When something goes wrong in public, the job lands on whoever owns the business or is running it that day, in between everything else.\n\nIt rarely arrives as a disaster. It arrives as a staff member's post, a customer complaint that finds an audience, a supplier's mistake with your name on the invoice, or a journalist who already has half the story and wants the other half by 3pm. What decides how it ends is not the size of the problem. It is what the business says in the first few hours, and who says it.\n\nWe have put the first day on one page: how to tell an issue from a crisis, who says what and in what order, and the communication formula that holds customers and staff when facts alone will not.\n\nFree, direct download, no sign-up:\n\n[Download The First 24 Hours desk guide]\n\nKeep it where you can find it under pressure, and hope you never need it. In my next note I will show you what the businesses that handle these moments well do differently.\n\nLyall Mercer\nCo-founder, My PR Partner. Lead Strategist, CRC Public Relations"
+        },
+        {
+          "id": "b1f",
+          "label": "Tier 5b, general business, comms professional",
+          "day": "Day 0",
+          "subject": "You are the crisis plan, {{first_name}}",
+          "preview": "The first 24 hours, on one page. Free.",
+          "body": "Good morning {{first_name}},\n\nIn most businesses your size, communications is one person, and on a bad day that person is the crisis plan. The CEO wants a statement, legal wants it shorter, the customers are already talking, and the journalist's deadline is the only one that is real.\n\nYou know the theory. What is hard to get in the moment is a page the leadership team will actually follow: how to tell an issue from a crisis before someone declares one, who speaks and in what order, and how to write a statement that holds an angry audience when the facts alone will not. Have that agreed before the day, and the argument about tone happens once, in calm, rather than at 4pm against a deadline.\n\nWe have put the first day on one page for exactly that conversation. Free, direct download, no sign-up:\n\n[Download The First 24 Hours desk guide]\n\nPut it in front of your leadership team while nothing is on fire. In my next note I will show you what the comms people who handle these moments well do differently, and how they got the room to back them.\n\nLyall Mercer\nCo-founder, My PR Partner. Lead Strategist, CRC Public Relations"
+        }
+      ]
+    },
+    {
+      "id": "biz-shared",
+      "group": "Business",
+      "name": "Business shared body",
+      "rev": 3,
+      "audience": "All five business tiers, both Tier 5 personas",
+      "product": "Crisis Masterclass, plus the business program waitlist",
+      "landing": "/crisis-masterclass",
+      "cadence": "Day 3, 7, 10",
+      "status": "live",
+      "note": "One edit here changes all five tiers. If the business program price lands before the send, email 4 is the one to rework: the waitlist line becomes a real second offer.\n\nThe comms professionals in Tier 5b get the same three follow-ups. Emails 2 and 4 read owner-first; if 5b earns its own follow-ups after the pilot, fork them here.",
+      "emails": [
+        {
+          "id": "bs2",
+          "label": "The gap",
+          "day": "Day 3",
+          "subject": "The first 24 hours decide it",
+          "preview": "Why facts alone do not calm an angry public.",
+          "body": "Good morning {{first_name}},\n\nWhen something goes wrong publicly, the difference between a bad week and lasting damage is almost always the first 24 hours of communication. Not the incident. The response.\n\nHere is the part that surprises most owners and managers: you cannot beat emotion with logic. When customers, staff or a community are angry or frightened, facts and legally-approved statements do not land. Validation first, information second. There is a formula for it, and it is teachable.\n\nThat formula is one module of the Crisis Masterclass, the 12-month online program we built with Melissa Agnes of the Crisis Ready Institute in the United States, exclusive to My PR Partner in Australasia. One session a month, self-paced, with a certificate at the end.\n\n[See what the 12 months cover]\n\nLyall"
+        },
+        {
+          "id": "bs3",
+          "label": "Offer and price anchor",
+          "day": "Day 7",
+          "subject": "$340 a month before, or $10k a day after",
+          "preview": "What crisis help costs on either side of the incident.",
+          "body": "Good morning {{first_name}},\n\nA quick note on numbers.\n\nWhen it happens, crisis consultants cost thousands a day and they arrive after the damage is done. A single external training day runs $7,000 to $15,000. The Crisis Masterclass is $340 a month (ex GST): a full year of structured training for less than one workshop day.\n\nWhat you get: twelve monthly sessions with Melissa Agnes of the Crisis Ready Institute and Australian case studies from our CRC Public Relations team, fortnightly Spotlight emails, a monthly live Q&A, and a certificate of completion.\n\n[See the Crisis Masterclass and enrol]\n\nIf you would rather talk it through first, reply and I will come back to you personally.\n\nLyall"
+        },
+        {
+          "id": "bs4",
+          "label": "Close, with the waitlist",
+          "day": "Day 10",
+          "subject": "Before I close the file, {{first_name}}",
+          "preview": "One question, then I will leave you be.",
+          "body": "Good morning {{first_name}},\n\nShort one, then I will stop filling your inbox.\n\nIf tomorrow morning a customer, a journalist and your own staff all had {{business_name}} in their mouths for the wrong reason, who knows exactly what to say in the first hour?\n\nIf the answer is \"we would work it out\", that is the gap. It is the same gap nearly every owner describes to us, and it is fixable for $340 a month.\n\n[Enrol in the Crisis Masterclass]\n\nWe are also building a broader PR program for businesses that goes past crisis into the everyday work of reputation. If that is closer to what you need, reply with the word waitlist and I will put you on it.\n\nEither way, keep the desk guide, and my door stays open.\n\nLyall"
+        }
+      ]
+    },
+    {
+      "id": "associations",
+      "group": "Held",
+      "name": "Industry associations",
+      "rev": 1,
+      "audience": "No list yet, build in progress",
+      "product": "Crisis Masterclass, plus the endorsed-provider offer",
+      "landing": "/programs/industry-associations",
+      "cadence": "Day 0, 3, 7, 10",
+      "status": "hold",
+      "note": "Copy is ready and holding. Nothing sends until there is a list: Associations Forum and AuSAE directories, a few hundred CEOs is enough.\n\nThe partnership approach to AuSAE and Associations Forum themselves runs in parallel and is worth more per deal than the cold list.",
+      "emails": [
+        {
+          "id": "a1",
+          "label": "Value, no ask",
+          "day": "Day 0",
+          "subject": "When your sector makes the news, {{org_name}} is the voice",
+          "preview": "The evidence on what actually works in a crisis.",
+          "body": "Good morning {{first_name}},\n\nHere is the uncomfortable part of running an association: you carry the reputation of every member. One member's scandal becomes the sector's headline, and the journalists do not call the member. They call you.\n\nWe have published a research paper that most communications advisers have not caught up with yet: the peer-reviewed evidence on emotion-led crisis management. Why validation beats legal-speak, why markets punished insincere apologies for three months, and why Jacinda Ardern's crisis approval hit 80% while G7 leaders averaged 48%.\n\n[Download: The Evidence Behind Emotion-Led Crisis Management]\n\nIt is a 10-minute read, and it will change how you brief your board on reputational risk.\n\nLyall Mercer\nCo-founder, My PR Partner. Lead Strategist, CRC Public Relations"
+        },
+        {
+          "id": "a2",
+          "label": "The gap and the authority",
+          "day": "Day 3",
+          "subject": "A comms team of one",
+          "preview": "Most association CEOs are the crisis plan.",
+          "body": "Good morning {{first_name}},\n\nMost associations run a communications team of one. Sometimes none, and then the CEO is the plan.\n\nThat works until the day it does not: a member scandal, an advocacy position that backfires, a sector-wide incident. On that day the difference is not budget, it is preparation.\n\nThe Crisis Masterclass is the 12-month online program we built with Melissa Agnes, CEO of the Crisis Ready Institute in the United States and one of the world's leading crisis communication authorities. It is exclusive to My PR Partner in Australasia. Monthly sessions, self-paced, live Q&A, and a certificate of completion endorsed by CRC Public Relations.\n\nIt exists precisely for leaders who are the spokesperson whether they chose it or not.\n\n[See the full course outline]\n\nLyall"
+        },
+        {
+          "id": "a3",
+          "label": "Offer and price anchor",
+          "day": "Day 7",
+          "subject": "One workshop day, or a whole year",
+          "preview": "$340 a month against $1,195 a seat.",
+          "body": "Good morning {{first_name}},\n\nThe going rate for crisis communications training in Australia is $1,195 per person for a two-day workshop, or $7,000 to $15,000 for a facilitator day. Then everyone goes back to work and forgets it by Christmas.\n\nThe Crisis Masterclass takes the opposite approach: $340 a month (ex GST) for twelve months of structured, expert-led capability building, with Australian case studies and personal access to the experts through the monthly Q&A.\n\n[Enrol in the Crisis Masterclass]\n\nHappy to answer anything by reply. I read these personally.\n\nLyall"
+        },
+        {
+          "id": "a4",
+          "label": "Close, with the endorsed-provider door",
+          "day": "Day 10",
+          "subject": "Two ways to do this, {{first_name}}",
+          "preview": "For you, or for your whole membership.",
+          "body": "Good morning {{first_name}},\n\nLast note from me, with two options on the table.\n\nOption one: enrol yourself or your communications lead in the Crisis Masterclass. $340 a month, start immediately, certificate at the end.\n\n[Enrol here]\n\nOption two, and this is the conversation I would most like to have: some associations are looking at the Masterclass as a member benefit. Your members get preferred access to world-class crisis training as part of their membership, your association adds a professional development benefit and a non-dues revenue line, and we handle all the delivery.\n\nIf protecting your sector's reputation is on your board's agenda this year, this is a tidy way to lead it.\n\nIf option two is interesting, reply with a good time for a 20-minute call.\n\nEither way, thanks for reading, and the research paper is yours to keep.\n\nLyall"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script id="appjs">
+(function () {
+  "use strict";
+
+  var TITLE = "EDM Copy Desk";
+  var FONTS =
+    '<link rel="preconnect" href="https://fonts.googleapis.com">' +
+    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' +
+    '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">';
+  var EDITORS = ["Lyall Mercer", "Barbara Gorogh", "3P Digital"];
+
+  var state = JSON.parse(document.getElementById("appstate").textContent);
+  var app = document.getElementById("app");
+
+  var ui = {
+    cohortId: state.cohorts[0].id,
+    editor: readLocal("edmdesk.editor") || EDITORS[0],
+    approving: false,
+    saving: false,
+    banner: null,
+    readOnly: false
+  };
+  var artifactNs = null;
+  var draft = null; // {cohortId: {note, emails:{id:{subject,preview,body}}}}
+
+  function readLocal(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
+  function writeLocal(k, v) { try { window.localStorage.setItem(k, v); } catch (e) {} }
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+  function cohort(id) {
+    for (var i = 0; i < state.cohorts.length; i++) if (state.cohorts[i].id === id) return state.cohorts[i];
+    return state.cohorts[0];
+  }
+  function fmtDate(iso) {
+    if (!iso) return "";
+    var d = new Date(iso);
+    if (isNaN(d)) return "";
+    try {
+      return d.toLocaleString("en-AU", {
+        timeZone: "Australia/Brisbane", day: "numeric", month: "short",
+        hour: "numeric", minute: "2-digit", hour12: true
+      });
+    } catch (e) { return d.toISOString().slice(0, 16).replace("T", " "); }
+  }
+  function words(s) { var t = String(s || "").trim(); return t ? t.split(/\s+/).length : 0; }
+
+  /* ---------- draft: live edits held off state until Update ---------- */
+
+  function ensureDraft(c) {
+    if (!draft) draft = {};
+    if (!draft[c.id]) {
+      var d = { note: c.note, emails: {} };
+      c.emails.forEach(function (e) {
+        d.emails[e.id] = { subject: e.subject, preview: e.preview, body: e.body };
+      });
+      draft[c.id] = d;
+    }
+    return draft[c.id];
+  }
+  function isDirty() {
+    if (!draft) return false;
+    for (var cid in draft) {
+      if (!Object.prototype.hasOwnProperty.call(draft, cid)) continue;
+      var c = cohort(cid), d = draft[cid];
+      if (d.note !== c.note) return true;
+      for (var i = 0; i < c.emails.length; i++) {
+        var e = c.emails[i], de = d.emails[e.id];
+        if (!de) continue;
+        if (de.subject !== e.subject || de.preview !== e.preview || de.body !== e.body) return true;
+      }
+    }
+    return false;
+  }
+  function dirtyCohorts() {
+    var out = [];
+    if (!draft) return out;
+    for (var cid in draft) {
+      if (!Object.prototype.hasOwnProperty.call(draft, cid)) continue;
+      var c = cohort(cid), d = draft[cid], changed = d.note !== c.note;
+      c.emails.forEach(function (e) {
+        var de = d.emails[e.id];
+        if (de && (de.subject !== e.subject || de.preview !== e.preview || de.body !== e.body)) changed = true;
+      });
+      if (changed) out.push(cid);
+    }
+    return out;
+  }
+  function commitDraft() {
+    var touched = dirtyCohorts();
+    touched.forEach(function (cid) {
+      var c = cohort(cid), d = draft[cid];
+      c.note = d.note;
+      c.emails.forEach(function (e) {
+        var de = d.emails[e.id];
+        if (!de) return;
+        e.subject = de.subject; e.preview = de.preview; e.body = de.body;
+      });
+      c.rev = (c.rev || 1) + 1;
+    });
+    return touched;
+  }
+
+  /* ---------- approval status ---------- */
+
+  function approvalOf(c) {
+    var a = state.approvals && state.approvals[c.id];
+    if (!a) return { kind: "draft", text: "Not approved" };
+    if (a.rev === c.rev) return { kind: "ok", text: "Approved by " + a.by + ", " + fmtDate(a.at) };
+    return { kind: "stale", text: "Edited since " + a.by + " approved it" };
+  }
+
+  /* ---------- rendering ---------- */
+
+  function render() {
+    var c = cohort(ui.cohortId);
+    var d = ensureDraft(c);
+    var dirty = isDirty();
+    var app2 = [];
+
+    app2.push('<div class="bar"><div class="bar-in">');
+    app2.push('<div class="brand"><h1>EDM Copy Desk</h1>' +
+      '<span class="sub">My PR Partner cold sequences &middot; rev ' + esc(state.rev) +
+      (state.updatedBy ? ' &middot; last saved by ' + esc(state.updatedBy) + ' ' + esc(fmtDate(state.updatedAt)) : '') +
+      '</span></div>');
+
+    if (!ui.readOnly) {
+      app2.push('<div class="who"><label for="editorsel">Editing as</label><select id="editorsel">' +
+        EDITORS.map(function (n) {
+          return '<option value="' + esc(n) + '"' + (n === ui.editor ? " selected" : "") + ">" + esc(n) + "</option>";
+        }).join("") + "</select></div>");
+      if (ui.saving) app2.push('<span class="saving">Saving…</span>');
+      else if (dirty) app2.push('<span class="dirty">Unsaved changes</span>');
+      app2.push('<button class="btn primary" id="btnupdate"' + (dirty && !ui.saving ? "" : " disabled") + ">Update</button>");
+      app2.push('<button class="btn approve" id="btnapprove"' + (ui.saving ? " disabled" : "") + ">Approve this cohort</button>");
+    } else {
+      app2.push('<span class="saving">Read-only view</span>');
+    }
+    app2.push("</div>");
+    if (ui.banner) {
+      app2.push('<div class="banner' + (ui.banner.err ? " err" : "") + '">' + esc(ui.banner.text) + "</div>");
+    }
+    app2.push("</div>");
+
+    app2.push('<div class="wrap">');
+
+    /* sidebar */
+    app2.push('<nav class="side">');
+    var groups = [];
+    state.cohorts.forEach(function (x) { if (groups.indexOf(x.group) === -1) groups.push(x.group); });
+    groups.forEach(function (g) {
+      app2.push('<div class="navgroup"><span class="eyebrow">' + esc(g) + "</span>");
+      state.cohorts.filter(function (x) { return x.group === g; }).forEach(function (x) {
+        var st = approvalOf(x);
+        var mark = st.kind === "ok" ? "approved" : st.kind === "stale" ? "edited since approval" : "not approved";
+        app2.push('<button class="navbtn' + (x.id === ui.cohortId ? " on" : "") + '" data-go="' + esc(x.id) + '">' +
+          '<span class="nm">' + esc(x.name) + "</span>" +
+          '<span class="mt">' + x.emails.length + " email" + (x.emails.length === 1 ? "" : "s") +
+          " &middot; <b>" + esc(mark) + "</b></span></button>");
+      });
+      app2.push("</div>");
+    });
+    app2.push('<div class="navgroup"><span class="eyebrow">How this works</span>' +
+      '<p class="hint" style="padding:0 12px; margin:0">Edit any field, then press <strong>Update</strong> to save a new version for everyone. <strong>Approve</strong> saves and stamps the cohort as signed off. Both notify 3P.</p></div>');
+    app2.push("</nav>");
+
+    /* main */
+    app2.push("<main>");
+    var st = approvalOf(c);
+    app2.push('<div class="cohead"><span class="eyebrow">' + esc(c.group) + "</span>" +
+      "<h2>" + esc(c.name) + "</h2>" +
+      '<span class="chip ' + (st.kind === "ok" ? "ok" : st.kind === "stale" ? "stale" : "draft") + '">' + esc(st.text) + "</span>" +
+      (c.status === "hold" ? ' <span class="chip hold">Holding, no list yet</span>' : "") +
+      '<div class="facts">' +
+      '<div class="fact"><span class="k">Audience</span><span class="v">' + esc(c.audience) + "</span></div>" +
+      '<div class="fact"><span class="k">Product</span><span class="v">' + esc(c.product) + "</span></div>" +
+      '<div class="fact"><span class="k">Landing</span><span class="v">' + esc(c.landing) + "</span></div>" +
+      '<div class="fact"><span class="k">Cadence</span><span class="v">' + esc(c.cadence) + "</span></div>" +
+      "</div></div>");
+
+    if (ui.approving && !ui.readOnly) {
+      app2.push('<div class="approve-panel"><h3>Approve the copy for ' + esc(c.name) + "</h3>" +
+        "<p>This saves everything on screen and records the sign-off against revision " +
+        ((c.rev || 1) + (dirtyCohorts().indexOf(c.id) > -1 ? 1 : 0)) + ". 3P is notified.</p>" +
+        '<div class="row">' +
+        '<input type="text" id="approvenote" placeholder="Optional note, e.g. approved subject to legal check on email 3">' +
+        '<button class="btn approve" id="btnapproveconfirm">Approve as ' + esc(ui.editor) + "</button>" +
+        '<button class="btn" id="btnapprovecancel">Cancel</button>' +
+        "</div></div>");
+    }
+
+    app2.push('<div class="guide"><span class="eyebrow">Notes for this cohort</span>' +
+      '<textarea id="cohortnote" rows="3"' + (ui.readOnly ? " readonly" : "") + ">" + esc(d.note) + "</textarea></div>");
+
+    c.emails.forEach(function (e) {
+      var de = d.emails[e.id];
+      app2.push('<article class="email"><header>' +
+        '<span class="day">' + esc(e.day) + "</span>" +
+        "<h3>" + esc(e.label) + "</h3>" +
+        '<span class="cnt">' + words(de.body) + " words</span></header>" +
+        '<div class="fields">' +
+        '<div class="field"><label for="su-' + esc(e.id) + '">Subject line</label>' +
+        '<input class="subj" type="text" id="su-' + esc(e.id) + '" data-f="subject" data-e="' + esc(e.id) + '" value="' + esc(de.subject) + '"' + (ui.readOnly ? " readonly" : "") + "></div>" +
+        '<div class="field"><label for="pv-' + esc(e.id) + '">Preview text</label>' +
+        '<input type="text" id="pv-' + esc(e.id) + '" data-f="preview" data-e="' + esc(e.id) + '" value="' + esc(de.preview) + '"' + (ui.readOnly ? " readonly" : "") + "></div>" +
+        '<div class="field"><label for="bo-' + esc(e.id) + '">Body</label>' +
+        '<textarea id="bo-' + esc(e.id) + '" data-f="body" data-e="' + esc(e.id) + '"' + (ui.readOnly ? " readonly" : "") + ">" + esc(de.body) + "</textarea>" +
+        '<span class="hint">Merge fields stay as written: <code>{{first_name}}</code>, <code>{{school_name}}</code>, <code>{{business_name}}</code>, <code>{{org_name}}</code>. Square brackets mark the linked call to action.</span></div>' +
+        "</div></article>");
+    });
+
+    app2.push('<div class="history"><h3>Update and approval history</h3><div class="hlist">');
+    var h = (state.history || []).slice(0, 25);
+    if (!h.length) app2.push('<p class="empty">Nothing recorded yet. The first Update will appear here.</p>');
+    h.forEach(function (row) {
+      app2.push('<div class="hrow"><span class="t">' + esc(fmtDate(row.at)) + "</span>" +
+        "<span>" + esc(row.text) + "</span>" +
+        '<span class="w">' + esc(row.by) + "</span></div>");
+    });
+    app2.push("</div></div>");
+
+    app2.push("</main></div>");
+
+    app.innerHTML = app2.join("");
+    wire();
+    sizeAll();
+  }
+
+  function sizeAll() {
+    var tas = app.querySelectorAll("textarea");
+    for (var i = 0; i < tas.length; i++) grow(tas[i]);
+  }
+  function grow(ta) {
+    ta.style.height = "auto";
+    ta.style.height = Math.max(ta.scrollHeight + 2, ta.id === "cohortnote" ? 54 : 150) + "px";
+  }
+
+  function wire() {
+    var sel = document.getElementById("editorsel");
+    if (sel) sel.addEventListener("change", function () {
+      ui.editor = sel.value; writeLocal("edmdesk.editor", ui.editor); render();
+    });
+
+    var navs = app.querySelectorAll("[data-go]");
+    for (var i = 0; i < navs.length; i++) {
+      navs[i].addEventListener("click", function () {
+        ui.cohortId = this.getAttribute("data-go"); ui.approving = false; ui.banner = null; render();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
+    var note = document.getElementById("cohortnote");
+    if (note) note.addEventListener("input", function () {
+      ensureDraft(cohort(ui.cohortId)).note = note.value; grow(note); refreshBar();
+    });
+
+    var fields = app.querySelectorAll("[data-f]");
+    for (var j = 0; j < fields.length; j++) {
+      fields[j].addEventListener("input", function () {
+        var d = ensureDraft(cohort(ui.cohortId));
+        d.emails[this.getAttribute("data-e")][this.getAttribute("data-f")] = this.value;
+        if (this.tagName === "TEXTAREA") {
+          grow(this);
+          var card = this.closest(".email");
+          if (card) card.querySelector(".cnt").textContent = words(this.value) + " words";
+        }
+        refreshBar();
+      });
+    }
+
+    var up = document.getElementById("btnupdate");
+    if (up) up.addEventListener("click", function () { save(false, ""); });
+
+    var ap = document.getElementById("btnapprove");
+    if (ap) ap.addEventListener("click", function () { ui.approving = true; render(); });
+
+    var apc = document.getElementById("btnapprovecancel");
+    if (apc) apc.addEventListener("click", function () { ui.approving = false; render(); });
+
+    var apk = document.getElementById("btnapproveconfirm");
+    if (apk) apk.addEventListener("click", function () {
+      var n = document.getElementById("approvenote");
+      save(true, n ? n.value.trim() : "");
+    });
+  }
+
+  function refreshBar() {
+    var dirty = isDirty();
+    var up = document.getElementById("btnupdate");
+    if (up) up.disabled = !dirty || ui.saving;
+    var barIn = app.querySelector(".bar-in");
+    if (!barIn || ui.readOnly) return;
+    var mark = barIn.querySelector(".dirty, .saving");
+    if (dirty && !mark) {
+      var s = document.createElement("span");
+      s.className = "dirty"; s.textContent = "Unsaved changes";
+      barIn.insertBefore(s, up);
+    } else if (!dirty && mark && mark.className === "dirty") {
+      mark.remove();
+    }
+  }
+
+  /* ---------- publish ---------- */
+
+  function jsonForScript(obj) {
+    return JSON.stringify(obj, null, 1).replace(/<\//g, "<\\/");
+  }
+  function buildDoc(next) {
+    var css = document.getElementById("appcss").textContent;
+    var js = document.getElementById("appjs").textContent;
+    return "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">" +
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">" +
+      "<title>" + TITLE + "</title>" + FONTS +
+      "<style id=\"appcss\">" + css + "<\/style></head><body>" +
+      "<div id=\"app\"></div>" +
+      "<script id=\"appstate\" type=\"application/json\">" + jsonForScript(next) + "<\/script>" +
+      "<script id=\"appjs\">" + js + "<\/script>" +
+      "</body></html>";
+  }
+
+  function save(approving, noteText) {
+    if (ui.readOnly || ui.saving) return;
+    var c = cohort(ui.cohortId);
+    var touched = commitDraft();
+    var now = new Date().toISOString();
+
+    if (!approving && !touched.length) return;
+
+    state.rev = (state.rev || 1) + 1;
+    state.updatedAt = now;
+    state.updatedBy = ui.editor;
+    state.history = state.history || [];
+
+    if (touched.length) {
+      var names = touched.map(function (id) { return cohort(id).name; }).join(", ");
+      state.history.unshift({ at: now, by: ui.editor, text: "Copy updated: " + names });
+    }
+    if (approving) {
+      state.approvals = state.approvals || {};
+      state.approvals[c.id] = { by: ui.editor, at: now, rev: c.rev || 1 };
+      state.history.unshift({
+        at: now, by: ui.editor,
+        text: "Approved " + c.name + (noteText ? ". Note: " + noteText : "")
+      });
+    }
+    state.history = state.history.slice(0, 60);
+
+    ui.saving = true; ui.approving = false; ui.banner = null;
+    render();
+
+    if (!artifactNs) {
+      ui.saving = false;
+      ui.banner = { err: true, text: "Saving is not available in this view, so nothing was published. Your text is still on screen: copy it out before closing the tab." };
+      render();
+      return;
+    }
+
+    draft = null;
+    artifactNs.publish(buildDoc(state)).then(function () {
+      // The view reloads to the published version.
+    }).catch(function (err) {
+      var code = err && err.code;
+      if (code === "conflict") return; // the shell reloads every view to the winner
+      ui.saving = false;
+      if (code === "not_writer" || code === "not_granted" || code === "not_declared" || code === "capability_disabled") {
+        ui.readOnly = true;
+        ui.banner = { err: true, text: "This view is read-only, so the change was not published. Ask Alex for edit access on the artifact." };
+      } else if (code === "rate_limited") {
+        ui.banner = { err: true, text: "Saved too many times in a row. Wait about a minute, then press Update again." };
+      } else if (code === "too_large") {
+        ui.banner = { err: true, text: "The copy is too long to publish. Trim one of the longer emails and try again." };
+      } else {
+        ui.banner = { err: true, text: "The save did not go through. Press Update again in a moment." };
+      }
+      render();
+    });
+  }
+
+  /* ---------- boot ---------- */
+
+  render();
+
+  window.addEventListener("beforeunload", function (e) {
+    if (isDirty() && !ui.saving) { e.preventDefault(); e.returnValue = ""; }
+  });
+
+  if (window.claude && typeof window.claude.use === "function") {
+    window.claude.use("artifact").then(function (ns) {
+      artifactNs = ns;
+      if (!ns) { ui.readOnly = true; render(); }
+    }).catch(function () { ui.readOnly = true; render(); });
+  } else {
+    ui.readOnly = true;
+    render();
+  }
+})();
+</script>

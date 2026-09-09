@@ -22,7 +22,13 @@ export type ProseNode =
   | { kind: "h3"; text: string; id?: string }
   | { kind: "ul"; items: ReactNode[] }
   | { kind: "ol"; items: ReactNode[] }
-  | { kind: "callout"; title: string; body: ReactNode };
+  | { kind: "callout"; title: string; body: ReactNode }
+  /** Verbatim material from a named source, rendered as a pull-quote. */
+  | { kind: "quote"; text: string; cite?: string }
+  /** Small inline call-to-action strip that routes back into a program. */
+  | { kind: "cta"; text: string; href: string; cta: string }
+  /** Escape hatch for a self-contained component (an embed, a self-check). */
+  | { kind: "custom"; node: ReactNode };
 
 export type LandingCard = {
   title: string;

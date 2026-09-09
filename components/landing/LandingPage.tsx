@@ -64,6 +64,40 @@ function Prose({ nodes }: { nodes: ProseNode[] }) {
                 <div className="mt-2 text-[15px] leading-relaxed text-text-medium">{node.body}</div>
               </aside>
             );
+          case "quote":
+            return (
+              <figure
+                key={i}
+                className="rounded-card border-l-4 border-brand-blue bg-[#F4F8FC] p-5 md:p-6"
+              >
+                <blockquote className="font-heading text-[16.5px] font-semibold leading-[1.6] text-text-dark md:text-[18px]">
+                  {node.text}
+                </blockquote>
+                {node.cite && (
+                  <figcaption className="mt-3 text-[13px] font-medium text-text-medium">
+                    {node.cite}
+                  </figcaption>
+                )}
+              </figure>
+            );
+          case "cta":
+            return (
+              <div
+                key={i}
+                className="flex flex-col gap-3 rounded-full border border-teal/30 bg-teal/[0.06] px-5 py-3 sm:flex-row sm:items-center sm:justify-between md:px-6"
+              >
+                <p className="text-[14.5px] font-medium leading-snug text-text-dark">{node.text}</p>
+                <Link
+                  href={node.href}
+                  className="inline-flex flex-shrink-0 items-center gap-1.5 rounded-full bg-teal px-4 py-2 text-[13.5px] font-semibold text-white transition-colors hover:bg-teal-dark"
+                >
+                  {node.cta}
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                </Link>
+              </div>
+            );
+          case "custom":
+            return <div key={i}>{node.node}</div>;
           case "p":
           default:
             return (

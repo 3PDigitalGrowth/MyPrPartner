@@ -1,0 +1,530 @@
+<title>Who Gets Which EDM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#F4F6F8; --surface:#FFFFFF; --surface-2:#EDF1F5;
+    --ink:#16233B; --ink-2:#33425C; --muted:#5C6A80; --faint:#8A97A8;
+    --rule:#DBE2EA; --rule-strong:#C2CDDA;
+    --teal:#07AFBB; --teal-deep:#05808A;
+    --gold:#A6862F; --green:#37804A; --red:#A8443C;
+    --chip:#E4EEF1;
+    --shadow:0 1px 2px rgba(22,35,59,.06), 0 8px 24px rgba(22,35,59,.05);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0D141F; --surface:#151F2C; --surface-2:#1B2735;
+      --ink:#E7ECF3; --ink-2:#C3CDDA; --muted:#96A3B6; --faint:#6F7D91;
+      --rule:#25313F; --rule-strong:#33414F;
+      --teal:#45C9D3; --teal-deep:#7FDDE4;
+      --gold:#D6B863; --green:#68B87A; --red:#DE7A70;
+      --chip:#1D3138;
+      --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.28);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0D141F; --surface:#151F2C; --surface-2:#1B2735;
+    --ink:#E7ECF3; --ink-2:#C3CDDA; --muted:#96A3B6; --faint:#6F7D91;
+    --rule:#25313F; --rule-strong:#33414F;
+    --teal:#45C9D3; --teal-deep:#7FDDE4;
+    --gold:#D6B863; --green:#68B87A; --red:#DE7A70;
+    --chip:#1D3138;
+    --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.28);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:"DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size:16.5px; line-height:1.62; margin:0;
+  }
+  .shell{max-width:1080px; margin:0 auto; padding:0 28px 96px}
+  .prose{max-width:70ch}
+  p{margin:0 0 1.05em}
+  a{color:var(--teal-deep); text-decoration-thickness:1px; text-underline-offset:2px}
+  strong{font-weight:500; color:var(--ink)}
+  em{font-style:italic}
+  code{
+    font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.86em;
+    background:var(--surface-2); padding:1px 5px; border-radius:3px; color:var(--ink);
+  }
+
+  h1,h2,h3{font-family:"Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif; text-wrap:balance; margin:0}
+  h1{font-weight:800; font-size:clamp(2.1rem,4.4vw,3.05rem); line-height:1.06; letter-spacing:-.022em}
+  h2{font-weight:700; font-size:clamp(1.35rem,2.4vw,1.72rem); line-height:1.18; letter-spacing:-.015em}
+  h3{font-weight:700; font-size:1.02rem; line-height:1.35; letter-spacing:-.006em}
+
+  .eyebrow{
+    font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.705rem; font-weight:500;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--faint);
+  }
+
+  header.top{padding:64px 0 0}
+  .kicker{display:flex; gap:14px; align-items:baseline; flex-wrap:wrap; margin-bottom:22px}
+  .kicker .dot{width:7px; height:7px; border-radius:50%; background:var(--teal); display:inline-block}
+  .standfirst{font-size:1.16rem; line-height:1.55; color:var(--ink-2); max-width:60ch; margin-top:20px}
+  .ruling{
+    margin:34px 0 0; padding:22px 26px; background:var(--surface); border:1px solid var(--rule);
+    border-radius:4px; box-shadow:var(--shadow); max-width:64ch;
+  }
+  .ruling p{margin:0; font-size:1.04rem; color:var(--ink)}
+  .ruling .eyebrow{display:block; margin-bottom:9px; color:var(--teal-deep)}
+
+  section{padding-top:62px}
+  .sechead{border-top:2px solid var(--ink); padding-top:14px; margin-bottom:26px}
+  .sechead .eyebrow{display:block; margin-bottom:7px}
+
+  .scroller{overflow-x:auto; margin:26px 0 8px; -webkit-overflow-scrolling:touch}
+  table{border-collapse:collapse; width:100%; min-width:640px; font-size:.925rem}
+  caption{
+    text-align:left; font-family:"IBM Plex Mono", monospace; font-size:.705rem; letter-spacing:.13em;
+    text-transform:uppercase; color:var(--faint); padding-bottom:10px;
+  }
+  th{
+    text-align:left; font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:.7rem;
+    letter-spacing:.1em; text-transform:uppercase; color:var(--muted);
+    border-bottom:1px solid var(--rule-strong); padding:0 14px 9px 0; vertical-align:bottom;
+  }
+  td{border-bottom:1px solid var(--rule); padding:11px 14px 11px 0; vertical-align:top; color:var(--ink-2)}
+  td:first-child{color:var(--ink); font-weight:500}
+  .num{font-family:"IBM Plex Mono", monospace; font-variant-numeric:tabular-nums; text-align:right; padding-right:22px; white-space:nowrap}
+  th.num{text-align:right; padding-right:22px}
+  tr.total td{border-bottom:none; border-top:1.5px solid var(--ink); font-weight:500; color:var(--ink); padding-top:12px}
+  tbody tr:hover td{background:var(--surface-2)}
+
+  .tag{
+    display:inline-block; font-family:"IBM Plex Mono", monospace; font-size:.68rem; letter-spacing:.06em;
+    padding:2px 7px; border-radius:3px; background:var(--chip); color:var(--teal-deep); white-space:nowrap;
+  }
+  .tag.hold{background:transparent; border:1px solid var(--gold); color:var(--gold)}
+  .tag.stop{background:transparent; border:1px solid var(--red); color:var(--red)}
+  .tag.go{background:transparent; border:1px solid var(--green); color:var(--green)}
+
+  .clusters{display:grid; gap:0; margin:24px 0 10px; border-top:1px solid var(--rule-strong)}
+  .cluster{
+    display:grid; grid-template-columns:minmax(150px,200px) 1fr auto; gap:18px; align-items:center;
+    padding:13px 0; border-bottom:1px solid var(--rule);
+  }
+  .cluster .label{font-weight:500; font-size:.94rem; color:var(--ink)}
+  .cluster .label span{display:block; font-size:.79rem; color:var(--muted); font-weight:400; line-height:1.35}
+  .bar{height:9px; background:var(--surface-2); border-radius:1px; position:relative; overflow:hidden}
+  .bar i{position:absolute; top:0; bottom:0; left:0; display:block; border-radius:1px}
+  .bar i.own{background:var(--teal)}
+  .bar i.lost{background:var(--gold); opacity:.75}
+  .cluster .figs{
+    font-family:"IBM Plex Mono", monospace; font-variant-numeric:tabular-nums; font-size:.8rem;
+    color:var(--muted); white-space:nowrap; text-align:right;
+  }
+  .cluster .figs b{color:var(--ink); font-weight:500}
+  .legend{display:flex; gap:20px; flex-wrap:wrap; margin-top:14px; font-size:.8rem; color:var(--muted)}
+  .legend i{display:inline-block; width:22px; height:8px; border-radius:1px; vertical-align:middle; margin-right:7px}
+
+  .routes{display:grid; gap:14px; margin:26px 0 0}
+  .route{
+    background:var(--surface); border:1px solid var(--rule); border-radius:4px;
+    overflow:hidden; box-shadow:var(--shadow);
+  }
+  .route .head{
+    display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap;
+    padding:15px 20px 13px; border-bottom:1px solid var(--rule); background:var(--surface-2);
+  }
+  .route .head h3{font-size:1rem}
+  .route .body{padding:16px 20px 18px; display:grid; gap:13px}
+  .row2{display:grid; grid-template-columns:118px 1fr; gap:14px; align-items:start}
+  .row2 .k{
+    font-family:"IBM Plex Mono", monospace; font-size:.7rem; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--faint); padding-top:3px;
+  }
+  .row2 .v{font-size:.93rem; color:var(--ink-2)}
+
+  .note{
+    border-left:2px solid var(--gold); padding:4px 0 4px 18px; margin:26px 0; max-width:66ch;
+    color:var(--ink-2); font-size:.95rem;
+  }
+  .note .eyebrow{display:block; color:var(--gold); margin-bottom:6px}
+
+  ol.steps{counter-reset:s; list-style:none; padding:0; margin:26px 0 0; display:grid; gap:2px}
+  ol.steps li{
+    counter-increment:s; display:grid; grid-template-columns:38px 1fr; gap:16px;
+    padding:16px 0; border-bottom:1px solid var(--rule); align-items:start;
+  }
+  ol.steps li::before{
+    content:counter(s,decimal-leading-zero);
+    font-family:"IBM Plex Mono", monospace; font-size:.78rem; color:var(--teal-deep); padding-top:3px;
+  }
+  ol.steps h3{margin-bottom:5px}
+  ol.steps p{margin:0; font-size:.94rem; color:var(--ink-2); max-width:64ch}
+
+  .decisions{display:grid; gap:0; margin-top:26px; border-top:1px solid var(--rule-strong)}
+  .decision{padding:18px 0; border-bottom:1px solid var(--rule); display:grid; gap:6px}
+  .decision .q{font-weight:500; color:var(--ink); font-size:1rem}
+  .decision .a{font-size:.93rem; color:var(--ink-2); max-width:66ch}
+  .decision .a b{font-weight:500; color:var(--ink)}
+
+  footer{margin-top:70px; padding-top:20px; border-top:1px solid var(--rule); color:var(--faint); font-size:.83rem}
+
+  @media (max-width:640px){
+    .shell{padding:0 20px 72px}
+    .row2{grid-template-columns:1fr; gap:4px}
+    .cluster{grid-template-columns:1fr; gap:8px}
+    .cluster .figs{text-align:left}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none !important; animation:none !important}}
+  :focus-visible{outline:2px solid var(--teal); outline-offset:2px}
+</style>
+
+<div class="shell">
+
+<header class="top">
+  <div class="kicker">
+    <span class="eyebrow"><span class="dot"></span>&nbsp; My PR Partner &middot; CRC Public Relations</span>
+    <span class="eyebrow">Cold EDM audience plan &middot; 2 September 2026, updated 9 September</span>
+  </div>
+  <h1>Who gets which EDM</h1>
+  <p class="standfirst">The follow-up to our discussion with Lyall, worked through to the send files. Schools hear about the Schools Program, and the crisis sequence gets pointed at the audience Search Console says is already looking for it.</p>
+
+  <div class="ruling">
+    <span class="eyebrow">The ruling this plan implements</span>
+    <p>Schools receive Schools Program content only. No school on any list receives a Crisis Masterclass pitch, in any email, at any point in a sequence.</p>
+  </div>
+</header>
+
+<section>
+  <div class="sechead">
+    <span class="eyebrow">Messaging alignment</span>
+    <h2>Each audience hears about the program built for it</h2>
+  </div>
+  <div class="prose">
+    <p>The direction we settled on with Lyall is a clean one: principals hear about the Schools Program, and the Crisis Masterclass goes to the audiences it was priced and packaged for. Everything below is that direction carried through to the sequences, the landing pages and the send files.</p>
+    <p>The Schools Program is the stronger story for that reader in any case. Twelve modules of school-specific material, allegations handling with Tim Sterne, board and governance risk with Tim Whincop, a whole-team licence rather than one seat. It answers the question a principal is actually holding, which is how the leadership team responds together, not how one person gets trained.</p>
+    <p>The alignment also does compliance work. Cold outreach here rests on inferred consent through conspicuous publication, and one of the three conditions is that the message is <em>directly relevant to the recipient's role</em>. A schools-specific program sent to a principal at a published school address passes that test cleanly. A general business training subscription sent to the same address is a weaker argument on the day someone asks the question.</p>
+  </div>
+  <div class="note">
+    <span class="eyebrow">What that changes in Sequence A</span>
+    Three things move together. The price anchor becomes $440 to $1,340 a month per school rather than $340 a seat, the buyer becomes the school rather than the principal personally, and the proof stack leads on fifteen years of CRC schools work rather than the Crisis Ready Institute licence.
+  </div>
+</section>
+
+<section>
+  <div class="sechead">
+    <span class="eyebrow">Signal &middot; Search Console &middot; myprpartner.com &middot; 3 Mar to 30 Aug 2026</span>
+    <h2>What organic search says about the buyer</h2>
+  </div>
+  <div class="prose">
+    <p>Six months of Search Console for myprpartner.com: 9,612 impressions and 78 clicks, of which 3,399 impressions and 54 clicks are Australian. That is a small dataset and I am treating it as corroboration rather than proof. What makes it useful is not the volume, it is the gap between where Google already ranks the site and where it does not.</p>
+  </div>
+
+  <div class="clusters">
+    <div class="cluster">
+      <div class="label">SME subscription intent<span>"pr membership site for smes", "pr training subscription for businesses"</span></div>
+      <div class="bar"><i class="own" style="width:64%"></i></div>
+      <div class="figs"><b>206</b> impr &middot; avg pos <b>9</b></div>
+    </div>
+    <div class="cluster">
+      <div class="label">Corporate crisis training<span>"crisis media management training", "media crisis training"</span></div>
+      <div class="bar"><i class="lost" style="width:100%"></i></div>
+      <div class="figs"><b>321</b> impr &middot; avg pos <b>58</b></div>
+    </div>
+    <div class="cluster">
+      <div class="label">Not-for-profit and charity<span>"not for profit pr", "charity pr sydney"</span></div>
+      <div class="bar"><i class="lost" style="width:27%"></i></div>
+      <div class="figs"><b>88</b> impr &middot; avg pos <b>44</b></div>
+    </div>
+    <div class="cluster">
+      <div class="label">Schools<span>"school pr", "public relations plan for schools"</span></div>
+      <div class="bar"><i class="own" style="width:11%"></i></div>
+      <div class="figs"><b>36</b> impr &middot; avg pos <b>18</b></div>
+    </div>
+    <div class="cluster">
+      <div class="label">Industry associations<span>"public relations for trade associations"</span></div>
+      <div class="bar"><i class="lost" style="width:9%"></i></div>
+      <div class="figs"><b>30</b> impr &middot; avg pos <b>35</b></div>
+    </div>
+  </div>
+  <div class="legend">
+    <span><i style="background:var(--teal)"></i>Ranking inside the top 20, the site matches this intent</span>
+    <span><i style="background:var(--gold);opacity:.75"></i>Ranking past position 30, demand exists but the site is not competing</span>
+  </div>
+
+  <div class="prose" style="margin-top:30px">
+    <h3 style="margin-bottom:10px">Reading it</h3>
+    <p>Google puts myprpartner.com in the top ten for the subscription phrasings and at position 50 to 75 for the workshop phrasings. Both facts are the same fact: the site is built around a recurring training subscription, and the phrases that describe a recurring training subscription are the ones nobody else in the Australian market is writing pages for. Every competitor in this market sells a facilitator day.</p>
+    <p>On company size, Search Console reports no firmographics at all, so the size read has to come from the language people type. Every query in the set that names a buyer size names a small one: <em>smes</em> twice, <em>small business</em> or <em>small businesses</em> four times, <em>startups</em> once, <em>business owners</em> twice. Nothing across 333 queries names enterprise, corporate group, ASX or multinational in a training context. The enterprise-flavoured queries that do appear ("financial services pr agency", "professional services pr", "corporate services pr agency") are agency-hire intent rather than training-purchase intent, and every one of them sits past position 50.</p>
+    <p>Price is the second, independent signal, and it brackets the same range. At $340 to $440 a month the purchase sits inside one manager's discretion. Above roughly 500 staff an organisation has an in-house communications function and buys agency retainers instead. Below about ten staff the recurring line does not survive a slow quarter. That gives a working target of <strong>10 to 500 employees</strong>, which happens to be a cut the master list supports directly, because the vendor tags every row with an employee band.</p>
+  </div>
+
+  <div class="note">
+    <span class="eyebrow">Worth a decision</span>
+    Not-for-profit is the second largest organic cluster in the dataset, ahead of schools and associations combined. The Charity program page is currently hidden and redirects to <code>/programs/business</code>, and there is no NFP segment in any purchased list. That is demand with nowhere to land.
+  </div>
+</section>
+
+<section>
+  <div class="sechead">
+    <span class="eyebrow">List audit &middot; 1,254,232 business rows &middot; 16,719 school rows &middot; 538 councils</span>
+    <h2>What the master list actually holds</h2>
+  </div>
+  <div class="prose">
+    <p>I ran the full 262MB business master list rather than sampling it. Filters applied in order: employee band between 10 and 500, verified email present, a named human on the record, and a job title matching a decision-maker pattern (CEO, owner, managing director, general manager, principal, director, founder, head of, practice manager, communications). That last filter is the expensive one and it removes roughly three quarters of the in-band rows.</p>
+  </div>
+
+  <div class="scroller">
+    <table>
+      <caption>Business master list, filtered to 10 to 500 employees</caption>
+      <thead>
+        <tr>
+          <th>Segment</th>
+          <th class="num">In band</th>
+          <th class="num">Named + verified</th>
+          <th class="num">Decision maker</th>
+          <th>Why they are exposed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Care and health</td>
+          <td class="num">27,127</td><td class="num">25,890</td><td class="num">4,735</td>
+          <td>Hospitals, allied health, mental health, aged care, disability providers. Incidents become regulator matters and news.</td>
+        </tr>
+        <tr>
+          <td>Hospitality and food</td>
+          <td class="num">24,944</td><td class="num">23,062</td><td class="num">6,618</td>
+          <td>Review pile-ons, food safety, staff disputes on social. The fastest-moving crisis category of the four.</td>
+        </tr>
+        <tr>
+          <td>Professional and finance</td>
+          <td class="num">75,229</td><td class="num">72,792</td><td class="num">21,459</td>
+          <td>Real estate, financial services, insurance, accounting, HR consulting. Trust is the product being sold.</td>
+        </tr>
+        <tr>
+          <td>Operational risk</td>
+          <td class="num">59,769</td><td class="num">58,015</td><td class="num">13,625</td>
+          <td>Construction, transport, mining services, energy, security, fitness. Site incidents and safety events.</td>
+        </tr>
+        <tr class="total">
+          <td>Addressable</td><td class="num">187,069</td><td class="num">179,759</td><td class="num">46,437</td>
+          <td>Less 3,445 marketing and advertising rows (peers and competitors) = <strong>42,992</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="scroller">
+    <table>
+      <caption>Largest decision-maker pools by industry</caption>
+      <thead><tr><th>Industry</th><th class="num">Contacts</th><th>Segment</th></tr></thead>
+      <tbody>
+        <tr><td>Trades and construction</td><td class="num">7,256</td><td>Operational risk</td></tr>
+        <tr><td>Real estate</td><td class="num">6,219</td><td>Professional and finance</td></tr>
+        <tr><td>Hospitality</td><td class="num">3,406</td><td>Hospitality and food</td></tr>
+        <tr><td>Financial services</td><td class="num">3,343</td><td>Professional and finance</td></tr>
+        <tr><td>Accounting</td><td class="num">3,135</td><td>Professional and finance</td></tr>
+        <tr><td>Mining services</td><td class="num">2,624</td><td>Operational risk</td></tr>
+        <tr><td>Human resources</td><td class="num">2,534</td><td>Professional and finance</td></tr>
+        <tr><td>Hospitals</td><td class="num">2,065</td><td>Care and health</td></tr>
+        <tr><td>General healthcare</td><td class="num">1,756</td><td>Care and health</td></tr>
+        <tr><td>Marketing and advertising</td><td class="num">3,445</td><td><span class="tag stop">exclude</span> peers and competitors</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="prose" style="margin-top:34px">
+    <h3 style="margin-bottom:10px">The schools list needs a sector pass before anything sends</h3>
+    <p>Of 16,719 school rows, 11,297 carry a deliverable address and 7,384 name a principal. The vendor left the Sector column blank on 9,813 rows, which matters more than it looks, because sector is what tells us whether a school can sign its own contract. Email domain resolves most of it: 2,276 blank rows sit on <code>det.nsw.edu.au</code>, several hundred more on diocesan Catholic domains, and the rest on independent school domains.</p>
+  </div>
+
+  <div class="scroller">
+    <table>
+      <caption>Schools, deliverable addresses after domain enrichment</caption>
+      <thead><tr><th>Sector</th><th class="num">Tagged</th><th class="num">Recovered</th><th class="num">Total</th><th>Buying authority</th></tr></thead>
+      <tbody>
+        <tr><td>Independent</td><td class="num">906</td><td class="num">852</td><td class="num">1,758</td><td><span class="tag go">signs its own</span> Principal or business manager approves</td></tr>
+        <tr><td>Catholic</td><td class="num">926</td><td class="num">377</td><td class="num">1,303</td><td><span class="tag go">signs its own</span> Diocesan office may buy centrally</td></tr>
+        <tr><td>Government</td><td class="num">3,898</td><td class="num">3,190</td><td class="num">7,088</td><td><span class="tag hold">nurture only</span> Department procurement, not the principal</td></tr>
+        <tr><td>Unresolved</td><td class="num">&mdash;</td><td class="num">1,058</td><td class="num">1,058</td><td>Manual check, mostly non-<code>.edu.au</code> domains</td></tr>
+        <tr class="total"><td>Deliverable</td><td class="num">5,730</td><td class="num">5,477</td><td class="num">11,207</td><td>Against 11,297 counted by validation status</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <span class="eyebrow">The number that decides the schools send</span>
+    <strong>3,061 independent and Catholic addresses</strong> where the school itself can approve a $440 to $1,340 monthly program. That is the Schools Program audience. Sending the same price-led ask to 7,088 government schools spends goodwill on principals who structurally cannot say yes.
+  </div>
+</section>
+
+<section>
+  <div class="sechead">
+    <span class="eyebrow">Routing</span>
+    <h2>Every list, one product, one landing page</h2>
+  </div>
+
+  <div class="routes">
+
+    <div class="route">
+      <div class="head">
+        <h3>Independent and Catholic schools</h3>
+        <span class="eyebrow">3,061 contacts &middot; Sequence A, Schools Program build</span>
+      </div>
+      <div class="body">
+        <div class="row2"><div class="k">Product</div><div class="v">Schools Program. Train $440, Support $840, Partner $1,340 a month per school, with a ten day free trial. Crisis Masterclass is <strong>not mentioned</strong> in any email.</div></div>
+        <div class="row2"><div class="k">Magnet</div><div class="v"><code>/resources/school-crisis-communication-plan</code>, plus the deepfake parent-letter template</div></div>
+        <div class="row2"><div class="k">Landing</div><div class="v"><code>/programs/schools</code></div></div>
+        <div class="row2"><div class="k">Angle</div><div class="v">Value, growth, protection, offer. Email 2 sells the half of the program most competitors do not have, which is the brand and enrolments work: school of choice through free positive publicity, template media releases, a media policy. Email 3 carries the named modules, Tim Sterne on allegations, Tim Whincop on governance, Dan Brown of Emmanuel College on tragedy. Email 4 leads with Support Level and the ten day trial rather than the cheapest tier.</div></div>
+      </div>
+    </div>
+
+    <div class="route">
+      <div class="head">
+        <h3>Government schools</h3>
+        <span class="eyebrow">7,088 contacts &middot; held out of the sales sequence</span>
+      </div>
+      <div class="body">
+        <div class="row2"><div class="k">Product</div><div class="v">None pitched. Value-only nurture on school-specific material.</div></div>
+        <div class="row2"><div class="k">Magnet</div><div class="v"><code>/resources/school-crisis-communication-plan</code></div></div>
+        <div class="row2"><div class="k">Angle</div><div class="v">One email offering the resource, then nothing until there is a department or diocesan conversation to point at. Names captured here feed a later state-level approach.</div></div>
+      </div>
+    </div>
+
+    <div class="route">
+      <div class="head">
+        <h3>Local councils</h3>
+        <span class="eyebrow">523 contacts &middot; Sequence B, council variant</span>
+      </div>
+      <div class="body">
+        <div class="row2"><div class="k">Product</div><div class="v">Crisis Masterclass, $340 a month</div></div>
+        <div class="row2"><div class="k">Landing</div><div class="v"><code>/crisis-masterclass</code></div></div>
+        <div class="row2"><div class="k">Angle</div><div class="v">The tightest fit on the whole plan. The MAV/ANU disinformation finding, the CEO as de facto spokesperson, and a price under every procurement threshold.</div></div>
+      </div>
+    </div>
+
+    <div class="route">
+      <div class="head">
+        <h3>Business, five tiers</h3>
+        <span class="eyebrow">88,279 contacts &middot; Sequence C, six openers and a shared body</span>
+      </div>
+      <div class="body">
+        <div class="row2"><div class="k">Product</div><div class="v">Crisis Masterclass at $340 a month, plus the business program waitlist. Business program pricing is still marked TBA on the site, so the sellable offer at launch is the Masterclass.</div></div>
+        <div class="row2"><div class="k">Magnet</div><div class="v">The First 24 Hours desk guide, and the crisis vulnerability checklist at <code>/resources/crisis-checklist</code></div></div>
+        <div class="row2"><div class="k">Landing</div><div class="v"><code>/crisis-media-training</code> for care, hospitality, construction and general business. <code>/pr-training-for-small-business</code> for professional and finance.</div></div>
+        <div class="row2"><div class="k">Angle</div><div class="v">Tier-specific opening line, shared body. Care and health opens on regulator and family communication; hospitality opens on the review pile-on; professional and finance opens on trust being the product; construction, mining and energy opens on the site incident; general business opens on there being no comms team, just the owner and the phone; the comms professional inside those same businesses gets an opener of their own, built on the fact that they are the crisis plan and need a page the leadership team will agree to before the day.</div></div>
+      </div>
+    </div>
+
+
+    <div class="route" style="border-left:2px solid var(--gold)">
+      <div class="head">
+        <h3>9 September addendum: the fifth tier</h3>
+        <span class="eyebrow">Lyall asked where the businesses outside the four categories go</span>
+      </div>
+      <div class="body">
+        <div class="row2"><div class="k">Why</div><div class="v">The 2 September cut chose four verticals with an obvious crisis story and left the rest of the 10 to 500 band unrouted. That was roughly half the decision-maker pool. Tier 5, general business, closes the gap with one extra opener; the shared body is already sector-neutral.</div></div>
+        <div class="row2"><div class="k">Tier 4</div><div class="v">Narrowed to construction, mining and energy, where the site-incident opener belongs. Transport, security and fitness move to Tier 5.</div></div>
+        <div class="row2"><div class="k">Tier 5</div><div class="v">Business services, IT and software, manufacturing, retail, consultants, architects, engineers, transport, security, fitness and every other in-band industry outside Tiers 1 to 4. Cleaned harder than the others: agency, media, comms and recruitment names (2,862), known enterprise names (2,128) and firms with ten or more contacts on the list (9,656, a branch-office headcount rather than a 10 to 500 business) were dropped.</div></div>
+        <div class="row2"><div class="k">Dual purpose</div><div class="v">Tier 5 splits by job title into two files with their own openers. <strong>5a</strong> is owners and leaders: CEO, MD, GM, director, founder. <strong>5b</strong> is the comms professional inside the same businesses: marketing managers and directors, brand managers, communications managers, heads of marketing, social media managers. For 5b the title filter widens past the decision-maker pattern, because in a 50-person business the marketing manager is the comms function. About 300 of the 5b rows are coordinator, assistant or executive titles, kept for now as forwarders and easy to drop. Every file carries a persona column, so the same split can be applied to Tiers 1 to 4 without re-cutting; between them those four files already hold 1,710 comms-persona titles.</div></div>
+        <div class="row2"><div class="k">Send files</div><div class="v">Cut 9 September from the full master list, one contact per email address, catch-all addresses flagged in a column. Tier 1 care and health <strong>5,112</strong>. Tier 2 hospitality and food <strong>6,302</strong>. Tier 3 professional and finance <strong>19,832</strong>. Tier 4 construction, mining and energy <strong>13,146</strong>. Tier 5a general business, leaders <strong>37,737</strong>. Tier 5b general business, comms professionals <strong>6,150</strong>. Total <strong>88,279</strong>. These supersede the four-tier estimates in the audit table above.</div></div>
+      </div>
+    </div>
+
+    <div class="route">
+      <div class="head">
+        <h3>Industry associations</h3>
+        <span class="eyebrow">No list exists &middot; copy ready, holding</span>
+      </div>
+      <div class="body">
+        <div class="row2"><div class="k">Status</div><div class="v">Confirmed in this pass: the 1.25M master list carries no association category, and the closest match is 58 community health centres. Nothing to send to.</div></div>
+        <div class="row2"><div class="k">Action</div><div class="v">Build a few hundred CEOs from the Associations Forum and AuSAE directories, and run the endorsed-provider approach to both bodies in parallel. That partnership motion is worth more per deal than the cold list ever will be.</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <p style="margin-top:22px; font-size:.9rem; color:var(--muted); max-width:66ch">A useful side effect: the three search landing pages shipped on 2 September are orphans with no internal links pointing at them. Making them the EDM destinations gives them real traffic and engagement while the internal linking question is still open.</p>
+
+  <div class="note" style="border-left-color:var(--teal)">
+    <span class="eyebrow" style="color:var(--teal-deep)">The copy itself</span>
+    Every sequence above sits in the <a href="https://claude.ai/code/artifact/dac3795f-f0ec-41f2-b37c-d98b6b597ffb">EDM Copy Desk</a>, editable in place. Lyall and Barbara change a subject line or a paragraph, press Update to save it for everyone, and press Approve to sign a cohort off. Both actions notify 3P.
+  </div>
+</section>
+
+<section>
+  <div class="sechead">
+    <span class="eyebrow">Execution</span>
+    <h2>Order of work</h2>
+  </div>
+
+  <ol class="steps">
+    <li>
+      <div>
+        <h3>Sign off the copy</h3>
+        <p>Every sequence is written and sitting in the Copy Desk waiting on approval. Nothing sends until Lyall and Barbara have been through each cohort and pressed Approve. That is the gate on the whole programme, so it is the first thing rather than the last.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Build Sequence A around the Schools Program</h3>
+        <p>Four emails, school-specific proof and price anchor throughout, no Crisis Masterclass mention. Independent and Catholic variants differ on one paragraph: the Catholic version acknowledges that the diocese may want the conversation.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Run the sector enrichment and cut the schools file</h3>
+        <p>Domain classification across the 5,477 blank-sector rows, then a split into the 3,061 send file and the 7,088 nurture file. The 1,058 unresolved rows get a manual pass rather than a guess.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Cut the business pilot at 4,500</h3>
+        <p>750 from each of the six opener files, largest organisations first, measured on reply rate rather than open rate. Six files at equal size is a test, not a blast, and it answers which vertical, and which persona, to spend the other 84,000 on.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Record the consent basis per file</h3>
+        <p>For councils, the published address and source URL for all 523. For schools, role-published addresses preferred. For business, the tier and title that establish role relevance. This is the record that matters if ACMA ever asks, and it is cheap to keep while the files are being cut.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>Send, on the cold stack, not Kajabi</h3>
+        <p>Day 0, 3, 7, 10. Tuesday to Thursday, 7:30 to 9:00am recipient state time. UTM per segment per email. Suppression list live from the first send, and any inbox past 5% bounce pauses immediately. Kajabi stays out of it: a purchased-list send through the platform that runs the checkout risks the paid members' account.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <div class="sechead">
+    <span class="eyebrow">Open</span>
+    <h2>Five things I need from you</h2>
+  </div>
+  <div class="decisions">
+    <div class="decision">
+      <div class="q">When can Lyall and Barbara get through the copy?</div>
+      <div class="a">All six cohorts are drafted and waiting in the Copy Desk. Approval is the only thing between here and a first send, and the list work in steps 2 to 4 can run alongside it.</div>
+    </div>
+    <div class="decision">
+      <div class="q">Government schools: nurture, or hold entirely?</div>
+      <div class="a">My recommendation is <b>one value-only email</b> carrying the crisis communication plan resource, then silence. It builds a named list for a department-level approach without burning 7,088 principals on an ask they cannot approve.</div>
+    </div>
+    <div class="decision">
+      <div class="q">Does the Charity program come back?</div>
+      <div class="a">Not-for-profit is the second largest organic cluster on the site and the page currently sits behind a redirect. Either un-hide it and give the demand somewhere to land, or accept that the traffic goes to competitors while it stays hidden.</div>
+    </div>
+    <div class="decision">
+      <div class="q">Business program pricing, still TBA?</div>
+      <div class="a">The first send to the business tiers sells the Crisis Masterclass at $340 and collects waitlist signups. If pricing lands before the send, the sequence gets materially stronger, because the business program is the better fit for most of those 43,000 organisations.</div>
+    </div>
+    <div class="decision">
+      <div class="q">Sign-off on the 10 to 500 employee band?</div>
+      <div class="a">It is the single filter doing the most work, and the one most open to argument. Widening to 500 to 1,000 adds roughly 30,000 contacts, and my read is that those organisations buy agency retainers rather than training subscriptions.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Prepared by 3P Digital &middot; 2 September 2026, business routing updated 9 September 2026 (Australia/Brisbane). Search Console figures pulled 2 September 2026 for myprpartner.com, 3 March to 30 August 2026. List counts computed from the full <code>edm_database</code> files, not a sample.
+</footer>
+
+</div>
