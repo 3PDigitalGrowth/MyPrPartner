@@ -10,6 +10,23 @@ import type { LandingConfig, ProseNode } from "./types";
  * no hooks, no client bundle, every answer present in the initial HTML.
  */
 
+/**
+ * Splits a section's nodes into runs: prose runs render at reading width,
+ * custom (embedded) nodes render at the full container width so grids and
+ * embeds line up with the card sections above and below.
+ */
+function groupNodes(nodes: ProseNode[]): { wide: boolean; nodes: ProseNode[] }[] {
+  const groups: { wide: boolean; nodes: ProseNode[] }[] = [];
+  for (const node of nodes) {
+    const last = groups[groups.length - 1];
+    // A call-to-action strip directly under a full-width block stays full width.
+    const wide = node.kind === "custom" || (node.kind === "cta" && Boolean(last?.wide));
+    if (last && last.wide === wide) last.nodes.push(node);
+    else groups.push({ wide, nodes: [node] });
+  }
+  return groups;
+}
+
 function Prose({ nodes }: { nodes: ProseNode[] }) {
   return (
     <div className="mt-6 space-y-5">
@@ -253,7 +270,15 @@ export function LandingPage({ config }: { config: LandingConfig }) {
                   {config.cardsSection.subhead}
                 </p>
               </div>
-              <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+              <div
+                className={`mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 ${
+                  config.cardsSection.cards.length % 3 === 0 || config.cardsSection.cards.length === 5
+                    ? "lg:grid-cols-3"
+                    : config.cardsSection.cards.length === 2
+                      ? "lg:grid-cols-2"
+                      : "lg:grid-cols-4"
+                }`}
+              >
                 {config.cardsSection.cards.map((card) => {
                   const Icon = card.icon;
                   return (
@@ -282,7 +307,8 @@ export function LandingPage({ config }: { config: LandingConfig }) {
           </section>
         )}
 
-        {/* ── Long-form body ── */}
+        {/* ── Long-form body. Prose stays at reading width; embedded blocks
+            (custom nodes) span the same width as the card grids above. ── */}
         {config.bodySections.map((section, idx) => (
           <section
             key={section.id}
@@ -301,8 +327,18 @@ export function LandingPage({ config }: { config: LandingConfig }) {
                 >
                   {section.heading}
                 </h2>
-                <Prose nodes={section.nodes} />
               </div>
+              {groupNodes(section.nodes).map((group, gi) =>
+                group.wide ? (
+                  <div key={gi}>
+                    <Prose nodes={group.nodes} />
+                  </div>
+                ) : (
+                  <div key={gi} className="max-w-[820px]">
+                    <Prose nodes={group.nodes} />
+                  </div>
+                )
+              )}
             </div>
           </section>
         ))}
