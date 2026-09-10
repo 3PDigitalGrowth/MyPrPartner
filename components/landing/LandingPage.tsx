@@ -187,7 +187,7 @@ export function LandingPage({ config }: { config: LandingConfig }) {
             />
           </div>
           <div className="relative z-10 mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
-            <div className="max-w-[820px]">
+            <div>
               <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[12px] font-medium uppercase tracking-[0.14em] text-white/90 backdrop-blur">
                 <EyebrowIcon className="h-3.5 w-3.5" aria-hidden />
                 {config.hero.eyebrow}
@@ -196,7 +196,7 @@ export function LandingPage({ config }: { config: LandingConfig }) {
                 {config.hero.title}{" "}
                 <span className="text-teal-light">{config.hero.titleHighlight}</span>
               </h1>
-              <p className="mt-5 max-w-[640px] text-[16px] leading-relaxed text-white/85 md:text-[18px]">
+              <p className="mt-5 max-w-[880px] text-[16px] leading-relaxed text-white/85 md:text-[18px]">
                 {config.hero.subhead}
               </p>
               <ul className="mt-7 flex flex-wrap gap-2.5">
@@ -234,7 +234,7 @@ export function LandingPage({ config }: { config: LandingConfig }) {
         {/* ── Direct answer. Written to stand alone if quoted. ── */}
         <section aria-labelledby="quick-answer" className="border-b border-[#E5E7EB] bg-white">
           <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-14 lg:px-8">
-            <div className="max-w-[820px] border-l-2 border-teal pl-5 md:pl-7">
+            <div className="border-l-2 border-teal pl-5 md:pl-7">
               <h2
                 id="quick-answer"
                 className="font-heading text-[22px] font-bold leading-snug text-text-dark md:text-[26px]"
@@ -256,7 +256,7 @@ export function LandingPage({ config }: { config: LandingConfig }) {
             className="scroll-mt-24 bg-bg-grey"
           >
             <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
-              <div className="max-w-[760px]">
+              <div>
                 <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
                   {config.cardsSection.eyebrow}
                 </p>
@@ -317,7 +317,7 @@ export function LandingPage({ config }: { config: LandingConfig }) {
             className={`scroll-mt-24 ${idx % 2 === 0 ? "bg-white" : "bg-bg-grey"}`}
           >
             <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
-              <div className="max-w-[820px]">
+              <div>
                 <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
                   {section.eyebrow}
                 </p>
@@ -334,7 +334,7 @@ export function LandingPage({ config }: { config: LandingConfig }) {
                     <Prose nodes={group.nodes} />
                   </div>
                 ) : (
-                  <div key={gi} className="max-w-[820px]">
+                  <div key={gi}>
                     <Prose nodes={group.nodes} />
                   </div>
                 )
@@ -351,7 +351,7 @@ export function LandingPage({ config }: { config: LandingConfig }) {
             className="scroll-mt-24 bg-crc-navy"
           >
             <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
-              <div className="max-w-[760px]">
+              <div>
                 <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal-light">
                   {config.trainers.eyebrow}
                 </p>
@@ -387,7 +387,7 @@ export function LandingPage({ config }: { config: LandingConfig }) {
                 ))}
               </ul>
               {config.trainers.footnote && (
-                <p className="mt-7 max-w-[760px] text-[14.5px] leading-relaxed text-white/70">
+                <p className="mt-7 text-[14.5px] leading-relaxed text-white/70">
                   {config.trainers.footnote}
                 </p>
               )}
@@ -402,7 +402,7 @@ export function LandingPage({ config }: { config: LandingConfig }) {
           className="scroll-mt-24 bg-white"
         >
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
-            <div className="max-w-[760px]">
+            <div>
               <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
                 {config.faq.eyebrow}
               </p>
@@ -413,7 +413,7 @@ export function LandingPage({ config }: { config: LandingConfig }) {
                 {config.faq.heading}
               </h2>
             </div>
-            <div className="mt-9 max-w-[860px] space-y-3">
+            <div className="mt-9 space-y-3">
               {config.faq.items.map((item) => (
                 <details
                   key={item.question}
@@ -444,7 +444,7 @@ export function LandingPage({ config }: { config: LandingConfig }) {
           className="scroll-mt-24 bg-bg-grey"
         >
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
-            <div className="max-w-[760px]">
+            <div>
               <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal">
                 {config.related.eyebrow}
               </p>
@@ -552,7 +552,7 @@ export function LandingPage({ config }: { config: LandingConfig }) {
             />
           </div>
           <div className="relative z-10 mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20 lg:px-8">
-            <div className="max-w-[720px]">
+            <div>
               <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-teal-light">
                 {config.finalCta.eyebrow}
               </p>
