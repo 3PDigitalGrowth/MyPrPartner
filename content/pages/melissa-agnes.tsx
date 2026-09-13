@@ -52,11 +52,11 @@ export function buildMelissaAgnesConfig(articles: Article[]): LandingConfig {
       title: "Melissa Agnes,",
       titleHighlight: "creator of the Crisis Ready® Model.",
       subhead:
-        "Founder and CEO of the Crisis Ready Institute, best-selling author of Crisis Ready: Building an Invincible Brand in an Uncertain World, and the presenter of every session of the Crisis Masterclass. Her Crisis Ready course is available in Australasia only through My PR Partner.",
+        "Founder and CEO of the Crisis Ready Institute, best-selling author of Crisis Ready: Building an Invincible Brand in an Uncertain World, and the presenter of every session of the Crisis Masterclass. Her Crisis Ready course is part of the Crisis Masterclass, available in Australasia only through My PR Partner.",
       trustBadges: [
         "Founder, Crisis Ready Institute (USA)",
         "Creator of the Crisis Ready® Model",
-        "Exclusive to My PR Partner in Australasia",
+        "Crisis Masterclass exclusive to My PR Partner in Australasia",
       ],
       backgroundImage: "/images/melissa-agnes-stage.webp",
       backgroundAlt: "",
@@ -77,7 +77,7 @@ export function buildMelissaAgnesConfig(articles: Article[]): LandingConfig {
             and is a regular contributor to media outlets across North America.
           </p>
           <p>
-            In Australasia, her Crisis Ready course is delivered exclusively through the{" "}
+            In Australasia, she has adapted her Crisis Ready course exclusively through the{" "}
             <Link href="/crisis-masterclass" className="text-teal-dark underline underline-offset-2">
               My PR Partner Crisis Masterclass
             </Link>
@@ -345,7 +345,7 @@ export function buildMelissaAgnesConfig(articles: Article[]): LandingConfig {
         {
           question: "Can I take Melissa Agnes's Crisis Ready course in Australia?",
           answer:
-            "Yes. In Australasia the Crisis Ready course is delivered exclusively through the My PR Partner Crisis Masterclass, a 12-month online program with a session from Melissa each month, workbooks, a monthly Q&A and a certificate endorsed by CRC Public Relations.",
+            "Yes. Melissa has adapted her Crisis Ready course for the My PR Partner Crisis Masterclass, which is available in Australasia only through My PR Partner: a 12-month online program with a session from Melissa each month, workbooks, a monthly Q&A and a certificate endorsed by CRC Public Relations.",
         },
         {
           question: "Does Melissa Agnes take part live?",
@@ -434,7 +434,7 @@ export function buildMelissaAgnesConfig(articles: Article[]): LandingConfig {
     finalCta: {
       eyebrow: "Enrol",
       heading: "Learn crisis leadership from the person who wrote the model",
-      body: "Twelve monthly sessions with Melissa Agnes, workbooks in her words, and a monthly Q&A with Melissa and Lyall Mercer. Exclusive to My PR Partner in Australasia.",
+      body: "Twelve monthly sessions with Melissa Agnes, workbooks in her words, and a monthly Q&A with Melissa and Lyall Mercer. The Crisis Masterclass is available in Australasia only through My PR Partner.",
       primary: { href: "/crisis-masterclass", label: "See the Crisis Masterclass" },
       secondary: { href: "/crisis-masterclass/inside", label: "See inside the 12 months" },
       backgroundImage: "/images/crisis-masterclass/final-cta-bg.jpg",
@@ -443,7 +443,7 @@ export function buildMelissaAgnesConfig(articles: Article[]): LandingConfig {
     seo: {
       title: "Melissa Agnes: Crisis Ready Course Australia | My PR Partner",
       description:
-        "Melissa Agnes, creator of the Crisis Ready Model, presents the Crisis Masterclass exclusively through My PR Partner in Australasia. Articles, talks and course.",
+        "Melissa Agnes, creator of the Crisis Ready Model, presents the Crisis Masterclass, available in Australasia only through My PR Partner. Articles, talks and course.",
       canonical: "https://myprpartner.com/melissa-agnes",
       ogImage: "/images/melissa-agnes-stage.webp",
     },

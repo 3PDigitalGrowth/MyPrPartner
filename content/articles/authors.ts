@@ -20,7 +20,7 @@ export const melissaAgnes: Author = {
 
 /** Fixed attribution block used on every Melissa Agnes piece. */
 export const melissaAttribution =
-  "Melissa Agnes is the founder of the Crisis Ready Institute and creator of the Crisis Ready® Model. Her Crisis Ready course is available in Australasia exclusively through the My PR Partner Crisis Masterclass.";
+  "Melissa Agnes is the founder of the Crisis Ready Institute and creator of the Crisis Ready® Model. Her Crisis Ready course is part of the Crisis Masterclass, available in Australasia only through My PR Partner.";
 
 export const melissaBio =
-  "Based in the USA, Melissa is a recognised leading authority on crisis communication, crisis leadership and brand protection. Best-selling author of 'Crisis Ready: Building an Invincible Brand in an Uncertain World', and creator of the Crisis Ready® Model which has been globally recognised as having elevated industry best practice, she has worked with ministries of foreign affairs and defence, NATO and many other leading organisations. She presents the Crisis Ready course exclusively through My PR Partner in Australasia.";
+  "Based in the USA, Melissa is a recognised leading authority on crisis communication, crisis leadership and brand protection. Best-selling author of 'Crisis Ready: Building an Invincible Brand in an Uncertain World', and creator of the Crisis Ready® Model which has been globally recognised as having elevated industry best practice, she has worked with ministries of foreign affairs and defence, NATO and many other leading organisations.";

@@ -339,7 +339,7 @@ export const crisisMasterclassInsideConfig: LandingConfig = {
         name: "Melissa Agnes",
         title: "Founder and CEO, Crisis Ready Institute",
         credential:
-          "Creator of the Crisis Ready® Model and author of Crisis Ready: Building an Invincible Brand in an Uncertain World. Presenting in Australasia exclusively through My PR Partner.",
+          "Creator of the Crisis Ready® Model and author of Crisis Ready: Building an Invincible Brand in an Uncertain World. Her Crisis Ready course is part of the Crisis Masterclass, available in Australasia only through My PR Partner.",
         image: "/images/instructors/melissa-agnes.png",
       },
       {
@@ -375,7 +375,7 @@ export const crisisMasterclassInsideConfig: LandingConfig = {
       {
         question: "Is this the same course Melissa Agnes runs in the United States?",
         answer:
-          "It is the Crisis Ready course by Melissa Agnes, recorded for the Australasian program with Lyall Mercer and co-branded by the Crisis Ready Institute and My PR Partner. It is available in Australasia only through My PR Partner.",
+          "It is the Crisis Ready course by Melissa Agnes, recorded for the Australasian program with Lyall Mercer and co-branded by the Crisis Ready Institute and My PR Partner. This adapted version, as part of the Crisis Masterclass, is available in Australasia only through My PR Partner.",
       },
       {
         question: "What happens in the monthly Q&A?",

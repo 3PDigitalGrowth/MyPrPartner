@@ -9,7 +9,7 @@ const SITE = "https://myprpartner.com";
 export const metadata: Metadata = {
   title: "Melissa Agnes: Crisis Ready Course Australia | My PR Partner",
   description:
-    "Melissa Agnes, creator of the Crisis Ready Model, presents the Crisis Masterclass exclusively through My PR Partner in Australasia. Articles, talks and course.",
+    "Melissa Agnes, creator of the Crisis Ready Model, presents the Crisis Masterclass, available in Australasia only through My PR Partner. Articles, talks and course.",
   alternates: { canonical: `${SITE}/melissa-agnes` },
   keywords: [
     "Melissa Agnes",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Melissa Agnes: Crisis Ready Course Australia | My PR Partner",
     description:
-      "Founder of the Crisis Ready Institute and creator of the Crisis Ready Model. Her course is available in Australasia only through the My PR Partner Crisis Masterclass.",
+      "Founder of the Crisis Ready Institute and creator of the Crisis Ready Model. Her Crisis Ready course is part of the Crisis Masterclass, available in Australasia only through My PR Partner.",
     url: `${SITE}/melissa-agnes`,
     siteName: "My PR Partner",
     type: "profile",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Melissa Agnes | My PR Partner",
     description:
-      "Creator of the Crisis Ready Model, presenting the Crisis Masterclass exclusively through My PR Partner in Australasia.",
+      "Creator of the Crisis Ready Model, presenting the Crisis Masterclass, available in Australasia only through My PR Partner.",
     images: ["/images/melissa-agnes-stage.webp"],
   },
 };

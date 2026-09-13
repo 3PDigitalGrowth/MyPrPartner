@@ -550,10 +550,11 @@ export function ArticleLayout({
               </div>
               {isMelissa && (
                 <p className="mt-6 text-[13.5px] text-white/80">
-                  Presented in Australasia exclusively through the{" "}
+                  Part of the{" "}
                   <Link href="/crisis-masterclass" className="font-semibold text-white underline underline-offset-4">
-                    My PR Partner Crisis Masterclass
+                    Crisis Masterclass
                   </Link>
+                  , available in Australasia only through My PR Partner
                 </p>
               )}
             </div>
