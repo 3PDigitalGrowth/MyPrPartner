@@ -81,7 +81,12 @@ function useScrollReveal() {
   return ref;
 }
 
-function VideoPlayer() {
+// Homepage intro video. The original file was hotlinked from the retired
+// WordPress BunnyCDN pull zone (myprpartner.b-cdn.net) which now returns 403.
+// Drop the replacement into public/videos/ and point this constant at it.
+const INTRO_VIDEO_SRC = "https://myprpartner.b-cdn.net/wp-content/uploads/2026/01/My-PR-Partner-video-compress-2.mp4";
+
+function VideoPlayer({ onUnavailable }: { onUnavailable: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
@@ -97,19 +102,23 @@ function VideoPlayer() {
     if (!v) return;
     const onPause = () => setPlaying(false);
     const onPlay = () => setPlaying(true);
+    const onError = () => onUnavailable();
     v.addEventListener("pause", onPause);
     v.addEventListener("play", onPlay);
+    v.addEventListener("error", onError);
+    if (v.error) onUnavailable();
     return () => {
       v.removeEventListener("pause", onPause);
       v.removeEventListener("play", onPlay);
+      v.removeEventListener("error", onError);
     };
-  }, []);
+  }, [onUnavailable]);
 
   return (
     <div className="relative rounded-card overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
       <video
         ref={videoRef}
-        src="https://myprpartner.b-cdn.net/wp-content/uploads/2026/01/My-PR-Partner-video-compress-2.mp4"
+        src={INTRO_VIDEO_SRC}
         controls
         preload="metadata"
         poster="/images/video-poster.jpg"
@@ -218,6 +227,8 @@ function LeadMagnetForm() {
 
 export default function Home() {
   const revealRef = useScrollReveal();
+  const [videoAvailable, setVideoAvailable] = useState(true);
+  const markVideoUnavailable = useCallback(() => setVideoAvailable(false), []);
 
   return (
     <div ref={revealRef}>
@@ -283,7 +294,7 @@ export default function Home() {
         <section className="bg-white pt-20 pb-16 md:pb-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center animate-fade-in-up">
-              <div className="lg:col-span-7">
+              <div className={videoAvailable ? "lg:col-span-7" : "lg:col-span-9"}>
                 <p className="text-[12px] font-medium tracking-[0.12em] text-teal mb-3"><T id="home.about.eyebrow">About My PR Partner</T></p>
                 <h2 className="font-heading text-[26px] md:text-[32px] font-bold text-text-dark leading-[1.2]">
                   <T id="home.about.title">What is public relations and why is it vital to success?</T>
@@ -302,9 +313,11 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <div className="lg:col-span-5">
-                <VideoPlayer />
-              </div>
+              {videoAvailable && (
+                <div className="lg:col-span-5">
+                  <VideoPlayer onUnavailable={markVideoUnavailable} />
+                </div>
+              )}
             </div>
           </div>
         </section>
