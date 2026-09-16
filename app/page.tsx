@@ -81,10 +81,10 @@ function useScrollReveal() {
   return ref;
 }
 
-// Homepage intro video. The original file was hotlinked from the retired
-// WordPress BunnyCDN pull zone (myprpartner.b-cdn.net) which now returns 403.
-// Drop the replacement into public/videos/ and point this constant at it.
-const INTRO_VIDEO_SRC = "https://myprpartner.b-cdn.net/wp-content/uploads/2026/01/My-PR-Partner-video-compress-2.mp4";
+// Homepage intro video, self-hosted. 720p H.264 faststart encode of the
+// client's "My PR Partner website - Shorter.mp4" master (Sep 2026). The
+// previous copy was hotlinked from the retired WordPress BunnyCDN zone.
+const INTRO_VIDEO_SRC = "/videos/my-pr-partner-intro.mp4";
 
 function VideoPlayer({ onUnavailable }: { onUnavailable: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);

@@ -47,3 +47,6 @@ next-env.d.ts
 
 # EDM send files (PII, never commit)
 crisis_mc_content_library/edm_send_files/
+
+# Raw video masters stay local; ship the encoded copies in public/videos/
+public/*.mp4
