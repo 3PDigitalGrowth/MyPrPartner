@@ -65,6 +65,49 @@ export default function RootLayout({
             gtag('config', 'G-L65KCFNGNR');
           `}
         </Script>
+        {/*
+          Kajabi click tracking. courses.myprpartner.com shares the root
+          domain, so GA4's enhanced-measurement outbound click never fires for
+          it and checkout clicks were invisible. One delegated listener covers
+          every enrol, waitlist and login button on the site:
+          - kajabi_click on any Kajabi link, with link_type (checkout /
+            waitlist / login / other), program (utm_medium) and cta_location
+            (utm_content, e.g. hero, final-cta)
+          - begin_checkout (GA4 recommended event, marked as a key event) on
+            /offers/<id>/checkout links, item_id = the Kajabi offer id
+        */}
+        <Script id="kajabi-click-tracking" strategy="afterInteractive">
+          {`
+            document.addEventListener('click', function (e) {
+              var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+              if (!a || typeof window.gtag !== 'function') return;
+              var url;
+              try { url = new URL(a.href, window.location.href); } catch (err) { return; }
+              if (!/(^|\\.)(courses|learn)\\.myprpartner\\.com$/.test(url.hostname) &&
+                  !/(^|\\.)(mykajabi|kajabi)\\.com$/.test(url.hostname)) return;
+              var q = url.searchParams;
+              var offer = url.pathname.match(/\\/offers\\/([^\\/]+)\\/checkout/);
+              var linkType = q.get('utm_campaign') === 'waitlist' ? 'waitlist'
+                : offer ? 'checkout'
+                : /\\/login/.test(url.pathname) ? 'login' : 'other';
+              var program = q.get('utm_medium') || '(not set)';
+              var ctaLocation = q.get('utm_content') || '(not set)';
+              window.gtag('event', 'kajabi_click', {
+                link_url: url.origin + url.pathname,
+                link_type: linkType,
+                program: program,
+                cta_location: ctaLocation
+              });
+              if (linkType === 'checkout') {
+                window.gtag('event', 'begin_checkout', {
+                  items: [{ item_id: offer[1], item_name: program }],
+                  program: program,
+                  cta_location: ctaLocation
+                });
+              }
+            }, true);
+          `}
+        </Script>
         <Script id="ms-clarity" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
