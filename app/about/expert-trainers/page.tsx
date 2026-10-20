@@ -16,6 +16,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BreadcrumbJsonLd } from "@/components/seo/StructuredData";
 import { TrainerFilter } from "./TrainerFilter";
+import GoDeeper from "@/components/shared/GoDeeper";
 import { T, copySrc, imgBind } from "@/components/editable";
 
 export const metadata: Metadata = {
@@ -688,6 +689,35 @@ export default function ExpertTrainersPage() {
             </div>
           </div>
         </section>
+
+        {/* ── GO DEEPER: where the trainers teach ── */}
+        <GoDeeper
+          copyBase="trainers.goDeeper"
+          content={{
+            eyebrow: "Go deeper",
+            heading: "Training and reading from the team",
+            links: [
+              {
+                href: "/crisis-media-training",
+                eyebrow: "For spokespeople",
+                title: "Crisis media training",
+                body: "Interview practice for the people who face the cameras when something goes wrong.",
+              },
+              {
+                href: "/melissa-agnes",
+                eyebrow: "About Melissa",
+                title: "Melissa Agnes and the Crisis Ready® Model",
+                body: "Who Melissa is and the Crisis Ready® Model she teaches in the masterclass.",
+              },
+              {
+                href: "/crisis-masterclass/inside",
+                eyebrow: "The program",
+                title: "Inside the Crisis Masterclass, month by month",
+                body: "What each of the twelve months covers, in Melissa Agnes's own words.",
+              },
+            ],
+          }}
+        />
 
         {/* ── FINAL CTA BAND ── */}
         <section className="relative overflow-hidden bg-text-dark">

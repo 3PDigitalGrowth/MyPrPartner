@@ -22,6 +22,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BreadcrumbJsonLd } from "@/components/seo/StructuredData";
+import GoDeeper from "@/components/shared/GoDeeper";
 import { T, copySrc, imgBind } from "@/components/editable";
 
 export const metadata: Metadata = {
@@ -638,6 +639,35 @@ export default function ProgramsPage() {
             </p>
           </div>
         </section>
+
+        {/* ── GO DEEPER: shorter options and guides under the programs ── */}
+        <GoDeeper
+          copyBase="programs.goDeeper"
+          content={{
+            eyebrow: "Go deeper",
+            heading: "Shorter options and free guides",
+            links: [
+              {
+                href: "/crisis-media-training",
+                eyebrow: "For spokespeople",
+                title: "Crisis media training",
+                body: "Interview practice for the people who face the cameras when something goes wrong.",
+              },
+              {
+                href: "/pr-training-for-small-business",
+                eyebrow: "Small business",
+                title: "PR training for small business owners",
+                body: "How owner-operators can run their own PR without an agency retainer, and what to do first.",
+              },
+              {
+                href: "/resources/school-crisis-communication-plan",
+                eyebrow: "For schools",
+                title: "How to write a school crisis communication plan",
+                body: "The structure, the approval chain and the first hour, written for Australian schools.",
+              },
+            ],
+          }}
+        />
 
         {/* ── "STILL NOT SURE" FINAL BAND ── */}
         <section className="bg-[#F7F8FA]">

@@ -82,7 +82,7 @@ export const associationsContent: CourseContent = {
   hero: {
     eyebrow: "For Australian industry, trade & professional associations",
     eyebrowIcon: Building2,
-    headline: "My PR Partner industry associations program",
+    headline: "PR and advocacy training for industry associations",
     tagline:
       "Position your association as the trusted voice and advocate for your industry",
     intro:
@@ -590,6 +590,31 @@ export const associationsContent: CourseContent = {
     ],
     signoff: "Lyall Mercer and Barbara Gorogh, Co-founders",
     showCrcLogo: true,
+  },
+
+  goDeeper: {
+    eyebrow: "Go deeper",
+    heading: "Free reading for association leaders",
+    links: [
+      {
+        href: "/crisis-media-training",
+        eyebrow: "For spokespeople",
+        title: "Crisis media training",
+        body: "Interview practice for the executives who speak for your members when an issue breaks.",
+      },
+      {
+        href: "/issue-or-crisis",
+        eyebrow: "A quick test",
+        title: "Issue or crisis? Five questions before you escalate",
+        body: "How to tell whether you are managing an issue or already inside a crisis.",
+      },
+      {
+        href: "/articles/crafting-effective-press-releases",
+        eyebrow: "Guide",
+        title: "How to write a press release",
+        body: "Finding a real news angle, structuring a release journalists can use and pitching it well.",
+      },
+    ],
   },
 
   finalCta: {

@@ -10,6 +10,7 @@ import FoundersWelcome from "./FoundersWelcome";
 import GroupEnrolmentBand from "./GroupEnrolmentBand";
 import RelatedProgramBand from "./RelatedProgramBand";
 import FinalCtaBand from "./FinalCtaBand";
+import GoDeeper from "@/components/shared/GoDeeper";
 import MobileEnrolBar from "./MobileEnrolBar";
 import { WaitlistModalProvider } from "./WaitlistModal";
 import { PlanSelectionProvider } from "./PlanSelection";
@@ -40,6 +41,13 @@ export default function CoursePage({ content }: { content: CourseContent }) {
           <FoundersWelcome content={content.foundersWelcome} />
           {content.groupBand ? <GroupEnrolmentBand content={content.groupBand} /> : null}
           {content.relatedProgram ? <RelatedProgramBand content={content.relatedProgram} /> : null}
+          {content.goDeeper ? (
+            <GoDeeper
+              content={content.goDeeper}
+              copyBase={`course.${content.slug}.goDeeper`}
+              tone="grey"
+            />
+          ) : null}
           <FinalCtaBand content={content.finalCta} checkout={content.checkout} />
           <MobileEnrolBar bar={content.mobileBar} />
         </div>

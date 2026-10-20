@@ -27,11 +27,37 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FaqJsonLd } from "@/components/seo/StructuredData";
+import GoDeeper, { type GoDeeperContent } from "@/components/shared/GoDeeper";
 import { currentPagePath } from "@/lib/page-context";
 import { T, copySrc, imgBind } from "@/components/editable";
 
 // Single source of truth for the homepage FAQ — drives both the visible
 // accordion and the FAQPage structured data.
+const HOME_GO_DEEPER: GoDeeperContent = {
+  eyebrow: "Go deeper",
+  heading: "Free guides and focused training",
+  links: [
+    {
+      href: "/crisis-media-training",
+      eyebrow: "For spokespeople",
+      title: "Crisis media training",
+      body: "Interview practice for the people who face the cameras when something goes wrong.",
+    },
+    {
+      href: "/resources/school-crisis-communication-plan",
+      eyebrow: "For schools",
+      title: "How to write a school crisis communication plan",
+      body: "The structure, the approval chain and the first hour, written for Australian schools.",
+    },
+    {
+      href: "/articles/crafting-effective-press-releases",
+      eyebrow: "Guide",
+      title: "How to write a press release",
+      body: "Finding a real news angle, structuring a release journalists can use and pitching it well.",
+    },
+  ],
+};
+
 const HOME_FAQS: { question: string; answer: string }[] = [
   {
     question: "Who owns My PR Partner and what experience do they have?",
@@ -398,6 +424,12 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* ── GO DEEPER: guides and landing pages under the programs ── */}
+        <GoDeeper
+          content={HOME_GO_DEEPER}
+          copyBase="home.goDeeper"
+        />
 
         {/* ── WHAT'S INCLUDED ── */}
         <section className="bg-white py-20">

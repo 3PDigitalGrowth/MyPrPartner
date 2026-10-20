@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import type { GoDeeperContent } from "@/components/shared/GoDeeper";
 
 export type IconRef = LucideIcon;
 
@@ -406,6 +407,8 @@ export type CourseContent = {
   groupBand?: GroupBandContent;
   /** Optional cross-sell band for a related program (e.g. Schools -> Crisis Masterclass) */
   relatedProgram?: RelatedProgramContent;
+  /** Optional "Go deeper" links from this hub down to its guides and landing pages */
+  goDeeper?: GoDeeperContent;
   finalCta: FinalCtaContent;
   mobileBar: MobileBarContent;
 };

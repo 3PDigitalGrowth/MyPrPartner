@@ -568,6 +568,31 @@ export const businessContent: CourseContent = {
     secondaryCta: { label: "Talk to our team", href: "/contact" },
   },
 
+  goDeeper: {
+    eyebrow: "Go deeper",
+    heading: "Free reading for business owners",
+    links: [
+      {
+        href: "/pr-training-for-small-business",
+        eyebrow: "Small business",
+        title: "PR training for small business owners",
+        body: "How owner-operators can run their own PR without an agency retainer, and what to do first.",
+      },
+      {
+        href: "/articles/crafting-effective-press-releases",
+        eyebrow: "Guide",
+        title: "How to write a press release",
+        body: "Finding a real news angle, structuring a release journalists can use and pitching it well.",
+      },
+      {
+        href: "/resources/pr-guide",
+        eyebrow: "Free guide",
+        title: "Five steps to becoming a trusted public voice",
+        body: "The same advice CRC Public Relations gives its clients, as a free PDF.",
+      },
+    ],
+  },
+
   finalCta: {
     eyebrow: "For Australian business and NFP leadership teams",
     eyebrowIcon: Briefcase,

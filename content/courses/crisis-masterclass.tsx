@@ -458,6 +458,51 @@ export const crisisMasterclassContent: CourseContent = {
     bgImage: "/images/crisis-masterclass/group-enrolment-bg.jpg",
   },
 
+  goDeeper: {
+    eyebrow: "Go deeper",
+    heading: "Read more before you enrol",
+    intro:
+      "The program in detail, the model it is built on and the case Melissa Agnes teaches, all free to read.",
+    links: [
+      {
+        href: "/crisis-masterclass/inside",
+        eyebrow: "The program",
+        title: "Inside the Crisis Masterclass, month by month",
+        body: "What each of the twelve months covers, in Melissa Agnes's own words.",
+      },
+      {
+        href: "/melissa-agnes",
+        eyebrow: "About Melissa",
+        title: "Melissa Agnes and the Crisis Ready® Model",
+        body: "Who Melissa is and the Crisis Ready® Model she teaches in the masterclass.",
+      },
+      {
+        href: "/crisis-ready-formula",
+        eyebrow: "The method",
+        title: "Validate, relate, prove",
+        body: "The order that gets a crisis message heard, and why fact-first statements fail.",
+      },
+      {
+        href: "/issue-or-crisis",
+        eyebrow: "A quick test",
+        title: "Issue or crisis? Five questions before you escalate",
+        body: "How to tell whether you are managing an issue or already inside a crisis.",
+      },
+      {
+        href: "/case-study/maple-leaf-foods",
+        eyebrow: "Case study",
+        title: "Maple Leaf Foods, 2008: from tragedy to trust",
+        body: "The listeria recall response Melissa teaches as the model, with the verified timeline.",
+      },
+      {
+        href: "/crisis-media-training",
+        eyebrow: "For spokespeople",
+        title: "Crisis media training",
+        body: "Interview practice for the people who face the cameras when something goes wrong.",
+      },
+    ],
+  },
+
   finalCta: {
     eyebrow: "Australia's premier crisis communications online program",
     eyebrowIcon: ShieldCheck,

@@ -76,7 +76,7 @@ export const schoolsContent: CourseContent = {
   hero: {
     eyebrow: "For Australian school leadership teams",
     eyebrowIcon: GraduationCap,
-    headline: "My PR Partner Schools Program",
+    headline: "Schools PR and crisis communication program",
     tagline:
       "Take your school's communication, reputation and crisis readiness to the next level",
     intro:
@@ -644,6 +644,31 @@ export const schoolsContent: CourseContent = {
     ],
     primaryCta: { label: "Learn about the My PR Partner Crisis Masterclass", href: "/crisis-masterclass" },
     secondaryCta: { label: "Talk to our team", href: "/contact" },
+  },
+
+  goDeeper: {
+    eyebrow: "Go deeper",
+    heading: "Free guides for school leaders",
+    links: [
+      {
+        href: "/resources/school-crisis-communication-plan",
+        eyebrow: "Guide",
+        title: "How to write a crisis communication plan for an Australian school",
+        body: "The structure, the approval chain and the first hour, written for principals, business managers and communications staff.",
+      },
+      {
+        href: "/crisis-media-training",
+        eyebrow: "For principals",
+        title: "Crisis media training",
+        body: "Interview practice for the principal or spokesperson who has to answer a journalist's questions.",
+      },
+      {
+        href: "/resources/crisis-checklist",
+        eyebrow: "Free checklist",
+        title: "The crisis vulnerability checklist",
+        body: "A 30-point self-assessment to find the gaps before an incident finds them for you.",
+      },
+    ],
   },
 
   finalCta: {

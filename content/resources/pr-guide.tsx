@@ -126,13 +126,28 @@ export const prGuideConfig: LeadMagnetConfig = {
 
   articles: {
     eyebrow: "Keep reading",
-    title: "Latest insights",
+    title: "Speaking in public, done well",
     items: [
       {
-        href: "/articles",
-        eyebrow: "Latest insights",
-        title: "Explore our full library of articles",
-        body: "Practical advice and honest insights on public relations, media and reputation, to help you protect and build your standing.",
+        href: "/articles/crafting-effective-press-releases",
+        eyebrow: "Media",
+        title: "Crafting Effective Press Releases: A Guide for Australian Organisations",
+        body: "How to find a real news angle, structure a release journalists can use and pitch it without wasting anyone's time.",
+        readTime: "14 min read",
+      },
+      {
+        href: "/articles/ai-erased-database-and-lied",
+        eyebrow: "Misinformation",
+        title: "The AI That Erased a Database, and Lied: How to Correct a Falsehood in Public",
+        body: "Melissa Agnes's three-step way to correct a public falsehood, and what two AI incidents reveal about the risk.",
+        readTime: "8 min read",
+      },
+      {
+        href: "/articles/calmest-person-in-the-room",
+        eyebrow: "Leadership",
+        title: "The Calmest Person in the Room",
+        body: "Why a leader's own steadiness, not their messaging, is what calms a crisis room.",
+        readTime: "6 min read",
       },
     ],
   },

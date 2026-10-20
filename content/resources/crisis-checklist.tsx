@@ -143,13 +143,28 @@ export const crisisChecklistConfig: LeadMagnetConfig = {
 
   articles: {
     eyebrow: "Keep reading",
-    title: "Latest insights",
+    title: "Crisis readiness, from Melissa Agnes",
     items: [
       {
-        href: "/articles",
-        eyebrow: "Latest insights",
-        title: "Explore our full library of articles",
-        body: "Discover practical advice and expert insights on crisis communication, media relations and reputation management to help protect and enhance your organisation's standing.",
+        href: "/articles/hope-is-not-a-strategy-crisis-response-penalty",
+        eyebrow: "Crisis readiness",
+        title: "Hope Is Not a Strategy: The Crisis Response Penalty Explained",
+        body: "Why a plan on a shelf is not readiness, and what a crisis ready culture looks like instead.",
+        readTime: "6 min read",
+      },
+      {
+        href: "/articles/issue-or-crisis-why-the-label-decides-the-response",
+        eyebrow: "Issue management",
+        title: "Issue or Crisis? Why the Label Decides the Response",
+        body: "A framework for telling an issue from a crisis, built on scale of impact and escalation, not gut feeling.",
+        readTime: "6 min read",
+      },
+      {
+        href: "/articles/anger-is-a-veil-emotion",
+        eyebrow: "Stakeholders",
+        title: "Anger Is a Veil Emotion",
+        body: "How to read what anger is covering, and what disappointment, fear and grief need from a leader.",
+        readTime: "6 min read",
       },
     ],
   },
