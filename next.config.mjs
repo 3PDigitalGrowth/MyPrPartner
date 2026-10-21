@@ -46,6 +46,18 @@ const nextConfig = {
         permanent: false,
       },
 
+      // crisismasterclass.com.au (and www) are attached to this Vercel project.
+      // Every path on them lands on the masterclass sales page rather than the
+      // homepage, tagged so GA4 reports the visit as a referral from that
+      // domain. myprpartner.com.au redirects at the Vercel domain level.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "(www\\.)?crisismasterclass\\.com\\.au" }],
+        destination:
+          "https://myprpartner.com/crisis-masterclass?utm_source=crisismasterclass.com.au&utm_medium=referral",
+        permanent: true,
+      },
+
       // ---------------------------------------------------------------------
       // Legacy WordPress URL map (added 2 Sep 2026).
       //
