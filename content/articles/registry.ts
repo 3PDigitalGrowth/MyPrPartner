@@ -9,13 +9,15 @@ import { doc as crisisOnion } from "./melissa/crisis-is-an-onion-layered-storyte
 import { doc as mapleLeaf } from "./melissa/maple-leaf-foods-from-tragedy-to-trust";
 import { doc as fourLevels } from "./melissa/four-levels-of-safety-crisis-leader";
 import { doc as angerVeil } from "./melissa/anger-is-a-veil-emotion";
+import { doc as crisisTraining } from "./lyall/crisis-management-training";
 
 /**
  * Slug -> body document. Card metadata for the same slugs lives in seed.ts.
- * Add a new article by dropping a content file in ./melissa and listing it
- * here and in seed.ts.
+ * Add a new article by dropping a content file in ./melissa or ./lyall and
+ * listing it here and in seed.ts.
  */
 export const articleRegistry: Record<string, ArticleDoc> = {
+  [crisisTraining.slug]: crisisTraining,
   [highStakesFormula.slug]: highStakesFormula,
   [aiErasedDatabase.slug]: aiErasedDatabase,
   [issueOrCrisis.slug]: issueOrCrisis,

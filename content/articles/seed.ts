@@ -10,6 +10,7 @@ import { card as crisisOnion } from "./melissa/crisis-is-an-onion-layered-storyt
 import { card as mapleLeaf } from "./melissa/maple-leaf-foods-from-tragedy-to-trust";
 import { card as fourLevels } from "./melissa/four-levels-of-safety-crisis-leader";
 import { card as angerVeil } from "./melissa/anger-is-a-veil-emotion";
+import { card as crisisTraining } from "./lyall/crisis-management-training";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Seed articles
@@ -17,8 +18,8 @@ import { card as angerVeil } from "./melissa/anger-is-a-veil-emotion";
 // Articles are served from this seed until Contentful credentials land (see
 // content/articles/CONTENTFUL_SETUP.md). The press release guide pairs with a
 // static detail page at app/articles/crafting-effective-press-releases; the
-// Melissa Agnes pieces render through app/articles/[slug] from the bodies in
-// content/articles/melissa/*.tsx (registry.ts lists them).
+// Melissa Agnes and Lyall Mercer pieces render through app/articles/[slug] from
+// the bodies in content/articles/{melissa,lyall}/*.tsx (registry.ts lists them).
 // Once Contentful is wired up, getAllArticles() prefers it automatically.
 
 type MelissaCard = {
@@ -56,6 +57,21 @@ function melissaArticle(
 }
 
 export const seedArticles: Article[] = [
+  {
+    slug: crisisTraining.slug,
+    title: crisisTraining.title,
+    summary: crisisTraining.summary,
+    category: "Crisis",
+    heroImage: "/images/articles/crisis-management-training.jpg",
+    heroImageAlt: crisisTraining.heroImageAlt,
+    author: lyallMercer,
+    publishedAt: "2026-10-26",
+    readTimeMinutes: crisisTraining.readTimeMinutes,
+    featured: false,
+    tags: [...crisisTraining.tags],
+    relatedPrograms: ["/crisis-masterclass", "/crisis-media-training"],
+    seo: { title: crisisTraining.seoTitle, description: crisisTraining.seoDescription },
+  },
   melissaArticle(highStakesFormula, "2026-09-10", { featured: true }),
   melissaArticle(aiErasedDatabase, "2026-09-09"),
   melissaArticle(issueOrCrisis, "2026-09-08"),
