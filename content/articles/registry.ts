@@ -15,6 +15,11 @@ import { doc as crisisTraining } from "./lyall/crisis-management-training";
  * Slug -> body document. Card metadata for the same slugs lives in seed.ts.
  * Add a new article by dropping a content file in ./melissa or ./lyall and
  * listing it here and in seed.ts.
+ *
+ * Studio-approved articles go straight to main: previews are behind Vercel
+ * SSO, so nobody can read a branch. Once the page returns 200, add its
+ * liveUrl to content/reviews.json in my-pr-partner-content-studio, or the
+ * studio's daily publish check keeps emailing.
  */
 export const articleRegistry: Record<string, ArticleDoc> = {
   [crisisTraining.slug]: crisisTraining,
