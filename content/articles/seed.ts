@@ -65,7 +65,7 @@ export const seedArticles: Article[] = [
     heroImage: "/images/articles/crisis-management-training.jpg",
     heroImageAlt: crisisTraining.heroImageAlt,
     author: lyallMercer,
-    publishedAt: "2026-10-26",
+    publishedAt: "2026-11-03",
     readTimeMinutes: crisisTraining.readTimeMinutes,
     featured: false,
     tags: [...crisisTraining.tags],
