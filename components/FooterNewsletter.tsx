@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowRight, CheckCircle2, Mail } from "lucide-react";
 import { currentPagePath } from "@/lib/page-context";
+import { formGuard } from "@/lib/form-guard";
 
 export function FooterNewsletter() {
   const [status, setStatus] = useState<"idle" | "submitting" | "done">("idle");
@@ -18,6 +19,7 @@ export function FooterNewsletter() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          ...formGuard(),
           formType: "newsletter",
           email,
           source: "footer",

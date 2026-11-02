@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowRight, CheckCircle2, Mail } from "lucide-react";
 import { currentPagePath } from "@/lib/page-context";
+import { formGuard } from "@/lib/form-guard";
 
 type NewsletterFormProps = {
   theme?: "light" | "dark";
@@ -24,6 +25,7 @@ export function NewsletterForm({ theme = "dark" }: NewsletterFormProps) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          ...formGuard(),
           formType: "newsletter",
           email,
           source: "articles",

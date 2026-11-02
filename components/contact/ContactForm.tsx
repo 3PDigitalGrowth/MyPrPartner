@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowRight, CheckCircle2, Mail } from "lucide-react";
 import { currentPagePath } from "@/lib/page-context";
+import { formGuard } from "@/lib/form-guard";
 
 export function ContactForm({ topicOptions }: { topicOptions: string[] }) {
   const [status, setStatus] = useState<"idle" | "submitting" | "done" | "error">("idle");
@@ -22,6 +23,7 @@ export function ContactForm({ topicOptions }: { topicOptions: string[] }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          ...formGuard(),
           formType: "contact",
           name,
           email,

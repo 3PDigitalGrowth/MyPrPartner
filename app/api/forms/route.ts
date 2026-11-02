@@ -47,6 +47,48 @@ function clip(value: unknown, max: number): string | undefined {
   return trimmed ? trimmed.slice(0, max) : undefined;
 }
 
+// Bots have been filling the download and newsletter forms since October with
+// random-letter names ("Qrhhhoqm"), dotted Gmail addresses and real people's
+// work emails, so each one mailed a PDF to someone who never asked for it.
+// The honeypot alone never caught them.
+const MIN_PAGE_MS = 3000;
+
+// Two-consonant openings that real first names use, English and otherwise.
+// Any other consonant pair at the start of a one-word name ("Qr", "Wc", "Zs")
+// is a keyboard mash.
+const NAME_ONSETS = new Set(
+  (
+    "bh bj bl br bz ch cl cr cz dh dj dm dr dw dz fj fl fr gh gj gl gn gr gw hj hs kh kj kl " +
+    "kn kr ks kw ll mb mc mk ml mn ms mt ng nj nk ph pf pl pr ps pt rh sc sh sj sk sl sm sn " +
+    "sp sr st sv sw sz th tj tr ts tw tz vl vr wh wl wr xh zb zh zl zv zw"
+  ).split(" ")
+);
+
+function looksRandom(name: string): boolean {
+  // Spaces, hyphens and accents all point to a real name; leave those alone.
+  if (!/^[A-Za-z]{4,20}$/.test(name)) return false;
+  const lower = name.toLowerCase();
+  const onset = lower.slice(0, 2);
+  if (/^[^aeiouy]{2}$/.test(onset) && !NAME_ONSETS.has(onset)) return true;
+  return /[^aeiouy]{6,}/.test(lower);
+}
+
+function botReason(body: Record<string, unknown>, email: string): string | null {
+  // guardMs comes from lib/form-guard.ts: how long the page had been open.
+  const guardMs = typeof body.guardMs === "number" ? body.guardMs : NaN;
+  if (!Number.isFinite(guardMs)) return "no page timing";
+  if (guardMs < MIN_PAGE_MS) return `sent ${guardMs}ms after page load`;
+
+  const [local, domain] = email.toLowerCase().split("@");
+  if ((domain === "gmail.com" || domain === "googlemail.com") && local.split(".").length > 3) {
+    return "dotted Gmail address";
+  }
+
+  const name = clip(body.name, 200);
+  if (name && looksRandom(name)) return "random-letter name";
+  return null;
+}
+
 // Reads the requested lead-magnet PDF from public/downloads and returns it as a
 // Resend attachment. Locked to the /downloads/ folder so an arbitrary path can
 // never be read off disk. Returns an empty array (and the email still sends
@@ -107,6 +149,19 @@ export async function POST(request: Request) {
   }
   if (!email || !EMAIL_RE.test(email)) {
     return NextResponse.json({ ok: false, error: "A valid email is required" }, { status: 400 });
+  }
+
+  // Same quiet "ok" as the honeypot, so the bot learns nothing and no email
+  // goes to the address it typed in.
+  const bot = botReason(body, email);
+  if (bot) {
+    console.warn("[api/forms] Dropped as automated:", {
+      reason: bot,
+      formType,
+      domain: email.split("@")[1],
+      source: clip(body.source, 100),
+    });
+    return NextResponse.json({ ok: true });
   }
 
   // Organisation is compulsory on every form that collects it (contact,

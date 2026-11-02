@@ -30,6 +30,7 @@ import { FaqJsonLd } from "@/components/seo/StructuredData";
 import GoDeeper, { type GoDeeperContent } from "@/components/shared/GoDeeper";
 import { currentPagePath } from "@/lib/page-context";
 import { T, copySrc, imgBind } from "@/components/editable";
+import { formGuard } from "@/lib/form-guard";
 
 // Single source of truth for the homepage FAQ — drives both the visible
 // accordion and the FAQPage structured data.
@@ -219,6 +220,7 @@ function LeadMagnetForm() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
+            ...formGuard(),
             formType: "resource",
             email,
             resourceLabel: "Becoming a Trusted Public Voice guide",

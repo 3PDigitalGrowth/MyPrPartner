@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { ArrowRight, CheckCircle2, X } from "lucide-react";
 import { currentPagePath } from "@/lib/page-context";
+import { formGuard } from "@/lib/form-guard";
 
 const inputClass =
   "mt-1.5 w-full rounded-lg border border-[#E5E7EB] bg-white px-4 py-2.5 text-[14px] text-text-dark placeholder:text-gray-400 focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal";
@@ -75,6 +76,7 @@ export default function InvoiceRequestModal({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          ...formGuard(),
           formType: "invoice",
           name,
           email,
