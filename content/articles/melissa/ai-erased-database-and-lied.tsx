@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HeldLink from "@/components/shared/HeldLink";
 import type { ArticleDoc } from "@/content/articles/types";
 
 export const card = {
@@ -43,9 +44,9 @@ export const doc: ArticleDoc = {
               that erased a company&apos;s live database, then lied about recovering it. In
               Australia, the eSafety Commissioner has already published guidance for schools
               on handling AI deepfakes, including a{" "}
-              <Link href="/resources/school-crisis-communication-plan">
+              <HeldLink href="/resources/school-crisis-communication-plan">
                 deepfake letter template
-              </Link>{" "}
+              </HeldLink>{" "}
               schools can adapt, because the same problem now reaches classrooms as fast as
               it reaches markets. Melissa Agnes, founder of the Crisis Ready Institute, wrote
               about both incidents in the same July 2026 newsletter. Her framework for

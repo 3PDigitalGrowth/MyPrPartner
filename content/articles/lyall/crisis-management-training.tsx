@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HeldLink from "@/components/shared/HeldLink";
 import type { ArticleDoc } from "@/content/articles/types";
 
 const linkClass = "text-teal underline underline-offset-4 hover:text-teal-dark";
@@ -277,9 +278,9 @@ export const doc: ArticleDoc = {
           t: "p",
           text: (
             <>
-              <Link href="/crisis-media-training" className={linkClass}>
+              <HeldLink href="/crisis-media-training" className={linkClass}>
                 Media training
-              </Link>{" "}
+              </HeldLink>{" "}
               is part of crisis preparation, but it is not the whole program. A spokesperson needs
               to answer difficult questions, correct false assumptions and avoid speculation. They
               also need enough authority to sound credible.

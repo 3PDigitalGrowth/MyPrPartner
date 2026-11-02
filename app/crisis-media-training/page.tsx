@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { heldRobots } from "@/lib/held-pages";
 import CourseJsonLd from "@/components/CourseJsonLd";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/StructuredData";
 import { LandingPage } from "@/components/landing/LandingPage";
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
   title: config.seo.title,
   description: config.seo.description,
   alternates: { canonical: config.seo.canonical },
+  robots: heldRobots("/crisis-media-training"),
   keywords: [
     "crisis media training",
     "crisis media training Australia",

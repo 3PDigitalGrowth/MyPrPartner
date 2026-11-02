@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { registeredSlugs as melissaArticleSlugs } from "@/content/articles/registry";
+import { isHeld } from "@/lib/held-pages";
 
 const BASE = "https://myprpartner.com";
 
@@ -18,19 +19,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/resources/pr-guide",           priority: 0.8,  changeFrequency: "monthly" },
     { url: "/resources/crisis-checklist",   priority: 0.8,  changeFrequency: "monthly" },
 
-    // Standalone search landing pages (added 2 Sep 2026). These are deliberately
-    // NOT in the header, footer or any existing page's links: they were briefed
-    // as orphan pages so the approved site navigation stays untouched. That
-    // makes the sitemap their only discovery path, which is why they carry a
-    // real priority here rather than being left out.
-    //
-    // Trade-off worth knowing: an orphan page receives no internal PageRank, so
-    // it competes on its own content alone and will rank slower than it would
-    // with links from /programs, /crisis-masterclass and /resources. Adding
-    // those inbound links later is a small change and is the single biggest
-    // thing that would lift these three. Each page links out heavily and the
-    // three cross-link to each other, so they pass equity on, they just do not
-    // receive any.
+    // Standalone search landing pages (added 2 Sep 2026). Held for Lyall's
+    // sign-off since 3 Nov (lib/held-pages.ts), which keeps them out of the
+    // output below until he approves them.
     { url: "/crisis-media-training",        priority: 0.8,  changeFrequency: "monthly" },
     { url: "/pr-training-for-small-business", priority: 0.8, changeFrequency: "monthly" },
     { url: "/resources/school-crisis-communication-plan", priority: 0.8, changeFrequency: "monthly" },
@@ -56,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/terms-and-conditions",         priority: 0.3,  changeFrequency: "yearly" },
   ];
 
-  return routes.map(({ url, priority, changeFrequency }) => ({
+  return routes.filter(({ url }) => !isHeld(url)).map(({ url, priority, changeFrequency }) => ({
     url: `${BASE}${url}`,
     lastModified: now,
     changeFrequency,

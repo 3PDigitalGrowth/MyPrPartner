@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { MT } from "@/components/editable";
+import { isHeld } from "@/lib/held-pages";
 
 export type GoDeeperLink = {
   href: string;
@@ -37,11 +38,23 @@ export default function GoDeeper({
   const id = (key: string) => (copyBase ? `${copyBase}.${key}` : false);
   const sectionBg = tone === "grey" ? "bg-[#F7F8FA]" : "bg-white";
   const cardBg = tone === "grey" ? "bg-white" : "bg-[#F7F8FA]";
+  // Held pages drop out, but each card keeps its original index so editor
+  // copy keyed on links.N still lands on the right card.
+  const visible = content.links
+    .map((link, idx) => ({ link, idx }))
+    .filter(({ link }) => !isHeld(link.href));
+  if (visible.length === 0) return null;
   // Keep rows full: three cards sit in one row from tablet up, six in 2x3 then
-  // 3x2, anything else in pairs.
-  const n = content.links.length;
+  // 3x2, a lone card matches the heading's width, anything else in pairs.
+  const n = visible.length;
   const cols =
-    n === 3 ? "md:grid-cols-3" : n % 3 === 0 ? "md:grid-cols-2 lg:grid-cols-3" : "md:grid-cols-2";
+    n === 1
+      ? "max-w-[680px]"
+      : n === 3
+        ? "md:grid-cols-3"
+        : n % 3 === 0
+          ? "md:grid-cols-2 lg:grid-cols-3"
+          : "md:grid-cols-2";
 
   return (
     <section className={sectionBg} aria-labelledby={copyBase ? `${copyBase}-heading` : undefined}>
@@ -64,7 +77,7 @@ export default function GoDeeper({
         </div>
 
         <div className={`mt-8 grid grid-cols-1 gap-5 ${cols}`}>
-          {content.links.map((link, idx) => (
+          {visible.map(({ link, idx }) => (
             <Link
               key={link.href}
               href={link.href}

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Check, ChevronDown, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { isHeld } from "@/lib/held-pages";
 import type { LandingConfig, ProseNode } from "./types";
 
 /**
@@ -130,8 +131,9 @@ function Prose({ nodes }: { nodes: ProseNode[] }) {
 
 export function LandingPage({ config }: { config: LandingConfig }) {
   const EyebrowIcon = config.hero.eyebrowIcon;
-  const siblingLinks = config.related.links.filter((l) => l.sibling);
-  const mainLinks = config.related.links.filter((l) => !l.sibling);
+  const relatedLinks = config.related.links.filter((l) => !isHeld(l.href));
+  const siblingLinks = relatedLinks.filter((l) => l.sibling);
+  const mainLinks = relatedLinks.filter((l) => !l.sibling);
 
   return (
     <>

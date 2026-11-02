@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { heldRobots } from "@/lib/held-pages";
 import {
   BreadcrumbJsonLd,
   FaqJsonLd,
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   title: config.seo.title,
   description: config.seo.description,
   alternates: { canonical: config.seo.canonical },
+  robots: heldRobots("/resources/school-crisis-communication-plan"),
   keywords: [
     "school crisis communication plan",
     "crisis communication plan for schools",
