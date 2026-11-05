@@ -12,6 +12,8 @@ type LeadMagnetFormProps = {
   theme?: "light" | "dark";
   variant?: "hero" | "band";
   submitLabel?: string;
+  /** Runs once the visitor submits, e.g. to fire an ad conversion event. */
+  onLead?: () => void;
 };
 
 export function LeadMagnetForm({
@@ -21,6 +23,7 @@ export function LeadMagnetForm({
   theme = "light",
   variant = "hero",
   submitLabel = "Send me the guide",
+  onLead,
 }: LeadMagnetFormProps) {
   const [status, setStatus] = useState<"idle" | "submitting" | "done">("idle");
   const [firstName, setFirstName] = useState("");
@@ -51,6 +54,7 @@ export function LeadMagnetForm({
         pagePath: currentPagePath(),
       }),
     }).catch((err) => console.error("Lead submission failed:", err));
+    onLead?.();
 
     try {
       if (typeof window !== "undefined") {
