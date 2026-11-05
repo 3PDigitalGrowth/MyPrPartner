@@ -315,5 +315,5 @@ export const doc: ArticleDoc = {
     "high-stakes-comms-formula",
   ],
   sourceNote:
-    "Quotes on the veil emotion, disappointment, fear, grief and relief are drawn from session 4 of Melissa Agnes's Crisis Ready® course, part of My PR Partner's Crisis Masterclass advanced certification material, trimmed for length and spoken filler. The session's journalling exercises, the fiance anecdote and the hamster story used in the closing Q&A are not reproduced here.",
+    "Quotes on the veil emotion, disappointment, fear, grief and relief are drawn from session 4 of Melissa Agnes's Crisis Ready® course, advanced material from her Crisis Ready® Certification program, taught inside My PR Partner's Crisis Masterclass, trimmed for length and spoken filler. The session's journalling exercises, the fiance anecdote and the hamster story used in the closing Q&A are not reproduced here.",
 };

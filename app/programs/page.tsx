@@ -130,7 +130,7 @@ const programs: Program[] = [
     outcomes: [
       "12-month self-paced program, fortnightly Spotlight emails and monthly Q&A",
       "Crisis Ready® modules from Melissa Agnes plus Australian case studies",
-      "Certificate on completion, backed by CRC Public Relations",
+      "A workbook and practical resource with every monthly session",
     ],
     cta: "See the masterclass",
   },

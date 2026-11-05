@@ -296,5 +296,5 @@ export const doc: ArticleDoc = {
     "four-levels-of-safety-crisis-leader",
   ],
   sourceNote:
-    "The quoted passages are drawn from session five of the Crisis Ready® course, a certification session delivered inside Melissa Agnes's own coaching frame. This excerpt leaves out the guided breathing script, the homework protocol, and the electromagnetic-field and physiological material from that session; the framing and explanation around the quotes are ours.",
+    "The quoted passages are drawn from session five of the Crisis Ready® course, advanced material from Melissa Agnes's Crisis Ready® Certification program, delivered inside her own coaching frame. This excerpt leaves out the guided breathing script, the homework protocol, and the electromagnetic-field and physiological material from that session; the framing and explanation around the quotes are ours.",
 };

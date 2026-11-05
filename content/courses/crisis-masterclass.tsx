@@ -1,5 +1,4 @@
 ﻿import {
-  Award,
   BookOpen,
   Briefcase,
   Building2,
@@ -101,7 +100,6 @@ export const crisisMasterclassContent: CourseContent = {
     { icon: Clock, title: "12-month access", sub: "Go at your own pace" },
     { icon: Users, title: "Expert trainers", sub: "Australian and international" },
     { icon: ShieldCheck, title: "Exclusive and unique", sub: "First in Australia" },
-    { icon: Award, title: "Certificate of completion", sub: "Endorsed by CRC Public Relations" },
   ],
 
   anchors: [
@@ -383,10 +381,6 @@ export const crisisMasterclassContent: CourseContent = {
         a: "Yes. We offer group enrolment rates for organisations of any size. Get in touch and our team will put together a plan that fits.",
       },
       {
-        q: "What does the certificate cover?",
-        a: "On completion, you receive a My PR Partner Crisis Masterclass certificate of completion, endorsed by CRC Public Relations. It acknowledges that you have completed the full 12-month program, including Crisis Ready\u00AE modules. The certificate is not a nationally accredited or formally recognised industry training qualification.",
-      },
-      {
         q: "How is payment handled?",
         a: "Payment is by annual subscription that can be paid in monthly instalments or annually. Payment is billed through our secure learning platform at checkout. You'll receive a tax invoice by email and immediate access to your course dashboard. Annual subscribers receive one month free and have the option of paying by invoice.",
       },
@@ -411,7 +405,6 @@ export const crisisMasterclassContent: CourseContent = {
       "Monthly Q&A",
       "Practical resources",
       "Bonus content",
-      "Certificate of completion",
     ],
     trustBadges: { poweredByCrcLogo: true, crisisReadyBadge: true },
     callbackLinkLabel: "Or request a callback from our team",

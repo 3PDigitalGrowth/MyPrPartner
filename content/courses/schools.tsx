@@ -552,7 +552,6 @@ export const schoolsContent: CourseContent = {
       "Crisis Ready\u00AE input from Melissa Agnes (Month 7)",
       "Guest-led modules with Tim Sterne and Tim Whincop",
       "On-call spokesperson media training (Month 12)",
-      "Certificate of completion for participating staff",
     ],
     trustBadges: { poweredByCrcLogo: true },
     callbackLinkLabel: "Or request a callback from our schools team",

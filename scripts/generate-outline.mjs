@@ -1072,7 +1072,6 @@ const crisis = {
       "Monthly Q&A",
       "Practical resources",
       "Bonus content",
-      "Certificate of completion",
     ],
   },
   cta: {

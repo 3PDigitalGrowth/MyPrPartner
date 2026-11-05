@@ -345,7 +345,7 @@ export function buildMelissaAgnesConfig(articles: Article[]): LandingConfig {
         {
           question: "Can I take Melissa Agnes's Crisis Ready course in Australia?",
           answer:
-            "Yes. Melissa has adapted her Crisis Ready course for the My PR Partner Crisis Masterclass, which is available in Australasia only through My PR Partner: a 12-month online program with a session from Melissa each month, workbooks, a monthly Q&A and a certificate endorsed by CRC Public Relations.",
+            "Yes. Melissa has adapted her Crisis Ready course for the My PR Partner Crisis Masterclass, which is available in Australasia only through My PR Partner: a 12-month online program with a session from Melissa each month, workbooks and a monthly Q&A.",
         },
         {
           question: "Does Melissa Agnes take part live?",

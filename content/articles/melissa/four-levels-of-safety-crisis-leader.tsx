@@ -277,7 +277,7 @@ export const doc: ArticleDoc = {
           t: "p",
           text: (
             <>
-              This session sits inside the certification stream of the{" "}
+              This session comes from the advanced Crisis Ready® material in the{" "}
               <Link href="/crisis-masterclass/inside">Crisis Masterclass</Link>, alongside the
               emotion breakdown covered in{" "}
               <Link href="/articles/anger-is-a-veil-emotion">Anger Is a Veil Emotion</Link>.

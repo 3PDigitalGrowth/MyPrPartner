@@ -38,7 +38,7 @@ export default function CrisisMasterclassInsidePage() {
     <>
       <CourseJsonLd
         name="Crisis Masterclass"
-        description="A 12-month online crisis communication course featuring the Crisis Ready® course by Melissa Agnes, with Australian case studies, workbooks, monthly Q&A and a certificate endorsed by CRC Public Relations."
+        description="A 12-month online crisis communication course featuring the Crisis Ready® course by Melissa Agnes, with Australian case studies, workbooks and a monthly Q&A."
         url="https://myprpartner.com/crisis-masterclass"
         image={`https://myprpartner.com${config.seo.ogImage}`}
         provider={{ name: "My PR Partner", url: "https://myprpartner.com" }}

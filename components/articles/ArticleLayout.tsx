@@ -61,7 +61,7 @@ function ctaCard(preset: CtaPreset, slug: string): CtaCard {
         external: true,
         eyebrow: "Enrol now",
         title: "Start the Crisis Masterclass this month",
-        body: "Twelve monthly sessions with Melissa Agnes and Lyall Mercer, workbooks, a monthly Q&A and a certificate endorsed by CRC Public Relations. $340 a month ex GST, ten-day free trial.",
+        body: "Twelve monthly sessions with Melissa Agnes and Lyall Mercer, workbooks and a monthly Q&A. $340 a month ex GST, ten-day free trial.",
         cta: "Enrol in the Crisis Masterclass",
         accent: "linear-gradient(135deg, #1A2B4A 0%, #1E73BE 100%)",
         icon: Shield,
@@ -133,7 +133,7 @@ function ctaCard(preset: CtaPreset, slug: string): CtaCard {
         href: "/crisis-masterclass",
         eyebrow: "The full program",
         title: "Ready before the crisis: the Crisis Masterclass",
-        body: "Australia's premier crisis communications program, delivered with the Crisis Ready Institute. One session a month for twelve months, self-paced, with a certificate your board can file.",
+        body: "Australia's premier crisis communications program, delivered with the Crisis Ready Institute. One session a month for twelve months, self-paced, with a monthly Q&A.",
         cta: "See the masterclass",
         accent: "linear-gradient(135deg, #1A2B4A 0%, #1E73BE 100%)",
         icon: Shield,
@@ -720,7 +720,7 @@ export function ArticleLayout({
                 Learn this with Melissa Agnes and Lyall Mercer
               </h2>
               <p className="mx-auto mt-4 max-w-[640px] text-[16px] leading-relaxed text-text-medium md:text-[17px]">
-                The article covers the idea. The Crisis Masterclass builds the skill: twelve months, one session a month, workbooks, live Q&A and a certificate endorsed by CRC Public Relations.
+                The article covers the idea. The Crisis Masterclass builds the skill: twelve months, one session a month, workbooks and a live Q&A.
               </p>
             </div>
             <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">

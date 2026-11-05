@@ -306,7 +306,7 @@ export const doc: ArticleDoc = {
     {
       question: "Where does this formula fit in the Crisis Masterclass?",
       answer:
-        "Validate, Relate, Prove is month three of the twelve-month Crisis Masterclass with Melissa Agnes and Lyall Mercer, built out with a worked example and a template you run on your own high-risk scenarios, alongside a monthly Q&A and a certificate endorsed by CRC Public Relations.",
+        "Validate, Relate, Prove is month three of the twelve-month Crisis Masterclass with Melissa Agnes and Lyall Mercer, built out with a worked example and a template you run on your own high-risk scenarios, alongside a monthly Q&A.",
     },
   ],
   related: [

@@ -1,5 +1,4 @@
 ﻿import {
-  Award,
   BadgeCheck,
   Briefcase,
   Building2,
@@ -123,7 +122,6 @@ export const charityContent: CourseContent = {
     { icon: Clock, title: "12 monthly modules", sub: "Training + resource + Q&A" },
     { icon: Users, title: "Whole-team program", sub: "ED, board, fundraising & comms" },
     { icon: Heart, title: "Mission focused", sub: "Trust, donations and reputation" },
-    { icon: Award, title: "Certificate of completion", sub: "Endorsed by CRC Public Relations" },
   ],
 
   anchors: [

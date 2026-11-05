@@ -1,6 +1,5 @@
 import Link from "next/link";
 import {
-  Award,
   BookOpen,
   Compass,
   FileText,
@@ -167,7 +166,7 @@ export const crisisMasterclassInsideConfig: LandingConfig = {
       "12 monthly sessions",
       "Video plus workbook every month",
       "Monthly Q&A with Melissa and Lyall",
-      "Certificate endorsed by CRC Public Relations",
+      "Fortnightly Spotlight emails",
     ],
     backgroundImage: "/images/melissa-agnes-stage.webp",
     backgroundAlt: "",
@@ -236,12 +235,6 @@ export const crisisMasterclassInsideConfig: LandingConfig = {
         icon: Users,
         accent: "linear-gradient(135deg, #533278 0%, #A25CC8 100%)",
       },
-      {
-        title: "A certificate at the end",
-        body: "A My PR Partner Crisis Masterclass certificate of completion, endorsed by CRC Public Relations, that a board can file as evidence of reputational-risk training.",
-        icon: Award,
-        accent: "linear-gradient(135deg, #0B7A58 0%, #37B288 100%)",
-      },
     ],
   },
 
@@ -294,7 +287,6 @@ export const crisisMasterclassInsideConfig: LandingConfig = {
             <>Monthly video session, workbook and downloadable resource</>,
             <>Monthly Q&amp;A with Melissa Agnes and Lyall Mercer, with questions submitted in advance</>,
             <>Fortnightly Spotlight emails between sessions</>,
-            <>Certificate of completion endorsed by CRC Public Relations</>,
             <>$340 a month ex GST, or pay annually, with a ten-day free trial</>,
           ],
         },
@@ -464,7 +456,7 @@ export const crisisMasterclassInsideConfig: LandingConfig = {
   finalCta: {
     eyebrow: "Enrol",
     heading: "Twelve months with Melissa Agnes and Lyall Mercer",
-    body: "Start with month one today. $340 a month ex GST, ten-day free trial, certificate endorsed by CRC Public Relations at the end.",
+    body: "Start with month one today. $340 a month ex GST, with a ten-day free trial.",
     primary: { href: "/crisis-masterclass", label: "See pricing and enrol" },
     secondary: { href: "/contact", label: "Ask about group enrolment" },
     backgroundImage: "/images/crisis-masterclass/final-cta-bg.jpg",
