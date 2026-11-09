@@ -10,6 +10,7 @@ import { doc as mapleLeaf } from "./melissa/maple-leaf-foods-from-tragedy-to-tru
 import { doc as fourLevels } from "./melissa/four-levels-of-safety-crisis-leader";
 import { doc as angerVeil } from "./melissa/anger-is-a-veil-emotion";
 import { doc as crisisTraining } from "./lyall/crisis-management-training";
+import { doc as socialMediaCrisis } from "./lyall/social-media-crisis-management";
 
 /**
  * Slug -> body document. Card metadata for the same slugs lives in seed.ts.
@@ -22,6 +23,7 @@ import { doc as crisisTraining } from "./lyall/crisis-management-training";
  * studio's daily publish check keeps emailing.
  */
 export const articleRegistry: Record<string, ArticleDoc> = {
+  [socialMediaCrisis.slug]: socialMediaCrisis,
   [crisisTraining.slug]: crisisTraining,
   [highStakesFormula.slug]: highStakesFormula,
   [aiErasedDatabase.slug]: aiErasedDatabase,

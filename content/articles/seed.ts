@@ -11,6 +11,7 @@ import { card as mapleLeaf } from "./melissa/maple-leaf-foods-from-tragedy-to-tr
 import { card as fourLevels } from "./melissa/four-levels-of-safety-crisis-leader";
 import { card as angerVeil } from "./melissa/anger-is-a-veil-emotion";
 import { card as crisisTraining } from "./lyall/crisis-management-training";
+import { card as socialMediaCrisis } from "./lyall/social-media-crisis-management";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Seed articles
@@ -57,6 +58,21 @@ function melissaArticle(
 }
 
 export const seedArticles: Article[] = [
+  {
+    slug: socialMediaCrisis.slug,
+    title: socialMediaCrisis.title,
+    summary: socialMediaCrisis.summary,
+    category: "Crisis",
+    heroImage: "/images/articles/social-media-crisis-management.jpg",
+    heroImageAlt: socialMediaCrisis.heroImageAlt,
+    author: lyallMercer,
+    publishedAt: "2026-11-09",
+    readTimeMinutes: socialMediaCrisis.readTimeMinutes,
+    featured: false,
+    tags: [...socialMediaCrisis.tags],
+    relatedPrograms: ["/crisis-masterclass", "/programs"],
+    seo: { title: socialMediaCrisis.seoTitle, description: socialMediaCrisis.seoDescription },
+  },
   {
     slug: crisisTraining.slug,
     title: crisisTraining.title,
