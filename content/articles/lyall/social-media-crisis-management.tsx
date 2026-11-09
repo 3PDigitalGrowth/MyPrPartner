@@ -5,9 +5,15 @@ import type { ArticleDoc } from "@/content/articles/types";
 const linkClass = "text-teal underline underline-offset-4 hover:text-teal-dark";
 
 /**
- * Lyall Mercer's social media crisis management guide. Body is the version
- * approved in the content studio on 25 Oct 2026
- * (social-media-crisis-management-australia), with his house rules applied:
+ * NOT PUBLISHED. Lyall has not approved this article. The studio logged an
+ * approval on 25 Oct 2026 that he did not make (his 4:10pm email that day
+ * approved only the first article); it went live on 9 Nov and was pulled the
+ * same day at his request. Kept here, unregistered, so his revisions can be
+ * applied once he reviews it. Do not add it to registry.ts or seed.ts until
+ * he signs it off by email.
+ *
+ * Lyall Mercer's social media crisis management guide. Body is the studio
+ * draft (social-media-crisis-management-australia), with his house rules applied:
  * "program" spelling and businesses before schools before associations. One
  * sentence that quoted the internal content brief for an unsourced statistic
  * was trimmed to the point it was making.
