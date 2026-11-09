@@ -29,6 +29,15 @@ const OUTLINE = {
 
 const CLICK_IDS = ["gclid", "gbraid", "wbraid"] as const;
 
+// Google Ads account 609-294-1623 (My PR Partner). Labels come from the
+// conversion actions the build_search_campaign run created on 10 Nov 2026.
+const ADS = {
+  id: "AW-18565664029",
+  checkout: "AW-18565664029/PFC1CLzFlrUdEJ2a5pRF",
+  outline: "AW-18565664029/P14uCPeTl7UdEJ2a5pRF",
+};
+const KAJABI_HOST = /(^|\.)courses\.myprpartner\.com$/;
+
 const CTA_HERO =
   "inline-flex items-center justify-center gap-2.5 rounded-full bg-white px-9 py-[18px] font-heading text-[18px] font-bold text-text-dark shadow-[0_14px_40px_rgba(0,0,0,0.28)] transition hover:-translate-y-0.5 hover:bg-white/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-crc-navy motion-reduce:transition-none motion-reduce:hover:translate-y-0";
 const CTA_TEAL =
@@ -38,8 +47,41 @@ const CTA_GHOST_DARK =
 
 const straight = (s: string) => s.replace(/[‘’]/g, "'").replace(/[“”]/g, '"');
 
+/** gtag, or the dataLayer queue gtag.js reads once it loads (the layout loads
+ *  it afterInteractive, which can land after this page's effects run). */
+function gtag(...args: unknown[]) {
+  const w = window as unknown as { gtag?: (...a: unknown[]) => void; dataLayer?: unknown[] };
+  if (typeof w.gtag === "function") return w.gtag(...args);
+  const queue = (w.dataLayer = w.dataLayer || []);
+  // gtag.js only reads Arguments objects from the queue, not plain arrays.
+  function push() {
+    // eslint-disable-next-line prefer-rest-params
+    queue.push(arguments);
+  }
+  (push as (...a: unknown[]) => void)(...args);
+}
+
 function track(event: string, params: Record<string, unknown>) {
-  (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag?.("event", event, params);
+  gtag("event", event, params);
+}
+
+/** Loads the Google Ads tag on this page only (its conversion linker reads the
+ *  gclid on landing) and counts every Kajabi checkout click as a conversion. */
+function useAdsConversions() {
+  useEffect(() => {
+    gtag("config", ADS.id);
+    const onClick = (e: MouseEvent) => {
+      const a = (e.target as Element | null)?.closest?.("a[href]") as HTMLAnchorElement | null;
+      if (!a) return;
+      try {
+        if (KAJABI_HOST.test(new URL(a.href).hostname)) gtag("event", "conversion", { send_to: ADS.checkout });
+      } catch {
+        /* not a URL */
+      }
+    };
+    document.addEventListener("click", onClick, true);
+    return () => document.removeEventListener("click", onClick, true);
+  }, []);
 }
 
 /** Kajabi checkout links carry the ad's click id and keyword through, and keep
@@ -99,6 +141,7 @@ export default function CrisisMasterclassAdPage() {
   const revealRef = useScrollReveal();
   const showBar = useShowAfterHero();
   const [invoiceOpen, setInvoiceOpen] = useState(false);
+  useAdsConversions();
 
   const headline = HEADLINES[params.get("t") ?? ""] ?? HEADLINES.communication;
   const [lead, ...more] = content.testimonials?.items ?? [];
@@ -492,7 +535,10 @@ export default function CrisisMasterclassAdPage() {
                 theme="dark"
                 variant="band"
                 submitLabel="Send me the outline"
-                onLead={() => track("generate_lead", { lead_type: "course_outline", program: "crisis-masterclass" })}
+                onLead={() => {
+                  track("generate_lead", { lead_type: "course_outline", program: "crisis-masterclass" });
+                  gtag("event", "conversion", { send_to: ADS.outline });
+                }}
               />
             </div>
           </div>
