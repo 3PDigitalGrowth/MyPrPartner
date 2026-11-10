@@ -50,6 +50,19 @@ const nextConfig = {
       // Every path on them lands on the masterclass sales page rather than the
       // homepage, tagged so GA4 reports the visit as a referral from that
       // domain. myprpartner.com.au redirects at the Vercel domain level.
+      //
+      // Links that already carry a utm_source (the EDMs link the short domain,
+      // as Lyall asked) keep their own tags: the query passes through untouched
+      // instead of being overwritten with the referral tags below.
+      {
+        source: "/:path*",
+        has: [
+          { type: "host", value: "(www\\.)?crisismasterclass\\.com\\.au" },
+          { type: "query", key: "utm_source" },
+        ],
+        destination: "https://myprpartner.com/crisis-masterclass",
+        permanent: true,
+      },
       {
         source: "/:path*",
         has: [{ type: "host", value: "(www\\.)?crisismasterclass\\.com\\.au" }],
