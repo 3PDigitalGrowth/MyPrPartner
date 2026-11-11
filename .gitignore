@@ -50,3 +50,7 @@ crisis_mc_content_library/edm_send_files/
 
 # Raw video masters stay local; ship the encoded copies in public/videos/
 public/*.mp4
+
+# Voice agent knowledge base: built locally by automation/voice-agent/build_kb.py.
+# 01-course-sessions.md comes from the paid course library above, so none of kb/ is committed.
+/automation/voice-agent/kb/
