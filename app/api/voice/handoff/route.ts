@@ -4,10 +4,12 @@ import { clip, replyMessage, sendHandoff } from "@/lib/voice-handoff";
 
 // The Crisis Masterclass voice assistant (ElevenLabs, built from
 // automation/voice-agent/) calls this mid-call through its send_to_course_team
-// webhook tool. Each call emails Lyall and Barbara what the person asked, what
-// was missing from the site and any call they want booked, so the team can
-// write back or ring them. Email building and test-traffic routing live in
-// lib/voice-handoff.ts.
+// webhook tool. An urgent crisis is emailed to Lyall and Barbara straight
+// away. Everything else is acknowledged here and goes out in the one call
+// report the post-call route sends a minute after the call ends, which reads
+// these same details back out of the transcript (Alex, 12 Nov 2026: one
+// email per call, with summary, sentiment and suggested follow-ups). Email
+// building and test-traffic routing live in lib/voice-handoff.ts.
 //
 // Required env: VOICE_HANDOFF_SECRET (same value as the agent's workspace
 // secret, sent as the x-voice-secret header), VOICE_HANDOFF_EMAILS,
@@ -36,16 +38,24 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "Invalid JSON" }, { status: 400 });
   }
 
+  const type = clip(body.request_type, 40);
+  const conversationId = clip(body.conversation_id, 80);
+  const dryRun = request.headers.get("x-voice-dry-run") === "1";
+  if (type !== "urgent_crisis" && !dryRun) {
+    console.log("[api/voice/handoff] recorded; goes out in the call report", { type, conversationId });
+    return NextResponse.json({ ok: true, message: replyMessage(type) });
+  }
+
   const result = await sendHandoff({
     fields: body,
     source: clip(body.source, 60),
-    conversationId: clip(body.conversation_id, 80),
-    dryRun: request.headers.get("x-voice-dry-run") === "1",
+    conversationId,
+    dryRun,
   });
   if (result.status === "error") {
     console.error("[api/voice/handoff]", result.error);
     return NextResponse.json({ ok: false, error: result.error }, { status: result.code });
   }
   // The agent tells the caller what this says, so keep it short and true.
-  return NextResponse.json({ ok: true, message: replyMessage(clip(body.request_type, 40)) });
+  return NextResponse.json({ ok: true, message: replyMessage(type) });
 }

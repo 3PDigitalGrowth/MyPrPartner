@@ -40,6 +40,7 @@ VOICE = {"voice_id": "w9rPM8AIZle60Nbpw7nl",
          "name": "Kate (MPP course assistant)"}
 TTS_MODEL = "eleven_v4_turbo"
 LLM = "claude-sonnet-5-5"
+ANALYSIS_LLM = "claude-sonnet-5-5"
 # Alex, 11 Nov 2026: about 15 minutes, so Lyall and Barbara can test it properly.
 MAX_CALL_SECONDS = 900
 FIRST_MESSAGE = (
@@ -72,13 +73,18 @@ DYNAMIC_VARIABLES = {
 }
 
 DATA_COLLECTION = {
+    # The call report Lyall and Barbara get after every call (Alex, 12 Nov 2026).
+    "call_summary": {"type": "string", "description": "Two or three plain sentences for Lyall and Barbara, written the way a colleague would brief them: who the person is (role, organisation), what they wanted or asked, and how the call ended. Australian English. Talk about the person, not the assistant: never write 'the AI agent' or 'the assistant'."},
+    "sentiment": {"type": "string", "description": "One of: positive, neutral, negative. The person's attitude to My PR Partner and the Crisis Masterclass by the end of the call. positive: warm, interested or appreciative. neutral: polite but noncommittal, or too short to tell. negative: annoyed, dismissive, or asked not to be contacted."},
+    "sentiment_reason": {"type": "string", "description": "One short sentence on what the sentiment is based on, quoting the person's words where possible."},
+    "follow_up_actions": {"type": "string", "description": "One to three concrete next steps for Lyall or Barbara, most important first, each starting with a verb, separated by ' | '. Base them only on what the person said, e.g. 'Call Sam on Thursday 13 Nov at 3pm to talk through group enrolment for eight leaders' or 'Email the course outline and confirm whether the Q&A can be joined live'. Include anything the person asked that the assistant couldn't answer. If nothing is needed, write 'No action needed' and the reason. For an opt-out: 'Remove from all lists and do not contact again'."},
     "interest": {"type": "string", "description": "One of: high (wants to enrol or book a call soon), medium (interested, has questions or needs approval), low (not now), none (not interested), unknown."},
     "role": {"type": "string", "description": "Their role and organisation type, in their words. Empty if not given."},
     "missing_information": {"type": "string", "description": "What they said was missing or unclear on the website, in their words. Empty if nothing."},
     "hesitation": {"type": "string", "description": "What is holding them back from enrolling (price, approval, time, timing, relevance, team), in their words. Empty if nothing said."},
     "questions": {"type": "string", "description": "Every question they asked that the assistant passed to the team, word for word, separated by semicolons. Empty if none."},
     "next_step": {"type": "string", "description": "One of: coordinator_call (agreed to a call with Lyall or Barbara), email_answers (questions passed on for an email reply), group_enquiry, urgent_crisis, callback_later (asked to be called at another time), opt_out, none."},
-    "call_time": {"type": "string", "description": "The day and time they asked for a call, as an actual date and time with time zone if given, e.g. 'Thursday 13 Nov, 2pm AEST'. Empty if none."},
+    "call_time": {"type": "string", "description": "The day and time they asked for a call, as an actual date and time with time zone if given, e.g. 'Thursday 13 Nov, 2pm AEST'. If the assistant read the date back on the call ('Wednesday the eighteenth'), use that date; never 'next Wednesday' or 'tomorrow'. Empty if none."},
     "contact_email": {"type": "string", "description": "The email address they confirmed on the call, exactly as read back. Empty if none."},
     "contact_phone": {"type": "string", "description": "The phone number they gave. Empty if none or if they said the number called is fine."},
     "team_size": {"type": "string", "description": "How many people they'd want to enrol, if they mentioned a team or board. Empty if not."},
@@ -239,8 +245,16 @@ def ensure_secret(state):
 
 
 def ensure_post_call_webhook(state):
-    """Create the post-call webhook once; its HMAC secret goes to SECRET_FILE, never the repo."""
+    """Create the post-call webhook once; its HMAC secret goes to SECRET_FILE, never the repo.
+
+    Retries stay on: since 12 Nov 2026 every call report depends on this webhook.
+    """
     if state.get("post_call_webhook_id"):
+        if not state.get("post_call_retries"):
+            call("PATCH", f"/v1/workspace/webhooks/{state['post_call_webhook_id']}",
+                 {"is_disabled": False, "name": "mpp-course-assistant-post-call", "retry_enabled": True})
+            state["post_call_retries"] = True
+            print("webhook: retries enabled")
         return
     res = call("POST", "/v1/workspace/webhooks", {"settings": {
         "auth_type": "hmac", "name": "mpp-course-assistant-post-call", "webhook_url": POST_CALL_URL}})
@@ -335,6 +349,8 @@ def platform_settings(state):
             for cid, goal in EVALUATION
         ]},
         "privacy": {"record_voice": True},
+        # Writes the call report's summary, sentiment and follow-ups (was gemini-2.5-flash).
+        "analysis_llm": ANALYSIS_LLM,
     }
     if state.get("post_call_webhook_id"):
         settings["workspace_overrides"] = {"webhooks": {

@@ -29,5 +29,6 @@
     }
   ],
   "agent_id": "agent_8501m74ft9v4exxrjjt0j44nkh26",
-  "post_call_webhook_id": "28bc307a8fd743e4921b7448d8bf23b0"
+  "post_call_webhook_id": "28bc307a8fd743e4921b7448d8bf23b0",
+  "post_call_retries": true
 }
