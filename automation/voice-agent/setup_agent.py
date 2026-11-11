@@ -48,6 +48,11 @@ FIRST_MESSAGE = (
     "just to make sure you've got everything you need. Have you got a couple of minutes?"
 )
 HANDOFF_URL = "https://myprpartner.com/api/voice/handoff"
+# Safety net: ElevenLabs posts each finished call here, and the route emails the
+# team if the caller asked for something but hung up before the handoff ran.
+# Set on this agent only (workspace_overrides), never workspace-wide, so other
+# clients' calls never reach this site.
+POST_CALL_URL = "https://myprpartner.com/api/voice/post-call"
 
 # The talk-to page and widget ignore these placeholders, so test_link() puts
 # every one in the URL (Luminar lesson, 11 Nov 2026: without them the call
@@ -233,6 +238,22 @@ def ensure_secret(state):
     return res["secret_id"]
 
 
+def ensure_post_call_webhook(state):
+    """Create the post-call webhook once; its HMAC secret goes to SECRET_FILE, never the repo."""
+    if state.get("post_call_webhook_id"):
+        return
+    res = call("POST", "/v1/workspace/webhooks", {"settings": {
+        "auth_type": "hmac", "name": "mpp-course-assistant-post-call", "webhook_url": POST_CALL_URL}})
+    state["post_call_webhook_id"] = res["webhook_id"]
+    secret = res.get("webhook_secret")
+    if secret and "ELEVENLABS_WEBHOOK_SECRET" not in read_env(SECRET_FILE):
+        with open(SECRET_FILE, "a", encoding="utf-8") as f:
+            f.write(f"ELEVENLABS_WEBHOOK_SECRET={secret}\n")
+    print(f"webhook: created {res['webhook_id']}"
+          + (f"; secret saved to {SECRET_FILE}. Add it to Vercel as ELEVENLABS_WEBHOOK_SECRET"
+             if secret else "; NO SECRET RETURNED, copy it from the ElevenLabs dashboard"))
+
+
 def tool_config(secret_id):
     props = {k: dict(v) for k, v in HANDOFF_TOOL["properties"].items()}
     for prop, var in HANDOFF_TOOL["auto"].items():
@@ -306,8 +327,8 @@ def conversation_config(state):
     }
 
 
-def platform_settings():
-    return {
+def platform_settings(state):
+    settings = {
         "data_collection": DATA_COLLECTION,
         "evaluation": {"criteria": [
             {"id": cid, "name": cid, "type": "prompt", "conversation_goal_prompt": goal}
@@ -315,6 +336,14 @@ def platform_settings():
         ]},
         "privacy": {"record_voice": True},
     }
+    if state.get("post_call_webhook_id"):
+        settings["workspace_overrides"] = {"webhooks": {
+            "post_call_webhook_id": state["post_call_webhook_id"],
+            "events": ["transcript"],
+            "transcript_format": "json",
+            "send_audio": False,
+        }}
+    return settings
 
 
 def test_link(agent_id, source="review-link"):
@@ -354,7 +383,7 @@ def main():
             "name": AGENT_NAME,
             "tags": TAGS,
             "conversation_config": conversation_config(state),
-            "platform_settings": platform_settings(),
+            "platform_settings": platform_settings(state),
         }, indent=2)[:5000])
         return
 
@@ -363,6 +392,7 @@ def main():
     if not kb_only:
         ensure_voice(state)
         sync_tool(state)
+        ensure_post_call_webhook(state)
         save_state(state)
     old_docs = sync_kb(state)
     save_state(state)  # keep the new doc ids even if the agent call fails
@@ -370,7 +400,7 @@ def main():
     if state.get("agent_id"):
         body = {"conversation_config": conversation_config(state)}
         if not kb_only:
-            body.update({"name": AGENT_NAME, "platform_settings": platform_settings()})
+            body.update({"name": AGENT_NAME, "platform_settings": platform_settings(state)})
         call("PATCH", f"/v1/convai/agents/{state['agent_id']}", body)
         print(f"agent: updated {state['agent_id']}")
     else:
@@ -378,7 +408,7 @@ def main():
             "name": AGENT_NAME,
             "tags": TAGS,
             "conversation_config": conversation_config(state),
-            "platform_settings": platform_settings(),
+            "platform_settings": platform_settings(state),
         })
         state["agent_id"] = res["agent_id"]
         print(f"agent: created {state['agent_id']}")
