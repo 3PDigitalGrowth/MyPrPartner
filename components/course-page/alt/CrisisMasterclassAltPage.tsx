@@ -201,7 +201,7 @@ function ProofStrip({ t }: { t?: Testimonial }) {
           </blockquote>
           <figcaption className="mt-3 text-[14px] text-text-medium">
             <span className="font-semibold text-text-dark">{t.name}</span>
-            {t.title ? `, ${t.title}` : ""}, on the Crisis Ready® course
+            {t.title ? `, ${t.title}` : ""}
           </figcaption>
         </figure>
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 lg:col-span-4 lg:justify-end">
