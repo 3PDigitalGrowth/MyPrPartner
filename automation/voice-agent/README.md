@@ -5,7 +5,7 @@ An ElevenAgents voice agent that follows up people who opened the Crisis Masterc
 - Agent: `agent_8501m74ft9v4exxrjjt0j44nkh26` ("My PR Partner - Crisis Masterclass course assistant") on 3P's ElevenLabs account (`3pdigital`, Creator plan). Ids in `agent.json`.
 - Test links: `python automation/voice-agent/setup_agent.py --link` prints two. The client review link (`source=review-link`) emails Lyall and Barbara on every handoff with `[Test call]` in the subject; the internal link (`source=internal-test`) emails Alex only. Never send a link without its `var_` parameters: the talk-to page ignores the agent's placeholder values and the call drops (Luminar, 11 Nov 2026).
 - Call limit: 15 minutes (`MAX_CALL_SECONDS = 900`), so Lyall and Barbara can test it properly. Bring it down for real outbound calls.
-- Keys: `ELEVENLABS_API_KEY` in `~/.claude/elevenlabs.env`; `VOICE_HANDOFF_SECRET` in `~/.claude/mpp-voice.env`. Neither goes in this repo, which is public.
+- Keys: `ELEVENLABS_API_KEY` in `~/.claude/elevenlabs.env`; `VOICE_HANDOFF_SECRET` and `ELEVENLABS_WEBHOOK_SECRET` in `~/.claude/mpp-voice.env`. None of them goes in this repo, which is public. Vercel production env holds `VOICE_HANDOFF_SECRET`, `VOICE_HANDOFF_EMAILS`, `ELEVENLABS_WEBHOOK_SECRET` and `VOICE_AGENT_ID`.
 
 ## How the handoff works
 
@@ -17,6 +17,8 @@ An ElevenAgents voice agent that follows up people who opened the Crisis Masterc
 | `internal-test` | Alex only |
 | `review-link` | Lyall and Barbara, subject marked `[Test call]` |
 | anything else (real calls) | Lyall and Barbara |
+
+**Safety net for calls that end early.** Alex's first browser test (11 Nov 2026) booked a call and closed the tab mid-booking, so the tool never ran and nobody would have heard. ElevenLabs now posts every finished call on this agent to `https://myprpartner.com/api/voice/post-call` (`app/api/voice/post-call/route.ts`). The post-call webhook `28bc307a8fd743e4921b7448d8bf23b0` is set on this agent only through `workspace_overrides`, never workspace-wide, so other clients' calls never reach this site. The route checks the `ElevenLabs-Signature` HMAC (`ELEVENLABS_WEBHOOK_SECRET`) and the agent id (`VOICE_AGENT_ID`). If the call analysis records a request (call, email answers, group quote, urgent crisis, opt-out) and the transcript shows no successful `send_to_course_team`, it emails the team from the analysis, with the transcript, subject marked "(call ended early)". Same `source` routing as the table above. Verified live 11 Nov: a dropped mid-booking session produced the email, and a completed booking produced exactly one email with the safety net logging "skipped: handoff already sent". Both routes share `lib/voice-handoff.ts`; test calls never set reply-to, because the test persona's made-up address sits on a real-looking domain.
 
 Booking is a request, not a calendar booking: the agent captures the day and time, contact details and a prep note, tells the person Lyall or Barbara will confirm, and the email asks them to.
 
