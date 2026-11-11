@@ -1,0 +1,330 @@
+{
+  "checked": "11 Nov 2026",
+  "displayPath": "myprpartner.com/Crisis/Masterclass",
+  "policy": {
+    "approved": 76,
+    "total": 76
+  },
+  "sharedHeadlines": [
+    "Learn From Melissa Agnes",
+    "Lyall Mercer & Melissa Agnes",
+    "12 Months, 100% Online",
+    "One New Module Each Month",
+    "Monthly Q&A With The Experts",
+    "Built For Australian Leaders",
+    "Exclusive in Australasia",
+    "Get The Course Outline",
+    "Enrol Today, Start Month One",
+    "Group Rates For Teams",
+    "$340 a Month ex GST",
+    "Learn at Your Own Pace"
+  ],
+  "sharedDescriptions": [
+    "One new module a month, with a workbook and a monthly Q&A. Learn at your own pace.",
+    "Built for comms leads, executives and spokespeople who carry the reputation load.",
+    "$340 a month ex GST, or pay annually and get one month free. Group rates available."
+  ],
+  "groups": [
+    {
+      "key": "communication",
+      "label": "Crisis communication",
+      "sampleSearch": "crisis communication course",
+      "landingUrl": "https://myprpartner.com/lp/crisis-masterclass?t=communication",
+      "ownHeadlines": [
+        "Crisis Communication Course",
+        "Crisis Comms Training Online",
+        "Lead the Message in a Crisis"
+      ],
+      "ownDescription": "A 12-month online crisis communication course with Melissa Agnes and Lyall Mercer.",
+      "keywords": [
+        {
+          "text": "crisis communication course",
+          "broad": true
+        },
+        {
+          "text": "crisis communications course",
+          "broad": false
+        },
+        {
+          "text": "crisis communication training",
+          "broad": true
+        },
+        {
+          "text": "crisis communications training",
+          "broad": false
+        },
+        {
+          "text": "crisis comms training",
+          "broad": false
+        },
+        {
+          "text": "crisis communication course online",
+          "broad": false
+        },
+        {
+          "text": "crisis communication online course",
+          "broad": false
+        },
+        {
+          "text": "crisis communication workshop",
+          "broad": false
+        },
+        {
+          "text": "crisis public relations management",
+          "broad": false
+        },
+        {
+          "text": "crisis pr training",
+          "broad": false
+        }
+      ]
+    },
+    {
+      "key": "management",
+      "label": "Crisis management",
+      "sampleSearch": "crisis management training",
+      "landingUrl": "https://myprpartner.com/lp/crisis-masterclass?t=management",
+      "ownHeadlines": [
+        "Crisis Management Course",
+        "Crisis Management Training",
+        "Online Crisis Management"
+      ],
+      "ownDescription": "A 12-month online crisis management course with Melissa Agnes and Lyall Mercer.",
+      "keywords": [
+        {
+          "text": "crisis management course",
+          "broad": true
+        },
+        {
+          "text": "crisis management courses",
+          "broad": false
+        },
+        {
+          "text": "crisis management training",
+          "broad": true
+        },
+        {
+          "text": "crisis management classes",
+          "broad": false
+        },
+        {
+          "text": "crisis management course online",
+          "broad": false
+        },
+        {
+          "text": "crisis management online course",
+          "broad": false
+        },
+        {
+          "text": "crisis management training online",
+          "broad": false
+        },
+        {
+          "text": "crisis management training australia",
+          "broad": false
+        },
+        {
+          "text": "crisis management workshop",
+          "broad": false
+        },
+        {
+          "text": "crisis management training courses",
+          "broad": false
+        },
+        {
+          "text": "crisis management training program",
+          "broad": false
+        },
+        {
+          "text": "crisis management training for employees",
+          "broad": false
+        },
+        {
+          "text": "crisis management team training",
+          "broad": false
+        }
+      ]
+    },
+    {
+      "key": "media",
+      "label": "Media and spokesperson",
+      "sampleSearch": "crisis media training",
+      "landingUrl": "https://myprpartner.com/lp/crisis-masterclass?t=media",
+      "ownHeadlines": [
+        "Crisis Media Training",
+        "Spokesperson Training Online",
+        "Face the Media With Confidence"
+      ],
+      "ownDescription": "Learn to speak for your organisation when it counts, with Melissa Agnes and Lyall Mercer.",
+      "keywords": [
+        {
+          "text": "crisis media training",
+          "broad": false
+        },
+        {
+          "text": "crisis media management training",
+          "broad": false
+        },
+        {
+          "text": "crisis management media training",
+          "broad": false
+        },
+        {
+          "text": "media crisis management training",
+          "broad": false
+        },
+        {
+          "text": "media crisis training",
+          "broad": false
+        },
+        {
+          "text": "crisis communications media training",
+          "broad": false
+        },
+        {
+          "text": "spokesperson training",
+          "broad": false
+        },
+        {
+          "text": "spokesperson training course",
+          "broad": false
+        },
+        {
+          "text": "media training course",
+          "broad": false
+        },
+        {
+          "text": "executive media training",
+          "broad": false
+        },
+        {
+          "text": "online media training",
+          "broad": false
+        },
+        {
+          "text": "media training online course",
+          "broad": false
+        },
+        {
+          "text": "media training program",
+          "broad": false
+        }
+      ]
+    },
+    {
+      "key": "leadership",
+      "label": "Crisis leadership",
+      "sampleSearch": "crisis leadership training",
+      "landingUrl": "https://myprpartner.com/lp/crisis-masterclass?t=leadership",
+      "ownHeadlines": [
+        "Crisis Leadership Training",
+        "Lead Calmly Under Pressure",
+        "Reputation & Issues Training"
+      ],
+      "ownDescription": "Become the crisis leader your team trusts. 12 months online with Melissa Agnes.",
+      "keywords": [
+        {
+          "text": "crisis leadership training",
+          "broad": false
+        },
+        {
+          "text": "crisis management leadership training",
+          "broad": false
+        },
+        {
+          "text": "crisis leadership course",
+          "broad": false
+        },
+        {
+          "text": "reputation management course",
+          "broad": false
+        },
+        {
+          "text": "reputation management training",
+          "broad": false
+        },
+        {
+          "text": "issues management training",
+          "broad": false
+        }
+      ]
+    }
+  ],
+  "sitelinks": [
+    {
+      "text": "Inside the Course",
+      "desc1": "See each month's session",
+      "desc2": "Messages from Melissa Agnes",
+      "url": "https://myprpartner.com/crisis-masterclass/inside"
+    },
+    {
+      "text": "Meet Melissa Agnes",
+      "desc1": "Founder, Crisis Ready Institute",
+      "desc2": "Author of Crisis Ready",
+      "url": "https://myprpartner.com/melissa-agnes"
+    },
+    {
+      "text": "Full Course Details",
+      "desc1": "All 12 modules and pricing",
+      "desc2": "Pay monthly or annually",
+      "url": "https://myprpartner.com/crisis-masterclass"
+    },
+    {
+      "text": "Group Enrolments",
+      "desc1": "Training a team or board?",
+      "desc2": "Ask about group rates",
+      "url": "https://myprpartner.com/contact"
+    }
+  ],
+  "callouts": [
+    "100% Online",
+    "Monthly Q&A",
+    "Workbook Every Month",
+    "Self-Paced Learning",
+    "Group Rates Available",
+    "Australian Case Studies"
+  ],
+  "negatives": [
+    "free",
+    "mental health",
+    "intervention",
+    "cism",
+    "stress",
+    "crowd",
+    "pcm",
+    "professional crisis management",
+    "stcw",
+    "maritime",
+    "nursing",
+    "suicide",
+    "de-escalation",
+    "cpi",
+    "lifeline",
+    "counselling",
+    "psychology",
+    "first aid",
+    "disaster",
+    "emergency management",
+    "cyber",
+    "ppt",
+    "pdf",
+    "jobs",
+    "job",
+    "salary",
+    "degree",
+    "university",
+    "masters",
+    "mba",
+    "tafe",
+    "certificate",
+    "certification",
+    "accredited",
+    "diploma",
+    "qualification",
+    "negotiation",
+    "negotiator",
+    "police",
+    "nonviolent",
+    "restraint"
+  ]
+}
