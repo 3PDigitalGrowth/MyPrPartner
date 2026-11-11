@@ -1,0 +1,32 @@
+{
+  "voice_added": true,
+  "handoff_secret_id": "fJQ1Sf2x21d38p9kKAfv",
+  "tool_id": "tool_0301m74ft3g1fpqr0er6sajc1yxe",
+  "knowledge_base": [
+    {
+      "type": "text",
+      "id": "eIInMdaRrSPqLzeQ6ZhR",
+      "name": "mpp-00-confirmed-facts",
+      "usage_mode": "prompt"
+    },
+    {
+      "type": "text",
+      "id": "ik41IL1snNsgTLfh43CG",
+      "name": "mpp-01-course-sessions",
+      "usage_mode": "auto"
+    },
+    {
+      "type": "text",
+      "id": "GY6oEyIbeMLiBiREOhKS",
+      "name": "mpp-02-myprpartner-site",
+      "usage_mode": "auto"
+    },
+    {
+      "type": "text",
+      "id": "ScS3BIz2hmvlb6ygswF1",
+      "name": "mpp-03-lyall-and-crc",
+      "usage_mode": "auto"
+    }
+  ],
+  "agent_id": "agent_8501m74ft9v4exxrjjt0j44nkh26"
+}

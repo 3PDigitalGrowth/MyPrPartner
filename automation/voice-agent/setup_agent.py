@@ -56,6 +56,9 @@ HANDOFF_URL = "https://myprpartner.com/api/voice/handoff"
 DYNAMIC_VARIABLES = {
     "first_name": "Sam",
     "organisation": "Riverside Community Health",
+    # The address on the contact record, so the agent confirms rather than collects
+    # (simulated callers hung up before giving one, 11 Nov 2026).
+    "email": "sam.taylor@riversidehealth.org.au",
     "trigger": "opened the last two Crisis Masterclass emails and visited the course page twice",
     "touchpoint": "1",
     "prior_notes": "none",
@@ -79,12 +82,12 @@ DATA_COLLECTION = {
     "opt_out": {"type": "boolean", "description": "True only if they explicitly asked not to be called or emailed again, or to be taken off the list. Not interested today is false."},
 }
 
-NA = " Mark success if it did not apply because the person was busy, not interested, or asked not to be contacted."
+NA = " Mark success if it did not apply because the person was busy or in a rush, not interested, or asked not to be contacted."
 EVALUATION = [
     ("ai_disclosed", "The assistant said it was an AI in its first turn, and never claimed to be a person."),
-    ("gap_explored", "The assistant asked what was missing or unclear on the website, or what was holding the person back, and listened to the answer." + NA),
+    ("gap_explored", "The assistant found out what was missing or unclear on the website, or what was holding the person back: either it asked, or the person raised their questions or concerns unprompted and the assistant dealt with each one." + NA),
     ("facts_accurate", "Every fact the assistant stated matches the knowledge base. Fail if it offered or implied a free trial, a certificate, a discount or a refund, quoted a price other than $340 a month or $3,740 a year (both ex GST), or invented a date, client or outcome."),
-    ("next_step_offered", "The assistant offered either a call with Lyall or Barbara or to pass the person's questions on for an email reply, and recorded the answer." + NA),
+    ("next_step_offered", "A next step was settled: the assistant offered a call with Lyall or Barbara or an email reply, or the person asked for one of these themselves and the assistant arranged it." + NA),
     ("handoff_complete", "If the person agreed to a call or to have questions answered by email, the assistant called send_to_course_team before the call ended, with their questions and confirmed contact details (and the call time, for a call). Mark success if nothing was agreed."),
     ("email_read_back", "If the person gave an email address, the assistant read it back to confirm it. Mark success if no email was given."),
     ("room_to_check_calendar", "When arranging a call time, the assistant asked for the day and time on its own (not bundled with contact details), offered a moment to check a calendar or waited quietly while they checked, and did not talk over them." + NA),
