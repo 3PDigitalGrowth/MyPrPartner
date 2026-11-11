@@ -126,10 +126,15 @@ export async function POST(request: Request) {
   }Call reference: ${esc(conversationId || "not recorded")}${source ? ` (${esc(source)})` : ""}. Sent by 3P Digital's voice assistant for My PR Partner.</td></tr>
 </table></body></html>`;
 
+  // The agent tells the caller what this says, so keep it short and true.
   const reply = {
     ok: true,
-    // The agent reads this back to the caller, so keep it short and true.
-    message: "Passed to Lyall and Barbara. They aim to reply within one business day.",
+    message:
+      type === "opt_out"
+        ? "Passed to Lyall and Barbara so this person is not contacted again."
+        : type === "urgent_crisis"
+          ? "Passed to Lyall and Barbara marked urgent. No callback time can be promised."
+          : "Passed to Lyall and Barbara. They aim to reply within one business day.",
   };
   if (source === "simulation") {
     console.log("[api/voice/handoff] simulation, not emailed", { type, conversationId, subject });
