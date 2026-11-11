@@ -9,7 +9,7 @@ import CrisisMasterclassAdPage from "@/components/landing/ads/CrisisMasterclassA
 export const metadata: Metadata = {
   title: "Crisis Communication Course, 100% Online | Crisis Masterclass",
   description:
-    "Twelve months of crisis communication training with Melissa Agnes (Crisis Ready Institute) and Lyall Mercer (CRC Public Relations). $340 a month ex GST, ten-day free trial.",
+    "Twelve months of crisis communication training with Melissa Agnes (Crisis Ready Institute) and Lyall Mercer (CRC Public Relations). $340 a month ex GST, 100% online.",
   robots: { index: false, follow: false },
   alternates: { canonical: "https://myprpartner.com/crisis-masterclass" },
 };

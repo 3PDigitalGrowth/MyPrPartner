@@ -61,7 +61,7 @@ function ctaCard(preset: CtaPreset, slug: string): CtaCard {
         external: true,
         eyebrow: "Enrol now",
         title: "Start the Crisis Masterclass this month",
-        body: "Twelve monthly sessions with Melissa Agnes and Lyall Mercer, workbooks and a monthly Q&A. $340 a month ex GST, ten-day free trial.",
+        body: "Twelve monthly sessions with Melissa Agnes and Lyall Mercer, workbooks and a monthly Q&A. $340 a month ex GST.",
         cta: "Enrol in the Crisis Masterclass",
         accent: "linear-gradient(135deg, #1A2B4A 0%, #1E73BE 100%)",
         icon: Shield,

@@ -147,10 +147,6 @@ export default function CrisisMasterclassAdPage() {
   const [lead, ...more] = content.testimonials?.items ?? [];
   const modules = content.courseStructure?.modules ?? [];
   const faq = [
-    {
-      q: "Is there a free trial?",
-      a: "Yes. There is a ten-day free trial, so your payment is not processed until you have seen the first session.",
-    },
     ...content.faq.items.filter((i) =>
       ["Who is the Crisis Masterclass for?", "Is it really 100% online?", "How long does enrolment last?", "How is payment handled?", "Can I enrol my team or board?"].includes(i.q)
     ),
@@ -170,7 +166,7 @@ export default function CrisisMasterclassAdPage() {
             className="h-10 w-auto lg:h-[48px]"
           />
           <div className="flex items-center gap-4">
-            <span className="hidden text-[14px] text-text-medium md:inline">Ten-day free trial · $340/mo ex GST</span>
+            <span className="hidden text-[14px] text-text-medium md:inline">$340/mo ex GST · 100% online</span>
             <a
               href={checkout("header")}
               className="inline-flex items-center gap-2 rounded-full bg-teal px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-teal-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2"
@@ -250,8 +246,8 @@ export default function CrisisMasterclassAdPage() {
               <p className="mt-5 flex items-start gap-2 text-[14px] leading-relaxed text-white/80">
                 <Lock className="mt-0.5 h-4 w-4 flex-shrink-0 text-teal-light" aria-hidden />
                 <span>
-                  <span className="font-semibold text-white">$340 a month ex GST, with a ten-day free trial.</span> You&apos;re
-                  not charged until you&apos;ve seen the first session. Pay annually and get one month free.
+                  <span className="font-semibold text-white">$340 a month ex GST.</span> Pay annually and get one month free,
+                  and month one opens the day you enrol.
                 </span>
               </p>
             </div>
@@ -590,8 +586,8 @@ export default function CrisisMasterclassAdPage() {
                     Annual subscription, paid monthly. Pay upfront and get one month free.
                   </p>
                   <p className="mt-5 inline-flex items-center gap-2 rounded-full bg-teal/10 px-3.5 py-1.5 text-[13px] font-semibold text-teal-dark">
-                    <Lock className="h-3.5 w-3.5" aria-hidden />
-                    Ten-day free trial
+                    <Check className="h-3.5 w-3.5" strokeWidth={3} aria-hidden />
+                    Month one opens the day you enrol
                   </p>
                   <a href={checkout("pricing")} className={`${CTA_TEAL} mt-6 w-full`}>
                     Enrol now
@@ -605,7 +601,7 @@ export default function CrisisMasterclassAdPage() {
                     Pay by invoice instead
                   </button>
                   <p className="mt-4 text-center text-[13px] leading-relaxed text-text-medium">
-                    Your payment isn&apos;t processed until you&apos;ve seen the first session.
+                    Secure checkout through our learning platform.
                   </p>
                 </div>
               </div>
@@ -650,8 +646,7 @@ export default function CrisisMasterclassAdPage() {
                 Don&apos;t wait until you&apos;re already in a crisis
               </h2>
               <p className="mt-5 max-w-[600px] text-[17px] leading-relaxed text-white/85">
-                Start month one today for $340 a month ex GST. The ten-day free trial means you see the first session before you
-                pay.
+                Start month one today for $340 a month ex GST, or pay annually and get one month free.
               </p>
               <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a href={checkout("final")} className={CTA_HERO}>
@@ -687,7 +682,7 @@ export default function CrisisMasterclassAdPage() {
               </ul>
               <p className="mt-6 flex items-baseline gap-2 border-t border-white/15 pt-5">
                 <span className="font-heading text-[34px] font-bold leading-none">$340</span>
-                <span className="text-[14px] text-white/75">a month ex GST · ten-day free trial</span>
+                <span className="text-[14px] text-white/75">a month ex GST · 12 months</span>
               </p>
             </div>
           </div>
@@ -718,7 +713,7 @@ export default function CrisisMasterclassAdPage() {
       >
         <div className="flex items-center gap-3">
           <div className="min-w-0 flex-1">
-            <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-teal">Ten-day free trial</p>
+            <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-teal">Crisis Masterclass</p>
             <p className="font-heading text-[14px] font-bold">$340/mo ex GST · annual plan</p>
           </div>
           <a

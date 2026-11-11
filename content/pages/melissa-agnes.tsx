@@ -269,7 +269,7 @@ export function buildMelissaAgnesConfig(articles: Article[]): LandingConfig {
           },
           {
             kind: "cta",
-            text: "The full course, twelve sessions with Melissa, is $340 a month with a ten-day free trial.",
+            text: "The full course, twelve sessions with Melissa, is $340 a month ex GST.",
             href: "/crisis-masterclass",
             cta: "See the Crisis Masterclass",
           },
@@ -375,7 +375,7 @@ export function buildMelissaAgnesConfig(articles: Article[]): LandingConfig {
           href: "/crisis-masterclass",
           eyebrow: "The full program",
           title: "Crisis Masterclass",
-          body: "Twelve months with Melissa Agnes and Lyall Mercer. $340 a month ex GST, ten-day free trial.",
+          body: "Twelve months with Melissa Agnes and Lyall Mercer. $340 a month ex GST.",
           cta: "See pricing and enrol",
           icon: Award,
           accent: "linear-gradient(135deg, #1A2B4A 0%, #1E73BE 100%)",

@@ -329,7 +329,7 @@ export const mapleLeafFoodsConfig: LandingConfig = {
               <Link href="/crisis-masterclass" className="font-semibold text-teal-dark underline underline-offset-2">
                 Crisis Masterclass
               </Link>{" "}
-              program page for pricing and the ten day free trial.
+              program page for pricing.
             </>
           ),
         },

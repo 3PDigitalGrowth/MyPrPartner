@@ -12,7 +12,7 @@ import { crisisMasterclassContent as live } from "./crisis-masterclass";
  *
  * Copy sources, so the review is about layout rather than new claims:
  * - headline: Lyall's own EDM1 letter ("go beyond the playbook")
- * - price, ten-day trial, annual month free: the /lp/crisis-masterclass page
+ * - price and annual month free: the /lp/crisis-masterclass page
  *   CRC reviewed on 5 Nov 2026
  * - the four hero outcomes stay as they are (CRC's call, 5 Nov 2026)
  */
@@ -58,10 +58,6 @@ export const crisisMasterclassAltContent: CourseContent = {
   faq: {
     ...live.faq,
     items: [
-      {
-        q: "Is there a free trial?",
-        a: "Yes. There is a ten-day free trial, so your payment is not processed until you have seen the first session.",
-      },
       ...live.faq.items,
     ],
   },
@@ -87,6 +83,6 @@ export const crisisMasterclassAltContent: CourseContent = {
 
   mobileBar: {
     ...live.mobileBar,
-    priceShort: "$340/mo ex GST · 10-day free trial",
+    priceShort: "$340/mo ex GST · annual plan",
   },
 };

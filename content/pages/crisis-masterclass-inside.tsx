@@ -287,7 +287,7 @@ export const crisisMasterclassInsideConfig: LandingConfig = {
             <>Monthly video session, workbook and downloadable resource</>,
             <>Monthly Q&amp;A with Melissa Agnes and Lyall Mercer, with questions submitted in advance</>,
             <>Fortnightly Spotlight emails between sessions</>,
-            <>$340 a month ex GST, or pay annually, with a ten-day free trial</>,
+            <>$340 a month ex GST, or pay annually and get one month free</>,
           ],
         },
         {
@@ -312,9 +312,9 @@ export const crisisMasterclassInsideConfig: LandingConfig = {
         },
         {
           kind: "cta",
-          text: "Not sure yet? The ten-day free trial covers the first session in full.",
+          text: "Ready when you are. Month one opens the day you enrol.",
           href: "/crisis-masterclass",
-          cta: "Start the free trial",
+          cta: "See pricing and enrol",
         },
       ],
     },
@@ -382,7 +382,7 @@ export const crisisMasterclassInsideConfig: LandingConfig = {
       {
         question: "What does it cost?",
         answer:
-          "$340 a month ex GST for 12 months, or an annual payment. There is a ten-day free trial, so your payment is not processed until you have seen the first session.",
+          "$340 a month ex GST for 12 months, or one annual payment that includes a month free.",
       },
     ],
   },
@@ -456,7 +456,7 @@ export const crisisMasterclassInsideConfig: LandingConfig = {
   finalCta: {
     eyebrow: "Enrol",
     heading: "Twelve months with Melissa Agnes and Lyall Mercer",
-    body: "Start with month one today. $340 a month ex GST, with a ten-day free trial.",
+    body: "Start with month one today. $340 a month ex GST, or pay annually and get one month free.",
     primary: { href: "/crisis-masterclass", label: "See pricing and enrol" },
     secondary: { href: "/contact", label: "Ask about group enrolment" },
     backgroundImage: "/images/crisis-masterclass/final-cta-bg.jpg",

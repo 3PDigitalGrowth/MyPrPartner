@@ -39,7 +39,7 @@ import {
  * Review draft of the Crisis Masterclass page (/crisis-masterclass/alt, noindex).
  * Same content as the live page; what changes is the first two screens:
  *   1. hero names the instructors and shows them (no stock portrait), leads
- *      with a promise, and puts the price and ten-day trial next to Enrol
+ *      with a promise, and puts the price next to Enrol
  *   2. one testimonial and the partner line straight under the hero
  *   3. Lyall's note moved up from the bottom of the page and trimmed
  *   4. key learnings and career value merged into one list
@@ -148,8 +148,8 @@ function AltHero({ hero, checkout }: { hero: HeroContent; checkout: CheckoutConf
           <p className="mt-5 flex items-start gap-2 text-[14px] leading-relaxed text-white/80">
             <Lock className="mt-0.5 h-4 w-4 flex-shrink-0 text-teal-light" aria-hidden />
             <span>
-              <span className="font-semibold text-white">$340 a month ex GST, with a ten-day free trial.</span>{" "}
-              You&apos;re not charged until you&apos;ve seen the first session. Pay annually and get one month free.
+              <span className="font-semibold text-white">$340 a month ex GST.</span>{" "}
+              Pay annually and get one month free, and month one opens the day you enrol.
             </span>
           </p>
         </div>
