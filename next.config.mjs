@@ -46,6 +46,14 @@ const nextConfig = {
         permanent: false,
       },
 
+      // /crisis-masterclass/alt was the review draft Lyall approved on 11 Nov
+      // 2026; it became the live /crisis-masterclass page on 14 Nov 2026.
+      {
+        source: "/crisis-masterclass/alt",
+        destination: "/crisis-masterclass",
+        permanent: true,
+      },
+
       // crisismasterclass.com.au (and www) are attached to this Vercel project.
       // Every path on them lands on the masterclass sales page rather than the
       // homepage, tagged so GA4 reports the visit as a referral from that

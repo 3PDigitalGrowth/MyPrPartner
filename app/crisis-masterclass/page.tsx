@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CourseJsonLd from "@/components/CourseJsonLd";
 import { FaqJsonLd, BreadcrumbJsonLd } from "@/components/seo/StructuredData";
-import CrisisMasterclassClient from "./CrisisMasterclassClient";
+import CrisisMasterclassAltPage from "@/components/course-page/alt/CrisisMasterclassAltPage";
 import { crisisMasterclassContent as content } from "@/content/courses/crisis-masterclass";
 
 export const metadata: Metadata = {
@@ -56,7 +56,7 @@ export default function CrisisMasterclassPage() {
       />
       <Navbar />
       <main className="pt-[72px] lg:pt-[72px]">
-        <CrisisMasterclassClient />
+        <CrisisMasterclassAltPage />
       </main>
       <Footer />
     </>

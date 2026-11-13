@@ -2,8 +2,9 @@ import type { CourseContent } from "@/components/course-page/types";
 import { crisisMasterclassContent as live } from "./crisis-masterclass";
 
 /**
- * Review draft of /crisis-masterclass (11 Nov 2026), served at
- * /crisis-masterclass/alt with noindex for Lyall and Barbara to compare.
+ * Layout for /crisis-masterclass. Built 11 Nov 2026 as a review draft at
+ * /crisis-masterclass/alt; Lyall approved it on 11 Nov 2026 (4:03pm, "RE: EDM")
+ * and it replaced the old page on 14 Nov 2026. /alt now redirects here.
  *
  * Why: after EDM1 (10 Nov) Clarity showed visitors leaving on the first
  * screen (8.7% average scroll, 12 seconds active), and the page has sat near
@@ -25,8 +26,6 @@ export const altLeadTestimonial = leadTestimonial
 
 export const crisisMasterclassAltContent: CourseContent = {
   ...live,
-
-  checkout: { ...live.checkout, utmMedium: "crisis-masterclass-alt" },
 
   hero: {
     ...live.hero,

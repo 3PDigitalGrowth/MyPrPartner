@@ -36,8 +36,9 @@ import {
 } from "@/content/courses/crisis-masterclass-alt";
 
 /**
- * Review draft of the Crisis Masterclass page (/crisis-masterclass/alt, noindex).
- * Same content as the live page; what changes is the first two screens:
+ * The Crisis Masterclass page (/crisis-masterclass). Reviewed as a draft at
+ * /crisis-masterclass/alt, approved by Lyall on 11 Nov 2026, live 14 Nov 2026.
+ * Same content as the old page; what changed is the first two screens:
  *   1. hero names the instructors and shows them (no stock portrait), leads
  *      with a promise, and puts the price next to Enrol
  *   2. one testimonial and the partner line straight under the hero
@@ -64,17 +65,6 @@ const straight = (s: string) => s.replace(/[‘’]/g, "'").replace(/[“”]/g,
 function track(name: string, params: Record<string, unknown>) {
   const w = window as unknown as { gtag?: (...args: unknown[]) => void };
   w.gtag?.("event", name, params);
-}
-
-function ReviewBar() {
-  return (
-    <div className="border-b border-[#F1D58A] bg-[#FFF7E0] text-[13px] leading-snug text-text-dark">
-      <div className="mx-auto max-w-7xl px-4 py-2.5 sm:px-6 lg:px-8">
-        <span className="font-semibold">Draft for review.</span> A proposed layout for the Crisis Masterclass page. It
-        isn&apos;t linked from the site and is hidden from search.
-      </div>
-    </div>
-  );
 }
 
 function AltHero({ hero, checkout }: { hero: HeroContent; checkout: CheckoutConfig }) {
@@ -344,7 +334,7 @@ function OutlineBand() {
             theme="dark"
             variant="band"
             submitLabel="Send me the outline"
-            onLead={() => track("generate_lead", { lead_type: "course_outline", program: "crisis-masterclass", page_variant: "alt" })}
+            onLead={() => track("generate_lead", { lead_type: "course_outline", program: "crisis-masterclass", page_variant: "nov-2026" })}
           />
         </div>
       </div>
@@ -359,7 +349,6 @@ export default function CrisisMasterclassAltPage() {
       <WaitlistModalProvider enabled={!!content.sidebar.waitlist} courseName={content.mobileBar.label} slug={content.slug}>
         <PlanSelectionProvider defaultTierId={content.sidebar.defaultTierId} hasComparison={false}>
           <div ref={revealRef}>
-            <ReviewBar />
             <AltHero hero={content.hero} checkout={content.checkout} />
             <ProofStrip t={altLeadTestimonial} />
             <StatMetaBar stats={content.statBar} />
