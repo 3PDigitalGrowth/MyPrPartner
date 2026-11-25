@@ -62,6 +62,17 @@ const nextConfig = {
       // Links that already carry a utm_source (the EDMs link the short domain,
       // as Lyall asked) keep their own tags: the query passes through untouched
       // instead of being overwritten with the referral tags below.
+      //
+      // crisismasterclass.com.au/enrol is the link in the December EDM (EDM2,
+      // the lesson email). It opens the short ads page, which holds visitors
+      // about ten times longer than the full course page. Kept temporary so
+      // the target can move without browsers caching the old one.
+      {
+        source: "/enrol",
+        has: [{ type: "host", value: "(www\\.)?crisismasterclass\\.com\\.au" }],
+        destination: "https://myprpartner.com/lp/crisis-masterclass",
+        permanent: false,
+      },
       {
         source: "/:path*",
         has: [
